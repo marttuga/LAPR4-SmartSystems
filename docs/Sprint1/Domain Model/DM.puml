@@ -1,0 +1,146 @@
+@startuml
+
+skinparam class {
+ArrowColor DarkBlue
+}
+
+skinparam stereotypeCBackgroundColor LightBlue
+
+package Client <<Aggregate>>{
+class Client <<Entity>> <<Root>>
+
+class Contact <<Value Object>>
+
+class PhoneNumber <<Value Object>>
+
+class EmailAddress <<Value Object>>
+
+class Name <<Value Object>>
+
+class Gender <<Value Object>>
+
+class Address <<Value Object>>
+
+class Birthday <<Value Object>>
+}
+
+
+/' Client '/
+Client --- "1" Contact : preferredContact >
+Client -- "1" Name : identifiedBy >
+Client *-- "*" Contact : contacts
+Client -- "1" Gender : identifiedBy >
+Client -- "1" Address : residence>
+Client -- "1" Birthday : dateOfBirth>
+Contact <|-- PhoneNumber
+Contact <|-- EmailAddress
+
+
+package Product <<Aggregate>>{
+class Product <<Entity>> <<Root>>
+
+class PriceTableID <<Value Object>>
+
+class PriceTable <<Entity>>
+
+class SalesRegion <<Entity>>
+
+class Category <<Value Object>>
+
+class ProductPriceDetail
+
+class Price <<Value Object>>
+
+class Barcode <<Value Object>>
+
+class Picture <<Value Object>>
+
+class Brand <<Value Object>>
+}
+
+
+/' Product '/
+Product --- "1" Category: categorized >
+Product --- "1" Price: has >
+Product --- "1..*" Picture: has >
+Product --- "1" Barcode: has >
+Product --- "1" Brand: has >
+ProductPriceDetail -- "1" Product: >
+ProductPriceDetail --- "1..*" PriceTable: >
+PriceTable --- "1" PriceTableID: >
+PriceTable --- "1" SalesRegion: >
+
+
+
+package Warehouse <<Aggregate>>{
+    class Warehouse <<Entity>> <<Root>>{
+    -Row
+    -Shelf
+    -Aisle
+    }
+
+    class AGV <<Entity>>{
+    -Autonomy
+    -State
+    }
+
+class Route <<Value Object>>
+
+class Plan <<Value Object>>
+}
+
+
+/' Warehouse '/
+
+Warehouse -- "1..*" AGV: has >
+AGV -- "1..*" Route: has >
+Warehouse -- "1" Plan: >
+
+
+
+package Order <<Aggregate>>{
+class Order <<Entity>> <<Root>>
+
+class DateTime <<Value Object>>
+
+class OrderID <<Value Object>>
+
+    class Status <<Entity>>{
+    -State
+    }
+
+class PaymentMethod <<Value Object>>
+
+    class ShippingMethod <<Value Object>>{
+    -Types
+    }
+}
+
+
+/' Order '/
+Order --- "1" OrderID : >
+Order --- "1" DateTime : >
+Order --- "1" Status : has >
+Order --- "1" PaymentMethod : has >
+Order --- "1" ShippingMethod : has >
+
+
+
+class ShoppingCart
+
+/' ShoppingCart '/
+ShoppingCart --- "1..*" Product: has >
+
+class Catalog
+
+/' Catalog '/
+Client --- "1..*" Catalog: sees >
+Catalog --- "1..*" Product: has >
+
+
+/' Joined Aggregates '/
+Client -- "1..*" Order: orders >
+Client -- "1..*" Product: chooses >
+Warehouse -- "*" Product: saves >
+
+@enduml
