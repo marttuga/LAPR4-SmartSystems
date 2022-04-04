@@ -28,10 +28,10 @@ class Birthday <<Value Object>>
 /' Client '/
 Client --- "1" Contact : preferredContact >
 Client -- "1" Name : identifiedBy >
-Client *-- "*" Contact : contacts
+Client *-- "*" Contact : contacts >
 Client -- "1" Gender : identifiedBy >
-Client -- "1" Address : residence>
-Client -- "1" Birthday : dateOfBirth>
+Client -- "1" Address : resides >
+Client -- "1" Birthday : dateOfBirth >
 Contact <|-- PhoneNumber
 Contact <|-- EmailAddress
 
@@ -118,8 +118,8 @@ class PaymentMethod <<Value Object>>
 
 
 /' Order '/
-Order --- "1" OrderID : >
-Order --- "1" DateTime : >
+Order --- "1" OrderID : has >
+Order --- "1" DateTime : has >
 Order --- "1" Status : has >
 Order --- "1" PaymentMethod : has >
 Order --- "1" ShippingMethod : has >
