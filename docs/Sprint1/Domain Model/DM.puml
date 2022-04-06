@@ -5,7 +5,7 @@ ArrowColor DarkBlue
 
 skinparam stereotypeCBackgroundColor LightBlue
 
-object Survey
+object Survey <<Value Object>>
 
 entity Client <<Entity>> <<Root>>
 
@@ -43,11 +43,11 @@ entity Product <<Entity>> <<Root>>
 
 object PriceTableID <<Value Object>>
 
-object PriceTable <<Entity>>
+entity PriceTable <<Entity>>
 
-object SalesRegion <<Entity>>
+entity SalesRegion <<Entity>>
 
-object Category <<Value Object>>
+entity Category <<Entity>>
 
 object ProductPriceDetail
 
@@ -61,10 +61,11 @@ object Brand <<Value Object>>
 
 object ProductItem <<Value Object>>
 
-Class Quantity <<Value Object>>
+object Quantity <<Value Object>>
 
 object Weight <<Value Object>>
 
+object Model <<Value Object>>
 
 
 /' Product '/
@@ -90,14 +91,25 @@ ProductItem --- "1" Quantity: has >
     -Aisle
     }
 
-    object AGV <<Entity>>{
+    entity AGV <<Entity>>{
     -Autonomy
     -State
     }
 
 object Route <<Value Object>>
 
+object Identifier <<Value Object>>
+
 object Plan <<Value Object>>
+
+object AlphaNumericCode <<Value Object>>
+
+object Description <<Value Object>>
+
+/' category '/
+Category --- "1" AlphaNumericCode  : categorized >
+Category --- "1" Description  : categorized >
+
 
 
 
@@ -105,6 +117,8 @@ object Plan <<Value Object>>
 
 Warehouse -- "1..*" AGV: has >
 AGV -- "1..*" Route: has >
+AGV -- "1" Identifier: has >
+AGV -- "1" Model: has >
 Warehouse -- "1" Plan: >
 
 
@@ -115,7 +129,7 @@ object DateTime <<Value Object>>
 
 object OrderID <<Value Object>>
 
-    object Status <<Entity>>{
+ entity Status <<Entity>>{
     -State
     }
 
