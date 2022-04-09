@@ -5,7 +5,9 @@ ArrowColor DarkBlue
 
 skinparam stereotypeCBackgroundColor LightBlue
 
-object Survey <<Value Object>>
+object Survey <<Value Object>> {
+-topic
+}
 
 entity Costumer <<Entity>> <<Root>>
 
@@ -88,7 +90,6 @@ ProductPriceDetail -- "1" Product: >
 ProductPriceDetail --- "1..*" PriceTable: >
 PriceTable --- "1" PriceTableID: >
 PriceTable --- "1" SalesRegion: >
-Survey --- "1" Product: about  >
 Product --- "1" ProductItem: becomes >
 ProductItem --- "1" Quantity: has >
 Product --- "1" Reference: has >
@@ -104,7 +105,6 @@ Product --- "1" UniqueInternalCode: has >
 
     entity AGV <<Entity>>{
     -Autonomy
-    -State
     }
 
 object Route <<Value Object>>
@@ -117,12 +117,17 @@ object AlphaNumericCode <<Value Object>>
 
 object Description <<Value Object>>
 
+object AGVDescription <<ValueObject>>
+
+object MaxWeightCarry <<ValueObject>>
+
+object AGVDock <<ValueObject>>
+
+entity Task <<Entity>>
+
 /' category '/
 Category --- "1" AlphaNumericCode  : categorized >
 Category --- "1" Description  : categorized >
-
-
-
 
 /' Warehouse '/
 
@@ -131,7 +136,10 @@ AGV -- "1..*" Route: has >
 AGV -- "1" Identifier: has >
 AGV -- "1" Model: has >
 Warehouse -- "1" Plan: >
-
+AGV -- "1" AGVDescription : has >
+AGV -- "1" MaxWeightCarry : has >
+AGV -- "1" AGVDock : has >
+AGV -- "1" Task : performs >
 
 
 entity Order <<Entity>> <<Root>>
@@ -153,7 +161,11 @@ object PaymentMethod <<Value Object>>
 object ShippingCost <<ValueObject>>
 
 
+
+object Volume <<ValueObject>>
+
 ShippingCost --- Weight: depends >
+ShippingCost --- Volume: depends >
 
 /' Order '/
 Order --- "1" OrderID : >
@@ -172,8 +184,15 @@ object ShoppingCart <<Value Object>>
 /' ShoppingCart '/
 ShoppingCart --- "1..*" ProductItem: has >
 
-object Catalog
 
+object StorageArea <<ValueObject>> {
+-AisleId
+-RowId
+-ShelfId
+}
+
+
+object Catalog
 /' Catalog '/
 Costumer --- "1..*" Catalog: sees >
 Catalog --- "1..*" Product: has >
@@ -182,5 +201,6 @@ Catalog --- "1..*" Product: has >
 /' Joined Aggregates '/
 Costumer "1" -- "1..*" Order: orders >
 Costumer -- "1..*" Product: chooses >
-Warehouse -- "*" Product: saves >
+Warehouse -- "1..*" StorageArea: contains >
+StorageArea -- "1..*" Product: stores >
 @enduml
