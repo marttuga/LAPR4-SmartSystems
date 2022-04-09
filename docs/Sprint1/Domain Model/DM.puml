@@ -5,56 +5,11 @@ ArrowColor DarkBlue
 
 skinparam stereotypeCBackgroundColor LightBlue
 
-object Survey <<Value Object>> {
--topic
-}
 
-entity Costumer <<Entity>> <<Root>>
-
-object Contact <<Value Object>>
-
-object PhoneNumber <<Value Object>>
-
-object EmailAddress <<Value Object>>
-
-object Name <<Value Object>>
-
-object Gender <<Value Object>>
-
-entity PostalAddress <<Entity>> {
-- Type
-}
-
-object CostumerID <<Value Object>>
-
-object Birthday <<Value Object>>
-object VATIdentifier <<Value Object>>
-
-
-/' Costumer '/
-Costumer --- "1" CostumerID : has >
-Costumer --- "1" Contact : preferredContact >
-Costumer -- "1" Name : identifiedBy >
-Costumer --  Contact : contacts
-Costumer -- "1" Gender : identifiedBy >
-Costumer -- "1..*" PostalAddress : has >
-Costumer -- "1" Birthday : dateOfBirth >
-Contact <|-- PhoneNumber
-Contact <|-- EmailAddress
-Costumer -- "1" Survey : answers >
-Costumer -- "1" VATIdentifier : has >
-
-
+/' OrderManagement '/
+package OrderManagement <<Aggregate>>{
 
 entity Product <<Entity>> <<Root>>
-
-object PriceTableID <<Value Object>>
-
-entity PriceTable <<Entity>>
-
-entity SalesRegion <<Entity>>
-
-entity Category <<Entity>>
 
 object ProductPriceDetail
 
@@ -72,13 +27,136 @@ object Quantity <<Value Object>>
 
 object Weight <<Value Object>>
 
-object Model <<Value Object>>
-
 entity ProductDescription <<Entity>>
 
 object Reference <<Value Object>>
 
 object UniqueInternalCode <<Value Object>>
+
+entity Order <<Entity>> <<Root>>
+
+object Category <<Value Object>>
+
+object AlphaNumericCode <<Value Object>>
+
+object Description <<Value Object>>
+
+object Catalog
+
+object PriceTableID <<Value Object>>
+
+entity PriceTable <<Entity>>
+
+entity SalesRegion <<Entity>>
+
+entity Costumer <<Entity>> <<Root>>
+
+object Contact <<Value Object>>
+
+object PhoneNumber <<Value Object>>
+
+object EmailAddress <<Value Object>>
+
+object Name <<Value Object>>
+
+object Gender <<Value Object>>
+
+    entity PostalAddress <<Entity>> {
+    - Type
+    }
+
+object DateTime <<Value Object>>
+
+object OrderID <<Value Object>>
+
+object ShoppingCart <<Value Object>>
+
+object PaymentMethod <<Value Object>>
+
+object ShippingCost <<ValueObject>>
+
+object Volume <<ValueObject>>
+}
+
+/' WarehouseManagement '/
+ package WarehouseManagement <<Aggregate>>{
+
+ entity Warehouse <<Entity>> <<Root>>{
+     -Row
+     -Shelf
+     -Aisle
+     }
+
+ entity AGV <<Entity>>{
+     -Autonomy
+     }
+
+object Route <<Value Object>>
+
+object Identifier <<Value Object>>
+
+object Plan <<Value Object>>
+
+object AGVDescription <<ValueObject>>
+
+object MaxWeightCarry <<ValueObject>>
+
+object AGVDock <<ValueObject>>
+
+entity Task <<Entity>>
+
+object CostumerID <<Value Object>>
+
+object Birthday <<Value Object>>
+
+object VATIdentifier <<Value Object>>
+
+   entity ShippingMethod <<Entity>>{
+    -Type
+    }
+
+     entity Status <<Entity>>{
+        -State
+     }
+
+object Model <<ValueObject>>
+
+    object StorageArea <<ValueObject>> {
+     -AisleId
+     -RowId
+     -ShelfId
+     }
+}
+
+/' Survey '/
+package Survey <<Aggregate>>{
+
+    object Survey <<Value Object>> {
+    -topic
+    }
+
+object SurveyAlphaNumericCode <<ValueObject>>
+
+object SurveyDescription <<ValueObject>>
+
+object SurveyPeriod <<ValueObject>>
+
+object SurveyRule <<ValueObject>>
+}
+
+/' Costumer '/
+Costumer --- "1" CostumerID : has >
+Costumer --- "1" Contact : preferredContact >
+Costumer -- "1" Name : identifiedBy >
+Costumer --  Contact : contacts
+Costumer -- "1" Gender : identifiedBy >
+Costumer -- "1..*" PostalAddress : has >
+Costumer -- "1" Birthday : dateOfBirth >
+Contact <|-- PhoneNumber
+Contact <|-- EmailAddress
+Costumer -- "1" Survey : answers >
+Costumer -- "1" VATIdentifier : has >
+
 
 /' Product '/
 Product --- "1" Category: categorized >
@@ -97,40 +175,12 @@ Product --- "1..*" ProductDescription: has >
 Product --- "1" UniqueInternalCode: has >
 
 
-    entity Warehouse <<Entity>> <<Root>>{
-    -Row
-    -Shelf
-    -Aisle
-    }
-
-    entity AGV <<Entity>>{
-    -Autonomy
-    }
-
-object Route <<Value Object>>
-
-object Identifier <<Value Object>>
-
-object Plan <<Value Object>>
-
-object AlphaNumericCode <<Value Object>>
-
-object Description <<Value Object>>
-
-object AGVDescription <<ValueObject>>
-
-object MaxWeightCarry <<ValueObject>>
-
-object AGVDock <<ValueObject>>
-
-entity Task <<Entity>>
-
-/' category '/
+/' Category '/
 Category --- "1" AlphaNumericCode  : categorized >
 Category --- "1" Description  : categorized >
 
-/' Warehouse '/
 
+/' Warehouse '/
 Warehouse -- "1..*" AGV: has >
 AGV -- "1..*" Route: has >
 AGV -- "1" Identifier: has >
@@ -142,30 +192,17 @@ AGV -- "1" AGVDock : has >
 AGV -- "1" Task : performs >
 
 
-entity Order <<Entity>> <<Root>>
-
-object DateTime <<Value Object>>
-
-object OrderID <<Value Object>>
-
- entity Status <<Entity>>{
-    -State
-    }
-
-object PaymentMethod <<Value Object>>
-
-   entity ShippingMethod <<Entity>>{
-    -Type
-    }
-
-object ShippingCost <<ValueObject>>
+/' Survey '/
+Survey -- "1..*" SurveyRule: has >
+Survey -- "1" SurveyDescription: has >
+Survey -- "1" SurveyAlphaNumericCode: caracterized >
+Survey -- "1" SurveyPeriod: has >
 
 
-
-object Volume <<ValueObject>>
-
+/' ShippingCost '/
 ShippingCost --- Weight: depends >
 ShippingCost --- Volume: depends >
+
 
 /' Order '/
 Order --- "1" OrderID : >
@@ -179,20 +216,10 @@ ShippingMethod--- "1" ShippingCost: has >
 Product --- "1" Weight: has >
 
 
-object ShoppingCart <<Value Object>>
-
 /' ShoppingCart '/
 ShoppingCart --- "1..*" ProductItem: has >
 
 
-object StorageArea <<ValueObject>> {
--AisleId
--RowId
--ShelfId
-}
-
-
-object Catalog
 /' Catalog '/
 Costumer --- "1..*" Catalog: sees >
 Catalog --- "1..*" Product: has >
