@@ -7,7 +7,7 @@ skinparam stereotypeCBackgroundColor LightBlue
 
 object Survey <<Value Object>>
 
-entity Client <<Entity>> <<Root>>
+entity Costumer <<Entity>> <<Root>>
 
 object Contact <<Value Object>>
 
@@ -19,23 +19,28 @@ object Name <<Value Object>>
 
 object Gender <<Value Object>>
 
-object Address <<Value Object>>
+entity PostalAddress <<Entity>> {
+- Type
+}
+
+object CostumerID <<Value Object>>
 
 object Birthday <<Value Object>>
+object VATIdentifier <<Value Object>>
 
 
-
-/' Client '/
-Client --- "1" Contact : preferredContact >
-Client -- "1" Name : identifiedBy >
-Client --  Contact : contacts
-Client -- "1" Gender : identifiedBy >
-Client -- "1" Address : residence>
-Client -- "1" Birthday : dateOfBirth>
+/' Costumer '/
+Costumer --- "1" CostumerID : has >
+Costumer --- "1" Contact : preferredContact >
+Costumer -- "1" Name : identifiedBy >
+Costumer --  Contact : contacts
+Costumer -- "1" Gender : identifiedBy >
+Costumer -- "1..*" PostalAddress : has >
+Costumer -- "1" Birthday : dateOfBirth >
 Contact <|-- PhoneNumber
 Contact <|-- EmailAddress
-Client -- "1" Survey : answers >
-
+Costumer -- "1" Survey : answers >
+Costumer -- "1" VATIdentifier : has >
 
 
 
@@ -67,6 +72,11 @@ object Weight <<Value Object>>
 
 object Model <<Value Object>>
 
+entity ProductDescription <<Entity>>
+
+object Reference <<Value Object>>
+
+object UniqueInternalCode <<Value Object>>
 
 /' Product '/
 Product --- "1" Category: categorized >
@@ -81,8 +91,9 @@ PriceTable --- "1" SalesRegion: >
 Survey --- "1" Product: about  >
 Product --- "1" ProductItem: becomes >
 ProductItem --- "1" Quantity: has >
-
-
+Product --- "1" Reference: has >
+Product --- "1..*" ProductDescription: has >
+Product --- "1" UniqueInternalCode: has >
 
 
     entity Warehouse <<Entity>> <<Root>>{
@@ -135,14 +146,14 @@ object OrderID <<Value Object>>
 
 object PaymentMethod <<Value Object>>
 
-    object ShippingMethod <<Value Object>>{
+   entity ShippingMethod <<Entity>>{
     -Type
     }
 
 object ShippingCost <<ValueObject>>
 
 
-
+ShippingCost --- Weight: depends >
 
 /' Order '/
 Order --- "1" OrderID : >
@@ -152,6 +163,7 @@ Order --- "1" PaymentMethod : has >
 Order --- "1" ShippingMethod : has >
 Order --- "1" Survey : generates >
 ShippingCost --- "1" SalesRegion: depends >
+ShippingMethod--- "1" ShippingCost: has >
 Product --- "1" Weight: has >
 
 
@@ -163,12 +175,12 @@ ShoppingCart --- "1..*" ProductItem: has >
 object Catalog
 
 /' Catalog '/
-Client --- "1..*" Catalog: sees >
+Costumer --- "1..*" Catalog: sees >
 Catalog --- "1..*" Product: has >
 
 
 /' Joined Aggregates '/
-Client -- "1..*" Order: orders >
-Client -- "1..*" Product: chooses >
+Costumer "1" -- "1..*" Order: orders >
+Costumer -- "1..*" Product: chooses >
 Warehouse -- "*" Product: saves >
 @enduml
