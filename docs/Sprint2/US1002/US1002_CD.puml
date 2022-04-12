@@ -1,0 +1,57 @@
+@startuml
+skinparam classAttributeIconSize 0
+//EXEMPLO
+
+class RegisterClientUI {
+}
+
+class RegisterClientController {
+  +registerClient(name, sex, ccn, nhsn, birthDate,tin, phoneNumber, email)
+  +registerClient(name, ccn, nhsn, birthDate,tin, phoneNumber, email)
+  +saveClient()
+  +createAndSendPasswordForNewClient()
+  +validateClient()
+  -getClientList()
+  -getClient()
+}
+
+class Client {
+-String name
+    -Email email
+  -String sex
+  -String ccn
+  -String nhsn
+  -LocalDate birthDate
+  -String tin
+  -String phoneNumber
+  +Client(name,email,sex, ccn, nhsn, birthDate,tin, phoneNumber)
+}
+
+class User {
+  -String name
+  -Email email
+  -Password password
+  +User(name, email,password)
+}
+
+class ClientStore{
+   +registerClient(name, sex, ccn, nhsn, birthDate,tin, phoneNumber, email)
+   +registerClient(name, ccn, nhsn, birthDate,tin, phoneNumber, email)
+   +validate(client)
+   +saveClient(client)
+   -getClientList()
+}
+
+class UserStore {
+  +create(name, email, password)
+  +add(user)
+}
+
+RegisterClientUI ..> UserStore
+RegisterClientUI ..> RegisterClientController
+RegisterClientController ..> Client
+RegisterClientController ..> ClientStore
+ClientStore ..> Client
+Client..> User
+UserStore..> User
+@enduml

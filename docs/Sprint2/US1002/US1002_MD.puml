@@ -1,0 +1,43 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+
+class Client {
+  -String name
+  -String gender
+  -String ccn
+  -String nhsn
+  -LocalDate birthDate
+  -String tin
+  -String phoneNumber
+  -Email email
+}
+
+class Test {
+  -code
+  -nhsn
+  -date
+}
+
+class Receptionist {
+
+}
+
+class Results{
+}
+
+class Sample {
+  -sampleType
+}
+
+class Notification{
+ }
+
+Receptionist "1" -- "1..*" Client : registers >
+Client "1" -- "*" Results : receives >
+Client "1" -- "*" Sample : gives >
+Test "*" -- "1" Client: requested by >
+Notification "*" -- "1" Client : sent to >
+@enduml
