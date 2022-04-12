@@ -37,9 +37,13 @@ entity Order <<Entity>> <<Root>>
 
 object Category <<Value Object>>
 
+object SubCategory <<Value Object>>
+
 object AlphaNumericCode <<Value Object>>
 
 object Description <<Value Object>>
+
+object LineOrder <<Value Object>>
 
 object Catalog
 
@@ -160,7 +164,6 @@ Costumer -- "1" VATIdentifier : has >
 
 /' Product '/
 Product --- "1" Category: categorized >
-Product --- "1" Price: has >
 Product --- "1..*" Picture: has >
 Product --- "1" Barcode: has >
 Product --- "1" Brand: has >
@@ -173,6 +176,7 @@ ProductItem --- "1" Quantity: has >
 Product --- "1" Reference: has >
 Product --- "1..*" ProductDescription: has >
 Product --- "1" UniqueInternalCode: has >
+Category --- "1..*" SubCategory: has >
 
 
 /' Category '/
@@ -214,6 +218,9 @@ Order --- "1" Survey : generates >
 ShippingCost --- "1" SalesRegion: depends >
 ShippingMethod--- "1" ShippingCost: has >
 Product --- "1" Weight: has >
+LineOrder -- "1" Price: has >
+LineOrder --- "1" Order: >
+LineOrder --- "1" ProductItem: has >
 
 
 /' ShoppingCart '/
