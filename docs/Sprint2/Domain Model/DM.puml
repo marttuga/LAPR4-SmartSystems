@@ -6,14 +6,24 @@ ArrowColor DarkBlue
 skinparam stereotypeCBackgroundColor LightBlue
 
 
+package Category <<Aggregate>> {
+    entity Category <<Entity>>
+
+    object AlphaNumericCode <<Value Object>>
+
+    object Description <<Value Object>>
+}
+
 /' OrderManagement '/
-package OrderManagement <<Aggregate>>{
+package Order <<Aggregate>>{
 
 entity Product <<Entity>> <<Root>>
 
 object ProductPriceDetail
 
 object Price <<Value Object>>
+
+object PriceOrder <<ValueObject>>
 
 object Barcode <<Value Object>>
 
@@ -25,6 +35,8 @@ object ProductItem <<Value Object>>
 
 object Quantity <<Value Object>>
 
+entity PriceItem <<Entity>>
+
 object Weight <<Value Object>>
 
 entity ProductDescription <<Entity>>
@@ -35,17 +47,7 @@ object UniqueInternalCode <<Value Object>>
 
 entity Order <<Entity>> <<Root>>
 
-object Category <<Value Object>>
-
-object SubCategory <<Value Object>>
-
-object AlphaNumericCode <<Value Object>>
-
-object Description <<Value Object>>
-
 object LineOrder <<Value Object>>
-
-object Catalog
 
 object PriceTableID <<Value Object>>
 
@@ -73,41 +75,13 @@ object DateTime <<Value Object>>
 
 object OrderID <<Value Object>>
 
-object ShoppingCart <<Value Object>>
+entity ShoppingCart <<Entity>>
 
-object PaymentMethod <<Value Object>>
+entity PaymentMethod <<Entity>>
 
 object ShippingCost <<ValueObject>>
 
 object Volume <<ValueObject>>
-}
-
-/' WarehouseManagement '/
- package WarehouseManagement <<Aggregate>>{
-
- entity Warehouse <<Entity>> <<Root>>{
-     -Row
-     -Shelf
-     -Aisle
-     }
-
- entity AGV <<Entity>>{
-     -Autonomy
-     }
-
-object Route <<Value Object>>
-
-object Identifier <<Value Object>>
-
-object Plan <<Value Object>>
-
-object AGVDescription <<ValueObject>>
-
-object MaxWeightCarry <<ValueObject>>
-
-object AGVDock <<ValueObject>>
-
-entity Task <<Entity>>
 
 object CostumerID <<Value Object>>
 
@@ -122,15 +96,51 @@ object VATIdentifier <<Value Object>>
      entity Status <<Entity>>{
         -State
      }
-
-object Model <<ValueObject>>
-
-    object StorageArea <<ValueObject>> {
-     -AisleId
-     -RowId
-     -ShelfId
-     }
 }
+
+/' WarehouseManagement '/
+ package Warehouse <<Aggregate>>{
+
+ entity Warehouse <<Entity>> <<Root>>{
+     -Row
+     -Shelf
+     -Aisle
+     }
+
+    object Plan <<ValueObject>>
+
+    entity Location <<Entity>>
+
+     object StorageArea <<ValueObject>> {
+         -AisleId
+         -RowId
+         -ShelfId
+         }
+
+ }
+
+ object AGV_Warehouse <<ValueObject>>
+
+package AGV <<Aggregate>>{
+ entity AGV <<Entity>>{
+     -Autonomy
+     }
+
+     object Route <<Value Object>>
+
+     object Identifier <<Value Object>>
+
+     object Model <<ValueObject>>
+
+     object AGVDescription <<ValueObject>>
+
+     object MaxWeightCarry <<ValueObject>>
+
+     object AGVDock <<ValueObject>>
+
+     entity Task <<Entity>>
+}
+
 
 /' Survey '/
 package Survey <<Aggregate>>{
@@ -146,7 +156,27 @@ object SurveyDescription <<ValueObject>>
 object SurveyPeriod <<ValueObject>>
 
 object SurveyRule <<ValueObject>>
+
+object Question <<ValueObject>>
 }
+
+entity Employee <<Entity>>
+
+entity User <<Entity>>
+
+object Username <<ValueObject>>
+
+object Password <<ValueObject>>
+
+/' Employee '/
+Employee --- AGV : manages >
+
+/' User '/
+User -- Username : has >
+User -- Password : has >
+User <|-- Costumer
+User <|-- Employee
+
 
 /' Costumer '/
 Costumer --- "1" CostumerID : has >
@@ -167,7 +197,7 @@ Product --- "1" Category: categorized >
 Product --- "1..*" Picture: has >
 Product --- "1" Barcode: has >
 Product --- "1" Brand: has >
-ProductPriceDetail -- "1" Product: >
+ProductPriceDetail -- "1" Product: <
 ProductPriceDetail --- "1..*" PriceTable: >
 PriceTable --- "1" PriceTableID: >
 PriceTable --- "1" SalesRegion: >
@@ -176,12 +206,14 @@ ProductItem --- "1" Quantity: has >
 Product --- "1" Reference: has >
 Product --- "1..*" ProductDescription: has >
 Product --- "1" UniqueInternalCode: has >
-Category --- "1..*" SubCategory: has >
+PriceItem --- Quantity: depends >
+
 
 
 /' Category '/
 Category --- "1" AlphaNumericCode  : categorized >
 Category --- "1" Description  : categorized >
+Category --- Category: it's child of
 
 
 /' Warehouse '/
@@ -194,6 +226,9 @@ AGV -- "1" AGVDescription : has >
 AGV -- "1" MaxWeightCarry : has >
 AGV -- "1" AGVDock : has >
 AGV -- "1" Task : performs >
+AGV -- AGV_Warehouse: >
+Warehouse -- "1..*" AGV_Warehouse: knows >
+Plan -- Location: has >
 
 
 /' Survey '/
@@ -201,6 +236,9 @@ Survey -- "1..*" SurveyRule: has >
 Survey -- "1" SurveyDescription: has >
 Survey -- "1" SurveyAlphaNumericCode: caracterized >
 Survey -- "1" SurveyPeriod: has >
+Survey -- "1..*" Question: has >
+
+Question -- Question: depends >
 
 
 /' ShippingCost '/
@@ -221,15 +259,14 @@ Product --- "1" Weight: has >
 LineOrder -- "1" Price: has >
 LineOrder --- "1" Order: >
 LineOrder --- "1" ProductItem: has >
+PriceOrder --- Order: depends >
+PriceOrder --- ShippingCost: depends >
 
 
 /' ShoppingCart '/
 ShoppingCart --- "1..*" ProductItem: has >
 
 
-/' Catalog '/
-Costumer --- "1..*" Catalog: sees >
-Catalog --- "1..*" Product: has >
 
 
 /' Joined Aggregates '/
