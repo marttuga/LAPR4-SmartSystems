@@ -16,28 +16,69 @@ class Client {
 }
 
 class Test {
-  -code
-  -nhsn
-  -date
+  -testcode
+  -nhsCode
+  -createdAt
 }
 
-class Receptionist {
-
+'Attributes and Methods for Class LabOrder'
+class LabOrder {
+ccn
+testType
 }
 
-class Results{
+class TestParameterResult{
 }
 
 class Sample {
-  -sampleType
+  -code
 }
 
-class Notification{
- }
 
-Receptionist "1" -- "1..*" Client : registers >
-Client "1" -- "*" Results : receives >
-Client "1" -- "*" Sample : gives >
+'Attributes for Class ClinicalAnalysisLaboratory'
+class ClinicalAnalysisLaboratory {
+laboratoryId
+}
+
+'Attributes and Methods for Class Company'
+class Company {
+designation
+}
+
+'Attributes and Methods for Class Test Type'
+class TestType {
+designation
+collectingMethod
+code
+}
+
+'Attributes and Methods for Class Parameter'
+class Parameter {
+code
+shortName
+description
+}
+
+class ParameterCategory {
+code
+nhsId
+description
+}
+
+class MedicalLabTechnician {
+
+}
+
+Company "1" -- "*" Test : performs >
+Company "1" -- "*" Client : has >
+LabOrder "1"  -- "1" Test : originates >
+MedicalLabTechnician "1" -- "*" Test : registers >
+ClinicalAnalysisLaboratory "1" -- "*" Test : performs >
+Test "1" -- "1" TestParameterResult : has >
+Test "1" -- "1" Sample : uses >
+Test "*" -- "1" TestType : is of >
 Test "*" -- "1" Client: requested by >
-Notification "*" -- "1" Client : sent to >
+Test "*" -- "1..*" Parameter : requests analysis of >
+Test "*" -- "1..*" ParameterCategory : requests analysis of >
+
 @enduml

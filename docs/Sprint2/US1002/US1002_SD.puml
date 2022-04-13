@@ -1,83 +1,230 @@
 @startuml
 autonumber
 'hide footbox
-actor "Receptionist" as RECP
-
-participant ":RegisterClientUI" as UI
-participant ":RegisterClientController" as CTRL
+actor "Clinical Chemistry Technologist" as CCT
+participant ":ConsultHistoricalTestsUI" as UI
+participant ":ConsultHistoricalTestsController" as CTRL
 participant ":Company" as Company
-participant "store: ClientStore" as Store
-participant "client: RegisterClient" as client
-participant "PasswordGenerator" as Pass
-participant "Email" as email
-participant " userStore" as userStore
+participant "testStore:TestStore" as Store
+participant "clientStore:ClientStore" as cStore
+participant ":ReadConfig" as Read
+participant ":OrderingByTin" as OBT
+participant ":OrderingByName" as OBN
+participant "tMapper: TestMapper" as tMapper
+participant "cMapper: ClientMapper" as cMapper
+participant "test:Test" as Test
+participant "lTestsDTO : List <TestDto>" as testDTO
+participant "lClientsDTO : List <ClientsDto>" as clientDTO
+participant "client:Client" as Client
 
-activate RECP
-RECP -> UI : Starts to register a new client
+
+activate CCT
+CCT -> UI :  starts to consult the clients list
 activate UI
-opt user chooses to type the sex or not
-UI --> RECP : requests client data (name, sex, phoneNumber, birthDate, tin,ccn,nhsn, email)
-end opt
+
+
+
+UI -> CTRL :  getClients()
 deactivate UI
-RECP -> UI : types requested data
-activate UI
-UI -> CTRL : registerClient (name, sex, phoneNumber, birthDate, tin,ccn,nhsn, email)
 activate CTRL
-CTRL --> Company : store = getClientStore()
+
+CTRL -> Company : clientStore = getClientStore()
 activate Company
 deactivate Company
-CTRL -> Store : client = registerClient (name, sex, phoneNumber, birthDate, tin,ccn,nhsn, email)
-activate  Store
-Store --> client *: registerClient(name, sex, phoneNumber, birthDate, tin,ccn,nhsn, email)
-deactivate Store
-CTRL -> Store : validateClient (client)
-activate Store
-deactivate Store
+
+CTRL -> cStore : clientsList= getClientsList()
+activate cStore
+deactivate cStore
+
+CTRL -> cMapper : lClientsDTO = toDTO(clientList)
 deactivate CTRL
-deactivate Company
-UI --> RECP : Shows all data and requests confirmation
+activate cMapper
+
+
+UI --> CCT : Asks to choose the ordering algorithm
 deactivate UI
-RECP -> UI : Confirms the data
+deactivate Company
+deactivate cStore
+alt chooses to sort the clients by Tin
+deactivate cMapper
+CCT -> UI : chooses ordering algorithm
 activate UI
-UI -> CTRL : saveClient()
+
+
+
+UI -> CTRL : sortByTin()
+
 activate CTRL
-CTRL -> Store : saveClient(client)
+alt chooses to sort in ascending order
+CTRL -> Read : sortTinAsc(lClientsDTO)
+activate Read
+
+
+Read -> OBT : getOrderingByTin(class)
+deactivate Read
+activate OBT
+
+
+OBT -> cMapper : sortingByTinAsc(lClientsDTO)
+deactivate OBT
+activate cMapper
+
+
+else chooses to sort in descending order
+
+CTRL -> Read : sortTinDesc(lClientsDTO))
+deactivate cMapper
+activate Read
 deactivate CTRL
-activate Store
-Store -> Store: validateClient(client)
-activate Store
-deactivate Store
-Store -> Store: add  Client(client)
-activate Store
-deactivate Store
-deactivate Store
-deactivate CTRL
 
-deactivate Store
-
-UI -> email : getEmail()
-activate email
-deactivate email
-activate "Pass"
-Pass -> Pass : finalPass = generatePassword()
-UI -> Pass : getFinalPassword()
-deactivate "Pass"
-
-UI -> userStore : create(name, email.getEmail(), pass.getFinalPassword())
-UI -> userStore : add(user)
+Read -> OBT : getOrderingByTin(class)
+deactivate Read
+activate OBT
 
 
+OBT -> cMapper : sortingByTinDesc(lClientsDTO)
+deactivate OBT
+activate cMapper
 
-UI --> RECP: createAnsSendPasswordForNewClient()
+end
 
 
-
-
-deactivate Company
-UI --> RECP: informs operation (in)success
-deactivate CTRL
+UI --> CCT : Shows sorted list
 deactivate UI
-deactivate RECP
+
+deactivate cMapper
+CCT -> UI : Types tin of the client
+activate UI
+
+UI -> CTRL :  getTests()
+activate CTRL
+CTRL -> Company : testStore = getTestStore()
+
+activate Company
+deactivate Company
+
+CTRL -> Store : testsList= getTestsList()
+activate Store
+deactivate Store
+
+CTRL -> tMapper : lTestsDTO = toDTO(testsList)
+deactivate CTRL
+activate tMapper
+
+
+UI -> CTRL : findTest()
+deactivate tMapper
+activate CTRL
+
+CTRL -> Store : test = findTest(lTestsDTO)
+deactivate CTRL
+activate Store
+
+
+
+UI --> CCT : Shows the test of the client
+deactivate UI
+
+
+deactivate Store
+else chooses to sort the clients by Name
+
+
+CCT -> UI :  chooses ordering algorithm
+activate UI
+
+UI -> CTRL : sortByName()
+
+activate CTRL
+
+
+
+alt chooses to sort from A-Z
+
+deactivate cStore
+
+CTRL -> Read : sortNameAZ(lClientsDTO)
+deactivate cMapper
+activate Read
+
+
+Read -> OBN : getOrderingByName(class)
+deactivate Read
+activate OBN
+
+
+OBN -> cMapper : sortingByNameAZ(lClientsDTO)
+deactivate OBN
+activate cMapper
+
+
+
+else chooses to sort from Z-A
+
+CTRL -> Read : sortNameZA(lClientsDTO)
+deactivate cMapper
+activate Read
+deactivate CTRL
+
+Read -> OBN : getOrderingByName(class)
+deactivate Read
+activate OBN
+
+
+OBN -> cMapper : sortingByNameZA(lClientsDTO)
+deactivate OBN
+activate cMapper
+
+
+
+
+
+end
+
+UI --> CCT : Shows sorted list
+deactivate cMapper
+deactivate UI
+
+CCT -> UI : Types name of the client
+
+activate UI
+UI -> CTRL :  getTests()
+activate CTRL
+CTRL -> Company : testStore = getTestStore()
+
+activate Company
+deactivate Company
+
+CTRL -> Store : testsList= getTestsList()
+activate Store
+deactivate Store
+
+CTRL -> tMapper : lTestsDTO = toDTO(testsList)
+deactivate CTRL
+activate tMapper
+
+
+deactivate cStore
+UI -> CTRL : findTest()
+deactivate tMapper
+activate CTRL
+CTRL -> Store : test = findTest(lTestsDTO)
+deactivate CTRL
+activate Store
+
+UI --> CCT : Shows the test of the client
+
+deactivate UI
+deactivate Store
+deactivate UI
+
+
+deactivate CCT
+
+
+end
+
+
 
 
 @enduml

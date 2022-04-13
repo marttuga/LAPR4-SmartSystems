@@ -1,57 +1,96 @@
 @startuml
 skinparam classAttributeIconSize 0
-//EXEMPLO
 
-class RegisterClientUI {
+package UI {
+class RegisterTestUI {
+}
 }
 
-class RegisterClientController {
-  +registerClient(name, sex, ccn, nhsn, birthDate,tin, phoneNumber, email)
-  +registerClient(name, ccn, nhsn, birthDate,tin, phoneNumber, email)
-  +saveClient()
-  +createAndSendPasswordForNewClient()
-  +validateClient()
-  -getClientList()
-  -getClient()
+package Controller{
+class RegisterTestController {
+  +createTest(testType,testCategory,testParameter, nhsCode,testCode, createdAt)
+  +saveTest()
+  +validateTest()
+  +getTest()
+}
 }
 
-class Client {
--String name
-    -Email email
-  -String sex
-  -String ccn
-  -String nhsn
-  -LocalDate birthDate
-  -String tin
-  -String phoneNumber
-  +Client(name,email,sex, ccn, nhsn, birthDate,tin, phoneNumber)
+package Domain {
+
+class Test {
+  -testType
+  -testCategory
+  -testParameter
+  -createdAt
+  -nhsCode
+  +getTestType()
+  +getTestCategory()
+  +getTestParameter()
+  +getNhsCode()
+  +getCreatedAt()
+  +getTestCode()
+  +Test()
 }
 
-class User {
-  -String name
-  -Email email
-  -Password password
-  +User(name, email,password)
+
+class TestStore{
+   +createTest()
+   +validate(test)
+   +saveTest(test)
+    +addSample()
+   +getTestParameter()
+   +getTestMap()
+   +getTestList()
+   +loadTestsListFromFile()
+   +saveTestsListToFile()
+   -getTestCode()
 }
 
+class TestTypeStore{
+   +getTestTypeList()
+
+}
+
+class ParameterStore{
+   +getParameterList()
+
+}
+class ParameterCategoryStore{
+   +getParameterCategoryList()
+
+}
 class ClientStore{
-   +registerClient(name, sex, ccn, nhsn, birthDate,tin, phoneNumber, email)
-   +registerClient(name, ccn, nhsn, birthDate,tin, phoneNumber, email)
-   +validate(client)
-   +saveClient(client)
-   -getClientList()
+   +getClientsList()
+
 }
 
-class UserStore {
-  +create(name, email, password)
-  +add(user)
+
+class Company{
+   -designation
+   +getTestStore()
+   +getTestTypeStore()
+   +getParameterStore()
+    +getParameterCategoryStore()
+    +getClientsStore()
+}
 }
 
-RegisterClientUI ..> UserStore
-RegisterClientUI ..> RegisterClientController
-RegisterClientController ..> Client
-RegisterClientController ..> ClientStore
-ClientStore ..> Client
-Client..> User
-UserStore..> User
+RegisterTestUI ..> RegisterTestController
+RegisterTestController ..> Test
+RegisterTestController ..>Company
+Company "1" --> "1" TestStore : uses
+Company "1" --> "1" TestTypeStore : uses
+Company "1" --> "1" ParameterStore : uses
+Company "1" --> "1" ParameterCategoryStore : uses
+Company "1" --> "1" ClientStore : uses
+RegisterTestController ..> TestStore
+RegisterTestController ..> TestTypeStore
+RegisterTestController ..> ParameterStore
+RegisterTestController ..> ParameterCategoryStore
+RegisterTestController ..> ClientStore
+TestStore"1" --> "*" Test: knows
+TestTypeStore"1" --> "*" Test: knows
+ParameterStore"1" --> "*" Test: knows
+ParameterCategoryStore"1" --> "*" Test: knows
+ClientStore "1" --> "*" Test: knows
 @enduml

@@ -1,25 +1,27 @@
 @startuml
 autonumber
-actor "Receptionist" as Receptionist
+actor "Sales Clerck" as SC
 
-activate Receptionist
-Receptionist -> ":System" : asks to register a client
-activate ":System"
-":System" --> Receptionist : requests data (name, sex, e-mail, phone number, TIN, birth date, CCN, NHSN )
-deactivate ":System"
+activate SC
 
-Receptionist -> ":System" : types requested data
-activate ":System"
-":System" --> Receptionist : shows all data and requests confirmation
-deactivate ":System"
-
-Receptionist -> ":System" : confirms the data
+":System" --> SC : shows list of products
 activate ":System"
 
-":System" --> Receptionist : generates a password
-
-":System" --> Receptionist : informs operation success
+SC -> ":System" : types the chosen product's barcode
 deactivate ":System"
-deactivate Receptionist
+
+SC -> ":System" : starts to view/search the products catalog
+activate ":System"
+
+":System" --> SC :shows all data and requests confirmation
+deactivate ":System"
+SC -> ":System" : confirms the data
+
+activate ":System"
+":System" --> SC : informs operation success
+deactivate ":System"
+
+deactivate ":System"
+deactivate SC
 
 @enduml
