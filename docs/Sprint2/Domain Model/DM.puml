@@ -35,17 +35,15 @@ object UniqueInternalCode <<Value Object>>
 
 entity Order <<Entity>> <<Root>>
 
-object Category <<Value Object>>
+package Category <<Aggregate>> {
+    entity Category <<Entity>>
 
-object SubCategory <<Value Object>>
+    object AlphaNumericCode <<Value Object>>
 
-object AlphaNumericCode <<Value Object>>
-
-object Description <<Value Object>>
+    object Description <<Value Object>>
+}
 
 object LineOrder <<Value Object>>
-
-object Catalog
 
 object PriceTableID <<Value Object>>
 
@@ -73,9 +71,9 @@ object DateTime <<Value Object>>
 
 object OrderID <<Value Object>>
 
-object ShoppingCart <<Value Object>>
+entity ShoppingCart <<Entity>>
 
-object PaymentMethod <<Value Object>>
+entity PaymentMethod <<Entity>>
 
 object ShippingCost <<ValueObject>>
 
@@ -83,31 +81,37 @@ object Volume <<ValueObject>>
 }
 
 /' WarehouseManagement '/
- package WarehouseManagement <<Aggregate>>{
+ package Warehouse <<Aggregate>>{
 
  entity Warehouse <<Entity>> <<Root>>{
      -Row
      -Shelf
      -Aisle
      }
+ }
 
+package AGV <<Aggregate>>{
  entity AGV <<Entity>>{
      -Autonomy
      }
 
-object Route <<Value Object>>
+     object Route <<Value Object>>
 
-object Identifier <<Value Object>>
+     object Identifier <<Value Object>>
+
+     object Model <<ValueObject>>
+
+     object AGVDescription <<ValueObject>>
+
+     object MaxWeightCarry <<ValueObject>>
+
+     object AGVDock <<ValueObject>>
+
+     entity Task <<Entity>>
+}
+
 
 object Plan <<Value Object>>
-
-object AGVDescription <<ValueObject>>
-
-object MaxWeightCarry <<ValueObject>>
-
-object AGVDock <<ValueObject>>
-
-entity Task <<Entity>>
 
 object CostumerID <<Value Object>>
 
@@ -123,14 +127,12 @@ object VATIdentifier <<Value Object>>
         -State
      }
 
-object Model <<ValueObject>>
 
     object StorageArea <<ValueObject>> {
      -AisleId
      -RowId
      -ShelfId
      }
-}
 
 /' Survey '/
 package Survey <<Aggregate>>{
@@ -176,12 +178,13 @@ ProductItem --- "1" Quantity: has >
 Product --- "1" Reference: has >
 Product --- "1..*" ProductDescription: has >
 Product --- "1" UniqueInternalCode: has >
-Category --- "1..*" SubCategory: has >
+
 
 
 /' Category '/
 Category --- "1" AlphaNumericCode  : categorized >
 Category --- "1" Description  : categorized >
+Category --- Category: it's child of
 
 
 /' Warehouse '/
@@ -227,9 +230,6 @@ LineOrder --- "1" ProductItem: has >
 ShoppingCart --- "1..*" ProductItem: has >
 
 
-/' Catalog '/
-Costumer --- "1..*" Catalog: sees >
-Catalog --- "1..*" Product: has >
 
 
 /' Joined Aggregates '/
