@@ -1,0 +1,10 @@
+/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaRepositoryFactory.java
+/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/BasepaRepositoryBase.java
+/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryClientUserRepository.java
+/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaClientUserRepository.java
+/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/PersistenceSettings.java
+/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryInitializer.java
+/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemorySignupRequestRepository.java
+/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryRepositoryFactory.java
+/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/BaseJpaReportingRepositoryBase.java
+/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaSignupRequestRepository.java
