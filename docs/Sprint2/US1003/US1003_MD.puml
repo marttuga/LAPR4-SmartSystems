@@ -1,0 +1,52 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+
+class Client {
+  -String name
+  -String gender
+  -String ccn
+  -String nhsn
+  -LocalDate birthDate
+  -String tin
+  -String phoneNumber
+  -Email email
+}
+
+class Test {
+  -testcode
+  -testType
+  -testCategory
+  -testParameter
+  -nhsCode
+  -createdAt
+}
+
+
+class TestParameterResult{
+}
+
+
+'Attributes for Class ClinicalAnalysisLaboratory'
+class ClinicalAnalysisLaboratory {
+laboratoryId
+}
+
+class ClinicalChemistryTechnologist{
+}
+
+
+
+Company "1" -- "*" Test : performs >
+Company "1" -- "*" Client : has >
+ClinicalAnalysisLaboratory "1" -- "*" Test : performs >
+Test "1" -- "*" TestParameterResult : has >
+Test "*" -- "1" Client: requested by >
+ClinicalChemistryTechnologist "1" -- "*" TestParameterResult : checks >
+ClinicalChemistryTechnologist "1" -- "*" TestParameterResult : creates >
+ClinicalAnalysisLaboratory "1" -- "*" TestParameterResult : provides >
+
+
+@enduml
