@@ -3,17 +3,30 @@ autonumber
 actor "Sales Clerck" as SC
 
 activate SC
-
-":System" --> SC : shows list of products
-activate ":System"
-
-SC -> ":System" : types the chosen product's barcode
-deactivate ":System"
-
 SC -> ":System" : starts to view/search the products catalog
 activate ":System"
+loop until exits
+":System" --> SC : asks for a field(category,description, brand..)to filter the catalog
+deactivate ":System"
 
-":System" --> SC :shows all data and requests confirmation
+SC -> ":System" : types the field
+activate ":System"
+
+end loop
+":System" --> SC : shows list of products and asks to choose how to order the list (by name or price)
+deactivate ":System"
+
+SC -> ":System" : chooses how to order
+activate ":System"
+
+":System" --> SC : shows list of products and asks for the barcode
+deactivate ":System"
+
+SC -> ":System" : types the chosen product's barcode
+activate ":System"
+
+
+":System" --> SC :shows all data(code,description,brand,category,price)and requests confirmation
 deactivate ":System"
 SC -> ":System" : confirms the data
 

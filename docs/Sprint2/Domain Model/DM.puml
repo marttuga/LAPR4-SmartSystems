@@ -19,7 +19,7 @@ package Order <<Aggregate>>{
 
 entity Product <<Entity>> <<Root>>
 
-object ProductPriceDetail
+object ProductPriceDetail <<ValueObject>>
 
 object Price <<Value Object>>
 

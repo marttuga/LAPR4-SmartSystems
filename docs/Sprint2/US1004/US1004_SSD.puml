@@ -4,7 +4,7 @@ actor "Sales Clerck" as SC
 
 
 activate SC
-SC -> ":System" : starts to create new products order
+SC -> ":System" : starts to create new product's order for a given costumer
 activate ":System"
 
 ":System" --> SC : shows list of costumers
@@ -13,25 +13,21 @@ deactivate ":System"
 SC -> ":System" : types the chosen costumer's id
 activate ":System"
 
-":System" --> SC : shows list of categories
+":System" --> SC : shows the shopping cart of the costumer
 deactivate ":System"
-
-SC -> ":System" : chooses the category
-activate ":System"
-
 loop until the sales clerck chooses to exit
-":System" --> SC : shows list of subcategories
-deactivate ":System"
-
-
-SC -> ":System" : chooses subcategories
+SC -> ":System" : chooses the products to order
 activate ":System"
-
 end loop
 
+":System" --> SC : shows price of the order with the shipping
+deactivate ":System"
 
 
-":System" --> SC :shows all data and requests confirmation
+SC -> ":System" : chooses payment method
+activate ":System"
+
+":System" --> SC : requests confirmation
 deactivate ":System"
 SC -> ":System" : confirms the data
 
