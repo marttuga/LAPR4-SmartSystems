@@ -1,84 +1,43 @@
 @startuml
-hide methods
-left to right direction
-skinparam classAttributeIconSize 0
+entity Order <<Entity>> <<Root>>
+
+object LineOrder <<Value Object>>
+
+entity PriceTable <<Entity>>
+
+entity SalesRegion <<Entity>>
+
+entity Costumer <<Entity>> <<Root>>
+
+entity PriceTable <<Entity>>
+
+entity PriceTable <<Entity>>
+
+PriceTable --- "1" PriceTableID: >
+PriceTable --- "1" SalesRegion: >
+Costumer --- "1" CostumerID : has >
+Product --- "1" ProductItem: becomes >
+ProductItem --- "1" Quantity: has >
+PriceItem --- Quantity: depends >
+ShippingCost --- Weight: depends >
+ShippingCost --- Volume: depends >
+Costumer "1" -- "1..*" Order: orders >
+ShoppingCart --- "1..*" ProductItem: has >
+Order --- "1" OrderID : >
+Order --- "1" DateTime : >
+Order --- "1" Status : has >
+Order --- "1" PaymentMethod : has >
+Order --- "1" ShippingMethod : has >
+ShippingCost --- "1" SalesRegion: depends >
+ShippingMethod--- "1" ShippingCost: has >
+Product --- "1" Weight: has >
+LineOrder -- "1" Price: has >
+LineOrder --- "1" Order: >
+LineOrder --- "1" ProductItem: has >
+PriceOrder --- Order: depends >
+PriceOrder --- ShippingCost: depends >
 
 
-class Client {
-  -String name
-  -String gender
-  -String ccn
-  -String nhsn
-  -LocalDate birthDate
-  -String tin
-  -String phoneNumber
-  -Email email
-}
 
-class Test {
-  -testcode
-  -nhsCode
-  -createdAt
-}
-
-'Attributes and Methods for Class LabOrder'
-class LabOrder {
-ccn
-testType
-}
-
-class TestParameterResult{
-}
-
-class Sample {
-  -code
-}
-
-
-'Attributes for Class ClinicalAnalysisLaboratory'
-class ClinicalAnalysisLaboratory {
-laboratoryId
-}
-
-'Attributes and Methods for Class Company'
-class Company {
-designation
-}
-
-'Attributes and Methods for Class Test Type'
-class TestType {
-designation
-collectingMethod
-code
-}
-
-'Attributes and Methods for Class Parameter'
-class Parameter {
-code
-shortName
-description
-}
-
-class ParameterCategory {
-code
-nhsId
-description
-}
-
-class MedicalLabTechnician {
-
-}
-
-Company "1" -- "*" Test : performs >
-Company "1" -- "*" Client : has >
-LabOrder "1"  -- "1" Test : originates >
-MedicalLabTechnician "1" -- "*" Test : registers >
-ClinicalAnalysisLaboratory "1" -- "*" Test : performs >
-Test "1" -- "1" TestParameterResult : has >
-Test "1" -- "1" Sample : uses >
-Test "*" -- "1" TestType : is of >
-Test "*" -- "1" Client: requested by >
-Test "*" -- "1..*" Parameter : requests analysis of >
-Test "*" -- "1..*" ParameterCategory : requests analysis of >
 
 @enduml
