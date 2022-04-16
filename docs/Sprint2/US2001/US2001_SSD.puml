@@ -1,27 +1,28 @@
 @startuml
 autonumber
-actor "Sales Clerck" as SC
+actor "Warehouse Employee" as WE
 
-activate SC
+activate WE
 
-":System" --> SC : shows list of products
+":System" --> WE : shows dimensions of storage areas
 activate ":System"
 
-SC -> ":System" : types the chosen product's barcode
+WE -> ":System" : chooses to open a JSON file
 deactivate ":System"
 
-SC -> ":System" : starts to view/search the products catalog
+":System" --> WE : opens JSON file
 activate ":System"
 
-":System" --> SC :shows all data and requests confirmation
+WE -> ":System" : enter the data of the warehouse plant
 deactivate ":System"
-SC -> ":System" : confirms the data
 
+WE -> ":System" : closes and save JSON file
 activate ":System"
-":System" --> SC : informs operation success
+
+":System" --> WE : informs operation success
 deactivate ":System"
 
 deactivate ":System"
-deactivate SC
+deactivate WE
 
 @enduml
