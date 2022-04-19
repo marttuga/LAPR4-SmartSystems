@@ -4,16 +4,22 @@ actor "Warehouse Employee" as WE
 
 activate WE
 
-":System" --> WE : shows dimensions of storage areas
+WE -> ":System" : set up the warehouse plant
 activate ":System"
 
-WE -> ":System" : chooses to open a JSON file
+":System" --> WE : shows dimensions of storage areas
 deactivate ":System"
 
-":System" --> WE : opens JSON file
+WE -> ":System" : chooses to open a JSON file
 activate ":System"
 
+":System" --> WE : opens JSON file
+deactivate ":System"
+
 WE -> ":System" : enter the data of the warehouse plant
+activate ":System"
+
+":System" --> WE : shows all data and requests confirmation
 deactivate ":System"
 
 WE -> ":System" : closes and save JSON file
