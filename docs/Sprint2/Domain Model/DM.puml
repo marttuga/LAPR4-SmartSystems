@@ -57,7 +57,7 @@ entity SalesRegion <<Entity>>
 
 entity Costumer <<Entity>> <<Root>>
 
-object Contact <<Value Object>>
+entity Contact <<Entity>>
 
 object PhoneNumber <<Value Object>>
 
@@ -124,6 +124,7 @@ object VATIdentifier <<Value Object>>
 package AGV <<Aggregate>>{
  entity AGV <<Entity>>{
      -Autonomy
+     -AGVDescription
      }
 
      object Route <<Value Object>>
@@ -131,8 +132,6 @@ package AGV <<Aggregate>>{
      object Identifier <<Value Object>>
 
      object Model <<ValueObject>>
-
-     object AGVDescription <<ValueObject>>
 
      object MaxWeightCarry <<ValueObject>>
 
@@ -157,6 +156,8 @@ object SurveyPeriod <<ValueObject>>
 object SurveyRule <<ValueObject>>
 
 object Topic <<ValueObject>>
+
+object GeneralQuestions  <<ValueObject>>
 }
 
 /'Question'/
@@ -232,7 +233,6 @@ AGV -- "1..*" Route: has >
 AGV -- "1" Identifier: caracterized >
 AGV -- "1" Model: has >
 Warehouse -- "1" Plan: >
-AGV -- "1" AGVDescription : has >
 AGV -- "1" MaxWeightCarry : has >
 AGV -- "1" AGVDock : has >
 AGV -- "1" Task : performs >
@@ -246,8 +246,8 @@ Survey -- "1..*" SurveyRule: has >
 Survey -- "1" SurveyDescription: has >
 Survey -- "1" SurveyAlphaNumericCode: caracterized >
 Survey -- "1" SurveyPeriod: has >
-Survey -- "1..*" Question: has >
 Survey -- "1" Topic: has >
+Survey -- "1..*" GeneralQuestions: has >
 
 Question -- Question: depends >
 
@@ -279,7 +279,9 @@ ShoppingCart --- "1..*" ProductItem: has >
 
 /'  Question '/
 Question --- "1..*" Answer: has >
+Question --- "1" GeneralQuestions: is <
 Answer --- "1" Type: has >
+
 
 
 /' Joined Aggregates '/
