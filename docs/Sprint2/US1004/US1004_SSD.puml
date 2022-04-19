@@ -16,8 +16,10 @@ activate ":System"
 ":System" --> SC : shows the shopping cart of the costumer
 deactivate ":System"
 loop until the sales clerck chooses to exit
-SC -> ":System" : chooses the products to order
+SC -> ":System" : check products stock
 activate ":System"
+":System" --> SC : Shows available stock
+
 end loop
 
 ":System" --> SC : shows price of the order with the shipping

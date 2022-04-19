@@ -145,8 +145,7 @@ package AGV <<Aggregate>>{
 /' Survey '/
 package Survey <<Aggregate>>{
 
-    object Survey <<Value Object>> {
-    -topic
+    Entity Survey <<Entity>> {
     }
 
 object SurveyAlphaNumericCode <<ValueObject>>
@@ -157,7 +156,19 @@ object SurveyPeriod <<ValueObject>>
 
 object SurveyRule <<ValueObject>>
 
-object Question <<ValueObject>>
+object Topic <<ValueObject>>
+}
+
+/'Question'/
+package Question <<Aggregate>>{
+entity Question <<Entity>>
+
+entity Answer <<Entity>>
+object Type <<Value Object>>{
+{Multiple Choice}
+{Free Answer}
+{Ordering}
+}
 }
 
 entity Employee <<Entity>>
@@ -217,16 +228,15 @@ Category --- Category: it's child of
 
 
 /' Warehouse '/
-Warehouse -- "1..*" AGV: has >
 AGV -- "1..*" Route: has >
-AGV -- "1" Identifier: has >
+AGV -- "1" Identifier: caracterized >
 AGV -- "1" Model: has >
 Warehouse -- "1" Plan: >
 AGV -- "1" AGVDescription : has >
 AGV -- "1" MaxWeightCarry : has >
 AGV -- "1" AGVDock : has >
 AGV -- "1" Task : performs >
-AGV -- AGV_Warehouse: >
+AGV_Warehouse -- AGV: is >
 Warehouse -- "1..*" AGV_Warehouse: knows >
 Plan -- Location: has >
 
@@ -237,6 +247,7 @@ Survey -- "1" SurveyDescription: has >
 Survey -- "1" SurveyAlphaNumericCode: caracterized >
 Survey -- "1" SurveyPeriod: has >
 Survey -- "1..*" Question: has >
+Survey -- "1" Topic: has >
 
 Question -- Question: depends >
 
@@ -263,10 +274,12 @@ PriceOrder --- Order: depends >
 PriceOrder --- ShippingCost: depends >
 
 
-/' ShoppingCart '/
+/'ShoppingCart '/
 ShoppingCart --- "1..*" ProductItem: has >
 
-
+/'  Question '/
+Question --- "1..*" Answer: has >
+Answer --- "1" Type: has >
 
 
 /' Joined Aggregates '/
