@@ -4,24 +4,24 @@ actor "Sales Clerck" as SC
 
 activate SC
 
-":System" --> SC : shows list of products
+SC -> ":System" : Starts to specify a new product for sale
 activate ":System"
 
-SC -> ":System" : types the chosen product's barcode
+":System" --> SC : Requests data (Brand, description, price...)
 deactivate ":System"
 
-SC -> ":System" : starts to view/search the products catalog
+SC -> ":System" : Types requested data
 activate ":System"
 
-":System" --> SC :shows all data and requests confirmation
+":System" --> SC :Shows all data and requests confirmation
 deactivate ":System"
-SC -> ":System" : confirms the data
+
+SC -> ":System" : Confirms the data
 
 activate ":System"
-":System" --> SC : informs operation success
+":System" --> SC : Informs operation (in)success
 deactivate ":System"
 
-deactivate ":System"
 deactivate SC
 
 @enduml
