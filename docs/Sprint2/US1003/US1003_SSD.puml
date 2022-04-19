@@ -4,24 +4,26 @@ actor "Sales Clerck" as SC
 
 activate SC
 
-":System" --> SC : shows list of products
+SC -> ":System" : Starts to register a new costumer
 activate ":System"
-
-SC -> ":System" : types the chosen product's barcode
+opt birthdate, gender, billing and delivering addresses are not mandatory
+":System" --> SC : Requests data (name, VAT identifier, email, phone number, birthdate, gender, billing address, delivering address)
 deactivate ":System"
+end opt
 
-SC -> ":System" : starts to view/search the products catalog
+
+SC -> ":System" : Inserts requested data
 activate ":System"
 
 ":System" --> SC :shows all data and requests confirmation
 deactivate ":System"
+
+
 SC -> ":System" : confirms the data
-
 activate ":System"
-":System" --> SC : informs operation success
+":System" --> SC : Generates costumerID and informs operation success
 deactivate ":System"
 
-deactivate ":System"
 deactivate SC
 
 @enduml
