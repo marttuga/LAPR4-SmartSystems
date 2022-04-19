@@ -2,7 +2,6 @@
 autonumber
 actor "Sales Clerck" as SC
 
-
 activate SC
 SC -> ":System" : starts to create new product's order for a given costumer
 activate ":System"
@@ -12,19 +11,52 @@ deactivate ":System"
 
 SC -> ":System" : types the chosen costumer's id
 activate ":System"
-
-":System" --> SC : shows the shopping cart of the costumer
+loop until exits
+loop until exits
+":System" --> SC : asks for a field(category,description, brand..)to filter the catalog
 deactivate ":System"
-loop until the sales clerck chooses to exit
-SC -> ":System" : check products stock
+
+SC -> ":System" : types the field
+activate ":System"
+
+end loop
+":System" --> SC : shows list of products and asks to choose how to order the list (by name or price)
+deactivate ":System"
+
+SC -> ":System" : chooses how to order
+activate ":System"
+
+":System" --> SC : shows list of products and asks for the barcode
+deactivate ":System"
+
+SC -> ":System" : types the chosen product's barcode
+activate ":System"
+
+":System" --> SC :shows all data(code,description,brand,category,price)
+deactivate ":System"
+
+SC -> ":System" : check product's stock
 activate ":System"
 ":System" --> SC : Shows available stock
+deactivate ":System"
+
+alt if there is stock
+SC -> ":System" : adds product to shopping cart
+activate ":System"
+else if there is not stock
+
+":System" --> SC : informs operation failure
+deactivate ":System"
+end
 
 end loop
 
+":System" --> SC : shows the shopping cart of the costumer
+activate ":System"
+
 ":System" --> SC : shows price of the order with the shipping
 deactivate ":System"
-
+deactivate ":System"
 
 SC -> ":System" : chooses payment method
 activate ":System"
