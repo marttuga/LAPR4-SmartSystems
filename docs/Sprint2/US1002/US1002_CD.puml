@@ -14,8 +14,9 @@ class ViewCatalogController {
 
 package Order <<Aggregate>>{
 
-entity Product <<Entity>> <<Root>>
-entity ProductDescription <<Entity>>
+entity Product <<Entity>> <<Root>> {
+- ProductDescription
+}
 entity PriceTable <<Entity>>
 entity SalesRegion <<Entity>>
 }
@@ -29,7 +30,6 @@ package Category <<Aggregate>> {
 ViewCatalogUI ..> ViewCatalogController
 ViewCatalogController ..> Category
 ViewCatalogController ..>PriceTable
-ViewCatalogController ..>ProductDescription
 
 ViewCatalogController ..> Product
 

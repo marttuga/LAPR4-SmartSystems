@@ -14,8 +14,9 @@ class NewProductOrderController {
 
 package Order <<Aggregate>>{
 
-entity Product <<Entity>> <<Root>>
-entity ProductDescription <<Entity>>
+entity Product <<Entity>> <<Root>> {
+- ProductDescription
+}
 entity PriceTable <<Entity>>
 entity SalesRegion <<Entity>>
 entity ShoppingCart <<Entity>>
@@ -33,7 +34,6 @@ package Category <<Aggregate>> {
 NewProductOrderUI ..> NewProductOrderController
 NewProductOrderController ..> Category
 NewProductOrderController ..>PriceTable
-NewProductOrderController ..>ProductDescription
 NewProductOrderController ..> Product
 NewProductOrderController ..> SalesRegion
 NewProductOrderController ..> PriceItem
