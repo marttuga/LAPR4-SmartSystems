@@ -2,216 +2,81 @@
 autonumber
 'hide footbox
 actor "Sales Clerck" as SC
-participant ":RegisterTestUI" as UI
-participant ":RegisterTestController" as CTRL
-participant ":Company" as Company
-participant "testStore:TestStore" as Store
-participant "cStore:ClientStore" as cStore
-participant "calStore:ClinicalAnalysisLaboratoryStore" as calStore
-participant "pc :ParameterCategory " as Pc
-participant "test : Test" as Test
-participant "testTypeStore:TestTypeStore" as ttStore
-participant "parameterStore:ParameterStore" as pStore
-participant "parameterCategoryStore:ParameterCategoryStore" as pcStore
-participant "client : Client" as Client
-participant "tt : TestType" as Tt
-participant "p : List<Parameter> " as parameterList
-participant "calList: List<ClinicalAnalysisLaboratory>" as calList
-
-
-
-
-
+participant ":ViewCatalogUI" as UI
+participant ":ViewCatalogController" as CTRL
+participant ":Category" as Categ
+participant ":Product" as Prod
+participant ":Order" as Order
+participant ":Costumer" as Costumer
+participant ":ShoppingCart" as ShopCa
+participant ":ShippingMethod" as SM
+participant ":PaymentMethod" as PM
 activate SC
-SC -> UI : Starts test registration
+
+SC -> UI : starts to create new product's order for a given costumer
 activate UI
 
-UI -> CTRL : getClinicalAnalysisLaboratory()
-activate CTRL
-
-CTRL -> Company : calStore = getClinicalAnalysisLaboratoryStore()
-activate Company
-deactivate Company
-
-CTRL -> calStore : calList= getCalList()
-activate calStore
-deactivate calStore
-deactivate CTRL
-
-UI -> CTRL : getClients()
-
-activate CTRL
-CTRL -> Company : clientStore = getClientStore()
-
-activate Company
-deactivate Company
-
-CTRL -> cStore : clientsList= getClientsList()
-activate cStore
-deactivate cStore
-deactivate CTRL
-
-UI --> SC : Asks to enter citizen card number of the client
-deactivate UI
-deactivate Company
-
-
-SC -> UI : Types citizen card number
-activate UI
-
-UI -> CTRL : findClient(tin)
-activate CTRL
-
-CTRL -> cStore : client = findClient(tin)
-deactivate CTRL
-activate cStore
-
-UI -> CTRL : getTestTypeList()
-deactivate Store
-activate CTRL
-deactivate cStore
-
-CTRL -> Company : testTypeStore = getTestTypeStore()
-activate Company
-deactivate Company
-
-CTRL -> ttStore : testTypeList = getTestTypeList()
-deactivate CTRL
-activate ttStore
-
-
-UI --> SC  : Shows list of test types
-deactivate UI
-deactivate Company
-deactivate ttStore
-
-SC -> UI : Selects test type
-activate UI
-
-UI -> CTRL : getParameterCategoryList()
-deactivate Store
-activate CTRL
-
-CTRL -> Company : parameterCategoryStore = getParameterCategoryStore()
-activate Company
-deactivate Company
-
-CTRL -> pcStore : parameterCategoryList = getParameterCategoryList()
-deactivate CTRL
-activate pcStore
-
-
-loop until receptionist chooses to exit
-UI --> SC  : Shows list of categories
-deactivate UI
-deactivate Company
-deactivate pcStore
-
-SC -> UI : Selects category
-activate UI
-
-UI -> CTRL : getParameterList()
-deactivate Store
-activate CTRL
-
-CTRL -> Company : parameterStore = getParameterStore()
-activate Company
-deactivate Company
-
-CTRL -> pStore : parameterList = getParameterList()
-deactivate CTRL
-activate pStore
-
-
-
-loop until receptionist chooses to exit
-
-UI --> SC  : Shows list of parameters
-deactivate pStore
+UI --> SC : shows list of costumers
 deactivate UI
 
-deactivate Company
+SC -> UI : types the chosen costumer's id
+activate UI
+loop until exits
+loop until exits
+UI --> SC : asks for a field(category,description, brand..)to filter the catalog
+deactivate UI
 
-
-SC -> UI : Selects parameter/s
+SC -> UI : types the field
 activate UI
 
-deactivate pcStore
-UI -> CTRL : addTestParameter(testParameter)
-activate CTRL
-CTRL -> pStore : tp = getTestParameter(testParameter)
-activate pStore
-deactivate pStore
-CTRL -> Test : tp = addTestParameter(parameter)
-activate Test
-deactivate Test
-CTRL--> UI : ok
-UI--> SC : added with success
-deactivate Test
-deactivate CTRL
 end loop
+UI --> SC : shows list of products and asks to choose how to order the list (by name or price)
+deactivate UI
+
+SC -> UI : chooses how to order
+activate UI
+
+UI --> SC : shows list of products and asks for the barcode
+deactivate UI
+
+SC -> UI : types the chosen product's barcode
+activate UI
+
+UI --> SC :shows all data(code,description,brand,category,price)
+deactivate UI
+
+SC -> UI : check product's stock
+activate UI
+UI --> SC : Shows available stock
+deactivate UI
+
+alt if there is stock
+SC -> UI : adds product to shopping cart
+activate UI
+else if there is not stock
+
+UI --> SC : informs operation failure
+deactivate UI
+end
+
 end loop
-UI --> SC  : Requests data(nhsCode)
-deactivate UI
 
-SC -> UI : types requested data
+UI --> SC : shows the shopping cart of the costumer
 activate UI
 
-UI -> CTRL : generateTestCode()
-activate CTRL
-
-CTRL -> Store : generateTestCode()
-deactivate CTRL
-activate Store
-
-
-
-
-
-UI -> CTRL : createTest()
-activate CTRL
-deactivate Store
-CTRL -> Company : testStore = getTestStore()
-
-activate Company
-deactivate Company
-CTRL -> Store : test = createTest(testType, testCategory, testParameter,nhsCode, testCode)
-activate Store
-
-Store --> Test : createTest(testType, testCategory, testParameter,nhsCode, testCode)
-
-activate Test
-deactivate Store
-deactivate Test
-
-CTRL -> Store : validateTest(test)
-activate Store
-deactivate Store
-deactivate CTRL
-
-UI --> SC : Shows the data and requests a confirmation
+UI --> SC : shows price of the order with the shipping
+deactivate UI
 deactivate UI
 
-SC -> UI : Confirms the data
+SC -> UI : chooses payment method
 activate UI
 
-UI -> CTRL : saveTest()
-activate CTRL
+UI --> SC : requests confirmation
+deactivate UI
+SC -> UI : confirms the data
 
-CTRL -> Store : saveTest(test)
-deactivate CTRL
-activate Store
-
-Store-> Store: validateTest()
-activate Store
-deactivate Store
-Store-> Store: addTest()
-activate Store
-deactivate Store
-deactivate Store
-deactivate CTRL
-
-UI --> SC: Informs operation success.
+activate UI
+UI --> SC : informs operation success
 deactivate UI
 deactivate SC
 

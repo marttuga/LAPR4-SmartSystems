@@ -2,95 +2,43 @@
 skinparam classAttributeIconSize 0
 
 package UI {
-class RegisterTestUI {
+class NewProductOrderUI {
 }
 }
 
 package Controller{
-class RegisterTestController {
-  +createTest(testType,testCategory,testParameter, nhsCode,testCode, createdAt)
-  +saveTest()
-  +validateTest()
-  +getTest()
+class NewProductOrderController {
+
 }
 }
 
-package Domain {
+package Order <<Aggregate>>{
 
-class Test {
-  -testType
-  -testCategory
-  -testParameter
-  -createdAt
-  -nhsCode
-  +getTestType()
-  +getTestCategory()
-  +getTestParameter()
-  +getNhsCode()
-  +getCreatedAt()
-  +getTestCode()
-  +Test()
+entity Product <<Entity>> <<Root>>
+entity ProductDescription <<Entity>>
+entity PriceTable <<Entity>>
+entity SalesRegion <<Entity>>
+entity ShoppingCart <<Entity>>
+entity PriceItem <<Entity>>
+entity Costumer <<Entity>> <<Root>>
+entity PaymentMethod <<Entity>>
 }
 
 
-class TestStore{
-   +createTest()
-   +validate(test)
-   +saveTest(test)
-    +addSample()
-   +getTestParameter()
-   +getTestMap()
-   +getTestList()
-   +loadTestsListFromFile()
-   +saveTestsListToFile()
-   -getTestCode()
-}
-
-class TestTypeStore{
-   +getTestTypeList()
+package Category <<Aggregate>> {
+    entity Category <<Entity>>
 
 }
 
-class ParameterStore{
-   +getParameterList()
+NewProductOrderUI ..> NewProductOrderController
+NewProductOrderController ..> Category
+NewProductOrderController ..>PriceTable
+NewProductOrderController ..>ProductDescription
+NewProductOrderController ..> Product
+NewProductOrderController ..> SalesRegion
+NewProductOrderController ..> PriceItem
+NewProductOrderController ..> ShoppingCart
+NewProductOrderController ..>Costumer
+NewProductOrderController ..> PaymentMethod
 
-}
-class ParameterCategoryStore{
-   +getParameterCategoryList()
-
-}
-class ClientStore{
-   +getClientsList()
-
-}
-
-
-class Company{
-   -designation
-   +getTestStore()
-   +getTestTypeStore()
-   +getParameterStore()
-    +getParameterCategoryStore()
-    +getClientsStore()
-}
-}
-
-RegisterTestUI ..> RegisterTestController
-RegisterTestController ..> Test
-RegisterTestController ..>Company
-Company "1" --> "1" TestStore : uses
-Company "1" --> "1" TestTypeStore : uses
-Company "1" --> "1" ParameterStore : uses
-Company "1" --> "1" ParameterCategoryStore : uses
-Company "1" --> "1" ClientStore : uses
-RegisterTestController ..> TestStore
-RegisterTestController ..> TestTypeStore
-RegisterTestController ..> ParameterStore
-RegisterTestController ..> ParameterCategoryStore
-RegisterTestController ..> ClientStore
-TestStore"1" --> "*" Test: knows
-TestTypeStore"1" --> "*" Test: knows
-ParameterStore"1" --> "*" Test: knows
-ParameterCategoryStore"1" --> "*" Test: knows
-ClientStore "1" --> "*" Test: knows
 @enduml
