@@ -17,7 +17,9 @@ package Category <<Aggregate>> {
 /' OrderManagement '/
 package Order <<Aggregate>>{
 
-entity Product <<Entity>> <<Root>>
+entity Product <<Entity>> <<Root>> {
+- ProductDescription
+}
 
 object ProductPriceDetail <<ValueObject>>
 
@@ -38,8 +40,6 @@ object Quantity <<Value Object>>
 entity PriceItem <<Entity>>
 
 object Weight <<Value Object>>
-
-entity ProductDescription <<Entity>>
 
 object Reference <<Value Object>>
 
@@ -157,9 +157,8 @@ object SurveyRule <<ValueObject>>
 
 object Topic <<ValueObject>>
 
-object GeneralQuestions  <<ValueObject>>
 }
-
+object GeneralQuestions  <<ValueObject>>
 /'Question'/
 package Question <<Aggregate>>{
 entity Question <<Entity>>
@@ -216,7 +215,6 @@ PriceTable --- "1" SalesRegion: >
 Product --- "1" ProductItem: becomes >
 ProductItem --- "1" Quantity: has >
 Product --- "1" Reference: has >
-Product --- "1..*" ProductDescription: has >
 Product --- "1" UniqueInternalCode: has >
 PriceItem --- Quantity: depends >
 
