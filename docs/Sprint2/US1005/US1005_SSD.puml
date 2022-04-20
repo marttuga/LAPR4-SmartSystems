@@ -4,10 +4,10 @@ actor "Sales Clerck" as SC
 
 activate SC
 
-":System" --> SC : shows list of products
+":System" --> SC : starts defining new category
 activate ":System"
 
-SC -> ":System" : types the chosen product's barcode
+SC -> ":System" : Asks for category name
 deactivate ":System"
 
 SC -> ":System" : starts to view/search the products catalog
