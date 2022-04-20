@@ -13,7 +13,8 @@
     <class>eapli.base.clientusermanagement.domain.ClientUser</class>
     <class>eapli.base.clientusermanagement.domain.SignupRequest</class>
 
-    <properties>
+
+      <properties>
       <!--<property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/base"/>-->
       <property name="javax.persistence.jdbc.url" value="jdbc:h2:~\base;MV_STORE=FALSE;AUTO_SERVER=true;"/>
 
