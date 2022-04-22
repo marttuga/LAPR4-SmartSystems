@@ -1,26 +1,39 @@
-# USDemo1
+# US1004
 =======================================
 
+# 1. Requirements
 
-# 1. Requisitos
+**US1004** As Sales Clerk, I want to create a new product's order on behalf of a given customer.
 
-*Nesta secção a equipa deve indicar a funcionalidade desenvolvida bem como descrever a sua interpretação sobre a mesma e sua correlação e/ou dependência de/com outros requisitos.*
+The interpretation made of this requirement was that the sales clerck wishes to choose some products from the catalog and make an order 
+on behalf of a given costumer.
+In order to succeed they must start by filtering all the products using a category, description and/or brand, then the data should appear ordered,
+by price or alphabetically. 
+Finally, the product must be chosen so that the details can be viewed and it can be added to the shopping cart, in there the final price can be viewed with the shipping costs
+and the payment method chosen to end the process.
 
-*Exemplo*
+## Acceptance criteria
+* Commonly fields used to filter products are: Category, Description (any of the available descriptions) e Brand
+* User should select/specify a data presentation order. This applies to any similar US.
+* At least the product' code, short description, brand, category and unit price should be presented.
+* More details can be presented for a given/selected product at user request.
+* The project must be prepared to easily support several currencies.
+* The system should work adopting a base currency (e.g.: EUR) and, according to the customer location, be able to present prices on other currencies (e.g. USD) using an external currency converter.
+* During the prototype development, using a currency converter should not be a major concern.
+* Data to be used to filter the products catalog content should be asked ahead.
+* Regarding presentation order, the necessary data can be asked either: ahead and after presenting them
 
-**Demo1** Como {Ator} pretendo...
-
-- Demo1.1. Blá Blá Blá ...
-
-- Demo1.2. Blá Blá Blá ...
-
-A interpretação feita deste requisito foi no sentido de ...
-
-# 2. Análise
-
-*Neste secção a equipa deve relatar o estudo/análise/comparação que fez com o intuito de tomar as melhores opções de design para a funcionalidade bem como aplicar diagramas/artefactos de análise adequados.*
-
-*Recomenda-se que organize este conteúdo por subsecções.*
+# 2. Analysis
+* To complete this user story, the us1001 (responsable for specifying a new product for sale), us1003 (responsable for registering a new customer) and us1005 (responsible for
+  defining a new category of products) are going to be necessary so that the sales clerck can create a new product's order on behalf of a given customer.
+* To make a new order, the sales clerck must start by choosing and adding the desired products to the shooping cart, this being possible by going through the exact same steps as the us1002.
+* Therefore, he must first filter the catalog by category, brand and/or a short description, after this, the data
+  should be ordered. The ordering method can be decided either, right after choosing the filters or after showing the filtered catalog.
+* The selected product from the organised catalog must have the product's code,a short description, brand, category and unit price in the details,
+  having in mind this price, the merchandise should support several currencies and depending on the location of the client change from the base currency(EUR).
+* Finally he should add the items to the shopping cart so that the main process of the order can begin. The final and total price of the order 
+is to be verified, having already included the transportation taxes, that depend on the location of  the costumer and shipping method.
+* To end the process, a payment method must be chosen.
 
 # 3. Design
 
@@ -29,10 +42,12 @@ A interpretação feita deste requisito foi no sentido de ...
 *Para além das secções sugeridas, podem ser incluídas outras.*
 
 ## 3.1. Realização da Funcionalidade
-
+![SSD](US1004_SSD.svg)
+![SD](US1004_SD.svg)
 *Nesta secção deve apresentar e descrever o fluxo/sequência que permite realizar a funcionalidade.*
 
 ## 3.2. Diagrama de Classes
+![CD](US1004_CD.svg)
 
 *Nesta secção deve apresentar e descrever as principais classes envolvidas na realização da funcionalidade.*
 
@@ -40,7 +55,7 @@ A interpretação feita deste requisito foi no sentido de ...
 
 *Nesta secção deve apresentar e explicar quais e como foram os padrões de design aplicados e as melhores práticas.*
 
-## 3.4. Testes 
+## 3.4. Testes
 *Nesta secção deve sistematizar como os testes foram concebidos para permitir uma correta aferição da satisfação dos requisitos.*
 
 **Teste 1:** Verificar que não é possível criar uma instância da classe Exemplo com valores nulos.
