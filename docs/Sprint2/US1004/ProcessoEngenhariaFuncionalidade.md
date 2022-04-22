@@ -36,10 +36,15 @@ is to be verified, having already included the transportation taxes, that depend
 * To end the process, a payment method must be chosen.
 
 # 3. Design
+* Utilizar a estrutura base standard da aplicação baseada em camadas
 
-*Nesta secção a equipa deve descrever o design adotado para satisfazer a funcionalidade. Entre outros, a equipa deve apresentar diagrama(s) de realização da funcionalidade, diagrama(s) de classes, identificação de padrões aplicados e quais foram os principais testes especificados para validar a funcionalidade.*
+>   Classes do domínio: Category, Product, SalesRegion, PriceTable, PriceItem,Costumer, PaymentMethod,ShoppingCart
+>
+>   Controlador: NewProductOrderController
+>
+>   Repository: CategoryRepository, ProductRepository, SalesRegionRepository, PriceTableRepository,PriceItemRepository,CostumerRepository,PaymentMethodRepository,ShoppingCartRepository
 
-*Para além das secções sugeridas, podem ser incluídas outras.*
+*Nesta secção a equipa deve descrever o design adotado para satisfazer a funcionalidade.  identificação de padrões aplicados e quais foram os principais testes especificados para validar a funcionalidade.*
 
 ## 3.1. Realização da Funcionalidade
 ![SSD](US1004_SSD.svg)

@@ -33,9 +33,15 @@ should be ordered. The ordering method can be decided either, right after choosi
 having in mind this price, the merchandise should support several currencies and depending on the location of the client change from the base currency(EUR).
 
 # 3. Design
-*Nesta secção a equipa deve descrever o design adotado para satisfazer a funcionalidade. Entre outros, a equipa deve apresentar diagrama(s) de realização da funcionalidade, diagrama(s) de classes, identificação de padrões aplicados e quais foram os principais testes especificados para validar a funcionalidade.*
+* Utilizar a estrutura base standard da aplicação baseada em camadas 
 
-*Para além das secções sugeridas, podem ser incluídas outras.*
+>   Classes do domínio: Category, Product, SalesRegion, PriceTable,
+>
+>   Controlador: ViewCatalogController
+>
+>   Repository: CategoryRepository, ProductRepository, SalesRegionRepository, PriceTableRepository
+
+*Nesta secção a equipa deve descrever o design adotado para satisfazer a funcionalidade.  identificação de padrões aplicados e quais foram os principais testes especificados para validar a funcionalidade.*
 
 ## 3.1. Realização da Funcionalidade
 ![SSD](US1002_SSD.svg)
