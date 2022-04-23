@@ -4,16 +4,35 @@
 
 # 1. Requirements
 
-*Nesta secção a equipa deve indicar a funcionalidade desenvolvida bem como descrever a sua interpretação sobre a mesma e sua correlação e/ou dependência de/com outros requisitos.*
 
 
 **1001** As Sales Clerk, I want to specify a new product for sale.
 
-- Demo1.1. Blá Blá Blá ...
+##Acceptance Criteria
 
-- Demo1.2. Blá Blá Blá ...
+* A product must have:
+> photo: it might be of any common format (e.g. png, jpeg, svg);
+>
+> short description: not empty having 30 chars maximum;
+>
+> extended description: not empty with a minimum of 20 chars and 100 chars maximum;
+>
+> technical description: multiple lines of text, preferably with no limit or the biggest possible.
+>
+> brand: not empty having 50 chars maximum;
+>
+> reference: not empty alphanumeric code with at 23 chars maximum;
+>
+> production code: not empty alphanumeric code with at 23 chars maximum however it might meet a given regular expression defined/configured at deployment time.
+>
+> internal code: not empty alphanumeric code with at 23 chars maximum however it might meet a given regular expression defined/configured at deployment time.
+>
+> Mandatory attributes: internal code, short and extended description.
 
-A interpretação feita deste requisito foi no sentido de ...
+
+Question 2: Still regarding the barcode should the identifier be sequential, if not what method should we use to generate the identifier?
+
+Q2. Barcodes are manually introduced by users since each product barcode is provided by the product manufacture.
 
 # 2. Analysis
 
@@ -23,13 +42,17 @@ A interpretação feita deste requisito foi no sentido de ...
 
 # 3. Design
 
-*Nesta secção a equipa deve descrever o design adotado para satisfazer a funcionalidade. Entre outros, a equipa deve apresentar diagrama(s) de realização da funcionalidade, diagrama(s) de classes, identificação de padrões aplicados e quais foram os principais testes especificados para validar a funcionalidade.*
+>   Classes do domínio: Product
+>
+>   Controlador: SpecifyNewProductController
+>
+>   Repository: ProductRepository
 
-*Para além das secções sugeridas, podem ser incluídas outras.*
 
 ## 3.1. Functionality Realization
 
-*Nesta secção deve apresentar e descrever o fluxo/sequência que permite realizar a funcionalidade.*
+![SSD](US1001_SSD.svg)
+![SD](US1001_SD.svg)
 
 ## 3.2. Class Diagram
 
