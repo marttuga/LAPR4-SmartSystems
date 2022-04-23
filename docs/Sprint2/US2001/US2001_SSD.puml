@@ -16,13 +16,7 @@ activate ":System"
 ":System" --> WE : opens JSON file
 deactivate ":System"
 
-WE -> ":System" : enter the data of the warehouse plant
-activate ":System"
-
-":System" --> WE : shows all data and requests confirmation
-deactivate ":System"
-
-WE -> ":System" : closes and save JSON file
+WE -> ":System" : confirms file upload
 activate ":System"
 
 ":System" --> WE : informs operation success
