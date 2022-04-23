@@ -1,6 +1,6 @@
 @startuml
 autonumber
-actor "Sales Clerck" as SC
+actor "Sales Clerk" as SC
 
 activate SC
 
