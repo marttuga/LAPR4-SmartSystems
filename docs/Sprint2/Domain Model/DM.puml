@@ -93,9 +93,7 @@ object VATIdentifier <<Value Object>>
     -Type
     }
 
-     entity Status <<Entity>>{
-        -State
-     }
+     object Status <<Value Object>>
 }
 
 /' WarehouseManagement '/
