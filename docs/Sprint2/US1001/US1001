@@ -1,38 +1,43 @@
-# US1001
+# **US1001 - As Sales Clerk, I want to specify a new product for sale.**
+
 =======================================
 
 
 # 1. Requirements
 
+**US1001 - As Sales Clerk, I want to specify a new product for sale.**
+
+The interpretation made of this user story was that the sales clerk wants to specify a new product for sale.
+For this, he must start by requesting the system to specifying a new product for sale, and he must introduce the data for that product.
+At the end the system shows all the data and asks for confirmation.
 
 
-**1001** As Sales Clerk, I want to specify a new product for sale.
 
 ##Acceptance Criteria
 
 * A product must have:
-> photo: it might be of any common format (e.g. png, jpeg, svg);
+> - a photo: it might be of any common format (e.g. png, jpeg, svg);
 >
-> short description: not empty having 30 chars maximum;
+> - a short description: not empty having 30 chars maximum;
 >
-> extended description: not empty with a minimum of 20 chars and 100 chars maximum;
+> - an extended description: not empty with a minimum of 20 chars and 100 chars maximum;
 >
-> technical description: multiple lines of text, preferably with no limit or the biggest possible.
+> - a technical description: multiple lines of text, preferably with no limit or the biggest possible.
 >
-> brand: not empty having 50 chars maximum;
+> - a brand: not empty having 50 chars maximum;
 >
-> reference: not empty alphanumeric code with at 23 chars maximum;
+> - a reference: not empty alphanumeric code with at 23 chars maximum;
 >
-> production code: not empty alphanumeric code with at 23 chars maximum however it might meet a given regular expression defined/configured at deployment time.
+> - a production code: not empty alphanumeric code with at 23 chars maximum however it might meet a given regular expression defined/configured at deployment time.
 >
-> internal code: not empty alphanumeric code with at 23 chars maximum however it might meet a given regular expression defined/configured at deployment time.
+> - an internal code: not empty alphanumeric code with at 23 chars maximum however it might meet a given regular expression defined/configured at deployment time.
 >
-> Mandatory attributes: internal code, short and extended description.
+> The mandatory attributes are the internal code, short and extended description.
 
 
-Question 2: Still regarding the barcode should the identifier be sequential, if not what method should we use to generate the identifier?
-
-Q2. Barcodes are manually introduced by users since each product barcode is provided by the product manufacture.
+>Question: Still regarding the barcode should the identifier be sequential, if not what method should we use to generate the identifier?
+>
+>Answer: Barcodes are manually introduced by users since each product barcode is provided by the product manufacture.
 
 # 2. Analysis
 
