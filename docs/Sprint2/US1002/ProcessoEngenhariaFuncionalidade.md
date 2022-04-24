@@ -45,11 +45,13 @@ having in mind this price, the merchandise should support several currencies and
 
 ## 3.1. Realização da Funcionalidade
 ![SSD](US1002_SSD.svg)
+
 ![SD](US1002_SD.svg)
 *Nesta secção deve apresentar e descrever o fluxo/sequência que permite realizar a funcionalidade.*
 
 ## 3.2. Diagrama de Classes
 ![CD](US1002_CD.svg)
+
 
 *Nesta secção deve apresentar e descrever as principais classes envolvidas na realização da funcionalidade.*
 

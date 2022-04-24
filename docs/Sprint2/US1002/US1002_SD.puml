@@ -4,32 +4,90 @@ autonumber
 actor "Sales Clerck" as SC
 participant ":ViewCatalogUI" as UI
 participant ":ViewCatalogController" as CTRL
-participant ":Category" as Categ
-participant ":Product" as Prod
+participant ":PersistenceContext" as PC
+participant ":RepositoryFactory" as RF
+participant ":CategoryRepository" as CatRepo
+participant ":ProductRepository" as ProdRepo
 
 activate SC
 
 SC -> UI : starts to view/search the products catalog
 activate UI
+
+
+UI -> CTRL : getCatalog
+activate CTRL
+CTRL -> PC : repositories()
+
+activate PC
+PC -> RF : create
+deactivate PC
+activate RF
+RF -> ProdRepo : create
+deactivate RF
+activate ProdRepo
+deactivate ProdRepo
+CTRL -> ProdRepo : getCatalog= getCatalog()
+deactivate CTRL
+deactivate ProdRepo
+
+
 loop until exits
-UI --> SC :asks for a field(category,description, brand..)to filter the catalog
+
+UI --> SC : asks for a field to filter the catalog
 deactivate UI
-
-
-
 SC -> UI : types the field
 activate UI
 
+
+UI -> CTRL : getCategory
+activate CTRL
+CTRL -> PC : repositories()
+
+activate PC
+PC -> RF : create
+deactivate PC
+activate RF
+RF -> CatRepo : create
+deactivate RF
+activate CatRepo
+deactivate CatRepo
+loop until exits
+CTRL -> CatRepo : getCategory= getCategory()
+deactivate CTRL
+deactivate CatRepo
+
 end loop
-
-
 UI --> SC : shows list of products and asks to choose how to order the list (by name or price)
 deactivate UI
 
-
-
 SC -> UI : chooses how to order
 activate UI
+
+
+UI -> CTRL : getProducts
+activate CTRL
+
+CTRL -> ProdRepo : getProducts= getProducts()
+activate ProdRepo
+deactivate CTRL
+deactivate ProdRepo
+
+UI -> CTRL : orderProducts
+activate CTRL
+
+alt chooses to sort by name
+CTRL -> ProdRepo : orderByName= orderByName()
+activate ProdRepo
+deactivate ProdRepo
+
+else chooses to sort by price
+CTRL -> ProdRepo : orderByPrice= orderByPrice()
+activate ProdRepo
+deactivate CTRL
+deactivate ProdRepo
+end
+
 
 UI --> SC : shows list of products and asks for the barcode
 deactivate UI
@@ -38,9 +96,19 @@ SC -> UI : types the chosen product's barcode
 activate UI
 
 
+UI -> CTRL : getProduct
+activate CTRL
+CTRL -> ProdRepo : getProduct= getProduct()
+activate ProdRepo
+deactivate CTRL
+deactivate ProdRepo
 
-UI --> SC :shows all data(code,description,brand,category,price)and requests confirmation
+UI --> SC :shows all data(code,description,brand,category,price)
 deactivate UI
+
+deactivate UI
+end loop
+
 SC -> UI : confirms the data
 
 activate UI
