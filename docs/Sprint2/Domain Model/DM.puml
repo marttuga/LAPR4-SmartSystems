@@ -51,7 +51,9 @@ object Reference <<Value Object>>
 
 object UniqueInternalCode <<Value Object>>
 
-entity Order <<Entity>> <<Root>>
+entity Order <<Entity>> <<Root>>{
+- DateTime
+}
 
 object LineOrder <<Value Object>>
 
@@ -77,8 +79,6 @@ object Gender <<Value Object>>
     - Type
     }
 
-object DateTime <<Value Object>>
-
 object OrderID <<Value Object>>
 
 entity ShoppingCart <<Entity>>
@@ -99,9 +99,7 @@ object VATIdentifier <<Value Object>>
     -Type
     }
 
-     entity Status <<Entity>>{
-        -State
-     }
+     object Status <<Value Object>>
 }
 
 /' WarehouseManagement '/
