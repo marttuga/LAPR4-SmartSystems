@@ -47,10 +47,12 @@ At the end the system shows all the data and asks for confirmation.
 
 # 3. Design
 
->   Classes do domínio: Product
+>   Domain classes: Product
 >
->   Controlador: SpecifyNewProductController
+>   Controller: SpecifyNewProductController
 >
+>   UI: SpecifyNewProductUI
+> 
 >   Repository: ProductRepository
 
 
