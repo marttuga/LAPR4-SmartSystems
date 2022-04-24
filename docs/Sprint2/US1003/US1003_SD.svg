@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1098px" preserveAspectRatio="none" style="width:2982px;height:1098px;background:#FFFFFF;" version="1.1" viewBox="0 0 2982 1098" width="2982px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="891.3164" style="stroke:#181818;stroke-width:1.0;" width="10" x="59" y="93.9766"/><rect fill="#FFFFFF" height="53.6211" style="stroke:#181818;stroke-width:1.0;" width="10" x="815" y="115.2871"/><rect fill="#FFFFFF" height="721.4531" style="stroke:#181818;stroke-width:1.0;" width="10" x="815" y="205.2188"/><rect fill="#FFFFFF" height="29.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="815" y="955.9824"/><rect fill="#FFFFFF" height="662.832" style="stroke:#181818;stroke-width:1.0;" width="10" x="1503" y="234.5293"/><rect fill="#FFFFFF" height="87.9316" style="stroke:#181818;stroke-width:1.0;" width="10" x="1681" y="393.082"/><rect fill="#FFFFFF" height="93.9316" style="stroke:#181818;stroke-width:1.0;" width="10" x="2480.5" y="510.3242"/><rect fill="#FFFFFF" height="58.6211" style="stroke:#181818;stroke-width:1.0;" width="10" x="2632" y="633.5664"/><rect fill="#FFFFFF" height="58.6211" style="stroke:#181818;stroke-width:1.0;" width="10" x="2632" y="780.1191"/><rect height="46.6211" style="stroke:#000000;stroke-width:1.5;fill:none;" width="895.5" x="10" y="130.2871"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="64" x2="64" y1="83.9766" y2="1003.293"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="819.5" x2="819.5" y1="83.9766" y2="1003.293"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="1507.5" x2="1507.5" y1="83.9766" y2="1003.293"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="1685.5" x2="1685.5" y1="83.9766" y2="1003.293"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="2327.5" x2="2327.5" y1="83.9766" y2="1003.293"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="2485.5" x2="2485.5" y1="83.9766" y2="1003.293"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="2636.5" x2="2636.5" y1="83.9766" y2="1003.293"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="2788.5" x2="2788.5" y1="83.9766" y2="1003.293"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="2926.5" x2="2926.5" y1="83.9766" y2="1003.293"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="20" y="81.0234">Sales Clerck</text><ellipse cx="64" cy="15.9883" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M64,23.9883 L64,50.9883 M51,31.9883 L77,31.9883 M64,50.9883 L51,65.9883 M64,50.9883 L77,65.9883 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="20" y="1015.8281">Sales Clerck</text><ellipse cx="64" cy="1027.2813" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M64,1035.2813 L64,1062.2813 M51,1043.2813 L77,1043.2813 M64,1062.2813 L51,1077.2813 M64,1062.2813 L77,1077.2813 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="151" x="744.5" y="36"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="101" x="769.5" y="56.5352">«presentation»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="751.5" y="73.0234">RegisterCustomerUI</text><rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="151" x="744.5" y="1002.293"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="101" x="769.5" y="1022.8281">«presentation»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="751.5" y="1039.3164">RegisterCustomerUI</text><rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="207" x="1404.5" y="36"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="90" x="1463" y="56.5352">«application»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="193" x="1411.5" y="73.0234">RegisterCustomerController</text><rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="207" x="1404.5" y="1002.293"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="90" x="1463" y="1022.8281">«application»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="193" x="1411.5" y="1039.3164">RegisterCustomerController</text><rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="129" x="1621.5" y="36"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="63" x="1654.5" y="56.5352">«builder»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="1628.5" y="73.0234">CustomerBuilder</text><rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="129" x="1621.5" y="1002.293"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="63" x="1654.5" y="1022.8281">«builder»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="1628.5" y="1039.3164">CustomerBuilder</text><rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="149" x="2253.5" y="36"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="66" x="2295" y="56.5352">«domain»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="135" x="2260.5" y="73.0234">customer:Customer</text><rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="149" x="2253.5" y="1002.293"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="66" x="2295" y="1022.8281">«domain»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="135" x="2260.5" y="1039.3164">customer:Customer</text><rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="146" x="2412.5" y="36"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="92" x="2439.5" y="56.5352">«persistence»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="2419.5" y="73.0234">PersistenceContext</text><rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="146" x="2412.5" y="1002.293"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="92" x="2439.5" y="1022.8281">«persistence»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="2419.5" y="1039.3164">PersistenceContext</text><rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="137" x="2568.5" y="36"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="61" x="2606.5" y="56.5352">«factory»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="2575.5" y="73.0234">RepositoryFactory</text><rect fill="#E2E2F0" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="137" x="2568.5" y="1002.293"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="61" x="2606.5" y="1022.8281">«factory»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="2575.5" y="1039.3164">RepositoryFactory</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="84" x="2743.5" y="64.5352">«repository»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="2715.5" y="81.0234">CustomerRepository</text><path d="M2770.5,15 C2770.5,5 2788.5,5 2788.5,5 C2788.5,5 2806.5,5 2806.5,15 L2806.5,41 C2806.5,51 2788.5,51 2788.5,51 C2788.5,51 2770.5,51 2770.5,41 L2770.5,15 " fill="#E2E2F0" style="stroke:#181818;stroke-width:1.5;"/><path d="M2770.5,15 C2770.5,25 2788.5,25 2788.5,25 C2788.5,25 2806.5,25 2806.5,15 " fill="none" style="stroke:#181818;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="84" x="2743.5" y="1015.8281">«repository»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="2715.5" y="1032.3164">CustomerRepository</text><path d="M2770.5,1045.2695 C2770.5,1035.2695 2788.5,1035.2695 2788.5,1035.2695 C2788.5,1035.2695 2806.5,1035.2695 2806.5,1045.2695 L2806.5,1071.2695 C2806.5,1081.2695 2788.5,1081.2695 2788.5,1081.2695 C2788.5,1081.2695 2770.5,1081.2695 2770.5,1071.2695 L2770.5,1045.2695 " fill="#E2E2F0" style="stroke:#181818;stroke-width:1.5;"/><path d="M2770.5,1045.2695 C2770.5,1055.2695 2788.5,1055.2695 2788.5,1055.2695 C2788.5,1055.2695 2806.5,1055.2695 2806.5,1045.2695 " fill="none" style="stroke:#181818;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="84" x="2881.5" y="64.5352">«repository»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="2871.5" y="81.0234">UserRepository</text><path d="M2908.5,15 C2908.5,5 2926.5,5 2926.5,5 C2926.5,5 2944.5,5 2944.5,15 L2944.5,41 C2944.5,51 2926.5,51 2926.5,51 C2926.5,51 2908.5,51 2908.5,41 L2908.5,15 " fill="#E2E2F0" style="stroke:#181818;stroke-width:1.5;"/><path d="M2908.5,15 C2908.5,25 2926.5,25 2926.5,25 C2926.5,25 2944.5,25 2944.5,15 " fill="none" style="stroke:#181818;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="84" x="2881.5" y="1015.8281">«repository»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="2871.5" y="1032.3164">UserRepository</text><path d="M2908.5,1045.2695 C2908.5,1035.2695 2926.5,1035.2695 2926.5,1035.2695 C2926.5,1035.2695 2944.5,1035.2695 2944.5,1045.2695 L2944.5,1071.2695 C2944.5,1081.2695 2926.5,1081.2695 2926.5,1081.2695 C2926.5,1081.2695 2908.5,1081.2695 2908.5,1071.2695 L2908.5,1045.2695 " fill="#E2E2F0" style="stroke:#181818;stroke-width:1.5;"/><path d="M2908.5,1045.2695 C2908.5,1055.2695 2926.5,1055.2695 2926.5,1055.2695 C2926.5,1055.2695 2944.5,1055.2695 2944.5,1045.2695 " fill="none" style="stroke:#181818;stroke-width:1.5;"/><rect fill="#FFFFFF" height="891.3164" style="stroke:#181818;stroke-width:1.0;" width="10" x="59" y="93.9766"/><rect fill="#FFFFFF" height="53.6211" style="stroke:#181818;stroke-width:1.0;" width="10" x="815" y="115.2871"/><rect fill="#FFFFFF" height="721.4531" style="stroke:#181818;stroke-width:1.0;" width="10" x="815" y="205.2188"/><rect fill="#FFFFFF" height="29.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="815" y="955.9824"/><rect fill="#FFFFFF" height="662.832" style="stroke:#181818;stroke-width:1.0;" width="10" x="1503" y="234.5293"/><rect fill="#FFFFFF" height="87.9316" style="stroke:#181818;stroke-width:1.0;" width="10" x="1681" y="393.082"/><rect fill="#FFFFFF" height="93.9316" style="stroke:#181818;stroke-width:1.0;" width="10" x="2480.5" y="510.3242"/><rect fill="#FFFFFF" height="58.6211" style="stroke:#181818;stroke-width:1.0;" width="10" x="2632" y="633.5664"/><rect fill="#FFFFFF" height="58.6211" style="stroke:#181818;stroke-width:1.0;" width="10" x="2632" y="780.1191"/><polygon fill="#181818" points="803,111.2871,813,115.2871,803,119.2871,807,115.2871" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="69" x2="809" y1="115.2871" y2="115.2871"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="76" y="110.5449">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="208" x="89" y="110.5449">Starts to register a new customer</text><path d="M10,130.2871 L77,130.2871 L77,137.5977 L67,147.5977 L10,147.5977 L10,130.2871 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="46.6211" style="stroke:#000000;stroke-width:1.5;" width="895.5" x="10" y="130.2871"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="22" x="25" y="143.8555">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="397" x="92" y="142.9219">[birthdate, gender, billing and delivering addresses are not mandatory]</text><polygon fill="#181818" points="80,164.9082,70,168.9082,80,172.9082,76,168.9082" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="74" x2="819" y1="168.9082" y2="168.9082"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="86" y="164.166">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="709" x="99" y="164.166">Requests data (name, VAT identifier, email, phone number, birthdate, gender, billing address, delivering address)</text><polygon fill="#181818" points="803,201.2188,813,205.2188,803,209.2188,807,205.2188" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="69" x2="809" y1="205.2188" y2="205.2188"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="76" y="200.4766">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="140" x="89" y="200.4766">Inserts requested data</text><polygon fill="#181818" points="1491,230.5293,1501,234.5293,1491,238.5293,1495,234.5293" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="825" x2="1497" y1="234.5293" y2="234.5293"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="832" y="229.7871">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="646" x="845" y="229.7871">addCustomer(name, VATid, email, phoneNumber, birthdate, gender, billingAddress, deliveringAddress)</text><path d="M1691,247.5293 L1691,272.5293 L2161,272.5293 L2161,257.5293 L2151,247.5293 L1691,247.5293 " fill="#CCE2CB" style="stroke:#181818;stroke-width:0.5;"/><path d="M2151,247.5293 L2151,257.5293 L2161,257.5293 L2151,247.5293 " fill="#CCE2CB" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="449" x="1697" y="265.0977">CustomerBuilder is used to create an entity of Customer in a valid state</text><polygon fill="#181818" points="1674,295.1504,1684,299.1504,1674,303.1504,1678,299.1504" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1513" x2="1680" y1="299.1504" y2="299.1504"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="1520" y="294.4082">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="38" x="1533" y="294.4082">create</text><polygon fill="#181818" points="1674,324.4609,1684,328.4609,1674,332.4609,1678,328.4609" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1513" x2="1680" y1="328.4609" y2="328.4609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="1520" y="323.7188">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="99" x="1533" y="323.7188">putName(name)</text><path d="M1518,341.4609 L1518,366.4609 L1764,366.4609 L1764,351.4609 L1754,341.4609 L1518,341.4609 " fill="#CCE2CB" style="stroke:#181818;stroke-width:0.5;"/><path d="M1754,341.4609 L1754,351.4609 L1764,351.4609 L1754,341.4609 " fill="#CCE2CB" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="225" x="1524" y="359.0293">Places rest of customer information</text><polygon fill="#181818" points="1669,389.082,1679,393.082,1669,397.082,1673,393.082" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1513" x2="1675" y1="393.082" y2="393.082"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="1520" y="388.3398">7</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="107" x="1533" y="388.3398">createCustomer()</text><polygon fill="#181818" points="2316,418.3926,2326,422.3926,2316,426.3926,2320,422.3926" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1691" x2="2322" y1="422.3926" y2="422.3926"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="1698" y="417.6504">8</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="600" x="1711" y="417.6504">create(name, VATid, email, phoneNumber, birthdate, gender, billingAddress, deliveringAddress)</text><polygon fill="#181818" points="1702,447.7031,1692,451.7031,1702,455.7031,1698,451.7031" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1696" x2="2327" y1="451.7031" y2="451.7031"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="1708" y="446.9609">9</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="59" x="1721" y="446.9609">customer</text><polygon fill="#181818" points="1524,477.0137,1514,481.0137,1524,485.0137,1520,481.0137" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1518" x2="1685" y1="481.0137" y2="481.0137"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="1530" y="476.2715">10</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="59" x="1552" y="476.2715">customer</text><polygon fill="#181818" points="2468.5,506.3242,2478.5,510.3242,2468.5,514.3242,2472.5,510.3242" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1513" x2="2474.5" y1="510.3242" y2="510.3242"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="1520" y="505.582">11</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="83" x="1542" y="505.582">repositories()</text><path d="M2495,523.3242 L2495,548.3242 L2760,548.3242 L2760,533.3242 L2750,523.3242 L2495,523.3242 " fill="#CCE2CB" style="stroke:#181818;stroke-width:0.5;"/><path d="M2750,523.3242 L2750,533.3242 L2760,533.3242 L2750,523.3242 " fill="#CCE2CB" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="244" x="2501" y="540.8926">can create repository in memory or JPA</text><polygon fill="#181818" points="2625,570.9453,2635,574.9453,2625,578.9453,2629,574.9453" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="2490.5" x2="2631" y1="574.9453" y2="574.9453"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="2497.5" y="570.2031">12</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="38" x="2519.5" y="570.2031">create</text><polygon fill="#181818" points="1524,600.2559,1514,604.2559,1524,608.2559,1520,604.2559" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1518" x2="2484.5" y1="604.2559" y2="604.2559"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="1530" y="599.5137">13</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44" x="1552" y="599.5137">factory</text><polygon fill="#181818" points="2620,629.5664,2630,633.5664,2620,637.5664,2624,633.5664" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1513" x2="2626" y1="633.5664" y2="633.5664"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="1520" y="628.8242">14</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="74" x="1542" y="628.8242">customers()</text><polygon fill="#181818" points="2776.5,658.877,2786.5,662.877,2776.5,666.877,2780.5,662.877" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="2642" x2="2782.5" y1="662.877" y2="662.877"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="2649" y="658.1348">15</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="38" x="2671" y="658.1348">create</text><polygon fill="#181818" points="1524,688.1875,1514,692.1875,1524,696.1875,1520,692.1875" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1518" x2="2636" y1="692.1875" y2="692.1875"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="1530" y="687.4453">16</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="126" x="1552" y="687.4453">customerRepository</text><polygon fill="#181818" points="2776.5,717.498,2786.5,721.498,2776.5,725.498,2780.5,721.498" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1513" x2="2782.5" y1="721.498" y2="721.498"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="1520" y="716.7559">17</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="95" x="1542" y="716.7559">save(customer)</text><polygon fill="#181818" points="836,746.8086,826,750.8086,836,754.8086,832,750.8086" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="830" x2="1502" y1="750.8086" y2="750.8086"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="842" y="746.0664">18</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="59" x="864" y="746.0664">customer</text><polygon fill="#181818" points="2620,776.1191,2630,780.1191,2620,784.1191,2624,780.1191" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1513" x2="2626" y1="780.1191" y2="780.1191"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="1520" y="775.377">19</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="42" x="1542" y="775.377">users()</text><polygon fill="#181818" points="2914.5,805.4297,2924.5,809.4297,2914.5,813.4297,2918.5,809.4297" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="2642" x2="2920.5" y1="809.4297" y2="809.4297"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="2649" y="804.6875">20</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="38" x="2671" y="804.6875">create</text><polygon fill="#181818" points="1524,834.7402,1514,838.7402,1524,842.7402,1520,838.7402" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1518" x2="2636" y1="838.7402" y2="838.7402"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="1530" y="833.998">21</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="94" x="1552" y="833.998">userRepository</text><polygon fill="#181818" points="2914.5,864.0508,2924.5,868.0508,2914.5,872.0508,2918.5,868.0508" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1513" x2="2920.5" y1="868.0508" y2="868.0508"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="1520" y="863.3086">22</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="63" x="1542" y="863.3086">save(user)</text><polygon fill="#181818" points="836,893.3613,826,897.3613,836,901.3613,832,897.3613" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="830" x2="1507" y1="897.3613" y2="897.3613"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="842" y="892.6191">23</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="27" x="864" y="892.6191">user</text><polygon fill="#181818" points="80,922.6719,70,926.6719,80,930.6719,76,926.6719" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="74" x2="819" y1="926.6719" y2="926.6719"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="86" y="921.9297">24</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="260" x="108" y="921.9297">shows all data and requests confirmation</text><polygon fill="#181818" points="803,951.9824,813,955.9824,803,959.9824,807,955.9824" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="69" x2="809" y1="955.9824" y2="955.9824"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="76" y="951.2402">25</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="111" x="98" y="951.2402">confirms the data</text><polygon fill="#181818" points="75,981.293,65,985.293,75,989.293,71,985.293" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="69" x2="819" y1="985.293" y2="985.293"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="18" x="81" y="980.5508">26</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="337" x="103" y="980.5508">Generates customerID and informs operation success</text><!--MD5=[8d3106b4319e52ccd40af6509d9f7d37]
+@startuml
+autonumber
+'hide footbox
+actor "Sales Clerck" as SC
+participant "RegisterCustomerUI" as UI <<presentation>>
+participant "RegisterCustomerController" as CTRL <<application>>
+participant "CustomerBuilder" as BD <<builder>>
+participant "customer:Customer" as Customer <<domain>>
+participant "PersistenceContext" as PC <<persistence>>
+participant "RepositoryFactory" as RF <<factory>>
+database "CustomerRepository" as CR <<repository>>
+database "UserRepository" as UR <<repository>>
+
+
+activate SC
+SC -> UI : Starts to register a new customer
+activate UI
+opt birthdate, gender, billing and delivering addresses are not mandatory
+UI - -> SC : Requests data (name, VAT identifier, email, phone number, birthdate, gender, billing address, delivering address)
+deactivate UI
+end opt
+
+
+SC -> UI : Inserts requested data
+activate UI
+
+UI -> CTRL : addCustomer(name, VATid, email, phoneNumber, birthdate, gender, billingAddress, deliveringAddress)
+activate CTRL
+
+note right BD #CCE2CB
+    CustomerBuilder is used to create an entity of Customer in a valid state
+end note
+
+CTRL -> BD : create
+CTRL -> BD : putName(name)
+
+note right CTRL #CCE2CB
+    Places rest of customer information
+end note
+
+CTRL -> BD : createCustomer()
+activate BD
+BD -> Customer : create(name, VATid, email, phoneNumber, birthdate, gender, billingAddress, deliveringAddress)
+Customer -> BD : customer
+
+BD -> CTRL : customer
+deactivate BD
+
+CTRL -> PC : repositories()
+activate PC
+note right PC #CCE2CB
+    can create repository in memory or JPA
+end note
+PC -> RF : create
+PC -> CTRL : factory
+deactivate PC
+
+
+
+CTRL -> RF : customers()
+activate RF
+RF -> CR : create
+RF -> CTRL : customerRepository
+deactivate RF
+CTRL -> CR : save(customer)
+CTRL -> UI : customer
+
+
+
+CTRL -> RF : users()
+activate RF
+RF -> UR : create
+RF -> CTRL : userRepository
+deactivate RF
+CTRL -> UR : save(user)
+CTRL -> UI : user
+deactivate CTRL
+
+UI - -> SC :shows all data and requests confirmation
+deactivate UI
+
+
+SC -> UI : confirms the data
+activate UI
+UI - -> SC : Generates customerID and informs operation success
+deactivate UI
+
+deactivate SC
+
+
+
+@enduml
+
+@startuml
+autonumber
+actor "Sales Clerck" as SC
+participant "RegisterCustomerUI" as UI <<presentation>>
+participant "RegisterCustomerController" as CTRL <<application>>
+participant "CustomerBuilder" as BD <<builder>>
+participant "customer:Customer" as Customer <<domain>>
+participant "PersistenceContext" as PC <<persistence>>
+participant "RepositoryFactory" as RF <<factory>>
+database "CustomerRepository" as CR <<repository>>
+database "UserRepository" as UR <<repository>>
+
+
+activate SC
+SC -> UI : Starts to register a new customer
+activate UI
+opt birthdate, gender, billing and delivering addresses are not mandatory
+UI - -> SC : Requests data (name, VAT identifier, email, phone number, birthdate, gender, billing address, delivering address)
+deactivate UI
+end opt
+
+
+SC -> UI : Inserts requested data
+activate UI
+
+UI -> CTRL : addCustomer(name, VATid, email, phoneNumber, birthdate, gender, billingAddress, deliveringAddress)
+activate CTRL
+
+note right BD #CCE2CB
+    CustomerBuilder is used to create an entity of Customer in a valid state
+end note
+
+CTRL -> BD : create
+CTRL -> BD : putName(name)
+
+note right CTRL #CCE2CB
+    Places rest of customer information
+end note
+
+CTRL -> BD : createCustomer()
+activate BD
+BD -> Customer : create(name, VATid, email, phoneNumber, birthdate, gender, billingAddress, deliveringAddress)
+Customer -> BD : customer
+
+BD -> CTRL : customer
+deactivate BD
+
+CTRL -> PC : repositories()
+activate PC
+note right PC #CCE2CB
+    can create repository in memory or JPA
+end note
+PC -> RF : create
+PC -> CTRL : factory
+deactivate PC
+
+
+
+CTRL -> RF : customers()
+activate RF
+RF -> CR : create
+RF -> CTRL : customerRepository
+deactivate RF
+CTRL -> CR : save(customer)
+CTRL -> UI : customer
+
+
+
+CTRL -> RF : users()
+activate RF
+RF -> UR : create
+RF -> CTRL : userRepository
+deactivate RF
+CTRL -> UR : save(user)
+CTRL -> UI : user
+deactivate CTRL
+
+UI - -> SC :shows all data and requests confirmation
+deactivate UI
+
+
+SC -> UI : confirms the data
+activate UI
+UI - -> SC : Generates customerID and informs operation success
+deactivate UI
+
+deactivate SC
+
+
+
+@enduml
+
+PlantUML version 1.2022.4(Sat Apr 09 14:29:17 WEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: pt
+Country: PT
+--></g></svg>
