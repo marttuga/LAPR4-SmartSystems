@@ -1,0 +1,31 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package UI {
+class SpecifyNewProductUI {
+}
+}
+
+package Controller{
+class SpecifyNewProductController {
+
+}
+}
+
+package Product <<Aggregate>> {
+entity Product <<Entity>> <<Root>> {
+- ProductDescription
+}
+}
+
+
+package Category <<Aggregate>> {
+    entity Category <<Entity>>
+}
+
+SpecifyNewProductUI ..> SpecifyNewProductController
+SpecifyNewProductController ..> Category
+SpecifyNewProductController ..> Product
+
+
+@enduml
