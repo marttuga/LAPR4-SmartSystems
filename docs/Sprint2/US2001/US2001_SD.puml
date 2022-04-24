@@ -1,230 +1,50 @@
 @startuml
 autonumber
 'hide footbox
-actor "Clinical Chemistry Technologist" as CCT
-participant ":ConsultHistoricalTestsUI" as UI
-participant ":ConsultHistoricalTestsController" as CTRL
-participant ":Company" as Company
-participant "testStore:TestStore" as Store
-participant "clientStore:ClientStore" as cStore
-participant ":ReadConfig" as Read
-participant ":OrderingByTin" as OBT
-participant ":OrderingByName" as OBN
-participant "tMapper: TestMapper" as tMapper
-participant "cMapper: ClientMapper" as cMapper
-participant "test:Test" as Test
-participant "lTestsDTO : List <TestDto>" as testDTO
-participant "lClientsDTO : List <ClientsDto>" as clientDTO
-participant "client:Client" as Client
+actor "Warehouse Employee" as WE
+participant ":UploadFileUI" as UI
+participant ":UploadFileController" as CTRL
+participant ":UploadFileService" as UFS
+participant ":PersistenceContext" as PC
+participant ":RepositoryFactory" as RF
+participant ":UploadFileRepository" as UFR
 
-
-activate CCT
-CCT -> UI :  starts to consult the clients list
+activate WE
+WE -> UI :  starts set up the warehouse plant
 activate UI
 
-
-
-UI -> CTRL :  getClients()
-deactivate UI
+UI -> CTRL : getJSONFile()
 activate CTRL
 
-CTRL -> Company : clientStore = getClientStore()
-activate Company
-deactivate Company
+CTRL -> UFS : getJSONFile()
+activate UFS
 
-CTRL -> cStore : clientsList= getClientsList()
-activate cStore
-deactivate cStore
+UFS -> PC : repositories()
+deactivate UFS
 
-CTRL -> cMapper : lClientsDTO = toDTO(clientList)
-deactivate CTRL
-activate cMapper
+activate PC
+PC -> RF : JSONFile()
+deactivate PC
 
+activate RF
+RF -> UFR : warehousePlant()
+activate UFR
+deactivate UFR
 
-UI --> CCT : Asks to choose the ordering algorithm
+deactivate RF
+
+UFS -> UFR : findWarehousePlant()
+activate UFR
+
+UFR --> UFS : allStoragesAreas()
+deactivate UFR
+
+UFS --> CTRL
+
+CTRL --> UI
+
+UI --> WE : informs operation success
 deactivate UI
-deactivate Company
-deactivate cStore
-alt chooses to sort the clients by Tin
-deactivate cMapper
-CCT -> UI : chooses ordering algorithm
-activate UI
-
-
-
-UI -> CTRL : sortByTin()
-
-activate CTRL
-alt chooses to sort in ascending order
-CTRL -> Read : sortTinAsc(lClientsDTO)
-activate Read
-
-
-Read -> OBT : getOrderingByTin(class)
-deactivate Read
-activate OBT
-
-
-OBT -> cMapper : sortingByTinAsc(lClientsDTO)
-deactivate OBT
-activate cMapper
-
-
-else chooses to sort in descending order
-
-CTRL -> Read : sortTinDesc(lClientsDTO))
-deactivate cMapper
-activate Read
-deactivate CTRL
-
-Read -> OBT : getOrderingByTin(class)
-deactivate Read
-activate OBT
-
-
-OBT -> cMapper : sortingByTinDesc(lClientsDTO)
-deactivate OBT
-activate cMapper
-
-end
-
-
-UI --> CCT : Shows sorted list
-deactivate UI
-
-deactivate cMapper
-CCT -> UI : Types tin of the client
-activate UI
-
-UI -> CTRL :  getTests()
-activate CTRL
-CTRL -> Company : testStore = getTestStore()
-
-activate Company
-deactivate Company
-
-CTRL -> Store : testsList= getTestsList()
-activate Store
-deactivate Store
-
-CTRL -> tMapper : lTestsDTO = toDTO(testsList)
-deactivate CTRL
-activate tMapper
-
-
-UI -> CTRL : findTest()
-deactivate tMapper
-activate CTRL
-
-CTRL -> Store : test = findTest(lTestsDTO)
-deactivate CTRL
-activate Store
-
-
-
-UI --> CCT : Shows the test of the client
-deactivate UI
-
-
-deactivate Store
-else chooses to sort the clients by Name
-
-
-CCT -> UI :  chooses ordering algorithm
-activate UI
-
-UI -> CTRL : sortByName()
-
-activate CTRL
-
-
-
-alt chooses to sort from A-Z
-
-deactivate cStore
-
-CTRL -> Read : sortNameAZ(lClientsDTO)
-deactivate cMapper
-activate Read
-
-
-Read -> OBN : getOrderingByName(class)
-deactivate Read
-activate OBN
-
-
-OBN -> cMapper : sortingByNameAZ(lClientsDTO)
-deactivate OBN
-activate cMapper
-
-
-
-else chooses to sort from Z-A
-
-CTRL -> Read : sortNameZA(lClientsDTO)
-deactivate cMapper
-activate Read
-deactivate CTRL
-
-Read -> OBN : getOrderingByName(class)
-deactivate Read
-activate OBN
-
-
-OBN -> cMapper : sortingByNameZA(lClientsDTO)
-deactivate OBN
-activate cMapper
-
-
-
-
-
-end
-
-UI --> CCT : Shows sorted list
-deactivate cMapper
-deactivate UI
-
-CCT -> UI : Types name of the client
-
-activate UI
-UI -> CTRL :  getTests()
-activate CTRL
-CTRL -> Company : testStore = getTestStore()
-
-activate Company
-deactivate Company
-
-CTRL -> Store : testsList= getTestsList()
-activate Store
-deactivate Store
-
-CTRL -> tMapper : lTestsDTO = toDTO(testsList)
-deactivate CTRL
-activate tMapper
-
-
-deactivate cStore
-UI -> CTRL : findTest()
-deactivate tMapper
-activate CTRL
-CTRL -> Store : test = findTest(lTestsDTO)
-deactivate CTRL
-activate Store
-
-UI --> CCT : Shows the test of the client
-
-deactivate UI
-deactivate Store
-deactivate UI
-
-
-deactivate CCT
-
-
-end
-
-
-
+deactivate WE
 
 @enduml

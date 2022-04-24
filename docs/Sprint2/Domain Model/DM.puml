@@ -41,6 +41,12 @@ entity PriceItem <<Entity>>
 
 object Weight <<Value Object>>
 
+object Dimensions <<Value Object>>{
+- Width
+- Height
+- Length
+}
+
 object Reference <<Value Object>>
 
 object UniqueInternalCode <<Value Object>>
@@ -217,6 +223,7 @@ ProductItem --- "1" Quantity: has >
 Product --- "1" Reference: has >
 Product --- "1" UniqueInternalCode: has >
 PriceItem --- Quantity: depends >
+Product --- Dimensions: has >
 
 
 
