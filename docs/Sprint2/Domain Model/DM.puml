@@ -51,7 +51,9 @@ object Reference <<Value Object>>
 
 object UniqueInternalCode <<Value Object>>
 
-entity Order <<Entity>> <<Root>>
+entity Order <<Entity>> <<Root>>{
+- DateTime
+}
 
 object LineOrder <<Value Object>>
 
@@ -76,8 +78,6 @@ object Gender <<Value Object>>
     entity PostalAddress <<Entity>> {
     - Type
     }
-
-object DateTime <<Value Object>>
 
 object OrderID <<Value Object>>
 
