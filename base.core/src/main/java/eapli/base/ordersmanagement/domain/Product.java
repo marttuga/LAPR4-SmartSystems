@@ -11,10 +11,10 @@ import javax.persistence.*;
 public class Product {
 
     @Id
-    @GeneratedValue
     private String uniqueInternalCode;
 
-    private String shortDescription;
+    @Embedded
+    private ShortDescription shortDescription;
 
     private String extendedDescription;
 
@@ -26,11 +26,14 @@ public class Product {
 
     private String productionCode;
 
-    /*private Barcode barcode;
+    @Embedded
+    private Barcode barcode;
 
-    private Category category;
+    /*@Embedded
+    private Category category;*/
 
-    private Dimension dimension;*/
+    @Embedded
+    private Dimension dimension;
 
     public Product() {
     }
