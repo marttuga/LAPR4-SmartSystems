@@ -48,6 +48,7 @@ is to be verified, having already included the transportation taxes, that depend
 
 ## 3.1. Realização da Funcionalidade
 ![SSD](US1004_SSD.svg)
+
 ![SD](US1004_SD.svg)
 *Nesta secção deve apresentar e descrever o fluxo/sequência que permite realizar a funcionalidade.*
 

@@ -51,22 +51,19 @@ end
 
 end loop
 
-":System" --> SC : shows the shopping cart of the costumer
-activate ":System"
+
 
 ":System" --> SC : shows price of the order with the shipping
-deactivate ":System"
-deactivate ":System"
+activate ":System"
 
 SC -> ":System" : chooses payment method
-activate ":System"
+deactivate ":System"
 
 ":System" --> SC : requests confirmation
-deactivate ":System"
-SC -> ":System" : confirms the data
 
 activate ":System"
-":System" --> SC : informs operation success
+
+":System" --> SC :confirms the data and informs operation success
 deactivate ":System"
 deactivate SC
 
