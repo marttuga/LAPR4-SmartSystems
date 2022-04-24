@@ -9,14 +9,21 @@
 *Exemplo*
 
 **US1003** As Sales Clerk, I want to register a new customer.
+As Sales Clerk, I want to define a new category of products.
+- US1003.1. Blá Blá Blá ...
 
-- Demo1.1. Blá Blá Blá ...
+- US1003.2. Blá Blá Blá ...
 
-- Demo1.2. Blá Blá Blá ...
 
-A interpretação feita deste requisito foi no sentido de ...
+Within the scope of this user story, the task of registering a new customer is assigned to the sales clerk. 
+As such, the costumer must provide at least the first and last name, a valid Value-Added Tax (VAT) identifier that varies from 
+one country to another so the system must be prepared to support/recognize several VAT Ids, an email address and a phone number.
+Optionally, customers might state their birthdate, gender and have/manage several billing and delivering postal addresses,
+including a street name, door number, postal code, city and country.
+
 
 # 2. Analysis
+
 
 ## 2.1 
 *Neste secção a equipa deve relatar o estudo/análise/comparação que fez com o intuito de tomar as melhores opções de design para a funcionalidade bem como aplicar diagramas/artefactos de análise adequados.*
