@@ -2,6 +2,7 @@
 autonumber
 actor "Sales Clerk" as SC
 
+loop
 activate SC
 
 SC -> ":System" : Starts to specify a new product for sale
@@ -23,5 +24,6 @@ activate ":System"
 deactivate ":System"
 
 deactivate SC
+end loop
 
 @enduml

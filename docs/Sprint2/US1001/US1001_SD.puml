@@ -1,27 +1,33 @@
 @startuml
 autonumber
 actor "Sales Clerk" as SC
+participant ":SpecifyNewProductUI" as UI
+participant ":SpecifyNewProductController" as CTRL
+participant ":Product" as Prod
 
+loop
 activate SC
 
-SC -> ":System" : Starts to specify a new product for sale
-activate ":System"
+SC -> UI : Starts to specify a new product for sale
+activate UI
 
-":System" --> SC : Requests data (Brand, description, price...)
-deactivate ":System"
+UI --> SC : Requests data (Brand, description, price...)
+deactivate UI
 
-SC -> ":System" : Types requested data
-activate ":System"
+SC -> UI : Types requested data
+activate UI
 
-":System" --> SC :Shows all data and requests confirmation
-deactivate ":System"
+UI --> SC :Shows all data and requests confirmation
+deactivate UI
 
-SC -> ":System" : Confirms the data
+SC -> UI : Confirms the data
+activate UI
 
-activate ":System"
-":System" --> SC : Informs operation (in)success
-deactivate ":System"
+UI --> SC : Informs operation (in)success
+deactivate UI
 
 deactivate SC
+end loop
+database "Database" as DB
 
 @enduml
