@@ -1,4 +1,4 @@
-package eapli.base.order.domain;
+package eapli.base.ordersmanagement.domain;
 
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
