@@ -1,27 +1,29 @@
 @startuml
 autonumber
-actor "Sales Clerck" as SC
+actor "Warehouse Employee" as WE
 
-activate SC
+loop
+activate WE
 
-":System" --> SC : shows list of products
+WE -> ":System" : Starts to configure an AGV
 activate ":System"
 
-SC -> ":System" : types the chosen product's barcode
+":System" --> WE : Requests data (id, short description, model, maximum weight...)
 deactivate ":System"
 
-SC -> ":System" : starts to view/search the products catalog
+WE -> ":System" : Types requested data
 activate ":System"
 
-":System" --> SC :shows all data and requests confirmation
+":System" --> WE :Shows all data and requests confirmation
 deactivate ":System"
-SC -> ":System" : confirms the data
+
+WE -> ":System" : Confirms the data
 
 activate ":System"
-":System" --> SC : informs operation success
+":System" --> WE : Informs operation (in)success
 deactivate ":System"
 
-deactivate ":System"
-deactivate SC
+deactivate WE
+end loop
 
 @enduml
