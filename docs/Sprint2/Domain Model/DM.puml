@@ -62,8 +62,6 @@ object LineOrder <<Value Object>>{
 - PriceWithoutTax
 }
 
-object TableID <<Value Object>>
-
 entity PriceTable <<Entity>>
 
 object PriceTableID <<Value Object>>
