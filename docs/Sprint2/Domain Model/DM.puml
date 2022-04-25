@@ -14,11 +14,13 @@ package Category <<Aggregate>> {
     object Description <<Value Object>>
 }
 
-/' OrderManagement '/
-package Order <<Aggregate>>{
+
+package Product <<Aggregate>>{
 
 entity Product <<Entity>> <<Root>> {
-- ProductDescription
+- shortDescription
+- extendedDescription
+- technicalDescription
 }
 
 object ProductPriceDetail <<ValueObject>>
@@ -48,7 +50,10 @@ object Dimensions <<Value Object>>{
 object Reference <<Value Object>>
 
 object UniqueInternalCode <<Value Object>>
+}
 
+/' OrderManagement '/
+package Order <<Aggregate>>{
 entity Order <<Entity>> <<Root>>{
 - DateTime
 }
@@ -67,6 +72,26 @@ entity PriceTable <<Entity>>
 object PriceTableID <<Value Object>>
 
 object SalesRegion <<Value Object>>
+
+object OrderID <<Value Object>>
+
+entity ShoppingCart <<Entity>>
+
+entity PaymentMethod <<Entity>>
+
+object ShippingCost <<ValueObject>>
+
+object Volume <<ValueObject>>
+
+
+   entity ShippingMethod <<Entity>>{
+    -Type
+    }
+
+     object Status <<Value Object>>
+}
+
+
 package Customer <<Aggregate>>{
 entity Customer <<Entity>> <<Root>>{
 - CustomerID
@@ -93,23 +118,7 @@ object BirthDate <<Value Object>>
 object VATIdentifier <<Value Object>>
 
 }
-object OrderID <<Value Object>>
 
-entity ShoppingCart <<Entity>>
-
-entity PaymentMethod <<Entity>>
-
-object ShippingCost <<ValueObject>>
-
-object Volume <<ValueObject>>
-
-
-   entity ShippingMethod <<Entity>>{
-    -Type
-    }
-
-     object Status <<Value Object>>
-}
 
 /' WarehouseManagement '/
  package Warehouse <<Aggregate>>{
@@ -185,26 +194,23 @@ object Type <<Value Object>>{
 }
 }
 
-entity Employee <<Entity>>
-
+package SystemUser <<Aggregate>>{
 entity User <<Entity>>
 
 object Username <<ValueObject>>
 
 object Password <<ValueObject>>
+}
 
-/' Employee '/
-Employee --- AGV : manages >
 
 /' User '/
 User -- Username : has >
 User -- Password : has >
-User <|-- Customer
-User <|-- Employee
+User --- Customer : is an <
+
 
 
 /' Customer '/
-
 Customer -- "1" Name : has >
 Customer -- "1" Gender : has >
 Customer -- "1..*" PostalAddress : has >
@@ -216,7 +222,7 @@ Customer -- "1" VATIdentifier : has >
 
 
 /' Product '/
-Product --- "1" Category: categorized >
+Product --- "1" Category: belongs to >
 Product --- "1..*" Picture: has >
 Product --- "1" Barcode: has >
 Product --- "1" Brand: has >
@@ -236,7 +242,7 @@ Product --- Dimensions: has >
 /' Category '/
 Category --- "1" AlphaNumericCode  : categorized >
 Category --- "1" Description  : categorized >
-Category --- Category: it's child of
+Category "0..1" --- "1" Category: is sub-category of >
 
 
 /' Warehouse '/
