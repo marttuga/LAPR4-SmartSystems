@@ -89,7 +89,7 @@ public interface RepositoryFactory {
     OrderRepository orders(TransactionalContext autoTx);
     OrderRepository orders();
 
-  /*  ProductRepository products(TransactionalContext autoTx);
-    ProductRepository products();*/
+    ProductRepository products(TransactionalContext autoTx);
+    ProductRepository products();
 
 }
