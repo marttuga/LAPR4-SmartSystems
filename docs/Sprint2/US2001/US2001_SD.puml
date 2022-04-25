@@ -10,7 +10,7 @@ participant ":RepositoryFactory" as RF
 participant ":UploadFileRepository" as UFR
 
 activate WE
-WE -> UI :  starts set up the warehouse plant
+WE -> UI :  starts set up the warehouse plan
 activate UI
 
 UI -> CTRL : getJSONFile()
@@ -27,13 +27,13 @@ PC -> RF : JSONFile()
 deactivate PC
 
 activate RF
-RF -> UFR : warehousePlant()
+RF -> UFR : warehousePlan()
 activate UFR
 deactivate UFR
 
 deactivate RF
 
-UFS -> UFR : findWarehousePlant()
+UFS -> UFR : findWarehousePlan()
 activate UFR
 
 UFR --> UFS : allStoragesAreas()

@@ -1,134 +1,26 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package UI {
-class ConsultHistoricalTestsUI {
-}
-}
-
-package Controller{
-class ConsultHistoricalTestsController {
-+getClientList()
-+getTestList()
-+sortByTIN(clientList)
-+sortByTIN2(clientList)
-+sortByName(clientList)
-+sortByName2(clientList)
-}
+class UploadFileUI <<presentation>> {
+    +doShow()
 }
 
-
-package Domain {
-
-class Test {
-  -testType
-  -testCategory
-  -testParameter
-  -createdAt
-  -nhsCode
-  +getTestType()
-  +getTestCategory()
-  +getTestParameter()
-  +getNhsCode()
-  +getCreatedAt()
-  +getTestCode()
-  +Test()
+class UploadFileController <<application>> {
+    +uploadFile()
 }
 
-
-
-class ReadConfig{
-   +readConfig()
-   +getOrderingClassTin(class)
-   +getOrderingClassName(class)
+class UploadFileRepository <<repository>> {
+  +save(JSON File)
 }
 
-
-
-class OrderingByTin{
-   +sortingByTIN(clientList)
-   +sortingByTIN2(clientList)
+class UploadFile <<domain>>{
+   +uploadFile(JSON File)
+   +
 }
 
-class OrderingByName{
-   +sortingByName(clientList)
-   +sortingByName2(clientList)
-}
-
-class Company{
-   -designation
-   +getTestStore()
-    +getClientsStore()
-}
-}
-package Store{
-
-class TestStore{
-   +getTestList()
-
-}
-class ClientStore{
-    +getClientsList()
-
- }
-}
-package Mappers{
-class ClientMapper{
- +toDTO(client)
-}
-
-class TestMapper{
- +toDTO(test)
-}
-}
-
-package DTO{
-class ClientDTO{
- -String name
- -String phoneNumber
- -LocalDate birthDate
- -String tin
- -String ccn
- -String nhsN
- -Email email
- -String sex
- +ClientDTO(name,phoneNumber,birthDate,tin,ccn,nhsN,email,sex)
-}
-
-class TestDTO{
- -String testCode
- -TestType testType
- -List<ParameterCategory> testCategory
- -List<Parameter> testParameter
- -String nhsCode
- -Client testClient
- -List<Parameter> parameterList
- -LocalDateTime testRegDate
- -List<Sample> sampleList
- -List<TestParameterResult> results
- -LocalDateTime timestamp
- -List<TestParameter> testParameterList
- +TestDTO(testCode, testType, testCategory, testParameter, nhsCode, testClient, parameterList, testRegDate, sampleList, results, timestamp, testParameterList)
-}
-}
-
-
-
-ConsultHistoricalTestsUI ..> ConsultHistoricalTestsController
-ConsultHistoricalTestsController ..> Test
-ConsultHistoricalTestsController ..>Company
-ConsultHistoricalTestsController ..>ReadConfig
-Company "1" --> "1" TestStore : uses
-Company "1" --> "1" ClientStore : uses
-ConsultHistoricalTestsController ..> TestStore
-ConsultHistoricalTestsController ..> ClientStore
-TestStore"1" --> "*" Test: knows
-ClientStore "1" --> "*" Test: knows
-ReadConfig ..> OrderingByName
-ReadConfig ..> OrderingByTin
-ConsultHistoricalTestsController ..> ClientMapper
-ConsultHistoricalTestsController..> TestMapper
-Test ..> TestDTO
-Test ..> ClientDTO
+UploadFileUI -> UploadFileController : theController
+UploadFileUI -> UploadFileRepository : repo
+UploadFileController -> UploadFile : the JSON File
+UploadFileUI ..> UploadFile : the JSON File
 
 @enduml
