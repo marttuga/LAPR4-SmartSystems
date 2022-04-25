@@ -6,4 +6,7 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class LineOrder implements ValueObject {
+
+    private int priceOrderWithoutTaxes;
+
 }
