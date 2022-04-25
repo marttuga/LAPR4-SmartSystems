@@ -68,7 +68,7 @@ entity PriceTable <<Entity>>
 
 object PriceTableID <<Value Object>>
 
-entity SalesRegion <<Entity>>
+object SalesRegion <<Value Object>>
 
 entity Costumer <<Entity>> <<Root>>
 
@@ -277,6 +277,7 @@ Order --- "1" Survey : generates >
 ShippingCost --- "1" SalesRegion: depends >
 ShippingMethod--- "1" ShippingCost: has >
 Product --- "1" Weight: has >
+Product --- "1" Volume: has >
 
 LineOrder --- "1" Order: >
 LineOrder --- "1" ProductItem: has >
