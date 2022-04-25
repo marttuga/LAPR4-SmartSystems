@@ -35,6 +35,7 @@ public class Order implements AggregateRoot<OrderID> {
     @JoinColumn(name = "costumer_id")
     private Costumer costumer;*/
 
+    
     public Order() {
     }
 
