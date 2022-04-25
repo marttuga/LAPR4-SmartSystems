@@ -10,8 +10,25 @@ import javax.persistence.Enumerated;
 @Embeddable
 public class ShippingCost implements ValueObject {
 
-    private int volume;
+    private int shippingCost;
 
     @Embedded
+    @Enumerated(EnumType.STRING)
     private SalesRegion salesRegion;
+
+    @Embedded
+    private Weight weight;
+
+    @Embedded
+    private Volume volume;
+
+    public ShippingCost() {
+    }
+
+    public ShippingCost(int shippingCost, SalesRegion salesRegion, Weight weight, Volume volume) {
+        this.shippingCost = shippingCost;
+        this.salesRegion = salesRegion;
+        this.weight = weight;
+        this.volume = volume;
+    }
 }

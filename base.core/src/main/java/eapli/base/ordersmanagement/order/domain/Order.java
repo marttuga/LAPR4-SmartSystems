@@ -20,6 +20,9 @@ public class Order implements AggregateRoot<OrderID> {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    @Embedded
+    private OrderActor orderActor;
+
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "paymentMethod_id")
     private PaymentMethod paymentMethod;
@@ -33,6 +36,27 @@ public class Order implements AggregateRoot<OrderID> {
     private Costumer costumer;
 
     public Order() {
+    }
+
+
+    @Override
+    public boolean sameAs(Object other) {
+        return false;
+    }
+
+    @Override
+    public int compareTo(OrderID other) {
+        return AggregateRoot.super.compareTo(other);
+    }
+
+    @Override
+    public OrderID identity() {
+        return null;
+    }
+
+    @Override
+    public boolean hasIdentity(OrderID id) {
+        return AggregateRoot.super.hasIdentity(id);
     }
 
     ;
