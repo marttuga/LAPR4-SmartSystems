@@ -1,18 +1,10 @@
 # US1003
 =======================================
 
-
 # 1. Requirements
-
-*Nesta secção a equipa deve indicar a funcionalidade desenvolvida bem como descrever a sua interpretação sobre a mesma e sua correlação e/ou dependência de/com outros requisitos.*
-
-*Exemplo*
 
 **US1003** As Sales Clerk, I want to register a new customer.
 As Sales Clerk, I want to define a new category of products.
-- US1003.1. Blá Blá Blá ...
-
-- US1003.2. Blá Blá Blá ...
 
 
 Within the scope of this user story, the task of registering a new customer is assigned to the sales clerk. 
@@ -22,25 +14,39 @@ Optionally, customers might state their birthdate, gender and have/manage severa
 including a street name, door number, postal code, city and country.
 
 
+## Acceptance criteria
+* At least the first and last name of the customer are required for their registration
+* Besides the name of the customer, a VAT, an  email address and a phone number are required for their registration
+* Birthdate, gender  and billing/delivering adresses are  optional for costumers registration 
+* The system must be prepared to support/recognize several VAT Ids
+
+
 # 2. Analysis
 
-
-## 2.1 
-*Neste secção a equipa deve relatar o estudo/análise/comparação que fez com o intuito de tomar as melhores opções de design para a funcionalidade bem como aplicar diagramas/artefactos de análise adequados.*
-
-*Recomenda-se que organize este conteúdo por subsecções.*
+* For registering a new costumer, a sales clerk must request them a handful of personal details such as their name, VAT identifier, email address and phone number
+* The system should be prepared to alert the sales clerk in case any of this information already exists on the system
+* The customer can optionally add more information to the registration in case they wish to, being the sales clerk responsibility to give them this option
+* Customers information should be double-checked by the sales clerk before ending the registration
 
 # 3. Design
 
-*Nesta secção a equipa deve descrever o design adotado para satisfazer a funcionalidade. Entre outros, a equipa deve apresentar diagrama(s) de realização da funcionalidade, diagrama(s) de classes, identificação de padrões aplicados e quais foram os principais testes especificados para validar a funcionalidade.*
 
-*Para além das secções sugeridas, podem ser incluídas outras.*
+>   Domain Classes: Costumer, Email, Address
+>
+>   Controller: RegisterCustomerController
+>
+>   Repository: CostumerRepository, UserRepository
 
 ## 3.1. Realização da Funcionalidade
 
+![SSD](US1003_SSD.svg)
+
+![SD](US1003_SD.svg)
 *Nesta secção deve apresentar e descrever o fluxo/sequência que permite realizar a funcionalidade.*
 
 ## 3.2. Diagrama de Classes
+
+![CD](US1003_CD.svg)
 
 *Nesta secção deve apresentar e descrever as principais classes envolvidas na realização da funcionalidade.*
 

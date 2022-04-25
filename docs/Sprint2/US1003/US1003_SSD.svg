@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="389px" preserveAspectRatio="none" style="width:869px;height:389px;background:#FFFFFF;" version="1.1" viewBox="0 0 869 389" width="869px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="199.1738" style="stroke:#181818;stroke-width:1.0;" width="10" x="59" y="91.4883"/><rect fill="#FFFFFF" height="53.6211" style="stroke:#181818;stroke-width:1.0;" width="10" x="815" y="112.7988"/><rect fill="#FFFFFF" height="29.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="815" y="202.7305"/><rect fill="#FFFFFF" height="29.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="815" y="261.3516"/><rect height="46.6211" style="stroke:#000000;stroke-width:1.5;fill:none;" width="853" x="10" y="127.7988"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="64" x2="64" y1="81.4883" y2="308.6621"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="820" x2="820" y1="81.4883" y2="308.6621"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="20" y="78.5352">Sales Clerck</text><ellipse cx="64" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M64,21.5 L64,48.5 M51,29.5 L77,29.5 M64,48.5 L51,63.5 M64,48.5 L77,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="20" y="321.1973">Sales Clerck</text><ellipse cx="64" cy="332.6504" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M64,340.6504 L64,367.6504 M51,348.6504 L77,348.6504 M64,367.6504 L51,382.6504 M64,367.6504 L77,382.6504 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="66" x="787" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="794" y="70.5352">:System</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="66" x="787" y="307.6621"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="794" y="328.1973">:System</text><rect fill="#FFFFFF" height="199.1738" style="stroke:#181818;stroke-width:1.0;" width="10" x="59" y="91.4883"/><rect fill="#FFFFFF" height="53.6211" style="stroke:#181818;stroke-width:1.0;" width="10" x="815" y="112.7988"/><rect fill="#FFFFFF" height="29.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="815" y="202.7305"/><rect fill="#FFFFFF" height="29.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="815" y="261.3516"/><polygon fill="#181818" points="803,108.7988,813,112.7988,803,116.7988,807,112.7988" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="69" x2="809" y1="112.7988" y2="112.7988"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="76" y="108.0566">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="208" x="89" y="108.0566">Starts to register a new costumer</text><path d="M10,127.7988 L77,127.7988 L77,135.1094 L67,145.1094 L10,145.1094 L10,127.7988 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="46.6211" style="stroke:#000000;stroke-width:1.5;" width="853" x="10" y="127.7988"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="22" x="25" y="141.3672">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="397" x="92" y="140.4336">[birthdate, gender, billing and delivering addresses are not mandatory]</text><polygon fill="#181818" points="80,162.4199,70,166.4199,80,170.4199,76,166.4199" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="74" x2="819" y1="166.4199" y2="166.4199"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="86" y="161.6777">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="709" x="99" y="161.6777">Requests data (name, VAT identifier, email, phone number, birthdate, gender, billing address, delivering address)</text><polygon fill="#181818" points="803,198.7305,813,202.7305,803,206.7305,807,202.7305" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="69" x2="809" y1="202.7305" y2="202.7305"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="76" y="197.9883">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="140" x="89" y="197.9883">Inserts requested data</text><polygon fill="#181818" points="80,228.041,70,232.041,80,236.041,76,232.041" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="74" x2="819" y1="232.041" y2="232.041"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="86" y="227.2988">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="260" x="99" y="227.2988">shows all data and requests confirmation</text><polygon fill="#181818" points="803,257.3516,813,261.3516,803,265.3516,807,261.3516" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="69" x2="809" y1="261.3516" y2="261.3516"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="76" y="256.6094">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="111" x="89" y="256.6094">confirms the data</text><polygon fill="#181818" points="75,286.6621,65,290.6621,75,294.6621,71,290.6621" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="69" x2="819" y1="290.6621" y2="290.6621"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9" x="81" y="285.9199">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="337" x="94" y="285.9199">Generates costumerID and informs operation success</text><!--MD5=[f8d02839e8c1c56536d4c2a030bb64ee]
+@startuml
+autonumber
+actor "Sales Clerck" as SC
+
+activate SC
+
+SC -> ":System" : Starts to register a new costumer
+activate ":System"
+opt birthdate, gender, billing and delivering addresses are not mandatory
+":System" - -> SC : Requests data (name, VAT identifier, email, phone number, birthdate, gender, billing address, delivering address)
+deactivate ":System"
+end opt
+
+
+SC -> ":System" : Inserts requested data
+activate ":System"
+
+":System" - -> SC :shows all data and requests confirmation
+deactivate ":System"
+
+
+SC -> ":System" : confirms the data
+activate ":System"
+":System" - -> SC : Generates costumerID and informs operation success
+deactivate ":System"
+
+deactivate SC
+
+@enduml
+
+PlantUML version 1.2022.4(Sat Apr 09 14:29:17 WEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: pt
+Country: PT
+--></g></svg>
