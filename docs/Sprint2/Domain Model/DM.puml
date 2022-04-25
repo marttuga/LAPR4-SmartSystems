@@ -69,10 +69,10 @@ entity PriceTable <<Entity>>
 object PriceTableID <<Value Object>>
 
 object SalesRegion <<Value Object>>
-
-entity Costumer <<Entity>> <<Root>>
-
-entity Contact <<Entity>>
+package Customer <<Aggregate>>{
+entity Customer <<Entity>> <<Root>>{
+- CustomerID
+}
 
 object PhoneNumber <<Value Object>>
 
@@ -82,10 +82,19 @@ object Name <<Value Object>>
 
 object Gender <<Value Object>>
 
-    entity PostalAddress <<Entity>> {
-    - Type
-    }
+entity PostalAddress <<ValueObject>> {
+- street
+- doorNumber
+- city
+- country
+- postalCode
+}
 
+object BirthDate <<Value Object>>
+
+object VATIdentifier <<Value Object>>
+
+}
 object OrderID <<Value Object>>
 
 entity ShoppingCart <<Entity>>
@@ -96,11 +105,6 @@ object ShippingCost <<ValueObject>>
 
 object Volume <<ValueObject>>
 
-object CostumerID <<Value Object>>
-
-object Birthday <<Value Object>>
-
-object VATIdentifier <<Value Object>>
 
    entity ShippingMethod <<Entity>>{
     -Type
@@ -175,6 +179,7 @@ package Question <<Aggregate>>{
 entity Question <<Entity>>
 
 entity Answer <<Entity>>
+
 object Type <<Value Object>>{
 {Multiple Choice}
 {Free Answer}
@@ -196,22 +201,20 @@ Employee --- AGV : manages >
 /' User '/
 User -- Username : has >
 User -- Password : has >
-User <|-- Costumer
+User <|-- Customer
 User <|-- Employee
 
 
-/' Costumer '/
-Costumer --- "1" CostumerID : has >
-Costumer --- "1" Contact : preferredContact >
-Costumer -- "1" Name : identifiedBy >
-Costumer --  Contact : contacts
-Costumer -- "1" Gender : identifiedBy >
-Costumer -- "1..*" PostalAddress : has >
-Costumer -- "1" Birthday : dateOfBirth >
-Contact <|-- PhoneNumber
-Contact <|-- EmailAddress
-Costumer -- "1" Survey : answers >
-Costumer -- "1" VATIdentifier : has >
+/' Customer '/
+
+Customer -- "1" Name : has >
+Customer -- "1" Gender : has >
+Customer -- "1..*" PostalAddress : has >
+Customer -- "1" BirthDate : dateOfBirth >
+Customer -- "1" PhoneNumber: has >
+Customer -- "1" EmailAddress: has >
+Customer -- "0..*" Survey : answers >
+Customer -- "1" VATIdentifier : has >
 
 
 /' Product '/
@@ -296,8 +299,8 @@ Answer --- "1" Type: has >
 
 
 /' Joined Aggregates '/
-Costumer "1" -- "1..*" Order: orders >
-Costumer -- "1..*" Product: chooses >
+Customer "1" -- "0..*" Order: places >
+Customer "1" -- "0..*" Product: chooses >
 Warehouse -- "1..*" StorageArea: contains >
 StorageArea -- "1..*" Product: stores >
 @enduml
