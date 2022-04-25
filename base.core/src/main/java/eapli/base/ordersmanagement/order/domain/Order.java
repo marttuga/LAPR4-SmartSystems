@@ -23,17 +23,17 @@ public class Order implements AggregateRoot<OrderID> {
     @Embedded
     private OrderActor orderActor;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  /*  @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "paymentMethod_id")
-    private PaymentMethod paymentMethod;
+    private PaymentMethod paymentMethod;*/
 
 /*    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "survey_code")
     private Survey survey;*/
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+/*    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "costumer_id")
-    private Costumer costumer;
+    private Costumer costumer;*/
 
     public Order() {
     }
