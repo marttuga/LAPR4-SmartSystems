@@ -1,6 +1,6 @@
 package eapli.base.ordersmanagement.product.domain;
 
-import eapli.base.ordersmanagement.order.domain.OrderID;
+import eapli.base.ordersmanagement.category.domain.Category;
 import eapli.framework.domain.model.AggregateRoot;
 
 import javax.persistence.*;
@@ -34,8 +34,9 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
     @Embedded
     private Barcode barcode;
 
-    /*@Embedded
-    private Category category;*/
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "category")
+    private Category category;
 
     @Embedded
     private Dimension dimension;

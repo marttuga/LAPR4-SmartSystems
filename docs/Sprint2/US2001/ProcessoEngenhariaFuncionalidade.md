@@ -3,7 +3,7 @@
 
 # 1. Requirements
 
-**US2001** As Warehouse Employee, I want to set up the warehouse plant by uploading a JSON file.
+**US2001** As Warehouse Employee, I want to set up the warehouse plan by uploading a JSON file.
 
 - Create a warehouse plan by uploading a JSON file that has the warehouse layout/organization.
   
@@ -13,21 +13,22 @@ I interpret that:
 
 ## Acceptance criteria
 * A default file can be loaded automatically.
-* If a JSON file is found may be updated the information about the warehouse plant.
+* If a JSON file is found may be updated the information about the warehouse plan.
 * Warehouse plant persistence must be done in the database because the JSON file might not be available on all workstations used by warehouse employees.
+* US 2001 is just to set up the warehouse plant by uploading a file. As so, it is not necessary to graphically display the warehouse plant.
 
 
 # 2. Analysis
 
 - Creation of a JSON file that contains all the information necessary for the location of any product in a warehouse, that is, having all the storage areas defined (with coordinates).
-- In addition, facilitate the user's request to open and update the information of the warehouse plant and finally save it.
+- In addition, facilitate the user's request to open and update the information of the warehouse plan and finally save it.
 
 
 # 3. Design
 
 * Use a layered application framework base pattern.
 
-* Domain Classes:  
+* Domain Classes: UploadFile
 * Controller: UploadFileController
 * Repository: UploadFileRepository
 

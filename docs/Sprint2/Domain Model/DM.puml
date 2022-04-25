@@ -22,10 +22,10 @@ entity Product <<Entity>> <<Root>> {
 - extendedDescription
 - technicalDescription
 }
-
+object Volume <<ValueObject>>
 object ProductPriceDetail <<ValueObject>>
 
-object PriceOrder <<ValueObject>>
+
 
 object Barcode <<Value Object>>
 
@@ -33,11 +33,9 @@ object Picture <<Value Object>>
 
 object Brand <<Value Object>>
 
-object ProductItem <<Value Object>>
 
-object Quantity <<Value Object>>
 
-entity PriceItem <<Entity>>
+
 
 object Weight <<Value Object>>
 
@@ -57,7 +55,7 @@ package Order <<Aggregate>>{
 entity Order <<Entity>> <<Root>>{
 - DateTime
 }
-
+object PriceOrder <<ValueObject>>
 object OrderActor <<Value Object>>{
 - id
 - actor
@@ -75,13 +73,13 @@ object SalesRegion <<Value Object>>
 
 object OrderID <<Value Object>>
 
-entity ShoppingCart <<Entity>>
+
 
 entity PaymentMethod <<Entity>>
 
 object ShippingCost <<ValueObject>>
 
-object Volume <<ValueObject>>
+
 
 
    entity ShippingMethod <<Entity>>{
@@ -119,7 +117,14 @@ object VATIdentifier <<Value Object>>
 
 }
 
+'SHOPPING CART'
+package ShoppingCart <<Aggregate>>{
+entity ShoppingCart <<Entity>> <<Root>>
+object ProductItem <<Value Object>>
+object Quantity <<Value Object>>
 
+entity PriceItem <<Entity>>
+}
 /' WarehouseManagement '/
  package Warehouse <<Aggregate>>{
 
@@ -203,6 +208,7 @@ object Password <<ValueObject>>
 }
 
 
+
 /' User '/
 User -- Username : has >
 User -- Password : has >
@@ -222,7 +228,7 @@ Customer -- "1" VATIdentifier : has >
 
 
 /' Product '/
-Product --- "1" Category: belongs to >
+Product --- "1..*" Category: belongs to >
 Product --- "1..*" Picture: has >
 Product --- "1" Barcode: has >
 Product --- "1" Brand: has >
@@ -236,6 +242,11 @@ ProductItem --- "1" PriceItem : has >
 Product --- "1" Reference: has >
 Product --- "1" UniqueInternalCode: has >
 Product --- Dimensions: has >
+Product --- "1" Weight: has >
+Product --- "1" Volume: has >
+
+/'ShoppingCart '/
+ShoppingCart --- "1..*" ProductItem: has >
 
 
 
@@ -268,6 +279,8 @@ Survey -- "1..*" GeneralQuestions: has >
 
 Question -- Question: depends >
 
+LineOrder --- "1" Order: >
+LineOrder --- "1" ProductItem: has >
 
 /' ShippingCost '/
 ShippingCost --- Weight: depends >
@@ -283,17 +296,14 @@ Order --- "1" ShippingMethod : has >
 Order --- "1" Survey : generates >
 ShippingCost --- "1" SalesRegion: depends >
 ShippingMethod--- "1" ShippingCost: has >
-Product --- "1" Weight: has >
-Product --- "1" Volume: has >
 
-LineOrder --- "1" Order: >
-LineOrder --- "1" ProductItem: has >
+
+
 PriceOrder --- Order: depends >
 PriceOrder --- ShippingCost: depends >
 
 
-/'ShoppingCart '/
-ShoppingCart --- "1..*" ProductItem: has >
+
 
 /'  Question '/
 Question --- "1..*" Answer: has >
