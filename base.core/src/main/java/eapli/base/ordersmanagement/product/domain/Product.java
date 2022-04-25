@@ -1,5 +1,8 @@
 package eapli.base.ordersmanagement.product.domain;
 
+import eapli.base.ordersmanagement.order.domain.OrderID;
+import eapli.framework.domain.model.AggregateRoot;
+
 import javax.persistence.*;
 
 /**
@@ -8,10 +11,11 @@ import javax.persistence.*;
  */
 
 @Entity
-public class Product {
+public class Product implements AggregateRoot<UniqueInternalCode> {
 
-    @Id
-    private String uniqueInternalCode;
+    @EmbeddedId
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UniqueInternalCode uniqueInternalCode;
 
     @Embedded
     private ShortDescription shortDescription;
@@ -20,7 +24,8 @@ public class Product {
 
     private String technicalDescription;
 
-    private String brand;
+    @Embedded
+    private Brand brand;
 
     private String reference;
 
@@ -36,5 +41,25 @@ public class Product {
     private Dimension dimension;
 
     public Product() {
+    }
+
+    @Override
+    public boolean sameAs(Object other) {
+        return false;
+    }
+
+    @Override
+    public int compareTo(UniqueInternalCode other) {
+        return AggregateRoot.super.compareTo(other);
+    }
+
+    @Override
+    public UniqueInternalCode identity() {
+        return null;
+    }
+
+    @Override
+    public boolean hasIdentity(UniqueInternalCode id) {
+        return AggregateRoot.super.hasIdentity(id);
     }
 }
