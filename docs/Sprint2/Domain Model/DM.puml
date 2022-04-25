@@ -23,8 +23,6 @@ entity Product <<Entity>> <<Root>> {
 
 object ProductPriceDetail <<ValueObject>>
 
-object Price <<Value Object>>
-
 object PriceOrder <<ValueObject>>
 
 object Barcode <<Value Object>>
@@ -55,9 +53,16 @@ entity Order <<Entity>> <<Root>>{
 - DateTime
 }
 
-object LineOrder <<Value Object>>
+object OrderActor <<Value Object>>{
+- id
+- actor
+}
 
-object PriceTableID <<Value Object>>
+object LineOrder <<Value Object>>{
+- PriceWithoutTax
+}
+
+object oTableID <<Value Object>>
 
 entity PriceTable <<Entity>>
 
@@ -218,9 +223,9 @@ PriceTable --- "1" PriceTableID: >
 PriceTable --- "1" SalesRegion: >
 Product --- "1" ProductItem: becomes >
 ProductItem --- "1" Quantity: has >
+ProductItem --- "1" PriceItem : has >
 Product --- "1" Reference: has >
 Product --- "1" UniqueInternalCode: has >
-PriceItem --- Quantity: depends >
 Product --- Dimensions: has >
 
 
@@ -261,16 +266,16 @@ ShippingCost --- Volume: depends >
 
 
 /' Order '/
-Order --- "1" OrderID : >
-Order --- "1" DateTime : >
+Order --- "1" OrderID : >ShoppingCart
 Order --- "1" Status : has >
+Order --- "1" OrderActor : has >
 Order --- "1" PaymentMethod : has >
 Order --- "1" ShippingMethod : has >
 Order --- "1" Survey : generates >
 ShippingCost --- "1" SalesRegion: depends >
 ShippingMethod--- "1" ShippingCost: has >
 Product --- "1" Weight: has >
-LineOrder -- "1" Price: has >
+
 LineOrder --- "1" Order: >
 LineOrder --- "1" ProductItem: has >
 PriceOrder --- Order: depends >
