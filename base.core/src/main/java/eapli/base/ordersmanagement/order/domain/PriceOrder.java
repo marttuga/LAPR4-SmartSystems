@@ -4,8 +4,7 @@ import eapli.framework.domain.model.ValueObject;
 
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+
 
 @Embeddable
 public class PriceOrder  implements ValueObject {
