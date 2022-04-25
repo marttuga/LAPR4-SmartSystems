@@ -16,7 +16,7 @@ public class ShippingCost implements ValueObject {
     @Enumerated(EnumType.STRING)
     private SalesRegion salesRegion;
 
-    @Embedded
+/*    @Embedded
     private Weight weight;
 
     @Embedded
@@ -30,5 +30,5 @@ public class ShippingCost implements ValueObject {
         this.salesRegion = salesRegion;
         this.weight = weight;
         this.volume = volume;
-    }
+    }*/
 }

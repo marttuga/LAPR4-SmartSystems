@@ -15,9 +15,11 @@ public class PriceTable  implements AggregateRoot<PriceTableID> {
     @Embedded
     private SalesRegion salesRegion;
 
+/*
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "paymentMethod_id")
     private PaymentMethod paymentMethod;
+*/
 
 
 
