@@ -105,7 +105,7 @@ object Name <<Value Object>>
 
 object Gender <<Value Object>>
 
-entity PostalAddress <<ValueObject>> {
+object PostalAddress <<ValueObject>> {
 - street
 - doorNumber
 - city
