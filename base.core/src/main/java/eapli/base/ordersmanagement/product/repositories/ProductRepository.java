@@ -12,11 +12,11 @@ import java.util.Optional;
 public interface ProductRepository extends DomainRepository<UniqueInternalCode, Product> {
     Optional<Product> findProduct(Brand brand, ShortDescription description, Category category);
 
-    Iterable<Brand> findProductsByBrand(Brand brand);
+    Optional<Product> findByBrand(Brand brand);
 
-    Iterable<ShortDescription> findByDescription(ShortDescription description);
+    Optional<Product> findByDescription(ShortDescription description);
 
-    Iterable<Category> findByCategory(Category category);
+    Optional<Product> findByCategory(Category category);
 
 }
 

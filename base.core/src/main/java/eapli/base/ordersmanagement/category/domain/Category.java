@@ -1,7 +1,5 @@
 package eapli.base.ordersmanagement.category.domain;
 
-import eapli.base.ordersmanagement.product.domain.Product;
-
 import javax.persistence.*;
 import java.io.Serializable;
 

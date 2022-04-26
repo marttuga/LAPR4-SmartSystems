@@ -3,6 +3,7 @@ package eapli.base.ordersmanagement.product.domain;
 import eapli.framework.domain.model.ValueObject;
 
 import javax.persistence.Embeddable;
+import java.util.Objects;
 
 /**
  *
@@ -10,21 +11,52 @@ import javax.persistence.Embeddable;
  */
 
 @Embeddable
-public class Dimension implements ValueObject {
+public class Dimension implements ValueObject, Comparable<Dimension> {
 
-    private Long width;
+    private Double width;
 
-    private Long height;
+    private Double height;
 
-    private Long lenght;
+    private Double length;
 
-    public Dimension(Long width, Long height, Long lenght) {
+    public Dimension(Double width, Double height, Double length) {
         this.width = width;
         this.height = height;
-        this.lenght = lenght;
+        this.length = length;
     }
 
-    public Dimension() {
+    protected Dimension() {
 
+    }
+
+    /*public Double getWidth() {
+        return width;
+    }
+
+    public Double getHeight() {
+        return height;
+    }
+
+    public Double getLength() {
+        return length;
+    }*/
+
+    @Override
+    public String toString() {
+        return "Dimension{" +
+                "width=" + width +
+                ", height=" + height +
+                ", length=" + length +
+                '}';
+    }
+
+    /*@Override
+    public int hashCode() {
+        return Objects.hash(getWidth(), getHeight(), getLength());
+    }
+*/
+    @Override
+    public int compareTo(Dimension o) {
+        return 0;
     }
 }

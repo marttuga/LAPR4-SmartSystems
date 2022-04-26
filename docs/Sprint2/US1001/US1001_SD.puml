@@ -3,6 +3,9 @@ autonumber
 actor "Sales Clerk" as SC
 participant ":SpecifyNewProductUI" as UI
 participant ":SpecifyNewProductController" as CTRL
+participant ":PersistenceContext" as PC
+participant ":RepositoryFactory" as RF
+participant ":ProductRepository" as ProdRep
 participant ":Product" as Prod
 
 loop
@@ -16,6 +19,48 @@ deactivate UI
 
 SC -> UI : Types requested data
 activate UI
+
+UI -> CTRL : create
+deactivate UI
+activate CTRL
+
+
+CTRL -> PC : repositories()
+deactivate CTRL
+activate PC
+PC -> RF : create
+deactivate PC
+activate RF
+
+RF -> ProdRep : create
+activate ProdRep
+deactivate RF
+
+
+deactivate ProdRep
+
+activate PC
+PC -> CTRL : ProductRepository
+deactivate PC
+activate CTRL
+deactivate CTRL
+
+activate UI
+UI -> CTRL : specifyNewProduct()
+
+CTRL -> Prod : newProduct = create()
+activate Prod
+deactivate Prod
+
+
+CTRL -> ProdRep : save(newProduct)
+activate ProdRep
+
+CTRL -> UI : newProduct
+
+deactivate CTRL
+
+deactivate ProdRep
 
 UI --> SC :Shows all data and requests confirmation
 deactivate UI

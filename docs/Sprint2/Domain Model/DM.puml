@@ -72,25 +72,23 @@ object OrderID <<Value Object>>
 
 
 
-entity PaymentMethod <<Entity>>
+object PaymentMethod <<Value Object>>
 
 object ShippingCost <<ValueObject>>
 
 
 
 
-   entity ShippingMethod <<Entity>>{
-    -Type
-    }
+   object ShippingMethod <<Value Object>>
 
      object Status <<Value Object>>
 }
 
 
 package Customer <<Aggregate>>{
-entity Customer <<Entity>> <<Root>>{
-- CustomerID
-}
+entity Customer <<Entity>> <<Root>>
+
+object CustomerId <<ValueObject>>
 
 object PhoneNumber <<Value Object>>
 
@@ -100,7 +98,7 @@ object Name <<Value Object>>
 
 object Gender <<Value Object>>
 
-entity PostalAddress <<ValueObject>> {
+object PostalAddress <<ValueObject>> {
 - street
 - doorNumber
 - city
@@ -117,10 +115,11 @@ object VATIdentifier <<Value Object>>
 'SHOPPING CART'
 package ShoppingCart <<Aggregate>>{
 entity ShoppingCart <<Entity>> <<Root>>
-object ProductItem <<Value Object>>
+object ShoppingCartID <<Value Object>>
+entity ProductItem <<Entity>>
 object Quantity <<Value Object>>
-
-entity PriceItem <<Entity>>
+object ProductItemID <<Value Object>>
+object PriceItem <<Value Object>>
 }
 /' WarehouseManagement '/
  package Warehouse <<Aggregate>>{
@@ -227,6 +226,7 @@ User --- Customer : is an <
 
 /' Customer '/
 Customer -- "1" Name : has >
+Customer -- "1" CustomerId : has >
 Customer -- "1" Gender : has >
 Customer -- "1..*" PostalAddress : has >
 Customer -- "1" BirthDate : dateOfBirth >
@@ -248,6 +248,7 @@ PriceTable --- "1" SalesRegion: >
 Product --- "1" ProductItem: becomes >
 ProductItem --- "1" Quantity: has >
 ProductItem --- "1" PriceItem : has >
+ProductItem --- "1" ProductItemID : has >
 Product --- "1" Reference: has >
 Product --- "1" UniqueInternalCode: has >
 Product --- Dimension: has >
@@ -257,6 +258,7 @@ Product --- "1" ProductionCode: has >
 
 /'ShoppingCart '/
 ShoppingCart --- "1..*" ProductItem: has >
+ShoppingCart --- "1" ShoppingCartID: has >
 
 
 
@@ -301,6 +303,7 @@ Order --- "1" OrderID : >ShoppingCart
 Order --- "1" Status : has >
 Order --- "1" OrderActor : has >
 Order --- "1" PaymentMethod : has >
+
 Order --- "1" ShippingMethod : has >
 Order --- "1" Survey : generates >
 ShippingCost --- "1" SalesRegion: depends >

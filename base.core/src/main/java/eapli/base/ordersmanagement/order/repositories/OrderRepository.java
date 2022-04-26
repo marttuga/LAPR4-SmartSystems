@@ -16,4 +16,6 @@ public interface OrderRepository extends DomainRepository<OrderID, Order> {
     default Optional<Order> findByID(OrderID orderID) {
         return ofIdentity(orderID);
     }
+
+    Optional<Order> findOrder(OrderID orderID);
 }

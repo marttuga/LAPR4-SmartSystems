@@ -3,6 +3,7 @@ package eapli.base.ordersmanagement.product.domain;
 import eapli.base.ordersmanagement.category.domain.Category;
 import eapli.base.warehousemanagement.domain.Warehouse;
 import eapli.framework.domain.model.AggregateRoot;
+import eapli.framework.domain.model.DomainEntities;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -22,16 +23,23 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
     @Embedded
     private ShortDescription shortDescription;
 
-    private String extendedDescription;
+    @Embedded
+    private ExtendedDescription extendedDescription;
 
-    private String technicalDescription;
+    @Embedded
+    private TechnicalDescription technicalDescription;
 
     @Embedded
     private Brand brand;
 
-    private String reference;
+    @Embedded
+    private Reference reference;
 
-    private String productionCode;
+    @Embedded
+    private ProductionCode productionCode;
+
+    @Embedded
+    private Weight weight;
 
     @Embedded
     private Barcode barcode;
@@ -52,22 +60,70 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
 
 
     @Override
-    public boolean sameAs(Object other) {
-        return false;
-    }
-
-    @Override
     public int compareTo(UniqueInternalCode other) {
         return AggregateRoot.super.compareTo(other);
     }
 
+    public UniqueInternalCode uniqueInternalCode() {
+        return identity();
+    }
+
+    public UniqueInternalCode getUniqueInternalCode() {
+        return uniqueInternalCode;
+    }
+
     @Override
     public UniqueInternalCode identity() {
-        return null;
+        return this.uniqueInternalCode;
     }
 
     @Override
     public boolean hasIdentity(UniqueInternalCode id) {
         return AggregateRoot.super.hasIdentity(id);
+    }
+
+    @Override
+    public boolean sameAs(final Object other) {
+        return DomainEntities.areEqual(this, other);
+    }
+
+    public Brand getBrand() {
+        return brand;
+    }
+
+    public ShortDescription getShortDescription() {
+        return shortDescription;
+    }
+
+    public ExtendedDescription getExtendedDescription() {
+        return extendedDescription;
+    }
+
+    public TechnicalDescription getTechnicalDescription() {
+        return technicalDescription;
+    }
+
+    public Reference getReference() {
+        return reference;
+    }
+
+    public ProductionCode getProductionCode() {
+        return productionCode;
+    }
+
+    public Weight getWeight() {
+        return weight;
+    }
+
+    public Barcode getBarcode() {
+        return barcode;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public Dimension getDimension() {
+        return dimension;
     }
 }

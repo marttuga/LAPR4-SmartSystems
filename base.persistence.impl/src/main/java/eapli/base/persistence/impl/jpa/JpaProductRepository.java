@@ -12,6 +12,8 @@ import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
 
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 public class JpaProductRepository extends JpaAutoTxRepository<Product, String, String> implements ProductRepository {
@@ -31,18 +33,24 @@ public class JpaProductRepository extends JpaAutoTxRepository<Product, String, S
     }
 
     @Override
-    public Iterable<Brand> findProductsByBrand(Brand brand) {
-        return null;
+    public Optional<Product> findByBrand(Brand brand) {
+        final Map<String, Object> params = new HashMap<>();
+        params.put("productBrand", brand);
+        return matchOne("e.brand=:productBrand", params);
     }
 
     @Override
-    public Iterable<ShortDescription> findByDescription(ShortDescription description) {
-        return null;
+    public Optional<Product> findByDescription(ShortDescription description) {
+        final Map<String, Object> params = new HashMap<>();
+        params.put("productDescription", description);
+        return matchOne("e.description=:productDescription", params);
     }
 
     @Override
-    public Iterable<Category> findByCategory(Category category) {
-        return null;
+    public Optional<Product> findByCategory(Category category) {
+        final Map<String, Object> params = new HashMap<>();
+        params.put("productCategory", category);
+        return matchOne("e.category=:productCategory", params);
     }
 
 
@@ -53,5 +61,6 @@ public class JpaProductRepository extends JpaAutoTxRepository<Product, String, S
 
     @Override
     public void deleteOfIdentity(UniqueInternalCode entityId) {
+
     }
 }
