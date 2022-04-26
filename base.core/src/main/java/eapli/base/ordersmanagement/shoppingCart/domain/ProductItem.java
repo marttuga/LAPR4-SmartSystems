@@ -31,7 +31,7 @@ public class ProductItem implements AggregateRoot<ProductItemID>{
         this.product = product;
     }
 
-    public ProductItem() {
+    protected ProductItem() {
 
     }
 
