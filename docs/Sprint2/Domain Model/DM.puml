@@ -143,6 +143,7 @@ object PriceItem <<Value Object>>
         -RowBegin
         -RowEnd
         -ShelfId
+        -NrShelves
         }
 
     object AGVDock <<ValueObject>> {
@@ -280,6 +281,7 @@ AGV -- "1" MaxWeightCarry : has >
 AGV -- "1" Task : performs >
 AGV_Warehouse -- AGV: is >
 Warehouse -- "1..*" AGV_Warehouse: knows >
+Warehouse -- "1" WarehouseID: caracterized >
 
 
 /' Survey '/
