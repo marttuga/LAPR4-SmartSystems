@@ -2,6 +2,7 @@ package eapli.base.ordersmanagement.product.domain;
 
 import eapli.base.ordersmanagement.category.domain.Category;
 import eapli.framework.domain.model.AggregateRoot;
+import eapli.framework.domain.model.DomainEntities;
 
 import javax.persistence.*;
 
@@ -45,22 +46,66 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
     }
 
     @Override
-    public boolean sameAs(Object other) {
-        return false;
-    }
-
-    @Override
     public int compareTo(UniqueInternalCode other) {
         return AggregateRoot.super.compareTo(other);
     }
 
+    public UniqueInternalCode uniqueInternalCode() {
+        return identity();
+    }
+
+    public UniqueInternalCode getUniqueInternalCode() {
+        return uniqueInternalCode;
+    }
+
     @Override
     public UniqueInternalCode identity() {
-        return null;
+        return this.uniqueInternalCode;
     }
 
     @Override
     public boolean hasIdentity(UniqueInternalCode id) {
         return AggregateRoot.super.hasIdentity(id);
+    }
+
+    @Override
+    public boolean sameAs(final Object other) {
+        return DomainEntities.areEqual(this, other);
+    }
+
+    public Brand getBrand() {
+        return brand;
+    }
+
+    public ShortDescription getShortDescription() {
+        return shortDescription;
+    }
+
+    public String getExtendedDescription() {
+        return extendedDescription;
+    }
+
+    public String getTechnicalDescription() {
+        return technicalDescription;
+    }
+
+    public String getReference() {
+        return reference;
+    }
+
+    public String getProductionCode() {
+        return productionCode;
+    }
+
+    public Barcode getBarcode() {
+        return barcode;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public Dimension getDimension() {
+        return dimension;
     }
 }
