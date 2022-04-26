@@ -1,6 +1,5 @@
 package eapli.base.ordersmanagement.product.domain;
 
-import eapli.base.ordersmanagement.category.domain.Category;
 import eapli.framework.domain.model.AggregateRoot;
 
 import javax.persistence.*;
@@ -20,23 +19,30 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
     @Embedded
     private ShortDescription shortDescription;
 
-    private String extendedDescription;
+    @Embedded
+    private ExtendedDescription extendedDescription;
 
-    private String technicalDescription;
+    @Embedded
+    private TechnicalDescription technicalDescription;
 
     @Embedded
     private Brand brand;
 
-    private String reference;
+    @Embedded
+    private Reference reference;
 
-    private String productionCode;
+    @Embedded
+    private ProductionCode productionCode;
+
+    @Embedded
+    private Weight weight;
 
     @Embedded
     private Barcode barcode;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+/*    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "category")
-    private Category category;
+    private Category category;*/
 
     @Embedded
     private Dimension dimension;

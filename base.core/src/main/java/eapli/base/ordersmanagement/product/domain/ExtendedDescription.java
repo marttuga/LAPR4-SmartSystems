@@ -13,24 +13,24 @@ import java.util.regex.Pattern;
  */
 
 @Embeddable
-public class ShortDescription implements ValueObject, Comparable<ShortDescription> {
+public class ExtendedDescription implements ValueObject, Comparable<ExtendedDescription> {
 
-    @Column(name = "shortDescription")
+    @Column(name = "extendedDescription")
     private String description;
 
-    public ShortDescription(String description) throws IllegalAccessException {
+    public ExtendedDescription(String description) throws IllegalAccessException {
         if(StringPredicates.isNullOrWhiteSpace(description)) {
-            throw new IllegalAccessException("The short description cannot be null or empty!");
+            throw new IllegalAccessException("The extended description cannot be null or empty!");
         }
-        if(description.length() > 30){
-            throw new IllegalArgumentException("The description should not have more than 30 characters.");
+        if(description.length() > 100 && description.length() < 20){
+            throw new IllegalArgumentException("The description should be with a minimum of 20 chars and 100 chars maximum.");
         }
         Pattern descRegerx = Pattern.compile("");
         this.description = description;
     }
 
 
-    protected ShortDescription() {
+    protected ExtendedDescription() {
 
     }
 
@@ -45,7 +45,7 @@ public class ShortDescription implements ValueObject, Comparable<ShortDescriptio
     }
 
     @Override
-    public int compareTo(ShortDescription o) {
+    public int compareTo(ExtendedDescription o) {
         return 0;
     }
 }
