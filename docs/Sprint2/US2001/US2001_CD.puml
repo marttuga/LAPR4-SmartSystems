@@ -9,7 +9,7 @@ class UploadFileController <<application>> {
     +uploadFile()
 }
 
-class UploadFileRepository <<repository>> {
+class WarehouseRepository <<repository>> {
   +save(JSON File)
 }
 
@@ -19,7 +19,7 @@ class UploadFile <<domain>>{
 }
 
 UploadFileUI -> UploadFileController : theController
-UploadFileUI -> UploadFileRepository : repo
+UploadFileUI -> WarehouseRepository : repo
 UploadFileController -> UploadFile : the JSON File
 UploadFileUI ..> UploadFile : the JSON File
 

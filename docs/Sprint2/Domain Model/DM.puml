@@ -22,10 +22,10 @@ entity Product <<Entity>> <<Root>> {
 - extendedDescription
 - technicalDescription
 }
-object Volume <<ValueObject>>
+
 object ProductPriceDetail <<ValueObject>>
 
-
+object ProductionCode <<ValueObject>>
 
 object Barcode <<Value Object>>
 
@@ -34,12 +34,9 @@ object Picture <<Value Object>>
 object Brand <<Value Object>>
 
 
-
-
-
 object Weight <<Value Object>>
 
-object Dimensions <<Value Object>>{
+object Dimension <<Value Object>>{
 - Width
 - Height
 - Length
@@ -130,24 +127,38 @@ object PriceItem <<Value Object>>
  package Warehouse <<Aggregate>>{
 
  entity Warehouse <<Entity>> <<Root>>{
-     -Row
-     -Shelf
-     -Aisle
      }
 
-    object Plan <<ValueObject>>
+    object WarehouseID <<ValueObject>>
 
-    entity Location <<Entity>>
+    object Plan <<ValueObject>> {
+        -Length
+        -Width
+        -AisleId
+        -AisleBegin
+        -AisleEnd
+        -AisleDepth
+        -AisleAccessibility
+        -RowId
+        -RowBegin
+        -RowEnd
+        -ShelfId
+        }
 
-     object StorageArea <<ValueObject>> {
-         -AisleId
-         -RowId
-         -ShelfId
-         }
+    object AGVDock <<ValueObject>> {
+        -AGVId
+        -Begin
+        -End
+        -Depth
+        -Accessibility
+        }
+
 
  }
 
- object AGV_Warehouse <<ValueObject>>
+ object AGV_Warehouse <<ValueObject>> {
+    -AGVId
+ }
 
 package AGV <<Aggregate>>{
  entity AGV <<Entity>>{
@@ -162,8 +173,6 @@ package AGV <<Aggregate>>{
      object Model <<ValueObject>>
 
      object MaxWeightCarry <<ValueObject>>
-
-     object AGVDock <<ValueObject>>
 
      entity Task <<Entity>>
 }
@@ -244,9 +253,10 @@ ProductItem --- "1" PriceItem : has >
 ProductItem --- "1" ProductItemID : has >
 Product --- "1" Reference: has >
 Product --- "1" UniqueInternalCode: has >
-Product --- Dimensions: has >
+Product --- Dimension: has >
 Product --- "1" Weight: has >
-Product --- "1" Volume: has >
+Product --- "1" ProductionCode: has >
+
 
 /'ShoppingCart '/
 ShoppingCart --- "1..*" ProductItem: has >
@@ -265,12 +275,11 @@ AGV -- "1..*" Route: has >
 AGV -- "1" Identifier: caracterized >
 AGV -- "1" Model: has >
 Warehouse -- "1" Plan: >
+Plan -- "1..*" AGVDock : has >
 AGV -- "1" MaxWeightCarry : has >
-AGV -- "1" AGVDock : has >
 AGV -- "1" Task : performs >
 AGV_Warehouse -- AGV: is >
 Warehouse -- "1..*" AGV_Warehouse: knows >
-Plan -- Location: has >
 
 
 /' Survey '/
@@ -307,8 +316,6 @@ PriceOrder --- Order: depends >
 PriceOrder --- ShippingCost: depends >
 
 
-
-
 /'  Question '/
 Question --- "1..*" Answer: has >
 Question --- "1" GeneralQuestions: is <
@@ -319,6 +326,5 @@ Answer --- "1" Type: has >
 /' Joined Aggregates '/
 Customer "1" -- "0..*" Order: places >
 Customer "1" -- "0..*" Product: chooses >
-Warehouse -- "1..*" StorageArea: contains >
-StorageArea -- "1..*" Product: stores >
+Warehouse -- "1..*" Product: stored in <
 @enduml
