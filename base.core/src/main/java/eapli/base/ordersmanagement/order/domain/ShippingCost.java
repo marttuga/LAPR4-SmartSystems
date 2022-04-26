@@ -1,5 +1,6 @@
 package eapli.base.ordersmanagement.order.domain;
 
+import eapli.base.ordersmanagement.product.domain.Weight;
 import eapli.framework.domain.model.ValueObject;
 
 import javax.persistence.Embeddable;
@@ -10,25 +11,21 @@ import javax.persistence.Enumerated;
 @Embeddable
 public class ShippingCost implements ValueObject {
 
-    private int shippingCost;
+    private double shippingCost;
 
     @Embedded
     @Enumerated(EnumType.STRING)
     private SalesRegion salesRegion;
 
-/*    @Embedded
-    private Weight weight;
-
     @Embedded
-    private Volume volume;
+    private Weight weight;
 
     public ShippingCost() {
     }
 
-    public ShippingCost(int shippingCost, SalesRegion salesRegion, Weight weight, Volume volume) {
+    public ShippingCost(double shippingCost, SalesRegion salesRegion, Weight weight) {
         this.shippingCost = shippingCost;
         this.salesRegion = salesRegion;
         this.weight = weight;
-        this.volume = volume;
-    }*/
+    }
 }
