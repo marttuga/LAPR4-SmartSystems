@@ -1,14 +1,12 @@
 package eapli.base.ordersmanagement.product.domain;
 
 import eapli.base.ordersmanagement.category.domain.Category;
-import eapli.base.warehousemanagement.domain.Plan;
-import eapli.base.warehousemanagement.domain.Warehouse;
-import eapli.base.warehousemanagement.domain.WarehouseID;
+import eapli.base.ordersmanagement.warehousemanagement.domain.Warehouse;
+import eapli.base.ordersmanagement.warehousemanagement.domain.WarehouseID;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 /**
  *
@@ -143,5 +141,25 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
 
     public WarehouseID getWarehouseID() {
         return warehouseID;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "uniqueInternalCode=" + uniqueInternalCode +
+                ", shortDescription=" + shortDescription +
+                ", extendedDescription=" + extendedDescription +
+                ", technicalDescription=" + technicalDescription +
+                ", brand=" + brand +
+                ", reference=" + reference +
+                ", productionCode=" + productionCode +
+                ", weight=" + weight +
+                ", barcode=" + barcode +
+                ", priceDetail=" + priceDetail +
+                ", category=" + category +
+                ", dimension=" + dimension +
+                ", warehouseID=" + warehouseID +
+                ", warehouse=" + warehouse +
+                '}';
     }
 }

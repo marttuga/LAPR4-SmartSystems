@@ -6,7 +6,7 @@ import eapli.framework.domain.model.DomainEntities;
 
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Category implements AggregateRoot<CategoryCode> {
@@ -17,7 +17,7 @@ public class Category implements AggregateRoot<CategoryCode> {
     private CategoryCode categoryCode;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Product> productList;
+    private Set<Product> productList;
 
     public Category() {}
 
