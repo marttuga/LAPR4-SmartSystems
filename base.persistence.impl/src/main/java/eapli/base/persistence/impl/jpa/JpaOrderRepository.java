@@ -7,6 +7,8 @@ import eapli.base.ordersmanagement.order.repositories.OrderRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 public class JpaOrderRepository extends JpaAutoTxRepository<Order, String, String> implements OrderRepository {
@@ -22,6 +24,13 @@ public class JpaOrderRepository extends JpaAutoTxRepository<Order, String, Strin
     }
 
     @Override
+    public Optional<Order> findOrder(OrderID orderID) {
+        final Map<String, Object> params = new HashMap<>();
+        params.put("OrderIdentification", orderID);
+        return matchOne("e.orderID=:OrderIdentification", params);
+    }
+
+    @Override
     public Optional<Order> ofIdentity(OrderID id) {
         return Optional.empty();
     }
@@ -29,4 +38,5 @@ public class JpaOrderRepository extends JpaAutoTxRepository<Order, String, Strin
     @Override
     public void deleteOfIdentity(OrderID entityId) {
     }
+
 }

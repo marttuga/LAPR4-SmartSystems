@@ -1,7 +1,9 @@
 package eapli.base.ordersmanagement.order.domain;
 
 
+import eapli.base.ordersmanagement.product.domain.UniqueInternalCode;
 import eapli.framework.domain.model.AggregateRoot;
+import eapli.framework.domain.model.DomainEntities;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -35,14 +37,8 @@ public class Order implements AggregateRoot<OrderID> {
     @JoinColumn(name = "costumer_id")
     private Costumer costumer;*/
 
-    
+
     public Order() {
-    }
-
-
-    @Override
-    public boolean sameAs(Object other) {
-        return false;
     }
 
     @Override
@@ -52,7 +48,7 @@ public class Order implements AggregateRoot<OrderID> {
 
     @Override
     public OrderID identity() {
-        return null;
+        return this.orderID;
     }
 
     @Override
@@ -60,7 +56,34 @@ public class Order implements AggregateRoot<OrderID> {
         return AggregateRoot.super.hasIdentity(id);
     }
 
-    ;
+    @Override
+    public boolean sameAs(final Object other) {
+        return DomainEntities.areEqual(this, other);
+    }
+
+    public OrderID orderID() {
+        return identity();
+    }
+
+    public OrderID getOrderID() {
+        return orderID;
+    }
+
+    public Date getDateTime() {
+        return dateTime;
+    }
+
+    public int getPriceOrder() {
+        return priceOrder;
+    }
 
 
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public OrderActor getOrderActor() {
+        return orderActor;
+    }
 }
