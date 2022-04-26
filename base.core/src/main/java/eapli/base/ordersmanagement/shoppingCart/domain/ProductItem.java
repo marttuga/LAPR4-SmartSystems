@@ -31,6 +31,10 @@ public class ProductItem implements AggregateRoot<ProductItemID>{
         this.product = product;
     }
 
+    public ProductItem() {
+
+    }
+
     @Override
     public String toString() {
         return "ProductItem:" +
