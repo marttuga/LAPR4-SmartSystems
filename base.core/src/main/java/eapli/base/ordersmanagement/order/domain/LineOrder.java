@@ -9,4 +9,6 @@ public class LineOrder implements ValueObject {
 
     private int priceOrderWithoutTaxes;
 
+
+
 }

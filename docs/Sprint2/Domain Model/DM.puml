@@ -79,7 +79,9 @@ object ShippingCost <<ValueObject>>
 
 
 
-   object ShippingMethod <<Value Object>>
+   object ShippingMethod <<Value Object>>{
+   - type
+   }
 
      object Status <<Value Object>>
 }
@@ -295,8 +297,6 @@ LineOrder --- "1" ProductItem: has >
 
 /' ShippingCost '/
 ShippingCost --- Weight: depends >
-ShippingCost --- Volume: depends >
-
 
 /' Order '/
 Order --- "1" OrderID : >ShoppingCart

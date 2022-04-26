@@ -1,12 +1,16 @@
-/*
-package eapli.base.ordersmanagement.domain;
+package eapli.base.ordersmanagement.order.domain;
+
+import eapli.framework.domain.model.ValueObject;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
-@Entity
-public class PaymentMethod implements Serializable {
-
+@Embeddable
+public enum PaymentMethod implements ValueObject {
+    PAY_PAL,
+    MBWAY,
+    CREDIT_CARD,
+    BANK_TRANSFERS,
+    VENMO,
 }
-*/
+
 

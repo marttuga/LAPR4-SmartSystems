@@ -1,7 +1,6 @@
 package eapli.base.ordersmanagement.order.domain;
-
-
-import eapli.base.ordersmanagement.product.domain.UniqueInternalCode;
+import eapli.base.ordersmanagement.customer.domain.Customer;
+import eapli.base.ordersmanagement.survey.domain.Survey;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 
@@ -12,7 +11,6 @@ import java.util.Date;
 public class Order implements AggregateRoot<OrderID> {
 
     private Date dateTime;
-    private int priceOrder;
 
     @EmbeddedId
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,20 +23,54 @@ public class Order implements AggregateRoot<OrderID> {
     @Embedded
     private OrderActor orderActor;
 
-  /*  @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "paymentMethod_id")
-    private PaymentMethod paymentMethod;*/
+    @Embedded
+    private PaymentMethod paymentMethod;
 
-/*    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @Embedded
+    private ShippingMethod shippingMethod;
+
+    @Embedded
+    private PriceOrder priceOrder;
+
+    @Embedded
+    private LineOrder lineOrder;
+
+   @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "survey_code")
-    private Survey survey;*/
+    private Survey survey;
 
-/*    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "costumer_id")
-    private Costumer costumer;*/
+    private Customer costumer;
 
+    public Order(Date dateTime, Status status, OrderActor orderActor, PaymentMethod paymentMethod, ShippingMethod shippingMethod, PriceOrder priceOrder, LineOrder lineOrder, Survey survey, Customer costumer) {
+        this.dateTime = dateTime;
+        this.status = status;
+        this.orderActor = orderActor;
+        this.paymentMethod = paymentMethod;
+        this.shippingMethod = shippingMethod;
+        this.priceOrder = priceOrder;
+        this.lineOrder = lineOrder;
+        this.survey = survey;
+        this.costumer = costumer;
+    }
 
     public Order() {
+    }
+
+    @Override
+    public String toString() {
+        return "Order:" +
+                "dateTime=" + dateTime +
+                ", orderID=" + orderID +
+                ", status=" + status +
+                ", orderActor=" + orderActor +
+                ", paymentMethod=" + paymentMethod +
+                ", shippingMethod=" + shippingMethod +
+                ", priceOrder=" + priceOrder +
+                ", lineOrder=" + lineOrder +
+                ", survey=" + survey +
+                ", costumer=" + costumer;
     }
 
     @Override
@@ -73,12 +105,6 @@ public class Order implements AggregateRoot<OrderID> {
         return dateTime;
     }
 
-    public int getPriceOrder() {
-        return priceOrder;
-    }
-
-
-
     public Status getStatus() {
         return status;
     }
@@ -86,4 +112,30 @@ public class Order implements AggregateRoot<OrderID> {
     public OrderActor getOrderActor() {
         return orderActor;
     }
+
+    public PaymentMethod getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public ShippingMethod getShippingMethod() {
+        return shippingMethod;
+    }
+
+    public PriceOrder getPriceOrder() {
+        return priceOrder;
+    }
+
+    public Customer getCostumer() {
+        return costumer;
+    }
+
+    public LineOrder getLineOrder() {
+        return lineOrder;
+    }
+
+    public Survey getSurvey() {
+        return survey;
+    }
+
+
 }
