@@ -79,7 +79,9 @@ object ShippingCost <<ValueObject>>
 
 
 
-   object ShippingMethod <<Value Object>>
+   object ShippingMethod <<Value Object>>{
+   - type
+   }
 
      object Status <<Value Object>>
 }
