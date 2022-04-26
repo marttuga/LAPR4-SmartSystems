@@ -321,5 +321,5 @@ Answer --- "1" Type: has >
 /' Joined Aggregates '/
 Customer "1" -- "0..*" Order: places >
 Customer "1" -- "0..*" Product: chooses >
-Warehouse -- "1..*" Product: stores >
+Warehouse -- "1..*" Product: stored in <
 @enduml
