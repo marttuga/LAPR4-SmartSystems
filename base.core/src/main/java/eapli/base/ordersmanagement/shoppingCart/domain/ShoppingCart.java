@@ -24,7 +24,6 @@ public class ShoppingCart implements AggregateRoot<ShoppingCartID>{
     }
 
     public ShoppingCart(ShoppingCartID shoppingCartID, ProductItem productItem) {
-        this.shoppingCartID = shoppingCartID;
         this.productItem = productItem;
     }
 

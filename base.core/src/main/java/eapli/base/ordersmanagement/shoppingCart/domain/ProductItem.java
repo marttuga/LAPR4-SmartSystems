@@ -24,6 +24,13 @@ public class ProductItem implements AggregateRoot<ProductItemID>{
     @JoinColumn(name = "product_code")
     private Product product;
 
+    public ProductItem(double priceItem, int quantity, LineOrder lineOrder, Product product) {
+        this.priceItem = priceItem;
+        this.quantity = quantity;
+        this.lineOrder = lineOrder;
+        this.product = product;
+    }
+
     @Override
     public String toString() {
         return "ProductItem:" +
