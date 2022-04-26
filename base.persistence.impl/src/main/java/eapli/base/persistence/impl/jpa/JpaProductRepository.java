@@ -33,7 +33,7 @@ public class JpaProductRepository extends JpaAutoTxRepository<Product, String, S
     }
 
     @Override
-    public Optional<Product> findProductsByBrand(Brand brand) {
+    public Optional<Product> findByBrand(Brand brand) {
         final Map<String, Object> params = new HashMap<>();
         params.put("productBrand", brand);
         return matchOne("e.brand=:productBrand", params);

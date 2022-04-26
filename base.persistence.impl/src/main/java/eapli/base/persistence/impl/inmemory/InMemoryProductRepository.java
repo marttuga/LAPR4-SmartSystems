@@ -23,7 +23,7 @@ public class InMemoryProductRepository extends InMemoryDomainRepository<Product,
     }
 
     @Override
-    public Optional<Product> findProductsByBrand(Brand brand) {
+    public Optional<Product> findByBrand(Brand brand) {
         return matchOne(e -> e.getBrand().equals(brand));
     }
 
@@ -31,6 +31,7 @@ public class InMemoryProductRepository extends InMemoryDomainRepository<Product,
     public Optional<Product> findByDescription(ShortDescription description) {
         return matchOne(e -> e.getShortDescription().equals(description));
     }
+
 
     @Override
     public Optional<Product> findByCategory(Category category) {

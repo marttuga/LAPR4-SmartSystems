@@ -21,16 +21,23 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
     @Embedded
     private ShortDescription shortDescription;
 
-    private String extendedDescription;
+    @Embedded
+    private ExtendedDescription extendedDescription;
 
-    private String technicalDescription;
+    @Embedded
+    private TechnicalDescription technicalDescription;
 
     @Embedded
     private Brand brand;
 
-    private String reference;
+    @Embedded
+    private Reference reference;
 
-    private String productionCode;
+    @Embedded
+    private ProductionCode productionCode;
+
+    @Embedded
+    private Weight weight;
 
     @Embedded
     private Barcode barcode;
@@ -81,20 +88,24 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
         return shortDescription;
     }
 
-    public String getExtendedDescription() {
+    public ExtendedDescription getExtendedDescription() {
         return extendedDescription;
     }
 
-    public String getTechnicalDescription() {
+    public TechnicalDescription getTechnicalDescription() {
         return technicalDescription;
     }
 
-    public String getReference() {
+    public Reference getReference() {
         return reference;
     }
 
-    public String getProductionCode() {
+    public ProductionCode getProductionCode() {
         return productionCode;
+    }
+
+    public Weight getWeight() {
+        return weight;
     }
 
     public Barcode getBarcode() {
