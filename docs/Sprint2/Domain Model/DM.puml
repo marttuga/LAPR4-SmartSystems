@@ -134,17 +134,33 @@ object PriceItem <<Value Object>>
     object Plan <<ValueObject>> {
         -Length
         -Width
-        -AisleId
-        -AisleBegin
-        -AisleEnd
-        -AisleDepth
-        -AisleAccessibility
-        -RowId
-        -RowBegin
-        -RowEnd
-        -ShelfId
-        -NrShelves
+        -Square
+        -Unit
         }
+
+    object Aisle <<ValueObject>> {
+        -Id
+        -LsquareBegin
+        -WsquareBegin
+        -LsquareEnd
+        -WsquareEnd
+        -BeginDepth
+        -EndDepth
+        -Accessibility
+    }
+
+    object Row <<ValueObject>> {
+         -Id
+         -LsquareBegin
+         -WsquareBegin
+         -LsquareEnd
+         -WsquareEnd
+        }
+
+    object Shelf <<ValueObject>> {
+             -Id
+             -NrShelves
+            }
 
     object AGVDock <<ValueObject>> {
         -AGVId
@@ -275,13 +291,16 @@ Category "0..1" --- "1" Category: is sub-category of >
 AGV -- "1..*" Route: has >
 AGV -- "1" Identifier: caracterized >
 AGV -- "1" Model: has >
-Warehouse -- "1" Plan: >
-Plan -- "1..*" AGVDock : has >
+Warehouse -- "1" Plan: > has
+Warehouse -- "1..*" AGVDock : has >
 AGV -- "1" MaxWeightCarry : has >
 AGV -- "1" Task : performs >
 AGV_Warehouse -- AGV: is >
 Warehouse -- "1..*" AGV_Warehouse: knows >
 Warehouse -- "1" WarehouseID: caracterized >
+Warehouse -- "1..*" Aisle : has >
+Warehouse -- "1..*" Row: has >
+Warehouse -- "1..*" Shelf: has >
 
 
 /' Survey '/
