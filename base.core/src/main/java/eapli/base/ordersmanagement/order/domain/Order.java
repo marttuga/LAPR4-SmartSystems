@@ -12,7 +12,7 @@ import java.util.Date;
 public class Order implements AggregateRoot<OrderID> {
 
     private Date dateTime;
-    private int priceOrder;
+
 
     @EmbeddedId
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,9 +25,14 @@ public class Order implements AggregateRoot<OrderID> {
     @Embedded
     private OrderActor orderActor;
 
-  /*  @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "paymentMethod_id")
-    private PaymentMethod paymentMethod;*/
+    @Embedded
+    private PaymentMethod paymentMethod;
+
+    @Embedded
+    private ShippingMethod shippingMethod;
+
+    @Embedded
+    private PriceOrder priceOrder;
 
 /*    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "survey_code")
@@ -73,12 +78,6 @@ public class Order implements AggregateRoot<OrderID> {
         return dateTime;
     }
 
-    public int getPriceOrder() {
-        return priceOrder;
-    }
-
-
-
     public Status getStatus() {
         return status;
     }
@@ -86,4 +85,18 @@ public class Order implements AggregateRoot<OrderID> {
     public OrderActor getOrderActor() {
         return orderActor;
     }
+
+    public PaymentMethod getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public ShippingMethod getShippingMethod() {
+        return shippingMethod;
+    }
+
+    public PriceOrder getPriceOrder() {
+        return priceOrder;
+    }
+
+
 }
