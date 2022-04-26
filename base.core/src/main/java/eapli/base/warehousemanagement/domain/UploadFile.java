@@ -188,7 +188,7 @@ public class UploadFile {
         JSONObject unit = (JSONObject) string.get("Unit");
         JSONArray aisles = (JSONArray) string.get("Aisles");
         JSONArray rows = (JSONArray) string.get("Rows");
-        JSONArray AGVDocks = (JSONArray) string.get("AGVDocks");
+        JSONArray AGVDock = (JSONArray) string.get("AGVDocks");
 
         System.out.println("Length: " + length);
         System.out.println("Width: " + width);
@@ -214,8 +214,8 @@ public class UploadFile {
            }
        }
 
-        for(int p = 0; p < AGVDocks.toArray().length; p++){
-            JSONObject t = (JSONObject) AGVDocks.get(p);
+        for(int p = 0; p < AGVDock.toArray().length; p++){
+            JSONObject t = (JSONObject) AGVDock.get(p);
             System.out.println("Id: " + t.get("Id"));
             System.out.println("Begin: " + t.get("begin"));
             System.out.println("End" + t.get("end"));
