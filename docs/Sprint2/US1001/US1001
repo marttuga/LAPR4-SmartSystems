@@ -63,7 +63,7 @@ At the end the system shows all the data and asks for confirmation.
 
 ## 3.2. Class Diagram
 
-*Nesta secção deve apresentar e descrever as principais classes envolvidas na realização da funcionalidade.*
+![CD](US1001_CD.svg)
 
 ## 3.3. Applied Patterns
 
