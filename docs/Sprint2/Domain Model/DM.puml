@@ -79,11 +79,14 @@ entity PaymentMethod <<Entity>>
 
 object ShippingCost <<ValueObject>>
 
+object ShippingMethodID <<ValueObject>>
+
+object PaymentMethodID <<ValueObject>>
+
 
 
 
    entity ShippingMethod <<Entity>>{
-    -Type
     }
 
      object Status <<Value Object>>
@@ -120,10 +123,11 @@ object VATIdentifier <<Value Object>>
 'SHOPPING CART'
 package ShoppingCart <<Aggregate>>{
 entity ShoppingCart <<Entity>> <<Root>>
-object ProductItem <<Value Object>>
+object ShoppingCartID <<Value Object>>
+entity ProductItem <<Entity>>
 object Quantity <<Value Object>>
-
-entity PriceItem <<Entity>>
+object ProductItemID <<Value Object>>
+object PriceItem <<Value Object>>
 }
 /' WarehouseManagement '/
  package Warehouse <<Aggregate>>{
@@ -239,6 +243,7 @@ PriceTable --- "1" SalesRegion: >
 Product --- "1" ProductItem: becomes >
 ProductItem --- "1" Quantity: has >
 ProductItem --- "1" PriceItem : has >
+ProductItem --- "1" ProductItemID : has >
 Product --- "1" Reference: has >
 Product --- "1" UniqueInternalCode: has >
 Product --- Dimensions: has >
@@ -247,6 +252,7 @@ Product --- "1" Volume: has >
 
 /'ShoppingCart '/
 ShoppingCart --- "1..*" ProductItem: has >
+ShoppingCart --- "1" ShoppingCartID: has >
 
 
 
@@ -292,11 +298,13 @@ Order --- "1" OrderID : >ShoppingCart
 Order --- "1" Status : has >
 Order --- "1" OrderActor : has >
 Order --- "1" PaymentMethod : has >
+PaymentMethod --- "1" PaymentMethodID : has >
+
 Order --- "1" ShippingMethod : has >
 Order --- "1" Survey : generates >
 ShippingCost --- "1" SalesRegion: depends >
 ShippingMethod--- "1" ShippingCost: has >
-
+ShippingMethod--- "1" ShippingMethodID: has >
 
 
 PriceOrder --- Order: depends >
