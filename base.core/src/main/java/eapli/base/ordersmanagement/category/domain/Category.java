@@ -1,7 +1,4 @@
 package eapli.base.ordersmanagement.category.domain;
-
-import eapli.base.ordersmanagement.product.domain.Product;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -15,10 +12,6 @@ public class Category implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "category")
 private Category subcategory;
-
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "product")
-    private Product product;
 
     public Category(){};
 
