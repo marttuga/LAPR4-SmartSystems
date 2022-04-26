@@ -94,9 +94,9 @@ object PaymentMethodID <<ValueObject>>
 
 
 package Customer <<Aggregate>>{
-entity Customer <<Entity>> <<Root>>{
-- CustomerID
-}
+entity Customer <<Entity>> <<Root>>
+
+object CustomerId <<ValueObject>>
 
 object PhoneNumber <<Value Object>>
 
@@ -222,6 +222,7 @@ User --- Customer : is an <
 
 /' Customer '/
 Customer -- "1" Name : has >
+Customer -- "1" CustomerId : has >
 Customer -- "1" Gender : has >
 Customer -- "1..*" PostalAddress : has >
 Customer -- "1" BirthDate : dateOfBirth >
