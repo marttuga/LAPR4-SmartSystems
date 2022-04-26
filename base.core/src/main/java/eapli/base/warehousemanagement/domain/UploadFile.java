@@ -55,7 +55,7 @@ public class UploadFile {
                 String access = (String) f.get("accessibility");
 
             /*
-            TODO: Construtores
+            TODO:
              */
 
 
@@ -113,7 +113,7 @@ public class UploadFile {
                 this.agvDockList.add(agvDock);
             }
             //TODO:
-            // this.warehouse = new Warehouse(warehousePlan,);
+            // warehouse
 
         } catch (Exception e) {
             e.printStackTrace();
