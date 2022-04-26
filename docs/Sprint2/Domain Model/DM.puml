@@ -297,8 +297,6 @@ LineOrder --- "1" ProductItem: has >
 
 /' ShippingCost '/
 ShippingCost --- Weight: depends >
-ShippingCost --- Volume: depends >
-
 
 /' Order '/
 Order --- "1" OrderID : >ShoppingCart
