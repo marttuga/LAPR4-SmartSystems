@@ -2,226 +2,121 @@ package eapli.base.warehousemanagement.domain;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
+import java.io.FileReader;
+import java.util.List;
 
 
 public class UploadFile {
 
-    public static void main(String[] args)  {
+    private Warehouse warehouse;
+    private List<AGVDock> agvDockList;
+    private List<Aisle> aisleList;
+    private List<Row> rowList;
 
-        //entrada: string json com dados do armazém
-        String jsonStr =
-        "{" +
-                 "\"Warehouse\":\"Warehouse Plan\"" +
-                 "\"Length\": 2800," +
-                 "\"Width\": 2000," +
-                 "\"Square\": 100," +
-                 "\"Unit\":\"cm\"," +
-                 "\"Aisles\":" +
-                         "[" +
-                         "{" +
-                         "\"Id\":1," +
-                         "\"begin\":{ \"lsquare\":5,\"wsquare\":1}," +
-                         "\"end\":{ \"lsquare\":16,\"wsquare\":1}," +
-                         "\"depth\":{ \"lsquare\":16,\"wsquare\":1}," +
-                         "\"accessibility\":\"w+\"," +
-                         "\"rows\":"+
-                            "[" +
-                            "{" +
-                                "\"Id\":1," +
-                                "\"begin\":{ \"lsquare\":5,\"wsquare\":1}," +
-                                "\"end\":{ \"lsquare\":7,\"wsquare\":1}," +
-                                "\"shelves\":3" +
-                            "}," +
-                            "{" +
-                                "\"Id\":2," +
-                                "\"begin\":{ \"lsquare\":8,\"wsquare\":1}," +
-                                "\"end\":{\"lsquare\":12,\"wsquare\":1}," +
-                                "\"shelves\":4" +
-                            "}," +
-                            "{" +
-                                "\"Id\":3," +
-                                "\"begin\":{ \"lsquare\":13,\"wsquare\":1}," +
-                                "\"end\":{ \"lsquare\":16,\"wsquare\":1}," +
-                                "\"shelves\":8" +
-                            "}" +
-                        "]" +
-                 "}," +
-                 "{" +
-                        "\"Id\":2," +
-                        "\"begin\":{ \"lsquare\":5,\"wsquare\":8}," +
-                        "\"end\":{ \"lsquare\":16,\"wsquare\":8}," +
-                        "\"depth\":{ \"lsquare\":16,\"wsquare\":9}," +
-                        "\"accessibility\":\"w-\"," +
-                        "\"rows\":"+
-                            "[" +
-                            "{" +
-                                "\"Id\":1," +
-                                "\"begin\":{ \"lsquare\":5,\"wsquare\":8}," +
-                                "\"end\":{ \"lsquare\":9,\"wsquare\":8}," +
-                                "\"shelves\":5" +
-                                "}," +
-                                "{" +
-                                "\"Id\":2," +
-                                "\"begin\":{ \"lsquare\":10,\"wsquare\":8}," +
-                                "\"end\":{ \"lsquare\":11,\"wsquare\":8}," +
-                                "\"shelves\":1" +
-                                "}," +
-                                "{" +
-                                "\"Id\":3," +
-                                "\"begin\":{ \"lsquare\":12,\"wsquare\":8}," +
-                                "\"end\":{ \"lsquare\":13,\"wsquare\":8}," +
-                                "\"shelves\":4" +
-                                "}," +
-                                "{" +
-                                "\"Id\":4," +
-                                "\"begin\":{ \"lsquare\":14,\"wsquare\":8}," +
-                                "\"end\":{ \"lsquare\":16,\"wsquare\":8}," +
-                                "\"shelves\":6" +
-                                "}" +
-                            "]" +
-                 "}," +
-                 "{" +
-                        "\"Id\":3," +
-                        "\"begin\":{ \"lsquare\":5,\"wsquare\":11}," +
-                        "\"end\":{ \"lsquare\":16,\"wsquare\":11}," +
-                        "\"depth\":{ \"lsquare\":16,\"wsquare\":10}," +
-                        "\"accessibility\":\"w+\"," +
-                        "\"rows\":"+
-                            "[" +
-                            "{" +
-                                "\"Id\":1," +
-                                "\"begin\":{ \"lsquare\":5,\"wsquare\":11}," +
-                                "\"end\":{ \"lsquare\":11,\"wsquare\":11}," +
-                                "\"shelves\":4" +
-                                "}," +
-                                "{" +
-                                "\"Id\":2," +
-                                "\"begin\":{ \"lsquare\":12,\"wsquare\":11}," +
-                                "\"end\":{ \"lsquare\":16,\"wsquare\":11}," +
-                                "\"shelves\":10" +
-                                "}," +
-                            "]" +
-                 "}," +
-                 "{" +
-                        "\"Id\":4," +
-                        "\"begin\":{ \"lsquare\":5,\"wsquare\":18}," +
-                        "\"end\":{ \"lsquare\":16,\"wsquare\":18}," +
-                        "\"depth\":{ \"lsquare\":16,\"wsquare\":18}," +
-                        "\"accessibility\":\"w-\"," +
-                        "\"rows\":"+
-                            "[" +
-                            "{" +
-                                "\"Id\":1," +
-                                "\"begin\":{ \"lsquare\":5,\"wsquare\":18}," +
-                                "\"end\":{ \"lsquare\":8,\"wsquare\":18}," +
-                                "\"shelves\":4" +
-                                "}," +
-                                "{" +
-                                "\"Id\":2," +
-                                "\"begin\":{ \"lsquare\":9, \"wsquare\":18}," +
-                                "\"end\":{ \"lsquare\":12,\"wsquare\":18}," +
-                                "\"shelves\":4" +
-                                "}," +
-                                "{" +
-                                "\"Id\":3," +
-                                "\"begin\":{ \"lsquare\":13,\"wsquare\":18}," +
-                                "\"end\":{ \"lsquare\":16,\"wsquare\":18}," +
-                                "\"shelves\":8" +
-                                "}," +
-                            "]" +
-                 "}" +
-        "]," +
-        "\"AGVDocks\":[" +
-                "{" +
-                        "\"Id\":\"D1\"" +
-                        "\"begin\":" + "{" + "\"lsquare\":1," + "\"wsquare\":3" +  "}," +
-                        "\"end\":" + "{" + "\"lsquare\":1," + "\"wsquare\":3" + "}," +
-                        "\"depth\":" + "{" + "\"lsquare\":1," + "\"wsquare\":3" + "}," +
-                        "\"accessibility\":\"l+\"," +
-                "}," +
-                "{" +
-                        "\"Id\":\"D2\"" +
-                        "\"begin\":" + "{" + "\"lsquare\":1," + "\"wsquare\":5" +  "}," +
-                        "\"end\":" + "{" + "\"lsquare\":1," + "\"wsquare\":5" + "}," +
-                        "\"depth\":" + "{" + "\"lsquare\":1," + "\"wsquare\":5" + "}," +
-                        "\"accessibility\":\"l+\"," +
-                "}," +
-                "{" +
-                        "\"Id\":\"D3\"" +
-                        "\"begin\":" + "{" + "\"lsquare\":1," + "\"wsquare\":13" +  "}," +
-                        "\"end\":" + "{" + "\"lsquare\":1," + "\"wsquare\":13" + "}," +
-                        "\"depth\":" + "{" + "\"lsquare\":1," + "\"wsquare\":13" + "}," +
-                        "\"accessibility\":\"l+\"," +
-                "}," +
-                "{" +
-                        "\"Id\":\"D4\"" +
-                        "\"begin\":" + "{" + "\"lsquare\":1," + "\"wsquare\":15" +  "}," +
-                        "\"end\":" + "{" + "\"lsquare\":1," + "\"wsquare\":15" + "}," +
-                        "\"depth\":" + "{" + "\"lsquare\":1," + "\"wsquare\":15" + "}," +
-                        "\"accessibility\":\"l+\"," +
-                "}," +
-                "{" +
-                        "\"Id\":\"D5\"" +
-                        "\"begin\":" + "{" + "\"lsquare\":20," + "\"wsquare\":4" +  "}," +
-                        "\"end\":" + "{" + "\"lsquare\":20," + "\"wsquare\":4" + "}," +
-                        "\"depth\":" + "{" + "\"lsquare\":20," + "\"wsquare\":4" + "}," +
-                        "\"accessibility\":\"l-\"," +
-                "}," +
-                "{" +
-                        "\"Id\":\"D6\"" +
-                        "\"begin\":" + "{" + "\"lsquare\":20," + "\"wsquare\":14" +  "}," +
-                        "\"end\":" + "{" + "\"lsquare\":20," + "\"wsquare\":14" + "}," +
-                        "\"depth\":" + "{" + "\"lsquare\":20," + "\"wsquare\":14" + "}," +
-                        "\"accessibility\":\"l-\"," +
-                "}," +
-        "]" +
-    "}";
+    public void uploadFile(String file_name) {
 
-        //importa a string para um JSONObject
-        JSONObject string = (JSONObject) new JSONObject().get(jsonStr);
+        //importa a o fich para um JSONObject
+        JSONParser parser = new JSONParser();
+        try {
+            Object obj = parser.parse(new FileReader(file_name));   //para ler o ficheiro
+            JSONObject jsonObject = (JSONObject) obj;
 
-        //Obtém os objetos
-        JSONObject length = (JSONObject) string.get("Length");
-        JSONObject width = (JSONObject) string.get("Width");
-        JSONObject square = (JSONObject) string.get("Square");
-        JSONObject unit = (JSONObject) string.get("Unit");
-        JSONArray aisles = (JSONArray) string.get("Aisles");
-        JSONArray rows = (JSONArray) string.get("Rows");
-        JSONArray AGVDock = (JSONArray) string.get("AGVDocks");
 
-        System.out.println("Length: " + length);
-        System.out.println("Width: " + width);
-        System.out.println("Square: " + square);
-        System.out.println("Unit: " + unit);
+            //Obtém os objetos
+            Integer length = Integer.parseInt((String) jsonObject.get("Length"));
+            Integer width = Integer.parseInt((String) jsonObject.get("Width"));
+            Integer square = Integer.parseInt((String) jsonObject.get("Square"));
+            String unit = (String) jsonObject.get("Unit");
 
-       for(int i = 0; i < aisles.toArray().length; i++){
-           JSONObject f = (JSONObject) aisles.get(i);
+            Plan warehousePlan = new Plan(length, width, square, unit);
 
-           System.out.println("Id: " + f.get("Id"));
-           System.out.println("Begin: " + f.get("begin"));
-           System.out.println("End" + f.get("end"));
-           System.out.println("Depth" + f.get("depth"));
-           System.out.println("Accessibility" + f.get("accessibility"));
-           System.out.println("Rows" + f.get("rows"));
+            JSONArray aisles = (JSONArray) jsonObject.get("Aisles");
 
-           for(int j = 0; j < rows.toArray().length; i++){
-               JSONObject h = (JSONObject) rows.get(j);
-               System.out.println("Id: " + h.get("Id"));
-               System.out.println("Begin: " + h.get("begin"));
-               System.out.println("End" + h.get("end"));
-               System.out.println("Shelves" + h.get("shelves"));
-           }
-       }
+            for (int i = 0; i < aisles.size(); i++) {
+                JSONObject f = (JSONObject) aisles.get(i);
 
-        for(int p = 0; p < AGVDock.toArray().length; p++){
-            JSONObject t = (JSONObject) AGVDock.get(p);
-            System.out.println("Id: " + t.get("Id"));
-            System.out.println("Begin: " + t.get("begin"));
-            System.out.println("End" + t.get("end"));
-            System.out.println("Depth" + t.get("depth"));
-            System.out.println("Accessibility" + t.get("accessibility"));
+                //id
+                Integer id = Integer.parseInt((String) f.get("Id"));
+                //begin
+                JSONObject jsonObjectB = (JSONObject) f.get("begin");
+                Integer lsquareB = Integer.parseInt((String) jsonObjectB.get("lsquare"));
+                Integer wsquareB = Integer.parseInt((String) jsonObjectB.get("wsquare"));
+                //end
+                JSONObject jsonObjectE = (JSONObject) f.get("end");
+                Integer lsquareE = Integer.parseInt((String) jsonObjectE.get("lsquare"));
+                Integer wsquareE = Integer.parseInt((String) jsonObjectE.get("wsquare"));
+                //depth
+                JSONObject jsonObjectD = (JSONObject) f.get("depth");
+                Integer lsquareD = Integer.parseInt((String) f.get("lsquare"));
+                Integer wsquareD = Integer.parseInt((String) f.get("wsquare"));
+                //accessibility
+                String access = (String) f.get("accessibility");
+
+            /*
+            TODO: Construtores
+             */
+
+
+                JSONArray rows = (JSONArray) f.get("rows");
+
+                for (int j = 0; j < rows.size(); j++) {
+                    JSONObject h = (JSONObject) rows.get(j);
+
+                    //id
+                    Integer rowId = Integer.parseInt((String) h.get("Id"));
+                    //begin
+                    JSONObject jsonObjectBRow = (JSONObject) h.get("begin");
+                    Integer lsquareBRow = Integer.parseInt((String) jsonObjectBRow.get("lsquare"));
+                    Integer wsquareBRow = Integer.parseInt((String) jsonObjectBRow.get("wsquare"));
+                    //end
+                    JSONObject jsonObjectERow = (JSONObject) h.get("end");
+                    Integer lsquareERow = Integer.parseInt((String) jsonObjectERow.get("lsquare"));
+                    Integer wsquareERow = Integer.parseInt((String) jsonObjectERow.get("wsquare"));
+                    //shelves
+                    Integer shelves = Integer.parseInt((String) h.get("shelves"));
+
+                    Row row = new Row(rowId, lsquareBRow, wsquareBRow, lsquareERow, wsquareERow);
+                    //guarda numa lista
+                    this.rowList.add(row);
+                }
+
+                Aisle aisle = new Aisle(id, lsquareB, wsquareB, lsquareE, wsquareE, lsquareD, wsquareD, access);
+                this.aisleList.add(aisle);
+            }
+
+            JSONArray AGVDock = (JSONArray) jsonObject.get("AGVDocks");
+
+            for (int p = 0; p < AGVDock.size(); p++) {
+                JSONObject t = (JSONObject) AGVDock.get(p);
+
+                //id
+                Integer AGVDock_id = Integer.parseInt((String) t.get("Id"));
+                //begin
+                JSONObject jsonObjectBAGVDock = (JSONObject) t.get("begin");
+                Integer lsquareBAGVDock = Integer.parseInt((String) jsonObjectBAGVDock.get("lsquare"));
+                Integer wsquareBAGVDock = Integer.parseInt((String) jsonObjectBAGVDock.get("wsquare"));
+                //end
+                JSONObject jsonObjectEAGVDock = (JSONObject) t.get("end");
+                Integer lsquareEAGVDock = Integer.parseInt((String) jsonObjectEAGVDock.get("lsquare"));
+                Integer wsquareEAGVDock = Integer.parseInt((String) jsonObjectEAGVDock.get("wsquare"));
+                //depth
+                JSONObject jsonObjectDAGVDock = (JSONObject) t.get("depth");
+                Integer lsquareDAGVDock = Integer.parseInt((String) jsonObjectDAGVDock.get("lsquare"));
+                Integer wsquareDAGVDock = Integer.parseInt((String) jsonObjectDAGVDock.get("wsquare"));
+                //accessibility
+                String accessAGVDock = (String) t.get("accessibility");
+
+                AGVDock agvDock = new AGVDock(AGVDock_id, lsquareBAGVDock, wsquareBAGVDock, lsquareEAGVDock,
+                        wsquareEAGVDock, lsquareDAGVDock, wsquareDAGVDock, accessAGVDock);
+                this.agvDockList.add(agvDock);
+            }
+            //TODO:
+            // this.warehouse = new Warehouse(warehousePlan,);
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        System.out.println();
     }
 }
