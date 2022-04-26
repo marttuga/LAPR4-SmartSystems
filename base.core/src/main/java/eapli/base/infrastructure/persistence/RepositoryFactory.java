@@ -24,6 +24,7 @@ import eapli.base.clientusermanagement.repositories.ClientUserRepository;
 import eapli.base.clientusermanagement.repositories.SignupRequestRepository;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
 import eapli.base.ordersmanagement.product.repositories.ProductRepository;
+import eapli.base.warehousemanagement.repositories.WarehouseRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.authz.domain.repositories.UserRepository;
 
@@ -91,5 +92,9 @@ public interface RepositoryFactory {
 
     ProductRepository products(TransactionalContext autoTx);
     ProductRepository products();
+
+    WarehouseRepository warehouse(TransactionalContext autoTx);
+    WarehouseRepository warehouse();
+
 
 }
