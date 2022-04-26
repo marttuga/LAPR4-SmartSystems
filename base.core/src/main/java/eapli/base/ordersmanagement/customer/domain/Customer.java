@@ -13,10 +13,12 @@ public class Customer implements AggregateRoot<CustomerId> {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private CustomerId customerId;
 
-
-
+    /**
+     * cascade = CascadeType.NONE as the systemUser is part of another aggregate
+     */
     @OneToOne()
     private SystemUser systemUser;
+
 
     @Embedded
     private Name name;
@@ -43,7 +45,9 @@ public class Customer implements AggregateRoot<CustomerId> {
     public Customer() {
     }
 
-    public Customer(EmailAddress emailAddress, PostalAddress postalAddresses, PhoneNumber phoneNumber, BirthDate birthDate, Name name, VATIdentifier vatIdentifier, Gender gender) {
+    public Customer(SystemUser systemUser, CustomerId customerId,EmailAddress emailAddress, PostalAddress postalAddresses, PhoneNumber phoneNumber, BirthDate birthDate, Name name, VATIdentifier vatIdentifier, Gender gender) {
+        this.systemUser = systemUser;
+        this.customerId = customerId;
         this.emailAddress = emailAddress;
         this.postalAddress = postalAddresses;
         this.phoneNumber = phoneNumber;
@@ -57,6 +61,7 @@ public class Customer implements AggregateRoot<CustomerId> {
         return this.systemUser;
     }
 
+    public CustomerId getCustomerId(){return this.customerId;}
 
     @Override
     public boolean sameAs(Object other) {
