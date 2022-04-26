@@ -8,10 +8,13 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class AGVDock implements ValueObject, Comparable<AGVDock>{
 
-    private String agvDockID;
-    private int begin;
-    private int end;
-    private int depth;
+    private int agvDockID;
+    private int lsquareBeginAGVDock;
+    private int wsquareBeginAGVDock;
+    private int lsquareEndAGVDock;
+    private int wsquareEndAGVDock;
+    private int lsquareDepthAGVDock;
+    private int wsquareDepthAGVDock;
     private String accessibility;
 
 
@@ -20,19 +23,25 @@ public class AGVDock implements ValueObject, Comparable<AGVDock>{
             throw new IllegalArgumentException(
                     "AGVDockID should neither be null nor empty");
         }
-        this.agvDockID = agvDockID;
+        this.agvDockID = Integer.parseInt(agvDockID);
     }
 
     protected AGVDock() {
     }
 
-    public AGVDock(String agvDockID, int begin, int end, int depth, String accessibility) {
+    public AGVDock(int agvDockID, int lsquareBeginAGVDock, int wsquareBeginAGVDock,
+                   int lsquareEndAGVDock, int wsquareEndAGVDock, int lsquareDepthAGVDock,
+                   int wsquareDepthAGVDock, String accessibility) {
         this.agvDockID = agvDockID;
-        this.begin = begin;
-        this.end = end;
-        this.depth = depth;
+        this.lsquareBeginAGVDock = lsquareBeginAGVDock;
+        this.wsquareBeginAGVDock = wsquareBeginAGVDock;
+        this.lsquareEndAGVDock = lsquareEndAGVDock;
+        this.wsquareEndAGVDock = wsquareEndAGVDock;
+        this.lsquareDepthAGVDock = lsquareDepthAGVDock;
+        this.wsquareDepthAGVDock = wsquareDepthAGVDock;
         this.accessibility = accessibility;
     }
+
 
     public static AGVDock valueOf(final String agvDockID) {
         return new AGVDock(agvDockID);
