@@ -1,9 +1,11 @@
 package eapli.base.ordersmanagement.product.domain;
 
 import eapli.base.ordersmanagement.category.domain.Category;
+import eapli.base.warehousemanagement.domain.Warehouse;
 import eapli.framework.domain.model.AggregateRoot;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  *
@@ -43,6 +45,11 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
 
     public Product() {
     }
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "warehouse")
+    private Warehouse warehouse;
+
 
     @Override
     public boolean sameAs(Object other) {
