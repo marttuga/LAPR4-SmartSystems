@@ -60,6 +60,7 @@ public class AddUserController {
                 createdOn);
     }
 
+
     public SystemUser addUser(final String username, final String password, final String firstName,
             final String lastName,
             final String email, final Set<Role> roles) {

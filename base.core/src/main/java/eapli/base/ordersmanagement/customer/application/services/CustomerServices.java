@@ -1,7 +1,8 @@
-/*
-package eapli.base.ordersmanagement.customer.domain;
+
+package eapli.base.ordersmanagement.customer.application.services;
 
 import eapli.base.infrastructure.persistence.PersistenceContext;
+import eapli.base.ordersmanagement.customer.domain.*;
 import eapli.base.ordersmanagement.customer.repositories.CustomerRepository;
 import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.framework.application.ApplicationService;
@@ -16,25 +17,25 @@ import java.util.HashSet;
 import java.util.Set;
 
 @ApplicationService
-public class CustomerService {
+public class CustomerServices {
     private final UserManagementService userService = AuthzRegistry.userService();
-    private final CustomerRepository customerRepository = PersistenceContext.repositories().customerUsers();
+    private final CustomerRepository customerRepository = PersistenceContext.repositories().customers();
 
-    public Customer createCustomer(EmailAddress emailAddress, PhoneNumber phoneNumber, String name, BirthDate birthDate, PostalAddress postalAddress, Gender gender, VATIdentifier vatIdentifier) {
+    public Customer createCustomer(SystemUser systemUser, String customerId, String emailAddress, String phoneNumber, String name, Calendar birthDate, String postalAddress, String gender, String vatIdentifier) {
 
         final CustomerBuilder customerBuilder = new CustomerBuilder();
         Customer customer;
         customer = customerBuilder.build();
-        customerBuilder.withEmailAddress(emailAddress).withPhoneNumber(phoneNumber).withName(name).withBirthDate(birthDate).withPostalAddress(postalAddress).withGender(gender).withVATIdentifier(vatIdentifier);
+        customerBuilder.withSystemUser(systemUser).withCustomerId(customerId).withEmailAddress(emailAddress).withPhoneNumber(phoneNumber).withName(name).withBirthDate(birthDate).withPostalAddress(postalAddress).withGender(gender).withVATIdentifier(vatIdentifier);
         this.customerRepository.save(customer);
 
         return customer;
     }
 
-    public SystemUser createSystemUserForCustomer(final String username, final String password, final String firstName, final String lastName, final String email) {
+    public SystemUser createSystemUserForCustomer(final String username, final String password, final String name, final String email) {
         final Set<Role> roles = new HashSet<>();
         roles.add(BaseRoles.CLIENT_USER);
-        return userService.registerNewUser(username, password, firstName, lastName, email, roles, Calendars.now());
+        return userService.registerNewUser(username, password, name, name, email, roles, Calendars.now());
     }
 }
-*/
+

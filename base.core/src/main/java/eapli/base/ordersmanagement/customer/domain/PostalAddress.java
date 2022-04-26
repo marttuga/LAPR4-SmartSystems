@@ -11,6 +11,7 @@ public class PostalAddress implements ValueObject {
     private String city;
     private String country;
     private String postalCode;
+    private String postalAddress;
 
     public PostalAddress(){
     }
@@ -25,5 +26,9 @@ public class PostalAddress implements ValueObject {
         this.city = city;
         this.country = country;
         this.postalCode=postalCode;
+    }
+
+    public PostalAddress(String postalAddress){
+        this.postalAddress = postalAddress;
     }
 }
