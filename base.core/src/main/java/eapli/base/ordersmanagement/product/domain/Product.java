@@ -1,7 +1,9 @@
 package eapli.base.ordersmanagement.product.domain;
 
 import eapli.base.ordersmanagement.category.domain.Category;
+import eapli.base.warehousemanagement.domain.Plan;
 import eapli.base.warehousemanagement.domain.Warehouse;
+import eapli.base.warehousemanagement.domain.WarehouseID;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 
@@ -44,12 +46,20 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
     @Embedded
     private Barcode barcode;
 
+    @Embedded
+    private ProductPriceDetail priceDetail;
+
+
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "category")
     private Category category;
 
     @Embedded
     private Dimension dimension;
+
+    @Embedded
+    private WarehouseID warehouseID;
+
 
     public Product() {
     }
@@ -125,5 +135,13 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
 
     public Dimension getDimension() {
         return dimension;
+    }
+
+    public ProductPriceDetail getPriceDetail() {
+        return priceDetail;
+    }
+
+    public WarehouseID getWarehouseID() {
+        return warehouseID;
     }
 }

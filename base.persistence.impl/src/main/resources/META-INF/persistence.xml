@@ -14,7 +14,6 @@
     <class>eapli.base.clientusermanagement.domain.SignupRequest</class>
     <class>eapli.base.ordersmanagement.product.domain.Product</class>
     <class>eapli.base.ordersmanagement.order.domain.Order</class>
-    <class>eapli.base.ordersmanagement.product.PaymentMethod</class>
 
 
     <properties>

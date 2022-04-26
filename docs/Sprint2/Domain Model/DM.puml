@@ -143,6 +143,7 @@ object PriceItem <<Value Object>>
         -RowBegin
         -RowEnd
         -ShelfId
+        -NrShelves
         }
 
     object AGVDock <<ValueObject>> {
@@ -239,7 +240,7 @@ Customer -- "1" VATIdentifier : has >
 
 
 /' Product '/
-Product --- "1..*" Category: belongs to >
+Product "1..*" --- "1" Category: belongs to >
 Product --- "1..*" Picture: has >
 Product --- "1" Barcode: has >
 Product --- "1" Brand: has >
@@ -280,6 +281,7 @@ AGV -- "1" MaxWeightCarry : has >
 AGV -- "1" Task : performs >
 AGV_Warehouse -- AGV: is >
 Warehouse -- "1..*" AGV_Warehouse: knows >
+Warehouse -- "1" WarehouseID: caracterized >
 
 
 /' Survey '/
@@ -297,8 +299,6 @@ LineOrder --- "1" ProductItem: has >
 
 /' ShippingCost '/
 ShippingCost --- Weight: depends >
-ShippingCost --- Volume: depends >
-
 
 /' Order '/
 Order --- "1" OrderID : >ShoppingCart
