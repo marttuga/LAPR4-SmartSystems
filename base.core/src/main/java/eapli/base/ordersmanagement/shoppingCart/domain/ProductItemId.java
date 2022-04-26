@@ -1,16 +1,43 @@
 package eapli.base.ordersmanagement.shoppingCart.domain;
 
 import eapli.framework.domain.model.ValueObject;
+import eapli.framework.strings.util.StringPredicates;
 
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class ProductItemId implements ValueObject, Comparable<ProductItemId>{
+public class ProductItemID implements ValueObject, Comparable<ProductItemID> {
+    private String productItemID;
 
-    private int productItemId;
+    public ProductItemID(final String productIdentification) {
+        if (StringPredicates.isNullOrEmpty(productIdentification)) {
+            throw new IllegalArgumentException(
+                    "ProductItem ID should neither be null nor empty");
+        }
+        this.productItemID = productIdentification;
+    }
+
+    protected ProductItemID() {
+    }
+
+    public static ProductItemID valueOf(final String productID) {
+        return new ProductItemID(productID);
+    }
 
     @Override
-    public int compareTo(ProductItemId o) {
-        return 0;
+    public int hashCode() {
+        return this.productItemID.hashCode();
     }
+
+    @Override
+    public String toString() {
+        return this.productItemID;
+    }
+
+    public int compareTo(final ProductItemID o) {
+        return productItemID.compareTo(o.productItemID);
+    }
+
+
 }
+
