@@ -1,4 +1,4 @@
-/*
+
 package eapli.base.warehousemanagement.domain;
 
 import org.json.simple.JSONArray;
@@ -121,4 +121,4 @@ public class UploadFile {
         }
     }
 }
-*/
+
