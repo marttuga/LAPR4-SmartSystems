@@ -20,7 +20,7 @@ public class ShoppingCart implements AggregateRoot<ShoppingCartID>{
     @JoinColumn(name = "product_item")
     private ProductItem productItem;
 
-    public ShoppingCart() {
+    protected ShoppingCart() {
     }
 
     public ShoppingCart(ShoppingCartID shoppingCartID, ProductItem productItem) {

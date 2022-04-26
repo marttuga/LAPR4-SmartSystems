@@ -1,7 +1,5 @@
-package eapli.base.warehousemanagement.domain;
+package eapli.base.ordersmanagement.warehousemanagement.domain;
 
-import eapli.base.ordersmanagement.category.domain.Category;
-import eapli.base.ordersmanagement.product.domain.Product;
 import eapli.framework.domain.model.AggregateRoot;
 
 import javax.persistence.*;
@@ -53,12 +51,12 @@ public class Warehouse implements AggregateRoot<WarehouseID> {
     }
 
     @Override
-    public int compareTo(eapli.base.warehousemanagement.domain.WarehouseID other) {
+    public int compareTo(eapli.base.ordersmanagement.warehousemanagement.domain.WarehouseID other) {
         return AggregateRoot.super.compareTo(other);
     }
 
     @Override
-    public eapli.base.warehousemanagement.domain.WarehouseID identity() {
+    public eapli.base.ordersmanagement.warehousemanagement.domain.WarehouseID identity() {
         return null;
     }
 }

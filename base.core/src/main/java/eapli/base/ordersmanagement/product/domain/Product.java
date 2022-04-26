@@ -49,6 +49,7 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
     @Embedded
     private ProductPriceDetail priceDetail;
 
+
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "category")
     private Category category;

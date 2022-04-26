@@ -256,7 +256,7 @@ Customer -- "1" VATIdentifier : has >
 
 
 /' Product '/
-Product --- "1..*" Category: belongs to >
+Product "1..*" --- "1" Category: belongs to >
 Product --- "1..*" Picture: has >
 Product --- "1" Barcode: has >
 Product --- "1" Brand: has >
