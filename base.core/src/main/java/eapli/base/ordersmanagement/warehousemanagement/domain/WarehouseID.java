@@ -1,10 +1,9 @@
-package eapli.base.warehousemanagement.domain;
+package eapli.base.ordersmanagement.warehousemanagement.domain;
 
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
 
 import javax.persistence.Embeddable;
-import javax.persistence.Embedded;
 
 @Embeddable
 public class WarehouseID implements ValueObject, Comparable<WarehouseID>{
