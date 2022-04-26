@@ -7,7 +7,8 @@ participant ":UploadFileController" as CTRL
 participant ":UploadFileService" as UFS
 participant ":PersistenceContext" as PC
 participant ":RepositoryFactory" as RF
-participant ":UploadFileRepository" as UFR
+participant ":WarehouseRepository" as UFR
+database "WarehouseRepository" as UR <<repository>>
 
 activate WE
 WE -> UI :  starts set up the warehouse plan
