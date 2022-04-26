@@ -10,7 +10,7 @@ public class NewProductOrderUI {
     private static ProductSorter productSorter = new ProductSorter();
     private static ViewCatalogController catalogueController = new ViewCatalogController();
     private static NewProductOrderController productOrderController = new NewProductOrderController();
- 
+
 
     public static void showMenu() {
         Scanner in = new Scanner(System.in);
