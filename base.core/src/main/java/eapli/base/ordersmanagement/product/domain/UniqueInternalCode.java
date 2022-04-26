@@ -3,26 +3,39 @@ package eapli.base.ordersmanagement.product.domain;
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import java.util.regex.Pattern;
+
+/**
+ *
+ * @author João Tiago Araújo <<1200584@isep.ipp.pt>>
+ */
 
 @Embeddable
 public class UniqueInternalCode implements ValueObject, Comparable<UniqueInternalCode> {
+
+    @Column(name = "uniqueInternalCode")
     private String uniqueInternalCode;
 
-    public UniqueInternalCode(final String internalCode) {
-        if (StringPredicates.isNullOrEmpty(internalCode)) {
-            throw new IllegalArgumentException(
-                    "UniqueInternalCode should neither be null nor empty");
+
+    public UniqueInternalCode(String uniqueInternalCode) throws IllegalAccessException {
+        if(StringPredicates.isNullOrWhiteSpace(uniqueInternalCode)) {
+            throw new IllegalAccessException("The production code cannot be null or empty!");
         }
-        this.uniqueInternalCode = internalCode;
+        if(uniqueInternalCode.length() > 23){
+            throw new IllegalArgumentException("The production code should not have more than 23 characters.");
+        }
+        Pattern descRegerx = Pattern.compile("");
+        this.uniqueInternalCode = uniqueInternalCode;
     }
 
     protected UniqueInternalCode() {
     }
 
-    public static UniqueInternalCode valueOf(final String internalCode) {
+/*    public static UniqueInternalCode valueOf(final String internalCode) {
         return new UniqueInternalCode(internalCode);
-    }
+    }*/
 
     @Override
     public int hashCode() {
@@ -33,7 +46,6 @@ public class UniqueInternalCode implements ValueObject, Comparable<UniqueInterna
     public String toString() {
         return this.uniqueInternalCode;
     }
-
 
     @Override
     public int compareTo(final UniqueInternalCode o) {
