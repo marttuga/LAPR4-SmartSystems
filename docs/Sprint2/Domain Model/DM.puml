@@ -75,19 +75,14 @@ object OrderID <<Value Object>>
 
 
 
-entity PaymentMethod <<Entity>>
+object PaymentMethod <<Value Object>>
 
 object ShippingCost <<ValueObject>>
 
-object ShippingMethodID <<ValueObject>>
-
-object PaymentMethodID <<ValueObject>>
 
 
 
-
-   entity ShippingMethod <<Entity>>{
-    }
+   object ShippingMethod <<Value Object>>
 
      object Status <<Value Object>>
 }
@@ -298,13 +293,11 @@ Order --- "1" OrderID : >ShoppingCart
 Order --- "1" Status : has >
 Order --- "1" OrderActor : has >
 Order --- "1" PaymentMethod : has >
-PaymentMethod --- "1" PaymentMethodID : has >
 
 Order --- "1" ShippingMethod : has >
 Order --- "1" Survey : generates >
 ShippingCost --- "1" SalesRegion: depends >
 ShippingMethod--- "1" ShippingCost: has >
-ShippingMethod--- "1" ShippingMethodID: has >
 
 
 PriceOrder --- Order: depends >
