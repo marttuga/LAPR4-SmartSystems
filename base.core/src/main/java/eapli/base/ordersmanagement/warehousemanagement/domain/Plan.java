@@ -1,4 +1,4 @@
-package eapli.base.warehousemanagement.domain;
+package eapli.base.ordersmanagement.warehousemanagement.domain;
 
 import eapli.framework.domain.model.ValueObject;
 
@@ -34,7 +34,7 @@ public class Plan implements ValueObject, Comparable<Plan> {
     public Plan(WarehouseID warehouseID, int length, int width,
                 int aisleId, int aisleBegin, int aisleEnd, int aisleDepth,
                 String aisleAccessibility, int rowId, int rowBegin, int rowEnd,
-                eapli.base.warehousemanagement.domain.AGVDock AGVDock) {
+                eapli.base.ordersmanagement.warehousemanagement.domain.AGVDock AGVDock) {
         this.warehouseID = warehouseID;
         this.length = length;
         this.width = width;

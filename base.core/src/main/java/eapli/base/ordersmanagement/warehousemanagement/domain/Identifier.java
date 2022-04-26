@@ -1,4 +1,4 @@
-package eapli.base.warehousemanagement.domain;
+package eapli.base.ordersmanagement.warehousemanagement.domain;
 
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
