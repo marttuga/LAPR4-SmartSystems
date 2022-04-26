@@ -1,5 +1,5 @@
 
-package eapli.base.warehousemanagement.domain;
+package eapli.base.ordersmanagement.warehousemanagement.domain;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
