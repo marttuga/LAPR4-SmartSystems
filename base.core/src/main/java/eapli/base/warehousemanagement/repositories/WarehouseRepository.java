@@ -1,7 +1,7 @@
-package eapli.base.ordersmanagement.warehousemanagement.repositories;
+package eapli.base.warehousemanagement.repositories;
 
-import eapli.base.ordersmanagement.warehousemanagement.domain.WarehouseID;
-import eapli.base.ordersmanagement.warehousemanagement.domain.Warehouse;
+import eapli.base.warehousemanagement.domain.WarehouseID;
+import eapli.base.warehousemanagement.domain.Warehouse;
 import eapli.framework.domain.repositories.DomainRepository;
 
 import java.util.Optional;

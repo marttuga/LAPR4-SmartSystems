@@ -1,4 +1,4 @@
-package eapli.base.ordersmanagement.warehousemanagement.domain;
+package eapli.base.warehousemanagement.domain;
 
 import eapli.framework.domain.model.AggregateRoot;
 

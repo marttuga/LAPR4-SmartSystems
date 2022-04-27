@@ -3,6 +3,9 @@ autonumber
 actor "Warehouse Employee" as WE
 participant ":ConfigureAGVUI" as UI
 participant ":ConfigureAGVController" as CTRL
+participant ":PersistenceContext" as PC
+participant ":RepositoryFactory" as RF
+participant ":AGVRepository" as AGVRep
 participant ":AGV" as AGV
 
 loop
@@ -16,6 +19,48 @@ deactivate UI
 
 WE -> UI : Types requested data
 activate UI
+
+UI -> CTRL : create
+deactivate UI
+activate CTRL
+
+
+CTRL -> PC : repositories()
+deactivate CTRL
+activate PC
+PC -> RF : create
+deactivate PC
+activate RF
+
+RF -> AGVRep : create
+activate AGVRep
+deactivate RF
+
+
+deactivate AGVRep
+
+activate PC
+PC -> CTRL : AGVRepository
+deactivate PC
+activate CTRL
+deactivate CTRL
+
+activate UI
+UI -> CTRL : configureAGV()
+
+CTRL -> AGV : newAgv = create()
+activate AGV
+deactivate AGV
+
+
+CTRL -> AGVRep : save(newAgv)
+activate AGVRep
+
+CTRL -> UI : newAGV
+
+deactivate CTRL
+
+deactivate AGVRep
 
 UI --> WE :Shows all data and requests confirmation
 deactivate UI
