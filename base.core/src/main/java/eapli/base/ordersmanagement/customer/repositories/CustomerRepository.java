@@ -6,6 +6,7 @@ import eapli.base.ordersmanagement.customer.domain.EmailAddress;
 import eapli.framework.domain.repositories.DomainRepository;
 import eapli.framework.infrastructure.authz.domain.model.Username;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface CustomerRepository extends DomainRepository<CustomerId, Customer> {
@@ -14,4 +15,8 @@ public interface CustomerRepository extends DomainRepository<CustomerId, Custome
     Customer findByCustomerId(CustomerId customerId);
 
     Optional<Customer> findByEmail(EmailAddress email);
+
+    public List<Customer> findAllCustomers();
+
+
 }

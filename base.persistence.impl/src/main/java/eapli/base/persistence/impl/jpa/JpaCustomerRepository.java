@@ -9,9 +9,7 @@ import eapli.framework.infrastructure.authz.domain.model.Username;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
 
 import javax.persistence.TypedQuery;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class JpaCustomerRepository extends JpaAutoTxRepository<Customer, CustomerId, CustomerId> implements CustomerRepository {
 
@@ -41,5 +39,12 @@ public class JpaCustomerRepository extends JpaAutoTxRepository<Customer, Custome
         params.put("name", name);
         return matchOne("e.systemUser.username =:name", params);
     }
+
+    @Override
+    public List<Customer> findAllCustomers() {
+        List<Customer> customers = (List<Customer>) findAll();
+        return customers;
+    }
+
 
 }
