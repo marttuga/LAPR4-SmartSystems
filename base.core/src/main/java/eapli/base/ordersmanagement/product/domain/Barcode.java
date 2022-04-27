@@ -5,6 +5,7 @@ import eapli.framework.strings.util.StringPredicates;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -18,14 +19,14 @@ public class Barcode implements ValueObject, Comparable<Barcode>{
     @Column(name = "barcode")
     public String barcode;
 
-    public Barcode(String barcode) throws IllegalAccessException {
-        if(StringPredicates.isNullOrWhiteSpace(barcode)) {
-            throw new IllegalAccessException("The barcode cannot be null or empty!");
+    public Barcode (String barcode){
+
+        Pattern codeRegex = Pattern.compile("^[0-9]{13}$");
+        Matcher matcher = codeRegex.matcher(barcode);
+        if (!matcher.find()) {
+            throw new IllegalArgumentException("Barcode must be written in EAN-13 type");
         }
-        if(barcode.length() != 13 ){
-            throw new IllegalArgumentException("The barcode EAN-13 must have 13 digits!");
-        }
-        Pattern descRegerx = Pattern.compile("");
+
         this.barcode = barcode;
     }
 
