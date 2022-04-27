@@ -7,7 +7,7 @@ import javax.persistence.Embeddable;
 import java.util.Objects;
 
 @Embeddable
-public class OrderID implements ValueObject {
+public class OrderID implements ValueObject,  Comparable<OrderID>{
     private String orderID;
 
     public OrderID(final String orderIdentification) {
@@ -26,8 +26,16 @@ public class OrderID implements ValueObject {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OrderID orderID1 = (OrderID) o;
+        return Objects.equals(orderID, orderID1.orderID);
+    }
+
+    @Override
     public int hashCode() {
-        return this.orderID.hashCode();
+        return Objects.hash(orderID);
     }
 
     @Override
@@ -36,10 +44,7 @@ public class OrderID implements ValueObject {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        OrderID orderID1 = (OrderID) o;
-        return Objects.equals(orderID, orderID1.orderID);
+    public int compareTo(OrderID o) {
+        return 0;
     }
 }

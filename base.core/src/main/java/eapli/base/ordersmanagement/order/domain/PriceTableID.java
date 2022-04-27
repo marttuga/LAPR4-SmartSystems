@@ -7,7 +7,7 @@ import javax.persistence.Embeddable;
 import java.util.Objects;
 
 @Embeddable
-public class PriceTableID implements ValueObject {
+public class PriceTableID implements ValueObject, Comparable<PriceTableID> {
     private String priceTableID;
 
     public PriceTableID(final String identification) {
@@ -25,21 +25,15 @@ public class PriceTableID implements ValueObject {
         return new PriceTableID(identification);
     }
 
-    @Override
-    public int hashCode() {
-        return this.priceTableID.hashCode();
-    }
 
     @Override
     public String toString() {
         return this.priceTableID;
     }
 
+
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        PriceTableID that = (PriceTableID) o;
-        return Objects.equals(priceTableID, that.priceTableID);
+    public int compareTo(PriceTableID o) {
+        return 0;
     }
 }

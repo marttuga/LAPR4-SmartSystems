@@ -14,7 +14,20 @@ import java.util.regex.Pattern;
  */
 
 @Embeddable
-public class UniqueInternalCode implements ValueObject {
+public class UniqueInternalCode implements ValueObject, Comparable<UniqueInternalCode>{
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UniqueInternalCode that = (UniqueInternalCode) o;
+        return Objects.equals(uniqueInternalCode, that.uniqueInternalCode);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(uniqueInternalCode);
+    }
 
     @Column(name = "uniqueInternalCode")
     private String uniqueInternalCode;
@@ -38,22 +51,17 @@ public class UniqueInternalCode implements ValueObject {
         return new UniqueInternalCode(internalCode);
     }*/
 
-    @Override
-    public int hashCode() {
-        return this.uniqueInternalCode.hashCode();
-    }
 
     @Override
     public String toString() {
         return this.uniqueInternalCode;
     }
 
+
+
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        UniqueInternalCode that = (UniqueInternalCode) o;
-        return Objects.equals(uniqueInternalCode, that.uniqueInternalCode);
+    public int compareTo(UniqueInternalCode o) {
+        return 0;
     }
 }
 

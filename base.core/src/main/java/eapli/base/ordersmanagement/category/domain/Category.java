@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class Category implements AggregateRoot<CategoryCode> {
+public class Category implements AggregateRoot<CategoryCode>, Comparable<CategoryCode> {
 
     //NAO ESTA ACABADO E NAO TENHO A CERTEZA
     @EmbeddedId
