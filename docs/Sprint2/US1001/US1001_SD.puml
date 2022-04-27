@@ -8,7 +8,7 @@ participant ":RepositoryFactory" as RF
 participant ":ProductRepository" as ProdRep
 participant ":Product" as Prod
 
-loop
+loop The mandatory attributes are the internal code, short and extended description.
 activate SC
 
 SC -> UI : Starts to specify a new product for sale
@@ -19,6 +19,10 @@ deactivate UI
 
 SC -> UI : Types requested data
 activate UI
+loop
+SC -> UI : Uploads picture
+end loop
+
 
 UI -> CTRL : create
 deactivate UI
