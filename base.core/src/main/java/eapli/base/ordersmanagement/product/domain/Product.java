@@ -1,8 +1,8 @@
 package eapli.base.ordersmanagement.product.domain;
 
 import eapli.base.ordersmanagement.category.domain.Category;
-import eapli.base.ordersmanagement.warehousemanagement.domain.Warehouse;
-import eapli.base.ordersmanagement.warehousemanagement.domain.WarehouseID;
+import eapli.base.warehousemanagement.domain.Warehouse;
+import eapli.base.warehousemanagement.domain.WarehouseID;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 

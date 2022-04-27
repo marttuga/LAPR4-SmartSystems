@@ -34,6 +34,6 @@ public class InMemoryCustomerRepository extends InMemoryDomainRepository<Custome
 
     @Override
     public List<Customer> findAllCustomers() {
-        return null;
+       return findAllCustomers();
     }
 }
