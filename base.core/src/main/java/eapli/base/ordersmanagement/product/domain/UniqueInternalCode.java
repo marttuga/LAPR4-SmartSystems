@@ -5,6 +5,7 @@ import eapli.framework.strings.util.StringPredicates;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 /**
@@ -13,7 +14,7 @@ import java.util.regex.Pattern;
  */
 
 @Embeddable
-public class UniqueInternalCode implements ValueObject, Comparable<UniqueInternalCode> {
+public class UniqueInternalCode implements ValueObject {
 
     @Column(name = "uniqueInternalCode")
     private String uniqueInternalCode;
@@ -48,8 +49,11 @@ public class UniqueInternalCode implements ValueObject, Comparable<UniqueInterna
     }
 
     @Override
-    public int compareTo(final UniqueInternalCode o) {
-        return uniqueInternalCode.compareTo(o.uniqueInternalCode);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UniqueInternalCode that = (UniqueInternalCode) o;
+        return Objects.equals(uniqueInternalCode, that.uniqueInternalCode);
     }
 }
 
