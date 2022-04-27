@@ -34,17 +34,23 @@ public class JpaCustomerRepository extends JpaAutoTxRepository<Customer, Custome
     }
 
     @Override
+    public List<Customer> findAllCustomers() {
+        List<Customer> customerList = new ArrayList<>();
+        TypedQuery<Customer> query = super.createQuery("SELECT DISTINCT c FROM Customer c", Customer.class);
+        for (Customer c: query.getResultList()) {
+            customerList.add(c);
+        }
+        return customerList;
+    }
+
+    @Override
     public Optional<Customer> findByUsername(Username name) {
         final Map<String, Object> params = new HashMap<>();
         params.put("name", name);
         return matchOne("e.systemUser.username =:name", params);
     }
 
-    @Override
-    public List<Customer> findAllCustomers() {
-        List<Customer> customers = (List<Customer>) findAll();
-        return customers;
-    }
+
 
 
 }
