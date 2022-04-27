@@ -4,7 +4,6 @@ package eapli.base.warehousemanagement.domain;
 import eapli.framework.domain.model.AggregateRoot;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class Warehouse implements AggregateRoot<WarehouseID> {
