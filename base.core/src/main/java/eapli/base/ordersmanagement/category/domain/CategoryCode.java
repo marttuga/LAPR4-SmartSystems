@@ -4,9 +4,10 @@ import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
 
 import javax.persistence.Embeddable;
+import java.util.Objects;
 
 @Embeddable
-public class CategoryCode implements ValueObject, Comparable<CategoryCode> {
+public class CategoryCode implements ValueObject {
     private String categoryCode;
 
     public CategoryCode(final String code) {
@@ -35,7 +36,10 @@ public class CategoryCode implements ValueObject, Comparable<CategoryCode> {
     }
 
     @Override
-    public int compareTo(final CategoryCode o) {
-        return categoryCode.compareTo(o.categoryCode);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CategoryCode that = (CategoryCode) o;
+        return Objects.equals(categoryCode, that.categoryCode);
     }
 }

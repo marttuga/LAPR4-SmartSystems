@@ -38,6 +38,7 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
     @Embedded
     private ProductionCode productionCode;
 
+    @Column(insertable = false, updatable = false)
     @Embedded
     private Weight weight;
 
@@ -49,12 +50,12 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
 
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "category")
     private Category category;
 
     @Embedded
     private Dimension dimension;
 
+    @Column(insertable = false,updatable = false)
     @Embedded
     private WarehouseID warehouseID;
 
@@ -62,8 +63,7 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
     public Product() {
     }
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "warehouse")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Warehouse warehouse;
 
 

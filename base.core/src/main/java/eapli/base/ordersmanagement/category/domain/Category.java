@@ -16,8 +16,6 @@ public class Category implements AggregateRoot<CategoryCode> {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private CategoryCode categoryCode;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Set<Product> productList;
 
     public Category() {}
 
@@ -33,8 +31,7 @@ public class Category implements AggregateRoot<CategoryCode> {
     @Override
     public String toString() {
         return "Category:" +
-                "categoryCode=" + categoryCode +
-                ", productList=" + productList ;
+                "categoryCode=" + categoryCode ;
     }
 
     @Override

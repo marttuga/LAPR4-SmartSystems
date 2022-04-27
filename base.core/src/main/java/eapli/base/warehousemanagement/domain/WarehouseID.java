@@ -3,12 +3,15 @@ package eapli.base.warehousemanagement.domain;
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import java.util.Objects;
 
 @Embeddable
-public class WarehouseID implements ValueObject, Comparable<WarehouseID>{
+public class WarehouseID implements ValueObject{
 
 
+    @Column(insertable = false, updatable = false)
     private String warehouseID;
 
     public WarehouseID(final String warehouseIdentification) {
@@ -28,8 +31,16 @@ public class WarehouseID implements ValueObject, Comparable<WarehouseID>{
 
 
     @Override
-    public int compareTo(WarehouseID o) {
-        return 0;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        WarehouseID that = (WarehouseID) o;
+        return Objects.equals(warehouseID, that.warehouseID);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(warehouseID);
     }
 
     @Override

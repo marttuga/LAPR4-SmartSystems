@@ -3,18 +3,26 @@ package eapli.base.warehousemanagement.domain;
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
 public class Aisle implements ValueObject, Comparable<Aisle>  {
 
     private int aisleId;
+    @Column(insertable = false,updatable = false)
     private int lsquareBegin;
+    @Column(insertable = false,updatable = false)
     private int wsquareBegin;
+    @Column(insertable = false,updatable = false)
     private int lsquareEnd;
+    @Column(insertable = false,updatable = false)
     private int wsquareEnd;
+    @Column(insertable = false,updatable = false)
     private int beginDepth;
+    @Column(insertable = false,updatable = false)
     private int endDepth;
+    @Column(insertable = false,updatable = false)
     private String accessibility;
 
     public Aisle(final String aisleId) {

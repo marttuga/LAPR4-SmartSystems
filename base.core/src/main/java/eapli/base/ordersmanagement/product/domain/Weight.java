@@ -13,7 +13,7 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Weight implements ValueObject, Comparable<Weight>{
 
-    @Column(name = "weight")
+    @Column(insertable = false,updatable = false)
     private Double weight;
 
     protected Weight() {

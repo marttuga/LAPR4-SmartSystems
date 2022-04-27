@@ -3,6 +3,7 @@ package eapli.base.warehousemanagement.domain;
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
@@ -15,6 +16,7 @@ public class AGVDock implements ValueObject, Comparable<AGVDock>{
     private int wsquareEndAGVDock;
     private int lsquareDepthAGVDock;
     private int wsquareDepthAGVDock;
+    @Column(insertable = false, updatable = false)
     private String accessibility;
 
 

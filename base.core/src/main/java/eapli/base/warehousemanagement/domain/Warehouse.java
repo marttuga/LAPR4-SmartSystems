@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Entity
 public class Warehouse implements AggregateRoot<WarehouseID> {
 
+    @Column(insertable = false,updatable = false)
     @EmbeddedId
     @GeneratedValue(strategy = GenerationType.AUTO)
     private WarehouseID WarehouseID;
