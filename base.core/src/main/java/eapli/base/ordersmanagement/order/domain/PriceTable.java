@@ -5,7 +5,7 @@ import eapli.framework.domain.model.AggregateRoot;
 import javax.persistence.*;
 
 @Entity
-public class PriceTable  implements AggregateRoot<PriceTableID> {
+public class PriceTable  implements AggregateRoot<PriceTableID>, Comparable<PriceTableID> {
 
     @EmbeddedId
     @GeneratedValue(strategy = GenerationType.AUTO)

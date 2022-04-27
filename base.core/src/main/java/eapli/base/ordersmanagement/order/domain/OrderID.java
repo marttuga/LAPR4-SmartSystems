@@ -4,9 +4,10 @@ import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
 
 import javax.persistence.Embeddable;
+import java.util.Objects;
 
 @Embeddable
-public class OrderID implements ValueObject, Comparable<OrderID> {
+public class OrderID implements ValueObject,  Comparable<OrderID>{
     private String orderID;
 
     public OrderID(final String orderIdentification) {
@@ -25,8 +26,16 @@ public class OrderID implements ValueObject, Comparable<OrderID> {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OrderID orderID1 = (OrderID) o;
+        return Objects.equals(orderID, orderID1.orderID);
+    }
+
+    @Override
     public int hashCode() {
-        return this.orderID.hashCode();
+        return Objects.hash(orderID);
     }
 
     @Override
@@ -35,7 +44,7 @@ public class OrderID implements ValueObject, Comparable<OrderID> {
     }
 
     @Override
-    public int compareTo(final OrderID o) {
-        return orderID.compareTo(o.orderID);
+    public int compareTo(OrderID o) {
+        return 0;
     }
 }

@@ -9,15 +9,13 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class Category implements AggregateRoot<CategoryCode> {
+public class Category implements AggregateRoot<CategoryCode>, Comparable<CategoryCode> {
 
     //NAO ESTA ACABADO E NAO TENHO A CERTEZA
     @EmbeddedId
     @GeneratedValue(strategy = GenerationType.AUTO)
     private CategoryCode categoryCode;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Set<Product> productList;
 
     public Category() {}
 
@@ -33,8 +31,7 @@ public class Category implements AggregateRoot<CategoryCode> {
     @Override
     public String toString() {
         return "Category:" +
-                "categoryCode=" + categoryCode +
-                ", productList=" + productList ;
+                "categoryCode=" + categoryCode ;
     }
 
     @Override

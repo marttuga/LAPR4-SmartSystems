@@ -17,7 +17,7 @@ class ProductItemID implements ValueObject, Comparable<ProductItemID> {
         this.productItemID = productIdentification;
     }
 
-    protected ProductItemID() {
+    public ProductItemID() {
     }
 
     public static ProductItemID valueOf(final String productID) {

@@ -4,6 +4,7 @@ import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
 
 import javax.persistence.Embeddable;
+import java.util.Objects;
 
 @Embeddable
 public class PriceTableID implements ValueObject, Comparable<PriceTableID> {
@@ -24,18 +25,15 @@ public class PriceTableID implements ValueObject, Comparable<PriceTableID> {
         return new PriceTableID(identification);
     }
 
-    @Override
-    public int hashCode() {
-        return this.priceTableID.hashCode();
-    }
 
     @Override
     public String toString() {
         return this.priceTableID;
     }
 
+
     @Override
-    public int compareTo(final PriceTableID o) {
-        return priceTableID.compareTo(o.priceTableID);
+    public int compareTo(PriceTableID o) {
+        return 0;
     }
 }

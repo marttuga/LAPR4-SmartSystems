@@ -27,6 +27,7 @@ public class Order implements AggregateRoot<OrderID> {
     @Embedded
     private PaymentMethod paymentMethod;
 
+    @Column(updatable = false,insertable = false)
     @Embedded
     private ShippingMethod shippingMethod;
 
@@ -36,12 +37,10 @@ public class Order implements AggregateRoot<OrderID> {
     @Embedded
     private LineOrder lineOrder;
 
-   @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "survey_code")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Survey survey;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "costumer_id")
     private Customer costumer;
 
     public Order(Calendar dateTime, Status status, OrderActor orderActor, PaymentMethod paymentMethod, ShippingMethod shippingMethod, PriceOrder priceOrder, LineOrder lineOrder, Survey survey, Customer costumer) {

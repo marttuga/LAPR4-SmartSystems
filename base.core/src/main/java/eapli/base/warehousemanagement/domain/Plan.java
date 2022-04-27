@@ -2,10 +2,12 @@ package eapli.base.warehousemanagement.domain;
 
 import eapli.framework.domain.model.ValueObject;
 
+import javax.persistence.Column;
 import javax.persistence.Embedded;
 
 public class Plan implements ValueObject, Comparable<Plan> {
 
+    @Column(insertable = false,updatable = false)
     @Embedded
     private WarehouseID warehouseID;
     private int length;

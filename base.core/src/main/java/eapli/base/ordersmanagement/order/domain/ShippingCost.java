@@ -3,20 +3,19 @@ package eapli.base.ordersmanagement.order.domain;
 import eapli.base.ordersmanagement.product.domain.Weight;
 import eapli.framework.domain.model.ValueObject;
 
-import javax.persistence.Embeddable;
-import javax.persistence.Embedded;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 
 @Embeddable
 public class ShippingCost implements ValueObject {
 
+    @Column (insertable = false, updatable = false)
     private double shippingCost;
 
     @Embedded
     @Enumerated(EnumType.STRING)
     private SalesRegion salesRegion;
 
+    @Column(insertable = false, updatable = false)
     @Embedded
     private Weight weight;
 

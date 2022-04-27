@@ -9,6 +9,7 @@ import java.util.List;
 @Entity
 public class Warehouse implements AggregateRoot<WarehouseID> {
 
+    @Column(insertable = false,updatable = false)
     @EmbeddedId
     @GeneratedValue(strategy = GenerationType.AUTO)
     private WarehouseID WarehouseID;
@@ -53,10 +54,6 @@ public class Warehouse implements AggregateRoot<WarehouseID> {
         return false;
     }
 
-    @Override
-    public int compareTo(eapli.base.warehousemanagement.domain.WarehouseID other) {
-        return AggregateRoot.super.compareTo(other);
-    }
 
     @Override
     public eapli.base.warehousemanagement.domain.WarehouseID identity() {

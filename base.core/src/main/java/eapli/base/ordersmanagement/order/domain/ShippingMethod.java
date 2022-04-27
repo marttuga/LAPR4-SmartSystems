@@ -2,6 +2,7 @@ package eapli.base.ordersmanagement.order.domain;
 
 import eapli.framework.domain.model.ValueObject;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 
@@ -15,6 +16,7 @@ public class ShippingMethod implements ValueObject {
     }
 
     private Type type;
+    @Column(insertable = false, updatable = false)
     @Embedded
     private ShippingCost shippingCost;
 

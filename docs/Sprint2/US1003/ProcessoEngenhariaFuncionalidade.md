@@ -4,8 +4,6 @@
 # 1. Requirements
 
 **US1003** As Sales Clerk, I want to register a new customer.
-As Sales Clerk, I want to define a new category of products.
-
 
 Within the scope of this user story, the task of registering a new customer is assigned to the sales clerk. 
 As such, the costumer must provide at least the first and last name, a valid Value-Added Tax (VAT) identifier that varies from 

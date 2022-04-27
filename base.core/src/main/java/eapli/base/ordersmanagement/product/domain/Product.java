@@ -1,6 +1,7 @@
 package eapli.base.ordersmanagement.product.domain;
 
 import eapli.base.ordersmanagement.category.domain.Category;
+import eapli.base.warehousemanagement.domain.*;
 import eapli.base.warehousemanagement.domain.Warehouse;
 import eapli.base.warehousemanagement.domain.WarehouseID;
 import eapli.framework.domain.model.AggregateRoot;
@@ -38,6 +39,7 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
     @Embedded
     private ProductionCode productionCode;
 
+    @Column(insertable = false, updatable = false)
     @Embedded
     private Weight weight;
 
@@ -49,22 +51,52 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
 
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "category")
     private Category category;
 
     @Embedded
     private Dimension dimension;
 
+    @Column(insertable = false,updatable = false)
     @Embedded
     private WarehouseID warehouseID;
 
+    @Embedded
+    private Aisle aisle;
 
-    public Product() {
+    @Embedded
+    private Row row;
+
+    @Embedded
+    private Shelf shelf;
+
+    @Embedded
+    private Bin bin;
+
+    public Product(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription, TechnicalDescription technicalDescription, Brand brand, Reference reference, ProductionCode productionCode, Weight weight, Barcode barcode, ProductPriceDetail priceDetail, Category category, Dimension dimension, WarehouseID warehouseID, Aisle aisle, Row row, Shelf shelf, Bin bin) {
     }
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "warehouse")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Warehouse warehouse;
+
+    public void setBin(Bin bin) {
+        this.bin = bin;
+    }
+
+    public void setShelf(Shelf shelf) {
+        this.shelf = shelf;
+    }
+
+    public void setRow(Row row) {
+        this.row = row;
+    }
+
+    public void setAisle(Aisle aisle) {
+        this.aisle = aisle;
+    }
+
+    public Product() {
+
+    }
 
 
     @Override
@@ -143,6 +175,22 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
         return warehouseID;
     }
 
+    public Aisle getAisle() {
+        return aisle;
+    }
+
+    public Row getRow() {
+        return row;
+    }
+
+    public Shelf getShelf() {
+        return shelf;
+    }
+
+    public Bin getBin() {
+        return bin;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -159,7 +207,10 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
                 ", category=" + category +
                 ", dimension=" + dimension +
                 ", warehouseID=" + warehouseID +
-                ", warehouse=" + warehouse +
+                ", aisle=" + aisle +
+                ", row=" + row +
+                ", shelf=" + shelf +
+                ", bin=" + bin +
                 '}';
     }
 }
