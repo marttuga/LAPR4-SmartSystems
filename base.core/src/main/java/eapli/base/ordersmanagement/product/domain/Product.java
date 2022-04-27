@@ -60,12 +60,16 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
     @Embedded
     private WarehouseID warehouseID;
 
+    @Embedded
     private Aisle aisle;
 
+    @Embedded
     private Row row;
 
+    @Embedded
     private Shelf shelf;
 
+    @Embedded
     private Bin bin;
 
     public Product(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription, TechnicalDescription technicalDescription, Brand brand, Reference reference, ProductionCode productionCode, Weight weight, Barcode barcode, ProductPriceDetail priceDetail, Category category, Dimension dimension, WarehouseID warehouseID, Aisle aisle, Row row, Shelf shelf, Bin bin) {
@@ -73,6 +77,26 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Warehouse warehouse;
+
+    public void setBin(Bin bin) {
+        this.bin = bin;
+    }
+
+    public void setShelf(Shelf shelf) {
+        this.shelf = shelf;
+    }
+
+    public void setRow(Row row) {
+        this.row = row;
+    }
+
+    public void setAisle(Aisle aisle) {
+        this.aisle = aisle;
+    }
+
+    public Product() {
+
+    }
 
 
     @Override
