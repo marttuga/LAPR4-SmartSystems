@@ -1,4 +1,4 @@
-package eapli.base.ordersmanagement.warehousemanagement.domain;
+package eapli.base.warehousemanagement.domain;
 
 import eapli.framework.domain.model.AggregateRoot;
 
@@ -27,9 +27,9 @@ public class Warehouse implements AggregateRoot<WarehouseID> {
 
     }
 
-    public Warehouse(eapli.base.ordersmanagement.warehousemanagement.domain.WarehouseID warehouseID,
+    public Warehouse(eapli.base.warehousemanagement.domain.WarehouseID warehouseID,
                      Plan plan, Aisle aisle, Row row, Shelf shelf,
-                     eapli.base.ordersmanagement.warehousemanagement.domain.AGVDock AGVDock) {
+                     eapli.base.warehousemanagement.domain.AGVDock AGVDock) {
         WarehouseID = warehouseID;
         this.plan = plan;
         this.aisle = aisle;
@@ -50,12 +50,12 @@ public class Warehouse implements AggregateRoot<WarehouseID> {
     }
 
     @Override
-    public int compareTo(eapli.base.ordersmanagement.warehousemanagement.domain.WarehouseID other) {
+    public int compareTo(eapli.base.warehousemanagement.domain.WarehouseID other) {
         return AggregateRoot.super.compareTo(other);
     }
 
     @Override
-    public eapli.base.ordersmanagement.warehousemanagement.domain.WarehouseID identity() {
+    public eapli.base.warehousemanagement.domain.WarehouseID identity() {
         return null;
     }
 }
