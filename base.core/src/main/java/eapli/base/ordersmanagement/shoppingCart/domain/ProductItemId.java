@@ -6,7 +6,7 @@ import eapli.framework.strings.util.StringPredicates;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class ProductItemID implements ValueObject, Comparable<ProductItemID> {
+class ProductItemID implements ValueObject, Comparable<ProductItemID> {
     private String productItemID;
 
     public ProductItemID(final String productIdentification) {
