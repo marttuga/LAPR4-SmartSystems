@@ -110,7 +110,7 @@ public class UploadFile {
                 this.agvDockList.add(agvDock);
             }
             //TODO:
-            // warehouse
+            //this.warehouse = new Warehouse();
 
         } catch (Exception e) {
             e.printStackTrace();
