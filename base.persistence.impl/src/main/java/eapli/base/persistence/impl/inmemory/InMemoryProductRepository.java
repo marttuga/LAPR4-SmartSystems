@@ -8,6 +8,7 @@ import eapli.base.ordersmanagement.product.domain.UniqueInternalCode;
 import eapli.base.ordersmanagement.product.repositories.ProductRepository;
 import eapli.framework.infrastructure.repositories.impl.inmemory.InMemoryDomainRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 public class InMemoryProductRepository extends InMemoryDomainRepository<Product, UniqueInternalCode> implements ProductRepository {
@@ -36,6 +37,26 @@ public class InMemoryProductRepository extends InMemoryDomainRepository<Product,
     @Override
     public Optional<Product> findByCategory(Category category) {
         return matchOne(e -> e.getCategory().equals(category));
+    }
+
+    @Override
+    public List<Product> findByBrandDescription(Brand brand, ShortDescription description) {
+        return null;
+    }
+
+    @Override
+    public List<Product> findByBrandCategory(Brand brand, Category category) {
+        return null;
+    }
+
+    @Override
+    public List<Product> findByDescriptionCategory(ShortDescription description, Category category) {
+        return null;
+    }
+
+    @Override
+    public List<Product> findByBrandDescriptionCategory(Brand brand, ShortDescription description, Category category) {
+        return null;
     }
 
 

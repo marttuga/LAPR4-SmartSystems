@@ -1,6 +1,7 @@
 package eapli.base.ordersmanagement.product.domain;
 
 import eapli.base.ordersmanagement.category.domain.Category;
+import eapli.base.warehousemanagement.domain.*;
 import eapli.base.warehousemanagement.domain.Warehouse;
 import eapli.base.warehousemanagement.domain.WarehouseID;
 import eapli.framework.domain.model.AggregateRoot;
@@ -59,8 +60,15 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
     @Embedded
     private WarehouseID warehouseID;
 
+    private Aisle aisle;
 
-    public Product() {
+    private Row row;
+
+    private Shelf shelf;
+
+    private Bin bin;
+
+    public Product(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription, TechnicalDescription technicalDescription, Brand brand, Reference reference, ProductionCode productionCode, Weight weight, Barcode barcode, ProductPriceDetail priceDetail, Category category, Dimension dimension, WarehouseID warehouseID, Aisle aisle, Row row, Shelf shelf, Bin bin) {
     }
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -143,6 +151,22 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
         return warehouseID;
     }
 
+    public Aisle getAisle() {
+        return aisle;
+    }
+
+    public Row getRow() {
+        return row;
+    }
+
+    public Shelf getShelf() {
+        return shelf;
+    }
+
+    public Bin getBin() {
+        return bin;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -159,7 +183,10 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
                 ", category=" + category +
                 ", dimension=" + dimension +
                 ", warehouseID=" + warehouseID +
-                ", warehouse=" + warehouse +
+                ", aisle=" + aisle +
+                ", row=" + row +
+                ", shelf=" + shelf +
+                ", bin=" + bin +
                 '}';
     }
 }

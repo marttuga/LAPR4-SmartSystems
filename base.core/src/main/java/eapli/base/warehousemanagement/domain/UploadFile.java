@@ -1,9 +1,7 @@
-
 package eapli.base.warehousemanagement.domain;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
+import org.json.simple.*;
+import org.json.simple.parser.*;
 
 import java.io.FileReader;
 import java.util.List;
@@ -55,9 +53,7 @@ public class UploadFile {
                 //accessibility
                 String access = (String) f.get("accessibility");
 
-            /*
-            TODO:
-             */
+            //TODO:
 
 
                 JSONArray rows = (JSONArray) f.get("rows");
