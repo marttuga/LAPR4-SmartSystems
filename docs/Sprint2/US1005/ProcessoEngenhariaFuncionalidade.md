@@ -1,46 +1,53 @@
-# USDemo1
+# US1005
 =======================================
 
 
-# 1. Requisitos
+# 1. Requirements
 
 *Nesta secção a equipa deve indicar a funcionalidade desenvolvida bem como descrever a sua interpretação sobre a mesma e sua correlação e/ou dependência de/com outros requisitos.*
 
 *Exemplo*
 
-**Demo1** Como {Ator} pretendo...
+**US1005** As Sales Clerk, I want to define a new category of products.
 
-- Demo1.1. Blá Blá Blá ...
 
-- Demo1.2. Blá Blá Blá ...
+Within the scope of this user story, the task of defining a new category is assigned to the sales clerk.
+As such, the sales clerk inserts an alphanumeric code and a description for the category they wish to define.
 
-A interpretação feita deste requisito foi no sentido de ...
+## Acceptance criteria
+* Non existing
 
-# 2. Análise
 
-*Neste secção a equipa deve relatar o estudo/análise/comparação que fez com o intuito de tomar as melhores opções de design para a funcionalidade bem como aplicar diagramas/artefactos de análise adequados.*
+# 2. Analysis
 
-*Recomenda-se que organize este conteúdo por subsecções.*
+* Defining a new category only requires the sales clerk to insert a code and a description.
+* In this case, we assume a product only has one category, but a category many products.
+* One category can also have sub-categories.
+
 
 # 3. Design
 
-*Nesta secção a equipa deve descrever o design adotado para satisfazer a funcionalidade. Entre outros, a equipa deve apresentar diagrama(s) de realização da funcionalidade, diagrama(s) de classes, identificação de padrões aplicados e quais foram os principais testes especificados para validar a funcionalidade.*
-
-*Para além das secções sugeridas, podem ser incluídas outras.*
+>   Domain Classes: Category
+>
+>   Controller: DefineCategoryController
+>
+>   Repository: CategoryRepository
 
 ## 3.1. Realização da Funcionalidade
 
-*Nesta secção deve apresentar e descrever o fluxo/sequência que permite realizar a funcionalidade.*
+![SSD](US1005_SSD.svg)
 
+![SD](US1005_SD.svg)
 ## 3.2. Diagrama de Classes
 
 *Nesta secção deve apresentar e descrever as principais classes envolvidas na realização da funcionalidade.*
 
 ## 3.3. Padrões Aplicados
 
+![CD](US1005_CD.svg)
 *Nesta secção deve apresentar e explicar quais e como foram os padrões de design aplicados e as melhores práticas.*
 
-## 3.4. Testes 
+## 3.4. Testes
 *Nesta secção deve sistematizar como os testes foram concebidos para permitir uma correta aferição da satisfação dos requisitos.*
 
 **Teste 1:** Verificar que não é possível criar uma instância da classe Exemplo com valores nulos.

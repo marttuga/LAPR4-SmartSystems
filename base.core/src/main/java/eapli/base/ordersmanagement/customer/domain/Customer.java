@@ -6,11 +6,10 @@ import eapli.framework.infrastructure.authz.domain.model.SystemUser;
 import javax.persistence.*;
 
 @Entity
-public class Customer implements AggregateRoot<CustomerId>, Comparable<CustomerId> {
+public class Customer implements AggregateRoot<CustomerId> {
 
 
-    @EmbeddedId
-    @Column(insertable = false,updatable = false)
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private CustomerId customerId;
 
@@ -21,7 +20,6 @@ public class Customer implements AggregateRoot<CustomerId>, Comparable<CustomerI
     private SystemUser systemUser;
 
     @Column(updatable = false,insertable = false)
-
     @Embedded
     private Name name;
 
@@ -75,12 +73,6 @@ public class Customer implements AggregateRoot<CustomerId>, Comparable<CustomerI
     public boolean sameAs(Object other) {
         return false;
     }
-
-    @Override
-    public int compareTo(CustomerId other) {
-        return AggregateRoot.super.compareTo(other);
-    }
-
 
     @Override
     public CustomerId identity() {
