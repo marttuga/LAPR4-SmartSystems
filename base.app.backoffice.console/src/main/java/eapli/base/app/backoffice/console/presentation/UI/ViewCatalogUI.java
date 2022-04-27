@@ -3,14 +3,17 @@ package eapli.base.app.backoffice.console.presentation.UI;
 import eapli.base.ordersmanagement.product.application.ProductSorter;
 import eapli.base.ordersmanagement.product.application.ViewCatalogController;
 import eapli.base.ordersmanagement.product.domain.Product;
+import eapli.framework.infrastructure.authz.application.AuthorizationService;
+import eapli.framework.infrastructure.authz.application.AuthzRegistry;
 import eapli.framework.io.util.Console;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class ViewCatalogUI {
-    private static ProductSorter productSorter = new ProductSorter();
-    private static ViewCatalogController catalogueController = new ViewCatalogController();
+    private final AuthorizationService authz = AuthzRegistry.authorizationService();
+    private static final ProductSorter productSorter = new ProductSorter();
+    private static final ViewCatalogController catalogueController = new ViewCatalogController();
 
 
     public static void showMenu() {

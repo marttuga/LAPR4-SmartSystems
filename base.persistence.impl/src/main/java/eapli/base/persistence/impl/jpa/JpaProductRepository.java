@@ -3,6 +3,8 @@ package eapli.base.persistence.impl.jpa;
 
 import eapli.base.Application;
 import eapli.base.ordersmanagement.category.domain.Category;
+import eapli.base.ordersmanagement.customer.domain.Customer;
+import eapli.base.ordersmanagement.customer.domain.CustomerId;
 import eapli.base.ordersmanagement.product.domain.Brand;
 import eapli.base.ordersmanagement.product.domain.Product;
 import eapli.base.ordersmanagement.product.domain.ShortDescription;
@@ -12,7 +14,9 @@ import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
 
 
+import javax.persistence.TypedQuery;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -39,6 +43,7 @@ public class JpaProductRepository extends JpaAutoTxRepository<Product, String, S
         return matchOne("e.brand=:productBrand", params);
     }
 
+
     @Override
     public Optional<Product> findByDescription(ShortDescription description) {
         final Map<String, Object> params = new HashMap<>();
@@ -53,7 +58,38 @@ public class JpaProductRepository extends JpaAutoTxRepository<Product, String, S
         return matchOne("e.category=:productCategory", params);
     }
 
+    @Override
+    public List<Product> findByBrandDescription(Brand brand, ShortDescription description) {
+        TypedQuery<Product> query = super.createQuery("SELECT c FROM Product c WHERE ( c.brand = :productBrand AND c.description=:productDescription", Product.class);
+        query.setParameter("productBrand", brand);
+        query.setParameter("productDescription", description);
+        return query.getResultList();
+    }
 
+    @Override
+    public List<Product> findByBrandCategory(Brand brand, Category category) {
+        TypedQuery<Product> query = super.createQuery("SELECT c FROM Product c WHERE ( c.brand = :productBrand AND c.category=:productCategory", Product.class);
+        query.setParameter("productBrand", brand);
+        query.setParameter("productCategory", category);
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Product> findByDescriptionCategory(ShortDescription description, Category category) {
+        TypedQuery<Product> query = super.createQuery("SELECT c FROM Product c WHERE ( c.description=:productDescription AND c.category=:productCategory", Product.class);
+        query.setParameter("productDescription", description);
+        query.setParameter("productCategory", category);
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Product> findByBrandDescriptionCategory(Brand brand, ShortDescription description, Category category) {
+        TypedQuery<Product> query = super.createQuery("SELECT c FROM Product c WHERE ( c.brand = :productBrand AND c.description=:productDescription AND c.category=:productCategory", Product.class);
+        query.setParameter("productBrand", brand);
+        query.setParameter("productDescription", description);
+        query.setParameter("productCategory", category);
+        return query.getResultList();
+    }
     @Override
     public Optional<Product> ofIdentity(UniqueInternalCode id) {
         return Optional.empty();

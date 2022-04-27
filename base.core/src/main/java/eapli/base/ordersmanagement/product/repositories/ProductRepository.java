@@ -7,6 +7,7 @@ import eapli.base.ordersmanagement.product.domain.ShortDescription;
 import eapli.base.ordersmanagement.product.domain.UniqueInternalCode;
 import eapli.framework.domain.repositories.DomainRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface ProductRepository extends DomainRepository<UniqueInternalCode, Product> {
@@ -18,5 +19,12 @@ public interface ProductRepository extends DomainRepository<UniqueInternalCode, 
 
     Optional<Product> findByCategory(Category category);
 
+    List<Product> findByBrandDescription(Brand brand, ShortDescription description);
+
+    List<Product> findByBrandCategory(Brand brand, Category category);
+
+    List<Product> findByDescriptionCategory(ShortDescription description, Category category);
+
+    List<Product> findByBrandDescriptionCategory(Brand brand, ShortDescription description, Category category);
 }
 
