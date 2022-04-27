@@ -16,7 +16,7 @@
     <class>eapli.base.ordersmanagement.order.domain.Order</class>
     <class>eapli.base.ordersmanagement.customer.domain.Customer</class>
     <class>eapli.base.ordersmanagement.category.domain.Category</class>
-    <class>eapli.base.ordersmanagement.warehousemanagement.domain.Warehouse</class>
+    <class>eapli.base.warehousemanagement.domain.Warehouse</class>
     <class>eapli.base.ordersmanagement.survey.domain.Survey</class>
 
 

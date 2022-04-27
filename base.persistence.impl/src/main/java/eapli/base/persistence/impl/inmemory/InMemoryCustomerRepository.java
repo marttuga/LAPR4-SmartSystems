@@ -7,6 +7,7 @@ import eapli.base.ordersmanagement.customer.repositories.CustomerRepository;
 import eapli.framework.infrastructure.authz.domain.model.Username;
 import eapli.framework.infrastructure.repositories.impl.inmemory.InMemoryDomainRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 public class InMemoryCustomerRepository extends InMemoryDomainRepository<Customer, CustomerId>
@@ -29,5 +30,10 @@ public class InMemoryCustomerRepository extends InMemoryDomainRepository<Custome
     @Override
     public Optional<Customer> findByEmail(EmailAddress emailAddress) {
         return matchOne(e -> e.user().email().equals(emailAddress));
+    }
+
+    @Override
+    public List<Customer> findAllCustomers() {
+        return null;
     }
 }
