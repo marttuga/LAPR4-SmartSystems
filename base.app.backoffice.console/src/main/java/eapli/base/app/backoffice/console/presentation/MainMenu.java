@@ -23,6 +23,8 @@
  */
 package eapli.base.app.backoffice.console.presentation;
 
+
+import eapli.base.app.backoffice.console.presentation.UI.ViewCatalogUI;
 import eapli.base.app.common.console.presentation.authz.MyUserMenu;
 import eapli.base.Application;
 import eapli.base.app.backoffice.console.presentation.authz.AddUserUI;
@@ -59,6 +61,7 @@ public class MainMenu extends AbstractUI {
     private static final int LIST_USERS_OPTION = 2;
     private static final int DEACTIVATE_USER_OPTION = 3;
     private static final int ACCEPT_REFUSE_SIGNUP_REQUEST_OPTION = 4;
+    private static final int VIEW_CATALOG = 5;
 
     // SETTINGS
     private static final int SET_KITCHEN_ALERT_LIMIT_OPTION = 1;
@@ -171,6 +174,7 @@ public class MainMenu extends AbstractUI {
         return menu;
     }
 
+
     private Menu buildUsersMenu() {
         final Menu menu = new Menu("Users >");
 
@@ -180,12 +184,8 @@ public class MainMenu extends AbstractUI {
         menu.addItem(ACCEPT_REFUSE_SIGNUP_REQUEST_OPTION, "Accept/Refuse Signup Request",
                 new AcceptRefuseSignupRequestAction());
         menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
-
+        menu.addItem(VIEW_CATALOG, "View Catalog", new ViewCatalogUI()::show);
         return menu;
     }
-
-
-
-
 
 }

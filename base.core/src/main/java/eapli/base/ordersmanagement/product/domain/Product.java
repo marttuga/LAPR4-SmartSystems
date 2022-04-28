@@ -193,7 +193,7 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "Product:" +
                 "uniqueInternalCode=" + uniqueInternalCode +
                 ", shortDescription=" + shortDescription +
                 ", extendedDescription=" + extendedDescription +
@@ -206,11 +206,6 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
                 ", priceDetail=" + priceDetail +
                 ", category=" + category +
                 ", dimension=" + dimension +
-                ", warehouseID=" + warehouseID +
-                ", aisle=" + aisle +
-                ", row=" + row +
-                ", shelf=" + shelf +
-                ", bin=" + bin +
-                '}';
+                ", warehouseID=" + warehouseID ;
     }
 }

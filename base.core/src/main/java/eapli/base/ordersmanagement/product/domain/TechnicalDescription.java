@@ -31,6 +31,10 @@ public class TechnicalDescription implements ValueObject, Comparable<TechnicalDe
 
     }
 
+    public static TechnicalDescription valueOf(final String description) throws IllegalAccessException {
+        return new TechnicalDescription(description);
+    }
+
     @Override
     public String toString(){
         return description;
