@@ -10,26 +10,25 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Embeddable
-public class PhoneNumber implements ValueObject {
+public class CustomerPhoneNumber implements ValueObject , Comparable<CustomerPhoneNumber>{
     @Embedded
     private String phoneNumber;
 
-    public PhoneNumber() {
+    public CustomerPhoneNumber() {
     }
 
-    public PhoneNumber(String phoneNumber) {
+    public CustomerPhoneNumber(String phoneNumber) {
 
         if (StringPredicates.isNullOrEmpty(phoneNumber)) {
             throw new IllegalArgumentException("Phone Number should neither be null nor empty");
         }
-
-        Pattern phoneNumberRegex = Pattern.compile("^\\d{9}$");
-        Matcher matcher = phoneNumberRegex.matcher(phoneNumber);
-
-        if (!matcher.find()) {
-            throw new IllegalArgumentException("Phone Number invalid format");
+        if (phoneNumber.matches("\\d{9}")) {
+            this.phoneNumber = phoneNumber;
         }
+    }
 
-        this.phoneNumber = phoneNumber;
+    @Override
+    public int compareTo(CustomerPhoneNumber o) {
+        return 0;
     }
 }

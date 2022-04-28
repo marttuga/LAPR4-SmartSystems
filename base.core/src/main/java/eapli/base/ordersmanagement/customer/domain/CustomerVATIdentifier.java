@@ -8,13 +8,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Embeddable
-public class VATIdentifier implements ValueObject {
+public class CustomerVATIdentifier implements ValueObject {
     private String vatIdentifier;
 
-    public VATIdentifier(){
+    public CustomerVATIdentifier(){
     }
 
-    public VATIdentifier(String vatIdentifier){
+    public CustomerVATIdentifier(String vatIdentifier){
         Preconditions.nonEmpty(vatIdentifier, "VAT identifier cannot be null or empty");
 
         Pattern vatIdRegex = Pattern.compile("^\\d{7}$");
