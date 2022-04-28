@@ -4,6 +4,7 @@ import eapli.framework.domain.model.ValueObject;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import java.util.Objects;
 
 /**
  *
@@ -14,13 +15,17 @@ import javax.persistence.Embeddable;
 public class ProductPriceDetail implements ValueObject, Comparable<ProductPriceDetail>{
 
     @Column(name = "price")
-    private Double price;
+    private double price;
 
     protected ProductPriceDetail() {
     }
 
-    public ProductPriceDetail(Double price) {
+    public ProductPriceDetail(double price) {
         this.price = price;
+    }
+
+    public ProductPriceDetail(String price) {
+
     }
 
     @Override
@@ -30,9 +35,13 @@ public class ProductPriceDetail implements ValueObject, Comparable<ProductPriceD
                 '}';
     }
 
+    public static ProductPriceDetail valueOf(final String price) throws IllegalAccessException {
+        return new ProductPriceDetail(price);
+    }
+
     @Override
     public int hashCode() {
-        return this.price.hashCode();
+        return Objects.hash(price);
     }
 
     @Override
