@@ -23,6 +23,10 @@ public class Bin implements ValueObject, Comparable<Bin> {
 
     }
 
+    public static Bin valueOf(final String bin) {
+        return new Bin(bin);
+    }
+
     @Override
     public String toString() {
         return "Bin{" +

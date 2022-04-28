@@ -26,6 +26,10 @@ public class Shelf implements ValueObject, Comparable<Shelf>{
         this.nrShelves = nrShelves;
     }
 
+    public static Shelf valueOf(final String shelfId) {
+        return new Shelf(shelfId);
+    }
+
     @Override
     public int compareTo(Shelf o) {
         return 0;
