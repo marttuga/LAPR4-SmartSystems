@@ -26,7 +26,7 @@ public class JpaCustomerRepository extends JpaAutoTxRepository<Customer, Mecanog
 
     @Override
     public Customer findByCustomerId(MecanographicNumber mecanographicNumber) {
-        TypedQuery<Customer> query = super.createQuery("SELECT c FROM Customer c WHERE c.customerId = :customerId", Customer.class);
+        TypedQuery<Customer> query = super.createQuery("SELECT c FROM Customer c WHERE c.mecanographicNumber = :customerId", Customer.class);
         query.setParameter("customerId", mecanographicNumber);
         return query.getSingleResult();
     }
@@ -43,12 +43,8 @@ public class JpaCustomerRepository extends JpaAutoTxRepository<Customer, Mecanog
 
     @Override
     public List<Customer> findAllCustomers() {
-        List<Customer> customerList = new ArrayList<>();
         TypedQuery<Customer> query = super.createQuery("SELECT DISTINCT c FROM Customer c", Customer.class);
-        for (Customer c: query.getResultList()) {
-            customerList.add(c);
-        }
-        return customerList;
+        return new ArrayList<>(query.getResultList());
     }
 
   /*  @Override
