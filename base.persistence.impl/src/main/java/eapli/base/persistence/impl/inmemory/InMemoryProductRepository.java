@@ -8,6 +8,7 @@ import eapli.base.ordersmanagement.product.domain.UniqueInternalCode;
 import eapli.base.ordersmanagement.product.repositories.ProductRepository;
 import eapli.framework.infrastructure.repositories.impl.inmemory.InMemoryDomainRepository;
 
+import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,25 +19,44 @@ public class InMemoryProductRepository extends InMemoryDomainRepository<Product,
         }
 
     @Override
-    public Optional<Product> findProduct(Brand brand, ShortDescription description, Category category) {
-            return null;
-        //return (matchOne(e -> e.getBrand().equals(brand))&&  matchOne(e -> e.getShortDescription().equals(description))&&  matchOne(e -> e.getCategory().equals(category)));
+    public List<Product> findAllProducts() {
+        return findAllProducts();
     }
 
     @Override
-    public Optional<Product> findByBrand(Brand brand) {
-        return matchOne(e -> e.getBrand().equals(brand));
+    public List<Brand> findAllBrands() {
+        return findAllBrands();
     }
 
     @Override
-    public Optional<Product> findByDescription(ShortDescription description) {
-        return matchOne(e -> e.getShortDescription().equals(description));
+    public Product findByProductCode(String code) {
+        return findByProductCode(code);
+    }
+
+    @Override
+    public List<Product> findByBrand(Brand brand) {
+        return null;//matchOne(e -> e.getBrand().equals(brand));
+    }
+
+    @Override
+    public Brand findByBrandName(String brandNome) {
+        return findByBrandName(brandNome);
+    }
+
+    @Override
+    public ShortDescription findByShortDescription(String shortDescription) {
+        return findByShortDescription(shortDescription);
+    }
+
+    @Override
+    public List<Product> findByDescription(ShortDescription description) {
+        return null;//matchOne(e -> e.getShortDescription().equals(description));
     }
 
 
     @Override
-    public Optional<Product> findByCategory(Category category) {
-        return matchOne(e -> e.getCategory().equals(category));
+    public List<Product> findByCategory(Category category) {
+        return null;//(e -> e.getCategory().equals(category));
     }
 
     @Override

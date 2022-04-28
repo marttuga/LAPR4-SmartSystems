@@ -3,6 +3,7 @@ package eapli.base.ordersmanagement.product.domain;
 import eapli.framework.domain.model.ValueObject;
 
 import javax.persistence.Embeddable;
+import java.util.Objects;
 
 /**
  *
@@ -53,7 +54,8 @@ public class Dimension implements ValueObject, Comparable<Dimension> {
                 '}';
     }
 
-    /*@Override
+/*
+    @Override
     public int hashCode() {
         return Objects.hash(getWidth(), getHeight(), getLength());
     }

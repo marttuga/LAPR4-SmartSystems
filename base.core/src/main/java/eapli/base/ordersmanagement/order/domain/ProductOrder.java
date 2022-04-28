@@ -6,10 +6,9 @@ import eapli.framework.domain.model.DomainEntities;
 
 import javax.persistence.*;
 import java.util.Calendar;
-import java.util.Date;
 
 @Entity
-public class Order implements AggregateRoot<OrderID> {
+public class ProductOrder implements AggregateRoot<OrderID> {
 
     private Calendar dateTime;
 
@@ -43,7 +42,7 @@ public class Order implements AggregateRoot<OrderID> {
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Customer costumer;
 
-    public Order(Calendar dateTime, Status status, OrderActor orderActor, PaymentMethod paymentMethod, ShippingMethod shippingMethod, PriceOrder priceOrder, LineOrder lineOrder, Survey survey, Customer costumer) {
+    public ProductOrder(Calendar dateTime, Status status, OrderActor orderActor, PaymentMethod paymentMethod, ShippingMethod shippingMethod, PriceOrder priceOrder, LineOrder lineOrder, Survey survey, Customer costumer) {
         this.dateTime = dateTime;
         this.status = status;
         this.orderActor = orderActor;
@@ -55,7 +54,7 @@ public class Order implements AggregateRoot<OrderID> {
         this.costumer = costumer;
     }
 
-    public Order() {
+    public ProductOrder() {
     }
 
     @Override

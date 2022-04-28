@@ -34,6 +34,14 @@ public class Brand implements ValueObject, Comparable<Brand>  {
         this.brandName = brandName;
     }
 
+    public String getBrandName() {
+        return brandName;
+    }
+
+    public static Brand valueOf(final String brandName) throws IllegalAccessException {
+        return new Brand(brandName);
+    }
+
     @Override
     public String toString(){
         return brandName;

@@ -34,6 +34,10 @@ public class ProductionCode implements ValueObject, Comparable<ProductionCode>  
         this.productionCode = productionCode;
     }
 
+    public static ProductionCode valueOf(final String productionCode) throws IllegalAccessException {
+        return new ProductionCode(productionCode);
+    }
+
     @Override
     public String toString(){
         return productionCode;

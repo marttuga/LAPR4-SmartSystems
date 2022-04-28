@@ -34,6 +34,10 @@ public class Reference implements ValueObject, Comparable<Reference>  {
         this.reference = reference;
     }
 
+    public static Reference valueOf(final String reference) throws IllegalAccessException {
+        return new Reference(reference);
+    }
+
     @Override
     public String toString(){
         return reference;
