@@ -9,4 +9,5 @@ public class DefineCategoryController {
     private final TransactionalContext txCtx = PersistenceContext.repositories().newTransactionalContext();
 
     private final CategoryRepository categoryRepository = PersistenceContext.repositories().category();
+
 }

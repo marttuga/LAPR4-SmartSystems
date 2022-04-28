@@ -15,4 +15,5 @@ public class JpaCategoryRepository extends JpaAutoTxRepository<Category, Categor
     public JpaCategoryRepository(String puname){
         super(puname, Application.settings().getExtendedPersistenceProperties(), "warehouseID");
     }
+
 }
