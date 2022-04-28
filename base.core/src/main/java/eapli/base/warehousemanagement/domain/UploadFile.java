@@ -1,3 +1,4 @@
+/*
 package eapli.base.warehousemanagement.domain;
 
 import org.json.simple.*;
@@ -5,9 +6,10 @@ import org.json.simple.parser.*;
 
 import java.io.FileReader;
 import java.util.List;
+*/
 
 
-public class UploadFile {
+/*public class UploadFile {
 
     private Warehouse warehouse;
     private List<AGVDock> agvDockList;
@@ -116,5 +118,5 @@ public class UploadFile {
             e.printStackTrace();
         }
     }
-}
+}*/
 

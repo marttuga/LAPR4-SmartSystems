@@ -4,24 +4,18 @@ actor "Sales Clerck" as SC
 
 activate SC
 
-":System" --> SC : starts defining new category
+":System" --> SC : Starts to define a new category
 activate ":System"
 
-SC -> ":System" : Asks for category name
+SC -> ":System" : Requests data (alphanumericCode, description)
 deactivate ":System"
 
-SC -> ":System" : starts to view/search the products catalog
+SC -> ":System" : Inserts requested data
 activate ":System"
 
-":System" --> SC :shows all data and requests confirmation
-deactivate ":System"
-SC -> ":System" : confirms the data
-
-activate ":System"
-":System" --> SC : informs operation success
+":System" --> SC :informs operation success
 deactivate ":System"
 
-deactivate ":System"
 deactivate SC
 
 @enduml
