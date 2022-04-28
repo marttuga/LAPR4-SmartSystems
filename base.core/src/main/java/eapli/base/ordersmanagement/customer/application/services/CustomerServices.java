@@ -25,14 +25,14 @@ public class CustomerServices {
     Customer customer1;
     Random rand =new Random();
 
-    public Customer createCustomerShortInfo(MecanographicNumber mecanographicNumber, CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier ) {
+    public Customer createCustomerShortInfo(CustomerId customerId, CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier ) {
         int id = rand.nextInt(999999999);
-        mecanographicNumber = new MecanographicNumber(id);
+        customerId = new CustomerId(id);
         /*do{
             id = rand.nextInt(999999999);
             customerId.setCustomerId(id);
         }while (customer1.hasIdentity(customerId));*/
-        Customer customer= new Customer(mecanographicNumber,customerFirstName,customerLastName,customerEmailAddress,customerPhoneNumber,customerVatIdentifier);
+        Customer customer= new Customer(customerId,customerFirstName,customerLastName,customerEmailAddress,customerPhoneNumber,customerVatIdentifier);
         String password = PasswordGeneratorAlgorithm.generatesPassword();
         createSystemUserForCustomer(customer.getCustomerId().toString(), password, customer.getCustomerFirstName().toString(), customer.getCustomerEmailAddress().toString());
         EmailSystem.sendEmail(customer.getCustomerEmailAddress().toString(), customer.getCustomerId().toString(), password);
@@ -40,14 +40,14 @@ public class CustomerServices {
         return customer;
     }
 
-    public Customer createCustomer(MecanographicNumber mecanographicNumber, CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier, CustomerBirthDay customerBirthDay, CustomerGender customerGender, Set<CustomerPostalAddress> customerPostalAddresses) {
+    public Customer createCustomer(CustomerId customerId, CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier, CustomerBirthDay customerBirthDay, CustomerGender customerGender, Set<CustomerPostalAddress> customerPostalAddresses) {
         int id = rand.nextInt(999999999);
-        mecanographicNumber = new MecanographicNumber(id);
+        customerId = new CustomerId(id);
         /*do{
             id = rand.nextInt(999999999);
             customerId.setCustomerId(id);
         }while (customer1.hasIdentity(customerId));*/
-        Customer customer= new Customer(mecanographicNumber,customerFirstName,customerLastName,customerEmailAddress,customerPhoneNumber,customerVatIdentifier,customerBirthDay,customerGender, customerPostalAddresses);
+        Customer customer= new Customer(customerId,customerFirstName,customerLastName,customerEmailAddress,customerPhoneNumber,customerVatIdentifier,customerBirthDay,customerGender, customerPostalAddresses);
         String password = PasswordGeneratorAlgorithm.generatesPassword();
         createSystemUserForCustomer(customer.getCustomerId().toString(), password, customer.getCustomerFirstName().toString(), customer.getCustomerEmailAddress().toString());
         EmailSystem.sendEmail(customer.getCustomerEmailAddress().toString(), customer.getCustomerId().toString(), password);

@@ -92,12 +92,12 @@ public class JpaRepositoryFactory implements RepositoryFactory {
 
     @Override
     public CustomerRepository customers(TransactionalContext autoTx) {
-        return null;
+        return new JpaCustomerRepository(autoTx);
     }
 
     @Override
     public CustomerRepository customers() {
-        return null;
+        return new JpaCustomerRepository(Application.settings().getPersistenceUnitName());
     }
 
     @Override

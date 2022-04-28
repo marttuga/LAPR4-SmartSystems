@@ -24,12 +24,12 @@ public class RegisterCustomerController {
 
     private final CustomerRepository customerRepository = PersistenceContext.repositories().customers();
 
-    public Customer registerCustomerShortInfo(MecanographicNumber mecanographicNumber, CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier ) {
+    public Customer registerCustomerShortInfo(CustomerId customerId, CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier ) {
         authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.SALES_CLERK_USER);
 
         txCtx.beginTransaction();
 
-        final Customer customer = customerService.createCustomerShortInfo(mecanographicNumber, customerFirstName, customerLastName, customerEmailAddress, customerPhoneNumber, customerVatIdentifier);
+        final Customer customer = customerService.createCustomerShortInfo(customerId, customerFirstName, customerLastName, customerEmailAddress, customerPhoneNumber, customerVatIdentifier);
 
         txCtx.commit();
 
@@ -37,12 +37,12 @@ public class RegisterCustomerController {
         return customer;
     }
 
-    public Customer registerCustomer(MecanographicNumber mecanographicNumber, CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier, CustomerBirthDay customerBirthDay, CustomerGender customerGender, Set<CustomerPostalAddress> customerPostalAddresses ) {
+    public Customer registerCustomer(CustomerId customerId, CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier, CustomerBirthDay customerBirthDay, CustomerGender customerGender, Set<CustomerPostalAddress> customerPostalAddresses ) {
         authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.SALES_CLERK_USER);
 
         txCtx.beginTransaction();
 
-        final Customer customer = customerService.createCustomer(mecanographicNumber, customerFirstName, customerLastName, customerEmailAddress, customerPhoneNumber, customerVatIdentifier, customerBirthDay,customerGender,customerPostalAddresses);
+        final Customer customer = customerService.createCustomer(customerId, customerFirstName, customerLastName, customerEmailAddress, customerPhoneNumber, customerVatIdentifier, customerBirthDay,customerGender,customerPostalAddresses);
 
         txCtx.commit();
 

@@ -5,7 +5,7 @@ import eapli.framework.validations.Preconditions;
 
 import java.util.Objects;
 
-public class MecanographicNumber implements ValueObject, Comparable<MecanographicNumber> {
+public class CustomerId implements ValueObject, Comparable<CustomerId> {
     private int customerId;
 
     public void setCustomerId(int customerId) {
@@ -16,7 +16,7 @@ public class MecanographicNumber implements ValueObject, Comparable<Mecanographi
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        MecanographicNumber that = (MecanographicNumber) o;
+        CustomerId that = (CustomerId) o;
         return Objects.equals(customerId, that.customerId);
     }
 
@@ -25,12 +25,12 @@ public class MecanographicNumber implements ValueObject, Comparable<Mecanographi
         return Objects.hash(customerId);
     }
 
-    public MecanographicNumber(final int customerId) {
+    public CustomerId(final int customerId) {
         Preconditions.noneNull(customerId, "CustomerID cannot be null or empty");
         this.customerId = customerId;
     }
 
-    protected MecanographicNumber() {
+    protected CustomerId() {
         // for ORM
     }
 
@@ -38,7 +38,7 @@ public class MecanographicNumber implements ValueObject, Comparable<Mecanographi
 
 
     @Override
-    public int compareTo(MecanographicNumber o) {
+    public int compareTo(CustomerId o) {
         return 0;
     }
 }
