@@ -9,7 +9,7 @@ public class EmailSystem {
      */
     private EmailSystem(){}
 
-    public static boolean sendEmail(String emailAddress, String role,String username, String password)  {
+    public static boolean sendEmail(String emailAddress,String username, String password)  {
 
         try {
             FileWriter myWriter;
@@ -17,7 +17,6 @@ public class EmailSystem {
 
             try {
                 myWriter.write(String.format("Email Address: %s %n", emailAddress));
-                myWriter.write(String.format("Role: %s %n",role));
                 myWriter.write(String.format("Username: %s %n", username));
                 myWriter.write(String.format("PassWord: %s %n", password));
 

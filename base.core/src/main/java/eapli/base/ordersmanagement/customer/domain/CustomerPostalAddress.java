@@ -3,9 +3,7 @@ package eapli.base.ordersmanagement.customer.domain;
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.validations.Preconditions;
 
-import javax.persistence.Embeddable;
-
-public class PostalAddress implements ValueObject {
+public class CustomerPostalAddress implements ValueObject {
     private String street;
     private int doorNumber;
     private String city;
@@ -13,10 +11,10 @@ public class PostalAddress implements ValueObject {
     private String postalCode;
     private String postalAddress;
 
-    public PostalAddress(){
+    public CustomerPostalAddress(){
     }
 
-    public PostalAddress(String street, int doorNumber, String city, String country, String postalCode){
+    public CustomerPostalAddress(String street, int doorNumber, String city, String country, String postalCode){
         Preconditions.nonEmpty(street, "Street cannot be null or empty");
         Preconditions.nonEmpty(String.valueOf(doorNumber), "Door Number cannot be null or empty");
         Preconditions.nonEmpty(city, "City cannot be null or empty");
@@ -28,7 +26,7 @@ public class PostalAddress implements ValueObject {
         this.postalCode=postalCode;
     }
 
-    public PostalAddress(String postalAddress){
+    public CustomerPostalAddress(String postalAddress){
         this.postalAddress = postalAddress;
     }
 }
