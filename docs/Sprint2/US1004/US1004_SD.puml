@@ -147,40 +147,14 @@ deactivate ProdRepo
 UI --> SC : Shows available stock
 deactivate UI
 
+end loop
 
-SC -> UI : adds product to shopping cart
+SC -> UI : confirms the data
+
 activate UI
 
 
-UI -> CTRL : addToCart
-activate CTRL
-CTRL -> PC : repositories()
-
-activate PC
-PC -> RF : create
-deactivate PC
-activate RF
-RF -> ShopRepo : create
-activate ShopRepo
-deactivate RF
-deactivate ShopRepo
-
-alt if there is stock
-CTRL -> ShopRepo : addToCart= addToCart()
-activate ShopRepo
-deactivate ShopRepo
-
-else if there is not stock
-CTRL -> ShopRepo : informs operation failure
-activate ShopRepo
-deactivate CTRL
-deactivate ShopRepo
-end
-
-end loop
-
 UI --> SC : shows price of the order with the shipping
-deactivate UI
 deactivate UI
 
 SC -> UI : chooses payment method
@@ -203,11 +177,7 @@ CTRL -> PayRepo : choosesPayMethod= choosesPayMethod()
 deactivate CTRL
 deactivate PayRepo
 
-UI --> SC : requests confirmation
 
-deactivate UI
-SC -> UI : confirms the data
-activate UI
 
 UI -> CTRL : savesOrder
 activate CTRL

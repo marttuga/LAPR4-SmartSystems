@@ -1,7 +1,7 @@
 package eapli.base.persistence.impl.jpa;
 
 import eapli.base.Application;
-import eapli.base.ordersmanagement.order.domain.Order;
+import eapli.base.ordersmanagement.order.domain.ProductOrder;
 import eapli.base.ordersmanagement.order.domain.OrderID;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public class JpaOrderRepository extends JpaAutoTxRepository<Order, String, String> implements OrderRepository {
+public class JpaOrderRepository extends JpaAutoTxRepository<ProductOrder, String, String> implements OrderRepository {
 
 
     public JpaOrderRepository(TransactionalContext autoTx) {
@@ -24,14 +24,14 @@ public class JpaOrderRepository extends JpaAutoTxRepository<Order, String, Strin
     }
 
     @Override
-    public Optional<Order> findOrder(OrderID orderID) {
+    public Optional<ProductOrder> findOrder(OrderID orderID) {
         final Map<String, Object> params = new HashMap<>();
         params.put("OrderIdentification", orderID);
         return matchOne("e.orderID=:OrderIdentification", params);
     }
 
     @Override
-    public Optional<Order> ofIdentity(OrderID id) {
+    public Optional<ProductOrder> ofIdentity(OrderID id) {
         return Optional.empty();
     }
 
