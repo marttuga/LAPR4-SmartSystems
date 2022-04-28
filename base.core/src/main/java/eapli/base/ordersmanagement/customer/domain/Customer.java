@@ -8,12 +8,12 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class Customer implements AggregateRoot<MecanographicNumber> {
+public class Customer implements AggregateRoot<CustomerId> {
 
 
-    @EmbeddedId
+    @Id
     @Column(unique = true)
-    private MecanographicNumber mecanographicNumber;
+    private CustomerId customerId;
 
   /*  *//**
      * cascade = CascadeType.NONE as the systemUser is part of another aggregate
@@ -39,22 +39,22 @@ public class Customer implements AggregateRoot<MecanographicNumber> {
     public Customer() {
     }
 
-    public Customer(MecanographicNumber mecanographicNumber, CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier ){
-        if (mecanographicNumber == null || customerFirstName == null || customerLastName == null || customerEmailAddress == null || customerPhoneNumber == null || customerVatIdentifier == null ) {
+    public Customer(CustomerId customerId, CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier ){
+        if (customerId == null || customerFirstName == null || customerLastName == null || customerEmailAddress == null || customerPhoneNumber == null || customerVatIdentifier == null ) {
             throw new IllegalArgumentException();
         }
-        this.mecanographicNumber = mecanographicNumber;
+        this.customerId = customerId;
         this.customerFirstName=customerFirstName;
         this.customerLastName=customerLastName;
         this.customerEmailAddress=customerEmailAddress;
         this.customerPhoneNumber=customerPhoneNumber;
         this.customerVatIdentifier=customerVatIdentifier;
     }
-    public Customer(MecanographicNumber mecanographicNumber, CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier, CustomerBirthDay customerBirthDay, CustomerGender customerGender, Set<CustomerPostalAddress> customerPostalAddresses){
-        if (mecanographicNumber == null || customerFirstName == null || customerLastName == null || customerEmailAddress == null || customerPhoneNumber == null || customerVatIdentifier == null || customerBirthDay == null || customerGender == null || customerPostalAddresses == null) {
+    public Customer(CustomerId customerId, CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier, CustomerBirthDay customerBirthDay, CustomerGender customerGender, Set<CustomerPostalAddress> customerPostalAddresses){
+        if (customerId == null || customerFirstName == null || customerLastName == null || customerEmailAddress == null || customerPhoneNumber == null || customerVatIdentifier == null || customerBirthDay == null || customerGender == null || customerPostalAddresses == null) {
             throw new IllegalArgumentException();
         }
-        this.mecanographicNumber = mecanographicNumber;
+        this.customerId = customerId;
         this.customerFirstName=customerFirstName;
         this.customerLastName=customerLastName;
         this.customerEmailAddress=customerEmailAddress;
@@ -70,7 +70,7 @@ public class Customer implements AggregateRoot<MecanographicNumber> {
         return this.systemUser;
     }*/
 
-    public MecanographicNumber getCustomerId(){return this.mecanographicNumber;}
+    public CustomerId getCustomerId(){return this.customerId;}
 
     public CustomerFirstName getCustomerFirstName() {
         return customerFirstName;
@@ -110,12 +110,12 @@ public class Customer implements AggregateRoot<MecanographicNumber> {
     }
 
     @Override
-    public MecanographicNumber identity() {
+    public CustomerId identity() {
         return null;
     }
 
     @Override
-    public boolean hasIdentity(MecanographicNumber id) {
+    public boolean hasIdentity(CustomerId id) {
         return AggregateRoot.super.hasIdentity(id);
     }
 

@@ -1,7 +1,7 @@
 package eapli.base.ordersmanagement.customer.repositories;
 
 import eapli.base.ordersmanagement.customer.domain.Customer;
-import eapli.base.ordersmanagement.customer.domain.MecanographicNumber;
+import eapli.base.ordersmanagement.customer.domain.CustomerId;
 import eapli.framework.domain.repositories.DomainRepository;
 import eapli.framework.general.domain.model.EmailAddress;
 import eapli.framework.infrastructure.authz.domain.model.Username;
@@ -9,10 +9,10 @@ import eapli.framework.infrastructure.authz.domain.model.Username;
 import java.util.List;
 import java.util.Optional;
 
-public interface CustomerRepository extends DomainRepository<MecanographicNumber, Customer> {
+public interface CustomerRepository extends DomainRepository<CustomerId, Customer> {
     Optional<Customer> findByUsername(Username username);
 
-    Customer findByCustomerId(MecanographicNumber mecanographicNumber);
+    Customer findByCustomerId(CustomerId customerId);
 
     Optional<Customer> findByEmail(EmailAddress email);
 
