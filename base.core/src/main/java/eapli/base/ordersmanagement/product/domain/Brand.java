@@ -38,6 +38,10 @@ public class Brand implements ValueObject, Comparable<Brand>  {
         return brandName;
     }
 
+    public static Brand valueOf(final String brandName) throws IllegalAccessException {
+        return new Brand(brandName);
+    }
+
     @Override
     public String toString(){
         return brandName;

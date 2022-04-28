@@ -34,6 +34,10 @@ public class Barcode implements ValueObject, Comparable<Barcode>{
 
     }
 
+    public static Barcode valueOf(final String barcode) throws IllegalAccessException {
+        return new Barcode(barcode);
+    }
+
     @Override
     public String toString() {
         return barcode;

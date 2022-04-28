@@ -34,6 +34,10 @@ public class ExtendedDescription implements ValueObject, Comparable<ExtendedDesc
 
     }
 
+    public static ExtendedDescription valueOf(final String description) throws IllegalAccessException {
+        return new ExtendedDescription(description);
+    }
+
     @Override
     public String toString(){
         return description;
