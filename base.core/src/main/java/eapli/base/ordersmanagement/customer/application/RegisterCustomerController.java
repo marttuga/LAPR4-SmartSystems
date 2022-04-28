@@ -42,5 +42,8 @@ public class RegisterCustomerController {
     public List<Customer> findAllCustomers(){
         return customerRepository.findAllCustomers();
     }
+    public Customer findByCustomerId(CustomerId c){
+        return customerRepository.findByCustomerId(c);
+    }
 }
 
