@@ -6,7 +6,7 @@ import eapli.base.ordersmanagement.category.domain.Category;
 import eapli.base.ordersmanagement.category.domain.CategoryCode;
 import eapli.base.ordersmanagement.customer.application.RegisterCustomerController;
 import eapli.base.ordersmanagement.customer.domain.Customer;
-import eapli.base.ordersmanagement.customer.domain.MecanographicNumber;
+import eapli.base.ordersmanagement.customer.domain.CustomerId;
 import eapli.base.ordersmanagement.order.application.NewProductOrderController;
 
 import eapli.base.ordersmanagement.product.application.ViewCatalogController;
@@ -29,7 +29,8 @@ public class NewProductOrderUI extends AbstractUI {
         do {
             continueRun = false;
             int costumerID = Utils.readIntegerFromConsole("Please enter the costumerID: " + "\n(must have 7 numbers)");
-            MecanographicNumber code = new MecanographicNumber(costumerID);
+
+            CustomerId code = new CustomerId(costumerID);
             Customer customer = registerCustomerController.findByCustomerId(code);
             System.out.println(customer);
 
