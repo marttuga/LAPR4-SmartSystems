@@ -11,12 +11,12 @@ public class ShippingCost implements ValueObject {
     @Column (insertable = false, updatable = false)
     private double shippingCost;
 
-    @Embedded
+
     @Enumerated(EnumType.STRING)
     private SalesRegion salesRegion;
 
     @Column(insertable = false, updatable = false)
-    @Embedded
+
     private Weight weight;
 
     public ShippingCost() {

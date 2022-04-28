@@ -17,7 +17,7 @@ public class ShippingMethod implements ValueObject {
 
     private Type type;
     @Column(insertable = false, updatable = false)
-    @Embedded
+   
     private ShippingCost shippingCost;
 
     public ShippingMethod() {

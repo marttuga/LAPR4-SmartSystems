@@ -13,7 +13,7 @@ public class PriceOrder  implements ValueObject {
     private double priceOrder;
 
     @Column(insertable = false, updatable = false)
-    @Embedded
+
     private ShippingCost shippingCost;
 
     public PriceOrder() {
