@@ -3,8 +3,6 @@ package eapli.base.persistence.impl.jpa;
 
 import eapli.base.Application;
 import eapli.base.ordersmanagement.category.domain.Category;
-import eapli.base.ordersmanagement.customer.domain.Customer;
-import eapli.base.ordersmanagement.customer.domain.CustomerId;
 import eapli.base.ordersmanagement.product.domain.Brand;
 import eapli.base.ordersmanagement.product.domain.Product;
 import eapli.base.ordersmanagement.product.domain.ShortDescription;

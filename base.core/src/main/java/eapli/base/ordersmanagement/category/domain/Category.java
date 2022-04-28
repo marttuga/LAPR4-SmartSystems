@@ -1,12 +1,10 @@
 package eapli.base.ordersmanagement.category.domain;
 
-import eapli.base.ordersmanagement.product.domain.Product;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 public class Category implements AggregateRoot<CategoryCode>, Comparable<CategoryCode> {
