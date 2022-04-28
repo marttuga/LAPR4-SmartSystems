@@ -9,13 +9,17 @@ import javax.persistence.*;
 @Entity
 public class Category implements AggregateRoot<CategoryCode>, Comparable<CategoryCode> {
 
-    //NAO ESTA ACABADO E NAO TENHO A CERTEZA
     @EmbeddedId
     @GeneratedValue(strategy = GenerationType.AUTO)
     private CategoryCode categoryCode;
-
+private String description;
 
     public Category() {}
+
+    public Category(CategoryCode categoryCode, String description) {
+        this.categoryCode = categoryCode;
+        this.description = description;
+    }
 
     public static CategoryCode valueOf(final String orderIdentification) {
         return new CategoryCode(orderIdentification);
@@ -28,8 +32,9 @@ public class Category implements AggregateRoot<CategoryCode>, Comparable<Categor
 
     @Override
     public String toString() {
-        return "Category:" +
-                "categoryCode=" + categoryCode ;
+        return "Category: " +
+                " categoryCode=" + categoryCode +
+                ", description='" + description ;
     }
 
     @Override
@@ -50,5 +55,13 @@ public class Category implements AggregateRoot<CategoryCode>, Comparable<Categor
     @Override
     public boolean sameAs(final Object other) {
         return DomainEntities.areEqual(this, other);
+    }
+
+    public CategoryCode getCategoryCode() {
+        return categoryCode;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

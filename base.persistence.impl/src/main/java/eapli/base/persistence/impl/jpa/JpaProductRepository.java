@@ -40,7 +40,7 @@ public class JpaProductRepository extends JpaAutoTxRepository<Product, String, S
     }
 
     @Override
-    public Product findByProductCode(String code) {
+    public Product findByProductCode(UniqueInternalCode code) {
         TypedQuery<Product> query = super.createQuery("SELECT c FROM Prduct c WHERE c.code = :product_code", Product.class);
         query.setParameter("product_code", code);
         return query.getSingleResult();

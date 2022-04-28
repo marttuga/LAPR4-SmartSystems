@@ -28,6 +28,4 @@ public class ProductSorter {
         });
         return productList;
     }
-
-
 }

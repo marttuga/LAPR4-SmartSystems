@@ -1,36 +1,36 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
-import eapli.base.Utils;
+
+import eapli.base.Utils.Utils;
+import eapli.base.ordersmanagement.category.application.DefineCategoryController;
 import eapli.base.ordersmanagement.category.domain.Category;
-import eapli.base.ordersmanagement.product.application.ProductSorter;
+import eapli.base.ordersmanagement.category.domain.CategoryCode;
+
 import eapli.base.ordersmanagement.product.application.ViewCatalogController;
 import eapli.base.ordersmanagement.product.domain.Brand;
 import eapli.base.ordersmanagement.product.domain.Product;
 import eapli.base.ordersmanagement.product.domain.ShortDescription;
-import eapli.framework.io.util.Console;
+import eapli.base.ordersmanagement.product.domain.UniqueInternalCode;
 import eapli.framework.presentation.console.AbstractUI;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 
 
 public class ViewCatalogUI extends AbstractUI {
-
-    private static final ProductSorter productSorter = new ProductSorter();
     private static final ViewCatalogController catalogueController = new ViewCatalogController();
-    // private static final ViewCategoryController categoryController = new ViewCategoryController();
+    private static final DefineCategoryController categoryController = new DefineCategoryController();
 
     public boolean doShow() {
         int optionFilter = 0;
         int optionOrdering = 0;
 
+        List<Product> productList = (List<Product>) catalogueController.findAllProducts();
+        catalogueController.printProductsList(productList);
+
         do {
 
-            List<Product> productList = (List<Product>) catalogueController.findAllProducts();
-            printProductsList(productList);
-
 /////////FILTERING MENU
-            optionFilter = showOptionsFilter();
+            optionFilter = catalogueController.showOptionsFilter();
             //ORDENAR A LISTA DE PRODUTOS
             switch (optionFilter) {
                 case 0:
@@ -39,28 +39,29 @@ public class ViewCatalogUI extends AbstractUI {
 
                 case 1:
 
-           /*         List<Category> categoryList = (List<Category>) categoryController.findAllCategories();
-                    printCategoriesList(categoryList);
+                    List<Category> categoryList = categoryController.findAllCategories();
+                    catalogueController.printCategoriesList(categoryList);
                     String categoryCode = Utils.readLine("Category code: ");
-                    Category category = categoryController.getCategoryByCode();
+                    CategoryCode code= new CategoryCode(categoryCode);
+                    Category category = categoryController.findByCategoryCode(code);
                     System.out.println();
                     System.out.println("               Catalog :             ");
                     System.out.println();
                     List<Product> productCategoryList = catalogueController.getProductByCategory(category);
-                    printProductsList(productCategoryList);
+                   catalogueController.printProductsList(productCategoryList);
                     break;
-*/
+
                 case 2:
 
-                    List<Brand> brandList = (List<Brand>) catalogueController.findAllBrands();
-                    printBrandsList(brandList);
+                    List<Brand> brandList = catalogueController.findAllBrands();
+                    catalogueController.printBrandsList(brandList);
                     String brandName = Utils.readLine("Brand: ");
                     Brand brand = catalogueController.findByBrandName(brandName);
                     System.out.println();
                     System.out.println("               Catalog :             ");
                     System.out.println();
                     List<Product> productBrandList = catalogueController.getProductByBrand(brand);
-                    printProductsList(productBrandList);
+                    catalogueController.printProductsList(productBrandList);
                     break;
 
                 case 3:
@@ -70,19 +71,19 @@ public class ViewCatalogUI extends AbstractUI {
                     System.out.println("               Catalog :             ");
                     System.out.println();
                     List<Product> productDescriptionList = (List<Product>) catalogueController.getProductByDescription(shortDescription);
-                    printProductsList(productDescriptionList);
+                    catalogueController.printProductsList(productDescriptionList);
                     break;
     /*        case 4:
-                sortByPrice();
+                Brand and Category();
                 break;
             case 5:
-                sortByDescription();
+                Brand and Short Description();
                 break;
             case 6:
-                sortByPrice();
+                Short Description and Category();
                 break;
             case 7:
-                sortByPrice();
+                Brand, Short Description and Category();
                 break;*/
 
                 default:
@@ -93,7 +94,7 @@ public class ViewCatalogUI extends AbstractUI {
 
         do {
             //////ORDERING MENU
-            optionOrdering = showOptionsOrdering();
+            optionOrdering = catalogueController.showOptionsOrdering();
             //ORDENAR A LISTA DE PRODUTOS
             switch (optionOrdering) {
                 case 0:
@@ -103,17 +104,17 @@ public class ViewCatalogUI extends AbstractUI {
                     System.out.println();
                     System.out.println("               Catalog :             ");
                     System.out.println();
-                    List<Product> productList = (List<Product>) catalogueController.findAllProducts();
-                    productSorter.sortByDescription(productList);
-                    printProductsList(productList);
+                    List<Product> producttList =catalogueController.findAllProducts();
+                    catalogueController.sortByDescription(producttList);
+                    catalogueController.printProductsList(producttList);
                     break;
                 case 2:
                     System.out.println();
                     System.out.println("               Catalog :             ");
                     System.out.println();
-                    List<Product> catalogueList = (List<Product>) catalogueController.findAllProducts();
-                    productSorter.sortByPrice(catalogueList);
-                    printProductsList(catalogueList);
+                    List<Product> catalogueList =  catalogueController.findAllProducts();
+                    catalogueController.sortByPrice(catalogueList);
+                    catalogueController.printProductsList(catalogueList);
                     break;
                 default:
                     System.out.println("Option does not exist!");
@@ -122,16 +123,15 @@ public class ViewCatalogUI extends AbstractUI {
         } while (optionOrdering != 0);
 
 
-        //////ESCOLHER PRODUTO
+        //////ESCOLHER PRODUTO e imprimir
         String productCode = Utils.readLine("Insert Product Internal Code: ");
-        if (productCode.length() > 23 || StringUtils.isBlank(productCode)) {
-            System.out.println("\nThe data inserted was not valid! Please try again");
-        } else {
-            Product product = catalogueController.findByProductCode(productCode);
+        try {
+            UniqueInternalCode code = new UniqueInternalCode(productCode);
+            Product product = catalogueController.findByProductCode(code);
             System.out.println(product);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();System.out.println("Product does not exist");
         }
-        System.out.println("Product does not exist");
-
 
         return false;
     }
@@ -141,61 +141,5 @@ public class ViewCatalogUI extends AbstractUI {
         return "View the catalog";
     }
 
-
-    ////////OPCOES DE FILTRAR
-    private static int showOptionsFilter() {
-        int option = -1;
-        System.out.println("===================================================\n");
-        System.out.println("               FILTER BY:          ");
-        System.out.println();
-        System.out.println("1-Category");
-        System.out.println("2-Brand");
-        System.out.println("3-Short Description");
-/*        System.out.println("4-Brand and Category");
-        System.out.println("5-Brand and Short Description");
-        System.out.println("6-Short Description and Category");
-        System.out.println("7-Brand, Short Description and Category");*/
-        System.out.println();
-        System.out.println("0. Back\n\n");
-        option = Console.readInteger("Please select an option");
-        return option;
-    }
-
-    ////////OPCOES DE ORDENAR
-    private static int showOptionsOrdering() {
-        int option = -1;
-        System.out.println("===================================================");
-        System.out.println("               Search Catalogue Menu:          ");
-        System.out.println("=================================================\n");
-        System.out.println("1-Sort Catalogues by Description");
-        System.out.println("2-Sort Catalogues by Price");
-        System.out.println("===================================================");
-        System.out.println("0. Back\n\n");
-        option = Console.readInteger("Please select an option");
-        return option;
-    }
-
-
-    //////PRINTING METHODS
-    public static void printProductsList(List<Product> productList) {
-        for (Product c : productList) {
-            System.out.println("Code- " + c.getUniqueInternalCode() + "\nDescription- " + c.getShortDescription() + "\nBrand- " + c.getBrand()
-                    + "\nCategory: " + c.getCategory() + "\nPrice: " + c.getPriceDetail() + "\n");
-        }
-    }
-
-/*
-    public static void printCategoriesList(List<Category> categoriesList) {
-        for (Category c : categoriesList) {
-            System.out.println("Category- " + c.getUniqueInternalCode() + "\nDescription- " + c.getShortDescription() + "\nCode- " + c.getBrand() + "\n");
-        }
-    }
-*/
-
-    public static void printBrandsList(List<Brand> brandsList) {
-        for (Brand c : brandsList) {
-            System.out.println("Brand- " + c.getBrandName() + "\n");
-        }
-    }
 
 }

@@ -53,5 +53,9 @@ public class RegisterCustomerController {
     public List<Customer> findAllCustomers(){
         return customerRepository.findAllCustomers();
     }
+
+    public Customer findByCustomerId(MecanographicNumber c){
+        return customerRepository.findByCustomerId(c);
+    }
 }
 
