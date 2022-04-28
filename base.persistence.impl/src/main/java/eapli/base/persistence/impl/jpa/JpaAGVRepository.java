@@ -12,8 +12,8 @@ import java.util.Optional;
 
 public class JpaAGVRepository extends JpaAutoTxRepository<AGV, String, String> implements AGVRepository {
 
-    public JpaAGVRepository(TransactionalContext tx, String identityFieldName) {
-        super(tx, identityFieldName);
+    public JpaAGVRepository(TransactionalContext tx) {
+        super(tx, "Identifier");
     }
 
     public JpaAGVRepository(String puname){
