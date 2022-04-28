@@ -9,7 +9,7 @@ import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
 
 import java.util.Optional;
 
-public class JpaWarehouseRepository extends JpaAutoTxRepository<Warehouse, String, String > implements WarehouseRepository {
+public class JpaWarehouseRepository extends JpaAutoTxRepository<Warehouse, WarehouseID, WarehouseID > implements WarehouseRepository {
 
     public JpaWarehouseRepository(TransactionalContext autoTx) { super(autoTx, "warehouseID");}
 

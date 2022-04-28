@@ -6,15 +6,15 @@ import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 
 @Embeddable
-public class Gender implements ValueObject {
+public class CustomerGender implements ValueObject {
     @Embedded
     private String gender;
 
-    public Gender() {
+    public CustomerGender() {
 
     }
 
-    public Gender(String gender) {
+    public CustomerGender(String gender) {
         if (!gender.equalsIgnoreCase("male") && !gender.equalsIgnoreCase("female") && !gender.equalsIgnoreCase("other")) {
             throw new IllegalArgumentException("Select only one male/female/other!");
         }

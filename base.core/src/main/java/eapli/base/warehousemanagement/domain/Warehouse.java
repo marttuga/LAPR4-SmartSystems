@@ -1,5 +1,6 @@
 package eapli.base.warehousemanagement.domain;
 
+
 import eapli.framework.domain.model.AggregateRoot;
 
 import javax.persistence.*;
@@ -21,28 +22,30 @@ public class Warehouse implements AggregateRoot<WarehouseID> {
     @Embedded
     private Shelf shelf;
     @Embedded
-    private AGVDock AGVDock;
+    private AGVDock agvDock;
 
 
-    public Warehouse(){
+
+    protected Warehouse(){
 
     }
 
-    public Warehouse(eapli.base.warehousemanagement.domain.WarehouseID warehouseID,
-                     Plan plan, Aisle aisle, Row row, Shelf shelf,
-                     eapli.base.warehousemanagement.domain.AGVDock AGVDock) {
+
+    public Warehouse(eapli.base.warehousemanagement.domain.WarehouseID warehouseID, Plan plan,
+                     Aisle aisle, Row row, Shelf shelf, AGVDock agvDock) {
         WarehouseID = warehouseID;
         this.plan = plan;
         this.aisle = aisle;
         this.row = row;
         this.shelf = shelf;
-        this.AGVDock = AGVDock;
+        this.agvDock = agvDock;
     }
 
-    public Warehouse(Plan plan, Aisle aisle, Row row) {
+    public Warehouse(Plan plan, Aisle aisle, Row row, AGVDock agvDock) {
         this.plan = plan;
         this.aisle = aisle;
         this.row = row;
+        this.agvDock = agvDock;
     }
 
     @Override

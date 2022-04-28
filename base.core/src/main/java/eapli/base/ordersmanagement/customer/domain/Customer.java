@@ -2,72 +2,107 @@
 package eapli.base.ordersmanagement.customer.domain;
 
 import eapli.framework.domain.model.AggregateRoot;
-import eapli.framework.infrastructure.authz.domain.model.SystemUser;
+import eapli.framework.general.domain.model.EmailAddress;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Customer implements AggregateRoot<CustomerId> {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(unique = true)
     private CustomerId customerId;
 
-    /**
+  /*  *//**
      * cascade = CascadeType.NONE as the systemUser is part of another aggregate
-     */
+     *//*
     @OneToOne()
-    private SystemUser systemUser;
-
-    @Column(updatable = false,insertable = false)
-    @Embedded
-    private Name name;
-
-    @Column(updatable = false,insertable = false)
-    @Embedded
-    private EmailAddress emailAddress;
-
-    @Column(updatable = false,insertable = false)
-    @Embedded
-    private BirthDate birthDate;
-
-    @Column(updatable = false,insertable = false)
-    @Embedded
-    private PhoneNumber phoneNumber;
-
-    @Column(updatable = false,insertable = false)
-    @Embedded
-    private Gender gender;
+    private SystemUser systemUser;*/
 
 
-    @Column(updatable = false,insertable = false)
-    @Embedded
-    private VATIdentifier vatIdentifier;
+    private CustomerFirstName customerFirstName;
+    private CustomerLastName customerLastName;
+    private EmailAddress customerEmailAddress;
 
-    @Column(updatable = false,insertable = false)
-    @Embedded
-    private PostalAddress postalAddress;
+    @Temporal(TemporalType.DATE)
+    private CustomerBirthDay customerBirthDay;
+
+    private CustomerPhoneNumber customerPhoneNumber;
+
+    private CustomerGender customerGender;
+    private CustomerVATIdentifier customerVatIdentifier;
+    @ElementCollection
+    private Set<CustomerPostalAddress> customerPostalAddress;
 
     public Customer() {
     }
 
-    public Customer(SystemUser systemUser, CustomerId customerId,EmailAddress emailAddress, PostalAddress postalAddresses, PhoneNumber phoneNumber, BirthDate birthDate, Name name, VATIdentifier vatIdentifier, Gender gender) {
-        this.systemUser = systemUser;
+    public Customer(CustomerId customerId, CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier ){
+        if (customerId == null || customerFirstName == null || customerLastName == null || customerEmailAddress == null || customerPhoneNumber == null || customerVatIdentifier == null ) {
+            throw new IllegalArgumentException();
+        }
         this.customerId = customerId;
-        this.emailAddress = emailAddress;
-        this.postalAddress = postalAddresses;
-        this.phoneNumber = phoneNumber;
-        this.birthDate = birthDate;
-        this.name = name;
-        this.vatIdentifier=vatIdentifier;
-        this.gender=gender;
+        this.customerFirstName=customerFirstName;
+        this.customerLastName=customerLastName;
+        this.customerEmailAddress=customerEmailAddress;
+        this.customerPhoneNumber=customerPhoneNumber;
+        this.customerVatIdentifier=customerVatIdentifier;
+    }
+    public Customer(CustomerId customerId, CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier, CustomerBirthDay customerBirthDay, CustomerGender customerGender, Set<CustomerPostalAddress> customerPostalAddresses){
+        if (customerId == null || customerFirstName == null || customerLastName == null || customerEmailAddress == null || customerPhoneNumber == null || customerVatIdentifier == null || customerBirthDay == null || customerGender == null || customerPostalAddresses == null) {
+            throw new IllegalArgumentException();
+        }
+        this.customerId = customerId;
+        this.customerFirstName=customerFirstName;
+        this.customerLastName=customerLastName;
+        this.customerEmailAddress=customerEmailAddress;
+        this.customerPhoneNumber=customerPhoneNumber;
+        this.customerVatIdentifier=customerVatIdentifier;
+        this.customerBirthDay = customerBirthDay;
+        this.customerGender = customerGender;
+        this.customerPostalAddress = customerPostalAddresses;
     }
 
-    public SystemUser user() {
+
+  /*  public SystemUser user() {
         return this.systemUser;
-    }
+    }*/
 
     public CustomerId getCustomerId(){return this.customerId;}
+
+    public CustomerFirstName getCustomerFirstName() {
+        return customerFirstName;
+    }
+
+    public CustomerLastName getCustomerLastName() {
+        return customerLastName;
+    }
+
+    public EmailAddress getCustomerEmailAddress() {
+        return customerEmailAddress;
+    }
+
+    public CustomerBirthDay getCustomerBirthDay() {
+        return customerBirthDay;
+    }
+
+    public CustomerPhoneNumber getCustomerPhoneNumber() {
+        return customerPhoneNumber;
+    }
+
+    public CustomerGender getCustomerGender() {
+        return customerGender;
+    }
+
+    public CustomerVATIdentifier getCustomerVatIdentifier() {
+        return customerVatIdentifier;
+    }
+
+    public Set<CustomerPostalAddress> getCustomerPostalAddress() {
+        return customerPostalAddress;
+    }
 
     @Override
     public boolean sameAs(Object other) {
@@ -83,5 +118,7 @@ public class Customer implements AggregateRoot<CustomerId> {
     public boolean hasIdentity(CustomerId id) {
         return AggregateRoot.super.hasIdentity(id);
     }
+
+
 }
 

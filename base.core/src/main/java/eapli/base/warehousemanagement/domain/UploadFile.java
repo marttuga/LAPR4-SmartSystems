@@ -1,4 +1,3 @@
-/*
 package eapli.base.warehousemanagement.domain;
 
 import org.json.simple.*;
@@ -6,10 +5,9 @@ import org.json.simple.parser.*;
 
 import java.io.FileReader;
 import java.util.List;
-*/
 
 
-/*public class UploadFile {
+public class UploadFile {
 
     private Warehouse warehouse;
     private List<AGVDock> agvDockList;
@@ -55,7 +53,7 @@ import java.util.List;
                 //accessibility
                 String access = (String) f.get("accessibility");
 
-            //TODO:
+                //TODO:
 
 
                 JSONArray rows = (JSONArray) f.get("rows");
@@ -112,11 +110,10 @@ import java.util.List;
                 this.agvDockList.add(agvDock);
             }
             //TODO:
-            // warehouse
+            //this.warehouse = new Warehouse();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-}*/
-
+}

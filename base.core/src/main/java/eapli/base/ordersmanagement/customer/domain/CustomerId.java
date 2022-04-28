@@ -1,12 +1,16 @@
 package eapli.base.ordersmanagement.customer.domain;
 
 import eapli.framework.domain.model.ValueObject;
-import eapli.framework.strings.util.StringPredicates;
+import eapli.framework.validations.Preconditions;
 
 import java.util.Objects;
 
 public class CustomerId implements ValueObject, Comparable<CustomerId> {
-    private String customerId;
+    private int customerId;
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -21,11 +25,8 @@ public class CustomerId implements ValueObject, Comparable<CustomerId> {
         return Objects.hash(customerId);
     }
 
-    public CustomerId(final String customerId) {
-        if (StringPredicates.isNullOrEmpty(customerId)) {
-            throw new IllegalArgumentException(
-                    "CustomerId should neither be null nor empty");
-        }
+    public CustomerId(final int customerId) {
+        Preconditions.noneNull(customerId, "CustomerID cannot be null or empty");
         this.customerId = customerId;
     }
 
@@ -33,14 +34,7 @@ public class CustomerId implements ValueObject, Comparable<CustomerId> {
         // for ORM
     }
 
-    public static CustomerId valueOf(final String customerId) {
-        return new CustomerId(customerId);
-    }
 
-    @Override
-    public String toString() {
-        return this.customerId;
-    }
 
 
     @Override
