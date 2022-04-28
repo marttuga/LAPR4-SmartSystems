@@ -4,6 +4,7 @@ import eapli.framework.domain.model.ValueObject;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import java.util.Objects;
 
 /**
  *
@@ -14,13 +15,17 @@ import javax.persistence.Embeddable;
 public class Weight implements ValueObject, Comparable<Weight>{
 
     @Column(insertable = false,updatable = false)
-    private Double weight;
+    private double weight;
 
     protected Weight() {
     }
 
-    public Weight(Double weight) {
+    public Weight(double weight) {
         this.weight = weight;
+    }
+
+    public Weight(String weight) {
+
     }
 
     @Override
@@ -29,9 +34,13 @@ public class Weight implements ValueObject, Comparable<Weight>{
                 "weight=" + weight;
     }
 
+    public static Weight valueOf(final String weight) throws IllegalAccessException {
+        return new Weight(weight);
+    }
+
     @Override
     public int hashCode() {
-        return this.weight.hashCode();
+        return Objects.hash(weight);
     }
 
     @Override

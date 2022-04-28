@@ -47,9 +47,9 @@ public class UniqueInternalCode implements ValueObject, Comparable<UniqueInterna
     protected UniqueInternalCode() {
     }
 
-/*    public static UniqueInternalCode valueOf(final String internalCode) {
+    public static UniqueInternalCode valueOf(final String internalCode) throws IllegalAccessException {
         return new UniqueInternalCode(internalCode);
-    }*/
+    }
 
 
     @Override
