@@ -7,10 +7,8 @@ import eapli.base.ordersmanagement.product.domain.ShortDescription;
 import eapli.base.ordersmanagement.product.domain.UniqueInternalCode;
 import eapli.base.ordersmanagement.product.repositories.ProductRepository;
 import eapli.framework.infrastructure.repositories.impl.inmemory.InMemoryDomainRepository;
-
-import javax.persistence.TypedQuery;
 import java.util.List;
-import java.util.Optional;
+
 
 public class InMemoryProductRepository extends InMemoryDomainRepository<Product, UniqueInternalCode> implements ProductRepository {
 
@@ -29,7 +27,7 @@ public class InMemoryProductRepository extends InMemoryDomainRepository<Product,
     }
 
     @Override
-    public Product findByProductCode(String code) {
+    public Product findByProductCode(UniqueInternalCode code) {
         return findByProductCode(code);
     }
 

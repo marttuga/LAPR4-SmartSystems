@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface ProductRepository extends DomainRepository<UniqueInternalCode, Product> {
     public List<Product> findAllProducts();
     public List<Brand> findAllBrands();
-    Product findByProductCode(String code);
+    Product findByProductCode(UniqueInternalCode code);
     Brand findByBrandName(String brandNome);
     ShortDescription findByShortDescription(String shortDescription);
 
