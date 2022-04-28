@@ -34,6 +34,10 @@ public class Brand implements ValueObject, Comparable<Brand>  {
         this.brandName = brandName;
     }
 
+    public String getBrandName() {
+        return brandName;
+    }
+
     @Override
     public String toString(){
         return brandName;

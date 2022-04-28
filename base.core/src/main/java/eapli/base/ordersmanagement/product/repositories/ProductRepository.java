@@ -11,13 +11,17 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ProductRepository extends DomainRepository<UniqueInternalCode, Product> {
-    Optional<Product> findProduct(Brand brand, ShortDescription description, Category category);
+    public List<Product> findAllProducts();
+    public List<Brand> findAllBrands();
+    Product findByProductCode(String code);
+    Brand findByBrandName(String brandNome);
+    ShortDescription findByShortDescription(String shortDescription);
 
-    Optional<Product> findByBrand(Brand brand);
+  List<Product> findByBrand(Brand brand);
 
-    Optional<Product> findByDescription(ShortDescription description);
+    List<Product> findByDescription(ShortDescription description);
 
-    Optional<Product> findByCategory(Category category);
+    List<Product> findByCategory(Category category);
 
     List<Product> findByBrandDescription(Brand brand, ShortDescription description);
 
