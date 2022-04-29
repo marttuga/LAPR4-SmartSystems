@@ -3,9 +3,11 @@ package eapli.base.persistence.impl.jpa;
 import eapli.base.Application;
 import eapli.base.warehousemanagement.domain.Warehouse;
 import eapli.base.warehousemanagement.domain.WarehouseID;
+
 import eapli.base.warehousemanagement.repositories.WarehouseRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
+
 
 import java.util.Optional;
 
@@ -17,6 +19,9 @@ public class JpaWarehouseRepository extends JpaAutoTxRepository<Warehouse, Wareh
         super(puname, Application.settings().getExtendedPersistenceProperties(), "warehouseID");
     }
 
+    public Optional<Warehouse> findById(WarehouseID warehouseID){
+        return Optional.empty();
+    }
     @Override
     public Optional<Warehouse> ofIdentity(WarehouseID id) {
         return Optional.empty();

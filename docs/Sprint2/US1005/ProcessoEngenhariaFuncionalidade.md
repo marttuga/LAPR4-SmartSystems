@@ -15,7 +15,9 @@ Within the scope of this user story, the task of defining a new category is assi
 As such, the sales clerk inserts an alphanumeric code and a description for the category they wish to define.
 
 ## Acceptance criteria
-* Non existing
+
+* code: not empty alphanumeric code with at 10 chars maximum;
+* description: not empty with a minimum of 20 chars and 50 chars maximum;
 
 
 # 2. Analysis

@@ -12,13 +12,14 @@ public class Category implements AggregateRoot<CategoryCode>, Comparable<Categor
     @EmbeddedId
     @GeneratedValue(strategy = GenerationType.AUTO)
     private CategoryCode categoryCode;
-private String description;
+    private CategoryDescription categoryDescription;
 
-    public Category() {}
+    protected Category() {
+    }
 
-    public Category(CategoryCode categoryCode, String description) {
+    public Category(CategoryCode categoryCode, CategoryDescription categoryDescription) {
         this.categoryCode = categoryCode;
-        this.description = description;
+        this.categoryDescription = categoryDescription;
     }
 
     public static CategoryCode valueOf(final String orderIdentification) {
@@ -34,7 +35,7 @@ private String description;
     public String toString() {
         return "Category: " +
                 " categoryCode=" + categoryCode +
-                ", description='" + description ;
+                ", description='" + categoryDescription ;
     }
 
     @Override
@@ -61,7 +62,7 @@ private String description;
         return categoryCode;
     }
 
-    public String getDescription() {
-        return description;
+    public CategoryDescription getDescription() {
+        return categoryDescription;
     }
 }
