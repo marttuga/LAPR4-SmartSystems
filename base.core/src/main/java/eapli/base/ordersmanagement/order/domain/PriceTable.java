@@ -15,10 +15,6 @@ public class PriceTable  implements AggregateRoot<PriceTableID>, Comparable<Pric
     @Embedded
     private SalesRegion sRegion;
 
-    /*@Embedded
-    private ProductPriceDetail productPriceDetail;
-*/
-
     public PriceTable(PriceTableID priceTableID, SalesRegion sRegion) {
         this.priceTableID = priceTableID;
         this.sRegion = sRegion;
@@ -26,6 +22,10 @@ public class PriceTable  implements AggregateRoot<PriceTableID>, Comparable<Pric
 
     public PriceTable(SalesRegion sRegion) {
         this.sRegion = sRegion;
+    }
+
+    public PriceTable() {
+
     }
 
     @Override

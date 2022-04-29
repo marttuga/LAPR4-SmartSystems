@@ -22,9 +22,21 @@ public class ShippingMethod implements ValueObject {
     public ShippingMethod() {
     }
 
+    public Type TypeOfDelivery() {
+        return type;
+    }
+
     public ShippingMethod(Type type, ShippingCost ship) {
         this.type = type;
         this.ship = ship;
+    }
+
+    public ShippingMethod(ShippingCost ship) {
+        this.ship = ship;
+    }
+
+    public ShippingMethod(Type type) {
+        this.type = type;
     }
 }
 
