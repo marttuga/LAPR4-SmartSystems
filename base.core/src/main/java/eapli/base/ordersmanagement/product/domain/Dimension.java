@@ -1,6 +1,7 @@
 package eapli.base.ordersmanagement.product.domain;
 
 import eapli.framework.domain.model.ValueObject;
+import eapli.framework.infrastructure.authz.domain.model.Name;
 
 import javax.persistence.Embeddable;
 import java.util.Objects;
@@ -29,17 +30,21 @@ public class Dimension implements ValueObject, Comparable<Dimension> {
 
     }
 
-/*    public Double getWidth() {
+    public Double width() {
         return width;
     }
 
-    public Double getHeight() {
+    public Double height() {
         return height;
     }
 
-    public Double getLength() {
+    public Double length() {
         return length;
-    }*/
+    }
+
+    public static Dimension valueOf(final Double width, final Double height, final Double length) {
+        return new Dimension(width, height,length);
+    }
 
     public Double getVolume(Double width, Double height, Double length){
         return (width * height * length);
@@ -54,12 +59,12 @@ public class Dimension implements ValueObject, Comparable<Dimension> {
                 '}';
     }
 
-/*
+
     @Override
     public int hashCode() {
-        return Objects.hash(getWidth(), getHeight(), getLength());
+        return Objects.hash(width, height, length);
     }
-*/
+
     @Override
     public int compareTo(Dimension o) {
         return 0;

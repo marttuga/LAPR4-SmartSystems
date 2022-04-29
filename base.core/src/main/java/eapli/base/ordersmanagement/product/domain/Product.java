@@ -1,6 +1,7 @@
 package eapli.base.ordersmanagement.product.domain;
 
 import eapli.base.ordersmanagement.category.domain.Category;
+import eapli.base.ordersmanagement.category.domain.CategoryCode;
 import eapli.base.warehousemanagement.domain.*;
 import eapli.base.warehousemanagement.domain.Warehouse;
 import eapli.base.warehousemanagement.domain.WarehouseID;
@@ -8,6 +9,7 @@ import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 
 import javax.persistence.*;
+import java.util.Arrays;
 
 /**
  *
@@ -51,7 +53,7 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
 
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Category category;
+    private Category categoryCode;
 
     @Embedded
     private Dimension dimension;
@@ -69,18 +71,21 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
     @Embedded
     private Shelf shelf;
 
-    @Embedded
-    private Bin bin;
+    @Lob
+    private byte[] picture;
 
-    public Product(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription, TechnicalDescription technicalDescription, Brand brand, Reference reference, ProductionCode productionCode, Weight weight, Barcode barcode, ProductPriceDetail priceDetail, Category category, Dimension dimension, WarehouseID warehouseID, Aisle aisle, Row row, Shelf shelf, Bin bin) {
+    public Product(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription, TechnicalDescription technicalDescription, Brand brand, Reference reference, ProductionCode productionCode, Weight weight, Barcode barcode, ProductPriceDetail priceDetail, CategoryCode categoryCode, Dimension dimension, WarehouseID warehouseID, Aisle aisle, Row row, Shelf shelf, byte[] picture) {
     }
+
+    public Product(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription) {
+        this.uniqueInternalCode = uniqueInternalCode;
+        this.shortDescription = shortDescription;
+        this.extendedDescription = extendedDescription;
+    }
+
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Warehouse warehouse;
-
-    public void setBin(Bin bin) {
-        this.bin = bin;
-    }
 
     public void setShelf(Shelf shelf) {
         this.shelf = shelf;
@@ -98,6 +103,18 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
 
     }
 
+    public byte[] picture() {
+        return Arrays.copyOf(picture, picture.length);
+    }
+
+    public boolean hasPicture() {
+        return picture != null && picture.length != 0;
+    }
+
+
+    public void changePicture(final byte[] picture) {
+        this.picture = Arrays.copyOf(picture, picture.length);
+    }
 
     @Override
     public int compareTo(UniqueInternalCode other) {
@@ -160,7 +177,7 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
     }
 
     public Category getCategory() {
-        return category;
+        return categoryCode;
     }
 
     public Dimension getDimension() {
@@ -187,9 +204,6 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
         return shelf;
     }
 
-    public Bin getBin() {
-        return bin;
-    }
 
     @Override
     public String toString() {
@@ -204,7 +218,7 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
                 ", weight=" + weight +
                 ", barcode=" + barcode +
                 ", priceDetail=" + priceDetail +
-                ", category=" + category +
+                ", category=" + categoryCode +
                 ", dimension=" + dimension +
                 ", warehouseID=" + warehouseID ;
     }
