@@ -3,22 +3,23 @@ package eapli.base.ordersmanagement.customer.domain;
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.validations.Preconditions;
 
-public class CustomerPostalAddress implements ValueObject {
+public class CustomerPostalAddress implements ValueObject, Comparable<CustomerPostalAddress>{
     private String street;
     private int doorNumber;
     private String city;
     private String country;
-    private String postalCode;
-    private String postalAddress;
+    private int postalCode;
 
-    public CustomerPostalAddress(){
+
+    protected CustomerPostalAddress(){
     }
 
-    public CustomerPostalAddress(String street, int doorNumber, String city, String country, String postalCode){
+    public CustomerPostalAddress(String street, int doorNumber, String city, String country, int postalCode){
         Preconditions.nonEmpty(street, "Street cannot be null or empty");
         Preconditions.nonEmpty(String.valueOf(doorNumber), "Door Number cannot be null or empty");
         Preconditions.nonEmpty(city, "City cannot be null or empty");
         Preconditions.nonEmpty(country, "Country Name cannot be null or empty");
+        Preconditions.nonEmpty(String.valueOf(postalCode), "Country Name cannot be null or empty");
         this.street = street;
         this.doorNumber = doorNumber;
         this.city = city;
@@ -26,7 +27,12 @@ public class CustomerPostalAddress implements ValueObject {
         this.postalCode=postalCode;
     }
 
-    public CustomerPostalAddress(String postalAddress){
-        this.postalAddress = postalAddress;
+    public static CustomerPostalAddress valueOf(final String street, final int doorNumber, final String city, final String country, final int postalCode){
+        return new CustomerPostalAddress(street, doorNumber, city, country, postalCode);
+    }
+
+    @Override
+    public int compareTo(CustomerPostalAddress o) {
+        return 0;
     }
 }

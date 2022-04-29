@@ -6,18 +6,8 @@ import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 
 @Embeddable
-public class CustomerGender implements ValueObject {
-    @Embedded
-    private String gender;
-
-    public CustomerGender() {
-
-    }
-
-    public CustomerGender(String gender) {
-        if (!gender.equalsIgnoreCase("male") && !gender.equalsIgnoreCase("female") && !gender.equalsIgnoreCase("other")) {
-            throw new IllegalArgumentException("Select only one male/female/other!");
-        }
-        this.gender = gender;
-    }
+public enum CustomerGender implements ValueObject {
+    MALE,
+    FEMALE,
+    OTHER
 }

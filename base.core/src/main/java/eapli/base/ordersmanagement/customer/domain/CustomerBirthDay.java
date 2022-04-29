@@ -15,7 +15,7 @@ public class CustomerBirthDay implements ValueObject {
     private Date birthDate;
 
 
-    public CustomerBirthDay(){
+    protected CustomerBirthDay(){
     }
 
      public CustomerBirthDay(final Date dateBirht){

@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 public class CustomerVATIdentifier implements ValueObject, Comparable<CustomerVATIdentifier> {
     private String vatIdentifier;
 
-    public CustomerVATIdentifier(){
+    protected CustomerVATIdentifier(){
     }
 
     public CustomerVATIdentifier(String vatIdentifier){

@@ -11,7 +11,7 @@ public class CustomerLastName implements ValueObject, Comparable<CustomerLastNam
 
     private String customerLastName;
 
-    public CustomerLastName() {
+    protected CustomerLastName() {
 
     }
 
