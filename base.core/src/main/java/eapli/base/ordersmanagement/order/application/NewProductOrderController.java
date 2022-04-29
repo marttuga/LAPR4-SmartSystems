@@ -5,8 +5,11 @@ import eapli.base.ordersmanagement.customer.application.services.CustomerService
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.order.domain.*;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
+import eapli.base.ordersmanagement.product.domain.UniqueInternalCode;
+import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
 import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.framework.domain.repositories.TransactionalContext;
+import eapli.framework.general.domain.model.Money;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
 
@@ -24,10 +27,16 @@ public class NewProductOrderController {
 
         txCtx.beginTransaction();
 
-        ProductOrder productOrder= new ProductOrder(orderActor,orderID,customer,dateTime,lineOrder,priceOrder,paymentMethod,shippingMethod,status);
+        ProductOrder productOrder= orderService.registerNewOrder(orderActor,orderID,customer,dateTime,lineOrder,priceOrder,paymentMethod,shippingMethod,Status.REGISTERED);
 
         txCtx.commit();
 
         return productOrder;
+    }
+
+    public Money getPriceItem(){
+
+    public ProductItem getProductItems(UniqueInternalCode code, int quantity){
+
     }
 }

@@ -9,7 +9,7 @@ import javax.persistence.Embedded;
 @Embeddable
 public class ShippingMethod implements ValueObject {
 
-    private static enum Type {
+    static enum Type {
         Standart,
         Blue,
         Green,
