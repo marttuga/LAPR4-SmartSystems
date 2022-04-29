@@ -30,14 +30,13 @@ public class AGV implements AggregateRoot<Identifier> {
 
     }
 
-    public AGV(Identifier identifier, int autonomy, AGVDock agvDock, String AGVDescription, Model model, MaxWeightCarry maxWeightCarry, Task task) {
+    public AGV(Identifier identifier, int autonomy, AGVDock agvDock, String AGVDescription, Model model, MaxWeightCarry maxWeightCarry) {
         this.identifier = identifier;
         this.autonomy = autonomy;
         this.agvDock = agvDock;
         this.AGVDescription = AGVDescription;
         this.model = model;
         this.maxWeightCarry = maxWeightCarry;
-        this.task = task;
     }
 
     public static int valueOfAutonomy(final int autonomy) {

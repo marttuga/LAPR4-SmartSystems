@@ -55,6 +55,6 @@ public class AGVBuilder {
     }
 
     public AGV build(){
-        return new AGV(identifier,autonomy,agvDock,AGVDescription,model,maxWeightCarry,task);
+        return new AGV(identifier,autonomy,agvDock,AGVDescription,model,maxWeightCarry);
     }
 }
