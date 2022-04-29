@@ -8,7 +8,6 @@ import javax.persistence.Embedded;
 public class Plan implements ValueObject, Comparable<Plan> {
 
     @Column(insertable = false,updatable = false)
-    @Embedded
     private WarehouseID warehouseID;
     private int length;
     private int width;
