@@ -1,14 +1,12 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
-import eapli.base.app.backoffice.console.presentation.MainMenu;
-import eapli.base.ordersmanagement.category.domain.Category;
 import eapli.base.ordersmanagement.category.domain.CategoryCode;
 import eapli.base.ordersmanagement.product.application.SpecifyNewProductController;
 import eapli.base.ordersmanagement.product.domain.*;
 import eapli.base.warehousemanagement.domain.*;
 import eapli.framework.domain.repositories.IntegrityViolationException;
-import eapli.framework.general.domain.model.Designation;
 import eapli.framework.io.util.Console;
+import eapli.framework.presentation.console.AbstractUI;
 
 /**
  *
@@ -16,10 +14,9 @@ import eapli.framework.io.util.Console;
  */
 
 
-public class SpecifyNewProductUI {
+public class SpecifyNewProductUI extends AbstractUI {
 
     private final SpecifyNewProductController controller = new SpecifyNewProductController();
-    MainMenu mainMenu;
 
     public SpecifyNewProductUI (){
 

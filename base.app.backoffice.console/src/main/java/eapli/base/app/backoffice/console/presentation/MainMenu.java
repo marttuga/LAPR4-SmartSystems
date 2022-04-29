@@ -24,10 +24,7 @@
 package eapli.base.app.backoffice.console.presentation;
 
 
-import eapli.base.app.backoffice.console.presentation.UI.DefineCategoryUI;
-import eapli.base.app.backoffice.console.presentation.UI.NewProductOrderUI;
-import eapli.base.app.backoffice.console.presentation.UI.RegisterCustomerUI;
-import eapli.base.app.backoffice.console.presentation.UI.ViewCatalogUI;
+import eapli.base.app.backoffice.console.presentation.UI.*;
 import eapli.base.app.common.console.presentation.authz.MyUserMenu;
 import eapli.base.Application;
 import eapli.base.app.backoffice.console.presentation.authz.AddUserUI;
@@ -70,6 +67,8 @@ public class MainMenu extends AbstractUI {
     private static final int CUSTOMER_REGISTER = 7;
 
     private static final int DEFINE_CATEGORY = 8;
+
+    private static final int SPECIFY_NEW_PRODUCT = 9;
 
     // SETTINGS
     private static final int SET_KITCHEN_ALERT_LIMIT_OPTION = 1;
@@ -193,6 +192,7 @@ public class MainMenu extends AbstractUI {
 
         menusMenu.addItem(CUSTOMER_REGISTER, "Register New Customer", new RegisterCustomerUI()::show);
         menusMenu.addItem(DEFINE_CATEGORY, "Define New Category", new DefineCategoryUI()::show);
+        menusMenu.addItem(SPECIFY_NEW_PRODUCT, "Specify New Product", new SpecifyNewProductUI()::show);
 
         menusMenu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
