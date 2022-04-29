@@ -1,3 +1,4 @@
+/*
 package eapli.base.app.backoffice.console.presentation.UI;
 
 import eapli.base.Utils.Utils;
@@ -9,15 +10,17 @@ import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.customer.domain.CustomerId;
 import eapli.base.ordersmanagement.order.application.NewProductOrderController;
 
+import eapli.base.ordersmanagement.order.domain.OrderID;
+import eapli.base.ordersmanagement.order.domain.ProductOrder;
+import eapli.base.ordersmanagement.order.domain.Status;
 import eapli.base.ordersmanagement.product.application.ViewCatalogController;
 import eapli.base.ordersmanagement.product.domain.*;
 import eapli.framework.presentation.console.AbstractUI;
-import org.apache.commons.lang3.StringUtils;
 
-import java.util.Calendar;
-import java.util.List;
+import java.util.*;
+*/
 
-
+/*
 public class NewProductOrderUI extends AbstractUI {
     private static final ViewCatalogController catalogueController = new ViewCatalogController();
     private static final NewProductOrderController productOrderController = new NewProductOrderController();
@@ -25,15 +28,18 @@ public class NewProductOrderUI extends AbstractUI {
     private static final DefineCategoryController categoryController = new DefineCategoryController();
 
     public boolean doShow() {
+
+        String orderActorID = Utils.readLineFromConsole("Please enter the Sales Clerck ID: ");
         boolean continueRun;
         do {
             continueRun = false;
-            int costumerID = Utils.readIntegerFromConsole("Please enter the costumerID: " + "\n(must have 7 numbers)");
-
-            CustomerId code = new CustomerId(costumerID);
-            Customer customer = registerCustomerController.findByCustomerId(code);
-            System.out.println(customer);
-
+            Customer customer;
+            do {
+                int costumerID = Utils.readIntegerFromConsole("Please enter the costumerID: " + "\n(must have 7 numbers)");
+                CustomerId code = new CustomerId(costumerID);
+                customer = registerCustomerController.findByCustomerId(code);
+                System.out.println(customer);
+            } while (registerCustomerController.findAllCustomers().contains(customer));
 
             int optionFilter = 0;
             int optionOrdering = 0;
@@ -42,10 +48,8 @@ public class NewProductOrderUI extends AbstractUI {
             catalogueController.printProductsList(productList);
 
             do {
-
 /////////FILTERING MENU
                 optionFilter = catalogueController.showOptionsFilter();
-                //ORDENAR A LISTA DE PRODUTOS
                 switch (optionFilter) {
                     case 0:
                         System.out.println("Exiting ...");
@@ -87,7 +91,7 @@ public class NewProductOrderUI extends AbstractUI {
                         List<Product> productDescriptionList = (List<Product>) catalogueController.getProductByDescription(shortDescription);
                         catalogueController.printProductsList(productDescriptionList);
                         break;
-    /*        case 4:
+    *//*        case 4:
                 Brand and Category();
                 break;
             case 5:
@@ -98,7 +102,7 @@ public class NewProductOrderUI extends AbstractUI {
                 break;
             case 7:
                 Brand, Short Description and Category();
-                break;*/
+                break;*//*
 
                     default:
                         System.out.println("Option does not exist!");
@@ -138,32 +142,39 @@ public class NewProductOrderUI extends AbstractUI {
 
 
             //////ESCOLHER PRODUTO e imprimir
-
             String productCode = Utils.readLine("Insert Product Internal Code: ");
             try {
                 UniqueInternalCode pcode = new UniqueInternalCode(productCode);
                 Product product = catalogueController.findByProductCode(pcode);
                 System.out.println(product);
+
+                int quantity = Utils.readIntegerFromConsole("Insert the quantity of the product: ");
+
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
                 System.out.println("Product does not exist");
             }
 
-
-            Calendar orderDate = Calendar.getInstance();
-
+        }while (continueRun);
 
 
 
+        Calendar orderDate = Calendar.getInstance();
 
-            return false;
+        Random rand = new Random();
+        String id = String.valueOf(rand.nextInt(999999999));
+        OrderID orderID = new OrderID(id);
+        ProductOrder order = productOrderController.registerNewOrder(productOrderController.orderActor(orderActorID), orderID, customer, orderDate, , , , , Status.REGISTERED);
 
 
-        } while (continueRun);
+        return false;
+
+
     }
+
 
     @Override
     public String headline() {
         return "Make a Product Order";
     }
-}
+}*/
