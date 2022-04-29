@@ -29,6 +29,7 @@ public class NewProductOrderUI extends AbstractUI {
         do {
             continueRun = false;
             int costumerID = Utils.readIntegerFromConsole("Please enter the costumerID: " + "\n(must have 7 numbers)");
+
             CustomerId code = new CustomerId(costumerID);
             Customer customer = registerCustomerController.findByCustomerId(code);
             System.out.println(customer);
@@ -137,6 +138,7 @@ public class NewProductOrderUI extends AbstractUI {
 
 
             //////ESCOLHER PRODUTO e imprimir
+
             String productCode = Utils.readLine("Insert Product Internal Code: ");
             try {
                 UniqueInternalCode pcode = new UniqueInternalCode(productCode);
@@ -154,32 +156,6 @@ public class NewProductOrderUI extends AbstractUI {
 
 
 
-
-
-       /* final Dish theDish = selectDish();
-
-        controller.registerMeal(MealType.LUNCH, currentDay, theDish);
-    } catch (@SuppressWarnings("unused") final IntegrityViolationException ex) {
-        System.out.println("There is already a meal for that day/type in that menu");
-    }
-            return false;
-}
-
-    private Dish selectDish() {
-        System.out.println("List of Dishes - Select a Dish");
-        final Iterable<Dish> listDish = listDishService.allDishes();
-        final SelectWidget<Dish> selectorDish = new SelectWidget<>("Select a dish", listDish,
-                new DishPrinter());
-        selectorDish.show();
-        return selectorDish.selectedElement();
-    }
-
-    @Override
-    public String headline() {
-        return "Register Meal On a Menu";
-    }
-
-*/
             return false;
 
 

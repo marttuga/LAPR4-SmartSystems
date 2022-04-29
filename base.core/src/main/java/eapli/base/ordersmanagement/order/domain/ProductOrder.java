@@ -23,6 +23,9 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     @Embedded
     private OrderActor orderActor;
 
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Customer customer;
+
     @Embedded
     private PaymentMethod paymentMethod;
 
@@ -39,19 +42,18 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Survey survey;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Customer costumer;
 
-    public ProductOrder(Calendar dateTime, Status status, OrderActor orderActor, PaymentMethod paymentMethod, ShippingMethod shippingMethod, PriceOrder priceOrder, LineOrder lineOrder, Survey survey, Customer costumer) {
+    public ProductOrder(OrderActor orderActor, OrderID orderID, Customer customer,Calendar dateTime, LineOrder lineOrder, PriceOrder priceOrder,
+                        PaymentMethod paymentMethod, ShippingMethod shippingMethod, Status status) {
         this.dateTime = dateTime;
+        this.orderID = orderID;
         this.status = status;
         this.orderActor = orderActor;
+        this.customer = customer;
         this.paymentMethod = paymentMethod;
         this.shippingMethod = shippingMethod;
         this.priceOrder = priceOrder;
         this.lineOrder = lineOrder;
-        this.survey = survey;
-        this.costumer = costumer;
     }
 
     public ProductOrder() {
@@ -69,7 +71,7 @@ public class ProductOrder implements AggregateRoot<OrderID> {
                 ", priceOrder=" + priceOrder +
                 ", lineOrder=" + lineOrder +
                 ", survey=" + survey +
-                ", costumer=" + costumer;
+                ", costumer=" + customer;
     }
 
     @Override
@@ -124,8 +126,8 @@ public class ProductOrder implements AggregateRoot<OrderID> {
         return priceOrder;
     }
 
-    public Customer getCostumer() {
-        return costumer;
+    public Customer getCustomer() {
+        return customer;
     }
 
     public LineOrder getLineOrder() {

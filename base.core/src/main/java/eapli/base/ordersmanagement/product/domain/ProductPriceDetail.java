@@ -1,6 +1,7 @@
 package eapli.base.ordersmanagement.product.domain;
 
 import eapli.framework.domain.model.ValueObject;
+import eapli.framework.general.domain.model.Money;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -15,12 +16,12 @@ import java.util.Objects;
 public class ProductPriceDetail implements ValueObject, Comparable<ProductPriceDetail>{
 
     @Column(name = "price")
-    private double price;
+    private Money price;
 
     protected ProductPriceDetail() {
     }
 
-    public ProductPriceDetail(double price) {
+    public ProductPriceDetail(Money price) {
         this.price = price;
     }
 
@@ -30,9 +31,8 @@ public class ProductPriceDetail implements ValueObject, Comparable<ProductPriceD
 
     @Override
     public String toString() {
-        return "ProductPriceDetail{" +
-                "price=" + price +
-                '}';
+        return "ProductPriceDetail:" +
+                "price=" + price;
     }
 
     public static ProductPriceDetail valueOf(final String price) throws IllegalAccessException {

@@ -1,6 +1,7 @@
 
 package eapli.base.ordersmanagement.customer.application;
 
+import eapli.base.clientusermanagement.domain.MecanographicNumber;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.ordersmanagement.customer.application.services.CustomerServices;
 import eapli.base.ordersmanagement.customer.domain.*;
@@ -54,7 +55,7 @@ public class RegisterCustomerController {
         return customerRepository.findAllCustomers();
     }
 
-    public Customer findByCustomerId(MecanographicNumber c){
+    public Customer findByCustomerId(CustomerId c){
         return customerRepository.findByCustomerId(c);
     }
 }

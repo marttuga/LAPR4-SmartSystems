@@ -4,35 +4,41 @@ import eapli.base.ordersmanagement.order.domain.LineOrder;
 import eapli.base.ordersmanagement.product.domain.Product;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
+import eapli.framework.general.domain.model.Money;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class ProductItem implements AggregateRoot<ProductItemID>{
 
-    private double priceItem;
+    private Money priceItem;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    Set<Product> products= new HashSet<>();
+
     private int quantity;
 
     @EmbeddedId
     @GeneratedValue(strategy = GenerationType.AUTO)
     private ProductItemID productItemID;
 
-   @Embedded
+
+
+    @Embedded
     private LineOrder lineOrder;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "product_code")
-    private Product product;
 
-    public ProductItem(double priceItem, int quantity, LineOrder lineOrder, Product product) {
+    public ProductItem(Money priceItem, int quantity, ProductItemID productItemID, Set<Product> products, LineOrder lineOrder) {
         this.priceItem = priceItem;
         this.quantity = quantity;
+        this.productItemID = productItemID;
+        this.products = products;
         this.lineOrder = lineOrder;
-        this.product = product;
     }
 
     protected ProductItem() {
-
     }
 
     @Override
@@ -41,8 +47,8 @@ public class ProductItem implements AggregateRoot<ProductItemID>{
                 "priceItem=" + priceItem +
                 ", quantity=" + quantity +
                 ", productItemID=" + productItemID +
-                ", lineOrder=" + lineOrder +
-                ", product=" + product ;
+                ", products=" + products +
+                ", lineOrder=" + lineOrder ;
     }
 
     @Override
@@ -77,15 +83,15 @@ public class ProductItem implements AggregateRoot<ProductItemID>{
         return lineOrder;
     }
 
-    public Product getProduct() {
-        return product;
+    public Set<Product> getProducts() {
+        return products;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public double getPriceItem() {
+    public Money getPriceItem() {
         return priceItem;
     }
 }

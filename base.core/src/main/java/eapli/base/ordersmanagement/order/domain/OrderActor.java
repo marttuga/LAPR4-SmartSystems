@@ -11,7 +11,7 @@ public class OrderActor implements ValueObject {
     private Role role;
 
 
-    private static enum Role {
+    static enum Role {
         Costumer, Sales_Clerk
     };
 
