@@ -5,18 +5,27 @@ import eapli.framework.strings.util.StringPredicates;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.Transient;
 
 @Embeddable
 public class AGVDock implements ValueObject, Comparable<AGVDock>{
 
+    @Transient
     private int agvDockID;
+    @Transient
     private int lsquareBeginAGVDock;
+    @Transient
     private int wsquareBeginAGVDock;
+    @Transient
     private int lsquareEndAGVDock;
+    @Transient
     private int wsquareEndAGVDock;
+    @Transient
     private int lsquareDepthAGVDock;
+    @Transient
     private int wsquareDepthAGVDock;
     @Column(insertable = false, updatable = false)
+    @Transient
     private String accessibility;
 
 

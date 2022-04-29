@@ -5,24 +5,33 @@ import eapli.framework.strings.util.StringPredicates;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.Transient;
 
 @Embeddable
 public class Aisle implements ValueObject, Comparable<Aisle>  {
 
+    @Transient
     private int aisleId;
     @Column(insertable = false,updatable = false)
+    @Transient
     private int lsquareBegin;
     @Column(insertable = false,updatable = false)
+    @Transient
     private int wsquareBegin;
     @Column(insertable = false,updatable = false)
+    @Transient
     private int lsquareEnd;
     @Column(insertable = false,updatable = false)
+    @Transient
     private int wsquareEnd;
     @Column(insertable = false,updatable = false)
+    @Transient
     private int beginDepth;
     @Column(insertable = false,updatable = false)
+    @Transient
     private int endDepth;
     @Column(insertable = false,updatable = false)
+    @Transient
     private String accessibility;
 
     public Aisle(final String aisleId) {
