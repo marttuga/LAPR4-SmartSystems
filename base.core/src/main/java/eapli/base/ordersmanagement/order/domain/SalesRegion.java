@@ -8,9 +8,9 @@ import java.io.Serializable;
 
 @Embeddable
 public enum SalesRegion  implements ValueObject {
-
-    PORTUGAL,
-    SPAIN,
+              // shippingcost
+    PORTUGAL, // 0,2
+    SPAIN,    // 0,2
     FRANCE,
     GERMANY,
     ITALY,
@@ -18,6 +18,5 @@ LUXEMBOURG,
     MALTA,
     FINLAND,
     AUSTRIA,
-
 
 }

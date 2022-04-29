@@ -11,22 +11,21 @@ import javax.persistence.Embedded;
 @Embeddable
 public class PriceOrder  implements ValueObject {
 
-    private Money priceOrder;
+    private Money priceMoney;
 
-    @Column(insertable = false, updatable = false)
 
-    private ShippingCost shippingCost;
+    private ShippingCost shippingC;
 
     public PriceOrder() {
     }
 
-    public PriceOrder(Money priceOrder, ShippingCost shippingCost) {
-        this.priceOrder = priceOrder;
-        this.shippingCost = shippingCost;
+    public PriceOrder(Money priceMoney, ShippingCost shippingC) {
+        this.priceMoney = priceMoney;
+        this.shippingC = shippingC;
     }
 
     @Override
     public String toString() {
-        return "total price: \n"+ priceOrder;
+        return "total price: \n"+ priceMoney;
     }
 }

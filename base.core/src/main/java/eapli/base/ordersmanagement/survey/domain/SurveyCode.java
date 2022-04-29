@@ -7,7 +7,7 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class SurveyCode implements ValueObject, Comparable<SurveyCode> {
-    private String surveyCode;
+    private String coding;
 
 
     
@@ -16,7 +16,7 @@ public class SurveyCode implements ValueObject, Comparable<SurveyCode> {
             throw new IllegalArgumentException(
                     "Survey alpha numeric code should neither be null nor empty");
         }
-        this.surveyCode = alphaNumericCode;
+        this.coding = alphaNumericCode;
     }
 
     protected SurveyCode() {
@@ -28,16 +28,16 @@ public class SurveyCode implements ValueObject, Comparable<SurveyCode> {
 
     @Override
     public int hashCode() {
-        return this.surveyCode.hashCode();
+        return this.coding.hashCode();
     }
 
     @Override
     public String toString() {
-        return this.surveyCode;
+        return this.coding;
     }
 
     @Override
     public int compareTo(final SurveyCode o) {
-        return surveyCode.compareTo(o.surveyCode);
+        return coding.compareTo(o.coding);
     }
 }

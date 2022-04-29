@@ -16,29 +16,30 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private OrderID orderID;
 
-    @Embedded
     @Enumerated(EnumType.STRING)
     private Status status;
 
     @Embedded
+    @Column(updatable = false,insertable = false)
     private OrderActor orderActor;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Customer customer;
 
     @Embedded
+    @Column(updatable = false,insertable = false)
     private PaymentMethod paymentMethod;
 
-    @Column(updatable = false,insertable = false)
+
     @Embedded
+    @Column(updatable = false,insertable = false)
     private ShippingMethod shippingMethod;
 
     @Embedded
+    @Column(updatable = false,insertable = false)
     private PriceOrder priceOrder;
 
-
-    
-    @Embedded
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private LineOrder lineOrder;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

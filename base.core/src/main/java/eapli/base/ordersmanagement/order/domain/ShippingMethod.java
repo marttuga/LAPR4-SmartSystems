@@ -16,16 +16,15 @@ public class ShippingMethod implements ValueObject {
     }
 
     private Type type;
-    @Column(insertable = false, updatable = false)
 
-    private ShippingCost shippingCost;
+    private ShippingCost ship;
 
     public ShippingMethod() {
     }
 
-    public ShippingMethod(Type type, ShippingCost shippingCost) {
+    public ShippingMethod(Type type, ShippingCost ship) {
         this.type = type;
-        this.shippingCost = shippingCost;
+        this.ship = ship;
     }
 }
 
