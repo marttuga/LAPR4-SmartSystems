@@ -8,14 +8,14 @@ import java.util.Objects;
 
 @Embeddable
 public class PriceTableID implements ValueObject, Comparable<PriceTableID> {
-    private String priceTableID;
+    private String priceTID;
 
     public PriceTableID(final String identification) {
         if (StringPredicates.isNullOrEmpty(identification)) {
             throw new IllegalArgumentException(
                     "PriceTableID should neither be null nor empty");
         }
-        this.priceTableID = identification;
+        this.priceTID = identification;
     }
 
     protected PriceTableID() {
@@ -28,7 +28,7 @@ public class PriceTableID implements ValueObject, Comparable<PriceTableID> {
 
     @Override
     public String toString() {
-        return this.priceTableID;
+        return this.priceTID;
     }
 
 
