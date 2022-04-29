@@ -17,7 +17,7 @@ public class Weight implements ValueObject, Comparable<Weight>{
     @Column(insertable = false,updatable = false)
     private double weight;
 
-    public Weight() {
+    protected Weight() {
     }
 
     public Weight(double weight) {

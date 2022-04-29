@@ -4,12 +4,12 @@ package eapli.base.app.backoffice.console.presentation.UI;
 import eapli.base.utilitarianClasses.Utils;
 import eapli.base.ordersmanagement.category.application.DefineCategoryController;
 import eapli.base.ordersmanagement.category.domain.Category;
-import eapli.base.ordersmanagement.category.domain.CategoryCode;
+
 
 import eapli.base.ordersmanagement.product.application.ViewCatalogController;
 import eapli.base.ordersmanagement.product.domain.Brand;
 import eapli.base.ordersmanagement.product.domain.Product;
-import eapli.base.ordersmanagement.product.domain.ShortDescription;
+
 import eapli.base.ordersmanagement.product.domain.UniqueInternalCode;
 import eapli.framework.presentation.console.AbstractUI;
 
@@ -38,40 +38,22 @@ public class ViewCatalogUI extends AbstractUI {
                     break;
 
                 case 1:
-
                     List<Category> categoryList = categoryController.findAllCategories();
                     catalogueController.printCategoriesList(categoryList);
                     String categoryCode = Utils.readLine("Category code: ");
-                    CategoryCode code= new CategoryCode(categoryCode);
-                    Category category = categoryController.findByCategoryCode(code);
-                    System.out.println();
-                    System.out.println("               Catalog :             ");
-                    System.out.println();
-                    List<Product> productCategoryList = catalogueController.getProductByCategory(category);
-                   catalogueController.printProductsList(productCategoryList);
+                    catalogueController.printCategoriesList(categoryCode);
                     break;
 
                 case 2:
-
                     List<Brand> brandList = catalogueController.findAllBrands();
                     catalogueController.printBrandsList(brandList);
                     String brandName = Utils.readLine("Brand: ");
-                    Brand brand = catalogueController.findByBrandName(brandName);
-                    System.out.println();
-                    System.out.println("               Catalog :             ");
-                    System.out.println();
-                    List<Product> productBrandList = catalogueController.getProductByBrand(brand);
-                    catalogueController.printProductsList(productBrandList);
+                   catalogueController.printBrandList(brandName);
                     break;
 
                 case 3:
                     String description = Utils.readLine("Description: ");
-                    ShortDescription shortDescription = catalogueController.findByShortDescription(description);
-                    System.out.println();
-                    System.out.println("               Catalog :             ");
-                    System.out.println();
-                    List<Product> productDescriptionList = (List<Product>) catalogueController.getProductByDescription(shortDescription);
-                    catalogueController.printProductsList(productDescriptionList);
+                    catalogueController.printDescriptionList(description);
                     break;
     /*        case 4:
                 Brand and Category();
@@ -101,20 +83,10 @@ public class ViewCatalogUI extends AbstractUI {
                     System.out.println("Exiting ...");
                     break;
                 case 1:
-                    System.out.println();
-                    System.out.println("               Catalog :             ");
-                    System.out.println();
-                    List<Product> producttList =catalogueController.findAllProducts();
-                    catalogueController.sortByDescription(producttList);
-                    catalogueController.printProductsList(producttList);
+                   catalogueController.printOrderedDescription();
                     break;
                 case 2:
-                    System.out.println();
-                    System.out.println("               Catalog :             ");
-                    System.out.println();
-                    List<Product> catalogueList =  catalogueController.findAllProducts();
-                    catalogueController.sortByPrice(catalogueList);
-                    catalogueController.printProductsList(catalogueList);
+                    catalogueController.printOrderedPrice();
                     break;
                 default:
                     System.out.println("Option does not exist!");
