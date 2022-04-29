@@ -59,6 +59,7 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     public ProductOrder() {
     }
 
+
     @Override
     public String toString() {
         return "Order:" +
@@ -102,10 +103,6 @@ public class ProductOrder implements AggregateRoot<OrderID> {
         return orderID;
     }
 
-    public Calendar getDateTime() {
-        return dateTime;
-    }
-
     public Status getStatus() {
         return status;
     }
@@ -134,9 +131,6 @@ public class ProductOrder implements AggregateRoot<OrderID> {
         return lineOrder;
     }
 
-    public Survey getSurvey() {
-        return survey;
-    }
 
 
 }

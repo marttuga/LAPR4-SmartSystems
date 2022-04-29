@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Embeddable
 public class PaymentMethod implements ValueObject {
 
-    private static enum Method {
+    static enum Method {
         PAY_PAL,
         MBWAY,
         CREDIT_CARD,

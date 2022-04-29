@@ -26,16 +26,17 @@ public class ProductItem implements AggregateRoot<ProductItemID>{
 
 
 
-    @Embedded
-    private LineOrder lineOrder;
-
-
-    public ProductItem(Money priceItem, int quantity, ProductItemID productItemID, Set<Product> products, LineOrder lineOrder) {
+    public ProductItem(Money priceItem, int quantity, ProductItemID productItemID, Set<Product> products) {
         this.priceItem = priceItem;
         this.quantity = quantity;
         this.productItemID = productItemID;
         this.products = products;
-        this.lineOrder = lineOrder;
+    }
+
+    public ProductItem(Money priceItem, Set<Product> products, int quantity) {
+        this.priceItem = priceItem;
+        this.products = products;
+        this.quantity = quantity;
     }
 
     protected ProductItem() {
@@ -47,8 +48,7 @@ public class ProductItem implements AggregateRoot<ProductItemID>{
                 "priceItem=" + priceItem +
                 ", quantity=" + quantity +
                 ", productItemID=" + productItemID +
-                ", products=" + products +
-                ", lineOrder=" + lineOrder ;
+                ", products=" + products;
     }
 
     @Override
@@ -77,10 +77,6 @@ public class ProductItem implements AggregateRoot<ProductItemID>{
 
     public ProductItemID getProductItemID() {
         return productItemID;
-    }
-
-    public LineOrder getLineOrder() {
-        return lineOrder;
     }
 
     public Set<Product> getProducts() {
