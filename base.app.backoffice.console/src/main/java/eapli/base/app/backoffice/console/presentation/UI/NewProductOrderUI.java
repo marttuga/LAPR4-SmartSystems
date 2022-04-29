@@ -1,6 +1,5 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
-import eapli.base.Utils.Utils;
 import eapli.base.ordersmanagement.category.application.DefineCategoryController;
 import eapli.base.ordersmanagement.category.domain.Category;
 import eapli.base.ordersmanagement.category.domain.CategoryCode;
@@ -12,6 +11,7 @@ import eapli.base.ordersmanagement.order.application.NewProductOrderController;
 import eapli.base.ordersmanagement.order.domain.OrderID;
 import eapli.base.ordersmanagement.product.application.ViewCatalogController;
 import eapli.base.ordersmanagement.product.domain.*;
+import eapli.base.utilitarianClasses.Utils;
 import eapli.framework.presentation.console.AbstractUI;
 
 import java.util.*;

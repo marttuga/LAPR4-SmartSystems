@@ -1,11 +1,10 @@
-package eapli.base.Utils;
+package eapli.base.utilitarianClasses;
 
 import java.util.Calendar;
 import java.util.Date;
 
 public class AgeCalculator {
     private AgeCalculator() {
-
     }
 
     public static int getCalculateAge(Date birthDate) {

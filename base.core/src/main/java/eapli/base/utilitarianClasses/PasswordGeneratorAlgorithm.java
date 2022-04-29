@@ -1,4 +1,4 @@
-package eapli.base.Utils;
+package eapli.base.utilitarianClasses;
 
 import java.security.SecureRandom;
 
@@ -10,7 +10,6 @@ public class PasswordGeneratorAlgorithm {
      * Hide implicit constructor.
      */
     private PasswordGeneratorAlgorithm() {
-
     }
 
     private static final SecureRandom random = new SecureRandom();

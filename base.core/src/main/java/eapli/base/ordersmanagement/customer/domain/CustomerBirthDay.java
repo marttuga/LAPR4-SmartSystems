@@ -1,12 +1,8 @@
 package eapli.base.ordersmanagement.customer.domain;
 
-import eapli.base.Utils.AgeCalculator;
+import eapli.base.utilitarianClasses.AgeCalculator;
 import eapli.framework.domain.model.ValueObject;
-import eapli.framework.time.util.CalendarPredicates;
-import eapli.framework.validations.Preconditions;
-
 import javax.persistence.Embeddable;
-import java.util.Calendar;
 import java.util.Date;
 
 @Embeddable

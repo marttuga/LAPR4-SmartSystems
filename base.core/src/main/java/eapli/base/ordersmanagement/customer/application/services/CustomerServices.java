@@ -1,8 +1,8 @@
 
 package eapli.base.ordersmanagement.customer.application.services;
 
-import eapli.base.Utils.EmailSystem;
-import eapli.base.Utils.PasswordGeneratorAlgorithm;
+import eapli.base.utilitarianClasses.EmailSystem;
+import eapli.base.utilitarianClasses.PasswordGeneratorAlgorithm;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.ordersmanagement.customer.domain.*;
 import eapli.base.ordersmanagement.customer.repositories.CustomerRepository;

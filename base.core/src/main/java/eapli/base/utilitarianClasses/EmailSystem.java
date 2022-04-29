@@ -1,4 +1,4 @@
-package eapli.base.Utils;
+package eapli.base.utilitarianClasses;
 
 import java.io.FileWriter;
 
@@ -10,7 +10,6 @@ public class EmailSystem {
     private EmailSystem(){}
 
     public static boolean sendEmail(String emailAddress,String username, String password)  {
-
         try {
             FileWriter myWriter;
             myWriter = new FileWriter("Email_With_Credentials.txt", true);
