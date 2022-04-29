@@ -10,11 +10,11 @@ public class AGVService {
 
     private final AGVRepository agvRepository = PersistenceContext.repositories().agv();
 
-    public AGV createAGV(Identifier identifier, int autonomy, AGVDock agvDock, String description, Model model, MaxWeightCarry maxWeightCarry, Task task){
+    public AGV createAGV(Identifier identifier, int autonomy, AGVDock agvDock, String description, Model model, MaxWeightCarry maxWeightCarry){
         final AGVBuilder agvBuilder = new AGVBuilder();
         AGV agv;
         agv = agvBuilder.build();
-        agvBuilder.withIdentifier(identifier).withAutonomy(autonomy).withAGVDock(agvDock).withAGVDescription(description).withModel(model).withMaxWeightCarry(maxWeightCarry).withTask(task);
+        agvBuilder.withIdentifier(identifier).withAutonomy(autonomy).withAGVDock(agvDock).withAGVDescription(description).withModel(model).withMaxWeightCarry(maxWeightCarry);
         this.agvRepository.save(agv);
 
         return agv;

@@ -13,11 +13,11 @@ public class ConfigureAGVController {
     private final AuthorizationService authorizationService = AuthzRegistry.authorizationService();
     private final TransactionalContext txCtx = PersistenceContext.repositories().newTransactionalContext();
 
-    public AGV configureAGV(Identifier identifier, int autonomy, AGVDock agvDock, String AGVDescription, Model model, MaxWeightCarry maxWeightCarry, Task task) throws IllegalAccessException{
+    public AGV configureAGV(Identifier identifier, int autonomy, AGVDock agvDock, String AGVDescription, Model model, MaxWeightCarry maxWeightCarry) throws IllegalAccessException{
         authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.WAREHOUSE_EMPLOYEE);
         //begin transaction
         txCtx.beginTransaction();
-        final AGV agv = agvService.createAGV(identifier,autonomy,agvDock,AGVDescription,model, maxWeightCarry,task);
+        final AGV agv = agvService.createAGV(identifier,autonomy,agvDock,AGVDescription,model, maxWeightCarry);
         txCtx.commit();
 
         return agv;

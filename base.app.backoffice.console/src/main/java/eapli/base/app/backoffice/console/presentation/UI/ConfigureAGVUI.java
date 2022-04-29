@@ -5,8 +5,9 @@ import eapli.base.warehousemanagement.application.ConfigureAGVController;
 import eapli.base.warehousemanagement.domain.*;
 import eapli.framework.domain.repositories.IntegrityViolationException;
 import eapli.framework.io.util.Console;
+import eapli.framework.presentation.console.AbstractUI;
 
-public class ConfigureAGVUI {
+public class ConfigureAGVUI extends AbstractUI {
 
     private final ConfigureAGVController controller = new ConfigureAGVController();
     MainMenu mainMenu;
@@ -24,8 +25,7 @@ public class ConfigureAGVUI {
             final String description = Console.readLine("Description: ");
             final String model = Console.readLine("Model: ");
             final Double maxWeightCarry = Console.readDouble("Maximum Weight: ");
-            final String task = Console.readLine("Task: ");
-                controller.configureAGV(Identifier.valueOf(identifier), AGV.valueOfAutonomy(autonomy), AGVDock.valueOf(agvDock), AGV.valueOfDescription(description), Model.valueOf(model), MaxWeightCarry.valueOf(maxWeightCarry), Task.valueOf(task));
+                controller.configureAGV(Identifier.valueOf(identifier), AGV.valueOfAutonomy(autonomy), AGVDock.valueOf(agvDock), AGV.valueOfDescription(description), Model.valueOf(model), MaxWeightCarry.valueOf(maxWeightCarry));
 
             System.out.println("Successful operation!");
         } catch (final IntegrityViolationException | IllegalAccessException ex){
