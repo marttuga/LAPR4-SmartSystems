@@ -1,5 +1,6 @@
-package eapli.base.warehousemanagement.domain;
+package eapli.base.warehousemanagement.application;
 
+import eapli.base.warehousemanagement.domain.*;
 import org.json.simple.*;
 import org.json.simple.parser.*;
 
@@ -7,9 +8,11 @@ import java.io.FileReader;
 import java.util.List;
 
 
-public class UploadFile {
+public class UploadFileService {
 
     private Warehouse warehouse;
+    private AGVDock agvDock;
+    private Aisle aisle;
     private List<AGVDock> agvDockList;
     private List<Aisle> aisleList;
     private List<Row> rowList;
@@ -53,11 +56,7 @@ public class UploadFile {
                 //accessibility
                 String access = (String) f.get("accessibility");
 
-                //TODO:
-
-
                 JSONArray rows = (JSONArray) f.get("rows");
-
                 for (int j = 0; j < rows.size(); j++) {
                     JSONObject h = (JSONObject) rows.get(j);
 
@@ -79,9 +78,10 @@ public class UploadFile {
                     this.rowList.add(row);
                 }
 
-                Aisle aisle = new Aisle(id, lsquareB, wsquareB, lsquareE, wsquareE, lsquareD, wsquareD, access);
+                aisle = new Aisle(id, lsquareB, wsquareB, lsquareE, wsquareE, lsquareD, wsquareD, access);
                 this.aisleList.add(aisle);
             }
+
 
             JSONArray AGVDock = (JSONArray) jsonObject.get("AGVDocks");
 
@@ -105,12 +105,12 @@ public class UploadFile {
                 //accessibility
                 String accessAGVDock = (String) t.get("accessibility");
 
-                AGVDock agvDock = new AGVDock(AGVDock_id, lsquareBAGVDock, wsquareBAGVDock, lsquareEAGVDock,
+                agvDock = new AGVDock(AGVDock_id, lsquareBAGVDock, wsquareBAGVDock, lsquareEAGVDock,
                         wsquareEAGVDock, lsquareDAGVDock, wsquareDAGVDock, accessAGVDock);
                 this.agvDockList.add(agvDock);
+
             }
-            //TODO:
-            //this.warehouse = new Warehouse();
+            this.warehouse = new Warehouse(warehousePlan, aisle, agvDock);
 
         } catch (Exception e) {
             e.printStackTrace();
