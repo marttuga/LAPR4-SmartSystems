@@ -10,7 +10,6 @@ public class EmailSystem {
     private EmailSystem(){}
 
     public static boolean sendEmail(String emailAddress,String username, String password)  {
-
         try {
             FileWriter myWriter;
             myWriter = new FileWriter("Email_With_Credentials.txt", true);

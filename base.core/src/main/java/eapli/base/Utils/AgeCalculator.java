@@ -5,7 +5,6 @@ import java.util.Date;
 
 public class AgeCalculator {
     private AgeCalculator() {
-
     }
 
     public static int getCalculateAge(Date birthDate) {

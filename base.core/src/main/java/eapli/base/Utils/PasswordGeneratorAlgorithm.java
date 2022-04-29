@@ -10,7 +10,6 @@ public class PasswordGeneratorAlgorithm {
      * Hide implicit constructor.
      */
     private PasswordGeneratorAlgorithm() {
-
     }
 
     private static final SecureRandom random = new SecureRandom();
