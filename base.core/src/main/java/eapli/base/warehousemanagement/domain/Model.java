@@ -10,7 +10,10 @@ public class Model implements ValueObject, Comparable<Model> {
 
     private String model;
 
-    protected Model() {
+    protected Model(String model) {
+    }
+    public static Model valueOf(final String model) {
+        return new Model(model);
     }
 
     @Override

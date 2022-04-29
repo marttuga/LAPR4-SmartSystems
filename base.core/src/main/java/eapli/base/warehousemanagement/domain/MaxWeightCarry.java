@@ -9,7 +9,11 @@ public class MaxWeightCarry implements ValueObject, Comparable<MaxWeightCarry> {
 
     private Double maxWeight;
 
-    protected MaxWeightCarry() {
+    protected MaxWeightCarry(Double maxWeight) {
+    }
+
+    public static MaxWeightCarry valueOf(final Double maxWeight) {
+        return new MaxWeightCarry(maxWeight);
     }
 
     @Override

@@ -9,7 +9,11 @@ public class Task implements ValueObject, Comparable<Task> {
 
     private String task;
 
-    protected Task() {
+    protected Task(String task) {
+    }
+
+    public static Task valueOf(final String task) {
+        return new Task(task);
     }
 
     @Override
