@@ -1,4 +1,3 @@
-/*
 package eapli.base.app.backoffice.console.presentation.UI;
 
 import eapli.base.Utils.Utils;
@@ -18,9 +17,8 @@ import eapli.base.ordersmanagement.product.domain.*;
 import eapli.framework.presentation.console.AbstractUI;
 
 import java.util.*;
-*/
 
-/*
+
 public class NewProductOrderUI extends AbstractUI {
     private static final ViewCatalogController catalogueController = new ViewCatalogController();
     private static final NewProductOrderController productOrderController = new NewProductOrderController();
@@ -91,7 +89,7 @@ public class NewProductOrderUI extends AbstractUI {
                         List<Product> productDescriptionList = (List<Product>) catalogueController.getProductByDescription(shortDescription);
                         catalogueController.printProductsList(productDescriptionList);
                         break;
-    *//*        case 4:
+    /*        case 4:
                 Brand and Category();
                 break;
             case 5:
@@ -102,7 +100,7 @@ public class NewProductOrderUI extends AbstractUI {
                 break;
             case 7:
                 Brand, Short Description and Category();
-                break;*//*
+                break;*/
 
                     default:
                         System.out.println("Option does not exist!");
@@ -164,7 +162,7 @@ public class NewProductOrderUI extends AbstractUI {
         Random rand = new Random();
         String id = String.valueOf(rand.nextInt(999999999));
         OrderID orderID = new OrderID(id);
-        ProductOrder order = productOrderController.registerNewOrder(productOrderController.orderActor(orderActorID), orderID, customer, orderDate, , , , , Status.REGISTERED);
+        //ProductOrder order = productOrderController.registerNewOrder(productOrderController.orderActor(orderActorID), orderID, customer, orderDate, , , , , Status.REGISTERED);
 
 
         return false;
@@ -177,4 +175,4 @@ public class NewProductOrderUI extends AbstractUI {
     public String headline() {
         return "Make a Product Order";
     }
-}*/
+}
