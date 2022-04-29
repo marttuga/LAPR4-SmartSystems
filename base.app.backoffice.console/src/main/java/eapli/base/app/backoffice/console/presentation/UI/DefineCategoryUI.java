@@ -1,6 +1,5 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
-import eapli.base.Utils.Utils;
 import eapli.base.ordersmanagement.category.application.DefineCategoryController;
 import eapli.base.ordersmanagement.category.domain.CategoryCode;
 import eapli.base.ordersmanagement.category.domain.CategoryDescription;

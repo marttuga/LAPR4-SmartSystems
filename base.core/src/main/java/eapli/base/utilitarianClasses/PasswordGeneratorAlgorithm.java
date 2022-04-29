@@ -1,4 +1,4 @@
-package eapli.base.Utils;
+package eapli.base.utilitarianClasses;
 
 import java.security.SecureRandom;
 
