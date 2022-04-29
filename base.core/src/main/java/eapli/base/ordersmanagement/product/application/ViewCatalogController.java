@@ -1,7 +1,9 @@
 package eapli.base.ordersmanagement.product.application;
 
 import eapli.base.infrastructure.persistence.PersistenceContext;
+import eapli.base.ordersmanagement.category.application.DefineCategoryController;
 import eapli.base.ordersmanagement.category.domain.Category;
+import eapli.base.ordersmanagement.category.domain.CategoryCode;
 import eapli.base.ordersmanagement.customer.application.services.CustomerServices;
 import eapli.base.ordersmanagement.product.domain.Brand;
 import eapli.base.ordersmanagement.product.domain.Product;
@@ -16,6 +18,7 @@ public class ViewCatalogController {
     private final ProductRepository productRepository = PersistenceContext.repositories().products();
     private final ViewCatalogService viewCatalogService = new ViewCatalogService();
     private static final ProductSorter productSorter = new ProductSorter();
+    private final DefineCategoryController categoryController = new DefineCategoryController();
 
     public List<Product> getProductByBrand(Brand brand) {
         return productRepository.findByBrand(brand);
@@ -65,7 +68,7 @@ public class ViewCatalogController {
         return productRepository.findByShortDescription(shortDescription);
     }
 
-    public int showOptionsFilter()  {
+    public int showOptionsFilter() {
         return viewCatalogService.showOptionsFilter();
     }
 
@@ -88,7 +91,51 @@ public class ViewCatalogController {
     public List<Product> sortByPrice(List<Product> productList) {
         return productSorter.sortByPrice(productList);
     }
+
     public List<Product> sortByDescription(List<Product> productList) {
         return productSorter.sortByDescription(productList);
     }
+
+    public void printHeader() {
+        viewCatalogService.printHeader();
+    }
+
+
+    public void printCategoriesList(String categoryCode) {
+        CategoryCode code = new CategoryCode(categoryCode);
+        Category category = categoryController.findByCategoryCode(code);
+        printHeader();
+        List<Product> productCategoryList = getProductByCategory(category);
+        printProductsList(productCategoryList);
+    }
+
+    public void printBrandList(String brandName) {
+        Brand brand = findByBrandName(brandName);
+        printHeader();
+        List<Product> productBrandList = getProductByBrand(brand);
+        printProductsList(productBrandList);
+    }
+
+    public void printDescriptionList(String description) {
+        ShortDescription shortDescription = findByShortDescription(description);
+        ShortDescription d = findByShortDescription(description);
+        printHeader();
+        List<Product> productList = getProductByDescription(d);
+        printProductsList(productList);
+    }
+
+    public void printOrderedDescription() {
+        printHeader();
+        List<Product> producttList = findAllProducts();
+        sortByDescription(producttList);
+        printProductsList(producttList);
+    }
+
+    public void printOrderedPrice() {
+        printHeader();
+        List<Product> catalogueList = findAllProducts();
+        sortByPrice(catalogueList);
+        printProductsList(catalogueList);
+    }
+
 }
