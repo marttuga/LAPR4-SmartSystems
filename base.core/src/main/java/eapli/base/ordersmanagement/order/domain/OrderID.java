@@ -8,14 +8,14 @@ import java.util.Objects;
 
 @Embeddable
 public class OrderID implements ValueObject,  Comparable<OrderID>{
-    private String orderID;
+    private String orderIden;
 
     public OrderID(final String orderIdentification) {
         if (StringPredicates.isNullOrEmpty(orderIdentification)) {
             throw new IllegalArgumentException(
                     "OrderID should neither be null nor empty");
         }
-        this.orderID = orderIdentification;
+        this.orderIden = orderIdentification;
     }
 
     protected OrderID() {
@@ -30,17 +30,17 @@ public class OrderID implements ValueObject,  Comparable<OrderID>{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         OrderID orderID1 = (OrderID) o;
-        return Objects.equals(orderID, orderID1.orderID);
+        return Objects.equals(orderIden, orderID1.orderIden);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(orderID);
+        return Objects.hash(orderIden);
     }
 
     @Override
     public String toString() {
-        return this.orderID;
+        return this.orderIden;
     }
 
     @Override

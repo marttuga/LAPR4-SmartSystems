@@ -16,16 +16,27 @@ public class ShippingMethod implements ValueObject {
     }
 
     private Type type;
-    @Column(insertable = false, updatable = false)
 
-    private ShippingCost shippingCost;
+    private ShippingCost ship;
 
     public ShippingMethod() {
     }
 
-    public ShippingMethod(Type type, ShippingCost shippingCost) {
+    public Type TypeOfDelivery() {
+        return type;
+    }
+
+    public ShippingMethod(Type type, ShippingCost ship) {
         this.type = type;
-        this.shippingCost = shippingCost;
+        this.ship = ship;
+    }
+
+    public ShippingMethod(ShippingCost ship) {
+        this.ship = ship;
+    }
+
+    public ShippingMethod(Type type) {
+        this.type = type;
     }
 }
 
