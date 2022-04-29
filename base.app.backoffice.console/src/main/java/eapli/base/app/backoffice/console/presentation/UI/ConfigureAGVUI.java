@@ -1,6 +1,5 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
-import eapli.base.app.backoffice.console.presentation.MainMenu;
 import eapli.base.warehousemanagement.application.ConfigureAGVController;
 import eapli.base.warehousemanagement.domain.*;
 import eapli.framework.domain.repositories.IntegrityViolationException;
@@ -10,7 +9,6 @@ import eapli.framework.presentation.console.AbstractUI;
 public class ConfigureAGVUI extends AbstractUI {
 
     private final ConfigureAGVController controller = new ConfigureAGVController();
-    MainMenu mainMenu;
 
     public ConfigureAGVUI (){
 
