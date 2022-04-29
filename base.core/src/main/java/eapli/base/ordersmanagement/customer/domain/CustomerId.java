@@ -8,9 +8,17 @@ import java.util.Objects;
 public class CustomerId implements ValueObject, Comparable<CustomerId> {
     private int customerId;
 
-    public void setCustomerId(int customerId) {
+    public CustomerId(final int customerId) {
+        Preconditions.noneNull(customerId, "CustomerID cannot be null or empty");
         this.customerId = customerId;
     }
+
+    protected CustomerId() {
+    }
+
+    /*public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }*/
 
     @Override
     public boolean equals(Object o) {
@@ -25,14 +33,7 @@ public class CustomerId implements ValueObject, Comparable<CustomerId> {
         return Objects.hash(customerId);
     }
 
-    public CustomerId(final int customerId) {
-        Preconditions.noneNull(customerId, "CustomerID cannot be null or empty");
-        this.customerId = customerId;
-    }
 
-    protected CustomerId() {
-        // for ORM
-    }
 
 
 

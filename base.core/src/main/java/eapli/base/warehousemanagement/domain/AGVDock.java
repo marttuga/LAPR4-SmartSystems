@@ -28,7 +28,7 @@ public class AGVDock implements ValueObject, Comparable<AGVDock>{
         this.agvDockID = Integer.parseInt(agvDockID);
     }
 
-    protected AGVDock() {
+    protected AGVDock(int agvDockID) {
     }
 
     public AGVDock(int agvDockID, int lsquareBeginAGVDock, int wsquareBeginAGVDock,
@@ -44,8 +44,12 @@ public class AGVDock implements ValueObject, Comparable<AGVDock>{
         this.accessibility = accessibility;
     }
 
+    protected AGVDock() {
 
-    public static AGVDock valueOf(final String agvDockID) {
+    }
+
+
+    public static AGVDock valueOf(final int agvDockID) {
         return new AGVDock(agvDockID);
     }
 

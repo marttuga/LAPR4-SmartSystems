@@ -14,7 +14,7 @@ public class CustomerPhoneNumber implements ValueObject , Comparable<CustomerPho
     @Embedded
     private String phoneNumber;
 
-    public CustomerPhoneNumber() {
+    protected CustomerPhoneNumber() {
     }
 
     public CustomerPhoneNumber(String phoneNumber) {

@@ -2,6 +2,7 @@ package eapli.base.ordersmanagement.product.domain;
 
 
 import eapli.base.ordersmanagement.category.domain.Category;
+import eapli.base.ordersmanagement.category.domain.CategoryCode;
 import eapli.base.warehousemanagement.domain.*;
 import eapli.framework.application.ApplicationService;
 
@@ -38,7 +39,7 @@ public class ProductBuilder {
     private ProductPriceDetail priceDetail;
 
 
-    private Category category;
+    private CategoryCode categoryCode;
 
 
     private Dimension dimension;
@@ -55,8 +56,6 @@ public class ProductBuilder {
 
     private Shelf shelf;
 
-
-    private Bin bin;
 
 
     public ProductBuilder withUniqueInternalCode(final UniqueInternalCode uniqueInternalCode) {
@@ -109,8 +108,8 @@ public class ProductBuilder {
         return this;
     }
 
-    public ProductBuilder withCategory(final Category category) {
-        this.category = category;
+    public ProductBuilder withCategory(final CategoryCode categoryCode) {
+        this.categoryCode = categoryCode;
         return this;
     }
 
@@ -136,12 +135,11 @@ public class ProductBuilder {
         this.shelf = shelf;
         return this;
     }
-    public ProductBuilder withBin(final Bin bin) {
-        this.bin = bin;
-        return this;
-    }
 
     public Product build() {
-        return new Product(uniqueInternalCode,shortDescription,extendedDescription,technicalDescription,brand,reference,productionCode,weight,barcode,priceDetail,category,dimension,warehouseID,aisle,row,shelf,bin);
+        return new Product(uniqueInternalCode,shortDescription,extendedDescription,technicalDescription,brand,reference,productionCode,weight,barcode,priceDetail,categoryCode,dimension,warehouseID,aisle,row,shelf, build().picture());
+    }
+    public Product buildMandatory() {
+        return new Product(uniqueInternalCode,shortDescription,extendedDescription);
     }
 }

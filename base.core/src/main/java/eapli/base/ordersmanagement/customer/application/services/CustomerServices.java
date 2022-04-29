@@ -25,9 +25,9 @@ public class CustomerServices {
     Customer customer1;
     Random rand =new Random();
 
-    public Customer createCustomerShortInfo(CustomerId customerId, CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier ) {
+    public Customer createCustomerShortInfo( CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier ) {
         int id = rand.nextInt(999999999);
-        customerId = new CustomerId(id);
+        CustomerId customerId = new CustomerId(id);
         /*do{
             id = rand.nextInt(999999999);
             customerId.setCustomerId(id);
@@ -40,9 +40,9 @@ public class CustomerServices {
         return customer;
     }
 
-    public Customer createCustomer(CustomerId customerId, CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier, CustomerBirthDay customerBirthDay, CustomerGender customerGender, Set<CustomerPostalAddress> customerPostalAddresses) {
+    public Customer createCustomer(CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier, CustomerBirthDay customerBirthDay, CustomerGender customerGender, Set<CustomerPostalAddress> customerPostalAddresses) {
         int id = rand.nextInt(999999999);
-        customerId = new CustomerId(id);
+        CustomerId customerId = new CustomerId(id);
         /*do{
             id = rand.nextInt(999999999);
             customerId.setCustomerId(id);

@@ -14,18 +14,9 @@ public class Customer implements AggregateRoot<CustomerId> {
     @Id
     @Column(unique = true)
     private CustomerId customerId;
-
-  /*  *//**
-     * cascade = CascadeType.NONE as the systemUser is part of another aggregate
-     *//*
-    @OneToOne()
-    private SystemUser systemUser;*/
-
-
     private CustomerFirstName customerFirstName;
     private CustomerLastName customerLastName;
     private EmailAddress customerEmailAddress;
-
     @Temporal(TemporalType.DATE)
     private CustomerBirthDay customerBirthDay;
 
@@ -36,7 +27,7 @@ public class Customer implements AggregateRoot<CustomerId> {
     @ElementCollection
     private Set<CustomerPostalAddress> customerPostalAddress;
 
-    public Customer() {
+    protected Customer() {
     }
 
     public Customer(CustomerId customerId, CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier ){
@@ -65,43 +56,14 @@ public class Customer implements AggregateRoot<CustomerId> {
         this.customerPostalAddress = customerPostalAddresses;
     }
 
-
-  /*  public SystemUser user() {
-        return this.systemUser;
-    }*/
-
     public CustomerId getCustomerId(){return this.customerId;}
 
     public CustomerFirstName getCustomerFirstName() {
         return customerFirstName;
     }
 
-    public CustomerLastName getCustomerLastName() {
-        return customerLastName;
-    }
-
     public EmailAddress getCustomerEmailAddress() {
         return customerEmailAddress;
-    }
-
-    public CustomerBirthDay getCustomerBirthDay() {
-        return customerBirthDay;
-    }
-
-    public CustomerPhoneNumber getCustomerPhoneNumber() {
-        return customerPhoneNumber;
-    }
-
-    public CustomerGender getCustomerGender() {
-        return customerGender;
-    }
-
-    public CustomerVATIdentifier getCustomerVatIdentifier() {
-        return customerVatIdentifier;
-    }
-
-    public Set<CustomerPostalAddress> getCustomerPostalAddress() {
-        return customerPostalAddress;
     }
 
     @Override

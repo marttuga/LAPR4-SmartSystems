@@ -6,7 +6,7 @@ import eapli.framework.strings.util.StringPredicates;
 public class CustomerFirstName implements ValueObject, Comparable<CustomerFirstName> {
     private String customerFirstName;
 
-    public CustomerFirstName(){
+    protected CustomerFirstName(){
     }
 
     public CustomerFirstName(final String customerFirstName){
