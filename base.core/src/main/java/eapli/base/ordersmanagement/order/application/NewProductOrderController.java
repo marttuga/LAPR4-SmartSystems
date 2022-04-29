@@ -77,9 +77,9 @@ public class NewProductOrderController {
         return null;
     }
 
-/*
-    public ShippingMethod shippingMethod(String shippingMethod) {
-        switch (shippingMethod) {
+
+/*    public ShippingMethod shippingMethod(int options) {
+        switch (options) {
             case ("Standard"):
                 return new ShippingMethod(ShippingMethod.Type.Standart,);
             case ("Blue"):

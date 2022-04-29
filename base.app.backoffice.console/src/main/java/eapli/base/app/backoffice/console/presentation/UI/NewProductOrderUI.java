@@ -9,8 +9,6 @@ import eapli.base.ordersmanagement.customer.domain.CustomerId;
 import eapli.base.ordersmanagement.order.application.NewProductOrderController;
 
 import eapli.base.ordersmanagement.order.domain.OrderID;
-import eapli.base.ordersmanagement.order.domain.ProductOrder;
-import eapli.base.ordersmanagement.order.domain.Status;
 import eapli.base.ordersmanagement.product.application.ViewCatalogController;
 import eapli.base.ordersmanagement.product.domain.*;
 import eapli.base.utilitarianClasses.Utils;
