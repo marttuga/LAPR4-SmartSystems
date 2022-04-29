@@ -14,7 +14,6 @@ public enum SalesRegion  implements ValueObject {
     FRANCE,
     GERMANY,
     ITALY,
-LUXEMBOURG,
     MALTA,
     FINLAND,
     AUSTRIA,

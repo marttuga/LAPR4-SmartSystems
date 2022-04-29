@@ -24,4 +24,17 @@ public class ShippingCost implements ValueObject {
         this.salesReg = salesReg;
         this.w = w;
     }
+
+    public Money shippingMoney() {
+        return shippingMoney;
+    }
+
+    public ShippingCost(Money shippingMoney, SalesRegion salesReg) {
+        this.shippingMoney = shippingMoney;
+        this.salesReg = salesReg;
+    }
+
+    public ShippingCost(Money shippingMoney) {
+        this.shippingMoney = shippingMoney;
+    }
 }

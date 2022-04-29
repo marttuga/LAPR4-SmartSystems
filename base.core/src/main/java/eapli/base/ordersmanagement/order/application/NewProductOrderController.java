@@ -40,59 +40,47 @@ public class NewProductOrderController {
 
     public ProductItem productItem(Set<Product> products, int quantity) {
         ProductPriceDetail price = (catalogController.findByProductCode(products.iterator().next().getUniqueInternalCode())).getPriceDetail();
-        double productItemPrice = (price.getPrice().amountAsDouble())*quantity;
-        Money pp= Money.euros(productItemPrice);
+        double productItemPrice = (price.getPrice().amountAsDouble()) * quantity;
+        Money pp = Money.euros(productItemPrice);
 
-        return new ProductItem(pp,products, quantity);
+        return new ProductItem(pp, products, quantity);
     }
 
 
     public LineOrder lineOrder(Set<ProductItem> productItens) {
-        double sum=0;
-        double lp=0;
-        for (int i = 0; i <productItens.size() ; i++) {
+        double sum = 0;
+        double lp = 0;
+        for (int i = 0; i < productItens.size(); i++) {
             lp = productItens.iterator().next().getPriceItem().amountAsDouble();
-            sum+=lp;
+            sum += lp;
         }
-        Money lineOrderPrice= Money.euros(lp);
+        Money lineOrderPrice = Money.euros(lp);
 
-        return new LineOrder(productItens,lineOrderPrice);
+        return new LineOrder(productItens, lineOrderPrice);
     }
 
     public PaymentMethod paymentMethod(int options) {
+        return orderService.paymentMethod(options);
+    }
+    public SalesRegion salesRegion(int options) {
+        return orderService.salesRegion(options);
+    }
 
-        switch (options) {
-            case (1):
-                return PaymentMethod.PAY_PAL;
-            case (2):
-                return PaymentMethod.MBWAY;
-            case (3):
-                return PaymentMethod.CREDIT_CARD;
-            case (4):
-                return PaymentMethod.BANK_TRANSFERS;
-            case (5):
-                return PaymentMethod.VENMO;
-        }
-
-        return null;
+    public ShippingMethod shippingMethod(int options) {
+        return orderService.shippingMethod(options);
     }
 
 
-/*    public ShippingMethod shippingMethod(int options) {
-        switch (options) {
-            case ("Standard"):
-                return new ShippingMethod(ShippingMethod.Type.Standart,);
-            case ("Blue"):
-                return new ShippingMethod( ShippingMethod.Type.Blue);
-            case ("Green"):
-                return new ShippingMethod( ShippingMethod.Type.Green);
-        }
-
-        return null;
-    }*/
+    public PriceOrder priceOfOrder(LineOrder lineOrder, SalesRegion sr,ShippingMethod.Type sM) {
+        double cost = orderService.shippingCostMethod(sM).shippingMoney().amountAsDouble()+orderService.shippingCostPlace(sr).shippingMoney().amountAsDouble();
+        ShippingCost shippingCost= new ShippingCost(Money.euros(cost));
+        Money priceO= Money.euros(cost);
+        return new PriceOrder(priceO,shippingCost);
+    }
 
     public OrderActor orderActor(String id) {
         return new OrderActor(id, OrderActor.Role.Sales_Clerk);
     }
+
 
 }

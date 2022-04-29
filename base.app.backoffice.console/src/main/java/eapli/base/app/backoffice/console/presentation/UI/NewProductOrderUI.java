@@ -8,9 +8,10 @@ import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.customer.domain.CustomerId;
 import eapli.base.ordersmanagement.order.application.NewProductOrderController;
 
-import eapli.base.ordersmanagement.order.domain.OrderID;
+import eapli.base.ordersmanagement.order.domain.*;
 import eapli.base.ordersmanagement.product.application.ViewCatalogController;
 import eapli.base.ordersmanagement.product.domain.*;
+import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
 import eapli.base.utilitarianClasses.Utils;
 import eapli.framework.presentation.console.AbstractUI;
 
@@ -26,67 +27,65 @@ public class NewProductOrderUI extends AbstractUI {
     public boolean doShow() {
 
         String orderActorID = Utils.readLineFromConsole("Please enter the Sales Clerck ID: ");
-        boolean continueRun;
+
+        Customer customer;
         do {
-            continueRun = false;
-            Customer customer;
-            do {
-                int costumerID = Utils.readIntegerFromConsole("Please enter the costumerID: " + "\n(must have 7 numbers)");
-                CustomerId code = new CustomerId(costumerID);
-                customer = registerCustomerController.findByCustomerId(code);
-                System.out.println(customer);
-            } while (registerCustomerController.findAllCustomers().contains(customer));
+            int costumerID = Utils.readIntegerFromConsole("Please enter the costumerID: " + "\n(must have 7 numbers)");
+            CustomerId code = new CustomerId(costumerID);
+            customer = registerCustomerController.findByCustomerId(code);
+            System.out.println(customer);
+        } while (registerCustomerController.findAllCustomers().contains(customer));
 
-            int optionFilter = 0;
-            int optionOrdering = 0;
+        int optionFilter = 0;
+        int optionOrdering = 0;
 
-            List<Product> productList = (List<Product>) catalogueController.findAllProducts();
-            catalogueController.printProductsList(productList);
+        List<Product> productList = (List<Product>) catalogueController.findAllProducts();
+        catalogueController.printProductsList(productList);
 
-            do {
+        do {
 /////////FILTERING MENU
-                optionFilter = catalogueController.showOptionsFilter();
-                switch (optionFilter) {
-                    case 0:
-                        System.out.println("Exiting ...");
-                        break;
+            optionFilter = catalogueController.showOptionsFilter();
+            switch (optionFilter) {
+                case 0:
+                    System.out.println("Exiting ...");
+                    break;
 
-                    case 1:
+                case 1:
 
-                        List<Category> categoryList = categoryController.findAllCategories();
-                        catalogueController.printCategoriesList(categoryList);
-                        String categoryCode = Utils.readLine("Category code: ");
-                        CategoryCode catCode = new CategoryCode(categoryCode);
-                        Category category = categoryController.findByCategoryCode(catCode);
-                        System.out.println();
-                        System.out.println("               Catalog :             ");
-                        System.out.println();
-                        List<Product> productCategoryList = catalogueController.getProductByCategory(category);
-                        catalogueController.printProductsList(productCategoryList);
-                        break;
+                    List<Category> categoryList = categoryController.findAllCategories();
+                    catalogueController.printCategoriesList(categoryList);
+                    String categoryCode = Utils.readLine("Category code: ");
+                    CategoryCode catCode = new CategoryCode(categoryCode);
+                    Category category = categoryController.findByCategoryCode(catCode);
+                    System.out.println();
+                    System.out.println("               Catalog :             ");
+                    System.out.println();
+                    List<Product> productCategoryList = catalogueController.getProductByCategory(category);
+                    catalogueController.printProductsList(productCategoryList);
+                    break;
 
-                    case 2:
+                case 2:
 
-                        List<Brand> brandList = catalogueController.findAllBrands();
-                        catalogueController.printBrandsList(brandList);
-                        String brandName = Utils.readLine("Brand: ");
-                        Brand brand = catalogueController.findByBrandName(brandName);
-                        System.out.println();
-                        System.out.println("               Catalog :             ");
-                        System.out.println();
-                        List<Product> productBrandList = catalogueController.getProductByBrand(brand);
-                        catalogueController.printProductsList(productBrandList);
-                        break;
+                    List<Brand> brandList = catalogueController.findAllBrands();
+                    catalogueController.printBrandsList(brandList);
+                    String brandName = Utils.readLine("Brand: ");
+                    Brand brand = catalogueController.findByBrandName(brandName);
+                    System.out.println();
+                    System.out.println("               Catalog :             ");
+                    System.out.println();
+                    List<Product> productBrandList = catalogueController.getProductByBrand(brand);
+                    catalogueController.printProductsList(productBrandList);
+                    break;
 
-                    case 3:
-                        String description = Utils.readLine("Description: ");
-                        ShortDescription shortDescription = catalogueController.findByShortDescription(description);
-                        System.out.println();
-                        System.out.println("               Catalog :             ");
-                        System.out.println();
-                        List<Product> productDescriptionList = (List<Product>) catalogueController.getProductByDescription(shortDescription);
-                        catalogueController.printProductsList(productDescriptionList);
-                        break;
+                case 3:
+                    String description = Utils.readLine("Description: ");
+                    ShortDescription shortDescription = catalogueController.findByShortDescription(description);
+                    System.out.println();
+                    System.out.println("               Catalog :             ");
+                    System.out.println();
+                    List<Product> productDescriptionList = (List<Product>) catalogueController.getProductByDescription(shortDescription);
+                    catalogueController.printProductsList(productDescriptionList);
+                    break;
     /*        case 4:
                 Brand and Category();
                 break;
@@ -100,44 +99,45 @@ public class NewProductOrderUI extends AbstractUI {
                 Brand, Short Description and Category();
                 break;*/
 
-                    default:
-                        System.out.println("Option does not exist!");
-                        break;
-                }
-            } while (optionFilter != 0);
+                default:
+                    System.out.println("Option does not exist!");
+                    break;
+            }
+        } while (optionFilter != 0);
 
-            do {
-                //////ORDERING MENU
-                optionOrdering = catalogueController.showOptionsOrdering();
-                //ORDENAR A LISTA DE PRODUTOS
-                switch (optionOrdering) {
-                    case 0:
-                        System.out.println("Exiting ...");
-                        break;
-                    case 1:
-                        System.out.println();
-                        System.out.println("               Catalog :             ");
-                        System.out.println();
-                        List<Product> producttList = (List<Product>) catalogueController.findAllProducts();
-                        catalogueController.sortByDescription(producttList);
-                        catalogueController.printProductsList(producttList);
-                        break;
-                    case 2:
-                        System.out.println();
-                        System.out.println("               Catalog :             ");
-                        System.out.println();
-                        List<Product> catalogueList = (List<Product>) catalogueController.findAllProducts();
-                        catalogueController.sortByPrice(catalogueList);
-                        catalogueController.printProductsList(catalogueList);
-                        break;
-                    default:
-                        System.out.println("Option does not exist!");
-                        break;
-                }
-            } while (optionOrdering != 0);
+        do {
+            //////ORDERING MENU
+            optionOrdering = catalogueController.showOptionsOrdering();
+            //ORDENAR A LISTA DE PRODUTOS
+            switch (optionOrdering) {
+                case 0:
+                    System.out.println("Exiting ...");
+                    break;
+                case 1:
+                    System.out.println();
+                    System.out.println("               Catalog :             ");
+                    System.out.println();
+                    List<Product> producttList = (List<Product>) catalogueController.findAllProducts();
+                    catalogueController.sortByDescription(producttList);
+                    catalogueController.printProductsList(producttList);
+                    break;
+                case 2:
+                    System.out.println();
+                    System.out.println("               Catalog :             ");
+                    System.out.println();
+                    List<Product> catalogueList = (List<Product>) catalogueController.findAllProducts();
+                    catalogueController.sortByPrice(catalogueList);
+                    catalogueController.printProductsList(catalogueList);
+                    break;
+                default:
+                    System.out.println("Option does not exist!");
+                    break;
+            }
+        } while (optionOrdering != 0);
 
+        LineOrder lineOrder = null;
+        do {
 
-            //////ESCOLHER PRODUTO e imprimir
             String productCode = Utils.readLine("Insert Product Internal Code: ");
             try {
                 UniqueInternalCode pcode = new UniqueInternalCode(productCode);
@@ -145,27 +145,44 @@ public class NewProductOrderUI extends AbstractUI {
                 System.out.println(product);
 
                 int quantity = Utils.readIntegerFromConsole("Insert the quantity of the product: ");
+                Set<Product> p = new HashSet<>();
+                for (int i = 0; i < quantity; i++) {
+                    p.add(product);
+                }
+                ProductItem productItem = productOrderController.productItem(p, quantity);
+
+                Set<ProductItem> pi = new HashSet<>();
+                pi.add(productItem);
+                lineOrder = productOrderController.lineOrder(pi);
 
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
                 System.out.println("Product does not exist");
             }
+        } while (Utils.confirm("Want to add more products? (y/n)"));
 
-        }while (continueRun);
 
+        int pm = Utils.readIntegerFromConsole("Choose the payment method: \n");
+        PaymentMethod paymentMethod = productOrderController.paymentMethod(pm);
 
+        int sm = Utils.readIntegerFromConsole("Choose the shipping method: \n");
+        ShippingMethod shippingMethod = productOrderController.shippingMethod(sm);
+
+        int sr = Utils.readIntegerFromConsole("Choose the region: \n");
+        SalesRegion salesRegion = productOrderController.salesRegion(sr);
+
+        PriceOrder priceOrder = productOrderController.priceOfOrder(lineOrder,salesRegion,shippingMethod.TypeOfDelivery() );
 
         Calendar orderDate = Calendar.getInstance();
 
         Random rand = new Random();
         String id = String.valueOf(rand.nextInt(999999999));
         OrderID orderID = new OrderID(id);
-        //ProductOrder order = productOrderController.registerNewOrder(productOrderController.orderActor(orderActorID), orderID, customer, orderDate, , , , , Status.REGISTERED);
 
+        ProductOrder order = productOrderController.registerNewOrder(productOrderController.orderActor(orderActorID), orderID, customer, orderDate, lineOrder,priceOrder , paymentMethod, shippingMethod, Status.REGISTERED);
+        System.out.println(order);
 
         return false;
-
-
     }
 
 
