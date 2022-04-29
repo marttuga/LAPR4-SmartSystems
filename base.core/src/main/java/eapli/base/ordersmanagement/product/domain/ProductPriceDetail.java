@@ -39,6 +39,10 @@ public class ProductPriceDetail implements ValueObject, Comparable<ProductPriceD
         return new ProductPriceDetail(price);
     }
 
+    public Money getPrice() {
+        return price;
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(price);
