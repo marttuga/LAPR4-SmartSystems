@@ -36,6 +36,8 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     @Embedded
     private PriceOrder priceOrder;
 
+
+    
     @Embedded
     private LineOrder lineOrder;
 
