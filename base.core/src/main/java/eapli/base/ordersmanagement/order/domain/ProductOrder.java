@@ -59,7 +59,7 @@ public class ProductOrder implements AggregateRoot<OrderID> {
         this.lineOrder = lineOrder;
     }
 
-    public ProductOrder() {
+    protected ProductOrder() {
     }
 
 

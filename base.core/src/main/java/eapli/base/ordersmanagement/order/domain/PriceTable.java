@@ -24,7 +24,7 @@ public class PriceTable  implements AggregateRoot<PriceTableID>, Comparable<Pric
         this.sRegion = sRegion;
     }
 
-    public PriceTable() {
+    protected PriceTable() {
 
     }
 
