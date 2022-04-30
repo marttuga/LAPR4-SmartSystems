@@ -51,8 +51,8 @@ public class UploadFileService {
                 Integer wsquareE = Integer.parseInt(String.valueOf(jsonObjectE.get("wsquare")));
                 //depth
                 JSONObject jsonObjectD = (JSONObject) f.get("depth");
-                Integer lsquareD = Integer.parseInt(String.valueOf(f.get("lsquare")));
-                Integer wsquareD = Integer.parseInt(String.valueOf(f.get("wsquare")));
+                Integer lsquareD = Integer.parseInt(String.valueOf(jsonObjectD.get("lsquare")));
+                Integer wsquareD = Integer.parseInt(String.valueOf(jsonObjectD.get("wsquare")));
                 //accessibility
                 String access = (String) f.get("accessibility");
 
@@ -74,12 +74,9 @@ public class UploadFileService {
                     Integer shelves = Integer.parseInt(String.valueOf(h.get("shelves")));
 
                     Row row = new Row(rowId, lsquareBRow, wsquareBRow, lsquareERow, wsquareERow);
-                    //guarda numa lista
-                    this.rowList.add(row);
                 }
 
                 aisle = new Aisle(id, lsquareB, wsquareB, lsquareE, wsquareE, lsquareD, wsquareD, access);
-                this.aisleList.add(aisle);
             }
 
 
@@ -89,7 +86,7 @@ public class UploadFileService {
                 JSONObject t = (JSONObject) AGVDock.get(p);
 
                 //id
-                Integer AGVDock_id = Integer.parseInt(String.valueOf(t.get("Id")));
+                String AGVDock_id = (String) t.get("Id");
                 //begin
                 JSONObject jsonObjectBAGVDock = (JSONObject) t.get("begin");
                 Integer lsquareBAGVDock = Integer.parseInt(String.valueOf(jsonObjectBAGVDock.get("lsquare")));
@@ -107,7 +104,6 @@ public class UploadFileService {
 
                 agvDock = new AGVDock(AGVDock_id, lsquareBAGVDock, wsquareBAGVDock, lsquareEAGVDock,
                         wsquareEAGVDock, lsquareDAGVDock, wsquareDAGVDock, accessAGVDock);
-                this.agvDockList.add(agvDock);
 
             }
             this.warehouse = new Warehouse(warehousePlan, aisle, agvDock);

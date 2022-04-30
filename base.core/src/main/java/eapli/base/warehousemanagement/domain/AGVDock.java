@@ -11,7 +11,7 @@ import javax.persistence.Transient;
 public class AGVDock implements ValueObject, Comparable<AGVDock>{
 
     @Transient
-    private int agvDockID;
+    private String agvDockID;
     @Transient
     private int lsquareBeginAGVDock;
     @Transient
@@ -34,13 +34,13 @@ public class AGVDock implements ValueObject, Comparable<AGVDock>{
             throw new IllegalArgumentException(
                     "AGVDockID should neither be null nor empty");
         }
-        this.agvDockID = Integer.parseInt(agvDockID);
+        this.agvDockID = agvDockID;
     }
 
-    protected AGVDock(int agvDockID) {
+    public AGVDock(int agvDockID) {
     }
 
-    public AGVDock(int agvDockID, int lsquareBeginAGVDock, int wsquareBeginAGVDock,
+    public AGVDock(String agvDockID, int lsquareBeginAGVDock, int wsquareBeginAGVDock,
                    int lsquareEndAGVDock, int wsquareEndAGVDock, int lsquareDepthAGVDock,
                    int wsquareDepthAGVDock, String accessibility) {
         this.agvDockID = agvDockID;
