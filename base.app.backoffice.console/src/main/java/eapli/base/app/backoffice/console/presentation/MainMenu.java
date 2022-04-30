@@ -62,18 +62,13 @@ public class MainMenu extends AbstractUI {
     private static final int LIST_USERS_OPTION = 2;
     private static final int DEACTIVATE_USER_OPTION = 3;
     private static final int ACCEPT_REFUSE_SIGNUP_REQUEST_OPTION = 4;
-    private static final int VIEW_CATALOG = 5;
-    private static final int NEW_ORDER = 6;
-
-    private static final int CUSTOMER_REGISTER = 7;
-
-    private static final int DEFINE_CATEGORY = 8;
-
-    private static final int SPECIFY_NEW_PRODUCT = 9;
-
-    private static final int CONFIGURE_AGV = 10;
-
-    private static final int UPLOAD_FILE = 11;
+    private static final int VIEW_CATALOG = 3;
+    private static final int NEW_ORDER = 4;
+    private static final int CUSTOMER_REGISTER = 1;
+    private static final int DEFINE_CATEGORY = 2;
+    private static final int SPECIFY_NEW_PRODUCT = 5;
+    private static final int CONFIGURE_AGV = 1;
+    private static final int UPLOAD_FILE = 2;
 
     // SETTINGS
     private static final int SET_KITCHEN_ALERT_LIMIT_OPTION = 1;
@@ -112,9 +107,9 @@ public class MainMenu extends AbstractUI {
     // MAIN MENU
     private static final int MY_USER_OPTION = 1;
     private static final int USERS_OPTION = 2;
-    private static final int SETTINGS_OPTION = 4;
-    private static final int SALES_OPTION = 9;
-    private static final int WAREHOUSE_MANAGEMENT_OPTION = 10;
+    private static final int SETTINGS_OPTION = 3;
+    private static final int SALES_OPTION = 4;
+    private static final int WAREHOUSE_MANAGEMENT_OPTION = 5;
     private static final int DISH_OPTION = 5;
     private static final int TRACEABILITY_OPTION = 6;
     private static final int MEALS_OPTION = 7;
@@ -174,10 +169,10 @@ public class MainMenu extends AbstractUI {
             mainMenu.addSubMenu(SALES_OPTION,clerkMenu);
         }
 
-        /*if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.WAREHOUSE_EMPLOYEE)) {
+        if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.WAREHOUSE_EMPLOYEE)) {
             final Menu warehouseMenu = buildWarehouseEmployeeMenu();
             mainMenu.addSubMenu(WAREHOUSE_MANAGEMENT_OPTION,warehouseMenu);
-        }*/
+        }
 
         if (!Application.settings().isMenuLayoutHorizontal()) {
             mainMenu.addItem(MenuItem.separator(SEPARATOR_LABEL));
@@ -198,19 +193,21 @@ public class MainMenu extends AbstractUI {
         return menu;
     }
 
+    //////////SALES CLERCK
     private Menu buildSalesClerkMenu() {
-        final Menu menusMenu = new Menu("Manage Customers >");
+        final Menu menusMenu = new Menu("Sales Clerk Menu >");
 
         menusMenu.addItem(CUSTOMER_REGISTER, "Register New Customer", new RegisterCustomerUI()::show);
         menusMenu.addItem(DEFINE_CATEGORY, "Define New Category", new DefineCategoryUI()::show);
+        menusMenu.addItem(VIEW_CATALOG, "View Catalog", new ViewCatalogUI()::show);
+        menusMenu.addItem(NEW_ORDER, "New Product Order", new NewProductOrderUI()::show);
         menusMenu.addItem(SPECIFY_NEW_PRODUCT, "Specify New Product", new SpecifyNewProductUI()::show);
-
         menusMenu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
         return menusMenu;
     }
 
-   /* private Menu buildWarehouseEmployeeMenu() {
+   private Menu buildWarehouseEmployeeMenu() {
         final Menu menusMenu = new Menu("Warehouse Management >");
         menusMenu.addItem(CONFIGURE_AGV, "Configure AGV", new ConfigureAGVUI()::show);
 
@@ -219,7 +216,7 @@ public class MainMenu extends AbstractUI {
         menusMenu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
         return menusMenu;
-    }*/
+    }
 
 
     private Menu buildUsersMenu() {
@@ -231,8 +228,7 @@ public class MainMenu extends AbstractUI {
         menu.addItem(ACCEPT_REFUSE_SIGNUP_REQUEST_OPTION, "Accept/Refuse Signup Request",
                 new AcceptRefuseSignupRequestAction());
         menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
-        menu.addItem(VIEW_CATALOG, "View Catalog", new ViewCatalogUI()::show);
-        menu.addItem(NEW_ORDER, "New Product Order", new NewProductOrderUI()::show);
+
 
         return menu;
     }

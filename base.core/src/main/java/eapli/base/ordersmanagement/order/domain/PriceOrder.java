@@ -9,7 +9,6 @@ import javax.persistence.*;
 @Embeddable
 public class PriceOrder  implements ValueObject {
 
-    @Column(insertable = false,updatable = false)
     @AttributeOverrides({
             @AttributeOverride(name = "amount", column = @Column(name = "priceMoneyAmount")),
             @AttributeOverride(name = "currency", column = @Column(name = "priceMoneyCurrency"))})

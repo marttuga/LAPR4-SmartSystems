@@ -45,7 +45,7 @@ public class LineOrder implements AggregateRoot<LineOrderID> {
     public String toString() {
         return "LineOrder:" +
                 "productItems=" + lineOrderList +
-                ", priceOrderWithoutTaxes=" + priceOrderWithoutTaxes ;
+                ", priceOrderWithoutTaxes=" + priceOrderWithoutTaxes;
     }
 
     public LineOrderID getLoid() {
