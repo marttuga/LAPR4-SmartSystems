@@ -13,6 +13,10 @@ import java.util.Set;
 @Entity
 public class ProductItem implements AggregateRoot<ProductItemID>{
 
+    @Column(insertable = false,updatable = false)
+    @AttributeOverrides({
+            @AttributeOverride(name = "amount", column = @Column(name = "priceItemAmount")),
+            @AttributeOverride(name = "currency", column = @Column(name = "priceItemCurrency"))})
     private Money priceItem;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

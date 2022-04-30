@@ -3,6 +3,8 @@ package eapli.base.ordersmanagement.product.domain;
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.general.domain.model.Money;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.util.Objects;
@@ -15,7 +17,11 @@ import java.util.Objects;
 @Embeddable
 public class ProductPriceDetail implements ValueObject, Comparable<ProductPriceDetail>{
 
-    @Column(name = "price")
+
+    @Column(insertable = false,updatable = false)
+    @AttributeOverrides({
+            @AttributeOverride(name = "amount", column = @Column(name = "priceAmount")),
+            @AttributeOverride(name = "currency", column = @Column(name = "priceCurrency"))})
     private Money price;
 
     protected ProductPriceDetail() {
