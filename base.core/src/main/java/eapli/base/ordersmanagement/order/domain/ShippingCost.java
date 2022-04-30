@@ -9,6 +9,9 @@ import javax.persistence.*;
 @Embeddable
 public class ShippingCost implements ValueObject {
 
+
+    @Column(insertable = false,updatable = false)
+
     private Money shippingMoney;
     private SalesRegion salesReg;
     private Weight w;

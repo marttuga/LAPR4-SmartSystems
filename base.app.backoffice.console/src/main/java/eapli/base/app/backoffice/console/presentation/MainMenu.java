@@ -28,6 +28,7 @@ import eapli.base.app.backoffice.console.presentation.UI.*;
 import eapli.base.app.common.console.presentation.authz.MyUserMenu;
 import eapli.base.Application;
 import eapli.base.app.backoffice.console.presentation.authz.AddUserUI;
+import eapli.base.app.backoffice.console.presentation.UI.RegisterCustomerUI;
 import eapli.base.app.backoffice.console.presentation.authz.DeactivateUserAction;
 import eapli.base.app.backoffice.console.presentation.authz.ListUsersAction;
 import eapli.base.app.backoffice.console.presentation.clientuser.AcceptRefuseSignupRequestAction;
@@ -71,6 +72,8 @@ public class MainMenu extends AbstractUI {
     private static final int SPECIFY_NEW_PRODUCT = 9;
 
     private static final int CONFIGURE_AGV = 10;
+
+    private static final int UPLOAD_FILE = 11;
 
     // SETTINGS
     private static final int SET_KITCHEN_ALERT_LIMIT_OPTION = 1;
@@ -171,10 +174,10 @@ public class MainMenu extends AbstractUI {
             mainMenu.addSubMenu(SALES_OPTION,clerkMenu);
         }
 
-        if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.WAREHOUSE_EMPLOYEE)) {
+        /*if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.WAREHOUSE_EMPLOYEE)) {
             final Menu warehouseMenu = buildWarehouseEmployeeMenu();
             mainMenu.addSubMenu(WAREHOUSE_MANAGEMENT_OPTION,warehouseMenu);
-        }
+        }*/
 
         if (!Application.settings().isMenuLayoutHorizontal()) {
             mainMenu.addItem(MenuItem.separator(SEPARATOR_LABEL));
@@ -207,15 +210,16 @@ public class MainMenu extends AbstractUI {
         return menusMenu;
     }
 
-    private Menu buildWarehouseEmployeeMenu() {
+   /* private Menu buildWarehouseEmployeeMenu() {
         final Menu menusMenu = new Menu("Warehouse Management >");
-
         menusMenu.addItem(CONFIGURE_AGV, "Configure AGV", new ConfigureAGVUI()::show);
+
+        menusMenu.addItem(UPLOAD_FILE, "Upload File", new UploadFileUI()::show);
 
         menusMenu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
         return menusMenu;
-    }
+    }*/
 
 
     private Menu buildUsersMenu() {

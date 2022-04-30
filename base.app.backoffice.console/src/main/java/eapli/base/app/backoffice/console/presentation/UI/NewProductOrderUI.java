@@ -29,7 +29,7 @@ public class NewProductOrderUI extends AbstractUI {
 
         Customer customer;
         do {
-            int costumerID = Utils.readIntegerFromConsole("Please enter the costumerID: " + "\n(must have 7 numbers)");
+            String costumerID = Utils.readLineFromConsole("Please enter the costumerID: " + "\n(must have 7 numbers)");
             CustomerId code = new CustomerId(costumerID);
             customer = registerCustomerController.findByCustomerId(code);
             System.out.println(customer);

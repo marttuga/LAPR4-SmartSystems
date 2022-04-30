@@ -2,10 +2,7 @@ package eapli.base.warehousemanagement.domain;
 
 import eapli.framework.domain.model.AggregateRoot;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 
 @Entity
 public class AGV implements AggregateRoot<Identifier> {
@@ -16,15 +13,17 @@ public class AGV implements AggregateRoot<Identifier> {
 
     private int autonomy;
 
+    @Embedded
     private AGVDock agvDock;
 
     private String AGVDescription;
 
+    @Embedded
     private Model model;
 
+    @Embedded
     private MaxWeightCarry maxWeightCarry;
 
-    private Task task;
 
     protected AGV(){
 

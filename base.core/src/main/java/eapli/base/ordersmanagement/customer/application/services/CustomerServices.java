@@ -25,13 +25,14 @@ public class CustomerServices {
     Customer customer1;
     Random rand =new Random();
 
-    public Customer createCustomerShortInfo( CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier ) {
-        int id = rand.nextInt(999999999);
+    public Customer createCustomerShortInfo( CustomerFirstName customerFirstName, CustomerLastName customerLastName, CustomerEmailAdress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier ) {
+        String id = null;
         CustomerId customerId = new CustomerId(id);
         /*do{
             id = rand.nextInt(999999999);
             customerId.setCustomerId(id);
         }while (customer1.hasIdentity(customerId));*/
+        final CustomerBuilder customerBuilder= new CustomerBuilder();
         Customer customer= new Customer(customerId,customerFirstName,customerLastName,customerEmailAddress,customerPhoneNumber,customerVatIdentifier);
         String password = PasswordGeneratorAlgorithm.generatesPassword();
         createSystemUserForCustomer(customer.getCustomerId().toString(), password, customer.getCustomerFirstName().toString(), customer.getCustomerEmailAddress().toString());
@@ -40,8 +41,8 @@ public class CustomerServices {
         return customer;
     }
 
-    public Customer createCustomer(CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier, CustomerBirthDay customerBirthDay, CustomerGender customerGender, Set<CustomerPostalAddress> customerPostalAddresses) {
-        int id = rand.nextInt(999999999);
+    public Customer createCustomer(CustomerFirstName customerFirstName, CustomerLastName customerLastName, CustomerEmailAdress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier, CustomerBirthDay customerBirthDay, CustomerGender customerGender, Set<CustomerPostalAddress> customerPostalAddresses) {
+        String id = null;
         CustomerId customerId = new CustomerId(id);
         /*do{
             id = rand.nextInt(999999999);

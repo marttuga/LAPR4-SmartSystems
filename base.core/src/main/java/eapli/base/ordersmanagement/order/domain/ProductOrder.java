@@ -1,5 +1,4 @@
 package eapli.base.ordersmanagement.order.domain;
-
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.survey.domain.Survey;
 import eapli.framework.domain.model.AggregateRoot;
@@ -21,22 +20,26 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     private Status status;
 
     @Embedded
-    @Column(updatable = false, insertable = false)
     private OrderActor orderActor;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Customer customer;
 
 
-    @Column(updatable = false, insertable = false)
     private PaymentMethod paymentMethod;
 
 
-    @Enumerated(EnumType.STRING)
+
+    @AttributeOverrides({
+            @AttributeOverride(name = "ship.shippingMoney.amount", column = @Column(name = "shippingMoneyAmount")),
+            @AttributeOverride(name = "ship.shippingMoney.currency", column = @Column(name = "shippingMoneyCurrency"))})
     private ShippingMethod shippingMethod;
 
     @Embedded
-    @Column(updatable = false, insertable = false)
+    @AttributeOverrides(value= {
+            @AttributeOverride(name="priceMoney.amount", column=@Column(name="priceMoneyAmount")),
+            @AttributeOverride(name="priceMoney.currency", column=@Column(name="priceMoneyCurrency"))
+    })
     private PriceOrder priceOrder;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -133,6 +136,7 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     public LineOrder getLineOrder() {
         return lineOrder;
     }
+
 
 
 }

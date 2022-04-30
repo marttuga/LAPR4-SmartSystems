@@ -7,6 +7,7 @@ import eapli.framework.domain.model.DomainEntities;
 import eapli.framework.general.domain.model.Money;
 
 import javax.persistence.*;
+import java.util.Calendar;
 import java.util.Set;
 
 @Entity
@@ -19,6 +20,11 @@ public class LineOrder implements AggregateRoot<LineOrderID> {
     @OneToMany
     private Set<ProductItem> lineOrderList;
 
+    @Embedded
+    @Column(insertable = false,updatable = false)
+    @AttributeOverrides({
+            @AttributeOverride(name = "amount", column = @Column(name = "priceOrderWithoutTaxesAmount")),
+            @AttributeOverride(name = "currency", column = @Column(name = "priceOrderWithoutTaxesCurrency"))})
     private Money priceOrderWithoutTaxes;
 
     protected LineOrder() {
