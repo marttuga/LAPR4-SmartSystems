@@ -23,9 +23,9 @@ package Category <<Aggregate>> {
     entity Category <<Entity>>
 }
 
-SpecifyNewProductUI ..> SpecifyNewProductController
-SpecifyNewProductController ..> Category
-SpecifyNewProductController ..> Product
+SpecifyNewProductUI ...> SpecifyNewProductController
+SpecifyNewProductController ...> Category
+SpecifyNewProductController ...> Product
 
 
 @enduml
