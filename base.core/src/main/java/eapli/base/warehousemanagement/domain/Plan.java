@@ -4,14 +4,19 @@ import eapli.framework.domain.model.ValueObject;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
+import javax.persistence.Transient;
 
 public class Plan implements ValueObject, Comparable<Plan> {
 
     @Column(insertable = false,updatable = false)
     private WarehouseID warehouseID;
+    @Transient
     private int length;
+    @Transient
     private int width;
+    @Transient
     private int square;
+    @Transient
     private String unit;
 
 

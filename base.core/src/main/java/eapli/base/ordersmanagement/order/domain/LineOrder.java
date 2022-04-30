@@ -21,7 +21,7 @@ private Set<ProductItem> lineOrderList;
 
     private Money priceOrderWithoutTaxes;
 
-    public LineOrder() {
+    protected LineOrder() {
     }
 
     public LineOrder(Set<ProductItem> productItems, Money priceOrderWithoutTaxes) {

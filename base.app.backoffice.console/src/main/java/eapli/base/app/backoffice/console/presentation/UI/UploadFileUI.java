@@ -1,41 +1,48 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
-import eapli.framework.io.util.Console;
+import eapli.base.warehousemanagement.application.UploadFileController;
+import eapli.framework.presentation.console.AbstractUI;
 
 import java.util.Scanner;
 
-public class UploadFileUI {
+public class UploadFileUI extends AbstractUI {
 
-    public static void showMenu() {
-        Scanner in = new Scanner(System.in);
-        int option = 0;
+    UploadFileController uploadFileController = new UploadFileController();
+
+    Scanner in = new Scanner(System.in);
+
+    @Override
+    protected boolean doShow() {
+        int option = -1;
         do {
-            option = showOptions();
+            System.out.println("==================================================");
+            System.out.println("=======Welcome to Upload File Menu!=======");
+            System.out.println("==================================================");
+            System.out.println("1- Upload JSON file");
+            System.out.println("==================================================");
+            System.out.println("0- Back.");
             switch (option) {
                 case 0:
                     System.out.println("Exiting ...");
                     break;
                 case 1:
-                    ;
-                    break;
+                    uploadFileController.uploadFile("WarehousePlan.json");
                 default:
                     System.out.println("Option does not exist!");
                     break;
             }
 
-        }while (option != 0) ;
+        } while (option != 0) ;
+            try {
+                System.out.println("Successful operation!");
+            } catch (Exception e) {
+                System.out.println("Something went wrong");
+            }
+        return false;
     }
 
-        private static int showOptions () {
-            int option = -1;
-            System.out.println("===================================================");
-            System.out.println("               Upload File Menu:          ");
-            System.out.println("=================================================\n");
-            System.out.println("1- ");
-            System.out.println("===================================================");
-            System.out.println("0. Back\n\n");
-            option = Console.readInteger("Please select an option");
-            return option;
+        public String headline () {
+            return "Upload JSON file.";
         }
 
 }
