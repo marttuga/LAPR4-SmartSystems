@@ -1,4 +1,5 @@
 package eapli.base.ordersmanagement.order.domain;
+
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.survey.domain.Survey;
 import eapli.framework.domain.model.AggregateRoot;
@@ -20,23 +21,22 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     private Status status;
 
     @Embedded
-    @Column(updatable = false,insertable = false)
+    @Column(updatable = false, insertable = false)
     private OrderActor orderActor;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Customer customer;
 
-    @Embedded
-    @Column(updatable = false,insertable = false)
+
+    @Column(updatable = false, insertable = false)
     private PaymentMethod paymentMethod;
 
 
-    @Embedded
-    @Column(updatable = false,insertable = false)
+    @Enumerated(EnumType.STRING)
     private ShippingMethod shippingMethod;
 
     @Embedded
-    @Column(updatable = false,insertable = false)
+    @Column(updatable = false, insertable = false)
     private PriceOrder priceOrder;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -46,7 +46,7 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     private Survey survey;
 
 
-    public ProductOrder(OrderActor orderActor, OrderID orderID, Customer customer,Calendar dateTime, LineOrder lineOrder, PriceOrder priceOrder,
+    public ProductOrder(OrderActor orderActor, OrderID orderID, Customer customer, Calendar dateTime, LineOrder lineOrder, PriceOrder priceOrder,
                         PaymentMethod paymentMethod, ShippingMethod shippingMethod, Status status) {
         this.dateTime = dateTime;
         this.orderID = orderID;
@@ -133,7 +133,6 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     public LineOrder getLineOrder() {
         return lineOrder;
     }
-
 
 
 }

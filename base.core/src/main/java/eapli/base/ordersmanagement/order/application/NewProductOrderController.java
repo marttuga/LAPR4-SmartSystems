@@ -71,7 +71,7 @@ public class NewProductOrderController {
     }
 
 
-    public PriceOrder priceOfOrder(LineOrder lineOrder, SalesRegion sr,ShippingMethod.Type sM) {
+    public PriceOrder priceOfOrder(LineOrder lineOrder, SalesRegion sr,ShippingMethod sM) {
         double cost = orderService.shippingCostMethod(sM).shippingMoney().amountAsDouble()+orderService.shippingCostPlace(sr).shippingMoney().amountAsDouble();
         ShippingCost shippingCost= new ShippingCost(Money.euros(cost));
         Money priceO= Money.euros(cost);

@@ -17,7 +17,7 @@ public class LineOrder implements AggregateRoot<LineOrderID> {
     private LineOrderID loid;
 
     @OneToMany
-private Set<ProductItem> lineOrderList;
+    private Set<ProductItem> lineOrderList;
 
     private Money priceOrderWithoutTaxes;
 
@@ -39,7 +39,7 @@ private Set<ProductItem> lineOrderList;
     public String toString() {
         return "LineOrder:" +
                 "productItems=" + lineOrderList +
-                ", priceOrderWithoutTaxes=" + priceOrderWithoutTaxes ;
+                ", priceOrderWithoutTaxes=" + priceOrderWithoutTaxes;
     }
 
     public LineOrderID getLoid() {

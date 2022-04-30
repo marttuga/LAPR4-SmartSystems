@@ -142,7 +142,7 @@ public class NewProductOrderUI extends AbstractUI {
         int sr = Utils.readIntegerFromConsole("Choose the region: \n");
         SalesRegion salesRegion = productOrderController.salesRegion(sr);
 
-        PriceOrder priceOrder = productOrderController.priceOfOrder(lineOrder, salesRegion, shippingMethod.TypeOfDelivery());
+        PriceOrder priceOrder = productOrderController.priceOfOrder(lineOrder, salesRegion, shippingMethod);
 
         Calendar orderDate = Calendar.getInstance();
 
