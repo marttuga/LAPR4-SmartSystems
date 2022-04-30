@@ -1,0 +1,27 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package UI {
+class ConfigureAGVUI {
+}
+}
+
+package Controller{
+class ConfigureAGVController {
+
+}
+}
+
+package AGV <<Aggregate>> {
+entity AGV <<Entity>> {
+- Autonomy
+- AGVDescription
+}
+}
+
+
+ConfigureAGVUI ..> ConfigureAGVController
+ConfigureAGVController ..> AGV
+
+
+@enduml

@@ -5,8 +5,8 @@ participant ":SpecifyNewProductUI" as UI
 participant ":SpecifyNewProductController" as CTRL
 participant ":PersistenceContext" as PC
 participant ":RepositoryFactory" as RF
-participant ":ProductRepository" as ProdRep
 participant ":Product" as Prod
+participant ":ProductRepository" as ProdRep
 
 loop The mandatory attributes are the internal code, short and extended description.
 activate SC
@@ -77,6 +77,6 @@ deactivate UI
 
 deactivate SC
 end loop
-database "Database" as DB
+
 
 @enduml
