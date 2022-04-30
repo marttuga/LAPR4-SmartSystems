@@ -27,7 +27,7 @@ public class LineOrder implements AggregateRoot<LineOrderID> {
             @AttributeOverride(name = "currency", column = @Column(name = "priceOrderWithoutTaxesCurrency"))})
     private Money priceOrderWithoutTaxes;
 
-    public LineOrder() {
+    protected LineOrder() {
     }
 
     public LineOrder(Set<ProductItem> productItems, Money priceOrderWithoutTaxes) {

@@ -16,7 +16,7 @@ public class ShippingCost implements ValueObject {
     private SalesRegion salesReg;
     private Weight w;
 
-    public ShippingCost() {
+    protected ShippingCost() {
     }
 
     public ShippingCost(Money shippingMoney, SalesRegion salesReg, Weight w) {

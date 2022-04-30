@@ -99,7 +99,7 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
         this.aisle = aisle;
     }
 
-    public Product() {
+    protected Product() {
 
     }
 

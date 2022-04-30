@@ -73,6 +73,8 @@ public class MainMenu extends AbstractUI {
 
     private static final int CONFIGURE_AGV = 10;
 
+    private static final int UPLOAD_FILE = 11;
+
     // SETTINGS
     private static final int SET_KITCHEN_ALERT_LIMIT_OPTION = 1;
 
@@ -210,8 +212,9 @@ public class MainMenu extends AbstractUI {
 
    /* private Menu buildWarehouseEmployeeMenu() {
         final Menu menusMenu = new Menu("Warehouse Management >");
-
         menusMenu.addItem(CONFIGURE_AGV, "Configure AGV", new ConfigureAGVUI()::show);
+
+        menusMenu.addItem(UPLOAD_FILE, "Upload File", new UploadFileUI()::show);
 
         menusMenu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 

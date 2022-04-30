@@ -18,7 +18,7 @@ public class PriceOrder  implements ValueObject {
 
     private ShippingCost shippingC;
 
-    public PriceOrder() {
+    protected PriceOrder() {
     }
 
     public PriceOrder(Money priceMoney, ShippingCost shippingC) {

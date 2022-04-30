@@ -18,7 +18,7 @@ public class ShippingMethod implements ValueObject {
 
     private ShippingCost ship;
 
-    public ShippingMethod() {
+    protected ShippingMethod() {
     }
 
     public Type TypeOfDelivery() {

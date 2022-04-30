@@ -15,8 +15,6 @@ public class AGVBuilder {
 
     private MaxWeightCarry maxWeightCarry;
 
-    private Task task;
-
     private AGVDock agvDock;
 
     public AGVBuilder withIdentifier(final Identifier identifier) {
@@ -41,11 +39,6 @@ public class AGVBuilder {
 
     public AGVBuilder withMaxWeightCarry(final MaxWeightCarry maxWeightCarry) {
         this.maxWeightCarry = maxWeightCarry;
-        return this;
-    }
-
-    public AGVBuilder withTask(final Task task) {
-        this.task = task;
         return this;
     }
 

@@ -15,7 +15,7 @@ public class OrderActor implements ValueObject {
         Costumer, Sales_Clerk
     };
 
-    public OrderActor() {
+    protected OrderActor() {
     }
 
     public OrderActor(String id,Role role) {

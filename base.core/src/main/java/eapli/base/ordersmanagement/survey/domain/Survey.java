@@ -15,6 +15,8 @@ public class Survey implements AggregateRoot<SurveyCode> {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private SurveyCode surveyCode;
 
+    protected Survey() {
+    }
 
     @Override
     public int compareTo(SurveyCode other) {

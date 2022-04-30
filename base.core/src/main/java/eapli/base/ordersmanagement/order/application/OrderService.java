@@ -100,7 +100,7 @@ public class OrderService {
 
         return null;
     }
-
+/*
     public ShippingMethod.Type shippingMethodShow(int options) {
 
         switch (options) {
@@ -114,7 +114,7 @@ public class OrderService {
 
         }
         return null;
-    }
+    }*/
 
     public ShippingCost shippingCostPlace(SalesRegion sr) {
         ShippingCost sc = null;
