@@ -10,7 +10,6 @@ import javax.persistence.Transient;
 @Embeddable
 public class Aisle implements ValueObject, Comparable<Aisle>  {
 
-    @Transient
     private int aisleId;
     @Column(insertable = false,updatable = false)
     @Transient
