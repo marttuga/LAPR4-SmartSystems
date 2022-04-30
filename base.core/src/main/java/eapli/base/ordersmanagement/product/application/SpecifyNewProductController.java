@@ -39,7 +39,7 @@ public class SpecifyNewProductController {
         //begin transaction
         txCtx.beginTransaction();
         final Product product = productService.createProductMandatory(uniqueInternalCode,shortDescription,extendedDescription);
-
+        txCtx.commit();
         return product;
     }
 
