@@ -6,7 +6,7 @@ import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import java.io.Serializable;
 
-@Embeddable
+
 public enum SalesRegion  implements ValueObject {
               // shippingcost
     PORTUGAL, // 0,2

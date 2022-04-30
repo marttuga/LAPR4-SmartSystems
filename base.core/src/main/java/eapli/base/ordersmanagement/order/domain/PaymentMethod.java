@@ -4,7 +4,7 @@ import eapli.framework.domain.model.ValueObject;
 
 import javax.persistence.*;
 
-@Embeddable
+
 public enum PaymentMethod implements ValueObject {
 
 

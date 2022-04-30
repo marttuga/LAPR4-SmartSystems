@@ -12,7 +12,8 @@ public class PriceTable  implements AggregateRoot<PriceTableID>, Comparable<Pric
     @GeneratedValue(strategy = GenerationType.AUTO)
     private PriceTableID priceTableID;
 
-    @Embedded
+
+    @Enumerated(EnumType.STRING)
     private SalesRegion sRegion;
 
     public PriceTable(PriceTableID priceTableID, SalesRegion sRegion) {

@@ -11,7 +11,6 @@ public class Warehouse implements AggregateRoot<WarehouseID> {
 
     @Column(insertable = false,updatable = false)
     @EmbeddedId
-    @Transient
     @GeneratedValue(strategy = GenerationType.AUTO)
     private WarehouseID WarehouseID;
 

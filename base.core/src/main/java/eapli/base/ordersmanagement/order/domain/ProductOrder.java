@@ -20,21 +20,16 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     private Status status;
 
     @Embedded
-    @Column(updatable = false,insertable = false)
     private OrderActor orderActor;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Customer customer;
 
-    @Embedded
-    @Column(updatable = false,insertable = false)
+    @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;
 
 
-    @Embedded
-    @AttributeOverrides({
-            @AttributeOverride(name = "ship.shippingMoney.amount", column = @Column(name = "shippingMoneyAmount")),
-            @AttributeOverride(name = "ship.shippingMoney.currency", column = @Column(name = "shippingMoneyCurrency"))})
+    @Enumerated(EnumType.STRING)
     private ShippingMethod shippingMethod;
 
     @Embedded
@@ -51,7 +46,7 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     private Survey survey;
 
 
-    public ProductOrder(OrderActor orderActor, OrderID orderID, Customer customer,Calendar dateTime, LineOrder lineOrder, PriceOrder priceOrder,
+    public ProductOrder(OrderActor orderActor, OrderID orderID, Customer customer, Calendar dateTime, LineOrder lineOrder, PriceOrder priceOrder,
                         PaymentMethod paymentMethod, ShippingMethod shippingMethod, Status status) {
         this.dateTime = dateTime;
         this.orderID = orderID;

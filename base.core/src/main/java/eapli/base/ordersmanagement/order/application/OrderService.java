@@ -77,6 +77,19 @@ public class OrderService {
         return null;
     }
 
+    public ShippingMethod shippingMethod(int options) {
+        switch (options) {
+            case (1):
+                return ShippingMethod.Standart;
+            case (2):
+                return ShippingMethod.Blue;
+            case (3):
+                return ShippingMethod.Green;
+        }
+
+        return null;
+    }
+
     public SalesRegion salesRegion(int options) {
 
         switch (options) {
@@ -100,21 +113,6 @@ public class OrderService {
 
         return null;
     }
-/*
-    public ShippingMethod.Type shippingMethodShow(int options) {
-
-        switch (options) {
-            case (1):
-                return ShippingMethod.Type.Standart;
-            case (2):
-                return ShippingMethod.Type.Blue;
-            case (3):
-                return ShippingMethod.Type.Green;
-
-
-        }
-        return null;
-    }*/
 
     public ShippingCost shippingCostPlace(SalesRegion sr) {
         ShippingCost sc = null;
@@ -138,15 +136,15 @@ public class OrderService {
     }
 
 
-    public ShippingCost shippingCostMethod(ShippingMethod.Type sm) {
+    public ShippingCost shippingCostMethod(ShippingMethod sm) {
         ShippingCost sc = null;
-        if (sm.equals(ShippingMethod.Type.Standart)) {
+        if (sm.equals(ShippingMethod.Standart)) {
             sc = new ShippingCost(Money.euros(1));
         } else {
-            if (sm.equals(ShippingMethod.Type.Blue)) {
+            if (sm.equals(ShippingMethod.Blue)) {
                 sc = new ShippingCost(Money.euros(2));
             } else {
-                if (sm.equals(ShippingMethod.Type.Green)) {
+                if (sm.equals(ShippingMethod.Green)) {
                     sc = new ShippingCost(Money.euros(3));
 
                 }
@@ -155,16 +153,5 @@ public class OrderService {
         return sc;
     }
 
-    public ShippingMethod shippingMethod(int options) {
-        switch (options) {
-            case (1):
-                return new ShippingMethod(ShippingMethod.Type.Standart, shippingCostMethod(ShippingMethod.Type.Standart));
-            case (2):
-                return new ShippingMethod(ShippingMethod.Type.Blue, shippingCostMethod(ShippingMethod.Type.Blue));
-            case (3):
-                return new ShippingMethod(ShippingMethod.Type.Green, shippingCostMethod(ShippingMethod.Type.Green));
-        }
 
-        return null;
-    }
 }

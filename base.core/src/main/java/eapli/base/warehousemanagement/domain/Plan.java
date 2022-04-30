@@ -3,9 +3,10 @@ package eapli.base.warehousemanagement.domain;
 import eapli.framework.domain.model.ValueObject;
 
 import javax.persistence.Column;
-import javax.persistence.Embedded;
+import javax.persistence.Embeddable;
 import javax.persistence.Transient;
 
+@Embeddable
 public class Plan implements ValueObject, Comparable<Plan> {
 
     @Column(insertable = false,updatable = false)
