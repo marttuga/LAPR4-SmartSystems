@@ -73,6 +73,5 @@ deactivate UI
 
 deactivate WE
 end loop
-database "Database" as DB
 
 @enduml
