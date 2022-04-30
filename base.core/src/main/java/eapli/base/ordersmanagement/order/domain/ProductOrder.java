@@ -25,14 +25,11 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Customer customer;
 
-
+    @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;
 
 
-
-    @AttributeOverrides({
-            @AttributeOverride(name = "ship.shippingMoney.amount", column = @Column(name = "shippingMoneyAmount")),
-            @AttributeOverride(name = "ship.shippingMoney.currency", column = @Column(name = "shippingMoneyCurrency"))})
+    @Enumerated(EnumType.STRING)
     private ShippingMethod shippingMethod;
 
     @Embedded
