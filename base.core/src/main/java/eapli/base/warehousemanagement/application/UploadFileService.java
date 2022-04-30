@@ -40,7 +40,7 @@ public class UploadFileService {
                 JSONObject f = (JSONObject) aisles.get(i);
 
                 //id
-                Integer id = Integer.parseInt((String) f.get("Id"));
+                Integer id = Integer.parseInt(String.valueOf(f.get("Id")));
                 //begin
                 JSONObject jsonObjectB = (JSONObject) f.get("begin");
                 Integer lsquareB = Integer.parseInt(String.valueOf(jsonObjectB.get("lsquare")));
