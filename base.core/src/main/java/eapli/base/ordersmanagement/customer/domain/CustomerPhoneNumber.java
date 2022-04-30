@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 
 @Embeddable
 public class CustomerPhoneNumber implements ValueObject , Comparable<CustomerPhoneNumber>{
-    @Embedded
+
     private String phoneNumber;
 
     protected CustomerPhoneNumber() {

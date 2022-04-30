@@ -6,9 +6,9 @@ import eapli.framework.validations.Preconditions;
 import java.util.Objects;
 
 public class CustomerId implements ValueObject, Comparable<CustomerId> {
-    private int customerId;
+    private String customerId;
 
-    public CustomerId(final int customerId) {
+    public CustomerId(final String customerId) {
         Preconditions.noneNull(customerId, "CustomerID cannot be null or empty");
         this.customerId = customerId;
     }

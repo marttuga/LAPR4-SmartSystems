@@ -25,7 +25,7 @@ public class RegisterCustomerController {
 
     private final CustomerRepository customerRepository = PersistenceContext.repositories().customers();
 
-    public Customer registerCustomerShortInfo( CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier ) {
+    public Customer registerCustomerShortInfo( CustomerFirstName customerFirstName, CustomerLastName customerLastName, CustomerEmailAdress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier ) {
         authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.SALES_CLERK_USER);
 
         txCtx.beginTransaction();
@@ -38,7 +38,7 @@ public class RegisterCustomerController {
         return customer;
     }
 
-    public Customer registerCustomer( CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier, CustomerBirthDay customerBirthDay, CustomerGender customerGender, Set<CustomerPostalAddress> customerPostalAddresses ) {
+    public Customer registerCustomer( CustomerFirstName customerFirstName, CustomerLastName customerLastName, CustomerEmailAdress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier, CustomerBirthDay customerBirthDay, CustomerGender customerGender, Set<CustomerPostalAddress> customerPostalAddresses ) {
         authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.SALES_CLERK_USER);
 
         txCtx.beginTransaction();

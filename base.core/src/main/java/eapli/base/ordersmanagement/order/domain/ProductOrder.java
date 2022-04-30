@@ -32,11 +32,16 @@ public class ProductOrder implements AggregateRoot<OrderID> {
 
 
     @Embedded
-    @Column(updatable = false,insertable = false)
+    @AttributeOverrides({
+            @AttributeOverride(name = "ship.shippingMoney.amount", column = @Column(name = "shippingMoneyAmount")),
+            @AttributeOverride(name = "ship.shippingMoney.currency", column = @Column(name = "shippingMoneyCurrency"))})
     private ShippingMethod shippingMethod;
 
     @Embedded
-    @Column(updatable = false,insertable = false)
+    @AttributeOverrides(value= {
+            @AttributeOverride(name="priceMoney.amount", column=@Column(name="priceMoneyAmount")),
+            @AttributeOverride(name="priceMoney.currency", column=@Column(name="priceMoneyCurrency"))
+    })
     private PriceOrder priceOrder;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

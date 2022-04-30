@@ -39,7 +39,7 @@ public class RegisterCustomerUI extends AbstractUI {
             System.out.println("==================================================");
             System.out.println("Please insert your email Address:");
             String emailAddress = in.nextLine();
-            EmailAddress customerEmailAddress = EmailAddress.valueOf(emailAddress);
+            CustomerEmailAdress customerEmailAddress = CustomerEmailAdress.valueOf(emailAddress);
             System.out.println("==================================================");
             System.out.println("Please insert your phone number:");
             String phoneNumber = in.nextLine();
@@ -65,7 +65,7 @@ public class RegisterCustomerUI extends AbstractUI {
                         customerGender = CustomerGender.MALE;
                     }else {
                         if (gender.equalsIgnoreCase(O)) {
-                            customerGender = CustomerGender.MALE;
+                            customerGender = CustomerGender.OTHER;
                         }
                     }
                 }
@@ -102,7 +102,7 @@ public class RegisterCustomerUI extends AbstractUI {
 
     @Override
     public String headline() {
-        return null;
+        return "Register New Customer";
     }
 }
 

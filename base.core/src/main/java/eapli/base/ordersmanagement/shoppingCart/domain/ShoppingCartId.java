@@ -17,7 +17,7 @@ class ShoppingCartID implements ValueObject, Comparable<ShoppingCartID> {
         this.shoppingCartID = cartID;
     }
 
-    protected ShoppingCartID() {
+    public ShoppingCartID() {
     }
 
     public static ShoppingCartID valueOf(final String cartID) {

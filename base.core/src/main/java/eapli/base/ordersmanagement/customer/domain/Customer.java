@@ -16,7 +16,7 @@ public class Customer implements AggregateRoot<CustomerId> {
     private CustomerId customerId;
     private CustomerFirstName customerFirstName;
     private CustomerLastName customerLastName;
-    private EmailAddress customerEmailAddress;
+    private CustomerEmailAdress customerEmailAddress;
     @Temporal(TemporalType.DATE)
     private CustomerBirthDay customerBirthDay;
 
@@ -30,7 +30,7 @@ public class Customer implements AggregateRoot<CustomerId> {
     protected Customer() {
     }
 
-    public Customer(CustomerId customerId, CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier ){
+    public Customer(CustomerId customerId, CustomerFirstName customerFirstName, CustomerLastName customerLastName, CustomerEmailAdress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier ){
         if (customerId == null || customerFirstName == null || customerLastName == null || customerEmailAddress == null || customerPhoneNumber == null || customerVatIdentifier == null ) {
             throw new IllegalArgumentException();
         }
@@ -41,7 +41,7 @@ public class Customer implements AggregateRoot<CustomerId> {
         this.customerPhoneNumber=customerPhoneNumber;
         this.customerVatIdentifier=customerVatIdentifier;
     }
-    public Customer(CustomerId customerId, CustomerFirstName customerFirstName, CustomerLastName customerLastName, EmailAddress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier, CustomerBirthDay customerBirthDay, CustomerGender customerGender, Set<CustomerPostalAddress> customerPostalAddresses){
+    public Customer(CustomerId customerId, CustomerFirstName customerFirstName, CustomerLastName customerLastName, CustomerEmailAdress customerEmailAddress, CustomerPhoneNumber customerPhoneNumber, CustomerVATIdentifier customerVatIdentifier, CustomerBirthDay customerBirthDay, CustomerGender customerGender, Set<CustomerPostalAddress> customerPostalAddresses){
         if (customerId == null || customerFirstName == null || customerLastName == null || customerEmailAddress == null || customerPhoneNumber == null || customerVatIdentifier == null || customerBirthDay == null || customerGender == null || customerPostalAddresses == null) {
             throw new IllegalArgumentException();
         }
@@ -62,7 +62,7 @@ public class Customer implements AggregateRoot<CustomerId> {
         return customerFirstName;
     }
 
-    public EmailAddress getCustomerEmailAddress() {
+    public CustomerEmailAdress getCustomerEmailAddress() {
         return customerEmailAddress;
     }
 
