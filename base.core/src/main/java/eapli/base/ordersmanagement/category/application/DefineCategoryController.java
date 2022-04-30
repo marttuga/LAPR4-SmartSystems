@@ -2,6 +2,7 @@ package eapli.base.ordersmanagement.category.application;
 
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.ordersmanagement.category.domain.Category;
+import eapli.base.ordersmanagement.category.domain.CategoryBuilder;
 import eapli.base.ordersmanagement.category.domain.CategoryCode;
 import eapli.base.ordersmanagement.category.domain.CategoryDescription;
 import eapli.base.ordersmanagement.category.repository.CategoryRepository;
@@ -20,17 +21,17 @@ public class DefineCategoryController {
 
     private final CategoryRepository categoryRepository = PersistenceContext.repositories().category();
 
-    public Category defineCategory(CategoryCode categoryCode, CategoryDescription categoryDescription){
+
+    public Category defineCategory(String categoryCode, String categoryDescription) {
         authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.SALES_CLERK_USER);
-        txCtx.beginTransaction();
-        final Category category = new Category(categoryCode,categoryDescription);
-        txCtx.commit();
-        return category;
+        final var newCategory = new CategoryBuilder().withCategoryCode(CategoryCode.valueOf(categoryCode)).withCategoryDescription(CategoryDescription.valueOf(categoryDescription)).build();
+        return categoryRepository.save(newCategory);
     }
 
     public Category findByCategoryCode(CategoryCode category) {
         return categoryRepository.findByCategoryCode(category);
     }
+
     public List<Category> findAllCategories() {
         return categoryRepository.findAllCategories();
     }

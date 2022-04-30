@@ -21,13 +21,11 @@ public class DefineCategoryUI extends AbstractUI {
             System.out.println("==================================================");
             System.out.println("Please insert a Category code: (Code must be have a maximum of 10 characters)");
             String code = in.nextLine();
-            CategoryCode categoryCode = CategoryCode.valueOf(code);
             System.out.println("==================================================");
             System.out.println("Please insert a Category description:(Description must be between 20 and 50 characters)");
             String description = in.nextLine();
-            CategoryDescription categoryDescription = CategoryDescription.valueOf(description);
             System.out.println("==================================================");
-            categoryController.defineCategory(categoryCode,categoryDescription);
+            categoryController.defineCategory(code,description);
             return true;
         } catch (Exception e) {
             System.out.println("Something went wrong");
