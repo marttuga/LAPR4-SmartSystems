@@ -1,10 +1,7 @@
 package eapli.base.ordersmanagement.product.domain;
 
 import eapli.base.ordersmanagement.category.domain.Category;
-import eapli.base.ordersmanagement.category.domain.CategoryCode;
-import eapli.base.warehousemanagement.domain.*;
 import eapli.base.warehousemanagement.domain.Warehouse;
-import eapli.base.warehousemanagement.domain.WarehouseID;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 
@@ -58,46 +55,35 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
     @Embedded
     private Dimension dimension;
 
-    @Column(insertable = false,updatable = false)
-    @Embedded
-    private WarehouseID warehouseID;
-
-    @Embedded
-    private Aisle aisle;
-
-    @Embedded
-    private Row row;
-
-    @Embedded
-    private Shelf shelf;
 
     @Lob
     private byte[] picture;
 
-    public Product(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription, TechnicalDescription technicalDescription, Brand brand, Reference reference, ProductionCode productionCode, Weight weight, Barcode barcode, ProductPriceDetail priceDetail, CategoryCode categoryCode, Dimension dimension, WarehouseID warehouseID, Aisle aisle, Row row, Shelf shelf, byte[] picture) {
-    }
 
-    public Product(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription) {
+    public Product(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription, TechnicalDescription technicalDescription, Brand brand, Reference reference, ProductionCode productionCode, Weight weight, Barcode barcode, ProductPriceDetail priceDetail, Dimension dimension) {
         this.uniqueInternalCode = uniqueInternalCode;
         this.shortDescription = shortDescription;
         this.extendedDescription = extendedDescription;
+        this.technicalDescription = technicalDescription;
+        this.brand = brand;
+        this.reference = reference;
+        this.productionCode = productionCode;
+        this.weight = weight;
+        this.barcode = barcode;
+        this.priceDetail = priceDetail;
+        this.dimension = dimension;
     }
 
+    public Product(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription, Barcode barcode) {
+        this.uniqueInternalCode = uniqueInternalCode;
+        this.shortDescription = shortDescription;
+        this.extendedDescription = extendedDescription;
+        this.barcode = barcode;
+    }
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Warehouse warehouse;
 
-    public void setShelf(Shelf shelf) {
-        this.shelf = shelf;
-    }
-
-    public void setRow(Row row) {
-        this.row = row;
-    }
-
-    public void setAisle(Aisle aisle) {
-        this.aisle = aisle;
-    }
 
     protected Product() {
 
@@ -188,23 +174,6 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
         return priceDetail;
     }
 
-    public WarehouseID getWarehouseID() {
-        return warehouseID;
-    }
-
-    public Aisle getAisle() {
-        return aisle;
-    }
-
-    public Row getRow() {
-        return row;
-    }
-
-    public Shelf getShelf() {
-        return shelf;
-    }
-
-
     @Override
     public String toString() {
         return "Product:" +
@@ -219,7 +188,6 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
                 ", barcode=" + barcode +
                 ", priceDetail=" + priceDetail +
                 ", category=" + categoryCode +
-                ", dimension=" + dimension +
-                ", warehouseID=" + warehouseID ;
+                ", dimension=" + dimension ;
     }
 }
