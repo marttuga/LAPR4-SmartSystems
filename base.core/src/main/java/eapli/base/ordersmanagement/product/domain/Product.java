@@ -96,25 +96,12 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
         this.shelfId = shelfId;
     }
 
-    public Product(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription, TechnicalDescription technicalDescription, Brand brand, Reference reference, ProductionCode productionCode, Weight weight, Barcode barcode, ProductPriceDetail priceDetail, Dimension dimension) {
-        this.uniqueInternalCode = uniqueInternalCode;
-        this.shortDescription = shortDescription;
-        this.extendedDescription = extendedDescription;
-        this.technicalDescription = technicalDescription;
-        this.brand = brand;
-        this.reference = reference;
-        this.productionCode = productionCode;
-        this.weight = weight;
-        this.barcode = barcode;
-        this.priceDetail = priceDetail;
-        this.dimension = dimension;
-    }
-
-    public Product(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription, Barcode barcode) {
+    public Product(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription, Barcode barcode, CategoryCode categoryCode) {
         this.uniqueInternalCode = uniqueInternalCode;
         this.shortDescription = shortDescription;
         this.extendedDescription = extendedDescription;
         this.barcode = barcode;
+        this.categoryCode = categoryCode;
     }
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
