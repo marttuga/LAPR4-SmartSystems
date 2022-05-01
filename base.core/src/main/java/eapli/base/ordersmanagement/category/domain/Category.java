@@ -22,10 +22,12 @@ public class Category implements AggregateRoot<CategoryCode>, Comparable<Categor
         this.categoryDescription = categoryDescription;
     }
 
-    public static CategoryCode valueOf(final String orderIdentification) {
-        return new CategoryCode(orderIdentification);
+    public Category(String categoryCode) {
     }
 
+    public static Category valueOf(final String categoryCode) {
+        return new Category(categoryCode);
+    }
     @Override
     public int hashCode() {
         return this.categoryCode.hashCode();

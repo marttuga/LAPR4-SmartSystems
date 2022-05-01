@@ -7,12 +7,15 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class MaxWeightCarry implements ValueObject, Comparable<MaxWeightCarry> {
 
-    private Double maxWeight;
+    private int maxWeight;
 
-    protected MaxWeightCarry(Double maxWeight) {
+    protected MaxWeightCarry() {
     }
 
-    public static MaxWeightCarry valueOf(final Double maxWeight) {
+    public MaxWeightCarry(int maxWeight) {
+    }
+
+    public static MaxWeightCarry valueOf(final int maxWeight) {
         return new MaxWeightCarry(maxWeight);
     }
 
@@ -23,13 +26,9 @@ public class MaxWeightCarry implements ValueObject, Comparable<MaxWeightCarry> {
                 '}';
     }
 
-    @Override
-    public int hashCode() {
-        return this.maxWeight.hashCode();
-    }
 
     @Override
     public int compareTo(MaxWeightCarry o) {
-        return maxWeight.compareTo(o.maxWeight);
+        return 0;
     }
 }

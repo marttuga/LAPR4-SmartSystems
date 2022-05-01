@@ -27,9 +27,9 @@ public class UploadFileService {
 
 
             //Obtém os objetos
-            Integer length = Integer.parseInt((String) jsonObject.get("Length"));
-            Integer width = Integer.parseInt((String) jsonObject.get("Width"));
-            Integer square = Integer.parseInt((String) jsonObject.get("Square"));
+            Integer length = Integer.parseInt(String.valueOf(jsonObject.get("Length")));
+            Integer width = Integer.parseInt(String.valueOf(jsonObject.get("Width")));
+            Integer square = Integer.parseInt(String.valueOf(jsonObject.get("Square")));
             String unit = (String) jsonObject.get("Unit");
 
             Plan warehousePlan = new Plan(length, width, square, unit);
@@ -40,19 +40,19 @@ public class UploadFileService {
                 JSONObject f = (JSONObject) aisles.get(i);
 
                 //id
-                Integer id = Integer.parseInt((String) f.get("Id"));
+                Integer id = Integer.parseInt(String.valueOf(f.get("Id")));
                 //begin
                 JSONObject jsonObjectB = (JSONObject) f.get("begin");
-                Integer lsquareB = Integer.parseInt((String) jsonObjectB.get("lsquare"));
-                Integer wsquareB = Integer.parseInt((String) jsonObjectB.get("wsquare"));
+                Integer lsquareB = Integer.parseInt(String.valueOf(jsonObjectB.get("lsquare")));
+                Integer wsquareB = Integer.parseInt(String.valueOf(jsonObjectB.get("wsquare")));
                 //end
                 JSONObject jsonObjectE = (JSONObject) f.get("end");
-                Integer lsquareE = Integer.parseInt((String) jsonObjectE.get("lsquare"));
-                Integer wsquareE = Integer.parseInt((String) jsonObjectE.get("wsquare"));
+                Integer lsquareE = Integer.parseInt(String.valueOf(jsonObjectE.get("lsquare")));
+                Integer wsquareE = Integer.parseInt(String.valueOf(jsonObjectE.get("wsquare")));
                 //depth
                 JSONObject jsonObjectD = (JSONObject) f.get("depth");
-                Integer lsquareD = Integer.parseInt((String) f.get("lsquare"));
-                Integer wsquareD = Integer.parseInt((String) f.get("wsquare"));
+                Integer lsquareD = Integer.parseInt(String.valueOf(jsonObjectD.get("lsquare")));
+                Integer wsquareD = Integer.parseInt(String.valueOf(jsonObjectD.get("wsquare")));
                 //accessibility
                 String access = (String) f.get("accessibility");
 
@@ -61,25 +61,22 @@ public class UploadFileService {
                     JSONObject h = (JSONObject) rows.get(j);
 
                     //id
-                    Integer rowId = Integer.parseInt((String) h.get("Id"));
+                    Integer rowId = Integer.parseInt(String.valueOf(h.get("Id")));
                     //begin
                     JSONObject jsonObjectBRow = (JSONObject) h.get("begin");
-                    Integer lsquareBRow = Integer.parseInt((String) jsonObjectBRow.get("lsquare"));
-                    Integer wsquareBRow = Integer.parseInt((String) jsonObjectBRow.get("wsquare"));
+                    Integer lsquareBRow = Integer.parseInt(String.valueOf(jsonObjectBRow.get("lsquare")));
+                    Integer wsquareBRow = Integer.parseInt(String.valueOf(jsonObjectBRow.get("wsquare")));
                     //end
                     JSONObject jsonObjectERow = (JSONObject) h.get("end");
-                    Integer lsquareERow = Integer.parseInt((String) jsonObjectERow.get("lsquare"));
-                    Integer wsquareERow = Integer.parseInt((String) jsonObjectERow.get("wsquare"));
+                    Integer lsquareERow = Integer.parseInt(String.valueOf(jsonObjectERow.get("lsquare")));
+                    Integer wsquareERow = Integer.parseInt(String.valueOf(jsonObjectERow.get("wsquare")));
                     //shelves
-                    Integer shelves = Integer.parseInt((String) h.get("shelves"));
+                    Integer shelves = Integer.parseInt(String.valueOf(h.get("shelves")));
 
                     Row row = new Row(rowId, lsquareBRow, wsquareBRow, lsquareERow, wsquareERow);
-                    //guarda numa lista
-                    this.rowList.add(row);
                 }
 
                 aisle = new Aisle(id, lsquareB, wsquareB, lsquareE, wsquareE, lsquareD, wsquareD, access);
-                this.aisleList.add(aisle);
             }
 
 
@@ -89,25 +86,24 @@ public class UploadFileService {
                 JSONObject t = (JSONObject) AGVDock.get(p);
 
                 //id
-                Integer AGVDock_id = Integer.parseInt((String) t.get("Id"));
+                String AGVDock_id = (String) t.get("Id");
                 //begin
                 JSONObject jsonObjectBAGVDock = (JSONObject) t.get("begin");
-                Integer lsquareBAGVDock = Integer.parseInt((String) jsonObjectBAGVDock.get("lsquare"));
-                Integer wsquareBAGVDock = Integer.parseInt((String) jsonObjectBAGVDock.get("wsquare"));
+                Integer lsquareBAGVDock = Integer.parseInt(String.valueOf(jsonObjectBAGVDock.get("lsquare")));
+                Integer wsquareBAGVDock = Integer.parseInt(String.valueOf(jsonObjectBAGVDock.get("wsquare")));
                 //end
                 JSONObject jsonObjectEAGVDock = (JSONObject) t.get("end");
-                Integer lsquareEAGVDock = Integer.parseInt((String) jsonObjectEAGVDock.get("lsquare"));
-                Integer wsquareEAGVDock = Integer.parseInt((String) jsonObjectEAGVDock.get("wsquare"));
+                Integer lsquareEAGVDock = Integer.parseInt(String.valueOf(jsonObjectEAGVDock.get("lsquare")));
+                Integer wsquareEAGVDock = Integer.parseInt(String.valueOf(jsonObjectEAGVDock.get("wsquare")));
                 //depth
                 JSONObject jsonObjectDAGVDock = (JSONObject) t.get("depth");
-                Integer lsquareDAGVDock = Integer.parseInt((String) jsonObjectDAGVDock.get("lsquare"));
-                Integer wsquareDAGVDock = Integer.parseInt((String) jsonObjectDAGVDock.get("wsquare"));
+                Integer lsquareDAGVDock = Integer.parseInt(String.valueOf(jsonObjectDAGVDock.get("lsquare")));
+                Integer wsquareDAGVDock = Integer.parseInt(String.valueOf(jsonObjectDAGVDock.get("wsquare")));
                 //accessibility
                 String accessAGVDock = (String) t.get("accessibility");
 
                 agvDock = new AGVDock(AGVDock_id, lsquareBAGVDock, wsquareBAGVDock, lsquareEAGVDock,
                         wsquareEAGVDock, lsquareDAGVDock, wsquareDAGVDock, accessAGVDock);
-                this.agvDockList.add(agvDock);
 
             }
             this.warehouse = new Warehouse(warehousePlan, aisle, agvDock);

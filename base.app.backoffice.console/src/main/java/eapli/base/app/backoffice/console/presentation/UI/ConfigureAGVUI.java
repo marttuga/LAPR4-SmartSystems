@@ -22,7 +22,7 @@ public class ConfigureAGVUI extends AbstractUI {
             final int autonomy = Console.readInteger("Autonomy: ");
             final String description = Console.readLine("Description: ");
             final String model = Console.readLine("Model: ");
-            final Double maxWeightCarry = Console.readDouble("Maximum Weight: ");
+            final int maxWeightCarry = Console.readInteger("Maximum Weight: ");
                 controller.configureAGV(Identifier.valueOf(identifier), AGV.valueOfAutonomy(autonomy), AGVDock.valueOf(agvDock), AGV.valueOfDescription(description), Model.valueOf(model), MaxWeightCarry.valueOf(maxWeightCarry));
 
             System.out.println("Successful operation!");
