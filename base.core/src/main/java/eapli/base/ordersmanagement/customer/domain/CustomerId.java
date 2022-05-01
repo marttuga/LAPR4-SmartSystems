@@ -16,10 +16,6 @@ public class CustomerId implements ValueObject, Comparable<CustomerId> {
     protected CustomerId() {
     }
 
-    /*public void setCustomerId(int customerId) {
-        this.customerId = customerId;
-    }*/
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -33,13 +29,17 @@ public class CustomerId implements ValueObject, Comparable<CustomerId> {
         return Objects.hash(customerId);
     }
 
-
-
-
-
-
     @Override
     public int compareTo(CustomerId o) {
         return 0;
+    }
+
+    @Override
+    public String toString() {
+        return  customerId ;
+    }
+
+    public CustomerId valueOf(final String id){
+        return new CustomerId(id);
     }
 }

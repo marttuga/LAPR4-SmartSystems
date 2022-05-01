@@ -53,4 +53,25 @@ public class Row implements ValueObject, Comparable<Row> {
     public int compareTo(Row o) {
         return 0;
     }
+
+
+    public int getLsquareBegin() {
+        return lsquareBegin;
+    }
+
+    public int getWsquareBegin() {
+        return wsquareBegin;
+    }
+
+    public int getLsquareEnd() {
+        return lsquareEnd;
+    }
+
+    public int getWsquareEnd() {
+        return wsquareEnd;
+    }
+
+    public int getRowId() {
+        return rowId;
+    }
 }

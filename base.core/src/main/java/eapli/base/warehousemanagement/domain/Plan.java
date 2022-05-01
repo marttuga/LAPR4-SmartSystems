@@ -46,4 +46,20 @@ public class Plan implements ValueObject, Comparable<Plan> {
     public int compareTo(Plan o) {
         return 0;
     }
+
+    public int getLength() {
+        return length;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getSquare() {
+        return square;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
 }

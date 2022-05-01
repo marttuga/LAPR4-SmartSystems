@@ -60,4 +60,28 @@ public class AGV implements AggregateRoot<Identifier> {
     public Identifier identity() {
         return null;
     }
+
+    public Identifier getIdentifier() {
+        return identifier;
+    }
+
+    public int getAutonomy() {
+        return autonomy;
+    }
+
+    public AGVDock getAgvDock() {
+        return agvDock;
+    }
+
+    public String getAGVDescription() {
+        return AGVDescription;
+    }
+
+    public Model getModel() {
+        return model;
+    }
+
+    public MaxWeightCarry getMaxWeightCarry() {
+        return maxWeightCarry;
+    }
 }

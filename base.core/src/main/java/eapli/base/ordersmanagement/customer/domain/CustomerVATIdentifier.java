@@ -4,8 +4,7 @@ import eapli.framework.domain.model.ValueObject;
 import eapli.framework.validations.Preconditions;
 
 import javax.persistence.Embeddable;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 
 @Embeddable
 public class CustomerVATIdentifier implements ValueObject, Comparable<CustomerVATIdentifier> {
@@ -17,10 +16,7 @@ public class CustomerVATIdentifier implements ValueObject, Comparable<CustomerVA
     public CustomerVATIdentifier(String vatIdentifier){
         Preconditions.nonEmpty(vatIdentifier, "VAT identifier cannot be null or empty");
 
-        Pattern vatIdRegex = Pattern.compile("^\\d{7}$");
-        Matcher matcher = vatIdRegex.matcher(vatIdentifier);
-
-        if (!matcher.find()) {
+        if (vatIdentifier.length() != 7) {
             throw new IllegalArgumentException("VAT identifier invalid format");
         }
 

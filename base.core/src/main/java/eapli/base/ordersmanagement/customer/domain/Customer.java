@@ -1,8 +1,8 @@
 
 package eapli.base.ordersmanagement.customer.domain;
 
+
 import eapli.framework.domain.model.AggregateRoot;
-import eapli.framework.general.domain.model.EmailAddress;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -11,18 +11,26 @@ import java.util.Set;
 public class Customer implements AggregateRoot<CustomerId> {
 
 
-    @Id
+    @EmbeddedId
     @Column(unique = true)
     private CustomerId customerId;
+    @Embedded
     private CustomerFirstName customerFirstName;
+    @Embedded
     private CustomerLastName customerLastName;
+
+    @Embedded
     private CustomerEmailAdress customerEmailAddress;
+
     @Temporal(TemporalType.DATE)
     private CustomerBirthDay customerBirthDay;
 
+    @Embedded
     private CustomerPhoneNumber customerPhoneNumber;
 
+
     private CustomerGender customerGender;
+    @Embedded
     private CustomerVATIdentifier customerVatIdentifier;
     @ElementCollection
     private Set<CustomerPostalAddress> customerPostalAddress;
@@ -80,6 +88,8 @@ public class Customer implements AggregateRoot<CustomerId> {
     public boolean hasIdentity(CustomerId id) {
         return AggregateRoot.super.hasIdentity(id);
     }
+
+
 
 
 }

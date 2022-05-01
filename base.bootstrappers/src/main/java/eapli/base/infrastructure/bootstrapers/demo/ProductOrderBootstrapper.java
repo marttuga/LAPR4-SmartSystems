@@ -30,7 +30,7 @@ public class ProductOrderBootstrapper implements Action {
 
     @Override
     public boolean execute() {
-        String customerId = customerRepository.findByEmail(EmailAddress.valueOf("costumer1@gmail.com")).get().getCustomerId().toString();
+        String customerId = customerRepository.findByCustomerId(customerRepository.valueOf("91YwzQjS")).toString();
         createProductOrder(customerId, "555", customerId, new Date(23/04/2001), "555", 2, "1", 10);
         return true;
     }

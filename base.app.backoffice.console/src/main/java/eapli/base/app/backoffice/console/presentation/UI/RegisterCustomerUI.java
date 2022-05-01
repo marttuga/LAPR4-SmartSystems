@@ -1,28 +1,24 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
 
-import eapli.base.ordersmanagement.customer.application.RegisterCustomerController;
+import eapli.base.ordersmanagement.customer.applicaion.RegisterCustomerController;
 
 import eapli.base.utilitarianClasses.Utils;
 import eapli.framework.presentation.console.AbstractUI;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
+
 import eapli.base.ordersmanagement.customer.domain.*;
-import eapli.framework.general.domain.model.EmailAddress;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Scanner;
+
 
 
 public class RegisterCustomerUI extends AbstractUI {
 
-    private static final String F = null;
+  /*  private static final String F = null;
     private static final String M = null;
-    private static final String O = null;
+    private static final String O = null;*/
     private final RegisterCustomerController controller = new RegisterCustomerController();
 
-    Scanner in = new Scanner(System.in);
 
     @Override
     protected boolean doShow() {
@@ -30,68 +26,51 @@ public class RegisterCustomerUI extends AbstractUI {
             System.out.println("==================================================");
             System.out.println("=======Welcome to costumer's registration!========");
             System.out.println("==================================================");
-            System.out.println("Please insert your first name:");
-            String firstName = in.nextLine();
-            CustomerFirstName customerFirstName = CustomerFirstName.valueOf(firstName);
-            System.out.println("Please insert your last name:");
-            String lastName = in.nextLine();
-            CustomerLastName customerLastName = CustomerLastName.valueOf(lastName);
+            String firstName = Utils.readLine("Please insert your first name:");
             System.out.println("==================================================");
-            System.out.println("Please insert your email Address:");
-            String emailAddress = in.nextLine();
-            CustomerEmailAdress customerEmailAddress = CustomerEmailAdress.valueOf(emailAddress);
+            String lastName = Utils.readLine("Please insert your last name:");
             System.out.println("==================================================");
-            System.out.println("Please insert your phone number:");
-            String phoneNumber = in.nextLine();
-            CustomerPhoneNumber customerPhoneNumber = CustomerPhoneNumber.valueOf(phoneNumber);
+            String emailAddress = Utils.readLine("Please insert your email Address:");
             System.out.println("==================================================");
-            System.out.println("Please insert a VAT identification number:");
-            String vatIdentifier = in.nextLine();
-            CustomerVATIdentifier customerVATIdentifier = CustomerVATIdentifier.valueOf(vatIdentifier);
+            String phoneNumber = Utils.readLine("Please insert your phone number:");
             System.out.println("==================================================");
-            if (Utils.confirm("Do you wish to add more information?(Y or N)")){
-                System.out.println("Please insert your birthday:(Use this format: dd/MM/yyyy)");
-                String birthday = in.nextLine();
-                Date date = new SimpleDateFormat("dd/MM/yyyy").parse(birthday);
-                CustomerBirthDay customerBirthDay= CustomerBirthDay.valueOf(date);
-                System.out.println("==================================================");
-                System.out.println("Please insert your gender:(F/M/O)");
-                String gender = in.nextLine();
-                CustomerGender customerGender = null;
-                if (gender.equalsIgnoreCase(F)){
-                    customerGender = CustomerGender.FEMALE;
-                }else{
-                    if (gender.equalsIgnoreCase(M)){
-                        customerGender = CustomerGender.MALE;
-                    }else {
-                        if (gender.equalsIgnoreCase(O)) {
-                            customerGender = CustomerGender.OTHER;
-                        }
+            String vatIdentifier = Utils.readLine("Please insert a VAT identification number:");
+            System.out.println("==================================================");
+            String option = Utils.readLine("Do you wish to add more information:");
+            switch (option.toUpperCase()){
+                case "Y":
+                    System.out.println("==================================================");
+                    Date birthday = Utils.readDateFromConsole("Please insert your birthday:(Use this format: dd/MM/yyyy)");
+                    System.out.println("==================================================");
+                    String gender = Utils.readLine("Please insert your gender:(F/M/O)");
+                    switch (gender.toUpperCase()) {
+                        case "F":
+                            gender = String.valueOf(CustomerGender.FEMALE);
+                            break;
+                        case "M":
+                            gender = String.valueOf(CustomerGender.MALE);
+                            break;
+                        case "O":
+                            gender = String.valueOf(CustomerGender.OTHER);
+                            break;
                     }
-                }
-                final Set<CustomerPostalAddress> address = new HashSet<>();
-                do {
+                    final Set<CustomerPostalAddress> address = new HashSet<>();
                     System.out.println("==================================================");
-                    System.out.println("Insert the Customer's Address (Street)");
-                    String street = in.nextLine();
+                    String street = Utils.readLine("Insert the Customer's Address (Street)");
                     System.out.println("==================================================");
-                    System.out.println("Insert the Customer's Address (Door number)");
-                    int doorNumber = in.nextInt();
+                    int doorNumber = Utils.readIntegerFromConsole("Insert the Customer's Address (Door number)");
                     System.out.println("==================================================");
-                    System.out.println("Insert the Customer's Address (City)");
-                    String city = in.nextLine();
+                    String city = Utils.readLine("Insert the Customer's Address (City)");
                     System.out.println("==================================================");
-                    System.out.println("Insert the Customer's Address (Country)");
-                    String country = in.nextLine();
+                    String country = Utils.readLine("Insert the Customer's Address (Country)");
                     System.out.println("==================================================");
-                    System.out.println("Insert the Customer's Address (Postal Code)");
-                    int postalCode = in.nextInt();
-                    CustomerPostalAddress customerPostalAddress = CustomerPostalAddress.valueOf(street,doorNumber,city,country,postalCode);
+                    int postalCode = Utils.readIntegerFromConsole("Insert the Customer's Address (Postal Code)");
+                    CustomerPostalAddress customerPostalAddress = CustomerPostalAddress.valueOf(street, doorNumber, city, country, postalCode);
                     address.add(customerPostalAddress);
-                } while (Utils.confirm("Write another address? (Y or N)"));
-                controller.registerCustomer(customerFirstName,customerLastName,customerEmailAddress,customerPhoneNumber,customerVATIdentifier,customerBirthDay,customerGender,address);
-            }else {
-                controller.registerCustomerShortInfo(customerFirstName,customerLastName,customerEmailAddress,customerPhoneNumber,customerVATIdentifier);
+                    controller.registerCustomer(firstName, lastName, emailAddress, phoneNumber, vatIdentifier, birthday, gender, address);
+                    break;
+                case "N":
+                    controller.registerCustomerShortInfo(firstName, lastName, emailAddress, phoneNumber, vatIdentifier);
             }
             return true;
         } catch (Exception e) {

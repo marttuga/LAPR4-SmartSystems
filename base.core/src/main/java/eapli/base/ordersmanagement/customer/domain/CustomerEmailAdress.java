@@ -10,6 +10,11 @@ public class CustomerEmailAdress implements ValueObject, Comparable<CustomerEmai
 
     private String email;
 
+    @Override
+    public String toString() {
+        return   email ;
+    }
+
     public CustomerEmailAdress() {
     }
 
