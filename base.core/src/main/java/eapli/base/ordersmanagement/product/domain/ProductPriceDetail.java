@@ -41,7 +41,7 @@ public class ProductPriceDetail implements ValueObject, Comparable<ProductPriceD
         return String.valueOf(Money.euros(price.amountAsDouble()));
     }
 
-    public static ProductPriceDetail valueOf(final String price) throws IllegalAccessException {
+    public static ProductPriceDetail valueOf(final Money price) throws IllegalAccessException {
         return new ProductPriceDetail(price);
     }
 

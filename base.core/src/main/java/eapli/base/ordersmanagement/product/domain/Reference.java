@@ -38,6 +38,10 @@ public class Reference implements ValueObject, Comparable<Reference>  {
         return new Reference(reference);
     }
 
+    public String getReference() {
+        return reference;
+    }
+
     @Override
     public String toString(){
         return reference;

@@ -28,6 +28,10 @@ public class Weight implements ValueObject, Comparable<Weight>{
 
     }
 
+    public double getWeight() {
+        return weight;
+    }
+
     @Override
     public String toString() {
         return "Weight{" +

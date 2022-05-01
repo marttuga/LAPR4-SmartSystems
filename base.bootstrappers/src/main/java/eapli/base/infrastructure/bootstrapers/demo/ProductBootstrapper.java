@@ -12,6 +12,7 @@ import eapli.base.warehousemanagement.domain.WarehouseID;
 import eapli.framework.actions.Action;
 import eapli.framework.domain.repositories.ConcurrencyException;
 import eapli.framework.domain.repositories.IntegrityViolationException;
+import eapli.framework.general.domain.model.Money;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,31 +26,36 @@ public class ProductBootstrapper implements Action {
     public boolean execute() {
         createProduct("555", "shortDescription1", "longDescription1",
                 "technicalDescription1", "Levs","test", "222", 10,
-                "2222222222222", "10", "555", 100, 100, 100,
+                "2222222222222", Money.euros(10), "555", 100, 100, 100,
                 1, 1, 1);
         createProduct("556", "shortDescription2", "longDescription2",
                 "technicalDescription2", "Supreme","test", "222", 10,
-                "2222222222223", "10", "555", 100, 100, 100,
+                "2222222222223", Money.euros(20), "555", 100, 100, 100,
                 2, 2, 2);
         createProduct("557", "shortDescription3", "longDescription3",
                 "technicalDescription3", "Perry Fred","test", "222", 10,
-                "2222222222224", "10", "556", 100, 100, 100,
+                "2222222222224", Money.euros(30), "556", 100, 100, 100,
                 3, 3, 3);
         createProduct("558", "shortDescription4", "longDescription4",
                 "technicalDescription4", "Levs","test", "222", 10,
-                "2222222222225", "10", "556", 100, 100, 100,
+                "2222222222225", Money.euros(5), "556", 100, 100, 100,
+                4, 4, 4);
+
+        createProduct("559", "shortDescription5", "longDescription5",
+                "technicalDescription5", "Levis","test", "222", 10,
+                "2222222222226", Money.euros(35), "556", 100, 100, 100,
                 4, 4, 4);
 
         return true;
     }
 
     private void createProduct(String uniqueInternalCode,
-                                String shortDescription,
-                                String extendedDescription,
-                                String technicalDescription,
-                                String brand,
-                                String reference,
-                                String productionCode, int weight, String barcode, String priceDetail, String categoryCode,
+                               String shortDescription,
+                               String extendedDescription,
+                               String technicalDescription,
+                               String brand,
+                               String reference,
+                               String productionCode, double weight, String barcode, Money priceDetail, String categoryCode,
                                double width, double heigth, double length, int aisle, int row, int shelf) {
 
         Product product;

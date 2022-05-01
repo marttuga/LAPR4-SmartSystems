@@ -8,14 +8,14 @@
 Within the scope of this user story, the task of registering a new customer is assigned to the sales clerk. 
 As such, the costumer must provide at least the first and last name, a valid Value-Added Tax (VAT) identifier that varies from 
 one country to another so the system must be prepared to support/recognize several VAT Ids, an email address and a phone number.
-Optionally, customers might state their birthdate, gender and have/manage several billing and delivering postal addresses,
+Optionally, customers might state their birthdate, customerGender and have/manage several billing and delivering postal addresses,
 including a street name, door number, postal code, city and country.
 
 
 ## Acceptance criteria
 * At least the first and last name of the customer are required for their registration
 * Besides the name of the customer, a VAT, an  email address and a phone number are required for their registration
-* Birthdate, gender  and billing/delivering adresses are  optional for costumers registration 
+* Birthdate, customerGender  and billing/delivering adresses are  optional for costumers registration 
 * The system must be prepared to support/recognize several VAT Ids
 
 
@@ -29,24 +29,22 @@ including a street name, door number, postal code, city and country.
 # 3. Design
 
 
->   Domain Classes: Costumer, Email, Address
+>   Domain Classes: Costumer, CustomerFirstName, CustomerLastName, CustomerEmailAddress, CustomerPostalAddress, CustomerPhoneNumber, CustomerBirthday, CustomerGender, CustomerVatIdentifier
 >
 >   Controller: RegisterCustomerController
 >
->   Repository: CostumerRepository, UserRepository
+>   Repository: CostumerRepository
 
 ## 3.1. Realização da Funcionalidade
 
 ![SSD](US1003_SSD.svg)
 
 ![SD](US1003_SD.svg)
-*Nesta secção deve apresentar e descrever o fluxo/sequência que permite realizar a funcionalidade.*
 
 ## 3.2. Diagrama de Classes
 
 ![CD](US1003_CD.svg)
 
-*Nesta secção deve apresentar e descrever as principais classes envolvidas na realização da funcionalidade.*
 
 ## 3.3. Padrões Aplicados
 

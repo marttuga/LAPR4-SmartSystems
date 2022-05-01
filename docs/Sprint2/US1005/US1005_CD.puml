@@ -1,0 +1,24 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package UI {
+class DefineCategoryUI <<presentation>> {
+}
+}
+
+package Controller <<application>>{
+class DefineCategoryController {
+
+}
+}
+
+package Category <<Aggregate>>{
+
+entity Category <<Entity>> <<Root>> {
+}
+
+
+
+DefineCategoryUI ..> DefineCategoryController
+DefineCategoryController ..> Category
+@enduml

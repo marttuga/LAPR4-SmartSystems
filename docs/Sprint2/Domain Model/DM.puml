@@ -18,10 +18,13 @@ package Category <<Aggregate>> {
 package Product <<Aggregate>>{
 
 entity Product <<Entity>> <<Root>> {
-- shortDescription
-- extendedDescription
-- technicalDescription
 }
+
+object ShortDescription <<ValueObject>>
+
+object ExtendedDescription <<ValueObject>>
+
+object TechnicalDescription <<ValueObject>>
 
 object ProductPriceDetail <<ValueObject>>
 
@@ -268,6 +271,9 @@ Product --- "1" ProductItem: becomes >
 ProductItem --- "1" Quantity: has >
 ProductItem --- "1" PriceItem : has >
 ProductItem --- "1" ProductItemID : has >
+Product --- "1" ShortDescription : has >
+Product --- "1" ExtendedDescription : has >
+Product --- "1" TechnicalDescription : has >
 Product --- "1" Reference: has >
 Product --- "1" UniqueInternalCode: has >
 Product --- Dimension: has >
