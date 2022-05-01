@@ -123,4 +123,5 @@ public class JpaProductRepository extends JpaAutoTxRepository<Product, String, S
     public void deleteOfIdentity(UniqueInternalCode entityId) {
 
     }
+
 }
