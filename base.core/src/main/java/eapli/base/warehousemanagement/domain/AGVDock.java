@@ -66,4 +66,36 @@ public class AGVDock implements ValueObject, Comparable<AGVDock>{
     public int compareTo(AGVDock o) {
         return 0;
     }
+
+    public String getAgvDockID() {
+        return agvDockID;
+    }
+
+    public int getLsquareBeginAGVDock() {
+        return lsquareBeginAGVDock;
+    }
+
+    public int getWsquareBeginAGVDock() {
+        return wsquareBeginAGVDock;
+    }
+
+    public int getLsquareEndAGVDock() {
+        return lsquareEndAGVDock;
+    }
+
+    public int getWsquareEndAGVDock() {
+        return wsquareEndAGVDock;
+    }
+
+    public int getLsquareDepthAGVDock() {
+        return lsquareDepthAGVDock;
+    }
+
+    public int getWsquareDepthAGVDock() {
+        return wsquareDepthAGVDock;
+    }
+
+    public String getAccessibility() {
+        return accessibility;
+    }
 }

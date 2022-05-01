@@ -66,4 +66,28 @@ public class Warehouse implements AggregateRoot<WarehouseID> {
     public eapli.base.warehousemanagement.domain.WarehouseID identity() {
         return null;
     }
+
+    public eapli.base.warehousemanagement.domain.WarehouseID getWarehouseID() {
+        return WarehouseID;
+    }
+
+    public Plan getPlan() {
+        return plan;
+    }
+
+    public Aisle getAisle() {
+        return aisle;
+    }
+
+    public Row getRow() {
+        return row;
+    }
+
+    public Shelf getShelf() {
+        return shelf;
+    }
+
+    public AGVDock getAgvDock() {
+        return agvDock;
+    }
 }

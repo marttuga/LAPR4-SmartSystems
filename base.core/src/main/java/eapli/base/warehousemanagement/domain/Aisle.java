@@ -66,4 +66,36 @@ public class Aisle implements ValueObject, Comparable<Aisle>  {
     public int compareTo(Aisle o) {
         return 0;
     }
+
+    public int getAisleId() {
+        return aisleId;
+    }
+
+    public int getLsquareBegin() {
+        return lsquareBegin;
+    }
+
+    public int getWsquareBegin() {
+        return wsquareBegin;
+    }
+
+    public int getLsquareEnd() {
+        return lsquareEnd;
+    }
+
+    public int getWsquareEnd() {
+        return wsquareEnd;
+    }
+
+    public int getBeginDepth() {
+        return beginDepth;
+    }
+
+    public int getEndDepth() {
+        return endDepth;
+    }
+
+    public String getAccessibility() {
+        return accessibility;
+    }
 }
