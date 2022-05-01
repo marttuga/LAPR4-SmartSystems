@@ -34,4 +34,12 @@ public class Shelf implements ValueObject, Comparable<Shelf>{
     public int compareTo(Shelf o) {
         return 0;
     }
+
+    public int getShelfId() {
+        return shelfId;
+    }
+
+    public int getNrShelves() {
+        return nrShelves;
+    }
 }
