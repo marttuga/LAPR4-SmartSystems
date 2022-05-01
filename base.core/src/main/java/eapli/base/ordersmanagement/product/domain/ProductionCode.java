@@ -38,6 +38,10 @@ public class ProductionCode implements ValueObject, Comparable<ProductionCode>  
         return new ProductionCode(productionCode);
     }
 
+    public String getProductionCode() {
+        return productionCode;
+    }
+
     @Override
     public String toString(){
         return productionCode;

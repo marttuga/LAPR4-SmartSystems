@@ -52,6 +52,9 @@ public class UniqueInternalCode implements ValueObject, Comparable<UniqueInterna
         return new UniqueInternalCode(internalCode);
     }
 
+    public String getUniqueInternalCode() {
+        return uniqueInternalCode;
+    }
 
     @Override
     public String toString() {

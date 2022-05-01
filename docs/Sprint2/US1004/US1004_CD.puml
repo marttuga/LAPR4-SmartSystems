@@ -1,44 +1,57 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package UI {
-class NewProductOrderUI {
-}
-}
 
-package Controller{
-class NewProductOrderController {
+class NewProductOrderUI <<presentation>>
 
-}
-}
 
-package Order <<Aggregate>>{
+class NewProductOrderController <<application>>
+class OrderRepository <<repository>>
+class ViewCatalogController <<application>>
+
+class ProductSorter
+class ProductRepository <<repository>>
+
+entity Order <<Entity>>
+
+
+entity Costumer <<Entity>> <<Root>>
 
 entity Product <<Entity>> <<Root>> {
 - ProductDescription
 }
-entity PriceTable <<Entity>>
-entity SalesRegion <<Entity>>
-entity ShoppingCart <<Entity>>
-entity PriceItem <<Entity>>
-entity Costumer <<Entity>> <<Root>>
-entity PaymentMethod <<Entity>>
-}
 
-
-package Category <<Aggregate>> {
     entity Category <<Entity>>
 
-}
 
-NewProductOrderUI ..> NewProductOrderController
-NewProductOrderController ..> Category
-NewProductOrderController ..>PriceTable
-NewProductOrderController ..> Product
-NewProductOrderController ..> SalesRegion
-NewProductOrderController ..> PriceItem
-NewProductOrderController ..> ShoppingCart
-NewProductOrderController ..>Costumer
-NewProductOrderController ..> PaymentMethod
+
+
+NewProductOrderController -->Costumer
+NewProductOrderController -->ViewCatalogController
+NewProductOrderUI --> NewProductOrderController : theController
+NewProductOrderUI ..> Order : theOrder
+NewProductOrderUI : doShow()
+NewProductOrderController --> OrderRepository : repo
+NewProductOrderController --> Order : the Order
+NewProductOrderController : createOrder ()
+OrderRepository : save(order)
+OrderRepository : findById(OrderID)
+
+ViewCatalogController --> Category
+ViewCatalogController --> Product: theProduct
+ViewCatalogController -->Brand
+ViewCatalogController -->ShortDescription
+
+ViewCatalogController --> ProductRepository : repo
+ViewCatalogController --> ProductSorter : sorter
+ProductSorter : sortByPrice(productList)
+ProductSorter : sortByName(productList)
+ViewCatalogController : getProductByBrand( brand)
+ViewCatalogController : getProductByCategory( category)
+ViewCatalogController : getProductByDescription( shortDescription)
+ViewCatalogController : sortByPrice( productList)
+ViewCatalogController : sortByDescription( productList)
+
+ProductRepository : findAllProducts()
 
 @enduml

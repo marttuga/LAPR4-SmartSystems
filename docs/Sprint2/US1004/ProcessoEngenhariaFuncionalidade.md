@@ -64,13 +64,22 @@ is to be verified, having already included the transportation taxes, that depend
 ## 3.4. Testes
 *Nesta secção deve sistematizar como os testes foram concebidos para permitir uma correta aferição da satisfação dos requisitos.*
 
-**Teste 1:** Verificar que não é possível criar uma instância da classe Exemplo com valores nulos.
+**Teste 1:** object get the value of another object
 
-	@Test(expected = IllegalArgumentException.class)
-		public void ensureNullIsNotAllowed() {
-		Exemplo instance = new Exemplo(null, null);
-	}
+    @Test
+    void valueOf() {
+        OrderID or = new OrderID("12");
+        Assertions.assertEquals(OrderID.valueOf("12"),or );
+    }
 
+**Teste 2:** method to test the method that returns the orderID 
+
+    @Test
+    void getOrderID() {
+        OrderID or = new OrderID("1");
+        ProductOrder order = new ProductOrder(o, orderID, c, d, lineOrder, po, PaymentMethod.MBWAY, ShippingMethod.Blue, Status.REGISTERED);
+        Assertions.assertEquals(or, order.getOrderID());
+    }
 # 4. Implementação
 
 *Nesta secção a equipa deve providenciar, se necessário, algumas evidências de que a implementação está em conformidade com o design efetuado. Para além disso, deve mencionar/descrever a existência de outros ficheiros (e.g. de configuração) relevantes e destacar commits relevantes;*

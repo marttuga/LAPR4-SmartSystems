@@ -2,7 +2,7 @@ package eapli.base.app.backoffice.console.presentation.UI;
 
 import eapli.base.ordersmanagement.category.application.DefineCategoryController;
 import eapli.base.ordersmanagement.category.domain.Category;
-import eapli.base.ordersmanagement.customer.application.RegisterCustomerController;
+import eapli.base.ordersmanagement.customer.applicaion.RegisterCustomerController;
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.customer.domain.CustomerId;
 import eapli.base.ordersmanagement.order.application.NewProductOrderController;

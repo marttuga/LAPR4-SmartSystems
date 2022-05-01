@@ -59,12 +59,14 @@ having in mind this price, the merchandise should support several currencies and
 ## 3.4. Testes
 *Nesta secção deve sistematizar como os testes foram concebidos para permitir uma correta aferição da satisfação dos requisitos.*
 
-**Teste 1:** Verificar que não é possível criar uma instância da classe Exemplo com valores nulos.
+**Teste 1:** Verificar se duas brands sao iguais
 
-	@Test(expected = IllegalArgumentException.class)
-		public void ensureNullIsNotAllowed() {
-		Exemplo instance = new Exemplo(null, null);
-	}
+	  @Test
+    void testEquals() throws IllegalAccessException {
+        Brand b= new Brand("oi");
+        Brand bo= new Brand("oi");
+        Assertions.assertEquals(bo.toString(), b.toString());
+    }
 
 # 4. Implementação
 
