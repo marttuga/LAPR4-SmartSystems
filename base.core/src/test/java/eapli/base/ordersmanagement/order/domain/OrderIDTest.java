@@ -29,6 +29,7 @@ class OrderIDTest {
         OrderID or = new OrderID("12");
         Assertions.assertEquals(o, or);
     }
+
     @Test
     void testNotEquals() {
         OrderID o = new OrderID("1");

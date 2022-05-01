@@ -31,6 +31,7 @@ class LineOrderIDTest {
         Assertions.assertEquals(o, or);
     }
 
+
     @Test
     void testNotEquals() {
         LineOrderID o = new LineOrderID("1");

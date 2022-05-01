@@ -50,11 +50,6 @@ public class LineOrder implements AggregateRoot<LineOrderID> {
     public LineOrderID getLoid() {
         return loid;
     }
-
-    public Set<ProductItem> getLineOrderList() {
-        return lineOrderList;
-    }
-
     public Money getPriceOrderWithoutTaxes() {
         return priceOrderWithoutTaxes;
     }
