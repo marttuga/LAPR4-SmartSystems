@@ -1,5 +1,6 @@
 package eapli.base.ordersmanagement.product.application;
 
+/*
 
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.ordersmanagement.category.domain.Category;
@@ -7,9 +8,10 @@ import eapli.base.ordersmanagement.category.domain.CategoryCode;
 import eapli.base.ordersmanagement.product.domain.*;
 import eapli.base.ordersmanagement.product.repositories.ProductRepository;
 import eapli.framework.application.ApplicationService;
+*/
 
 
-@ApplicationService
+/*@ApplicationService
 public class ProductService {
 
     private final ProductRepository productRepository = PersistenceContext.repositories().products();
@@ -25,7 +27,7 @@ public class ProductService {
         return product;
     }
 
-/*        public Product createProduct(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription, TechnicalDescription technicalDescription, Brand brand, Reference reference, ProductionCode productionCode, Weight weight , Barcode barcode, ProductPriceDetail priceDetail, Dimension dimension) {
+*//*        public Product createProduct(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription, TechnicalDescription technicalDescription, Brand brand, Reference reference, ProductionCode productionCode, Weight weight , Barcode barcode, ProductPriceDetail priceDetail, Dimension dimension) {
 
         final ProductBuilder productBuilder = new ProductBuilder();
         Product product;
@@ -34,7 +36,7 @@ public class ProductService {
         this.productRepository.save(product);
 
         return product;
-    }*/
+    }*//*
 
         public Product createProductMandatory(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription) {
 
@@ -46,4 +48,4 @@ public class ProductService {
 
         return product;
     }
-}
+}*/
