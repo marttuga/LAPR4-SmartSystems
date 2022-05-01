@@ -9,7 +9,7 @@ class CustomerPhoneNumberTest {
 
     @Test
     void testPhoneNumber() {
-        Assertions.assertNotNull(new CustomerFirstName("917147649"));
+        Assertions.assertNotNull(new CustomerPhoneNumber("917147649"));
     }
 
     @Test
@@ -20,5 +20,10 @@ class CustomerPhoneNumberTest {
     @Test
     void ensurePhoneNumberIsNotEmpty() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> new CustomerPhoneNumber(""));
+    }
+
+    @Test
+    void ensurePhoneNumberIsNine() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new CustomerPhoneNumber("91836844445"));
     }
 }
