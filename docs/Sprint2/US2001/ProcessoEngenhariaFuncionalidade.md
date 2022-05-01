@@ -28,7 +28,7 @@ I interpret that:
 
 * Use a layered application framework base pattern.
 
-* Domain Classes: UploadFile
+* Domain Classes: Warehouse, WarehouseID, AGVDock, Plan, Row, Shelf, Aisle
 * Controller: UploadFileController
 * Repository: UploadFileRepository
 
@@ -45,31 +45,41 @@ I interpret that:
 
 ## 3.3. Padrões Aplicados
 
-*Nesta secção deve apresentar e explicar quais e como foram os padrões de design aplicados e as melhores práticas.*
+Repository factory to store in database and controller.
 
 ## 3.4. Testes 
-*Nesta secção deve sistematizar como os testes foram concebidos para permitir uma correta aferição da satisfação dos requisitos.*
 
-**Teste 1:** Verificar que não é possível criar uma instância da classe Exemplo com valores nulos.
+**Test 1:** Check that the value of  warehouse id is 2.
 
-	@Test(expected = IllegalArgumentException.class)
-		public void ensureNullIsNotAllowed() {
-		Exemplo instance = new Exemplo(null, null);
-	}
+    @Test
+    void valueOf() {
+        WarehouseID war = new WarehouseID("2");
+        Assertions.assertEquals(WarehouseID.valueOf("2"),war );
+    }
+
+**Test 2:** Check that the length of warehouse's plan is not the same to plan and plan 1.
+
+    @Test
+    void testNotEqualsLength() {
+        Plan p = new Plan(20000, 15000, 100, "cm");
+        Plan p1 = new Plan(10000, 15000, 100, "cm");
+        Assertions.assertNotEquals(p.getLength(), p1.getLength());
+    }
+
 
 # 4. Implementação
 
-*Nesta secção a equipa deve providenciar, se necessário, algumas evidências de que a implementação está em conformidade com o design efetuado. Para além disso, deve mencionar/descrever a existência de outros ficheiros (e.g. de configuração) relevantes e destacar commits relevantes;*
-
-*Recomenda-se que organize este conteúdo por subsecções.*
+* I implemented the domain classes based on the domain model created and that I needed for the US implementation. Thus, by uploading the JSON file, it will be possible to configure the warehouse's plan, which includes aisle, row and agv dock.
+After that, I created the controller, repository and UI so that it was possible for the warehouse employee to complete this 
+task (upload file). A JSON file was also created with the warehouse settings that we defined as a team.
 
 # 5. Integração/Demonstração
 
-*Nesta secção a equipa deve descrever os esforços realizados no sentido de integrar a funcionalidade desenvolvida com as restantes funcionalidades do sistema.*
+* The concern of not persisting the data read when uploading the JSON file was taken into account.
+* I integrated this US into the warehouse employee menu.
 
 # 6. Observações
 
-*Nesta secção sugere-se que a equipa apresente uma perspetiva critica sobre o trabalho desenvolvido apontando, por exemplo, outras alternativas e ou trabalhos futuros relacionados.*
 
 
 

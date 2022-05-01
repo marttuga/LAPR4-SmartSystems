@@ -16,9 +16,4 @@ class CustomerIdTest {
     void ensureCustomerIdIsNotNull() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> new CustomerId(null));
     }
-
-    @Test
-    void ensureCustomerIsNotEmpty() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> new CustomerId(""));
-    }
 }
