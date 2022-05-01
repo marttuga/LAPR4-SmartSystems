@@ -34,6 +34,10 @@ public class ShortDescription implements ValueObject, Comparable<ShortDescriptio
 
     }
 
+    public String getDescription() {
+        return description;
+    }
+
     public static ShortDescription valueOf(final String description) throws IllegalAccessException {
         return new ShortDescription(description);
     }
