@@ -31,8 +31,8 @@ public class RegisterCustomerController {
 
     public Customer registerCustomerShortInfo( final String customerFirstName, final String customerLastName, final String customerEmailAddress, final String  customerPhoneNumber, final String customerVatIdentifier ) {
         authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.SALES_CLERK_USER);
-        //String uniqueID = RandomStringUtils.randomAlphanumeric(8);
-        String uniqueID = "99999999";
+        String uniqueID = RandomStringUtils.randomAlphanumeric(5);
+        //String uniqueID = null;
         final var newCustomer = new CustomerBuilder().withCustomerId(uniqueID).withFisrtName(CustomerFirstName.valueOf(customerFirstName)).withLastName(CustomerLastName.valueOf(customerLastName)).withEmailAdress(CustomerEmailAdress.valueOf(customerEmailAddress)).withPhoneNumber(CustomerPhoneNumber.valueOf(customerPhoneNumber)).withVATIdentifier(CustomerVATIdentifier.valueOf(customerVatIdentifier)).buildShortInfo();
         String password = PasswordGeneratorAlgorithm.generatesPassword();
         EmailSystem.sendEmail(newCustomer.getCustomerEmailAddress().toString(), newCustomer.getCustomerId().toString(), password);
