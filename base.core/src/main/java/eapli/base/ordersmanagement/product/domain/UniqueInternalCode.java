@@ -16,6 +16,7 @@ import java.util.regex.Pattern;
 @Embeddable
 public class UniqueInternalCode implements ValueObject, Comparable<UniqueInternalCode>{
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
