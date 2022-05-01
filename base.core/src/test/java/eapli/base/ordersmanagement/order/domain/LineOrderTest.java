@@ -17,14 +17,14 @@ class LineOrderTest {
     ShortDescription shortDescription = new ShortDescription("oi galerinha ");
     ExtendedDescription extendedDescription = new ExtendedDescription("hello galera tudo bom com vcs");
     Barcode barcode = new Barcode("1234567890123");
-    CategoryCode code= new CategoryCode("11111a1111s");
+    CategoryCode code= new CategoryCode("11111a");
     Product product = new Product(u,shortDescription, extendedDescription , barcode,code);
 
     UniqueInternalCode ur = new UniqueInternalCode("12345");
     ShortDescription shortD = new ShortDescription("oi");
     ExtendedDescription extendedD = new ExtendedDescription("hello");
     Barcode barco = new Barcode("1234321234543");
-    CategoryCode coe= new CategoryCode("2232323s3213");
+    CategoryCode coe= new CategoryCode("223232");
     Product p = new Product(ur, shortD, extendedD, barco,coe);
 
     Set<Product> list;
@@ -33,7 +33,7 @@ class LineOrderTest {
     ShortDescription shorti = new ShortDescription("oio");
     ExtendedDescription extended = new ExtendedDescription("hell");
     Barcode bade = new Barcode("1111122212121");
-    CategoryCode c= new CategoryCode("4432123212we");
+    CategoryCode c= new CategoryCode("4432");
     Product po = new Product(ura, shorti, extended, bade,c);
 
     Set<Product> listt;

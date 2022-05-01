@@ -20,7 +20,7 @@ import java.util.Set;
 public class NewProductOrderController {
     private final OrderService orderService = new OrderService();
     private final ViewCatalogController catalogController = new ViewCatalogController();
-    private final OrderRepository orderRepository = PersistenceContext.repositories().orders();
+
     private final TransactionalContext txCtx = PersistenceContext.repositories().newTransactionalContext();
     private final AuthorizationService authorizationService = AuthzRegistry.authorizationService();
 
