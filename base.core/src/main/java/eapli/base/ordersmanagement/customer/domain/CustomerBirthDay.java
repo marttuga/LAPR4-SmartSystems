@@ -3,6 +3,8 @@ package eapli.base.ordersmanagement.customer.domain;
 import eapli.base.utilitarianClasses.AgeCalculator;
 import eapli.framework.domain.model.ValueObject;
 import javax.persistence.Embeddable;
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Embeddable
@@ -15,9 +17,9 @@ public class CustomerBirthDay implements ValueObject {
     }
 
     public CustomerBirthDay(final Date dateBirht){
-        if (dateBirht == null||getAge(dateBirht)<18)  {
+        if (dateBirht == null)  {
             throw new IllegalArgumentException(
-                    "Age attributes should neither be null nor empty and you should have at least 18 ");
+                    "Age attributes should not be null nor empty");
         }
         // TODO validate invariants, i.e., mecanographic number regular
         // expression

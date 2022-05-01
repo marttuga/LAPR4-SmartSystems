@@ -32,7 +32,6 @@ public class RegisterCustomerController {
     public Customer registerCustomerShortInfo( final String customerFirstName, final String customerLastName, final String customerEmailAddress, final String  customerPhoneNumber, final String customerVatIdentifier ) {
         authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.SALES_CLERK_USER);
         String uniqueID = RandomStringUtils.randomAlphanumeric(8);
-        //String uniqueID = null;
         final var newCustomer = new CustomerBuilder().withCustomerId(uniqueID).withFisrtName(CustomerFirstName.valueOf(customerFirstName)).withLastName(CustomerLastName.valueOf(customerLastName)).withEmailAdress(CustomerEmailAdress.valueOf(customerEmailAddress)).withPhoneNumber(CustomerPhoneNumber.valueOf(customerPhoneNumber)).withVATIdentifier(CustomerVATIdentifier.valueOf(customerVatIdentifier)).buildShortInfo();
         String password = PasswordGeneratorAlgorithm.generatesPassword();
         EmailSystem.sendEmail(newCustomer.getCustomerEmailAddress().toString(), newCustomer.getCustomerId().toString(), password);
@@ -42,7 +41,7 @@ public class RegisterCustomerController {
     public Customer registerCustomer(final String customerFirstName, final String customerLastName, final String customerEmailAddress, final String  customerPhoneNumber, final String customerVatIdentifier, final Date customerBirthDay, final String customerGender, final Set<CustomerPostalAddress> customerPostalAddresses) {
         authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.SALES_CLERK_USER);
         String uniqueID = RandomStringUtils.randomAlphanumeric(8);
-        final var newCustomer = new CustomerBuilder().withCustomerId(uniqueID).withFisrtName(customerFirstName).withLastName(customerLastName).withEmailAdress(CustomerEmailAdress.valueOf(customerEmailAddress)).withPhoneNumber(CustomerPhoneNumber.valueOf(customerPhoneNumber)).withVATIdentifier(CustomerVATIdentifier.valueOf(customerVatIdentifier)).withBirthday(CustomerBirthDay.valueOf(customerBirthDay)).withGender(CustomerGender.valueOf(customerGender)).withPostalAdresses(customerPostalAddresses).build();
+        final var newCustomer = new CustomerBuilder().withCustomerId(uniqueID).withFisrtName(CustomerFirstName.valueOf(customerFirstName)).withLastName(CustomerLastName.valueOf(customerLastName)).withEmailAdress(CustomerEmailAdress.valueOf(customerEmailAddress)).withPhoneNumber(CustomerPhoneNumber.valueOf(customerPhoneNumber)).withVATIdentifier(CustomerVATIdentifier.valueOf(customerVatIdentifier)).withBirthday(CustomerBirthDay.valueOf(customerBirthDay)).withGender(CustomerGender.valueOf(customerGender)).withPostalAdresses(customerPostalAddresses).build();
         String password = PasswordGeneratorAlgorithm.generatesPassword();
         EmailSystem.sendEmail(newCustomer.getCustomerEmailAddress().toString(), newCustomer.getCustomerId().toString(), password);
         return customerRepository.save(newCustomer);
@@ -56,9 +55,4 @@ public class RegisterCustomerController {
         return customerRepository.findByCustomerId(c);
     }
 
-    public SystemUser createSystemUserForCustomer(final String username, final String password, final String name, final String email) {
-        final Set<Role> roles = new HashSet<>();
-        roles.add(BaseRoles.CLIENT_USER);
-        return userService.registerNewUser(username, password, name, name, email, roles, Calendars.now());
-    }
 }
