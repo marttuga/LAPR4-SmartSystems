@@ -2,6 +2,7 @@ package eapli.base.ordersmanagement.product.application;
 
 
 import eapli.base.ordersmanagement.category.domain.Category;
+import eapli.base.ordersmanagement.category.domain.CategoryCode;
 import eapli.base.ordersmanagement.product.domain.*;
 import eapli.base.warehousemanagement.domain.*;
 import eapli.framework.application.ApplicationService;
@@ -39,10 +40,16 @@ public class ProductBuilder {
     private ProductPriceDetail priceDetail;
 
 
-    private Category categoryCode;
+    private CategoryCode categoryCode;
 
 
     private Dimension dimension;
+
+    private int aisleId;
+
+    private int rowId;
+
+    private int shelfId;
 
 
     public ProductBuilder withUniqueInternalCode(final UniqueInternalCode uniqueInternalCode) {
@@ -95,7 +102,7 @@ public class ProductBuilder {
         return this;
     }
 
-    public ProductBuilder withCategory(final Category categoryCode) {
+    public ProductBuilder withCategory(final CategoryCode categoryCode) {
         this.categoryCode = categoryCode;
         return this;
     }
@@ -105,14 +112,31 @@ public class ProductBuilder {
         return this;
     }
 
-/*    public Product build() {
-        return new Product(uniqueInternalCode,shortDescription,extendedDescription,technicalDescription,brand,reference,productionCode,weight,barcode,priceDetail,categoryCode,dimension,aisle,row,shelf);
-    }*/
+    public ProductBuilder withAisleId(final int aisleId) {
+        this.aisleId = aisleId;
+        return this;
+    }
+
+    public ProductBuilder withRowId(final int rowId) {
+        this.rowId = rowId;
+        return this;
+    }
+
+    public ProductBuilder withShelfId(final int shelfId) {
+        this.shelfId = shelfId;
+        return this;
+    }
+
+
+
+    public Product build() {
+        return new Product(uniqueInternalCode,shortDescription,extendedDescription,technicalDescription,brand,reference,productionCode,weight,barcode,priceDetail,categoryCode,dimension,aisleId,rowId,shelfId);
+    }
     public Product buildMandatory() {
         return new Product(uniqueInternalCode,shortDescription,extendedDescription,barcode);
     }
 
-    public Product build() {
+/*    public Product build() {
         return new Product(uniqueInternalCode,shortDescription,extendedDescription,technicalDescription,brand,reference,productionCode,weight,barcode,priceDetail,dimension);
-    }
+    }*/
 }

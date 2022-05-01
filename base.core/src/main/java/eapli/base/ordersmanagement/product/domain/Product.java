@@ -1,12 +1,12 @@
 package eapli.base.ordersmanagement.product.domain;
 
 import eapli.base.ordersmanagement.category.domain.Category;
+import eapli.base.ordersmanagement.category.domain.CategoryCode;
 import eapli.base.warehousemanagement.domain.Warehouse;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 
 import javax.persistence.*;
-import java.util.Arrays;
 
 /**
  *
@@ -50,15 +50,51 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
 
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Category categoryCode;
+    private Category category;
+
+    private CategoryCode categoryCode;
 
     @Embedded
     private Dimension dimension;
 
+    private int aisleId;
 
-    @Lob
-    private byte[] picture;
+    private int rowId;
 
+    private int shelfId;
+
+/*    @Lob
+    private byte[] picture;*/
+
+    public int getAisleId() {
+        return aisleId;
+    }
+
+    public int getRowId() {
+        return rowId;
+    }
+
+    public int getShelfId() {
+        return shelfId;
+    }
+
+    public Product(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription, TechnicalDescription technicalDescription, Brand brand, Reference reference, ProductionCode productionCode, Weight weight, Barcode barcode, ProductPriceDetail priceDetail, CategoryCode categoryCode, Dimension dimension, int aisleId, int rowId, int shelfId) {
+        this.uniqueInternalCode = uniqueInternalCode;
+        this.shortDescription = shortDescription;
+        this.extendedDescription = extendedDescription;
+        this.technicalDescription = technicalDescription;
+        this.brand = brand;
+        this.reference = reference;
+        this.productionCode = productionCode;
+        this.weight = weight;
+        this.barcode = barcode;
+        this.priceDetail = priceDetail;
+        this.categoryCode = categoryCode;
+        this.dimension = dimension;
+        this.aisleId = aisleId;
+        this.rowId = rowId;
+        this.shelfId = shelfId;
+    }
 
     public Product(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription, TechnicalDescription technicalDescription, Brand brand, Reference reference, ProductionCode productionCode, Weight weight, Barcode barcode, ProductPriceDetail priceDetail, Dimension dimension) {
         this.uniqueInternalCode = uniqueInternalCode;
@@ -89,6 +125,7 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
 
     }
 
+/*
     public byte[] picture() {
         return Arrays.copyOf(picture, picture.length);
     }
@@ -100,6 +137,19 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
 
     public void changePicture(final byte[] picture) {
         this.picture = Arrays.copyOf(picture, picture.length);
+    }
+*/
+
+    public static int valueOfAisleId(final int aisleId) throws IllegalAccessException {
+        return aisleId;
+    }
+
+    public static int valueOfRowId(final int rowId) throws IllegalAccessException {
+        return rowId;
+    }
+
+    public static int valueOfShelfId(final int shelfId) throws IllegalAccessException {
+        return shelfId;
     }
 
     @Override
@@ -162,7 +212,7 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
         return barcode;
     }
 
-    public Category getCategory() {
+    public CategoryCode getCategory() {
         return categoryCode;
     }
 

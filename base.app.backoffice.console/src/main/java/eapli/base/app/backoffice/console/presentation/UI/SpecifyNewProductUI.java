@@ -1,6 +1,7 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
 import eapli.base.ordersmanagement.category.domain.Category;
+import eapli.base.ordersmanagement.category.domain.CategoryCode;
 import eapli.base.ordersmanagement.product.application.SpecifyNewProductController;
 import eapli.base.ordersmanagement.product.domain.*;
 import eapli.base.warehousemanagement.domain.*;
@@ -53,8 +54,8 @@ public class SpecifyNewProductUI extends AbstractUI {
                 final int rowID = Console.readInteger("Row ID: ");
                 final int shelfID = Console.readInteger("Shelf ID: ");
 
-                //controller.specifyNewProduct(UniqueInternalCode.valueOf(uniqueInternalCode), ShortDescription.valueOf(shortDescription), ExtendedDescription.valueOf(extendedDescription), TechnicalDescription.valueOf(technicalDescription), Brand.valueOf(brand), Reference.valueOf(reference),ProductionCode.valueOf(productionCode), Weight.valueOf(weight), Barcode.valueOf(barcode), ProductPriceDetail.valueOf(priceDetail), Category.valueOf(categoryCode), Dimension.valueOf(width,height,length), Aisle.valueOf(aisleID), Row.valueOf(rowID), Shelf.valueOf(shelfID));
-                controller.specifyNewProduct(UniqueInternalCode.valueOf(uniqueInternalCode), ShortDescription.valueOf(shortDescription), ExtendedDescription.valueOf(extendedDescription), TechnicalDescription.valueOf(technicalDescription), Brand.valueOf(brand), Reference.valueOf(reference),ProductionCode.valueOf(productionCode), Weight.valueOf(weight), Barcode.valueOf(barcode), ProductPriceDetail.valueOf(priceDetail), Dimension.valueOf(width,height,length));
+                controller.specifyNewProduct(UniqueInternalCode.valueOf(uniqueInternalCode), ShortDescription.valueOf(shortDescription), ExtendedDescription.valueOf(extendedDescription), TechnicalDescription.valueOf(technicalDescription), Brand.valueOf(brand), Reference.valueOf(reference),ProductionCode.valueOf(productionCode), Weight.valueOf(weight), Barcode.valueOf(barcode), ProductPriceDetail.valueOf(priceDetail), CategoryCode.valueOf(categoryCode), Dimension.valueOf(width,height,length), Product.valueOfAisleId(aisleID), Product.valueOfRowId(rowID), Product.valueOfShelfId(shelfID));
+                //controller.specifyNewProduct(UniqueInternalCode.valueOf(uniqueInternalCode), ShortDescription.valueOf(shortDescription), ExtendedDescription.valueOf(extendedDescription), TechnicalDescription.valueOf(technicalDescription), Brand.valueOf(brand), Reference.valueOf(reference),ProductionCode.valueOf(productionCode), Weight.valueOf(weight), Barcode.valueOf(barcode), ProductPriceDetail.valueOf(priceDetail), Dimension.valueOf(width,height,length));
 
             }
             System.out.println("Successful operation!");
