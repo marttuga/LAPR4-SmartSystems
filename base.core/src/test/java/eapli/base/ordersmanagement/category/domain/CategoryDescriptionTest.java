@@ -24,11 +24,11 @@ class CategoryDescriptionTest {
 
     @Test
     void ensureCategoryCodeIsNotMoreThan50() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> new CategoryCode("ivwrciyreibceirbciebrcibericb3irbcibtiyb4ibiybt4ibcibiyb4ibyi4rbf"));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new CategoryDescription("ivwrciyreibceirbciebrcibericb3irbcibtiyb4ibiybt4ibcibiyb4ibyi4rbf"));
     }
     @Test
     void ensureCategoryCodeIsNotLessThan20() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> new CategoryCode("high heels"));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new CategoryDescription("high heels"));
     }
 
 }
