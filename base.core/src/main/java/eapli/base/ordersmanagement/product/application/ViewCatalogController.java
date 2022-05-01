@@ -11,7 +11,6 @@ import eapli.base.ordersmanagement.product.domain.UniqueInternalCode;
 import eapli.base.ordersmanagement.product.repositories.ProductRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 public class ViewCatalogController {
     private final ProductRepository productRepository = PersistenceContext.repositories().products();

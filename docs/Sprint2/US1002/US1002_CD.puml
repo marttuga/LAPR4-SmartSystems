@@ -1,39 +1,45 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-package UI {
-class ViewCatalogUI {
-}
-}
 
-package Controller{
-class ViewCatalogController {
+class ViewCatalogUI <<presentation>>
 
-}
-}
 
-package Order <<Aggregate>>{
+
+class ViewCatalogController <<application>>
+
+class ProductSorter
+class ProductRepository <<repository>>
+
+
 
 entity Product <<Entity>> <<Root>> {
 - ProductDescription
 }
-entity PriceTable <<Entity>>
-entity SalesRegion <<Entity>>
-}
 
 
-package Category <<Aggregate>> {
     entity Category <<Entity>>
 
-}
 
-ViewCatalogUI ..> ViewCatalogController
-ViewCatalogController ..> Category
-ViewCatalogController ..>PriceTable
 
-ViewCatalogController ..> Product
 
-ViewCatalogController ..> SalesRegion
+ViewCatalogController --> Category
+ViewCatalogController --> Product: theProduct
+ViewCatalogController -->Brand
+ViewCatalogController -->ShortDescription
+ViewCatalogUI --> ViewCatalogController : theController
+ViewCatalogUI ..> Product : theProduct
+ViewCatalogUI : doShow()
+ViewCatalogController --> ProductRepository : repo
+ViewCatalogController --> ProductSorter : sorter
+ProductSorter : sortByPrice(productList)
+ProductSorter : sortByName(productList)
+ViewCatalogController : getProductByBrand( brand)
+ViewCatalogController : getProductByCategory( category)
+ViewCatalogController : getProductByDescription( shortDescription)
+ViewCatalogController : sortByPrice( productList)
+ViewCatalogController : sortByDescription( productList)
 
+ProductRepository : findAllProducts()
 
 @enduml
