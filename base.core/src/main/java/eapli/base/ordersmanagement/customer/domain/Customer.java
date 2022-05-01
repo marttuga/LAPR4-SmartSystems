@@ -1,30 +1,36 @@
 
 package eapli.base.ordersmanagement.customer.domain;
 
+
 import eapli.framework.domain.model.AggregateRoot;
 
 import javax.persistence.*;
-import java.text.SimpleDateFormat;
 import java.util.Set;
 
 @Entity
 public class Customer implements AggregateRoot<CustomerId> {
 
-    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 
-
-    @Id
+    @EmbeddedId
     @Column(unique = true)
     private CustomerId customerId;
+    @Embedded
     private CustomerFirstName customerFirstName;
+    @Embedded
     private CustomerLastName customerLastName;
+
+    @Embedded
     private CustomerEmailAdress customerEmailAddress;
+
     @Temporal(TemporalType.DATE)
     private CustomerBirthDay customerBirthDay;
 
+    @Embedded
     private CustomerPhoneNumber customerPhoneNumber;
 
+
     private CustomerGender customerGender;
+    @Embedded
     private CustomerVATIdentifier customerVatIdentifier;
     @ElementCollection
     private Set<CustomerPostalAddress> customerPostalAddress;
