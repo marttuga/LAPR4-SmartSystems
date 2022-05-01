@@ -1,7 +1,7 @@
 package eapli.base.infrastructure.bootstrapers.demo;
 
 import eapli.base.infrastructure.persistence.PersistenceContext;
-import eapli.base.ordersmanagement.customer.application.RegisterCustomerController;
+import eapli.base.ordersmanagement.customer.applicaion.RegisterCustomerController;
 import eapli.base.ordersmanagement.customer.domain.*;
 import eapli.base.ordersmanagement.customer.repositories.CustomerRepository;
 import eapli.framework.actions.Action;
@@ -23,9 +23,9 @@ public class CustomerBootstrapper implements Action {
 
     @Override
     public boolean execute() {
-        createCostumer("costumer1", "costumer1", "costumer1@gmail.com",
-                    new Date(23/04/2001), "999999999", "7777777", "test",
-                    1, "test", "test", 1);
+        createCostumer("Mike", "Chang", "mike@gmail.com",
+                    new Date(23/04/2001), "917147649", "1234567", "male",
+                    "Oxford Street", 12, "London", "England",5000);
         return true;
     }
 
@@ -35,6 +35,7 @@ public class CustomerBootstrapper implements Action {
             Date customerBirthDay,
             String customerPhoneNumber,
             String customerVatIdentifier,
+            String customerGender,
             String street, int doorNumber, String city, String country, int postalCode) {
 
         Customer customer;
@@ -43,10 +44,10 @@ public class CustomerBootstrapper implements Action {
             CustomerPostalAddress customerPostalAddress = new CustomerPostalAddress(street, doorNumber, city, country, postalCode);
             postalAddress.add(customerPostalAddress);
 
-            customer = registerCustomerController.registerCustomer(new CustomerFirstName(customerFirstName), new CustomerLastName(customerLastName),
-                    new CustomerEmailAdress(customerEmailAddress), new CustomerPhoneNumber(customerPhoneNumber),
-                    new CustomerVATIdentifier(customerVatIdentifier),  new CustomerBirthDay(customerBirthDay),
-                    CustomerGender.MALE, postalAddress);
+            customer = registerCustomerController.registerCustomer(customerFirstName, customerLastName,
+                   customerEmailAddress,  customerPhoneNumber,
+                    customerVatIdentifier,  customerBirthDay,
+                    customerGender, postalAddress);
             customerRepository.save(customer);
         } catch (final ConcurrencyException | IntegrityViolationException e) {
             // ignoring exception. assuming it is just a primary key violation
