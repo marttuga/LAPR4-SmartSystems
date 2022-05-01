@@ -38,6 +38,10 @@ public class ExtendedDescription implements ValueObject, Comparable<ExtendedDesc
         return new ExtendedDescription(description);
     }
 
+    public String getDescription() {
+        return description;
+    }
+
     @Override
     public String toString(){
         return description;
