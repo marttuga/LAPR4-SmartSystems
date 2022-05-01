@@ -4,16 +4,11 @@ import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.order.domain.*;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
-import eapli.base.ordersmanagement.survey.domain.Survey;
 import eapli.framework.application.ApplicationService;
 import eapli.framework.general.domain.model.Money;
-import eapli.framework.infrastructure.authz.application.AuthzRegistry;
-import eapli.framework.infrastructure.authz.application.UserManagementService;
-import eapli.framework.infrastructure.authz.domain.model.SystemUser;
 import eapli.framework.io.util.Console;
 
 import java.util.Calendar;
-import java.util.Random;
 
 @ApplicationService
 public class OrderService {
