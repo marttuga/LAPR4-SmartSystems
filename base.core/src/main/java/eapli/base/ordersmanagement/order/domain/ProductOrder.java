@@ -109,9 +109,6 @@ public class ProductOrder implements AggregateRoot<OrderID> {
         return status;
     }
 
-    public OrderActor getOrderActor() {
-        return orderActor;
-    }
 
     public PaymentMethod getPaymentMethod() {
         return paymentMethod;
@@ -125,9 +122,7 @@ public class ProductOrder implements AggregateRoot<OrderID> {
         return priceOrder;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
+
 
     public LineOrder getLineOrder() {
         return lineOrder;
