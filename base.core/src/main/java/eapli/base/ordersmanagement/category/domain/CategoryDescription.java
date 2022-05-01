@@ -27,6 +27,11 @@ public class CategoryDescription implements ValueObject, Comparable<CategoryDesc
     }
 
     @Override
+    public String toString() {
+        return categoryDescription ;
+    }
+
+    @Override
     public int compareTo(CategoryDescription o) {
         return 0;
     }

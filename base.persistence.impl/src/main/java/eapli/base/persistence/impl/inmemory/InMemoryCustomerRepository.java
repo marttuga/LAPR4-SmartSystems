@@ -30,6 +30,11 @@ public class InMemoryCustomerRepository extends InMemoryDomainRepository<Custome
     }
 
     @Override
+    public Customer findByCustomerIdOrder(String customerId) {
+        return null;
+    }
+
+    @Override
     public Optional<Customer> findByEmail(EmailAddress email) {
         return Optional.ofNullable(data().get(email));
     }

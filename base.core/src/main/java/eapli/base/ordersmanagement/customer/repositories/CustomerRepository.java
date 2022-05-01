@@ -14,6 +14,7 @@ public interface CustomerRepository extends DomainRepository<CustomerId, Custome
 
     Customer findByCustomerId(CustomerId customerId);
 
+    Customer findByCustomerIdOrder(String customerId);
     Optional<Customer> findByEmail(EmailAddress email);
 
     public List<Customer> findAllCustomers();

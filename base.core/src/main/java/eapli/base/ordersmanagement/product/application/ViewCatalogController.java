@@ -18,49 +18,26 @@ public class ViewCatalogController {
     private static final ProductSorter productSorter = new ProductSorter();
     private final DefineCategoryController categoryController = new DefineCategoryController();
 
-    public List<Product> getProductByBrand(Brand brand) {
+    public List<Product> getProductByBrand(String brand) {
         return productRepository.findByBrand(brand);
     }
 
-    public List<Product> getProductByCategory(Category category) {
+    public List<Product> getProductByCategory(String category) {
         return productRepository.findByCategory(category);
     }
 
-    public List<Product> getProductByDescription(ShortDescription shortDescription) {
+    public List<Product> getProductByDescription(String shortDescription) {
         return productRepository.findByDescription(shortDescription);
-    }
-
-    public List<Product> getProductByBrandCategory(Brand brand, Category category) {
-        return productRepository.findByBrandCategory(brand, category);
-    }
-
-    public List<Product> getProductByCategoryDescription(Category category, ShortDescription shortDescription) {
-        return productRepository.findByDescriptionCategory(shortDescription, category);
-    }
-
-    public List<Product> getProductByBrandDescription(Brand brand, ShortDescription shortDescription) {
-        return productRepository.findByBrandDescription(brand, shortDescription);
-    }
-
-    public List<Product> getProductByBrandDescriptionCategory(Brand brand, ShortDescription shortDescription, Category category) {
-        return productRepository.findByBrandDescriptionCategory(brand, shortDescription, category);
     }
 
     public List<Product> findAllProducts() {
         return productRepository.findAllProducts();
     }
 
-    public List<Brand> findAllBrands() {
-        return productRepository.findAllBrands();
-    }
-
-    public Product findByProductCode(UniqueInternalCode code) {
+    public Product findByProductCode(String code) {
         return productRepository.findByProductCode(code);
     }
 
-    public Brand findByBrandName(String brandName) {
-        return productRepository.findByBrandName(brandName);
-    }
 
     public ShortDescription findByShortDescription(String shortDescription) {
         return productRepository.findByShortDescription(shortDescription);
@@ -82,9 +59,6 @@ public class ViewCatalogController {
         viewCatalogService.printCategoriesList(categoriesList);
     }
 
-    public void printBrandsList(List<Brand> brandsList) {
-        viewCatalogService.printBrandsList(brandsList);
-    }
 
     public List<Product> sortByPrice(List<Product> productList) {
         return productSorter.sortByPrice(productList);
@@ -99,39 +73,37 @@ public class ViewCatalogController {
     }
 
 
-    public void printCategoriesList(String categoryCode) {
-        CategoryCode code = new CategoryCode(categoryCode);
-        Category category = categoryController.findByCategoryCode(code);
+    public List<Product> printCategoriesList(String categoryCode) {
         printHeader();
-        List<Product> productCategoryList = getProductByCategory(category);
-        printProductsList(productCategoryList);
+        List<Product> productCategoryList = getProductByCategory(categoryCode);
+       printProductsList(productCategoryList);
+       return productCategoryList;
     }
 
-    public void printBrandList(String brandName) {
-        Brand brand = findByBrandName(brandName);
+    public  List<Product> printBrandList(String brandName) {
         printHeader();
-        List<Product> productBrandList = getProductByBrand(brand);
+        List<Product> productBrandList = getProductByBrand(brandName);
         printProductsList(productBrandList);
+        return productBrandList;
     }
 
-    public void printDescriptionList(String description) {
+    public List<Product> printDescriptionList(String description) {
         ShortDescription shortDescription = findByShortDescription(description);
         ShortDescription d = findByShortDescription(description);
         printHeader();
-        List<Product> productList = getProductByDescription(d);
+        List<Product> productList = getProductByDescription(description);
         printProductsList(productList);
+        return productList;
     }
 
-    public void printOrderedDescription() {
+    public void printOrderedDescription(List<Product> producttList) {
         printHeader();
-        List<Product> producttList = findAllProducts();
         sortByDescription(producttList);
         printProductsList(producttList);
     }
 
-    public void printOrderedPrice() {
+    public void printOrderedPrice(List<Product> catalogueList) {
         printHeader();
-        List<Product> catalogueList = findAllProducts();
         sortByPrice(catalogueList);
         printProductsList(catalogueList);
     }
