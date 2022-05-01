@@ -74,7 +74,6 @@ public class ProductOrder implements AggregateRoot<OrderID> {
                 ", shippingMethod=" + shippingMethod +
                 ", priceOrder=" + priceOrder +
                 ", lineOrder=" + lineOrder +
-                ", survey=" + survey +
                 ", costumer=" + customer;
     }
 

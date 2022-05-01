@@ -35,19 +35,16 @@ having in mind this price, the merchandise should support several currencies and
 # 3. Design
 * Utilizar a estrutura base standard da aplicação baseada em camadas 
 
->   Classes do domínio: Category, Product, SalesRegion, PriceTable,
+>   Classes do domínio: Category, Product, Barcode, Brand, ShortDescription, ProductPriceDetail
 >
 >   Controlador: ViewCatalogController
 >
->   Repository: CategoryRepository, ProductRepository, SalesRegionRepository, PriceTableRepository
-
-*Nesta secção a equipa deve descrever o design adotado para satisfazer a funcionalidade.  identificação de padrões aplicados e quais foram os principais testes especificados para validar a funcionalidade.*
+>   Repository:  ProductRepository
 
 ## 3.1. Realização da Funcionalidade
 ![SSD](US1002_SSD.svg)
 
 ![SD](US1002_SD.svg)
-*Nesta secção deve apresentar e descrever o fluxo/sequência que permite realizar a funcionalidade.*
 
 ## 3.2. Diagrama de Classes
 ![CD](US1002_CD.svg)
@@ -77,8 +74,17 @@ having in mind this price, the merchandise should support several currencies and
 
 # 5. Integração/Demonstração
 
-*Nesta secção a equipa deve descrever os esforços realizados no sentido de integrar a funcionalidade desenvolvida com as restantes funcionalidades do sistema.*
+    public List<Product> getProductByBrand(Brand brand) {
+        return productRepository.findByBrand(brand);
+    }
 
+    public List<Product> getProductByCategory(Category category) {
+        return productRepository.findByCategory(category);
+    }
+
+    public List<Product> getProductByDescription(ShortDescription shortDescription) {
+        return productRepository.findByDescription(shortDescription);
+    }
 # 6. Observações
 
 *Nesta secção sugere-se que a equipa apresente uma perspetiva critica sobre o trabalho desenvolvido apontando, por exemplo, outras alternativas e ou trabalhos futuros relacionados.*

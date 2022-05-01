@@ -7,7 +7,6 @@ import eapli.framework.domain.model.DomainEntities;
 import eapli.framework.general.domain.model.Money;
 
 import javax.persistence.*;
-import java.util.Calendar;
 import java.util.Set;
 
 @Entity
