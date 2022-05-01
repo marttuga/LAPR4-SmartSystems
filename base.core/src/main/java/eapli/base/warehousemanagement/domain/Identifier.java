@@ -29,4 +29,9 @@ public class Identifier implements ValueObject, Comparable<Identifier> {
     public int compareTo(Identifier o) {
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return "Identifier:"+ identifier;
+    }
 }
