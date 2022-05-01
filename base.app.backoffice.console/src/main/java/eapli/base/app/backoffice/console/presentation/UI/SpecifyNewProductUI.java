@@ -33,7 +33,8 @@ public class SpecifyNewProductUI extends AbstractUI {
                 final String shortDescription = Console.readLine("Short description: ");
                 final String extendedDescription = Console.readLine("Extended description: ");
                 final String barcode = Console.readLine("Barcode(EAN-13): ");
-                controller.specifyNewProductMandatory(UniqueInternalCode.valueOf(uniqueInternalCode), ShortDescription.valueOf(shortDescription), ExtendedDescription.valueOf(extendedDescription), Barcode.valueOf(barcode));
+                final String categoryCode = Console.readLine("Category: ");
+                controller.specifyNewProductMandatory(UniqueInternalCode.valueOf(uniqueInternalCode), ShortDescription.valueOf(shortDescription), ExtendedDescription.valueOf(extendedDescription), Barcode.valueOf(barcode), CategoryCode.valueOf(categoryCode));
             } else {
                 System.out.println("Product: \n");
                 final String uniqueInternalCode = Console.readLine("Unique Internal Code: ");

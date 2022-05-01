@@ -18,7 +18,7 @@ import eapli.framework.infrastructure.authz.application.AuthzRegistry;
 
 public class SpecifyNewProductController {
 
-    private final ProductService productService = new ProductService();
+    //private final ProductService productService = new ProductService();
     private final AuthorizationService authorizationService = AuthzRegistry.authorizationService();
     private final TransactionalContext txCtx = PersistenceContext.repositories().newTransactionalContext();
     private final ProductRepository productRepository = PersistenceContext.repositories().products();
@@ -40,12 +40,12 @@ public class SpecifyNewProductController {
 
 
 
-    public Product specifyNewProductMandatory(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription, Barcode barcode){
+    public Product specifyNewProductMandatory(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription, Barcode barcode, CategoryCode categoryCode){
         authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.SALES_CLERK_USER);
         //begin transaction
         txCtx.beginTransaction();
         //final Product product = productService.createProductMandatory(uniqueInternalCode,shortDescription,extendedDescription);
-        final Product product = new Product(uniqueInternalCode, shortDescription, extendedDescription, barcode);
+        final Product product = new Product(uniqueInternalCode, shortDescription, extendedDescription, barcode, categoryCode);
         this.productRepository.save(product);
         txCtx.commit();
         return product;

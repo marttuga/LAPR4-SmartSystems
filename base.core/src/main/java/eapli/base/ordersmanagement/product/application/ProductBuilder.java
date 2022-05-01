@@ -1,12 +1,13 @@
 package eapli.base.ordersmanagement.product.application;
 
 
-import eapli.base.ordersmanagement.category.domain.Category;
+/*import eapli.base.ordersmanagement.category.domain.Category;
 import eapli.base.ordersmanagement.category.domain.CategoryCode;
 import eapli.base.ordersmanagement.product.domain.*;
 import eapli.base.warehousemanagement.domain.*;
-import eapli.framework.application.ApplicationService;
+import eapli.framework.application.ApplicationService;*/
 
+/*
 @ApplicationService
 public class ProductBuilder {
 
@@ -132,11 +133,16 @@ public class ProductBuilder {
     public Product build() {
         return new Product(uniqueInternalCode,shortDescription,extendedDescription,technicalDescription,brand,reference,productionCode,weight,barcode,priceDetail,categoryCode,dimension,aisleId,rowId,shelfId);
     }
-    public Product buildMandatory() {
+*/
+/*    public Product buildMandatory() {
         return new Product(uniqueInternalCode,shortDescription,extendedDescription,barcode);
-    }
+    }*//*
 
+
+*/
 /*    public Product build() {
         return new Product(uniqueInternalCode,shortDescription,extendedDescription,technicalDescription,brand,reference,productionCode,weight,barcode,priceDetail,dimension);
-    }*/
+    }*//*
+
 }
+*/
