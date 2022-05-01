@@ -110,18 +110,10 @@ public class CustomerBuilder implements DomainFactory<Customer> {
         return this;
     }*/
 
-    public CustomerBuilder withPostalAdresses(final Set<CustomerPostalAddress> postalAdresses){
-        this.customerPostalAddresses=postalAdresses;
-        return this;
-    }
 
-    public CustomerBuilder withPostalAdresses(final String street, final int doorNumber, final String city,final String country, final int postalCode){
-        Set<CustomerPostalAddress> postalAddresses = new HashSet<>();
-        for (CustomerPostalAddress cpa: postalAddresses
-             ) {
-            postalAddresses.add(new CustomerPostalAddress(street,doorNumber,city,country,postalCode));
-        }
-        this.customerPostalAddresses = postalAddresses;
+
+    public CustomerBuilder withPostalAdresses(final Set<CustomerPostalAddress> postalAdresses){
+        this.customerPostalAddresses = postalAdresses;
         return this;
     }
 
@@ -129,6 +121,12 @@ public class CustomerBuilder implements DomainFactory<Customer> {
     @Override
     public Customer build() {
         return new Customer(this.customerId, this.customerFirstName, this.customerLastName, this.customerEmailAddress, this.customerPhoneNumber, this.customerVATIdentifier, this.customerBirthDay, this.customerGender, this.customerPostalAddresses);
+    }
+
+
+
+    public Customer buildShortInfo() {
+        return new Customer(this.customerId, this.customerFirstName, this.customerLastName, this.customerEmailAddress, this.customerPhoneNumber, this.customerVATIdentifier);
     }
 }
 

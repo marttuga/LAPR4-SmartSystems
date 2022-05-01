@@ -19,12 +19,10 @@ public class CustomerPhoneNumber implements ValueObject , Comparable<CustomerPho
 
     public CustomerPhoneNumber(String phoneNumber) {
 
-        if (StringPredicates.isNullOrEmpty(phoneNumber)) {
+        if (StringPredicates.isNullOrEmpty(phoneNumber)||phoneNumber.length()>9||phoneNumber.length()<9) {
             throw new IllegalArgumentException("Phone Number should neither be null nor empty");
         }
-        if (phoneNumber.matches("\\d{9}")) {
-            this.phoneNumber = phoneNumber;
-        }
+        this.phoneNumber=phoneNumber;
     }
 
     public static CustomerPhoneNumber valueOf(final String phoneNumber) {

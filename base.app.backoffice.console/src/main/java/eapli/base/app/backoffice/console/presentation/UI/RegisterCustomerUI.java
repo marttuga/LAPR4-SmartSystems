@@ -1,7 +1,7 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
 
-import eapli.base.ordersmanagement.customer.application.RegisterCustomerController;
+import eapli.base.ordersmanagement.customer.applicaion.RegisterCustomerController;
 
 import eapli.base.utilitarianClasses.Utils;
 import eapli.framework.presentation.console.AbstractUI;
@@ -9,7 +9,6 @@ import eapli.framework.presentation.console.AbstractUI;
 import java.util.HashSet;
 import java.util.Set;
 import eapli.base.ordersmanagement.customer.domain.*;
-import eapli.framework.general.domain.model.EmailAddress;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
@@ -32,40 +31,38 @@ public class RegisterCustomerUI extends AbstractUI {
             System.out.println("==================================================");
             System.out.println("Please insert your first name:");
             String firstName = in.nextLine();
-            CustomerFirstName customerFirstName = CustomerFirstName.valueOf(firstName);
+            System.out.println("==================================================");
             System.out.println("Please insert your last name:");
             String lastName = in.nextLine();
-            CustomerLastName customerLastName = CustomerLastName.valueOf(lastName);
             System.out.println("==================================================");
             System.out.println("Please insert your email Address:");
             String emailAddress = in.nextLine();
-            CustomerEmailAdress customerEmailAddress = CustomerEmailAdress.valueOf(emailAddress);
             System.out.println("==================================================");
             System.out.println("Please insert your phone number:");
             String phoneNumber = in.nextLine();
-            CustomerPhoneNumber customerPhoneNumber = CustomerPhoneNumber.valueOf(phoneNumber);
             System.out.println("==================================================");
             System.out.println("Please insert a VAT identification number:");
             String vatIdentifier = in.nextLine();
-            CustomerVATIdentifier customerVATIdentifier = CustomerVATIdentifier.valueOf(vatIdentifier);
+
             System.out.println("==================================================");
-            if (Utils.confirm("Do you wish to add more information?(Y or N)")){
+            System.out.println("Do you wish to add more information:");
+            String option = in.nextLine();
+            if (option.equalsIgnoreCase("y")){
                 System.out.println("Please insert your birthday:(Use this format: dd/MM/yyyy)");
                 String birthday = in.nextLine();
-                Date date = new SimpleDateFormat("dd/MM/yyyy").parse(birthday);
-                CustomerBirthDay customerBirthDay= CustomerBirthDay.valueOf(date);
+                Date date = new SimpleDateFormat("dd/MM/yyyy").parse(birthday);;
                 System.out.println("==================================================");
                 System.out.println("Please insert your gender:(F/M/O)");
                 String gender = in.nextLine();
-                CustomerGender customerGender = null;
+                String customerGender = null;
                 if (gender.equalsIgnoreCase(F)){
-                    customerGender = CustomerGender.FEMALE;
+                    customerGender = String.valueOf(CustomerGender.FEMALE);
                 }else{
                     if (gender.equalsIgnoreCase(M)){
-                        customerGender = CustomerGender.MALE;
+                        customerGender = String.valueOf(CustomerGender.MALE);
                     }else {
                         if (gender.equalsIgnoreCase(O)) {
-                            customerGender = CustomerGender.OTHER;
+                            customerGender = String.valueOf(CustomerGender.OTHER);
                         }
                     }
                 }
@@ -89,9 +86,10 @@ public class RegisterCustomerUI extends AbstractUI {
                     CustomerPostalAddress customerPostalAddress = CustomerPostalAddress.valueOf(street,doorNumber,city,country,postalCode);
                     address.add(customerPostalAddress);
                 } while (Utils.confirm("Write another address? (Y or N)"));
-                controller.registerCustomer(customerFirstName,customerLastName,customerEmailAddress,customerPhoneNumber,customerVATIdentifier,customerBirthDay,customerGender,address);
-            }else {
-                controller.registerCustomerShortInfo(customerFirstName,customerLastName,customerEmailAddress,customerPhoneNumber,customerVATIdentifier);
+                controller.registerCustomer(firstName,lastName,emailAddress,phoneNumber,vatIdentifier,date,gender,address);
+            } else {if (option.equalsIgnoreCase("n")){
+                controller.registerCustomerShortInfo(firstName,lastName,emailAddress,phoneNumber,vatIdentifier);
+            }
             }
             return true;
         } catch (Exception e) {

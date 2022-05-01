@@ -14,16 +14,16 @@ public class CustomerBirthDay implements ValueObject {
     protected CustomerBirthDay(){
     }
 
-     public CustomerBirthDay(final Date dateBirht){
-         if (dateBirht == null||getAge(dateBirht)<18)  {
-             throw new IllegalArgumentException(
-                     "Age attributes should neither be null nor empty and you should have at least 18 ");
-         }
-         // TODO validate invariants, i.e., mecanographic number regular
-         // expression
+    public CustomerBirthDay(final Date dateBirht){
+        if (dateBirht == null||getAge(dateBirht)<18)  {
+            throw new IllegalArgumentException(
+                    "Age attributes should neither be null nor empty and you should have at least 18 ");
+        }
+        // TODO validate invariants, i.e., mecanographic number regular
+        // expression
 
-         this.birthDate = dateBirht;
-     }
+        this.birthDate = dateBirht;
+    }
 
     public static int getAge(Date date){
         return AgeCalculator.getCalculateAge(date);

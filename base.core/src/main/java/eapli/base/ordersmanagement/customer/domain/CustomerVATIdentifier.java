@@ -1,6 +1,7 @@
 package eapli.base.ordersmanagement.customer.domain;
 
 import eapli.framework.domain.model.ValueObject;
+import eapli.framework.strings.util.StringPredicates;
 import eapli.framework.validations.Preconditions;
 
 import javax.persistence.Embeddable;
@@ -17,10 +18,7 @@ public class CustomerVATIdentifier implements ValueObject, Comparable<CustomerVA
     public CustomerVATIdentifier(String vatIdentifier){
         Preconditions.nonEmpty(vatIdentifier, "VAT identifier cannot be null or empty");
 
-        Pattern vatIdRegex = Pattern.compile("^\\d{7}$");
-        Matcher matcher = vatIdRegex.matcher(vatIdentifier);
-
-        if (!matcher.find()) {
+        if (vatIdentifier.length()>7||vatIdentifier.length()<7) {
             throw new IllegalArgumentException("VAT identifier invalid format");
         }
 

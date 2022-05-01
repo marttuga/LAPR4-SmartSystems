@@ -2,13 +2,15 @@
 package eapli.base.ordersmanagement.customer.domain;
 
 import eapli.framework.domain.model.AggregateRoot;
-import eapli.framework.general.domain.model.EmailAddress;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
 import java.util.Set;
 
 @Entity
 public class Customer implements AggregateRoot<CustomerId> {
+
+    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 
 
     @Id
@@ -80,6 +82,8 @@ public class Customer implements AggregateRoot<CustomerId> {
     public boolean hasIdentity(CustomerId id) {
         return AggregateRoot.super.hasIdentity(id);
     }
+
+
 
 
 }
