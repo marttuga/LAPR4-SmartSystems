@@ -72,7 +72,6 @@ class ProductOrderTest {
         OrderID or = new OrderID("1");
         ProductOrder order = new ProductOrder(o, orderID, c, d, lineOrder, po, PaymentMethod.MBWAY, ShippingMethod.Blue, Status.REGISTERED);
         Assertions.assertEquals(or, order.getOrderID());
-
     }
 
     @Test
