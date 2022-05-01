@@ -1,5 +1,6 @@
 package eapli.base.ordersmanagement.customer.domain;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -7,14 +8,17 @@ import static org.junit.jupiter.api.Assertions.*;
 class CustomerIdTest {
 
     @Test
-    void testEquals() {
+    void testCustomerId() {
+        Assertions.assertNotNull(new CustomerId("2hs7g37s"));
     }
 
     @Test
-    void testHashCode() {
+    void ensureCustomerIdIsNotNull() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new CustomerId(null));
     }
 
     @Test
-    void compareTo() {
+    void ensureCustomerIsNotEmpty() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new CustomerId(""));
     }
 }
