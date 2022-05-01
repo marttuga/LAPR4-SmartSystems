@@ -24,7 +24,7 @@
     <class>eapli.base.warehousemanagement.domain.AGV</class>
 
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://vsgate-s2.dei.isep.ipp.pt:10327/DB"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://vsgate-s2.dei.isep.ipp.pt:10327/DB;DB_CLOSE_ON_EXIT=FALSE"/>
       <!--<property name="javax.persistence.jdbc.url" value="jdbc:h2:~\base;MV_STORE=FALSE;AUTO_SERVER=true;"/>-->
 
       <property name="javax.persistence.jdbc.user" value=""/>
