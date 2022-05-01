@@ -112,4 +112,6 @@ public class BaseBootstrapper implements Action {
         final String name = boot.getClass().getSimpleName();
         return Strings.left(name, name.length() - "Bootstrapper".length());
     }
+
+
 }
