@@ -1,6 +1,5 @@
 package eapli.base.ordersmanagement.category.domain;
 
-import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.framework.domain.model.DomainFactory;
 
 public class CategoryBuilder implements DomainFactory<Category> {
@@ -14,18 +13,8 @@ public class CategoryBuilder implements DomainFactory<Category> {
         return this;
     }
 
-    public CategoryBuilder withCategoryCode(final String code){
-        this.categoryCode= new CategoryCode(code);
-        return this;
-    }
-
     public CategoryBuilder withCategoryDescription(final CategoryDescription description){
         this.categoryDescription=description;
-        return this;
-    }
-
-    public CategoryBuilder withCategoryDescription(final String description){
-        this.categoryDescription= new CategoryDescription(description);
         return this;
     }
 
