@@ -20,17 +20,15 @@ public class CategoryBootstrapper implements Action {
 
     @Override
     public boolean execute() {
-        createCategory("555", "Camisolas");
-        createCategory("556", "Calças");
+        createCategory("555", "Categoria das Camisolas");
+        createCategory("556", "Categoria das Calças");
         return true;
     }
 
     private void createCategory(String categoryCode, String categoryDescription) {
 
-        Category category;
         try {
-            category = defineCategoryController.defineCategory(categoryCode, categoryDescription);
-            categoryRepository.save(category);
+            defineCategoryController.defineCategory(categoryCode, categoryDescription);
         } catch (final ConcurrencyException | IntegrityViolationException e) {
             // ignoring exception. assuming it is just a primary key violation
             // due to the tentative of inserting a duplicated user
