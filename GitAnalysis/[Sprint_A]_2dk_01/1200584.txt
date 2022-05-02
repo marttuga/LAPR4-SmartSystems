@@ -1,3 +1,71 @@
+commit 7fc89244869f66b232caa5d12cf4703a64aa2fca
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 22:50:55 2022 +0100
+
+    US1003_CD.svg and US1005_CD.svg
+
+M	docs/Sprint2/US1003/US1003_CD.svg
+A	docs/Sprint2/US1005/US1005_CD.svg
+
+commit 9a6009c9451fcc963d2b3a77ba881c163a807640
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 22:43:40 2022 +0100
+
+    updated tests
+
+M	base.core/src/test/java/eapli/base/ordersmanagement/category/domain/CategoryDescriptionTest.java
+M	base.core/src/test/java/eapli/base/ordersmanagement/customer/domain/CustomerIdTest.java
+
+commit a67795d770fa740adbb4ac8e8856530763410905
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 22:34:54 2022 +0100
+
+    Domain Model
+
+M	docs/Sprint2/Domain Model/DM.puml
+M	docs/Sprint2/Domain Model/DM.svg
+
+commit 9605810597a61d687313ae0b76afa1f14b3ff833
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 22:23:52 2022 +0100
+
+    <L2L20-1> US1001: Implementation: updated UI
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/SpecifyNewProductUI.java
+
+commit 0198dc7ccc760c1a4551078d39d790a73f60b7a6
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 22:15:15 2022 +0100
+
+    <L2L20-1> US1001: Implementation: update ProductPriceDetail and bootstrapper
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/ProductBootstrapper.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/ProductPriceDetail.java
+
+commit a4d10087006ee5774c0f289958c8b9ac76f78efa
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 21:43:12 2022 +0100
+
+    JpaProductRepository update
+
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaProductRepository.java
+
+commit 8fe68e785003de81ea24d38b965ffe1a44725cc8
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 21:23:37 2022 +0100
+
+    fixed ProductOrderBootstrapper
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/ProductOrderBootstrapper.java
+
+commit 45c9c3f30d86c1e84311aa986672b5f032d0dee5
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 21:22:48 2022 +0100
+
+    <L2L20-1> US1001: Implementation: JpaProductRepository
+
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaProductRepository.java
+
 commit 1b2a6d2bbad39a620a53c24625f6de31e4c276fa
 Author: João Tiago Araújo <1200584@isep.ipp.pt>
 Date:   Sun May 1 20:40:39 2022 +0100

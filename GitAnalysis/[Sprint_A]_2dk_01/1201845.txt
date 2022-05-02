@@ -1,3 +1,27 @@
+commit 3e01a1261a426911291c5aa327e8b9eb00f5b85d
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun May 1 23:57:01 2022 +0100
+
+    changes to make us work
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/NewProductOrderUI.java
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/ViewCatalogUI.java
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/ProductOrderBootstrapper.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/category/domain/CategoryCode.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/category/domain/CategoryDescription.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/customer/applicaion/RegisterCustomerController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/customer/repositories/CustomerRepository.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/NewProductOrderController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/application/ProductSorter.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/application/ViewCatalogController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/application/ViewCatalogService.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/ProductPriceDetail.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/repositories/ProductRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryCustomerRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryProductRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaCustomerRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaProductRepository.java
+
 commit 05305d6f028377659ec1868df291c8e81030f15f
 Author: Marta Portugal <1201845@isep.ipp.pt>
 Date:   Sun May 1 20:22:42 2022 +0100

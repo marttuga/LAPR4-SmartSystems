@@ -1,3 +1,31 @@
+commit 6d19875f7fe9507e9d66c7e85403bec8eddd96f5
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sun May 1 22:48:45 2022 +0100
+
+    <L2L20-9> SVG Files
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/category/domain/CategoryBuilder.java
+M	docs/Sprint2/US1003/ProcessoEngenhariaFuncionalidade.md
+M	docs/Sprint2/US1003/US1003_CD.puml
+M	docs/Sprint2/US1003/US1003_SD.svg
+M	docs/Sprint2/US1003/US1003_SSD.svg
+M	docs/Sprint2/US1005/ProcessoEngenhariaFuncionalidade.md
+A	docs/Sprint2/US1005/US1005_CD.puml
+
+commit 077ccab2e23b4cc824132a035929562c4a0d104a
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sun May 1 22:28:50 2022 +0100
+
+    <L2L20-3> Tests for domain classes
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/CustomerBootstrapper.java
+A	base.core/src/test/java/eapli/base/ordersmanagement/category/domain/CategoryCodeTest.java
+A	base.core/src/test/java/eapli/base/ordersmanagement/category/domain/CategoryDescriptionTest.java
+M	base.core/src/test/java/eapli/base/ordersmanagement/customer/domain/CustomerIdTest.java
+M	base.core/src/test/java/eapli/base/ordersmanagement/customer/domain/CustomerPhoneNumberTest.java
+M	base.core/src/test/java/eapli/base/ordersmanagement/customer/domain/CustomerPostalAddressTest.java
+M	base.core/src/test/java/eapli/base/ordersmanagement/customer/domain/CustomerVATIdentifierTest.java
+
 commit 433fe9eefb9244d5fc7597b2d470ecc38fddd875
 Author: Rui Dias <1200963@isep.ipp.pt>
 Date:   Sun May 1 21:07:36 2022 +0100

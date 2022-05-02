@@ -1,3 +1,27 @@
+commit 0c76bdd1701a80eb8ea8ab4768392d07e45cee3d
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sun May 1 22:34:18 2022 +0100
+
+    <L2L20-5> ProcessoEngenhariaFuncionalidade.md
+
+M	docs/Sprint2/US2001/ProcessoEngenhariaFuncionalidade.md
+
+commit 3256fe38bcdeb8654ddbee3325a37225212ba841
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sun May 1 22:24:53 2022 +0100
+
+    Presentation ppt
+
+A	docs/Sprint2/LAPR4_Presentation/LAPR4_Presentation.pptx
+
+commit ecea947c33b6d071769b0343181bf400c89c8bb6
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sun May 1 22:24:38 2022 +0100
+
+    <L2L20-6> US9001- concluded
+
+A	docs/Sprint2/US9001/LAPR4_US9001.pptx
+
 commit 067c69a91a2c6c8116853ea52c01f479941bd9d1
 Author: Maria Flores <1201615@isep.ipp.pt>
 Date:   Sun May 1 18:51:04 2022 +0100
