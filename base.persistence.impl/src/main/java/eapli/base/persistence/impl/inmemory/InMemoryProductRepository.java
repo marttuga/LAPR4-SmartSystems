@@ -27,12 +27,12 @@ public class InMemoryProductRepository extends InMemoryDomainRepository<Product,
     }
 
     @Override
-    public Product findByProductCode(UniqueInternalCode code) {
+    public Product findByProductCode(String code) {
         return findByProductCode(code);
     }
 
     @Override
-    public List<Product> findByBrand(Brand brand) {
+    public List<Product> findByBrand(String brand) {
         return null;//matchOne(e -> e.getBrand().equals(brand));
     }
 
@@ -47,13 +47,13 @@ public class InMemoryProductRepository extends InMemoryDomainRepository<Product,
     }
 
     @Override
-    public List<Product> findByDescription(ShortDescription description) {
+    public List<Product> findByDescription(String description) {
         return null;//matchOne(e -> e.getShortDescription().equals(description));
     }
 
 
     @Override
-    public List<Product> findByCategory(Category category) {
+    public List<Product> findByCategory(String category) {
         return null;//(e -> e.getCategory().equals(category));
     }
 

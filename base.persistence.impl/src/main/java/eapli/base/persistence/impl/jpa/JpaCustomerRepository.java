@@ -10,6 +10,7 @@ import eapli.framework.general.domain.model.EmailAddress;
 import eapli.framework.infrastructure.authz.domain.model.Username;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
 
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.*;
 
@@ -30,10 +31,19 @@ public class JpaCustomerRepository extends JpaAutoTxRepository<Customer, Custome
 
     @Override
     public Customer findByCustomerId(CustomerId customerId) {
-        TypedQuery<Customer> query = super.createQuery("SELECT c FROM Customer c WHERE c.customerId = :customerId", Customer.class);
+        TypedQuery<Customer> query = super.createQuery("SELECT c FROM Customer c WHERE c.customerId.customerId = :customerId", Customer.class);
         query.setParameter("customerId", customerId);
         return query.getSingleResult();
     }
+
+    @Override
+    public Customer findByCustomerIdOrder(String customerId) {
+        Query q = entityManager().createQuery("SELECT cust FROM Customer cust " +
+                " WHERE cust.customerId = :customerId");
+        q.setParameter("customerId", customerId);
+        return  (Customer) q.getSingleResult();
+    }
+
 
     @Override
     public Optional<Customer> findByEmail(EmailAddress email) {

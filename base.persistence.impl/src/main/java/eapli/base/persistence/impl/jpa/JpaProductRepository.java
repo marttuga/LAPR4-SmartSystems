@@ -12,6 +12,7 @@ import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
 
 
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.*;
 
@@ -35,50 +36,58 @@ public class JpaProductRepository extends JpaAutoTxRepository<Product, String, S
 
     @Override
     public List<Brand> findAllBrands() {
-        TypedQuery<Brand> query = super.createQuery("SELECT DISTINCT c FROM Brand c", Brand.class);
+        TypedQuery<Brand> query = super.createQuery("SELECT DISTINCT brandName FROM Product c", Brand.class);
         return new ArrayList<>(query.getResultList());
     }
 
     @Override
-    public Product findByProductCode(UniqueInternalCode code) {
-        TypedQuery<Product> query = super.createQuery("SELECT c FROM Product c WHERE c.code = :product_code", Product.class);
-        query.setParameter("product_code", code);
-        return query.getSingleResult();
+    public Product findByProductCode(String uniqueinternalcode) {
+        Query q = entityManager().createQuery("SELECT prod FROM Product prod " +
+                " WHERE prod.uniqueInternalCode.uniqueInternalCode = :uniqueinternalcode");
+        q.setParameter("uniqueinternalcode", uniqueinternalcode);
+        return (Product) q.getSingleResult();
+
     }
 
     @Override
-    public Brand findByBrandName(String brandNome) {
-        TypedQuery<Brand> query = super.createQuery("SELECT c FROM Brand c WHERE c.brandName = :brand_name", Brand.class);
-        query.setParameter("brand_name", brandNome);
-        return query.getSingleResult();
+    public Brand findByBrandName(String brandName) {
+        Query q = entityManager().createQuery("SELECT prod FROM Product prod " +
+                " WHERE prod.brand.brandName = :brandName");
+        q.setParameter("brandName", brandName);
+        return (Brand) q.getSingleResult();
+
     }
 
     @Override
     public ShortDescription findByShortDescription(String shortDescription) {
-        TypedQuery<ShortDescription> query = super.createQuery("SELECT c FROM ShortDescription c WHERE c.shortDescription = :shortDescription", ShortDescription.class);
-        query.setParameter("shortDescription", shortDescription);
-        return query.getSingleResult();
+        Query q = entityManager().createQuery("SELECT prod FROM Product prod " +
+                " WHERE prod.shortDescription.description = :shortDescription");
+        q.setParameter("shortDescription", shortDescription);
+        return (ShortDescription) q.getSingleResult();
     }
 
     @Override
-    public List<Product> findByBrand(Brand brand) {
-        TypedQuery<Product> query = super.createQuery("SELECT c FROM Product c WHERE c.brand = :brand_name", Product.class);
-        query.setParameter("brand_name", brand);
-        return query.getResultList();
+    public List<Product> findByBrand(String brandName) {
+            Query q = entityManager().createQuery("SELECT prod FROM Product prod " +
+                    " WHERE prod.brand.brandName = :brandName");
+            q.setParameter("brandName", brandName);
+            return q.getResultList();
     }
 
     @Override
-    public List<Product> findByDescription(ShortDescription description) {
-        TypedQuery< Product> query = super.createQuery("SELECT c FROM Product c WHERE c.description = :shortDescription", Product.class);
-        query.setParameter("shortDescription", description);
-        return query.getResultList();
+    public List<Product> findByDescription(String shortDescription) {
+        Query q = entityManager().createQuery("SELECT prod FROM Product prod " +
+                " WHERE prod.shortDescription.description = :shortDescription");
+        q.setParameter("shortDescription", shortDescription);
+        return  q.getResultList();
     }
 
     @Override
-    public List<Product> findByCategory(Category category) {
-        TypedQuery< Product> query = super.createQuery("SELECT c FROM Product c WHERE c.category = :product_category", Product.class);
-        query.setParameter("product_category", category);
-        return query.getResultList();
+    public List<Product> findByCategory(String categorycode) {
+        Query q = entityManager().createQuery("SELECT prod FROM Product prod " +
+                " WHERE prod.categoryCode.categoryCode = :categoryCode");
+        q.setParameter("categoryCode", categorycode);
+        return  q.getResultList();
     }
 
     @Override
@@ -91,7 +100,7 @@ public class JpaProductRepository extends JpaAutoTxRepository<Product, String, S
 
     @Override
     public List<Product> findByBrandCategory(Brand brand, Category category) {
-        TypedQuery<Product> query = super.createQuery("SELECT c FROM Product c WHERE ( c.brand = :productBrand AND c.category=:productCategory", Product.class);
+        TypedQuery<Product> query = super.createQuery("SELECT c FROM Product c WHERE ( c.brand = :productBrand AND c.categorycode =:productCategory", Product.class);
         query.setParameter("productBrand", brand);
         query.setParameter("productCategory", category);
         return query.getResultList();
@@ -99,7 +108,7 @@ public class JpaProductRepository extends JpaAutoTxRepository<Product, String, S
 
     @Override
     public List<Product> findByDescriptionCategory(ShortDescription description, Category category) {
-        TypedQuery<Product> query = super.createQuery("SELECT c FROM Product c WHERE ( c.description=:productDescription AND c.category=:productCategory", Product.class);
+        TypedQuery<Product> query = super.createQuery("SELECT c FROM Product c WHERE ( c.description=:productDescription AND c.categorycode =:productCategory", Product.class);
         query.setParameter("productDescription", description);
         query.setParameter("productCategory", category);
         return query.getResultList();
@@ -123,5 +132,4 @@ public class JpaProductRepository extends JpaAutoTxRepository<Product, String, S
     public void deleteOfIdentity(UniqueInternalCode entityId) {
 
     }
-
 }

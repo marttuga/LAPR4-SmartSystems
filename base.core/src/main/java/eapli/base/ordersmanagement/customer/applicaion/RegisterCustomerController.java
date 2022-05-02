@@ -54,5 +54,8 @@ public class RegisterCustomerController {
     public Customer findByCustomerId(CustomerId c){
         return customerRepository.findByCustomerId(c);
     }
+    public Customer findByCustomerIdOrder(String c){
+        return customerRepository.findByCustomerIdOrder(c);
+    }
 
 }

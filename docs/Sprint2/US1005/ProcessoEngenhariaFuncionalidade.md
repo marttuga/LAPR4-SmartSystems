@@ -4,9 +4,6 @@
 
 # 1. Requirements
 
-*Nesta secção a equipa deve indicar a funcionalidade desenvolvida bem como descrever a sua interpretação sobre a mesma e sua correlação e/ou dependência de/com outros requisitos.*
-
-*Exemplo*
 
 **US1005** As Sales Clerk, I want to define a new category of products.
 
@@ -29,7 +26,7 @@ As such, the sales clerk inserts an alphanumeric code and a description for the 
 
 # 3. Design
 
->   Domain Classes: Category
+>   Domain Classes: Category, CategoryCode, CategoryDescription
 >
 >   Controller: DefineCategoryController
 >
@@ -42,11 +39,9 @@ As such, the sales clerk inserts an alphanumeric code and a description for the 
 ![SD](US1005_SD.svg)
 ## 3.2. Diagrama de Classes
 
-*Nesta secção deve apresentar e descrever as principais classes envolvidas na realização da funcionalidade.*
-
+![CD](US1005_CD.svg)
 ## 3.3. Padrões Aplicados
 
-![CD](US1005_CD.svg)
 *Nesta secção deve apresentar e explicar quais e como foram os padrões de design aplicados e as melhores práticas.*
 
 ## 3.4. Testes

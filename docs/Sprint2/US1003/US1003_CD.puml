@@ -2,11 +2,11 @@
 skinparam classAttributeIconSize 0
 
 package UI {
-class RegisterCustomerUI {
+class RegisterCustomerUI <<presentation>> {
 }
 }
 
-package Controller{
+package Controller <<application>>{
 class RegisterCustomerController {
 
 }
@@ -21,5 +21,4 @@ entity Customer <<Entity>> <<Root>> {
 
 RegisterCustomerUI ..> RegisterCustomerController
 RegisterCustomerController ..> Customer
-
 @enduml

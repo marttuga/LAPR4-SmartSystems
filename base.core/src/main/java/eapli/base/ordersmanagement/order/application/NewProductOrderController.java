@@ -39,7 +39,7 @@ public class NewProductOrderController {
 
 
     public ProductItem productItem(Set<Product> products, int quantity) {
-        ProductPriceDetail price = (catalogController.findByProductCode(products.iterator().next().getUniqueInternalCode())).getPriceDetail();
+        ProductPriceDetail price = (catalogController.findByProductCode(String.valueOf(products.iterator().next().getUniqueInternalCode()))).getPriceDetail();
         double productItemPrice = (price.getPrice().amountAsDouble()) * quantity;
         Money pp = Money.euros(productItemPrice);
 
@@ -62,6 +62,7 @@ public class NewProductOrderController {
     public PaymentMethod paymentMethod(int options) {
         return orderService.paymentMethod(options);
     }
+
     public SalesRegion salesRegion(int options) {
         return orderService.salesRegion(options);
     }
@@ -71,11 +72,11 @@ public class NewProductOrderController {
     }
 
 
-    public PriceOrder priceOfOrder(LineOrder lineOrder, SalesRegion sr,ShippingMethod sM) {
-        double cost = orderService.shippingCostMethod(sM).shippingMoney().amountAsDouble()+orderService.shippingCostPlace(sr).shippingMoney().amountAsDouble();
-        ShippingCost shippingCost= new ShippingCost(Money.euros(cost));
-        Money priceO= Money.euros(cost);
-        return new PriceOrder(priceO,shippingCost);
+    public PriceOrder priceOfOrder(LineOrder lineOrder, SalesRegion sr, ShippingMethod sM) {
+        double cost = orderService.shippingCostMethod(sM).shippingMoney().amountAsDouble() + orderService.shippingCostPlace(sr).shippingMoney().amountAsDouble();
+        ShippingCost shippingCost = new ShippingCost(Money.euros(cost));
+        Money priceO = Money.euros(cost);
+        return new PriceOrder(priceO, shippingCost);
     }
 
     public OrderActor orderActor(String id) {

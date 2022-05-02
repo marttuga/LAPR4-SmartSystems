@@ -2,6 +2,7 @@ package eapli.base.app.backoffice.console.presentation.UI;
 
 import eapli.base.ordersmanagement.category.application.DefineCategoryController;
 import eapli.base.ordersmanagement.category.domain.Category;
+
 import eapli.base.ordersmanagement.customer.applicaion.RegisterCustomerController;
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.customer.domain.CustomerId;
@@ -30,43 +31,39 @@ public class NewProductOrderUI extends AbstractUI {
         Customer customer;
         do {
             String costumerID = Utils.readLineFromConsole("Please enter the costumerID: " + "\n(must have 7 numbers)");
-            CustomerId code = new CustomerId(costumerID);
-            customer = registerCustomerController.findByCustomerId(code);
+            customer = registerCustomerController.findByCustomerIdOrder(costumerID);
             System.out.println(customer);
         } while (registerCustomerController.findAllCustomers().contains(customer));
 
         int optionFilter = 0;
         int optionOrdering = 0;
 
-        List<Product> productList =  catalogueController.findAllProducts();
+        List<Product> productList = catalogueController.findAllProducts();
         catalogueController.printProductsList(productList);
+        List<Product> productListt= new ArrayList<>();
 
-        do {
 /////////FILTERING MENU
-            optionFilter = catalogueController.showOptionsFilter();
-            switch (optionFilter) {
-                case 0:
-                    System.out.println("Exiting ...");
-                    break;
+        optionFilter = catalogueController.showOptionsFilter();
+        //ORDENAR A LISTA DE PRODUTOS
+        switch (optionFilter) {
+            case 0:
+                System.out.println("Exiting ...");
+                break;
 
-                case 1:
-                    List<Category> categoryList = categoryController.findAllCategories();
-                    catalogueController.printCategoriesList(categoryList);
-                    String categoryCode = Utils.readLine("Category code: ");
-                    catalogueController.printCategoriesList(categoryCode);
-                    break;
+            case 1:
+                String categoryCode = Utils.readLine("Category code: ");
+                productListt=catalogueController.printCategoriesList(categoryCode);
+                break;
 
-                case 2:
-                    List<Brand> brandList = catalogueController.findAllBrands();
-                    catalogueController.printBrandsList(brandList);
-                    String brandName = Utils.readLine("Brand: ");
-                    catalogueController.printBrandList(brandName);
-                    break;
+            case 2:
+                String brandName = Utils.readLine("Brand: ");
+                productListt=catalogueController.printBrandList(brandName);
+                break;
 
-                case 3:
-                    String description = Utils.readLine("Description: ");
-                    catalogueController.printDescriptionList(description);
-                    break;
+            case 3:
+                String description = Utils.readLine("Description: ");
+                productListt=catalogueController.printDescriptionList(description);
+                break;
     /*        case 4:
                 Brand and Category();
                 break;
@@ -80,56 +77,48 @@ public class NewProductOrderUI extends AbstractUI {
                 Brand, Short Description and Category();
                 break;*/
 
-                default:
-                    System.out.println("Option does not exist!");
-                    break;
-            }
-        } while (optionFilter != 0);
+            default:
+                System.out.println("Option does not exist!");
+                break;
+        }
 
-        do {
-            //////ORDERING MENU
-            optionOrdering = catalogueController.showOptionsOrdering();
-            //ORDENAR A LISTA DE PRODUTOS
-            switch (optionOrdering) {
-                case 0:
-                    System.out.println("Exiting ...");
-                    break;
-                case 1:
-                    catalogueController.printOrderedDescription();
-                    break;
-                case 2:
-                    catalogueController.printOrderedPrice();
-                    break;
-                default:
-                    System.out.println("Option does not exist!");
-                    break;
-            }
-        } while (optionOrdering != 0);
+
+        //////ORDERING MENU
+        optionOrdering = catalogueController.showOptionsOrdering();
+        //ORDENAR A LISTA DE PRODUTOS
+        switch (optionOrdering) {
+            case 0:
+                System.out.println("Exiting ...");
+                break;
+            case 1:
+                catalogueController.printOrderedDescription(productListt);
+                break;
+            case 2:
+                catalogueController.printOrderedPrice(productListt);
+                break;
+            default:
+                System.out.println("Option does not exist!");
+                break;
+        }
 
         LineOrder lineOrder = null;
         do {
 
             String productCode = Utils.readLine("Insert Product Internal Code: ");
-            try {
-                UniqueInternalCode pcode = new UniqueInternalCode(productCode);
-                Product product = catalogueController.findByProductCode(pcode);
-                System.out.println(product);
+            Product product = catalogueController.findByProductCode(productCode);
+            System.out.println(product);
 
-                int quantity = Utils.readIntegerFromConsole("Insert the quantity of the product: ");
-                Set<Product> p = new HashSet<>();
-                for (int i = 0; i < quantity; i++) {
-                    p.add(product);
-                }
-                ProductItem productItem = productOrderController.productItem(p, quantity);
-
-                Set<ProductItem> pi = new HashSet<>();
-                pi.add(productItem);
-                lineOrder = productOrderController.lineOrder(pi);
-
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-                System.out.println("Product does not exist");
+            int quantity = Utils.readIntegerFromConsole("Insert the quantity of the product: ");
+            Set<Product> p = new HashSet<>();
+            for (int i = 0; i < quantity; i++) {
+                p.add(product);
             }
+            ProductItem productItem = productOrderController.productItem(p, quantity);
+
+            Set<ProductItem> pi = new HashSet<>();
+            pi.add(productItem);
+            lineOrder = productOrderController.lineOrder(pi);
+
         } while (Utils.confirm("Want to add more products? (y/n)"));
 
 

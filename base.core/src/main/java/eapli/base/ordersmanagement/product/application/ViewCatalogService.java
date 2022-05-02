@@ -39,7 +39,7 @@ public class ViewCatalogService {
     public int showOptionsOrdering() {
         int option = -1;
         System.out.println("===================================================");
-        System.out.println("               Search Catalogue Menu:          ");
+        System.out.println("               SORT :          ");
         System.out.println("=================================================\n");
         System.out.println("1-Sort Catalogues by Description");
         System.out.println("2-Sort Catalogues by Price");
@@ -52,22 +52,17 @@ public class ViewCatalogService {
     //////PRINTING METHODS
     public void printProductsList(List<Product> productList) {
         for (Product c : productList) {
-            System.out.println("Code- " + c.getUniqueInternalCode() + "\nDescription- " + c.getShortDescription() + "\nBrand- " + c.getBrand()
+            System.out.println("Code- " + c.getUniqueInternalCode() + "\nDescription- " + c.getShortDescription().toString() + "\nBrand- " + c.getBrand()
                     + "\nCategory: " + c.getCategory() + "\nPrice: " + c.getPriceDetail() + "\n");
         }
     }
 
     public void printCategoriesList(List<Category> categoriesList) {
         for (Category c : categoriesList) {
-            System.out.println("Category- Description- " + c.getDescription() + "\nCode- " + c.getCategoryCode() + "\n");
+            System.out.println("Category- Description- " + c.getDescription().toString() + "\nCode- " + c.getCategoryCode() + "\n");
         }
     }
 
-    public void printBrandsList(List<Brand> brandsList) {
-        for (Brand c : brandsList) {
-            System.out.println("Brand- " + c.getBrandName() + "\n");
-        }
-    }
 
     public void printHeader() {
         System.out.println();
