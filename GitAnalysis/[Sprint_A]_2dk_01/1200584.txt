@@ -1,0 +1,1392 @@
+commit 7fc89244869f66b232caa5d12cf4703a64aa2fca
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 22:50:55 2022 +0100
+
+    US1003_CD.svg and US1005_CD.svg
+
+M	docs/Sprint2/US1003/US1003_CD.svg
+A	docs/Sprint2/US1005/US1005_CD.svg
+
+commit 9a6009c9451fcc963d2b3a77ba881c163a807640
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 22:43:40 2022 +0100
+
+    updated tests
+
+M	base.core/src/test/java/eapli/base/ordersmanagement/category/domain/CategoryDescriptionTest.java
+M	base.core/src/test/java/eapli/base/ordersmanagement/customer/domain/CustomerIdTest.java
+
+commit a67795d770fa740adbb4ac8e8856530763410905
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 22:34:54 2022 +0100
+
+    Domain Model
+
+M	docs/Sprint2/Domain Model/DM.puml
+M	docs/Sprint2/Domain Model/DM.svg
+
+commit 9605810597a61d687313ae0b76afa1f14b3ff833
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 22:23:52 2022 +0100
+
+    <L2L20-1> US1001: Implementation: updated UI
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/SpecifyNewProductUI.java
+
+commit 0198dc7ccc760c1a4551078d39d790a73f60b7a6
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 22:15:15 2022 +0100
+
+    <L2L20-1> US1001: Implementation: update ProductPriceDetail and bootstrapper
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/ProductBootstrapper.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/ProductPriceDetail.java
+
+commit a4d10087006ee5774c0f289958c8b9ac76f78efa
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 21:43:12 2022 +0100
+
+    JpaProductRepository update
+
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaProductRepository.java
+
+commit 8fe68e785003de81ea24d38b965ffe1a44725cc8
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 21:23:37 2022 +0100
+
+    fixed ProductOrderBootstrapper
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/ProductOrderBootstrapper.java
+
+commit 45c9c3f30d86c1e84311aa986672b5f032d0dee5
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 21:22:48 2022 +0100
+
+    <L2L20-1> US1001: Implementation: JpaProductRepository
+
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaProductRepository.java
+
+commit 1b2a6d2bbad39a620a53c24625f6de31e4c276fa
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 20:40:39 2022 +0100
+
+    <L2L20-1> US1001: Implementation: update domain classes
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/TechnicalDescription.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/UniqueInternalCode.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Weight.java
+
+commit 3e19c959e2593f5af4f0ab55607296fb1a268394
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 20:40:31 2022 +0100
+
+    <L2L20-1> US1001: Implementation: update domain classes
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/ProductionCode.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Reference.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/ShortDescription.java
+
+commit 6ea7211f79bea167262a06fadd8408b27a3db09a
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 20:40:13 2022 +0100
+
+    <L2L20-1> US1001: Implementation: update domain classes
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Barcode.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/ExtendedDescription.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Product.java
+
+commit 8607caaad22ec86ecb657a5908dce6a2753377bf
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 20:39:37 2022 +0100
+
+    <L2L20-1> US1001: Tests
+
+A	base.core/src/test/java/eapli/base/ordersmanagement/product/domain/TechnicalDescriptionTest.java
+A	base.core/src/test/java/eapli/base/ordersmanagement/product/domain/UniqueInternalCodeTest.java
+A	base.core/src/test/java/eapli/base/ordersmanagement/product/domain/WeightTest.java
+
+commit 5f039dc41e95a9258b849430ddee00a227a06d6d
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 20:39:31 2022 +0100
+
+    <L2L20-1> US1001: Tests
+
+A	base.core/src/test/java/eapli/base/ordersmanagement/product/domain/ProductPriceDetailTest.java
+A	base.core/src/test/java/eapli/base/ordersmanagement/product/domain/ReferenceTest.java
+A	base.core/src/test/java/eapli/base/ordersmanagement/product/domain/ShortDescriptionTest.java
+
+commit dcad8f829b7e17e2f2119555733f9432bfc68caa
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 20:39:15 2022 +0100
+
+    <L2L20-1> US1001: Tests
+
+A	base.core/src/test/java/eapli/base/ordersmanagement/product/domain/BarcodeTest.java
+A	base.core/src/test/java/eapli/base/ordersmanagement/product/domain/DimensionTest.java
+A	base.core/src/test/java/eapli/base/ordersmanagement/product/domain/ExtendedDescriptionTest.java
+A	base.core/src/test/java/eapli/base/ordersmanagement/product/domain/ProductionCodeTest.java
+
+commit d553fa0c6db3ffc4cf1ce3adfae34ce2d0cc90dc
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 20:35:24 2022 +0100
+
+    DataModel.svg
+
+A	docs/Sprint2/Data Model/DataModel.svg
+
+commit 946e12731cf1bad8d60d6c6da8fe0c0fbd24c334
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 19:29:12 2022 +0100
+
+    fixed imports
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/NewProductOrderUI.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/application/ViewCatalogController.java
+
+commit 6a2a0d4dad8730579ec774a8bd918193d7e9d02a
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 17:25:34 2022 +0100
+
+    persistence.xml update
+
+M	base.persistence.impl/src/main/resources/META-INF/persistence.xml
+
+commit 9809e6fc9b7c415c1f6380e68f3818d0579ff7b4
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 17:22:36 2022 +0100
+
+    <L2L20-7> US1900: Implementation: updated bootstrap
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/BaseDemoBootstrapper.java
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/CustomerBootstrapper.java
+
+commit 10c68b6a350ab7877a2a930c3a6f5e0993be6bee
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 17:03:39 2022 +0100
+
+    <L2L20-7> US1900: Implementation: updated bootstrap
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/BaseDemoBootstrapper.java
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/CategoryBootstrapper.java
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/ProductBootstrapper.java
+M	run-bootstrap.sh
+
+commit 92ff53ab20a61a2162cc44fe49a3bc36cbbd6255
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 12:38:00 2022 +0100
+
+    <L2L20-1> US1001: Implementation: updated Product, Controller and UI
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/SpecifyNewProductUI.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/application/SpecifyNewProductController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Product.java
+
+commit 7d5a94ac840c68096ee248746d05a503e2492f47
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 12:37:31 2022 +0100
+
+    <L2L20-1> US1001: Implementation: commented Builder and Service
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/application/ProductBuilder.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/application/ProductService.java
+
+commit 830b78360a8ccad111cb735e7222c3ad17156f68
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun May 1 10:55:38 2022 +0100
+
+    <L2L20-1> US1001: Implementation: updated product, builder, service, controller and UI
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/SpecifyNewProductUI.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/application/ProductBuilder.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/application/ProductService.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/application/SpecifyNewProductController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Product.java
+
+commit c20d3072f2e8921f29dde05e76631d76e0f913bd
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Apr 30 22:57:55 2022 +0100
+
+    <L2L20-1> US1001: Analysis update
+
+R088	docs/Sprint2/US1001/US1001	docs/Sprint2/US1001/US1001.md
+
+commit 6a851f6693fbd9bc35584706bff86dae50ed1b65
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Apr 30 22:57:34 2022 +0100
+
+    <L2L20-8> US2002: Analysis and Design update
+
+A	docs/Sprint2/US2001/US2001_CD.svg
+M	docs/Sprint2/US2002/US2002.md
+
+commit 86f8c894c5b24d1ff4f4312cc3a495ffcea7b34b
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Apr 30 22:56:54 2022 +0100
+
+    Domain model design
+
+D	docs/Sprint2/Domain Model/DM.png
+A	docs/Sprint2/Domain Model/DM.svg
+
+commit 17b0c882afb3b2cf88206965bd664854890802b9
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Apr 30 22:38:38 2022 +0100
+
+    <L2L20-1> US1001: Implementation:
+    updated Category and Product
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/category/domain/Category.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Product.java
+
+commit 1fc89e7722847cde240f4429006daf9cca6f6f4b
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Apr 30 22:38:06 2022 +0100
+
+    <L2L20-1> US1001: Implementation:
+    updated builder, service, controller and UI
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/SpecifyNewProductUI.java
+R073	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/ProductBuilder.java	base.core/src/main/java/eapli/base/ordersmanagement/product/application/ProductBuilder.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/application/ProductService.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/application/SpecifyNewProductController.java
+
+commit a04b486a937b58951c0823a8ec2b47af8bb034c4
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Apr 30 22:00:03 2022 +0100
+
+    <L2L20-8> US2002: Implementation:
+    updated Controller, UI and domain classes
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/ConfigureAGVUI.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/application/ConfigureAGVController.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/Aisle.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/MaxWeightCarry.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/Model.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/Row.java
+
+commit c9822c9895481952b0e5d46fb3324d5431b10f22
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Apr 30 21:04:30 2022 +0100
+
+    <L2L20-5> fixed service AGVDock
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/application/UploadFileService.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGVDock.java
+
+commit 265bed112a300fac2cf74e774818c93360ad5a58
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Apr 30 20:24:24 2022 +0100
+
+    <L2L20-5> fixed ui and json file
+
+M	WarehousePlan.json
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/UploadFileUI.java
+
+commit e9610d3571b90dce5562ae78e3168673595ac6ef
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Apr 30 12:31:02 2022 +0100
+
+    updated MainMenu
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/MainMenu.java
+
+commit bbae5e51e93f440bd34df640ec423052438ce16d
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Apr 30 12:30:47 2022 +0100
+
+    <L2L20-1> US1001: Implementation: update Controller
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/application/SpecifyNewProductController.java
+
+commit 5c5c6858cf26fb4a36636fa2a2220fb0b18f5196
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Apr 30 12:04:57 2022 +0100
+
+    <L2L20-1> US1001: Design: update CD
+
+M	docs/Sprint2/US1001/US1001_CD.puml
+M	docs/Sprint2/US1001/US1001_CD.svg
+
+commit f0331a3fc8ba6db30eda9111035661e698e1c5e3
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Apr 30 10:41:52 2022 +0100
+
+    <L2L20-8> US2002: Implementation: added AGV to persistence.xml
+
+M	base.persistence.impl/src/main/resources/META-INF/persistence.xml
+
+commit fb7a7153ffe918dcca222a4b2871908f1994ac19
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Apr 30 10:35:36 2022 +0100
+
+    <L2L20-1> US1001: Design: fixed SD
+
+M	docs/Sprint2/US1001/US1001_SD.puml
+M	docs/Sprint2/US1001/US1001_SD.svg
+
+commit ee0aceb981657148adeb6e8c3f9c1ee23088ffd8
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Apr 30 10:35:12 2022 +0100
+
+    <L2L20-8> US2002: Design:
+    added CD and fixed SD
+
+A	docs/Sprint2/US2002/US2002_CD.puml
+A	docs/Sprint2/US2002/US2002_CD.svg
+M	docs/Sprint2/US2002/US2002_SD.puml
+M	docs/Sprint2/US2002/US2002_SD.svg
+
+commit 97d7fa011bdcaf802de5a23e09d3a1d2fbb87745
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Apr 30 10:34:12 2022 +0100
+
+    <L2L20-8> US2002: Analysis:
+    updated US2002.md
+
+M	docs/Sprint2/US2002/US2002.md
+
+commit 70b4587b4641bd21931fe13c416b93e299c85298
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Apr 30 10:07:42 2022 +0100
+
+    <L2L20-8> US2002: Implementation:
+    updated AGV and AGVBuilder
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGV.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGVBuilder.java
+
+commit 29f187308b9f3846bf87b3e6aea558770572db06
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Apr 30 10:00:18 2022 +0100
+
+    <L2L20-1> US1001: Implementation:
+    public for protected constructor in Product class
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Product.java
+
+commit e5a9b234ea80e18605724544f7be8bc142083bb0
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Apr 29 16:22:34 2022 +0100
+
+    Revert "<L2L20-1> US1001: Implementation: JpaRepositoryFactory"
+    
+    This reverts commit 5b7b5d5a
+
+M	base.persistence.impl/target/classes/eapli/base/persistence/impl/jpa/JpaRepositoryFactory.class
+
+commit a2b46858ac5b7339630b86d6dfcaab3d56f95f9a
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Apr 29 16:15:15 2022 +0100
+
+    <L2L20-8> US2002: Implementation:
+    added ConfigureAGVUI to Main Menu
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/MainMenu.java
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/ConfigureAGVUI.java
+
+commit 5b7b5d5a423b8abede400b406be492120e054475
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Apr 29 15:52:55 2022 +0100
+
+    <L2L20-1> US1001: Implementation:
+    JpaRepositoryFactory
+
+M	base.persistence.impl/target/classes/eapli/base/persistence/impl/jpa/JpaRepositoryFactory.class
+
+commit 702807b220a4eca9a510f53d04f2a4f775dd1ffb
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Apr 29 15:51:45 2022 +0100
+
+    <L2L20-1> US1001: Implementation:
+    added SpecifyNewProductUI to Main Menu
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/MainMenu.java
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/SpecifyNewProductUI.java
+M	base.core/target/classes/eapli/base/infrastructure/persistence/RepositoryFactory.class
+
+commit 3385b296117d03131374e44c7827e400aa5e2541
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Apr 29 15:51:07 2022 +0100
+
+    <L2L20-8> US2002: Implementation:
+    updated application and domain classes
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/ConfigureAGVUI.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/application/AGVService.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/application/ConfigureAGVController.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGV.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGVBuilder.java
+
+commit 23471ea45cd50486aa1a33949c2b1c65838daf6d
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Apr 29 15:31:11 2022 +0100
+
+    added imports to NewProductOrderUI and RegisterCustomerUI
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/NewProductOrderUI.java
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/RegisterCustomerUI.java
+
+commit 85913c25edf79f9b7c69b16af433276a68dd1684
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Apr 29 14:10:17 2022 +0100
+
+    <L2L20-8> US2002: Implementation: Added ConfigureAGVController, ConfigureAGVUI
+
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/ConfigureAGVUI.java
+A	base.core/src/main/java/eapli/base/warehousemanagement/application/ConfigureAGVController.java
+
+commit d5da50e5cc3841bc82b5d9f6d8569412862fa08d
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Apr 29 14:09:52 2022 +0100
+
+    <L2L20-8> US2002: Implementation: Added enum Status, updated Builder and Service
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/application/AGVService.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGVBuilder.java
+A	base.core/src/main/java/eapli/base/warehousemanagement/domain/Status.java
+
+commit 41d1e99eeb0fdb843a65e66409756754ad6a3f29
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Apr 29 14:09:12 2022 +0100
+
+    <L2L20-8> US2002: Implementation: Updated AGV, AGVDock, MaxWeightCarry, Model and Task
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGV.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGVDock.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/MaxWeightCarry.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/Model.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/Task.java
+
+commit c9565c510a9df04eb6d0cec783f4debc9d359816
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Apr 29 12:08:00 2022 +0100
+
+    <L2L20-1> US1001: Implementation: Updated Controller and UI
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/SpecifyNewProductUI.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/application/SpecifyNewProductController.java
+
+commit f8048914fa99880c8a8805357d09a12e478e5587
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Apr 29 12:07:33 2022 +0100
+
+    <L2L20-1> US1001: Implementation: Updated Dimension, Product, ProductService and ProductBuilder
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/application/ProductService.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Dimension.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Product.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/ProductBuilder.java
+
+commit 5f412a35cc6648610cbdc29afe3859df2ecbd8ac
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Apr 28 23:46:25 2022 +0100
+
+    updated RepositoryFactory
+
+M	base.core/src/main/java/eapli/base/infrastructure/persistence/RepositoryFactory.java
+
+commit 3dd6021aed7d984bf9bd78abc5e271b62b388a06
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Apr 28 23:45:01 2022 +0100
+
+    updated JpaRepositoryFactory
+
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaRepositoryFactory.java
+
+commit 5874f68da32c2a56f8db26d7a5a5a0d499abf72c
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Apr 28 23:30:33 2022 +0100
+
+    update ecafeteria.sample.properties
+
+M	base.core/src/main/resources/ecafeteria.sample.properties
+
+commit 7e2204da47ba322e279df375cb2859b347f8f727
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Apr 28 11:46:45 2022 +0100
+
+    <L2L20-8> US2002: Implementation: updated JpaAGVRepository
+
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaAGVRepository.java
+
+commit 022e218b68568eda9d030f589ae455059725efbe
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Apr 28 11:44:03 2022 +0100
+
+    <L2L20-8> US2002: Implementation: added AGV repository, builder and service
+
+A	base.core/src/main/java/eapli/base/warehousemanagement/application/AGVService.java
+A	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGVBuilder.java
+A	base.core/src/main/java/eapli/base/warehousemanagement/repositories/AGVRepository.java
+A	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaAGVRepository.java
+
+commit 1b965e77831890e1d68529433d00192a02e266b2
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Apr 28 11:43:08 2022 +0100
+
+    <L2L20-8> US2002: Implementation: updated domain classes
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGV.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/Bin.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/Shelf.java
+
+commit 42bdba0e5b244e92e8eb7456d70170a23056e92c
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Apr 28 11:42:46 2022 +0100
+
+    <L2L20-1> US1001: Implementation: updated domain classes
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Barcode.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Brand.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Dimension.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/ExtendedDescription.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/ShortDescription.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/TechnicalDescription.java
+
+commit 3b498ec10eb5ed1e698859ab70df81a905593192
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Apr 28 11:42:22 2022 +0100
+
+    <L2L20-1> US1001: Implementation: updated domain classes
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/ProductPriceDetail.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/ProductionCode.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Reference.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/UniqueInternalCode.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Weight.java
+
+commit e41799232b578efa801a42a8d9d91236053e7845
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Apr 27 18:34:12 2022 +0100
+
+    <L2L20-1> US1001: Implementation: Created ProductBuilder and ProductService
+
+A	base.core/src/main/java/eapli/base/ordersmanagement/product/application/ProductService.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/ProductBuilder.java
+
+commit ab36bad361be9931f5b37e3a1fbd59c3334ca90b
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Apr 27 18:33:14 2022 +0100
+
+    <L2L20-1> US1001: Implementation: updated Product and barcode
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Barcode.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Product.java
+
+commit 591fbce427073563b30b2d147c5fb19d8d6899cc
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Apr 27 18:18:33 2022 +0100
+
+    building alteration
+
+M	base.core/pom.xml
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/UploadFile.java
+
+commit 6cc5881f3b90740b80fe74a73afb4518532314b6
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Apr 27 16:42:20 2022 +0100
+
+    building alteration
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/shoppingCart/domain/ProductItemId.java
+
+commit 08f79392db3a56b556f7827325cf41023977b6c3
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Apr 27 16:38:44 2022 +0100
+
+    building alterations
+
+M	base.core/src/main/java/eapli/base/infrastructure/persistence/RepositoryFactory.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/shoppingCart/domain/ShoppingCartId.java
+M	base.core/target/classes/eapli/base/infrastructure/persistence/RepositoryFactory.class
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryCustomerRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaRepositoryFactory.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaWarehouseRepository.java
+M	base.persistence.impl/src/main/resources/META-INF/persistence.xml
+M	run-backoffice.sh
+M	run-bootstrap.sh
+
+commit eb77efa90121d56c2c3cb017f2e0a02b816710dd
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Apr 27 11:51:19 2022 +0100
+
+    change folders to warehousemanagement
+
+R092	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/AGV.java	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGV.java
+R096	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/AGVDock.java	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGVDock.java
+R091	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/AGV_Warehouse.java	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGV_Warehouse.java
+R095	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/Aisle.java	base.core/src/main/java/eapli/base/warehousemanagement/domain/Aisle.java
+R092	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/Bin.java	base.core/src/main/java/eapli/base/warehousemanagement/domain/Bin.java
+R092	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/Identifier.java	base.core/src/main/java/eapli/base/warehousemanagement/domain/Identifier.java
+R090	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/MaxWeightCarry.java	base.core/src/main/java/eapli/base/warehousemanagement/domain/MaxWeightCarry.java
+R088	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/Model.java	base.core/src/main/java/eapli/base/warehousemanagement/domain/Model.java
+R093	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/Plan.java	base.core/src/main/java/eapli/base/warehousemanagement/domain/Plan.java
+R088	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/Route.java	base.core/src/main/java/eapli/base/warehousemanagement/domain/Route.java
+R094	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/Row.java	base.core/src/main/java/eapli/base/warehousemanagement/domain/Row.java
+R092	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/Shelf.java	base.core/src/main/java/eapli/base/warehousemanagement/domain/Shelf.java
+R087	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/Task.java	base.core/src/main/java/eapli/base/warehousemanagement/domain/Task.java
+R098	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/UploadFile.java	base.core/src/main/java/eapli/base/warehousemanagement/domain/UploadFile.java
+R070	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/Warehouse.java	base.core/src/main/java/eapli/base/warehousemanagement/domain/Warehouse.java
+R093	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/WarehouseID.java	base.core/src/main/java/eapli/base/warehousemanagement/domain/WarehouseID.java
+R064	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/repositories/WarehouseRepository.java	base.core/src/main/java/eapli/base/warehousemanagement/repositories/WarehouseRepository.java
+
+commit 6755ba94f7af0e815c55d7972e6a7185c0589a1e
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Apr 27 11:08:18 2022 +0100
+
+    <L2L20-8> US2002: Implementation: Implemented Model, MaxWeightCarry, Route, Task classes
+
+A	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/MaxWeightCarry.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/Model.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/Route.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/Task.java
+
+commit 26db4f3fb5a8301976cc7f1cfe6f32a51d247b7d
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Apr 27 11:07:23 2022 +0100
+
+    <L2L20-8> US2002: Design: updated US2002_SD
+
+M	docs/Sprint2/US2002/US2002_SD.puml
+M	docs/Sprint2/US2002/US2002_SD.svg
+
+commit b032a911b036f7213d70bc7222dcb84383e7fe19
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Apr 27 11:00:40 2022 +0100
+
+    <L2L20-1> US1001: Implementation: created Bin.java
+
+A	base.core/src/main/java/eapli/base/ordersmanagement/warehousemanagement/domain/Bin.java
+
+commit af31244936c406292efb9822715de40021ea2060
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Apr 27 10:49:41 2022 +0100
+
+    <L2L20-1> US1001: Design: Updated US1001_SD
+
+M	docs/Sprint2/US1001/US1001_SD.puml
+M	docs/Sprint2/US1001/US1001_SD.svg
+
+commit d249cb604b516e60162a7bf562674da6dc889c34
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Apr 27 00:03:25 2022 +0100
+
+    Added Utils.java
+
+A	base.core/src/main/java/eapli/base/Utils.java
+
+commit 3b952285619e88c52648507062021c0582a1e631
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Tue Apr 26 18:06:24 2022 +0100
+
+    <L2L20-1> Implementation: Updated Dimension, Product, ProductPriceDetail
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Dimension.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Product.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/ProductPriceDetail.java
+
+commit e7c053b82ae25764e29d24e1d4e889e99fa48a69
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Tue Apr 26 17:21:58 2022 +0100
+
+    <L2L20-20> Design: Updated DM.puml and DM.png
+
+M	docs/Sprint2/Domain Model/DM.png
+M	docs/Sprint2/Domain Model/DM.puml
+
+commit eb48bee7e43c4572a45adcc712ef36d39c25e88c
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Tue Apr 26 16:29:01 2022 +0100
+
+    Implementation: Created class PriceItem, ProductItem, ProductItemId, Quantity, ShoppingCart and ShoppingCartId
+
+A	base.core/src/main/java/eapli/base/ordersmanagement/shoppingCart/domain/PriceItem.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/shoppingCart/domain/ProductItem.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/shoppingCart/domain/ProductItemId.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/shoppingCart/domain/Quantity.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/shoppingCart/domain/ShoppingCart.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/shoppingCart/domain/ShoppingCartId.java
+
+commit 83f00d7703ba76d2aee50c2b6093525b62571635
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Tue Apr 26 11:54:42 2022 +0100
+
+    <L2L20-1> US1001: Implementation: Updated ProductRepository
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/repositories/ProductRepository.java
+
+commit a7b6b2a8de89994e95ea72a1f8b9fb634b890457
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Tue Apr 26 11:54:16 2022 +0100
+
+    <L2L20-1> US1001: Implementation: Created SpecifyNewProductUI and SpecifyNewProductController
+
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/SpecifyNewProductUI.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/product/application/SpecifyNewProductController.java
+
+commit 23a03bb64cd6e8395c4023d2d94683414fe8744d
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Tue Apr 26 11:52:57 2022 +0100
+
+    <L2L20-1> US1001: Implementation: Updated Brand, UniqueInternalCode
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Brand.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/UniqueInternalCode.java
+
+commit 63de2cecc15528d9b6ce351c58fa16b909832c13
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Tue Apr 26 11:52:18 2022 +0100
+
+    <L2L20-1> US1001: Implementation: Added ExtendedDescription, Reference, ProductionCode, TechnicalDescription and Weight
+
+A	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/ExtendedDescription.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/ProductionCode.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Reference.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/TechnicalDescription.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Weight.java
+
+commit 89128837468b733cf12287343265fa50f62694bd
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Tue Apr 26 11:51:13 2022 +0100
+
+    <L2L20-1> US1001: Implementation: Updated classes Product, Barcode, Dimension, ShortDescription
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Barcode.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Dimension.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/Product.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/domain/ShortDescription.java
+
+commit 8c02468fce8c2a3016dbf1308b9017150f19161d
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Tue Apr 26 10:32:39 2022 +0100
+
+    <L2L20-1> US-1001: Analysis: Updated US1001.md
+
+M	docs/Sprint2/US1001/US1001
+
+commit 27590f191d44e983e52385eb969c0df082a80a0a
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Tue Apr 26 10:32:20 2022 +0100
+
+    <L2L20-1> US-1001: Design: Updated US1001 SD
+    Updated US1001_SD.svg
+
+M	docs/Sprint2/US1001/US1001_SD.puml
+M	docs/Sprint2/US1001/US1001_SD.svg
+
+commit ee56c30c2c1848026ee51288df04f81c39a60ddf
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Mon Apr 25 22:53:48 2022 +0100
+
+    changed class to abstract
+
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryRepositoryFactory.java
+
+commit 2828ba1e8d61aecceb855c66941791deaa8fa861
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Apr 24 23:41:49 2022 +0100
+
+    <L2L20-1> US1001: Implementation: Updated classes Product, Barcode, Dimension, ShortDescription
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/domain/Barcode.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/domain/Dimension.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/domain/Product.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/domain/ShortDescription.java
+
+commit 6b1bc1768870cd2211b79fd52f11d6a9e6cfde53
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Apr 24 23:25:13 2022 +0100
+
+    <L2L20-1> US1001: Implementation: Added classes Product, Barcode, Dimension, ShortDescription
+
+A	base.core/src/main/java/eapli/base/ordersmanagement/domain/Barcode.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/domain/Dimension.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/domain/Product.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/domain/ShortDescription.java
+M	base.persistence.impl/src/main/resources/META-INF/persistence.xml
+
+commit 550c76d86d425ae86e5bdb5a8d91bcb7fbbd5f82
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Apr 24 19:33:58 2022 +0100
+
+    <L2L20-1> Created and added US1001_CD.puml and US1001_CD.svg
+
+A	docs/Sprint2/US1001/US1001_CD.puml
+A	docs/Sprint2/US1001/US1001_CD.svg
+
+commit 0b07856cff95f197c86384951ed23d8b689bb7e1
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Apr 24 19:32:55 2022 +0100
+
+    <L2L20-20> updated DM.puml and DM.svg
+
+M	docs/Sprint2/Domain Model/DM.puml
+M	docs/Sprint2/Domain Model/DM.svg
+
+commit 31c0ab995adb727cec8c7242d85d4833e411f20c
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Apr 24 13:14:59 2022 +0100
+
+    <L2L20-8> US-2002: Analysis: Added US2002.md
+
+A	docs/Sprint2/US2002/US2002.md
+
+commit a33658d10b2cc381bbf1281d3d44da8357f48c3f
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Apr 24 13:07:49 2022 +0100
+
+    <L2L20-8> US-2002: Design: Updated US2002 SSD and SD
+    Added US2002_SD.svg and US2002_SSD.svg
+
+M	docs/Sprint2/US2002/US2002_SD.puml
+A	docs/Sprint2/US2002/US2002_SD.svg
+M	docs/Sprint2/US2002/US2002_SSD.puml
+A	docs/Sprint2/US2002/US2002_SSD.svg
+
+commit 955132b6d506481fbc2b8f850868fcaeef777ed7
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Apr 24 13:06:03 2022 +0100
+
+    <L2L20-1> US-1001: Analysis: Updated US1001.md
+
+M	docs/Sprint2/US1001/US1001
+
+commit 63f5239019f195c512b6c7981b9ee70f8fe42280
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Apr 24 12:31:17 2022 +0100
+
+    <L2L20-1> US-1001: Design: Updated US1001 SSD and SD
+    Updated US1001_SD.svg and US1001_SSD.svg
+
+M	docs/Sprint2/US1001/US1001_SD.puml
+M	docs/Sprint2/US1001/US1001_SD.svg
+M	docs/Sprint2/US1001/US1001_SSD.puml
+M	docs/Sprint2/US1001/US1001_SSD.svg
+
+commit fec714e09c63ff02993407166fa37668c75d37cb
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Apr 24 12:30:19 2022 +0100
+
+    <L2L20-1> US-1001: Analysis: Updated US1001.md
+
+M	docs/Sprint2/US1001/US1001
+
+commit dfa19f11278adb09c27f9f2e4cda217051a231bf
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Apr 23 16:41:27 2022 +0100
+
+    <L2L20-1> US-1001: Analysis: Updated US1001.md
+
+M	docs/Sprint2/US1001/US1001
+
+commit ffc3ee04193d865a2c848c67251278b8889c174d
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Apr 23 16:40:53 2022 +0100
+
+    <L2L20-1> US-1001: Design: Updated US1001 SSD and SD
+    Added US1001_SD.svg and US1001_SSD.svg
+
+M	docs/Sprint2/US1001/US1001_SD.puml
+A	docs/Sprint2/US1001/US1001_SD.svg
+M	docs/Sprint2/US1001/US1001_SSD.puml
+A	docs/Sprint2/US1001/US1001_SSD.svg
+
+commit 2afeccd165016ee16aeebf5d0b12dabf6176c320
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Apr 20 18:22:11 2022 +0100
+
+    <L2L20-1> added US1001.md
+
+A	docs/Sprint2/US1001/US1001
+
+commit b8b60b4a41491da4fab13f0be0d55e021c69a330
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Apr 20 17:19:38 2022 +0100
+
+    <L2L20-1> <L2L20-8> deleted CD.puml and MD.puml
+
+D	docs/Sprint2/US1001/US1001_CD.puml
+D	docs/Sprint2/US2002/US2002_CD.puml
+D	docs/Sprint2/US2002/US2002_MD.puml
+
+commit 9cf97d3db34d07f3508c80d52e8ff890b7e1c9e0
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Tue Apr 19 14:53:53 2022 +0100
+
+    update
+
+D	docs/Sprint2/US1001/US1001_MD.puml
+
+commit 7c3d6bda0b7bba687c691d6cc98c11122cc8ea41
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Tue Apr 19 13:38:19 2022 +0100
+
+    <L2L20-1> <L2L20-17> US-1001: Design: Updated US1001 SSD
+
+M	docs/Sprint2/US1001/US1001_SSD.puml
+
+commit abb30322c691cedf3f1189a37e9f1ecbe8fa7e47
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Apr 13 18:25:27 2022 +0100
+
+    US-G002: Analysis: Update Domain Model.
+
+M	docs/Sprint2/Domain Model/DM.puml
+
+commit 2ba5bcea65bab83c87d7342100d8264b4fc95de3
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Apr 13 17:26:44 2022 +0100
+
+    US-G002: Analysis: Update Domain Model.
+
+M	docs/Sprint2/Domain Model/DM.puml
+
+commit 4a31d765c2ad01c5dce98eabef8bb221737b9e33
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Apr 13 16:28:56 2022 +0100
+
+    app.common.console pom fix
+
+M	base.app.common.console/pom.xml
+A	base.core/target/base.core-1.4.0-SNAPSHOT.jar
+A	base.core/target/classes/eapli/base/AppSettings.class
+A	base.core/target/classes/eapli/base/Application.class
+A	base.core/target/classes/eapli/base/clientusermanagement/application/AcceptRefuseSignupFactory.class
+A	base.core/target/classes/eapli/base/clientusermanagement/application/AcceptRefuseSignupRequestController.class
+A	base.core/target/classes/eapli/base/clientusermanagement/application/AcceptRefuseSignupRequestControllerEventfullImpl.class
+A	base.core/target/classes/eapli/base/clientusermanagement/application/AcceptRefuseSignupRequestControllerTxImpl.class
+A	base.core/target/classes/eapli/base/clientusermanagement/application/ClientUserService.class
+A	base.core/target/classes/eapli/base/clientusermanagement/application/ListClientUsersController.class
+A	base.core/target/classes/eapli/base/clientusermanagement/application/eventhandlers/AddClientUserOnSignupAcceptedController.class
+A	base.core/target/classes/eapli/base/clientusermanagement/application/eventhandlers/NewUserRegisteredFromSignupWatchDog.class
+A	base.core/target/classes/eapli/base/clientusermanagement/domain/ApprovalStatus.class
+A	base.core/target/classes/eapli/base/clientusermanagement/domain/ClientUser.class
+A	base.core/target/classes/eapli/base/clientusermanagement/domain/ClientUserBuilder.class
+A	base.core/target/classes/eapli/base/clientusermanagement/domain/MecanographicNumber.class
+A	base.core/target/classes/eapli/base/clientusermanagement/domain/SignupRequest.class
+A	base.core/target/classes/eapli/base/clientusermanagement/domain/SignupRequestBuilder.class
+A	base.core/target/classes/eapli/base/clientusermanagement/domain/events/NewUserRegisteredFromSignupEvent.class
+A	base.core/target/classes/eapli/base/clientusermanagement/domain/events/SignupAcceptedEvent.class
+A	base.core/target/classes/eapli/base/clientusermanagement/repositories/ClientUserRepository.class
+A	base.core/target/classes/eapli/base/clientusermanagement/repositories/SignupRequestRepository.class
+A	base.core/target/classes/eapli/base/infrastructure/persistence/PersistenceContext.class
+A	base.core/target/classes/eapli/base/infrastructure/persistence/RepositoryFactory.class
+A	base.core/target/classes/eapli/base/myclientuser/application/MyClientUserService.class
+A	base.core/target/classes/eapli/base/myclientuser/application/SignupController.class
+A	base.core/target/classes/eapli/base/usermanagement/application/AddUserController.class
+A	base.core/target/classes/eapli/base/usermanagement/application/DeactivateUserController.class
+A	base.core/target/classes/eapli/base/usermanagement/application/ListUsersController.class
+A	base.core/target/classes/eapli/base/usermanagement/application/eventhandlers/AddUserOnSignupAcceptedController.class
+A	base.core/target/classes/eapli/base/usermanagement/application/eventhandlers/SignupAcceptedWatchDog.class
+A	base.core/target/classes/eapli/base/usermanagement/domain/BasePasswordPolicy$PasswordStrength.class
+A	base.core/target/classes/eapli/base/usermanagement/domain/BasePasswordPolicy.class
+A	base.core/target/classes/eapli/base/usermanagement/domain/BaseRoles.class
+A	base.core/target/classes/eapli/base/usermanagement/domain/UserBuilderHelper.class
+A	base.core/target/classes/ecafeteria.sample.properties
+A	base.core/target/dependency/FastInfoset-1.2.15.jar
+A	base.core/target/dependency/HikariCP-4.0.3.jar
+A	base.core/target/dependency/antlr-2.7.7.jar
+A	base.core/target/dependency/apiguardian-api-1.1.2.jar
+A	base.core/target/dependency/aspectjweaver-1.9.7.jar
+A	base.core/target/dependency/byte-buddy-1.10.7.jar
+A	base.core/target/dependency/classmate-1.5.1.jar
+A	base.core/target/dependency/commons-io-2.8.0.jar
+A	base.core/target/dependency/commons-lang3-3.12.0.jar
+A	base.core/target/dependency/dom4j-2.1.1.jar
+A	base.core/target/dependency/eapli.framework.core-v18.1.0_CORE.jar
+A	base.core/target/dependency/eapli.framework.infrastructure.authz-v17.4.0_AUTHZ.jar
+A	base.core/target/dependency/eapli.framework.infrastructure.pubsub-v16.7.0_PUBSUB.jar
+A	base.core/target/dependency/h2-1.4.200.jar
+A	base.core/target/dependency/hamcrest-core-1.3.jar
+A	base.core/target/dependency/hibernate-commons-annotations-5.1.0.Final.jar
+A	base.core/target/dependency/hibernate-core-5.4.14.Final.jar
+A	base.core/target/dependency/istack-commons-runtime-3.0.7.jar
+A	base.core/target/dependency/jackson-annotations-2.13.1.jar
+A	base.core/target/dependency/jackson-core-2.13.1.jar
+A	base.core/target/dependency/jackson-databind-2.13.1.jar
+A	base.core/target/dependency/jackson-datatype-jdk8-2.13.1.jar
+A	base.core/target/dependency/jackson-datatype-jsr310-2.13.1.jar
+A	base.core/target/dependency/jackson-module-parameter-names-2.13.1.jar
+A	base.core/target/dependency/jakarta.annotation-api-1.3.5.jar
+A	base.core/target/dependency/jakarta.persistence-api-2.2.3.jar
+A	base.core/target/dependency/jakarta.transaction-api-1.3.3.jar
+A	base.core/target/dependency/jandex-2.1.1.Final.jar
+A	base.core/target/dependency/javassist-3.24.0-GA.jar
+A	base.core/target/dependency/javax.activation-api-1.2.0.jar
+A	base.core/target/dependency/jaxb-api-2.3.1.jar
+A	base.core/target/dependency/jaxb-runtime-2.3.1.jar
+A	base.core/target/dependency/jboss-logging-3.3.2.Final.jar
+A	base.core/target/dependency/jul-to-slf4j-1.7.36.jar
+A	base.core/target/dependency/junit-4.13.2.jar
+A	base.core/target/dependency/junit-jupiter-api-5.8.2.jar
+A	base.core/target/dependency/junit-platform-commons-1.8.2.jar
+A	base.core/target/dependency/junit-platform-engine-1.8.2.jar
+A	base.core/target/dependency/junit-vintage-engine-5.8.2.jar
+A	base.core/target/dependency/log4j-api-2.17.1.jar
+A	base.core/target/dependency/log4j-to-slf4j-2.17.1.jar
+A	base.core/target/dependency/logback-classic-1.2.10.jar
+A	base.core/target/dependency/logback-core-1.2.10.jar
+A	base.core/target/dependency/opentest4j-1.2.0.jar
+A	base.core/target/dependency/slf4j-api-1.7.32.jar
+A	base.core/target/dependency/snakeyaml-1.29.jar
+A	base.core/target/dependency/spring-aop-5.3.16.jar
+A	base.core/target/dependency/spring-aspects-5.3.16.jar
+A	base.core/target/dependency/spring-beans-5.3.16.jar
+A	base.core/target/dependency/spring-boot-2.6.4.jar
+A	base.core/target/dependency/spring-boot-autoconfigure-2.6.4.jar
+A	base.core/target/dependency/spring-boot-starter-2.6.4.jar
+A	base.core/target/dependency/spring-boot-starter-aop-2.6.4.jar
+A	base.core/target/dependency/spring-boot-starter-data-jpa-2.6.4.jar
+A	base.core/target/dependency/spring-boot-starter-jdbc-2.6.4.jar
+A	base.core/target/dependency/spring-boot-starter-json-2.6.4.jar
+A	base.core/target/dependency/spring-boot-starter-logging-2.6.4.jar
+A	base.core/target/dependency/spring-boot-starter-security-2.6.4.jar
+A	base.core/target/dependency/spring-context-5.3.16.jar
+A	base.core/target/dependency/spring-core-5.3.16.jar
+A	base.core/target/dependency/spring-data-commons-2.6.2.jar
+A	base.core/target/dependency/spring-data-jpa-2.6.2.jar
+A	base.core/target/dependency/spring-expression-5.3.16.jar
+A	base.core/target/dependency/spring-jcl-5.3.16.jar
+A	base.core/target/dependency/spring-jdbc-5.3.16.jar
+A	base.core/target/dependency/spring-orm-5.3.16.jar
+A	base.core/target/dependency/spring-security-config-5.6.2.jar
+A	base.core/target/dependency/spring-security-core-5.6.2.jar
+A	base.core/target/dependency/spring-security-crypto-5.6.2.jar
+A	base.core/target/dependency/spring-security-web-5.6.2.jar
+A	base.core/target/dependency/spring-tx-5.3.16.jar
+A	base.core/target/dependency/spring-web-5.3.16.jar
+A	base.core/target/dependency/stax-ex-1.8.jar
+A	base.core/target/dependency/txw2-2.3.1.jar
+A	base.core/target/maven-archiver/pom.properties
+A	base.core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+A	base.core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+A	base.core/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+A	base.core/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+A	base.core/target/surefire-reports/TEST-eapli.base.clientusermanagement.domain.ClientUserTest.xml
+A	base.core/target/surefire-reports/eapli.base.clientusermanagement.domain.ClientUserTest.txt
+A	base.core/target/test-classes/eapli/base/clientusermanagement/domain/ClientUserTest.class
+A	base.persistence.impl/target/base.persistence.impl-1.4.0-SNAPSHOT.jar
+A	base.persistence.impl/target/classes/META-INF/persistence.xml
+A	base.persistence.impl/target/classes/eapli/base/persistence/impl/inmemory/InMemoryClientUserRepository.class
+A	base.persistence.impl/target/classes/eapli/base/persistence/impl/inmemory/InMemoryInitializer$LazyHolder.class
+A	base.persistence.impl/target/classes/eapli/base/persistence/impl/inmemory/InMemoryInitializer.class
+A	base.persistence.impl/target/classes/eapli/base/persistence/impl/inmemory/InMemoryRepositoryFactory.class
+A	base.persistence.impl/target/classes/eapli/base/persistence/impl/inmemory/InMemorySignupRequestRepository.class
+A	base.persistence.impl/target/classes/eapli/base/persistence/impl/jpa/BaseJpaReportingRepositoryBase.class
+A	base.persistence.impl/target/classes/eapli/base/persistence/impl/jpa/BasepaRepositoryBase.class
+A	base.persistence.impl/target/classes/eapli/base/persistence/impl/jpa/JpaClientUserRepository.class
+A	base.persistence.impl/target/classes/eapli/base/persistence/impl/jpa/JpaRepositoryFactory.class
+A	base.persistence.impl/target/classes/eapli/base/persistence/impl/jpa/JpaSignupRequestRepository.class
+A	base.persistence.impl/target/classes/eapli/base/persistence/impl/jpa/PersistenceSettings.class
+A	base.persistence.impl/target/dependency/FastInfoset-1.2.15.jar
+A	base.persistence.impl/target/dependency/HikariCP-4.0.3.jar
+A	base.persistence.impl/target/dependency/antlr-2.7.7.jar
+A	base.persistence.impl/target/dependency/apiguardian-api-1.1.2.jar
+A	base.persistence.impl/target/dependency/aspectjweaver-1.9.7.jar
+A	base.persistence.impl/target/dependency/base.bootstrappers-1.4.0-SNAPSHOT.jar
+A	base.persistence.impl/target/dependency/base.core-1.4.0-SNAPSHOT.jar
+A	base.persistence.impl/target/dependency/byte-buddy-1.10.7.jar
+A	base.persistence.impl/target/dependency/classmate-1.5.1.jar
+A	base.persistence.impl/target/dependency/commons-io-2.8.0.jar
+A	base.persistence.impl/target/dependency/commons-lang3-3.12.0.jar
+A	base.persistence.impl/target/dependency/dom4j-2.1.1.jar
+A	base.persistence.impl/target/dependency/eapli.framework.core-v18.1.0_CORE.jar
+A	base.persistence.impl/target/dependency/eapli.framework.infrastructure.authz-v17.4.0_AUTHZ.jar
+A	base.persistence.impl/target/dependency/eapli.framework.infrastructure.pubsub-v16.7.0_PUBSUB.jar
+A	base.persistence.impl/target/dependency/h2-1.4.200.jar
+A	base.persistence.impl/target/dependency/hamcrest-core-1.3.jar
+A	base.persistence.impl/target/dependency/hibernate-commons-annotations-5.1.0.Final.jar
+A	base.persistence.impl/target/dependency/hibernate-core-5.4.14.Final.jar
+A	base.persistence.impl/target/dependency/istack-commons-runtime-3.0.7.jar
+A	base.persistence.impl/target/dependency/jackson-annotations-2.13.1.jar
+A	base.persistence.impl/target/dependency/jackson-core-2.13.1.jar
+A	base.persistence.impl/target/dependency/jackson-databind-2.13.1.jar
+A	base.persistence.impl/target/dependency/jackson-datatype-jdk8-2.13.1.jar
+A	base.persistence.impl/target/dependency/jackson-datatype-jsr310-2.13.1.jar
+A	base.persistence.impl/target/dependency/jackson-module-parameter-names-2.13.1.jar
+A	base.persistence.impl/target/dependency/jakarta.annotation-api-1.3.5.jar
+A	base.persistence.impl/target/dependency/jakarta.persistence-api-2.2.3.jar
+A	base.persistence.impl/target/dependency/jakarta.transaction-api-1.3.3.jar
+A	base.persistence.impl/target/dependency/jandex-2.1.1.Final.jar
+A	base.persistence.impl/target/dependency/javassist-3.24.0-GA.jar
+A	base.persistence.impl/target/dependency/javax.activation-api-1.2.0.jar
+A	base.persistence.impl/target/dependency/jaxb-api-2.3.1.jar
+A	base.persistence.impl/target/dependency/jaxb-runtime-2.3.1.jar
+A	base.persistence.impl/target/dependency/jboss-logging-3.3.2.Final.jar
+A	base.persistence.impl/target/dependency/jul-to-slf4j-1.7.36.jar
+A	base.persistence.impl/target/dependency/junit-4.13.2.jar
+A	base.persistence.impl/target/dependency/junit-jupiter-api-5.8.2.jar
+A	base.persistence.impl/target/dependency/junit-platform-commons-1.8.2.jar
+A	base.persistence.impl/target/dependency/junit-platform-engine-1.8.2.jar
+A	base.persistence.impl/target/dependency/junit-vintage-engine-5.8.2.jar
+A	base.persistence.impl/target/dependency/log4j-api-2.17.1.jar
+A	base.persistence.impl/target/dependency/log4j-to-slf4j-2.17.1.jar
+A	base.persistence.impl/target/dependency/logback-classic-1.2.10.jar
+A	base.persistence.impl/target/dependency/logback-core-1.2.10.jar
+A	base.persistence.impl/target/dependency/opentest4j-1.2.0.jar
+A	base.persistence.impl/target/dependency/slf4j-api-1.7.32.jar
+A	base.persistence.impl/target/dependency/snakeyaml-1.29.jar
+A	base.persistence.impl/target/dependency/spring-aop-5.3.16.jar
+A	base.persistence.impl/target/dependency/spring-aspects-5.3.16.jar
+A	base.persistence.impl/target/dependency/spring-beans-5.3.16.jar
+A	base.persistence.impl/target/dependency/spring-boot-2.6.4.jar
+A	base.persistence.impl/target/dependency/spring-boot-autoconfigure-2.6.4.jar
+A	base.persistence.impl/target/dependency/spring-boot-starter-2.6.4.jar
+A	base.persistence.impl/target/dependency/spring-boot-starter-aop-2.6.4.jar
+A	base.persistence.impl/target/dependency/spring-boot-starter-data-jpa-2.6.4.jar
+A	base.persistence.impl/target/dependency/spring-boot-starter-jdbc-2.6.4.jar
+A	base.persistence.impl/target/dependency/spring-boot-starter-json-2.6.4.jar
+A	base.persistence.impl/target/dependency/spring-boot-starter-logging-2.6.4.jar
+A	base.persistence.impl/target/dependency/spring-boot-starter-security-2.6.4.jar
+A	base.persistence.impl/target/dependency/spring-context-5.3.16.jar
+A	base.persistence.impl/target/dependency/spring-core-5.3.16.jar
+A	base.persistence.impl/target/dependency/spring-data-commons-2.6.2.jar
+A	base.persistence.impl/target/dependency/spring-data-jpa-2.6.2.jar
+A	base.persistence.impl/target/dependency/spring-expression-5.3.16.jar
+A	base.persistence.impl/target/dependency/spring-jcl-5.3.16.jar
+A	base.persistence.impl/target/dependency/spring-jdbc-5.3.16.jar
+A	base.persistence.impl/target/dependency/spring-orm-5.3.16.jar
+A	base.persistence.impl/target/dependency/spring-security-config-5.6.2.jar
+A	base.persistence.impl/target/dependency/spring-security-core-5.6.2.jar
+A	base.persistence.impl/target/dependency/spring-security-crypto-5.6.2.jar
+A	base.persistence.impl/target/dependency/spring-security-web-5.6.2.jar
+A	base.persistence.impl/target/dependency/spring-tx-5.3.16.jar
+A	base.persistence.impl/target/dependency/spring-web-5.3.16.jar
+A	base.persistence.impl/target/dependency/stax-ex-1.8.jar
+A	base.persistence.impl/target/dependency/txw2-2.3.1.jar
+A	base.persistence.impl/target/maven-archiver/pom.properties
+A	base.persistence.impl/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+A	base.persistence.impl/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+A	target/dependency/FastInfoset-1.2.15.jar
+A	target/dependency/HikariCP-4.0.3.jar
+A	target/dependency/antlr-2.7.7.jar
+A	target/dependency/apiguardian-api-1.1.2.jar
+A	target/dependency/aspectjweaver-1.9.7.jar
+A	target/dependency/byte-buddy-1.10.7.jar
+A	target/dependency/classmate-1.5.1.jar
+A	target/dependency/commons-io-2.8.0.jar
+A	target/dependency/commons-lang3-3.12.0.jar
+A	target/dependency/dom4j-2.1.1.jar
+A	target/dependency/eapli.framework.core-v18.1.0_CORE.jar
+A	target/dependency/eapli.framework.infrastructure.authz-v17.4.0_AUTHZ.jar
+A	target/dependency/eapli.framework.infrastructure.pubsub-v16.7.0_PUBSUB.jar
+A	target/dependency/h2-1.4.200.jar
+A	target/dependency/hamcrest-core-1.3.jar
+A	target/dependency/hibernate-commons-annotations-5.1.0.Final.jar
+A	target/dependency/hibernate-core-5.4.14.Final.jar
+A	target/dependency/istack-commons-runtime-3.0.7.jar
+A	target/dependency/jackson-annotations-2.13.1.jar
+A	target/dependency/jackson-core-2.13.1.jar
+A	target/dependency/jackson-databind-2.13.1.jar
+A	target/dependency/jackson-datatype-jdk8-2.13.1.jar
+A	target/dependency/jackson-datatype-jsr310-2.13.1.jar
+A	target/dependency/jackson-module-parameter-names-2.13.1.jar
+A	target/dependency/jakarta.annotation-api-1.3.5.jar
+A	target/dependency/jakarta.persistence-api-2.2.3.jar
+A	target/dependency/jakarta.transaction-api-1.3.3.jar
+A	target/dependency/jandex-2.1.1.Final.jar
+A	target/dependency/javassist-3.24.0-GA.jar
+A	target/dependency/javax.activation-api-1.2.0.jar
+A	target/dependency/jaxb-api-2.3.1.jar
+A	target/dependency/jaxb-runtime-2.3.1.jar
+A	target/dependency/jboss-logging-3.3.2.Final.jar
+A	target/dependency/jul-to-slf4j-1.7.36.jar
+A	target/dependency/junit-4.13.2.jar
+A	target/dependency/junit-jupiter-api-5.8.2.jar
+A	target/dependency/junit-platform-commons-1.8.2.jar
+A	target/dependency/junit-platform-engine-1.8.2.jar
+A	target/dependency/junit-vintage-engine-5.8.2.jar
+A	target/dependency/log4j-api-2.17.1.jar
+A	target/dependency/log4j-to-slf4j-2.17.1.jar
+A	target/dependency/logback-classic-1.2.10.jar
+A	target/dependency/logback-core-1.2.10.jar
+A	target/dependency/opentest4j-1.2.0.jar
+A	target/dependency/slf4j-api-1.7.32.jar
+A	target/dependency/snakeyaml-1.29.jar
+A	target/dependency/spring-aop-5.3.16.jar
+A	target/dependency/spring-aspects-5.3.16.jar
+A	target/dependency/spring-beans-5.3.16.jar
+A	target/dependency/spring-boot-2.6.4.jar
+A	target/dependency/spring-boot-autoconfigure-2.6.4.jar
+A	target/dependency/spring-boot-starter-2.6.4.jar
+A	target/dependency/spring-boot-starter-aop-2.6.4.jar
+A	target/dependency/spring-boot-starter-data-jpa-2.6.4.jar
+A	target/dependency/spring-boot-starter-jdbc-2.6.4.jar
+A	target/dependency/spring-boot-starter-json-2.6.4.jar
+A	target/dependency/spring-boot-starter-logging-2.6.4.jar
+A	target/dependency/spring-boot-starter-security-2.6.4.jar
+A	target/dependency/spring-context-5.3.16.jar
+A	target/dependency/spring-core-5.3.16.jar
+A	target/dependency/spring-data-commons-2.6.2.jar
+A	target/dependency/spring-data-jpa-2.6.2.jar
+A	target/dependency/spring-expression-5.3.16.jar
+A	target/dependency/spring-jcl-5.3.16.jar
+A	target/dependency/spring-jdbc-5.3.16.jar
+A	target/dependency/spring-orm-5.3.16.jar
+A	target/dependency/spring-security-config-5.6.2.jar
+A	target/dependency/spring-security-core-5.6.2.jar
+A	target/dependency/spring-security-crypto-5.6.2.jar
+A	target/dependency/spring-security-web-5.6.2.jar
+A	target/dependency/spring-tx-5.3.16.jar
+A	target/dependency/spring-web-5.3.16.jar
+A	target/dependency/stax-ex-1.8.jar
+A	target/dependency/txw2-2.3.1.jar
+
+commit f6a4a790b8c178537101893b7f8e279368b1d82f
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Apr 10 21:44:40 2022 +0100
+
+    US-G002: Analysis: Update Domain Model.
+
+A	docs/Sprint1/Domain Model/DM.svg
+
+commit 9c89d2d46a9e1e9075b4e80b544d93e9f0f611b4
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Apr 10 00:28:26 2022 +0100
+
+    US-G002: Analysis: Update Domain Model.
+
+M	docs/Sprint1/Domain Model/DM.puml
+
+commit bedb40d041881e0d6b973a45ff3ce721f9d8a933
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Apr 6 18:55:42 2022 +0100
+
+    Initial commit
+
+A	README.md
+A	base.app.backoffice.console/.gitignore
+A	base.app.backoffice.console/pom.xml
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/BaseBackoffice.java
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/MainMenu.java
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/authz/AddUserAction.java
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/authz/AddUserUI.java
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/authz/DeactivateUserAction.java
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/authz/DeactivateUserUI.java
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/authz/ListUsersAction.java
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/authz/ListUsersUI.java
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/authz/SystemUserPrinter.java
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/clientuser/AcceptRefuseSignupRequestAction.java
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/clientuser/AcceptRefuseSignupRequestUI.java
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/clientuser/SignupRequestPrinter.java
+A	base.app.backoffice.console/src/main/resources/application.properties
+A	base.app.backoffice.console/src/main/resources/logback.xml
+A	base.app.backoffice.console/src/test/java/eapli/base/app/other/console/BaseBackofficeTest.java
+A	base.app.bootstrap/.gitignore
+A	base.app.bootstrap/pom.xml
+A	base.app.bootstrap/src/main/java/eapli/base/app/bootstrap/BaseBootstrap.java
+A	base.app.bootstrap/src/main/resources/application.properties
+A	base.app.bootstrap/src/main/resources/logback.xml
+A	base.app.common.console/.gitignore
+A	base.app.common.console/pom.xml
+A	base.app.common.console/src/main/java/eapli/base/app/common/console/BaseApplication.java
+A	base.app.common.console/src/main/java/eapli/base/app/common/console/presentation/authz/ChangePasswordUI.java
+A	base.app.common.console/src/main/java/eapli/base/app/common/console/presentation/authz/LoginAction.java
+A	base.app.common.console/src/main/java/eapli/base/app/common/console/presentation/authz/LoginUI.java
+A	base.app.common.console/src/main/java/eapli/base/app/common/console/presentation/authz/LogoutAction.java
+A	base.app.common.console/src/main/java/eapli/base/app/common/console/presentation/authz/LogoutUI.java
+A	base.app.common.console/src/main/java/eapli/base/app/common/console/presentation/authz/MyUserMenu.java
+A	base.app.common.console/src/test/java/eapli/base/consoleapp/common/AppTest.java
+A	base.app.other.console/.gitignore
+A	base.app.other.console/pom.xml
+A	base.app.other.console/src/main/java/eapli/base/app/other/console/OtherApp.java
+A	base.app.other.console/src/main/java/eapli/base/app/other/console/presentation/MainMenu.java
+A	base.app.other.console/src/main/resources/application.properties
+A	base.app.other.console/src/main/resources/logback.xml
+A	base.app.other.console/src/test/java/eapli/base/app/other/console/OtherAppTest.java
+A	base.app.user.console/.gitignore
+A	base.app.user.console/pom.xml
+A	base.app.user.console/src/main/java/eapli/base/app/user/console/BaseUserApp.java
+A	base.app.user.console/src/main/java/eapli/base/app/user/console/presentation/ClientUserBaseUI.java
+A	base.app.user.console/src/main/java/eapli/base/app/user/console/presentation/FrontMenu.java
+A	base.app.user.console/src/main/java/eapli/base/app/user/console/presentation/MainMenu.java
+A	base.app.user.console/src/main/java/eapli/base/app/user/console/presentation/myuser/SignupRequestAction.java
+A	base.app.user.console/src/main/java/eapli/base/app/user/console/presentation/myuser/SignupRequestUI.java
+A	base.app.user.console/src/main/java/eapli/base/app/user/console/presentation/myuser/UserDataWidget.java
+A	base.app.user.console/src/main/resources/application.properties
+A	base.app.user.console/src/main/resources/logback.xml
+A	base.app.user.console/src/test/java/eapli/base/utente/consoleapp/AppTest.java
+A	base.bootstrappers/.gitignore
+A	base.bootstrappers/pom.xml
+A	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/BaseBootstrapper.java
+A	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/MasterUsersBootstrapper.java
+A	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/TestDataConstants.java
+A	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/UsersBootstrapperBase.java
+A	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/BackofficeUsersBootstrapper.java
+A	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/BaseDemoBootstrapper.java
+A	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/ClientUserBootstrapper.java
+A	base.bootstrappers/src/main/java/eapli/base/infrastructure/smoketests/BaseDemoSmokeTester.java
+A	base.bootstrappers/src/main/resources/application.properties
+A	base.bootstrappers/src/test/java/eapli/base/bootstrapapp/AppTest.java
+A	base.core/pom.xml
+A	base.core/src/main/java/eapli/base/AppSettings.java
+A	base.core/src/main/java/eapli/base/Application.java
+A	base.core/src/main/java/eapli/base/clientusermanagement/application/AcceptRefuseSignupFactory.java
+A	base.core/src/main/java/eapli/base/clientusermanagement/application/AcceptRefuseSignupRequestController.java
+A	base.core/src/main/java/eapli/base/clientusermanagement/application/AcceptRefuseSignupRequestControllerEventfullImpl.java
+A	base.core/src/main/java/eapli/base/clientusermanagement/application/AcceptRefuseSignupRequestControllerTxImpl.java
+A	base.core/src/main/java/eapli/base/clientusermanagement/application/ClientUserService.java
+A	base.core/src/main/java/eapli/base/clientusermanagement/application/ListClientUsersController.java
+A	base.core/src/main/java/eapli/base/clientusermanagement/application/eventhandlers/AddClientUserOnSignupAcceptedController.java
+A	base.core/src/main/java/eapli/base/clientusermanagement/application/eventhandlers/NewUserRegisteredFromSignupWatchDog.java
+A	base.core/src/main/java/eapli/base/clientusermanagement/domain/ApprovalStatus.java
+A	base.core/src/main/java/eapli/base/clientusermanagement/domain/ClientUser.java
+A	base.core/src/main/java/eapli/base/clientusermanagement/domain/ClientUserBuilder.java
+A	base.core/src/main/java/eapli/base/clientusermanagement/domain/MecanographicNumber.java
+A	base.core/src/main/java/eapli/base/clientusermanagement/domain/SignupRequest.java
+A	base.core/src/main/java/eapli/base/clientusermanagement/domain/SignupRequestBuilder.java
+A	base.core/src/main/java/eapli/base/clientusermanagement/domain/events/NewUserRegisteredFromSignupEvent.java
+A	base.core/src/main/java/eapli/base/clientusermanagement/domain/events/SignupAcceptedEvent.java
+A	base.core/src/main/java/eapli/base/clientusermanagement/repositories/ClientUserRepository.java
+A	base.core/src/main/java/eapli/base/clientusermanagement/repositories/SignupRequestRepository.java
+A	base.core/src/main/java/eapli/base/infrastructure/persistence/PersistenceContext.java
+A	base.core/src/main/java/eapli/base/infrastructure/persistence/RepositoryFactory.java
+A	base.core/src/main/java/eapli/base/myclientuser/application/MyClientUserService.java
+A	base.core/src/main/java/eapli/base/myclientuser/application/SignupController.java
+A	base.core/src/main/java/eapli/base/usermanagement/application/AddUserController.java
+A	base.core/src/main/java/eapli/base/usermanagement/application/DeactivateUserController.java
+A	base.core/src/main/java/eapli/base/usermanagement/application/ListUsersController.java
+A	base.core/src/main/java/eapli/base/usermanagement/application/eventhandlers/AddUserOnSignupAcceptedController.java
+A	base.core/src/main/java/eapli/base/usermanagement/application/eventhandlers/SignupAcceptedWatchDog.java
+A	base.core/src/main/java/eapli/base/usermanagement/domain/BasePasswordPolicy.java
+A	base.core/src/main/java/eapli/base/usermanagement/domain/BaseRoles.java
+A	base.core/src/main/java/eapli/base/usermanagement/domain/UserBuilderHelper.java
+A	base.core/src/main/resources/ecafeteria.sample.properties
+A	base.core/src/test/java/eapli/base/clientusermanagement/domain/ClientUserTest.java
+A	base.persistence.impl/pom.xml
+A	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryClientUserRepository.java
+A	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryInitializer.java
+A	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryRepositoryFactory.java
+A	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemorySignupRequestRepository.java
+A	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/BaseJpaReportingRepositoryBase.java
+A	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/BasepaRepositoryBase.java
+A	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaClientUserRepository.java
+A	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaRepositoryFactory.java
+A	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaSignupRequestRepository.java
+A	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/PersistenceSettings.java
+A	base.persistence.impl/src/main/resources/META-INF/persistence.xml
+A	build-all.bat
+A	build-all.sh
+A	license.txt
+A	pipeline.bat
+A	pom.xml
+A	quickbuild.bat
+A	rebuild-all.bat
+A	rebuild-all.sh
+A	run-backoffice.bat
+A	run-backoffice.sh
+A	run-bootstrap.bat
+A	run-bootstrap.sh
+A	run-other.bat
+A	run-other.sh
+A	run-user.bat
+A	run-user.sh
+
+commit 9082e2d9538e117185f139e228aa3e399c43c8c3
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Mon Apr 4 16:12:26 2022 +0100
+
+    US-G002: Analysis: Add Domain Model.
+
+A	docs/Sprint1/Domain Model/DM.puml

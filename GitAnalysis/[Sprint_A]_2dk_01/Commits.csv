@@ -1,0 +1,303 @@
+3e01a12,2022-05-01 23:57:01 +0100,Marta Portugal,1201845@isep.ipp.pt,changes to make us work
+7fc8924,2022-05-01 22:50:55 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US1003_CD.svg and US1005_CD.svg
+6d19875,2022-05-01 22:48:45 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-9> SVG Files
+9a6009c,2022-05-01 22:43:40 +0100,João Tiago Araújo,1200584@isep.ipp.pt,updated tests
+a67795d,2022-05-01 22:34:54 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Domain Model
+0c76bdd,2022-05-01 22:34:18 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> ProcessoEngenhariaFuncionalidade.md
+077ccab,2022-05-01 22:28:50 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Tests for domain classes
+3256fe3,2022-05-01 22:24:53 +0100,Maria Flores,1201615@isep.ipp.pt,Presentation ppt
+ecea947,2022-05-01 22:24:38 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-6> US9001- concluded
+9605810,2022-05-01 22:23:52 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: updated UI
+0198dc7,2022-05-01 22:15:15 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: update ProductPriceDetail and bootstrapper
+a4d1008,2022-05-01 21:43:12 +0100,João Tiago Araújo,1200584@isep.ipp.pt,JpaProductRepository update
+696863e,2022-05-01 21:27:11 +0100,Paulo Proen�a,prp@isep.ipp.pt,Repository Analysis
+8fe68e7,2022-05-01 21:23:37 +0100,João Tiago Araújo,1200584@isep.ipp.pt,fixed ProductOrderBootstrapper
+45c9c3f,2022-05-01 21:22:48 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: JpaProductRepository
+433fe9e,2022-05-01 21:07:36 +0100,Rui Dias,1200963@isep.ipp.pt,General bootstrap
+1b2a6d2,2022-05-01 20:40:39 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: update domain classes
+3e19c95,2022-05-01 20:40:31 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: update domain classes
+6ea7211,2022-05-01 20:40:13 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: update domain classes
+8607caa,2022-05-01 20:39:37 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Tests
+5f039dc,2022-05-01 20:39:31 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Tests
+dcad8f8,2022-05-01 20:39:15 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Tests
+d553fa0,2022-05-01 20:35:24 +0100,João Tiago Araújo,1200584@isep.ipp.pt,DataModel.svg
+05305d6,2022-05-01 20:22:42 +0100,Marta Portugal,1201845@isep.ipp.pt,change and addition of tests on order domain
+267d5c6,2022-05-01 19:57:51 +0100,Marta Portugal,1201845@isep.ipp.pt,change on classes CD and addition of tests
+19a2d7f,2022-05-01 19:51:57 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Customer bootstraper changes
+946e127,2022-05-01 19:29:12 +0100,João Tiago Araújo,1200584@isep.ipp.pt,fixed imports
+8f238aa,2022-05-01 18:51:32 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Customer email added to string and file to store
+067c69a,2022-05-01 18:51:04 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-8> Implementation: class AGV test
+63d4be7,2022-05-01 18:37:24 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Customer Controller, classes and UI finished
+7e446fb,2022-05-01 18:35:32 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-8> Implementation: class Identifier test
+18e4256,2022-05-01 18:27:40 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001 Implementation: class Shelf test
+78df604,2022-05-01 18:17:16 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001 Implementation: class AGVDock test
+a51c14e,2022-05-01 18:05:40 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001 Implementation: class plan test
+0cea548,2022-05-01 17:56:02 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001 Implementation: class row test
+5d523f2,2022-05-01 17:48:56 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001 Implementation: class aisle test
+8e44470,2022-05-01 17:34:48 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001 Implementation: class warehouse test
+6a2a0d4,2022-05-01 17:25:34 +0100,João Tiago Araújo,1200584@isep.ipp.pt,persistence.xml update
+9809e6f,2022-05-01 17:22:36 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-7> US1900: Implementation: updated bootstrap
+10c68b6,2022-05-01 17:03:39 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-7> US1900: Implementation: updated bootstrap
+da05f4b,2022-05-01 16:56:13 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Customer bootstraper changes
+954b8f0,2022-05-01 16:49:15 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001 Implementation: class warehouse ID test
+27b01de,2022-05-01 16:33:00 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Register customer controller changes
+3114005,2022-05-01 15:45:33 +0100,Marta Portugal,1201845@isep.ipp.pt,1900 bruno's us for the bootstrapper, error cloning the projrct so I am pushing the classes for him
+5147e0d,2022-05-01 15:37:09 +0100,Marta Portugal,1201845@isep.ipp.pt,tests for order
+b2d9cd8,2022-05-01 14:54:16 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-9> Category code limit change
+4646cda,2022-05-01 13:59:16 +0100,Marta Portugal,1201845@isep.ipp.pt,tests for order and remove get method from order
+cdc7c73,2022-05-01 13:45:11 +0100,Rui Dias,1200963@isep.ipp.pt,General - refactor error correction
+9291b0c,2022-05-01 13:41:08 +0100,Marta Portugal,1201845@isep.ipp.pt,tests for IDs and remove one get method
+76149da,2022-05-01 12:55:15 +0100,Marta Portugal,1201845@isep.ipp.pt,pom correction for junit and tests for IDs
+92ff53a,2022-05-01 12:38:00 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: updated Product, Controller and UI
+7d5a94a,2022-05-01 12:37:31 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: commented Builder and Service
+830b783,2022-05-01 10:55:38 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: updated product, builder, service, controller and UI
+33e36c3,2022-05-01 06:34:08 +0100,Marta Portugal,1201845@isep.ipp.pt,productorder survey removed
+c20d307,2022-04-30 22:57:55 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Analysis update
+6a851f6,2022-04-30 22:57:34 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-8> US2002: Analysis and Design update
+86f8c89,2022-04-30 22:56:54 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Domain model design
+17b0c88,2022-04-30 22:38:38 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: updated Category and Product
+1fc89e7,2022-04-30 22:38:06 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: updated builder, service, controller and UI
+a04b486,2022-04-30 22:00:03 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-8> US2002: Implementation: updated Controller, UI and domain classes
+c9822c9,2022-04-30 21:04:30 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-5> fixed service AGVDock
+f7285aa,2022-04-30 20:53:34 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001 Implementation: corrections
+8fc96c5,2022-04-30 20:48:49 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001 Implementation: corrections
+265bed1,2022-04-30 20:24:24 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-5> fixed ui and json file
+48c147d,2022-04-30 12:59:09 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-9> - Category builder addition and changes to ui and controller
+e9610d3,2022-04-30 12:31:02 +0100,João Tiago Araújo,1200584@isep.ipp.pt,updated MainMenu
+bbae5e5,2022-04-30 12:30:47 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: update Controller
+5c5c685,2022-04-30 12:04:57 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Design: update CD
+60c28c0,2022-04-30 11:34:30 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-15> US2001 Design:SSD.svg
+d7a40e0,2022-04-30 11:12:45 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001 Implementation: corrections
+37b297f,2022-04-30 11:03:04 +0100,Marta Portugal,1201845@isep.ipp.pt,main menu aleration
+840361d,2022-04-30 10:48:39 +0100,Marta Portugal,1201845@isep.ipp.pt,removing @column
+f0331a3,2022-04-30 10:41:52 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-8> US2002: Implementation: added AGV to persistence.xml
+fb7a715,2022-04-30 10:35:36 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Design: fixed SD
+ee0aceb,2022-04-30 10:35:12 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-8> US2002: Design: added CD and fixed SD
+97d7fa0,2022-04-30 10:34:12 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-8> US2002: Analysis: updated US2002.md
+b92aa69,2022-04-30 10:31:18 +0100,Marta Portugal,1201845@isep.ipp.pt,removing @embedable from enums and removing shippingCost from SHippingMethod and making it an enum
+2cc3463,2022-04-30 10:30:45 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> - Customer minor fixes and money value object atribute override
+70b4587,2022-04-30 10:07:42 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-8> US2002: Implementation: updated AGV and AGVBuilder
+29f1873,2022-04-30 10:00:18 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: public for protected constructor in Product class
+c4972fe,2022-04-30 00:31:16 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> JSON file
+4c1558d,2022-04-30 00:30:24 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> Implementation US2001: classes of domain
+d906fbc,2022-04-30 00:30:03 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> Implementation US2001: classes of application
+7295d8f,2022-04-30 00:09:48 +0100,Marta Portugal,1201845@isep.ipp.pt,moving methods from ui and controller to services us 1002 and 1004
+48390d4,2022-04-29 23:46:46 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> Implementation US2001: classes of UI
+be51c1b,2022-04-29 22:42:19 +0100,Marta Portugal,1201845@isep.ipp.pt,Changing empty constructors from public to protected
+ba8c0d8,2022-04-29 20:07:59 +0100,Rui Dias,1200963@isep.ipp.pt,General - money value object fix
+14bbfd9,2022-04-29 19:32:18 +0100,Marta Portugal,1201845@isep.ipp.pt,Ading constructors to some classes, not finished UI for us 1004
+c4d3f28,2022-04-29 16:36:40 +0100,Marta Portugal,1201845@isep.ipp.pt,persistence xml
+7c654d3,2022-04-29 16:36:08 +0100,Marta Portugal,1201845@isep.ipp.pt,price table mudanca de variaveis
+9060198,2022-04-29 16:30:09 +0100,Marta Portugal,1201845@isep.ipp.pt,tentativa correcao de erro ao correr, e lineorder para entity e mudan�a de todos os atributos com nomes iguais
+e5a9b23,2022-04-29 16:22:34 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Revert "<L2L20-1> US1001: Implementation: JpaRepositoryFactory"
+a2b4685,2022-04-29 16:15:15 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-8> US2002: Implementation: added ConfigureAGVUI to Main Menu
+5b7b5d5,2022-04-29 15:52:55 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: JpaRepositoryFactory
+702807b,2022-04-29 15:51:45 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: added SpecifyNewProductUI to Main Menu
+3385b29,2022-04-29 15:51:07 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-8> US2002: Implementation: updated application and domain classes
+964333b,2022-04-29 15:32:59 +0100,Marta Portugal,1201845@isep.ipp.pt,addition of methods
+23471ea,2022-04-29 15:31:11 +0100,João Tiago Araújo,1200584@isep.ipp.pt,added imports to NewProductOrderUI and RegisterCustomerUI
+5f44d1f,2022-04-29 15:25:25 +0100,Rui Dias,1200963@isep.ipp.pt,General Utils folder rename
+611d4b6,2022-04-29 15:19:32 +0100,Rui Dias,1200963@isep.ipp.pt,General Utils folder updates
+78d6fa4,2022-04-29 15:18:16 +0100,Marta Portugal,1201845@isep.ipp.pt,push to correct some mistakes of conection
+ae660fb,2022-04-29 15:17:11 +0100,Marta Portugal,1201845@isep.ipp.pt,payment method agian enum, and addition of methods in controller
+b48c810,2022-04-29 14:23:08 +0100,Marta Portugal,1201845@isep.ipp.pt,correcting some methods and changing to money
+5cc2d29,2022-04-29 14:20:04 +0100,Marta Portugal,1201845@isep.ipp.pt,commented classes
+a2e57b7,2022-04-29 14:16:37 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Customer domain classes tests and protected constructor
+85913c2,2022-04-29 14:10:17 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-8> US2002: Implementation: Added ConfigureAGVController, ConfigureAGVUI
+d5da50e,2022-04-29 14:09:52 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-8> US2002: Implementation: Added enum Status, updated Builder and Service
+41d1e99,2022-04-29 14:09:12 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-8> US2002: Implementation: Updated AGV, AGVDock, MaxWeightCarry, Model and Task
+cfffe1e,2022-04-29 14:07:57 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-9> Category description, controller and UI
+c9565c5,2022-04-29 12:08:00 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: Updated Controller and UI
+f804891,2022-04-29 12:07:33 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: Updated Dimension, Product, ProductService and ProductBuilder
+9b08dc2,2022-04-29 08:58:41 +0100,Marta Portugal,1201845@isep.ipp.pt,Changing the variables of prices from type double to type money
+6639dc5,2022-04-28 23:46:27 +0100,Marta Portugal,1201845@isep.ipp.pt,corrections of warnings
+5f412a3,2022-04-28 23:46:25 +0100,João Tiago Araújo,1200584@isep.ipp.pt,updated RepositoryFactory
+3dd6021,2022-04-28 23:45:01 +0100,João Tiago Araújo,1200584@isep.ipp.pt,updated JpaRepositoryFactory
+783019e,2022-04-28 23:36:39 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on value objects
+5874f68,2022-04-28 23:30:33 +0100,João Tiago Araújo,1200584@isep.ipp.pt,update ecafeteria.sample.properties
+976a64f,2022-04-28 23:19:58 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Customer changes to classes
+ea00829,2022-04-28 21:23:20 +0100,Marta Portugal,1201845@isep.ipp.pt,persistence productOrder
+77c3f60,2022-04-28 20:57:59 +0100,Marta Portugal,1201845@isep.ipp.pt,error correction customer
+90724c1,2022-04-28 20:54:07 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Customer controller changes
+41dc6d6,2022-04-28 20:50:53 +0100,Marta Portugal,1201845@isep.ipp.pt,us1002 service and ui for catalog
+416fdf4,2022-04-28 20:50:03 +0100,Marta Portugal,1201845@isep.ipp.pt,alterations in customer and product sorter
+b265766,2022-04-28 20:48:35 +0100,Marta Portugal,1201845@isep.ipp.pt,category findByCode method
+4f35e4f,2022-04-28 20:47:48 +0100,Marta Portugal,1201845@isep.ipp.pt,UI and mainMenu us1002 and 1004 alterations
+8582eb5,2022-04-28 20:46:18 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Customer classes change in name
+46906f4,2022-04-28 18:33:06 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-9> Category repository and controller
+7a63007,2022-04-28 18:26:56 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-9> Category repository and controller plus utils folder
+49992b4,2022-04-28 18:16:47 +0100,Marta Portugal,1201845@isep.ipp.pt,change of name class Order to ProductOrder
+e92e73d,2022-04-28 18:12:31 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> Implementation US2001: classes of application
+7e2204d,2022-04-28 11:46:45 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-8> US2002: Implementation: updated JpaAGVRepository
+022e218,2022-04-28 11:44:03 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-8> US2002: Implementation: added AGV repository, builder and service
+1b965e7,2022-04-28 11:43:08 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-8> US2002: Implementation: updated domain classes
+42bdba0,2022-04-28 11:42:46 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: updated domain classes
+3b498ec,2022-04-28 11:42:22 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: updated domain classes
+4560354,2022-04-28 02:52:05 +0100,Marta Portugal,1201845@isep.ipp.pt,finalizing the view catalog us ui
+283fd83,2022-04-28 02:51:31 +0100,Marta Portugal,1201845@isep.ipp.pt,order and main menu alteration and addition of UI
+3ea33ba,2022-04-28 00:39:28 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> Implementation US2001: classes of domain
+4b72fc8,2022-04-28 00:37:34 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> Implementation US2001: classes of domain
+7b92b67,2022-04-28 00:17:01 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-27> <L2L20-28> Analysis and design for defining a new category
+ee2f44e,2022-04-27 20:16:27 +0100,Marta Portugal,1201845@isep.ipp.pt,Product class correction
+27b8d45,2022-04-27 20:10:53 +0100,Rui Dias,1200963@isep.ipp.pt,General - comparable and equals integration
+a919bf9,2022-04-27 18:56:43 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Columns changed acccess
+9f205e8,2022-04-27 18:53:30 +0100,Marta Portugal,1201845@isep.ipp.pt,changes in ID classes implement equals
+e417992,2022-04-27 18:34:12 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: Created ProductBuilder and ProductService
+ab36bad,2022-04-27 18:33:14 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: updated Product and barcode
+591fbce,2022-04-27 18:18:33 +0100,João Tiago Araújo,1200584@isep.ipp.pt,building alteration
+8446819,2022-04-27 17:16:24 +0100,Marta Portugal,1201845@isep.ipp.pt,order UI and class order alterations
+a86ad72,2022-04-27 17:15:45 +0100,Marta Portugal,1201845@isep.ipp.pt,product repository and in memory and UI alterations
+ebaeb54,2022-04-27 17:00:42 +0100,Maria Flores,1201615@isep.ipp.pt,class BaseRoles: add Sales Clerk and Warehouse Employee
+58473e8,2022-04-27 16:53:46 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Customer inMemory and JpaCustomerRepository changes
+6cc5881,2022-04-27 16:42:20 +0100,João Tiago Araújo,1200584@isep.ipp.pt,building alteration
+08f7939,2022-04-27 16:38:44 +0100,João Tiago Araújo,1200584@isep.ipp.pt,building alterations
+f821a56,2022-04-27 16:32:53 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001: Implementation (create UploadFileUI)
+dd348a1,2022-04-27 16:17:49 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Customer new methods in repository and persistence changes
+eb77efa,2022-04-27 11:51:19 +0100,João Tiago Araújo,1200584@isep.ipp.pt,change folders to warehousemanagement
+6755ba9,2022-04-27 11:08:18 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-8> US2002: Implementation: Implemented Model, MaxWeightCarry, Route, Task classes
+26db4f3,2022-04-27 11:07:23 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-8> US2002: Design: updated US2002_SD
+b032a91,2022-04-27 11:00:40 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: created Bin.java
+af31244,2022-04-27 10:49:41 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Design: Updated US1001_SD
+9655ad5,2022-04-27 00:37:51 +0100,Marta Portugal,1201845@isep.ipp.pt,warehouse error corrections changing folders
+132f6ab,2022-04-27 00:37:26 +0100,Marta Portugal,1201845@isep.ipp.pt,warehouse changing folders
+a28e7a1,2022-04-27 00:33:20 +0100,Marta Portugal,1201845@isep.ipp.pt,merge
+3524b94,2022-04-27 00:30:49 +0100,Marta Portugal,1201845@isep.ipp.pt,ui base implementation, and correction category and product
+7f7382a,2022-04-27 00:17:03 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001: errors package
+d91efdd,2022-04-27 00:12:47 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001 Implementation: class uploadFile(update)
+f4c4e1c,2022-04-27 00:11:38 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001 Implementation: class uploadFile(update)
+3bc2f47,2022-04-27 00:11:02 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001 Implementation: classes of domain (corrections in the warehouse's value objects )
+fed2542,2022-04-27 00:07:37 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-20> Design: domain model(corrections and changes in the warehouse class )
+78f97d9,2022-04-27 00:04:30 +0100,Marta Portugal,1201845@isep.ipp.pt,repositories alteration
+f90353c,2022-04-27 00:04:03 +0100,Marta Portugal,1201845@isep.ipp.pt,warehouse corrections resultants from moving pacakge
+d249cb6,2022-04-27 00:03:25 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Added Utils.java
+26c840f,2022-04-27 00:01:55 +0100,Marta Portugal,1201845@isep.ipp.pt,moving pacakage werehouso inside orders management
+5948c8c,2022-04-26 23:09:48 +0100,Marta Portugal,1201845@isep.ipp.pt,correction
+a621722,2022-04-26 23:03:18 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Customer fixed and added repositories
+bf271c8,2022-04-26 22:25:28 +0100,Marta Portugal,1201845@isep.ipp.pt,category base implementation and dm alteration
+1cc91ea,2022-04-26 19:29:51 +0100,Marta Portugal,1201845@isep.ipp.pt,view catalog us ui and alterations in product
+6200d7d,2022-04-26 19:29:21 +0100,Marta Portugal,1201845@isep.ipp.pt,order alterations
+c14d97b,2022-04-26 18:15:38 +0100,Marta Portugal,1201845@isep.ipp.pt,constructor in productItem
+1a44d75,2022-04-26 18:10:50 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on constructors
+c44a82e,2022-04-26 18:07:41 +0100,Marta Portugal,1201845@isep.ipp.pt,merge and error corrections
+3b95228,2022-04-26 18:06:24 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> Implementation: Updated Dimension, Product, ProductPriceDetail
+dc038d9,2022-04-26 18:03:49 +0100,Marta Portugal,1201845@isep.ipp.pt,ProductItem, shoppingCart,price item and quantity corrections
+e7c053b,2022-04-26 17:21:58 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-20> Design: Updated DM.puml and DM.png
+e14327c,2022-04-26 16:33:30 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001 Implementation: classes of domain (corrections)
+eb48bee,2022-04-26 16:29:01 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Implementation: Created class PriceItem, ProductItem, ProductItemId, Quantity, ShoppingCart and ShoppingCartId
+86e8888,2022-04-26 15:54:42 +0100,Marta Portugal,1201845@isep.ipp.pt,survey implementation base
+0507244,2022-04-26 15:52:38 +0100,Marta Portugal,1201845@isep.ipp.pt,order value objects finalizations
+827eb8d,2022-04-26 15:52:17 +0100,Marta Portugal,1201845@isep.ipp.pt,~wrong folder for customer deleted
+19ac007,2022-04-26 15:48:08 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Added customer builder methods and services
+207f8a6,2022-04-26 15:16:15 +0100,Marta Portugal,1201845@isep.ipp.pt,dm alteration elimination of volumo
+1d6feed,2022-04-26 14:54:21 +0100,Marta Portugal,1201845@isep.ipp.pt,DM alterations, and class order addition atributes
+6e90471,2022-04-26 14:51:35 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Added Name and controller classes for costumer
+e3175c5,2022-04-26 14:50:24 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Added domain model classes for costumer
+5b8676b,2022-04-26 14:49:14 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001 Implementation: classes of repositories
+c981bbc,2022-04-26 14:46:59 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001 Implementation: classes of repositories
+6da594c,2022-04-26 14:45:45 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001 Implementation: classes of domain
+0abd707,2022-04-26 14:44:39 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-5> US2001 Implementation: classes of domain
+09a334a,2022-04-26 14:39:21 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-20> Design: DM(update)
+4173072,2022-04-26 14:22:13 +0100,Marta Portugal,1201845@isep.ipp.pt,DM alterations order
+a48c90f,2022-04-26 14:18:36 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-29> US2001 Design: CD(update)
+acfc5cb,2022-04-26 14:18:18 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-32> US2001 Design: SD(update)
+34bedd8,2022-04-26 14:17:40 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-20> Design: Domain Model(update)
+34b4709,2022-04-26 14:14:34 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Domain model alterations for costumer
+2132a4c,2022-04-26 14:07:45 +0100,Marta Portugal,1201845@isep.ipp.pt,MD alterations order
+7aea713,2022-04-26 12:16:59 +0100,Marta Portugal,1201845@isep.ipp.pt,in memory and product class alterations
+f0aa3c7,2022-04-26 12:16:40 +0100,Marta Portugal,1201845@isep.ipp.pt,inMemory and order class alterations
+83f00d7,2022-04-26 11:54:42 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: Updated ProductRepository
+a7b6b2a,2022-04-26 11:54:16 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: Created SpecifyNewProductUI and SpecifyNewProductController
+23a03bb,2022-04-26 11:52:57 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: Updated Brand, UniqueInternalCode
+63de2ce,2022-04-26 11:52:18 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: Added ExtendedDescription, Reference, ProductionCode, TechnicalDescription and Weight
+8912883,2022-04-26 11:51:13 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: Updated classes Product, Barcode, Dimension, ShortDescription
+8c02468,2022-04-26 10:32:39 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US-1001: Analysis: Updated US1001.md
+27590f1,2022-04-26 10:32:20 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US-1001: Design: Updated US1001 SD Updated US1001_SD.svg
+8ac2b68,2022-04-25 23:56:59 +0100,Marta Portugal,1201845@isep.ipp.pt,classes order
+ee56c30,2022-04-25 22:53:48 +0100,João Tiago Araújo,1200584@isep.ipp.pt,changed class to abstract
+51cff19,2022-04-25 22:27:46 +0100,Marta Portugal,1201845@isep.ipp.pt,coment line errors
+7bd72e2,2022-04-25 22:24:32 +0100,Marta Portugal,1201845@isep.ipp.pt,comment line
+1ad8be5,2022-04-25 22:01:51 +0100,Marta Portugal,1201845@isep.ipp.pt,package ui in backoffice
+bc91aae,2022-04-25 18:26:55 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-29> US2001: Design and CD (update)
+42c7852,2022-04-25 18:26:23 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-16> US2001: SD (corrections)
+2b5b796,2022-04-25 18:11:33 +0100,Marta Portugal,1201845@isep.ipp.pt,jparepositories product and order
+439a7eb,2022-04-25 18:10:50 +0100,Marta Portugal,1201845@isep.ipp.pt,DM alterations, product correction and category correction
+e5a8408,2022-04-25 17:05:59 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Added domain model classes for costumer
+61bcff3,2022-04-25 17:05:05 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Domain model - changed address from entity to value object
+30f87e8,2022-04-25 16:57:13 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Domain model - changed aggregates
+30d3337,2022-04-25 16:45:18 +0100,Marta Portugal,1201845@isep.ipp.pt,product repository and catalog controller
+d5cc933,2022-04-25 16:45:01 +0100,Marta Portugal,1201845@isep.ipp.pt,corrections on orders management classes
+58a9a56,2022-04-25 16:44:13 +0100,Marta Portugal,1201845@isep.ipp.pt,corrections on product classes
+cb16589,2022-04-25 16:33:58 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-3> Domain model - customer aggregate and value objects changes
+8e1a7b4,2022-04-25 16:00:04 +0100,Marta Portugal,1201845@isep.ipp.pt,MD alterations
+68fa4cf,2022-04-25 15:30:02 +0100,Marta Portugal,1201845@isep.ipp.pt,dm alteration on product volume
+459658f,2022-04-25 14:18:34 +0100,Marta Portugal,1201845@isep.ipp.pt,DM error correction
+ca7eeff,2022-04-25 14:10:49 +0100,Marta Portugal,1201845@isep.ipp.pt,Addition of value object classes on ordersmanagement
+1e39730,2022-04-25 14:10:43 +0100,Marta Portugal,1201845@isep.ipp.pt,Addition of value object classes on ordersmanagement
+83dd8cd,2022-04-25 14:10:02 +0100,Marta Portugal,1201845@isep.ipp.pt,DM alteration
+ef96e2b,2022-04-25 00:29:50 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-14> ProcessoEngenhariaFuncionalidade.md - Analysis for customer registration
+83e8c11,2022-04-25 00:28:34 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-13> Sequence Diagram and Class Diagram for Costumer Registration
+e03d80c,2022-04-25 00:26:20 +0100,Marta Portugal,1201845@isep.ipp.pt,change folder and alterations on classes order and product
+af9ad3d,2022-04-25 00:25:34 +0100,Marta Portugal,1201845@isep.ipp.pt,product change folder
+6755b28,2022-04-25 00:16:14 +0100,Marta Portugal,1201845@isep.ipp.pt,change of local folder of files
+2828ba1,2022-04-24 23:41:49 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: Updated classes Product, Barcode, Dimension, ShortDescription
+6b1bc17,2022-04-24 23:25:13 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US1001: Implementation: Added classes Product, Barcode, Dimension, ShortDescription
+2458d8d,2022-04-24 23:06:43 +0100,Marta Portugal,1201845@isep.ipp.pt,DM alterations
+f0fc493,2022-04-24 23:06:33 +0100,Marta Portugal,1201845@isep.ipp.pt,orders management classes value object addition
+6251c69,2022-04-24 21:26:42 +0100,Marta Portugal,1201845@isep.ipp.pt,payment method class
+0dcea65,2022-04-24 21:26:29 +0100,Marta Portugal,1201845@isep.ipp.pt,order package classes creation
+f2e8250,2022-04-24 21:25:53 +0100,Marta Portugal,1201845@isep.ipp.pt,MD alteration
+3d9c7c9,2022-04-24 19:51:17 +0100,Rui Dias,1200963@isep.ipp.pt,ProcessoEngenhariaFuncionalidade.md - US description and requirements
+550c76d,2022-04-24 19:33:58 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> Created and added US1001_CD.puml and US1001_CD.svg
+0b07856,2022-04-24 19:32:55 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-20> updated DM.puml and DM.svg
+a0038af,2022-04-24 17:18:16 +0100,Marta Portugal,1201845@isep.ipp.pt,[L2L20-4] SD,SSD,CD corrections and svg US 1004
+de76788,2022-04-24 17:17:18 +0100,Marta Portugal,1201845@isep.ipp.pt,[L2L20-2] US 1002 SD,CD,SSD corrections and svg
+2eb6abf,2022-04-24 15:16:54 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-29> Design: Updated US2001 (SD)
+31c0ab9,2022-04-24 13:14:59 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-8> US-2002: Analysis: Added US2002.md
+a33658d,2022-04-24 13:07:49 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-8> US-2002: Design: Updated US2002 SSD and SD Added US2002_SD.svg and US2002_SSD.svg
+955132b,2022-04-24 13:06:03 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US-1001: Analysis: Updated US1001.md
+63f5239,2022-04-24 12:31:17 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US-1001: Design: Updated US1001 SSD and SD Updated US1001_SD.svg and US1001_SSD.svg
+fec714e,2022-04-24 12:30:19 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US-1001: Analysis: Updated US1001.md
+a1532aa,2022-04-23 23:25:56 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-15> US2001: SSD (updated)
+2b430f1,2022-04-23 23:25:17 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-30> US2001: Analysis of US2001
+dfa19f1,2022-04-23 16:41:27 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US-1001: Analysis: Updated US1001.md
+ffc3ee0,2022-04-23 16:40:53 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> US-1001: Design: Updated US1001 SSD and SD Added US1001_SD.svg and US1001_SSD.svg
+2190fa9,2022-04-22 20:13:16 +0100,Marta Portugal,1201845@isep.ipp.pt,processo engenharia e funcionalidades para us1002 e 1004
+495720c,2022-04-22 19:53:43 +0100,Marta Portugal,1201845@isep.ipp.pt,processo engenharia e funcionalidades para us1002 e 1004
+1d0c09e,2022-04-20 21:15:15 +0100,Marta Portugal,1201845@isep.ipp.pt,recuperacao do CD e modelo de anallise e design
+88f29b5,2022-04-20 18:23:23 +0100,Rui Dias,1200963@isep.ipp.pt,planning changes
+2afeccd,2022-04-20 18:22:11 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> added US1001.md
+b8b60b4,2022-04-20 17:19:38 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> <L2L20-8> deleted CD.puml and MD.puml
+63e977b,2022-04-20 17:17:14 +0100,Marta Portugal,1201845@isep.ipp.pt,<L2L20-2> changes in the domain model and elimination of individual mds
+53f2a20,2022-04-20 15:39:03 +0100,Marta Portugal,1201845@isep.ipp.pt,md e cd base para us1002 e 1004
+3ebe52f,2022-04-19 15:53:40 +0100,Marta Portugal,1201845@isep.ipp.pt,ssd 1004 altera�oes
+1d0b4ad,2022-04-19 15:33:39 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-20> Domain model changes
+69e354f,2022-04-19 15:05:36 +0100,Marta Portugal,1201845@isep.ipp.pt,md altera�oes
+9cf97d3,2022-04-19 14:53:53 +0100,João Tiago Araújo,1200584@isep.ipp.pt,update
+715dff0,2022-04-19 14:53:09 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-10> Use Case Diagram
+f50fc17,2022-04-19 13:39:42 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-15> Design: SSD US2001
+7c3d6bd,2022-04-19 13:38:19 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-1> <L2L20-17> US-1001: Design: Updated US1001 SSD
+5263fd8,2022-04-19 13:35:56 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-12> Design - US1003 SSD
+078c2ec,2022-04-16 19:22:08 +0100,Maria Flores,1201615@isep.ipp.pt,US2001 Design: SSD
+fbdf69f,2022-04-16 12:05:33 +0100,Marta Portugal,1201845@isep.ipp.pt,md base para us 1004
+d5a0977,2022-04-15 21:44:25 +0100,Marta Portugal,1201845@isep.ipp.pt,ssd base para us 1002 e 1004
+10ef3d6,2022-04-14 18:03:37 +0100,Rui Dias,1200963@isep.ipp.pt,Design templates
+14275f6,2022-04-13 18:27:04 +0100,Marta Portugal,1201845@isep.ipp.pt,ficheiros de exemplo para a analise das us
+abb3032,2022-04-13 18:25:27 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US-G002: Analysis: Update Domain Model.
+2ba5bce,2022-04-13 17:26:44 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US-G002: Analysis: Update Domain Model.
+4a31d76,2022-04-13 16:28:56 +0100,João Tiago Araújo,1200584@isep.ipp.pt,app.common.console pom fix
+dc7a23d,2022-04-12 23:51:04 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-10> Cria��o do diagrama de Casos de Uso
+c4673ee,2022-04-12 20:27:44 +0100,Marta Portugal,1201845@isep.ipp.pt,pasta sprint2 com dm e pastas sd ssd cd e md
+f8aaa10,2022-04-12 14:15:41 +0100,Maria Flores,1201615@isep.ipp.pt,US-G002: Analysis: Update Domain Model
+f6a4a79,2022-04-10 21:44:40 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US-G002: Analysis: Update Domain Model.
+9c89d2d,2022-04-10 00:28:26 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US-G002: Analysis: Update Domain Model.
+2c63646,2022-04-09 23:47:55 +0100,Marta Portugal,1201845@isep.ipp.pt,US-G002: Analysis: correction on Domain Model.
+a03b90a,2022-04-09 18:37:56 +0100,Marta Portugal,1201845@isep.ipp.pt,US-G002: Analysis: correction on Domain Model.
+bedb40d,2022-04-06 18:55:42 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Initial commit
+5af6523,2022-04-06 18:31:10 +0100,Marta Portugal,1201845@isep.ipp.pt,US-G002: Analysis: correction on Domain Model.
+83a746d,2022-04-06 18:11:38 +0100,Marta Portugal,1201845@isep.ipp.pt,US-G002: Analysis: correction on Domain Model.
+bcbf0d0,2022-04-04 18:10:20 +0100,Marta Portugal,1201845@isep.ipp.pt,altera�ao de setas no modelo
+f483feb,2022-04-04 16:18:55 +0100,Maria Flores,1201615@isep.ipp.pt,US-G001: Requirements
+9082e2d,2022-04-04 16:12:26 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US-G002: Analysis: Add Domain Model.
+6247272,2022-03-30 15:40:47 +0000,Maria Flores Marques,1201615@isep.ipp.pt,Planeamento.md edited
+e263cbe,2022-03-28 23:17:23 +0100,Maria Flores,1201615@isep.ipp.pt,Planeamento e outros docs_template
+e5eedf6,2022-03-28 13:42:15 +0000,Maria Flores Marques,1201615@isep.ipp.pt,Initial commit
