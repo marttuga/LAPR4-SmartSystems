@@ -1,13 +1,9 @@
 package eapli.base.ordersmanagement.product.application;
-
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.ordersmanagement.category.application.DefineCategoryController;
 import eapli.base.ordersmanagement.category.domain.Category;
-import eapli.base.ordersmanagement.category.domain.CategoryCode;
-import eapli.base.ordersmanagement.product.domain.Brand;
 import eapli.base.ordersmanagement.product.domain.Product;
 import eapli.base.ordersmanagement.product.domain.ShortDescription;
-import eapli.base.ordersmanagement.product.domain.UniqueInternalCode;
 import eapli.base.ordersmanagement.product.repositories.ProductRepository;
 
 import java.util.List;

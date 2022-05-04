@@ -32,6 +32,16 @@ public class CustomerPostalAddress implements ValueObject, Comparable<CustomerPo
     }
 
     @Override
+    public String toString() {
+        return "CustomerPostalAddress: " +
+                "street='" + street + '\'' +
+                ", doorNumber=" + doorNumber +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", postalCode=" + postalCode ;
+    }
+
+    @Override
     public int compareTo(CustomerPostalAddress o) {
         return 0;
     }

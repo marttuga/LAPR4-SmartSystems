@@ -5,10 +5,11 @@ package eapli.base.ordersmanagement.customer.domain;
 import eapli.framework.domain.model.AggregateRoot;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-public class Customer implements AggregateRoot<CustomerId> {
+public class Customer implements AggregateRoot<CustomerId>  {
 
 
     @EmbeddedId
@@ -90,7 +91,18 @@ public class Customer implements AggregateRoot<CustomerId> {
     }
 
 
-
-
+    @Override
+    public String toString() {
+        return "Customer:" +
+                "customerId=" + customerId +
+                ", customerFirstName=" + customerFirstName +
+                ", customerLastName=" + customerLastName +
+                ", customerEmailAddress=" + customerEmailAddress +
+                ", customerBirthDay=" + customerBirthDay.toString() +
+                ", customerPhoneNumber=" + customerPhoneNumber.toString() +
+                ", customerGender=" + customerGender +
+                ", customerVatIdentifier=" + customerVatIdentifier.toString() +
+                ", customerPostalAddress=" + customerPostalAddress.toString() ;
+    }
 }
 

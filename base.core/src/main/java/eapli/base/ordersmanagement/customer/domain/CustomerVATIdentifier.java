@@ -28,6 +28,12 @@ public class CustomerVATIdentifier implements ValueObject, Comparable<CustomerVA
     }
 
     @Override
+    public String toString() {
+        return "CustomerVATIdentifier: " +
+                "vatIdentifier='" + vatIdentifier ;
+    }
+
+    @Override
     public int compareTo(CustomerVATIdentifier o) {
         return 0;
     }

@@ -27,6 +27,12 @@ public class CustomerPhoneNumber implements ValueObject , Comparable<CustomerPho
     }
 
     @Override
+    public String toString() {
+        return "CustomerPhoneNumber: " +
+                "phoneNumber='" + phoneNumber ;
+    }
+
+    @Override
     public int compareTo(CustomerPhoneNumber o) {
         return 0;
     }

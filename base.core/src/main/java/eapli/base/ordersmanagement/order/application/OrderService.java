@@ -53,6 +53,25 @@ public class OrderService {
         return option;
     }
 
+    public int showSalesRegion() {
+        int option = -1;
+        System.out.println("===================================================");
+        System.out.println("               Sales Region:          ");
+        System.out.println("=================================================\n");
+        System.out.println("1-PORTUGAL");
+        System.out.println("2-SPAIN");
+        System.out.println("3-FRANCE");
+        System.out.println("4-ITALY");
+        System.out.println("5-AUSTRIA");
+        System.out.println("6-FINLAND");
+        System.out.println("7-GERMANY");
+        System.out.println("8-MALTA");
+        System.out.println("===================================================");
+        System.out.println("0. Back\n\n");
+        option = Console.readInteger("Please select an option");
+        return option;
+    }
+
 
     public PaymentMethod paymentMethod(int options) {
 

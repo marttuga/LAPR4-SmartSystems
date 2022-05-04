@@ -83,5 +83,15 @@ public class NewProductOrderController {
         return new OrderActor(id, OrderActor.Role.Sales_Clerk);
     }
 
+    public int showOptionsPayment() {
+        return orderService.showOptionsPayment();
+    }
 
+    public int showOptionsShipping() {
+        return orderService.showOptionsShipping();
+    }
+
+    public int showSalesRegion() {
+        return orderService.showSalesRegion();
+    }
 }

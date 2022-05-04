@@ -39,7 +39,7 @@ public class JpaCustomerRepository extends JpaAutoTxRepository<Customer, Custome
     @Override
     public Customer findByCustomerIdOrder(String customerId) {
         Query q = entityManager().createQuery("SELECT cust FROM Customer cust " +
-                " WHERE cust.customerId = :customerId");
+                " WHERE cust.customerId.customerId = :customerId");
         q.setParameter("customerId", customerId);
         return  (Customer) q.getSingleResult();
     }

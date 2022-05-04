@@ -1,11 +1,9 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
 import eapli.base.ordersmanagement.category.application.DefineCategoryController;
-import eapli.base.ordersmanagement.category.domain.Category;
 
 import eapli.base.ordersmanagement.customer.applicaion.RegisterCustomerController;
 import eapli.base.ordersmanagement.customer.domain.Customer;
-import eapli.base.ordersmanagement.customer.domain.CustomerId;
 import eapli.base.ordersmanagement.order.application.NewProductOrderController;
 
 import eapli.base.ordersmanagement.order.domain.*;
@@ -28,19 +26,20 @@ public class NewProductOrderUI extends AbstractUI {
 
         String orderActorID = Utils.readLineFromConsole("Please enter the Sales Clerck ID: ");
 
-        Customer customer;
-        do {
-            String costumerID = Utils.readLineFromConsole("Please enter the costumerID: " + "\n(must have 7 numbers)");
-            customer = registerCustomerController.findByCustomerIdOrder(costumerID);
-            System.out.println(customer);
-        } while (registerCustomerController.findAllCustomers().contains(customer));
+
+
+        String costumerID = Utils.readLineFromConsole("Please enter the costumerID: " + "\n(must have 7 digits)");
+        Customer customer = registerCustomerController.findByCustomerIdOrder(costumerID);
+        System.out.println(customer);
+
+        System.out.println();
 
         int optionFilter = 0;
         int optionOrdering = 0;
 
         List<Product> productList = catalogueController.findAllProducts();
         catalogueController.printProductsList(productList);
-        List<Product> productListt= new ArrayList<>();
+        List<Product> productListt = new ArrayList<>();
 
 /////////FILTERING MENU
         optionFilter = catalogueController.showOptionsFilter();
@@ -52,17 +51,17 @@ public class NewProductOrderUI extends AbstractUI {
 
             case 1:
                 String categoryCode = Utils.readLine("Category code: ");
-                productListt=catalogueController.printCategoriesList(categoryCode);
+                productListt = catalogueController.printCategoriesList(categoryCode);
                 break;
 
             case 2:
                 String brandName = Utils.readLine("Brand: ");
-                productListt=catalogueController.printBrandList(brandName);
+                productListt = catalogueController.printBrandList(brandName);
                 break;
 
             case 3:
                 String description = Utils.readLine("Description: ");
-                productListt=catalogueController.printDescriptionList(description);
+                productListt = catalogueController.printDescriptionList(description);
                 break;
     /*        case 4:
                 Brand and Category();
@@ -122,12 +121,15 @@ public class NewProductOrderUI extends AbstractUI {
         } while (Utils.confirm("Want to add more products? (y/n)"));
 
 
+        productOrderController.showOptionsPayment();
         int pm = Utils.readIntegerFromConsole("Choose the payment method: \n");
         PaymentMethod paymentMethod = productOrderController.paymentMethod(pm);
 
+        productOrderController.showOptionsShipping();
         int sm = Utils.readIntegerFromConsole("Choose the shipping method: \n");
         ShippingMethod shippingMethod = productOrderController.shippingMethod(sm);
 
+        productOrderController.showSalesRegion();
         int sr = Utils.readIntegerFromConsole("Choose the region: \n");
         SalesRegion salesRegion = productOrderController.salesRegion(sr);
 
