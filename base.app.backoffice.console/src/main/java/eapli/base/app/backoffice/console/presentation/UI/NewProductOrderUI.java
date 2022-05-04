@@ -26,10 +26,12 @@ public class NewProductOrderUI extends AbstractUI {
 
         String orderActorID = Utils.readLineFromConsole("Please enter the Sales Clerck ID: ");
 
-
-
-        String costumerID = Utils.readLineFromConsole("Please enter the costumerID: " + "\n(must have 7 digits)");
-        Customer customer = registerCustomerController.findByCustomerIdOrder(costumerID);
+        Customer customer;
+        String costumerID;
+do {
+  costumerID = Utils.readLineFromConsole("Please enter the costumerID: " + "\n(must have 7 digits)");
+}while (registerCustomerController.findByCustomerIdOrder(costumerID)==null);
+        customer = registerCustomerController.findByCustomerIdOrder(costumerID);
         System.out.println(customer);
 
         System.out.println();
@@ -144,7 +146,7 @@ public class NewProductOrderUI extends AbstractUI {
         ProductOrder order = productOrderController.registerNewOrder(productOrderController.orderActor(orderActorID), orderID, customer, orderDate, lineOrder, priceOrder, paymentMethod, shippingMethod, Status.REGISTERED);
         System.out.println(order);
 
-        return false;
+        return true;
     }
 
     @Override

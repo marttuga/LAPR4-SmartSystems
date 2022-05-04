@@ -18,16 +18,14 @@ import org.slf4j.LoggerFactory;
 import java.util.*;
 
 public class ProductOrderBootstrapper implements Action {
-
     private static final Logger LOGGER = LoggerFactory.getLogger(ProductOrderBootstrapper.class);
     private final NewProductOrderController newProductOrderController = new NewProductOrderController();
     private final OrderRepository orderRepository = PersistenceContext.repositories().orders();
     private final ProductRepository productRepository = PersistenceContext.repositories().products();
-
     @Override
     public boolean execute() {
 
-        createProductOrder("123", "555", new Date(23 / 04 / 2001), "555", 2, "1", 10);
+        createProductOrder("123", "555", new Date(23/04/2001), "555", 2, "1", 10);
         return true;
     }
 
@@ -36,15 +34,15 @@ public class ProductOrderBootstrapper implements Action {
 
         ProductOrder productOrder;
         try {
-            Customer customer = new Customer(new CustomerId("222"), new CustomerFirstName("Customer1"), new CustomerLastName("CustomerL1"),
-                    new CustomerEmailAdress("customer1@gmail.com"), new CustomerPhoneNumber("999999999"), new CustomerVATIdentifier("1234567"));
+            Customer customer = new Customer(new CustomerId("222"), new CustomerFirstName("Customer1") , new CustomerLastName("CustomerL1") ,
+                    new CustomerEmailAdress("customer1@gmail.com") , new CustomerPhoneNumber("999999999") , new CustomerVATIdentifier("1234567") );
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(date);
             Product product = productRepository.findByProductCode(productId);
             Set<Product> products = new HashSet<Product>();
             products.add(product);
             Money money = new Money(priceMoney, Currency.getInstance(currencyCode));
-            ProductItem productItem = new ProductItem(money, products, amount);
+            ProductItem productItem = new ProductItem(money,products, amount);
             Set<ProductItem> productItems = new HashSet<ProductItem>();
             productItems.add(productItem);
             productOrder = newProductOrderController.registerNewOrder(new OrderActor(actorId, OrderActor.Role.Costumer),
@@ -59,7 +57,4 @@ public class ProductOrderBootstrapper implements Action {
         }
     }
 }
-
-
-
 
