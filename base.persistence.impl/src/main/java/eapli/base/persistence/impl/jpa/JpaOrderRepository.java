@@ -4,12 +4,13 @@ import eapli.base.Application;
 import eapli.base.ordersmanagement.order.domain.ProductOrder;
 import eapli.base.ordersmanagement.order.domain.OrderID;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
+import eapli.base.ordersmanagement.product.domain.Product;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+import java.util.*;
 
 public class JpaOrderRepository extends JpaAutoTxRepository<ProductOrder, String, String> implements OrderRepository {
 
@@ -22,12 +23,20 @@ public class JpaOrderRepository extends JpaAutoTxRepository<ProductOrder, String
         super(puname, Application.settings().getExtendedPersistenceProperties(),
                 "orderID");
     }
+    @Override
+    public List<ProductOrder> findAllOrders() {
+        TypedQuery<ProductOrder> query = super.createQuery("SELECT DISTINCT c FROM ProductOrder c", ProductOrder.class);
+        return new ArrayList<>(query.getResultList());
+    }
+
 
     @Override
-    public Optional<ProductOrder> findOrder(OrderID orderID) {
-        final Map<String, Object> params = new HashMap<>();
-        params.put("OrderIdentification", orderID);
-        return matchOne("e.orderID=:OrderIdentification", params);
+    public ProductOrder findByOrderID(String orderID) {
+        Query q = entityManager().createQuery("SELECT ord FROM ProductOrder ord " +
+                " WHERE ord.orderID.orderIden = :orderID");
+        q.setParameter("orderID", orderID);
+        return (ProductOrder) q.getSingleResult();
+
     }
 
     @Override

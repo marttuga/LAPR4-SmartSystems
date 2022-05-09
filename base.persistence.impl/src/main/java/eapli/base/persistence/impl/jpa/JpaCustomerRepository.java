@@ -31,7 +31,7 @@ public class JpaCustomerRepository extends JpaAutoTxRepository<Customer, Custome
 
     @Override
     public Customer findByCustomerId(CustomerId customerId) {
-        TypedQuery<Customer> query = super.createQuery("SELECT c FROM Customer c WHERE c.customerId.customerId = :customerId", Customer.class);
+        TypedQuery<Customer> query = super.createQuery("SELECT c FROM Customer c WHERE c.customerId = :customerId", Customer.class);
         query.setParameter("customerId", customerId);
         return query.getSingleResult();
     }

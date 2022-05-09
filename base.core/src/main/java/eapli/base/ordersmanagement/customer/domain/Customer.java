@@ -93,16 +93,9 @@ public class Customer implements AggregateRoot<CustomerId>  {
 
     @Override
     public String toString() {
-        return "Customer:" +
-                "customerId=" + customerId +
-                ", customerFirstName=" + customerFirstName +
-                ", customerLastName=" + customerLastName +
-                ", customerEmailAddress=" + customerEmailAddress +
-                ", customerBirthDay=" + customerBirthDay.toString() +
-                ", customerPhoneNumber=" + customerPhoneNumber.toString() +
-                ", customerGender=" + customerGender +
-                ", customerVatIdentifier=" + customerVatIdentifier.toString() +
-                ", customerPostalAddress=" + customerPostalAddress.toString() ;
+        return
+                "Customer: " + customerFirstName + " " +
+                  customerLastName + "  Email: " + customerEmailAddress ;
     }
 }
 

@@ -3,6 +3,7 @@ import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 
 import javax.persistence.*;
+import java.util.Set;
 
 
 @Entity
@@ -16,16 +17,13 @@ public class ShoppingCart implements AggregateRoot<ShoppingCartID>{
         this.shoppingCartID = shoppingCartID;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "product_item")
-    private ProductItem productItem;
+    private Set< ProductItem> productItem;
 
     protected ShoppingCart() {
     }
 
-    public ShoppingCart(ShoppingCartID shoppingCartID, ProductItem productItem) {
-        this.productItem = productItem;
-    }
 
     @Override
     public int compareTo(ShoppingCartID other) {
@@ -55,7 +53,5 @@ public class ShoppingCart implements AggregateRoot<ShoppingCartID>{
         return shoppingCartID;
     }
 
-    public ProductItem getProductItem() {
-        return productItem;
-    }
+
 }

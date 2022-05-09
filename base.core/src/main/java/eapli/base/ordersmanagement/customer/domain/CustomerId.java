@@ -42,7 +42,7 @@ public class CustomerId implements ValueObject, Comparable<CustomerId> {
         return  customerId ;
     }
 
-    public CustomerId valueOf(final String id){
+    public static CustomerId valueOf(final String id){
         return new CustomerId(id);
     }
 }
