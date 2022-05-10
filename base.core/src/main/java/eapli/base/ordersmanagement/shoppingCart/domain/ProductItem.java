@@ -12,24 +12,22 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class ProductItem implements AggregateRoot<ProductItemID>{
+public class ProductItem implements AggregateRoot<ProductItemID> {
 
-    @Column(insertable = false,updatable = false)
+    @Column(insertable = false, updatable = false)
     @AttributeOverrides({
             @AttributeOverride(name = "amount", column = @Column(name = "priceItemAmount")),
             @AttributeOverride(name = "currency", column = @Column(name = "priceItemCurrency"))})
     private Money priceItem;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-
-    Set<Product> products= new HashSet<>();
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    Set<Product> products = new HashSet<>();
 
     private int quantity;
 
     @EmbeddedId
     @GeneratedValue(strategy = GenerationType.AUTO)
     private ProductItemID productItemID;
-
 
 
     public ProductItem(Money priceItem, int quantity, ProductItemID productItemID, Set<Product> products) {
@@ -50,8 +48,8 @@ public class ProductItem implements AggregateRoot<ProductItemID>{
 
     @Override
     public String toString() {
-        return "\nProducts=" + products+
-                "\nquantity=" + quantity+
+        return "\nProducts=" + products +
+                "\nquantity=" + quantity +
                 "\npriceItem=" + priceItem;
     }
 

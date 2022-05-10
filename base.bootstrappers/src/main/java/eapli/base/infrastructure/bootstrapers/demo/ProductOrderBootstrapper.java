@@ -47,7 +47,7 @@ public class ProductOrderBootstrapper implements Action {
             productItems.add(productItem);
             productOrder = newProductOrderController.registerNewOrder(new OrderActor(actorId, OrderActor.Role.Costumer),
                     new OrderID(orderID), customer, calendar, new LineOrder(productItems, money), new PriceOrder(money, new ShippingCost(money)),
-                    PaymentMethod.MBWAY, ShippingMethod.Standart, Status.REGISTERED);
+                    PaymentMethod.MBWAY, ShippingMethod.Standart, Status.BEING_PREPARED);
             orderRepository.save(productOrder);
         } catch (final ConcurrencyException | IntegrityViolationException e) {
             // ignoring exception. assuming it is just a primary key violation

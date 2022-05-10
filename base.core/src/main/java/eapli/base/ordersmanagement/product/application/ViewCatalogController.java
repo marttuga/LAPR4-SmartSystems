@@ -5,6 +5,7 @@ import eapli.base.ordersmanagement.category.domain.Category;
 import eapli.base.ordersmanagement.product.domain.Product;
 import eapli.base.ordersmanagement.product.domain.ShortDescription;
 import eapli.base.ordersmanagement.product.repositories.ProductRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

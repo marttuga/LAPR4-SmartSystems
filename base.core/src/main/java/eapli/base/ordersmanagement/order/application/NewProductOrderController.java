@@ -2,7 +2,6 @@ package eapli.base.ordersmanagement.order.application;
 
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.ordersmanagement.customer.domain.Customer;
-import eapli.base.ordersmanagement.customer.domain.CustomerId;
 import eapli.base.ordersmanagement.order.domain.*;
 
 import eapli.base.ordersmanagement.order.repositories.LineOrderRepository;
@@ -22,7 +21,6 @@ import org.apache.commons.lang3.RandomStringUtils;
 
 import java.util.Calendar;
 import java.util.List;
-import java.util.Random;
 import java.util.Set;
 
 public class NewProductOrderController {
@@ -38,11 +36,11 @@ public class NewProductOrderController {
     public ProductOrder registerNewOrder(OrderActor orderActor, OrderID orderID, Customer customer, Calendar
             dateTime, LineOrder lineOrder, PriceOrder priceOrder, PaymentMethod paymentMethod, ShippingMethod shippingMethod, Status status) {
         authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.SALES_CLERK_USER);
-        txCtx.beginTransaction();
+
 
         ProductOrder productOrder = new ProductOrder(orderActor, orderID, customer, dateTime, lineOrder, priceOrder, paymentMethod, shippingMethod, Status.REGISTERED);
 
-        txCtx.commit();
+
 
         return orderRepository.save(productOrder);
     }
