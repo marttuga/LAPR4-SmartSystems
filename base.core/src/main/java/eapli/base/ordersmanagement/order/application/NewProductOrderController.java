@@ -34,7 +34,7 @@ public class NewProductOrderController {
         txCtx.beginTransaction();
 
         ProductOrder productOrder = orderService.registerNewOrder(orderActor, orderID, customer, dateTime, lineOrder, priceOrder, paymentMethod, shippingMethod, Status.REGISTERED);
-
+        this.orderRepository.save(productOrder);
         txCtx.commit();
 
         return productOrder;
