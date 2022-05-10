@@ -13,8 +13,8 @@ import eapli.base.ordersmanagement.product.application.ViewCatalogController;
 import eapli.base.ordersmanagement.product.domain.*;
 import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
 import eapli.base.utilitarianClasses.Utils;
-import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.presentation.console.AbstractUI;
+import org.apache.commons.lang3.RandomStringUtils;
 
 import java.util.*;
 
@@ -24,16 +24,15 @@ public class NewProductOrderUI extends AbstractUI {
     private static final NewProductOrderController productOrderController = new NewProductOrderController();
     private static final RegisterCustomerController registerCustomerController = new RegisterCustomerController();
     private static final DefineCategoryController categoryController = new DefineCategoryController();
-   // private final TransactionalContext txCtx = PersistenceContext.repositories().newTransactionalContext();
+    // private final TransactionalContext txCtx = PersistenceContext.repositories().newTransactionalContext();
 
     public boolean doShow() {
 
         String orderActorID = Utils.readLineFromConsole("Please enter the Sales Clerck ID: ");
+
         LineOrder lineOrder;
         Customer customer;
         Set<ProductItem> pi = new HashSet<>();
-
-        Random rand = new Random();
         String costumerID = Utils.readLineFromConsole("Please enter the costumerID: " + "\n(must have 7 digits)");
 
         customer = registerCustomerController.findByCustomerId(CustomerId.valueOf(costumerID));
@@ -135,17 +134,13 @@ public class NewProductOrderUI extends AbstractUI {
         System.out.println(priceOrder);
         Calendar orderDate = Calendar.getInstance();
 
-        String id = String.valueOf(rand.nextInt(999999999));
+        String id = RandomStringUtils.randomAlphanumeric(6);
         OrderID orderID = new OrderID(id);
 
-        //try {
+        OrderActor orderActor = productOrderController.orderActor(orderActorID);
 
-            ProductOrder order = productOrderController.registerNewOrder(productOrderController.orderActor(orderActorID), orderID, customer, orderDate, lineOrder, priceOrder, paymentMethod, shippingMethod, Status.REGISTERED);
-            System.out.println(order);
-        //} catch (RollbackException e) {
-         //   e.printStackTrace();
-         //   txCtx.rollback();
-        //}
+        ProductOrder order = productOrderController.registerNewOrder(orderActor, orderID, customer, orderDate, lineOrder, priceOrder, paymentMethod, shippingMethod, Status.REGISTERED);
+        System.out.println(order);
         return true;
     }
 

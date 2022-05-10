@@ -5,6 +5,7 @@ import eapli.base.ordersmanagement.product.domain.Product;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 import eapli.framework.general.domain.model.Money;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -20,6 +21,7 @@ public class ProductItem implements AggregateRoot<ProductItemID>{
     private Money priceItem;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+
     Set<Product> products= new HashSet<>();
 
     private int quantity;
@@ -48,11 +50,9 @@ public class ProductItem implements AggregateRoot<ProductItemID>{
 
     @Override
     public String toString() {
-        return "ProductItem:" +
-                "priceItem=" + priceItem +
-                ", quantity=" + quantity +
-                ", productItemID=" + productItemID +
-                ", products=" + products;
+        return "\nProducts=" + products+
+                "\nquantity=" + quantity+
+                "\npriceItem=" + priceItem;
     }
 
     @Override

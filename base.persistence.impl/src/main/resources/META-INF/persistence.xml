@@ -19,6 +19,7 @@
     <class>eapli.base.warehousemanagement.domain.Warehouse</class>
     <class>eapli.base.ordersmanagement.survey.domain.Survey</class>
     <class>eapli.base.ordersmanagement.shoppingCart.domain.ProductItem</class>
+    <class>eapli.base.ordersmanagement.shoppingCart.domain.ShoppingCart</class>
     <class>eapli.base.ordersmanagement.order.domain.LineOrder</class>
     <class>eapli.base.ordersmanagement.order.domain.PriceTable</class>
     <class>eapli.base.warehousemanagement.domain.AGV</class>

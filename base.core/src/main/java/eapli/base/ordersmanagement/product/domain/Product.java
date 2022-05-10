@@ -218,17 +218,11 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
     @Override
     public String toString() {
         return "Product:" +
-                "uniqueInternalCode=" + uniqueInternalCode +
-                ", shortDescription=" + shortDescription +
-                ", extendedDescription=" + extendedDescription +
-                ", technicalDescription=" + technicalDescription +
-                ", brand=" + brand +
-                ", reference=" + reference +
-                ", productionCode=" + productionCode +
-                ", weight=" + weight +
-                ", barcode=" + barcode +
-                ", priceDetail=" + priceDetail +
-                ", category=" + categoryCode +
-                ", dimension=" + dimension ;
+                "\nuniqueInternalCode=" + uniqueInternalCode +
+                " | shortDescription=" + shortDescription +
+                " | brand=" + brand +
+                " | category=" + categoryCode +
+                " | barcode=" + barcode +
+                " | priceDetail=" + priceDetail;
     }
 }

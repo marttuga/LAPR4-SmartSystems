@@ -22,4 +22,9 @@ public class OrderActor implements ValueObject {
         this.id = id;
         this.role = role;
     }
+
+    @Override
+    public String toString() {
+        return "OrderActor: id= " + id + " | " +role;
+    }
 }

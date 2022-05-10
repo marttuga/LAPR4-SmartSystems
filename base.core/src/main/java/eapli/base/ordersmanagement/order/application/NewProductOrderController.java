@@ -2,18 +2,23 @@ package eapli.base.ordersmanagement.order.application;
 
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.ordersmanagement.customer.domain.Customer;
+import eapli.base.ordersmanagement.customer.domain.CustomerId;
 import eapli.base.ordersmanagement.order.domain.*;
 
+import eapli.base.ordersmanagement.order.repositories.LineOrderRepository;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
 import eapli.base.ordersmanagement.product.application.ViewCatalogController;
 import eapli.base.ordersmanagement.product.domain.Product;
 import eapli.base.ordersmanagement.product.domain.ProductPriceDetail;
 import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
+import eapli.base.ordersmanagement.shoppingCart.domain.ProductItemID;
+import eapli.base.ordersmanagement.shoppingCart.repositories.ProductItemRepository;
 import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.general.domain.model.Money;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
+import org.apache.commons.lang3.RandomStringUtils;
 
 import java.util.Calendar;
 import java.util.List;
@@ -21,6 +26,8 @@ import java.util.Random;
 import java.util.Set;
 
 public class NewProductOrderController {
+    private final ProductItemRepository productItemRepository = PersistenceContext.repositories().productItems();
+    private final LineOrderRepository lineOrderRepository = PersistenceContext.repositories().lineOrders();
     private final OrderRepository orderRepository = PersistenceContext.repositories().orders();
     private final OrderService orderService = new OrderService();
     private final ViewCatalogController catalogController = new ViewCatalogController();
@@ -33,25 +40,27 @@ public class NewProductOrderController {
         authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.SALES_CLERK_USER);
         txCtx.beginTransaction();
 
-        ProductOrder productOrder = orderService.registerNewOrder(orderActor, orderID, customer, dateTime, lineOrder, priceOrder, paymentMethod, shippingMethod, Status.REGISTERED);
-        this.orderRepository.save(productOrder);
+        ProductOrder productOrder = new ProductOrder(orderActor, orderID, customer, dateTime, lineOrder, priceOrder, paymentMethod, shippingMethod, Status.REGISTERED);
+
         txCtx.commit();
 
-        return productOrder;
+        return orderRepository.save(productOrder);
     }
 
     public ProductItem productItemSet(Set<Product> products, int quantity) {
+        String id = RandomStringUtils.randomAlphanumeric(6);
+        ProductItemID productItemID = new ProductItemID(id);
         ProductPriceDetail price = (catalogController.findByProductCode(String.valueOf(products.iterator().next().getUniqueInternalCode()))).getPriceDetail();
         double productItemPrice = (price.getPrice().amountAsDouble()) * quantity;
         Money pp = Money.euros(productItemPrice);
+        ProductItem pi = new ProductItem(pp, quantity, productItemID, products);
 
-        return new ProductItem(pp, products, quantity);
+        return this.productItemRepository.save(pi);
     }
 
 
     public LineOrder lineOrderSet(Set<ProductItem> productItens) {
-        Random rand = new Random();
-        String id = String.valueOf(rand.nextInt(999999999));
+        String id = RandomStringUtils.randomAlphanumeric(6);
         LineOrderID lorderID = new LineOrderID(id);
         double sum = 0;
         double lp;
@@ -60,8 +69,9 @@ public class NewProductOrderController {
             sum = sum + lp;
         }
         Money lineOrderPrice = Money.euros(sum);
+        LineOrder ln = new LineOrder(lorderID, productItens, lineOrderPrice);
 
-        return new LineOrder(lorderID, productItens, lineOrderPrice);
+        return this.lineOrderRepository.save(ln);
     }
 
     public PaymentMethod paymentMethod(int options) {
