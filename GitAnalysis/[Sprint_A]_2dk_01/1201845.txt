@@ -1,3 +1,56 @@
+commit 26e43fc476a5d4ee0e419b491e3ce12e8f12832d
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon May 9 22:17:27 2022 +0100
+
+    Fixed errors on classes to make us work
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/NewProductOrderUI.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/customer/domain/Customer.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/customer/domain/CustomerId.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/NewProductOrderController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/repositories/OrderRepository.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/shoppingCart/domain/ShoppingCart.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryOrderRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaCustomerRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaOrderRepository.java
+M	base.persistence.impl/target/classes/eapli/base/persistence/impl/jpa/JpaRepositoryFactory.class
+
+commit 706bb6959e25164c2c553272935db0c17ee3f10a
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Wed May 4 19:01:47 2022 +0100
+
+    Fixed error, category code with wrong length
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/category/domain/CategoryCode.java
+
+commit f9f3b7fe56907cd7d6f0ed7f06c177448ad3fd27
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Wed May 4 17:43:11 2022 +0100
+
+    changes to make us work and corrections on other classes
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/NewProductOrderUI.java
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/CustomerBootstrapper.java
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/ProductOrderBootstrapper.java
+
+commit 4188a7b27531ed3ec3586846c2ee3b11987f0604
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Wed May 4 15:44:33 2022 +0100
+
+    changes to make us work and corrections on other classes
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/NewProductOrderUI.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/customer/domain/Customer.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/customer/domain/CustomerBirthDay.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/customer/domain/CustomerId.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/customer/domain/CustomerPhoneNumber.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/customer/domain/CustomerPostalAddress.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/customer/domain/CustomerVATIdentifier.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/NewProductOrderController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/OrderService.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/product/application/ViewCatalogController.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaCustomerRepository.java
+
 commit 3e01a1261a426911291c5aa327e8b9eb00f5b85d
 Author: Marta Portugal <1201845@isep.ipp.pt>
 Date:   Sun May 1 23:57:01 2022 +0100
