@@ -1,0 +1,7 @@
+commit d8828347e56abd0b1d145ef755639301a4b4a6a2
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Tue May 10 14:33:27 2022 +0100
+
+    ProductTest.java
+
+A	base.core/src/test/java/eapli/base/ordersmanagement/product/domain/ProductTest.java
