@@ -38,8 +38,8 @@ public class BackofficeUsersBootstrapper extends UsersBootstrapperBase implement
 
     @Override
     public boolean execute() {
-        registerSalesClerk("salesclerk", PASSWORD1, "Johny", "Sales", "johny.sales@gmail.com");
-        registerWarehouseEmployee("warehouseemployee", PASSWORD1, "Oven", "Stove", "Oven.and.stove@emai.l.com");
+        registerSalesClerk("salesclerk", PASSWORD1, "Johny", "Sales", "sales@gmail.com");
+        registerWarehouseEmployee("warehouseemployee", PASSWORD1, "Oven", "Stove", "stove@emai.l.com");
         return true;
     }
 

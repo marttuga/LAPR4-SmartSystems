@@ -92,8 +92,8 @@ public class NewProductOrderController {
         return new PriceOrder(priceO, shippingCost);
     }
 
-    public OrderActor orderActor(String id) {
-        return new OrderActor(id, OrderActor.Role.Sales_Clerk);
+    public OrderActor orderActor(String email) {
+        return new OrderActor(email, OrderActor.Role.Sales_Clerk);
     }
 
     public int showOptionsPayment() {

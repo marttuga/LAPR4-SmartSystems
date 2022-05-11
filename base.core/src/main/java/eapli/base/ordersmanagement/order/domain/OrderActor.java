@@ -7,7 +7,7 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class OrderActor implements ValueObject {
 
-    private String id;
+    private String email;
     private Role role;
 
 
@@ -18,13 +18,13 @@ public class OrderActor implements ValueObject {
     protected OrderActor() {
     }
 
-    public OrderActor(String id,Role role) {
-        this.id = id;
+    public OrderActor(String email, Role role) {
+        this.email = email;
         this.role = role;
     }
 
     @Override
     public String toString() {
-        return "id= " + id + " | " +role;
+        return  email + " | " +role;
     }
 }

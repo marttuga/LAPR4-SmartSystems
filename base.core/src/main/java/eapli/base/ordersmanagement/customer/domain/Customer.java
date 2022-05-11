@@ -94,7 +94,7 @@ public class Customer implements AggregateRoot<CustomerId>  {
     @Override
     public String toString() {
         return
-                "Customer: " + customerFirstName + " " +
+                 customerFirstName + " " +
                   customerLastName + "  Email: " + customerEmailAddress ;
     }
 }

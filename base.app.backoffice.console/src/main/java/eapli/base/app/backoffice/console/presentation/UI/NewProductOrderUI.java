@@ -1,6 +1,4 @@
 package eapli.base.app.backoffice.console.presentation.UI;
-
-import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.ordersmanagement.category.application.DefineCategoryController;
 
 import eapli.base.ordersmanagement.customer.applicaion.RegisterCustomerController;
@@ -28,7 +26,7 @@ public class NewProductOrderUI extends AbstractUI {
 
     public boolean doShow() {
 
-        String orderActorID = Utils.readLineFromConsole("Please enter the Sales Clerck ID: ");
+        String orderActorID = Utils.readLineFromConsole("Please enter the Sales Clerck email: ");
 
         LineOrder lineOrder;
         Customer customer;
