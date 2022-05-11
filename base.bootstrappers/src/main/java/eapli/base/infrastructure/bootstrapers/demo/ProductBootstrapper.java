@@ -47,7 +47,7 @@ public class ProductBootstrapper implements Action {
                 5, 5, 5);
 
         createProduct("560", "shortDescription6", "longDescription6",
-                "technicalDescription6", "zara home","test", "222", 17,
+                "technicalDescription6", "ikea","test", "222", 17,
                 "2222222222227", Money.euros(40), "557", 100, 100, 100,
                 6, 6, 6);
 
@@ -65,6 +65,16 @@ public class ProductBootstrapper implements Action {
                 "technicalDescription9", "milka","test", "222", 9,
                 "2222222222230", Money.euros(5), "558", 4, 4, 10,
                 9, 9, 9);
+
+        createProduct("564", "shortDescription10", "longDescription10",
+                "technicalDescription10", "joom","test", "222", 9,
+                "2222222222231", Money.euros(25), "557", 20, 10, 15,
+                10, 10, 10);
+
+        createProduct("565", "shortDescription11", "longDescription11",
+                "technicalDescription11", "oreo","test", "222", 9,
+                "2222222222232", Money.euros(30), "558", 15, 15, 10,
+                11, 11, 11);
 
         return true;
     }

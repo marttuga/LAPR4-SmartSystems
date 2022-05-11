@@ -25,6 +25,6 @@ public class OrderActor implements ValueObject {
 
     @Override
     public String toString() {
-        return "OrderActor: id= " + id + " | " +role;
+        return "id= " + id + " | " +role;
     }
 }

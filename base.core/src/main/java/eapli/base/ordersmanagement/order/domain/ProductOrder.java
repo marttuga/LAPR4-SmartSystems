@@ -33,9 +33,9 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     private ShippingMethod shippingMethod;
 
     @Embedded
-    @AttributeOverrides(value= {
-            @AttributeOverride(name="priceMoney.amount", column=@Column(name="priceMoneyAmount")),
-            @AttributeOverride(name="priceMoney.currency", column=@Column(name="priceMoneyCurrency"))
+    @AttributeOverrides(value = {
+            @AttributeOverride(name = "priceMoney.amount", column = @Column(name = "priceMoneyAmount")),
+            @AttributeOverride(name = "priceMoney.currency", column = @Column(name = "priceMoneyCurrency"))
     })
     private PriceOrder priceOrder;
 
@@ -66,15 +66,15 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     @Override
     public String toString() {
         return "Order:" +
-                "dateTime=" + dateTime +
-                ", orderID=" + orderID +
-                ", status=" + status +
-                ", orderActor=" + orderActor +
-                ", paymentMethod=" + paymentMethod +
-                ", shippingMethod=" + shippingMethod +
-                ", priceOrder=" + priceOrder +
-                ", lineOrder=" + lineOrder +
-                ", costumer=" + customer;
+                "\ndateTime=" + Calendar.getInstance().getTime() + Calendar.DAY_OF_YEAR + Calendar.MONTH + Calendar.YEAR +
+                "\norderID=" + orderID +
+                "\nstatus=" + status +
+                "\norderActor=" + orderActor +
+                "\npaymentMethod=" + paymentMethod +
+                "\nshippingMethod=" + shippingMethod +
+                "\npriceOrder=" + priceOrder +
+                "\nlineOrder=" + lineOrder +
+                "\ncostumer=" + customer;
     }
 
     @Override
@@ -123,11 +123,9 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     }
 
 
-
     public LineOrder getLineOrder() {
         return lineOrder;
     }
-
 
 
 }
