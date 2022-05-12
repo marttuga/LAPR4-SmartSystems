@@ -1,0 +1,36 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+
+class AGVToPrepOrderUI <<presentation>>
+
+
+
+class AGVToPrepOrderController <<application>>
+
+class ProductOrderRepository <<repository>>
+class AGVRepository <<repository>>
+
+
+entity ProductOrder <<Entity>> <<Root>>
+entity AGV <<Entity>> <<Root>>
+
+
+
+
+
+AGVToPrepOrderController --> ProductOrder
+AGVToPrepOrderController --> AGV
+AGVToPrepOrderUI --> AGVToPrepOrderController : theController
+AGVToPrepOrderUI : doShow()
+AGVToPrepOrderController --> ProductOrderRepository : repo
+AGVToPrepOrderController --> AGVRepository : repo
+AGVToPrepOrderController : getAllOrders()
+AGVToPrepOrderController : getAvailableAGVs()
+AGVToPrepOrderController : getOrderByStatus( status)
+ProductOrderRepository : getAllOrders()
+AGVRepository : getAvailableAGVs()
+ProductOrderRepository : getOrderByStatus( status)
+AGVToPrepOrderController : aGVGetsOrderToPrep(agv, order)
+
+@enduml

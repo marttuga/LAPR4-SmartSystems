@@ -1,0 +1,106 @@
+@startuml
+autonumber
+'hide footbox
+actor "Warehouse Employee" as WE
+participant ":AGVToPrepOrderUI" as UI
+participant ":AGVToPrepOrderController" as CTRL
+participant ":PersistenceContext" as PC
+participant ":RepositoryFactory" as RF
+participant ":ProductOrderRepository" as ProdRepo
+participant ":AGVRepository" as AGVRepo
+
+
+activate WE
+
+WE -> UI : asks to view the list of previous orders made
+activate UI
+
+
+UI -> CTRL : getOrders
+activate CTRL
+CTRL -> PC : repositories()
+
+activate PC
+PC -> RF : create
+deactivate PC
+activate RF
+RF -> ProdRepo : create
+deactivate RF
+activate ProdRepo
+deactivate ProdRepo
+CTRL -> ProdRepo : getOrders= getOrders()
+deactivate CTRL
+deactivate ProdRepo
+
+
+
+UI --> WE : shows list of orders
+deactivate UI
+WE -> UI : asks to see the ones with status: TO_BE_PREPARED
+activate UI
+
+
+UI -> CTRL : getOrderByStatus
+activate CTRL
+CTRL -> ProdRepo : getOrderByStatus= getOrderByStatus()
+activate ProdRepo
+deactivate CTRL
+deactivate ProdRepo
+
+UI --> WE :  shows list of orders with that status
+deactivate UI
+
+WE -> UI : asks to see the AGVs that are available
+activate UI
+
+
+UI -> CTRL : getAGVs
+activate CTRL
+CTRL -> PC : repositories()
+
+activate PC
+PC -> RF : create
+deactivate PC
+activate RF
+RF -> AGVRepo : create
+deactivate RF
+activate AGVRepo
+deactivate AGVRepo
+CTRL -> AGVRepo : getAGVs= getAGVs()
+
+deactivate CTRL
+deactivate AGVRepo
+
+UI --> WE : shows the list of AGVs
+deactivate UI
+
+WE -> UI : chooses one to prepare the order
+activate UI
+
+
+UI -> CTRL : getAvailableAGV
+activate CTRL
+CTRL -> AGVRepo : getAvailableAGV= getAvailableAGV()
+activate AGVRepo
+CTRL -> ProdRepo : changeOrderStatus= changeOrderStatus()
+deactivate AGVRepo
+activate ProdRepo
+deactivate CTRL
+
+
+UI --> WE :shows all data
+deactivate UI
+deactivate ProdRepo
+deactivate UI
+
+
+WE -> UI : confirms the data
+
+activate UI
+UI --> WE : informs operation success
+deactivate UI
+
+deactivate UI
+deactivate WE
+
+@enduml

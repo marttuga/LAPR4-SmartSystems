@@ -1,4 +1,4 @@
-# US1002
+# US2003
 =======================================
 
 # 1. Requirements
@@ -11,6 +11,13 @@ They start by filtering all the products using a category, description and/or br
 by price or alphabetically. Finally, the product must be chosen so that the details can be viewed.
 
 ## Acceptance criteria
+* In the scope of US 2003, the AGV is selected by the warehouse employee from the ones that are available and are able to perform the task.
+* The warehouse employee is able to: 
+* (i) select an order that needs to be prepared; 
+* (ii): select the AGV from the ones that are available and able to perform the task; 
+* (iii) the task is sent to the selected AGV and 
+* (iv) the order change its status.
+
 
 
 # 2. Analysis
@@ -23,11 +30,11 @@ prepared by an AGV (in the status to be prepared)
 # 3. Design
 * Utilizar a estrutura base standard da aplicação baseada em camadas 
 
->   Classes do domínio: Category, Product, Barcode, Brand, ShortDescription, ProductPriceDetail
+>   Classes do domínio: ProductOrder, AGV
 >
->   Controlador: ViewCatalogController
+>   Controlador: AGVToPrepOrderController
 >
->   Repository:  ProductRepository
+>   Repository:  ProductOrderRepository AGVRepository
 
 ## 3.1. Realização da Funcionalidade
 ![SSD](US2003_SSD.svg)
@@ -37,16 +44,11 @@ prepared by an AGV (in the status to be prepared)
 ## 3.2. Diagrama de Classes
 ![CD](US2003_CD.svg)
 
-
-*Nesta secção deve apresentar e descrever as principais classes envolvidas na realização da funcionalidade.*
-
 ## 3.3. Padrões Aplicados
 
-*Nesta secção deve apresentar e explicar quais e como foram os padrões de design aplicados e as melhores práticas.*
+Repository factory to store in database and controller.
 
 ## 3.4. Testes
-*Nesta secção deve sistematizar como os testes foram concebidos para permitir uma correta aferição da satisfação dos requisitos.*
-
 **Teste 1:** Verificar se duas brands sao iguais
 
 	  @Test
@@ -58,9 +60,9 @@ prepared by an AGV (in the status to be prepared)
 
 # 4. Implementação
 
-*Nesta secção a equipa deve providenciar, se necessário, algumas evidências de que a implementação está em conformidade com o design efetuado. Para além disso, deve mencionar/descrever a existência de outros ficheiros (e.g. de configuração) relevantes e destacar commits relevantes;*
-
-*Recomenda-se que organize este conteúdo por subsecções.*
+* I implemented the domain classes based on the domain model created and that I needed for the US implementation. 
+  I created the controller, repository and UI so that it was possible for the warehouse employee to complete this
+  task of giving an oredr to be prepared to an agv. 
 
 # 5. Integração/Demonstração
 
@@ -76,8 +78,6 @@ prepared by an AGV (in the status to be prepared)
         return productRepository.findByDescription(shortDescription);
     }
 # 6. Observações
-
-*Nesta secção sugere-se que a equipa apresente uma perspetiva critica sobre o trabalho desenvolvido apontando, por exemplo, outras alternativas e ou trabalhos futuros relacionados.*
 
 
 

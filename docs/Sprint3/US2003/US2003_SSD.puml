@@ -1,0 +1,39 @@
+@startuml
+autonumber
+actor "Warehouse Employee" as WE
+
+activate WE
+WE -> ":System" : asks to view the list of previous orders made
+activate ":System"
+
+":System" --> WE : shows list of orders
+deactivate ":System"
+
+WE -> ":System" : asks to see the ones with status: TO_BE_PREPARED
+activate ":System"
+
+":System" --> WE : shows list of orders with that status
+deactivate ":System"
+
+WE -> ":System" : asks to see the AGVs that are available
+activate ":System"
+
+":System" --> WE : shows the list of AGVs
+deactivate ":System"
+
+WE -> ":System" : chooses one to prepare the order
+activate ":System"
+
+
+":System" --> WE :shows all data and requests confirmation
+deactivate ":System"
+WE -> ":System" : confirms the data
+
+activate ":System"
+":System" --> WE : informs operation success
+deactivate ":System"
+
+deactivate ":System"
+deactivate WE
+
+@enduml
