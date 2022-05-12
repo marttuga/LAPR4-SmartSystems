@@ -3,6 +3,7 @@ import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.survey.domain.Survey;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
+import org.hibernate.type.CalendarDateType;
 
 import javax.persistence.*;
 import java.util.Calendar;
@@ -66,7 +67,7 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     @Override
     public String toString() {
         return "Order:" +
-                "\ndateTime=" + Calendar.getInstance().getTime() + Calendar.DAY_OF_YEAR + Calendar.MONTH + Calendar.YEAR +
+                "\ndateTime="  + dateTime.getTime() +
                 "\norderID=" + orderID +
                 "\nstatus=" + status +
                 "\norderActor=" + orderActor +
