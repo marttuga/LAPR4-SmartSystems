@@ -1,3 +1,12 @@
+commit bd28e375b9561ab8b182fd7811435d41fa599d88
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed May 11 17:13:33 2022 +0100
+
+    Added Sprint3
+
+A	docs/Sprint3/Domain Model/DM.puml
+A	docs/Sprint3/Domain Model/DM.svg
+
 commit d8828347e56abd0b1d145ef755639301a4b4a6a2
 Author: João Tiago Araújo <1200584@isep.ipp.pt>
 Date:   Tue May 10 14:33:27 2022 +0100
