@@ -4,23 +4,29 @@ import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.order.domain.*;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
+import eapli.base.ordersmanagement.product.domain.Product;
 import eapli.framework.application.ApplicationService;
 import eapli.framework.general.domain.model.Money;
 import eapli.framework.io.util.Console;
 
 import java.util.Calendar;
+import java.util.List;
 
 @ApplicationService
 public class OrderService {
     private final OrderRepository orderRepository = PersistenceContext.repositories().orders();
 
 
-    public ProductOrder registerNewOrder(OrderActor orderActor, OrderID orderID, Customer customer, Calendar dateTime, LineOrder lineOrder, PriceOrder priceOrder, PaymentMethod paymentMethod, ShippingMethod shippingMethod, Status status) {
+    public void printOrdersList(List<ProductOrder> orderList) {
+        for (ProductOrder c : orderList) {
+            System.out.println("orderID- " + c.getOrderID() + "\nCustomerID- " + c.getCustomer().toString()
+                    + "\nStatus- " + c.getStatus() +"\n");
+        }
+    }
+    public void printOrder(ProductOrder c) {
+            System.out.println("orderID- " + c.getOrderID() + "\nCustomerID- " + c.getCustomer().toString()
+                    + "\nStatus- " + c.getStatus() +"\n");
 
-
-        ProductOrder productOrder = new ProductOrder(orderActor, orderID, customer, dateTime, lineOrder, priceOrder, paymentMethod, shippingMethod, status);
-        this.orderRepository.save(productOrder);
-        return productOrder;
     }
 
     public int showOptionsPayment() {

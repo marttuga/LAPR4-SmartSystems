@@ -4,7 +4,6 @@ import eapli.base.Application;
 import eapli.base.ordersmanagement.order.domain.ProductOrder;
 import eapli.base.ordersmanagement.order.domain.OrderID;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
-import eapli.base.ordersmanagement.product.domain.Product;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
 
@@ -23,12 +22,20 @@ public class JpaOrderRepository extends JpaAutoTxRepository<ProductOrder, String
         super(puname, Application.settings().getExtendedPersistenceProperties(),
                 "orderID");
     }
+
     @Override
     public List<ProductOrder> findAllOrders() {
         TypedQuery<ProductOrder> query = super.createQuery("SELECT DISTINCT c FROM ProductOrder c", ProductOrder.class);
         return new ArrayList<>(query.getResultList());
     }
 
+    @Override
+    public List<ProductOrder> findOrdersByStatus(String status) {
+        Query q = entityManager().createQuery("SELECT ord FROM ProductOrder ord " +
+                " WHERE ord.status = :status");
+        q.setParameter("status", status);
+        return new ArrayList<>(q.getResultList());
+    }
 
     @Override
     public ProductOrder findByOrderID(String orderID) {

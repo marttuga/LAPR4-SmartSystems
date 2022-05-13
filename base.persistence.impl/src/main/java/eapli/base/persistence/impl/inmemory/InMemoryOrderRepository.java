@@ -21,6 +21,12 @@ public class InMemoryOrderRepository  extends InMemoryDomainRepository<ProductOr
     }
 
     @Override
+    public List<ProductOrder> findOrdersByStatus(String status) {
+        return null;
+    }
+
+
+    @Override
     public ProductOrder findByOrderID(String id) {
         return findByOrderID(id);
     }

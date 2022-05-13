@@ -10,6 +10,9 @@ import java.util.Optional;
 
 public interface OrderRepository extends DomainRepository<OrderID, ProductOrder> {
     List<ProductOrder> findAllOrders();
+
+    List<ProductOrder> findOrdersByStatus(String status);
+
     ProductOrder findByOrderID(String id);
 
 }

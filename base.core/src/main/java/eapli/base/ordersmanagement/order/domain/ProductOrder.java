@@ -128,5 +128,7 @@ public class ProductOrder implements AggregateRoot<OrderID> {
         return lineOrder;
     }
 
-
+    public Customer getCustomer() {
+        return customer;
+    }
 }
