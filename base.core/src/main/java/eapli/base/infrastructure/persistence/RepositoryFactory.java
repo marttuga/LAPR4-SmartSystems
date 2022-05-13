@@ -29,6 +29,7 @@ import eapli.base.ordersmanagement.order.repositories.OrderRepository;
 import eapli.base.ordersmanagement.product.repositories.ProductRepository;
 import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
 import eapli.base.ordersmanagement.shoppingCart.repositories.ProductItemRepository;
+import eapli.base.ordersmanagement.shoppingCart.repositories.ShoppingCartRepository;
 import eapli.base.warehousemanagement.repositories.AGVRepository;
 import eapli.base.warehousemanagement.repositories.WarehouseRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
@@ -93,6 +94,9 @@ public interface RepositoryFactory {
 
     ProductItemRepository productItems(TransactionalContext autoTx);
     ProductItemRepository productItems();
+
+    ShoppingCartRepository shoppingCarts(TransactionalContext autoTx);
+    ShoppingCartRepository shoppingCarts();
 
     LineOrderRepository lineOrders(TransactionalContext autoTx);
     LineOrderRepository lineOrders();
