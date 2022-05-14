@@ -24,18 +24,21 @@ public class AGV implements AggregateRoot<Identifier> {
     @Embedded
     private MaxWeightCarry maxWeightCarry;
 
+    private Status status;
+
 
     protected AGV(){
 
     }
 
-    public AGV(Identifier identifier, int autonomy, AGVDock agvDock, String AGVDescription, Model model, MaxWeightCarry maxWeightCarry) {
+    public AGV(Identifier identifier, int autonomy, AGVDock agvDock, String AGVDescription, Model model, MaxWeightCarry maxWeightCarry, Status status) {
         this.identifier = identifier;
         this.autonomy = autonomy;
         this.agvDock = agvDock;
         this.AGVDescription = AGVDescription;
         this.model = model;
         this.maxWeightCarry = maxWeightCarry;
+        this.status = status;
     }
 
     public static int valueOfAutonomy(final int autonomy) {
@@ -79,6 +82,10 @@ public class AGV implements AggregateRoot<Identifier> {
 
     public Model getModel() {
         return model;
+    }
+
+    public Status getStatus() {
+        return status;
     }
 
     public MaxWeightCarry getMaxWeightCarry() {
