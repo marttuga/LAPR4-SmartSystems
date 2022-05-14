@@ -5,14 +5,13 @@ actor "Sales Clerck" as SC
 activate SC
 SC -> ":System" : starts to view/search the products catalog
 activate ":System"
-loop until exits
+
 ":System" --> SC : asks for a field(category,description, brand..)to filter the catalog
 deactivate ":System"
 
 SC -> ":System" : types the field
 activate ":System"
 
-end loop
 ":System" --> SC : shows list of products and asks to choose how to order the list (by name or price)
 deactivate ":System"
 

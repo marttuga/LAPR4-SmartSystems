@@ -1,0 +1,57 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+
+class AddProductShopCartUI <<presentation>>
+
+
+class AddProductShopCartController <<application>>
+class OrderRepository <<repository>>
+class ViewCatalogController <<application>>
+
+class ProductSorter
+class ProductRepository <<repository>>
+class ShoppingCartRepository <<repository>>
+
+entity ShoppingCart <<Entity>>
+
+
+entity Costumer <<Entity>> <<Root>>
+
+entity Product <<Entity>> <<Root>> {
+- ProductDescription
+}
+
+    entity Category <<Entity>>
+
+
+
+
+AddProductShopCartController -->Costumer
+AddProductShopCartController -->ViewCatalogController
+AddProductShopCartUI --> AddProductShopCartController : theController
+AddProductShopCartUI : doShow()
+AddProductShopCartController --> OrderRepository : repo
+AddProductShopCartController --> ShoppingCartRepository : repo
+AddProductShopCartController : addProductShopCart()
+OrderRepository : save(order)
+OrderRepository : findById(OrderID)
+AddProductShopCartController --> ShoppingCart : theShoppingCart
+AddProductShopCartController --> Product : theProduct
+ViewCatalogController --> Category
+ViewCatalogController -->Brand
+ViewCatalogController -->ShortDescription
+AddProductShopCartUI ..> ShoppingCart : theShoppingCart
+ViewCatalogController --> ProductRepository : repo
+ViewCatalogController --> ProductSorter : sorter
+ProductSorter : sortByPrice(productList)
+ProductSorter : sortByName(productList)
+ViewCatalogController : getProductByBrand( brand)
+ViewCatalogController : getProductByCategory( category)
+ViewCatalogController : getProductByDescription( shortDescription)
+ViewCatalogController : sortByPrice( productList)
+ViewCatalogController : sortByDescription( productList)
+
+ProductRepository : findAllProducts()
+
+@enduml

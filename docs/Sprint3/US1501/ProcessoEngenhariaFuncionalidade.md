@@ -25,11 +25,11 @@ and/or search for a specific one and its details and add them to the shopping ca
 # 3. Design
 * Utilizar a estrutura base standard da aplicação baseada em camadas 
 
->   Classes do domínio: Category, Product, Barcode, Brand, ShortDescription, ProductPriceDetail
+>   Classes do domínio: Category, Product, Brand, ShortDescription, ProductOrder, shoppingCart
 >
->   Controlador: ViewCatalogController
+>   Controlador: AddProductShopCartController
 >
->   Repository:  ProductRepository
+>   Repository:  ProductRepository, ShoppingCartRepository
 
 ## 3.1. Realização da Funcionalidade
 ![SSD](US1501_SSD.svg)
@@ -39,16 +39,11 @@ and/or search for a specific one and its details and add them to the shopping ca
 ## 3.2. Diagrama de Classes
 ![CD](US1501_CD.svg)
 
-
-*Nesta secção deve apresentar e descrever as principais classes envolvidas na realização da funcionalidade.*
-
 ## 3.3. Padrões Aplicados
 
-*Nesta secção deve apresentar e explicar quais e como foram os padrões de design aplicados e as melhores práticas.*
+Repository factory to store in database and controller.
 
 ## 3.4. Testes
-*Nesta secção deve sistematizar como os testes foram concebidos para permitir uma correta aferição da satisfação dos requisitos.*
-
 **Teste 1:** Verificar se duas brands sao iguais
 
 	  @Test
@@ -60,9 +55,9 @@ and/or search for a specific one and its details and add them to the shopping ca
 
 # 4. Implementação
 
-*Nesta secção a equipa deve providenciar, se necessário, algumas evidências de que a implementação está em conformidade com o design efetuado. Para além disso, deve mencionar/descrever a existência de outros ficheiros (e.g. de configuração) relevantes e destacar commits relevantes;*
-
-*Recomenda-se que organize este conteúdo por subsecções.*
+* I implemented the domain classes based on the domain model created and that I needed for the US implementation.
+* I created and used the controller, repository, UI  so that it was possible for the customer to complete this
+  task of adding another product to a shopping cart after viewing/searching the catalog.
 
 # 5. Integração/Demonstração
 
@@ -78,8 +73,6 @@ and/or search for a specific one and its details and add them to the shopping ca
         return productRepository.findByDescription(shortDescription);
     }
 # 6. Observações
-
-*Nesta secção sugere-se que a equipa apresente uma perspetiva critica sobre o trabalho desenvolvido apontando, por exemplo, outras alternativas e ou trabalhos futuros relacionados.*
 
 
 

@@ -1,22 +1,21 @@
 @startuml
 autonumber
 'hide footbox
-actor "Sales Clerck" as SC
-participant ":NewProductOrderUI" as UI
-participant ":NewProductOrderController" as CTRL
+actor "Customer" as C
+participant ":AddProductShopCartUI" as UI
+participant ":AddProductShopCartController" as CTRL
 participant ":PersistenceContext" as PC
 participant ":RepositoryFactory" as RF
 participant ":CostumerRepository" as CostRepo
 participant ":CategoryRepository" as CatRepo
 participant ":ProductRepository" as ProdRepo
 participant ":OrderRepository" as OrdRepo
+participant ":ShoppingCartRepository" as ShopRepo
 
 
+activate C
 
-
-activate SC
-
-SC -> UI : starts to create new product's order for a given costumer
+C -> UI : starts to create new product's order for a given costumer
 activate UI
 
 UI -> CTRL : getCostumerList
@@ -34,11 +33,11 @@ deactivate CostRepo
 CTRL -> CostRepo : getCostumerList= getCostumerList()
 deactivate CTRL
 deactivate CostRepo
-UI --> SC : shows list of costumers
+UI --> C : shows list of costumers
 deactivate PC
 deactivate UI
 
-SC -> UI : types the chosen costumer's id
+C -> UI : types the chosen costumer's id
 activate UI
 
 UI -> CTRL : getCostumer
@@ -52,11 +51,10 @@ deactivate CostRepo
 
 loop until exits
 
-UI --> SC : asks for a field to filter the catalog
+UI --> C : asks for a field to filter the catalog
 deactivate UI
-SC -> UI : types the field
+C -> UI : types the field
 activate UI
-
 
 alt chooses category
 UI -> CTRL : getProductByCategory
@@ -82,10 +80,11 @@ activate ProdRepo
 deactivate CTRL
 deactivate ProdRepo
 end
-UI --> SC : shows list of products and asks to choose how to order the list (by name or price)
+
+UI --> C : shows list of products and asks to choose how to order the list (by name or price)
 deactivate UI
 
-SC -> UI : chooses how to order
+C -> UI : chooses how to order
 activate UI
 
 
@@ -121,10 +120,10 @@ deactivate ProdRepo
 end
 
 
-UI --> SC : shows list of products and asks for the barcode
+UI --> C : shows list of products and asks for the ID
 deactivate UI
 
-SC -> UI : types the chosen product's barcode
+C -> UI : types the chosen product's ID
 activate UI
 
 
@@ -135,25 +134,12 @@ activate ProdRepo
 deactivate CTRL
 deactivate ProdRepo
 
-UI --> SC :shows all data(code,description,brand,category,price)
+UI --> C :shows all data(code,description,brand,category,price)
 deactivate UI
 
-
-end loop
-
-SC -> UI : confirms the data
-
+C -> UI : adds product to the shopping cart
 activate UI
-
-
-UI --> SC : shows price of the order with the shipping
-deactivate UI
-
-SC -> UI : chooses payment method
-activate UI
-
-
-UI -> CTRL : choosesPayMethod
+UI -> CTRL : ":addProductShopCart
 activate CTRL
 CTRL -> PC : repositories()
 
@@ -161,12 +147,34 @@ activate PC
 PC -> RF : create
 deactivate PC
 activate RF
-RF -> OrdRepo : create
+RF -> ShopRepo : create
 deactivate RF
-activate OrdRepo
-deactivate OrdRepo
-CTRL -> OrdRepo : choosesPayMethod= choosesPayMethod()
+activate ShopRepo
+deactivate ShopRepo
+CTRL -> ShopRepo : addProductShopCart= addProductShopCart()
 deactivate CTRL
+deactivate ShopRepo
+
+
+end loop
+
+activate UI
+
+
+UI --> C : shows price of the order with the shipping
+deactivate UI
+
+C -> UI : chooses payment method
+activate UI
+
+
+UI -> CTRL : choosesPayMethod
+activate CTRL
+
+CTRL -> OrdRepo : choosesPayMethod= choosesPayMethod()
+activate OrdRepo
+deactivate CTRL
+
 deactivate OrdRepo
 
 
@@ -187,8 +195,8 @@ CTRL -> OrdRepo : savesOrder= savesOrder()
 deactivate CTRL
 deactivate OrdRepo
 
-UI --> SC : informs operation success
+UI --> C : informs operation success
 deactivate UI
-deactivate SC
+deactivate C
 
 @enduml

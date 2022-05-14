@@ -61,7 +61,7 @@ Repository factory to store in database and controller.
 # 4. Implementação
 
 * I implemented the domain classes based on the domain model created and that I needed for the US implementation. 
-  I created the controller, repository and UI so that it was possible for the warehouse employee to complete this
+* I created the controller, repository and UI so that it was possible for the warehouse employee to complete this
   task of giving an oredr to be prepared to an agv. 
 
 # 5. Integração/Demonstração
