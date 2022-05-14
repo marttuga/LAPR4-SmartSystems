@@ -40,13 +40,13 @@ public class JpaAGVRepository extends JpaAutoTxRepository<AGV, String, String> i
 
     }
 
-  /*  @Override
-    public List<AGV> findByAGVByStatus(String status) {
+    @Override
+    public List<AGV> findAGVByStatus(String status) {
         Query q = entityManager().createQuery("SELECT agv FROM AGV agv " +
                 " WHERE agv.status = :status");
         q.setParameter("status", status);
         return new ArrayList<>(q.getResultList());
-    }*/
+    }
 
     @Override
     public Optional<AGV> ofIdentity(Identifier id) {

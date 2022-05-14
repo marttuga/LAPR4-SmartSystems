@@ -13,5 +13,5 @@ public interface AGVRepository extends DomainRepository<Identifier,AGV> {
 
     List<AGV> findAllAGV();
     AGV findByAGVID(String id);
-   // List<AGV> findAGVByStatus(String status);
+    List<AGV> findAGVByStatus(String status);
 }

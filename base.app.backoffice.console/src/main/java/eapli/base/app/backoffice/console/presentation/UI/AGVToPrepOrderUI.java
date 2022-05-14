@@ -32,7 +32,7 @@ public class AGVToPrepOrderUI {
         agvToPrepOrderController.printAGVList(agvList);
 
         String statusAGV = Utils.readLineFromConsole("Please enter the Status of the AGVs that you want to find: ");
-        //agvToPrepOrderController.findAGVByStatus(status);
+        agvToPrepOrderController.findAGVByStatus(status);
 
         String idAGV = Utils.readLineFromConsole("Please enter the ID of the AGV you want to start preparing the order: ");
         agvToPrepOrderController.findByAGVID(idAGV);

@@ -24,6 +24,7 @@ public class AGV implements AggregateRoot<Identifier> {
     @Embedded
     private MaxWeightCarry maxWeightCarry;
 
+    @Enumerated(EnumType.STRING)
     private Status status;
 
 

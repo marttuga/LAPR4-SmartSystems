@@ -30,9 +30,9 @@ public class AGVToPrepOrderController {
     public AGV findByAGVID(String identifier) {
         return agvRepository.findByAGVID(identifier);
     }
-  /*  public List<AGV> findAGVByStatus(String status) {
+    public List<AGV> findAGVByStatus(String status) {
         return agvRepository.findAGVByStatus(status);
-    }*/
+    }
 
     public void printOrdersList(List<ProductOrder> orderList) {
         orderService.printOrdersList(orderList);
