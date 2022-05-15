@@ -7,6 +7,7 @@ import org.hibernate.type.CalendarDateType;
 
 import javax.persistence.*;
 import java.util.Calendar;
+import java.util.Objects;
 
 @Entity
 public class ProductOrder implements AggregateRoot<OrderID> {
@@ -130,5 +131,8 @@ public class ProductOrder implements AggregateRoot<OrderID> {
 
     public Customer getCustomer() {
         return customer;
+    }
+
+    public void changeStatus(Status status) {this.status = status;
     }
 }

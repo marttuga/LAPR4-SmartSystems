@@ -38,7 +38,7 @@ public class NewProductOrderController {
         authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.SALES_CLERK_USER);
 
 
-        ProductOrder productOrder = new ProductOrder(orderActor, orderID, customer, dateTime, lineOrder, priceOrder, paymentMethod, shippingMethod, Status.REGISTERED);
+        ProductOrder productOrder = new ProductOrder(orderActor, orderID, customer, dateTime, lineOrder, priceOrder, paymentMethod, shippingMethod, status);
 
 
 
