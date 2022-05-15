@@ -1,34 +1,29 @@
 package eapli.base.app.backoffice.console.presentation.UI;
-import eapli.base.ordersmanagement.category.application.DefineCategoryController;
 
+import eapli.base.ordersmanagement.category.application.DefineCategoryController;
 import eapli.base.ordersmanagement.customer.applicaion.RegisterCustomerController;
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.customer.domain.CustomerId;
 import eapli.base.ordersmanagement.order.application.NewProductOrderController;
-
 import eapli.base.ordersmanagement.order.domain.*;
 import eapli.base.ordersmanagement.product.application.ViewCatalogController;
-import eapli.base.ordersmanagement.product.domain.*;
+import eapli.base.ordersmanagement.product.domain.Product;
 import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
+import eapli.base.ordersmanagement.shoppingCart.domain.ShoppingCart;
+import eapli.base.ordersmanagement.shoppingCart.domain.ShoppingCartID;
 import eapli.base.utilitarianClasses.Utils;
 import eapli.framework.presentation.console.AbstractUI;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import java.util.*;
 
-
-public class NewProductOrderUI extends AbstractUI {
+public class AddProductShopCartUI extends AbstractUI {
     private static final ViewCatalogController catalogueController = new ViewCatalogController();
     private static final NewProductOrderController productOrderController = new NewProductOrderController();
     private static final RegisterCustomerController registerCustomerController = new RegisterCustomerController();
-    private static final DefineCategoryController categoryController = new DefineCategoryController();
-    // private final TransactionalContext txCtx = PersistenceContext.repositories().newTransactionalContext();
 
     public boolean doShow() {
 
-        String orderActorID = Utils.readLineFromConsole("Please enter the Sales Clerck email: ");
-
-        LineOrder lineOrder;
         Customer customer;
         Set<ProductItem> pi = new HashSet<>();
         String costumerID = Utils.readLineFromConsole("Please enter the costumerID: " + "\n(must have 7 digits)");
@@ -106,31 +101,20 @@ public class NewProductOrderUI extends AbstractUI {
 
             pi.add(productItem);
 
-        } while (Utils.confirm("Want to add more products? (y/n)"));
-
-        lineOrder = productOrderController.lineOrderSet(pi);
-
-        PaymentMethod paymentMethod = productOrderController.paymentMethod(productOrderController.showOptionsPayment());
-
-        ShippingMethod shippingMethod = productOrderController.shippingMethod(productOrderController.showOptionsShipping());
-
-        SalesRegion salesRegion = productOrderController.salesRegion(productOrderController.showSalesRegion());
-        PriceOrder priceOrder = productOrderController.priceOfOrder(lineOrder, salesRegion, shippingMethod);
-        System.out.println(priceOrder);
-        Calendar orderDate = Calendar.getInstance();
+        } while (Utils.confirm("Want to add more products to the ShoppingCart? (y/n)"));
 
         String id = RandomStringUtils.randomAlphanumeric(6);
-        OrderID orderID = new OrderID(id);
+        ShoppingCartID shoppingCartID = new ShoppingCartID(id);
 
-        OrderActor orderActor = productOrderController.orderActor(orderActorID);
+        ShoppingCart shoppingCart= new ShoppingCart(shoppingCartID,customer,pi);
+        System.out.println(shoppingCart);
 
-        ProductOrder order = productOrderController.registerNewOrder(orderActor, orderID, customer, orderDate, lineOrder, priceOrder, paymentMethod, shippingMethod, Status.REGISTERED);
-        System.out.println(order);
         return true;
     }
 
     @Override
     public String headline() {
-        return "Make a Product Order";
+        return "Add product to ShoppingCart";
     }
+
 }

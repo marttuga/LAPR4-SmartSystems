@@ -1,4 +1,5 @@
 package eapli.base.ordersmanagement.shoppingCart.domain;
+import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 
@@ -13,6 +14,9 @@ public class ShoppingCart implements AggregateRoot<ShoppingCartID>{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private ShoppingCartID shoppingCartID;
 
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Customer customer;
+
     public ShoppingCart(ShoppingCartID shoppingCartID) {
         this.shoppingCartID = shoppingCartID;
     }
@@ -24,6 +28,19 @@ public class ShoppingCart implements AggregateRoot<ShoppingCartID>{
     protected ShoppingCart() {
     }
 
+    public ShoppingCart(ShoppingCartID shoppingCartID, Customer customer, Set<ProductItem> productItem) {
+        this.shoppingCartID = shoppingCartID;
+        this.customer = customer;
+        this.productItem = productItem;
+    }
+
+    @Override
+    public String toString() {
+        return "ShoppingCart:" +
+                "\nshoppingCartID=" + shoppingCartID  +
+                "\nproductItem=" + productItem +
+                "\ncustomer=" + customer;
+    }
 
     @Override
     public int compareTo(ShoppingCartID other) {
@@ -53,5 +70,11 @@ public class ShoppingCart implements AggregateRoot<ShoppingCartID>{
         return shoppingCartID;
     }
 
+    public Customer getCustomer() {
+        return customer;
+    }
 
+    public Set<ProductItem> getProductItem() {
+        return productItem;
+    }
 }

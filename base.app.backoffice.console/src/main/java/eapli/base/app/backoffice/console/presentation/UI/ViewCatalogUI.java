@@ -51,19 +51,6 @@ public class ViewCatalogUI extends AbstractUI {
                 String description = Utils.readLine("Description: ");
                 productListt=catalogueController.printDescriptionList(description);
                 break;
-    /*        case 4:
-                Brand and Category();
-                break;
-            case 5:
-                Brand and Short Description();
-                break;
-            case 6:
-                Short Description and Category();
-                break;
-            case 7:
-                Brand, Short Description and Category();
-                break;*/
-
             default:
                 System.out.println("Option does not exist!");
                 break;

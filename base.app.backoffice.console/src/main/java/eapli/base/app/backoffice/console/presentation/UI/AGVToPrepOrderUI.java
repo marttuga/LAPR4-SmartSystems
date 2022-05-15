@@ -4,10 +4,12 @@ import eapli.base.ordersmanagement.order.application.AGVToPrepOrderController;
 import eapli.base.ordersmanagement.order.domain.ProductOrder;
 import eapli.base.utilitarianClasses.Utils;
 import eapli.base.warehousemanagement.domain.AGV;
+import eapli.framework.presentation.console.AbstractUI;
+
 import java.util.List;
 
 
-public class AGVToPrepOrderUI {
+public class AGVToPrepOrderUI extends AbstractUI {
     private static final AGVToPrepOrderController agvToPrepOrderController = new AGVToPrepOrderController();
 
     public boolean doShow() {
@@ -40,6 +42,13 @@ public class AGVToPrepOrderUI {
 
 
         return true;
+    }
+
+    @Override
+    public String headline() {
+
+            return "Give an order to prepare to an AGV";
+
     }
 
 
