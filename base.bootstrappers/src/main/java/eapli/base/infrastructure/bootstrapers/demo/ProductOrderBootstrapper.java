@@ -28,19 +28,32 @@ public class ProductOrderBootstrapper implements Action {
     private final ProductRepository productRepository = PersistenceContext.repositories().products();
     private final LineOrderRepository lineOrderRepository = PersistenceContext.repositories().lineOrders();
     private final ProductItemRepository productItemRepository = PersistenceContext.repositories().productItems();
-
-
-
+    private final OrderRepository orderRepository = PersistenceContext.repositories().orders();
 
     @Override
     public boolean execute() {
 
-        createProductOrder("123", "555", new Date(23/04/2001), "555", 2, "EUR", 10L);
+        ProductOrder productOrder1 = createProductOrder("123", "555", new Date(28/6/2001), "555", 2,
+                "EUR", 10L);
+        assert productOrder1 != null;
+        productOrder1.changeStatus(Status.PAYMENT_PENDING);
+        orderRepository.save(productOrder1);
+        ProductOrder productOrder2 = createProductOrder("123", "556", new Date(23/4/2008), "555", 2,
+                "EUR", 10L);
+        assert productOrder2 != null;
+        productOrder2.changeStatus(Status.TO_BE_PREPARED);
+        orderRepository.save(productOrder2);
+        ProductOrder productOrder3 = createProductOrder("123", "557", new Date(23/9/2021), "555", 2,
+                "EUR", 10L);
+        assert productOrder3 != null;
+        productOrder3.changeStatus(Status.TO_BE_PREPARED);
+        orderRepository.save(productOrder3);
+
         return true;
     }
 
-    private void createProductOrder(String actorId, String orderID, Date date,
-                                    String productId, int amount, String currencyCode, long priceMoney) {
+    private ProductOrder createProductOrder(String actorId, String orderID, Date date,
+                                            String productId, int amount, String currencyCode, long priceMoney) {
 
         try {
             Customer customer = customerRepository.findAllCustomers().get(0);
@@ -85,14 +98,16 @@ public class ProductOrderBootstrapper implements Action {
             System.out.println(priceOrder);
 
             System.out.println("-----CONTROLLER-----");
-            newProductOrderController.registerNewOrder(orderActor, orderID1, customer, calendar, lineOrder, priceOrder,
+            ProductOrder productOrder = newProductOrderController.registerNewOrder(orderActor, orderID1, customer, calendar, lineOrder, priceOrder,
                     PaymentMethod.MBWAY, ShippingMethod.Standart, Status.BEING_PREPARED);
+            return productOrder;
         } catch (final ConcurrencyException | IntegrityViolationException e) {
             // ignoring exception. assuming it is just a primary key violation
             // due to the tentative of inserting a duplicated user
             LOGGER.warn("Assuming {} already exists (activate trace log for details)", orderID);
             LOGGER.trace("Assuming existing record", e);
         }
+        return null;
     }
 }
 

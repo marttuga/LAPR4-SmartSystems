@@ -92,4 +92,8 @@ public class AGV implements AggregateRoot<Identifier> {
     public MaxWeightCarry getMaxWeightCarry() {
         return maxWeightCarry;
     }
+
+    public void changeStatus(Status status) {
+        this.status = status;
+    }
 }
