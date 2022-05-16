@@ -1,5 +1,7 @@
 package eapli.base.warehousemanagement.domain;
 
+import eapli.base.ordersmanagement.order.domain.LineOrder;
+import eapli.base.ordersmanagement.order.domain.ProductOrder;
 import eapli.framework.domain.model.AggregateRoot;
 
 import javax.persistence.*;
@@ -27,6 +29,8 @@ public class AGV implements AggregateRoot<Identifier> {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private ProductOrder order;
 
     protected AGV(){
 
@@ -40,6 +44,17 @@ public class AGV implements AggregateRoot<Identifier> {
         this.model = model;
         this.maxWeightCarry = maxWeightCarry;
         this.status = status;
+    }
+
+    public AGV(Identifier identifier, int autonomy, AGVDock agvDock, String AGVDescription, Model model, MaxWeightCarry maxWeightCarry, Status status, ProductOrder order) {
+        this.identifier = identifier;
+        this.autonomy = autonomy;
+        this.agvDock = agvDock;
+        this.AGVDescription = AGVDescription;
+        this.model = model;
+        this.maxWeightCarry = maxWeightCarry;
+        this.status = status;
+        this.order = order;
     }
 
     public static int valueOfAutonomy(final int autonomy) {
@@ -95,5 +110,22 @@ public class AGV implements AggregateRoot<Identifier> {
 
     public void changeStatus(Status status) {
         this.status = status;
+    }
+
+    public void changeOrder(ProductOrder order) {
+        this.order = order;
+    }
+
+    public ProductOrder getOrder() {
+        return order;
+    }
+
+    @Override
+    public String toString() {
+        return "AGV:" + identifier +
+                "\nDock=" + agvDock +
+                "\nDescription='" + AGVDescription + '\'' +
+                "\nModel=" + model +
+                "\nStatus=" + status ;
     }
 }

@@ -3,6 +3,7 @@ package eapli.base.persistence.impl.jpa;
 import eapli.base.Application;
 import eapli.base.ordersmanagement.order.domain.ProductOrder;
 import eapli.base.ordersmanagement.order.domain.OrderID;
+import eapli.base.ordersmanagement.order.domain.Status;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
@@ -30,11 +31,11 @@ public class JpaOrderRepository extends JpaAutoTxRepository<ProductOrder, String
     }
 
     @Override
-    public List<ProductOrder> findOrdersByStatus(String status) {
+    public List<ProductOrder> findOrdersByStatus(Status status) {
         Query q = entityManager().createQuery("SELECT ord FROM ProductOrder ord " +
                 " WHERE ord.status = :status");
         q.setParameter("status", status);
-        return new ArrayList<>(q.getResultList());
+        return (q.getResultList());
     }
 
     @Override

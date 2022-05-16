@@ -4,6 +4,8 @@ import eapli.base.ordersmanagement.order.application.AGVToPrepOrderController;
 import eapli.base.ordersmanagement.order.domain.ProductOrder;
 import eapli.base.utilitarianClasses.Utils;
 import eapli.base.warehousemanagement.domain.AGV;
+import eapli.base.warehousemanagement.domain.Status;
+import eapli.framework.domain.repositories.IntegrityViolationException;
 import eapli.framework.presentation.console.AbstractUI;
 
 import java.util.List;
@@ -13,18 +15,24 @@ public class AGVToPrepOrderUI extends AbstractUI {
     private static final AGVToPrepOrderController agvToPrepOrderController = new AGVToPrepOrderController();
 
     public boolean doShow() {
+        try{
         System.out.println();
         System.out.println("               ORDERS :             ");
         System.out.println();
         List<ProductOrder> ordersList = agvToPrepOrderController.findAllOrders();
         agvToPrepOrderController.printOrdersList(ordersList);
 
-        String status = Utils.readLineFromConsole("Please enter the Status of the orders that you want to find: ");
-        agvToPrepOrderController.findOrdersByStatus(status);
+        eapli.base.ordersmanagement.order.domain.Status status = agvToPrepOrderController.statusOrder(agvToPrepOrderController.showOptionsStatusOrder());
+        List<ProductOrder> productOrderList = agvToPrepOrderController.findOrdersByStatus(status);
+
+        System.out.println();
+        System.out.println("               ORDERS WITH THE CHOSEN STATUS :             ");
+        System.out.println();
+        agvToPrepOrderController.printOrdersList(productOrderList);
 
         String id = Utils.readLineFromConsole("Please enter the ID of the order you want to start preparing: ");
-        agvToPrepOrderController.findByOrderID(id);
-
+        ProductOrder productOrder = agvToPrepOrderController.findByOrderID(id);
+        System.out.println(productOrder);
 
         System.out.println();
         System.out.println("               AGVs :             ");
@@ -33,21 +41,28 @@ public class AGVToPrepOrderUI extends AbstractUI {
         List<AGV> agvList = agvToPrepOrderController.findAllAGV();
         agvToPrepOrderController.printAGVList(agvList);
 
-        String statusAGV = Utils.readLineFromConsole("Please enter the Status of the AGVs that you want to find: ");
-        agvToPrepOrderController.findAGVByStatus(status);
+        Status statusAGV = agvToPrepOrderController.statusAGV(agvToPrepOrderController.showOptionsStatusAGV());
+        List<AGV> agvListt = agvToPrepOrderController.findAGVByStatus(statusAGV);
+        System.out.println();
+        System.out.println("               AGVS WITH THE CHOSEN STATUS :             ");
+        System.out.println();
+        agvToPrepOrderController.printAGVList(agvListt);
 
         String idAGV = Utils.readLineFromConsole("Please enter the ID of the AGV you want to start preparing the order: ");
-        agvToPrepOrderController.findByAGVID(idAGV);
+        AGV agv2 = agvToPrepOrderController.findByAGVID(idAGV);
 
 
-
-        return true;
+        System.out.println(agvToPrepOrderController.agvToPrepOrder(agv2, productOrder));
+        } catch (final IntegrityViolationException ex){
+            System.out.println("Error associating the agv");
+        }
+        return false;
     }
 
     @Override
     public String headline() {
 
-            return "Give an order to prepare to an AGV";
+        return "Give an order to prepare to an AGV";
 
     }
 

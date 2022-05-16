@@ -5,6 +5,7 @@ import eapli.base.ordersmanagement.order.domain.ProductOrder;
 import eapli.base.warehousemanagement.domain.AGV;
 import eapli.base.warehousemanagement.domain.Identifier;
 
+import eapli.base.warehousemanagement.domain.Status;
 import eapli.base.warehousemanagement.repositories.AGVRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
@@ -41,11 +42,11 @@ public class JpaAGVRepository extends JpaAutoTxRepository<AGV, String, String> i
     }
 
     @Override
-    public List<AGV> findAGVByStatus(String status) {
+    public List<AGV> findAGVByStatus(Status status) {
         Query q = entityManager().createQuery("SELECT agv FROM AGV agv " +
                 " WHERE agv.status = :status");
         q.setParameter("status", status);
-        return new ArrayList<>(q.getResultList());
+        return (q.getResultList());
     }
 
     @Override

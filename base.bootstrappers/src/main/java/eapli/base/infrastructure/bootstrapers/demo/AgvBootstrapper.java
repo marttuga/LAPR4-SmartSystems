@@ -28,7 +28,7 @@ public class AgvBootstrapper implements Action {
         agvRepository.save(agv2);
         AGV agv3 = createAgv("558", 10, agvDock, "test", "test", 10);
         assert agv3 != null;
-        agv3.changeStatus(Status.OCCUPIED);
+        agv3.changeStatus(Status.FREE);
         agvRepository.save(agv3);
         return true;
     }
