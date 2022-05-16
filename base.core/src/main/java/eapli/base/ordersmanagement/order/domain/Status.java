@@ -11,7 +11,7 @@ public enum Status implements ValueObject {
     TO_BE_PREPARED,
     BEING_PREPARED,
     DISPATCHED,
-    DELIVERED_BY_CARRIER,
+    DELIVERED,
 
 
 }

@@ -67,7 +67,7 @@ public class ProductOrder implements AggregateRoot<OrderID> {
 
     @Override
     public String toString() {
-        return "Order:" +
+        return "\nOrder:" +
                 "\ndateTime="  + dateTime.getTime() +
                 "\norderID=" + orderID +
                 "\nstatus=" + status +

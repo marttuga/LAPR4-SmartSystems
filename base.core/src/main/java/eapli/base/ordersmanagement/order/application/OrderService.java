@@ -173,5 +173,36 @@ public class OrderService {
         return sc;
     }
 
+    public int showOptionsStatusOrder() {
+        int option = -1;
+        System.out.println("===================================================");
+        System.out.println("               ORDER STATUS:          ");
+        System.out.println("=================================================\n");
+        System.out.println("1-REGISTERED");
+        System.out.println("2-TO BE PREPARED");
+        System.out.println("3-BEING PREPARED");
+        System.out.println("4-DISPATCHED");
+        System.out.println("3-DELIVERED");
+        System.out.println("===================================================");
+        System.out.println("0. Back\n\n");
+        option = Console.readInteger("Please select an option");
+        return option;
+    }
+    public eapli.base.ordersmanagement.order.domain.Status statusOrder(int options) {
 
+        switch (options) {
+            case (1):
+                return eapli.base.ordersmanagement.order.domain.Status.REGISTERED;
+            case (2):
+                return eapli.base.ordersmanagement.order.domain.Status.TO_BE_PREPARED;
+            case (3):
+                return Status.BEING_PREPARED;
+            case (4):
+                return Status.DISPATCHED;
+            case (5):
+                return Status.DELIVERED;
+        }
+
+        return null;
+    }
 }

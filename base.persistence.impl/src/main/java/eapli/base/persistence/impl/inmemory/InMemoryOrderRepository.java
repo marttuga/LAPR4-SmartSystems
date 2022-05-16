@@ -21,7 +21,7 @@ public class InMemoryOrderRepository  extends InMemoryDomainRepository<ProductOr
     }
 
     @Override
-    public List<ProductOrder> findOrdersByStatus(String status) {
+    public List<ProductOrder> findOrdersByStatus(eapli.base.ordersmanagement.order.domain.Status status) {
         return null;
     }
 

@@ -11,7 +11,7 @@ import java.util.Optional;
 public interface OrderRepository extends DomainRepository<OrderID, ProductOrder> {
     List<ProductOrder> findAllOrders();
 
-    List<ProductOrder> findOrdersByStatus(String status);
+    List<ProductOrder> findOrdersByStatus(eapli.base.ordersmanagement.order.domain.Status status);
 
     ProductOrder findByOrderID(String id);
 

@@ -11,6 +11,7 @@ import eapli.base.ordersmanagement.product.domain.Brand;
 import eapli.base.ordersmanagement.product.domain.Product;
 
 import eapli.base.ordersmanagement.product.domain.UniqueInternalCode;
+import eapli.framework.domain.repositories.IntegrityViolationException;
 import eapli.framework.presentation.console.AbstractUI;
 
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class ViewCatalogUI extends AbstractUI {
     private static final DefineCategoryController categoryController = new DefineCategoryController();
 
     public boolean doShow() {
+        try{
         int optionFilter = 0;
         int optionOrdering = 0;
 
@@ -82,6 +84,9 @@ public class ViewCatalogUI extends AbstractUI {
         Product product = catalogueController.findByProductCode(productCode);
         System.out.println(product);
 
+        } catch (final IntegrityViolationException ex){
+            System.out.println("Error registrating order.");
+        }
         return false;
     }
 

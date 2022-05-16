@@ -11,6 +11,7 @@ import eapli.base.ordersmanagement.product.application.ViewCatalogController;
 import eapli.base.ordersmanagement.product.domain.*;
 import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
 import eapli.base.utilitarianClasses.Utils;
+import eapli.framework.domain.repositories.IntegrityViolationException;
 import eapli.framework.presentation.console.AbstractUI;
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -25,7 +26,7 @@ public class NewProductOrderUI extends AbstractUI {
     // private final TransactionalContext txCtx = PersistenceContext.repositories().newTransactionalContext();
 
     public boolean doShow() {
-
+        try{
         String orderActorID = Utils.readLineFromConsole("Please enter the Sales Clerck email: ");
 
         LineOrder lineOrder;
@@ -126,7 +127,10 @@ public class NewProductOrderUI extends AbstractUI {
 
         ProductOrder order = productOrderController.registerNewOrder(orderActor, orderID, customer, orderDate, lineOrder, priceOrder, paymentMethod, shippingMethod, Status.REGISTERED);
         System.out.println(order);
-        return true;
+        } catch (final IntegrityViolationException ex){
+            System.out.println("Error registrating order.");
+        }
+        return false;
     }
 
     @Override
