@@ -3,6 +3,8 @@ package eapli.base.ordersmanagement.order.domain;
 import eapli.base.ordersmanagement.customer.domain.*;
 import eapli.base.ordersmanagement.product.domain.Weight;
 import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
+import eapli.base.warehousemanagement.domain.AGV;
+import eapli.base.warehousemanagement.domain.Identifier;
 import eapli.framework.general.domain.model.Money;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -34,37 +36,17 @@ class ProductOrderTest {
     @Test
     void testToString() {
         ProductOrder order = new ProductOrder(o, orderID, c, d, lineOrder, po, PaymentMethod.MBWAY, ShippingMethod.Blue, Status.REGISTERED);
-        String expected = "Order:" +
-                "dateTime=" + d +
-                ", orderID=" + orderID +
-                ", status=" +  Status.REGISTERED +
-                ", orderActor=" + o +
-                ", paymentMethod=" + PaymentMethod.MBWAY +
-                ", shippingMethod=" + ShippingMethod.Blue +
-                ", priceOrder=" + po +
-                ", lineOrder=" + lineOrder +
-                ", costumer=" + c;
+        String expected =  "\nOrder:" +
+                "\ndateTime="  + d.getTime() +
+                "\norderID=" + orderID +
+                "\nstatus=" + Status.REGISTERED +
+                "\norderActor=" + o +
+                "\npaymentMethod=" + PaymentMethod.MBWAY +
+                "\nshippingMethod=" + ShippingMethod.Blue +
+                "\npriceOrder=" + "total price: \n"+ priceOrder+
+                "\nlineOrder=" + lineOrder +
+                "\ncostumer=" + c;
         Assertions.assertEquals(expected, order.toString());
-    }
-
-    @Test
-    void compareTo() {
-    }
-
-    @Test
-    void identity() {
-    }
-
-    @Test
-    void hasIdentity() {
-    }
-
-    @Test
-    void sameAs() {
-    }
-
-    @Test
-    void orderID() {
     }
 
     @Test
@@ -105,5 +87,12 @@ class ProductOrderTest {
         LineOrder lineOrde = new LineOrder(l, priceSemCustos);
         ProductOrder order = new ProductOrder(o, orderID, c, d, lineOrder, po, PaymentMethod.MBWAY, ShippingMethod.Blue, Status.REGISTERED);
         Assertions.assertEquals(lineOrde.toString(), order.getLineOrder().toString());
+    }
+
+    @Test
+    void changeStatus() {
+        ProductOrder order = new ProductOrder(o, orderID, c, d, lineOrder, po, PaymentMethod.MBWAY, ShippingMethod.Blue, Status.REGISTERED);
+        order.changeStatus(Status.BEING_PREPARED);
+        Assertions.assertEquals(Status.BEING_PREPARED, order.getStatus());
     }
 }

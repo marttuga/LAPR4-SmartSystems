@@ -27,12 +27,6 @@ class IdentifierTest {
     }
 
     @Test
-    void testHashCode() {
-        Identifier i = new Identifier("2");
-        Assertions.assertEquals(494317290, i.hashCode());
-    }
-
-    @Test
     void testToString() {
         Identifier i = new Identifier(" 2");
         Assertions.assertEquals("Identifier: 2", i.toString());

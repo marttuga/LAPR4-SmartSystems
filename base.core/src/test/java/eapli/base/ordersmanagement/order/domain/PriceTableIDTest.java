@@ -38,12 +38,6 @@ class PriceTableIDTest {
     }
 
     @Test
-    void testHashCode() {
-        PriceTableID o = new PriceTableID("12");
-        Assertions.assertEquals(204684384, o.hashCode());
-    }
-
-    @Test
     void testToString() {
         PriceTableID o = new PriceTableID("12");
         Assertions.assertEquals("12", o.toString());

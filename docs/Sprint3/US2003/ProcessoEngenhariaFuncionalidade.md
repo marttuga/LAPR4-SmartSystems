@@ -49,33 +49,29 @@ prepared by an AGV (in the status to be prepared)
 Repository factory to store in database and controller.
 
 ## 3.4. Testes
-**Teste 1:** Verificar se duas brands sao iguais
+**Teste 1:** Change the status of an agv
 
-	  @Test
-    void testEquals() throws IllegalAccessException {
-        Brand b= new Brand("oi");
-        Brand bo= new Brand("oi");
-        Assertions.assertEquals(bo.toString(), b.toString());
+    @Test
+    void changeStatus() {
+        Identifier id = new Identifier("1");
+        AGV agV = new AGV(id, 70,agvDock,"auto", model, maxWeightCarry, Status.FREE );
+        agV.changeStatus(Status.CHARGING);
+        Assertions.assertEquals(Status.CHARGING, agV.getStatus());
     }
 
 # 4. Implementação
 
 * I implemented the domain classes based on the domain model created and that I needed for the US implementation. 
 * I created the controller, repository and UI so that it was possible for the warehouse employee to complete this
-  task of giving an oredr to be prepared to an agv. 
+  task of giving an order to be prepared to an agv. 
 
 # 5. Integração/Demonstração
 
-    public List<Product> getProductByBrand(Brand brand) {
-        return productRepository.findByBrand(brand);
-    }
-
-    public List<Product> getProductByCategory(Category category) {
-        return productRepository.findByCategory(category);
-    }
-
-    public List<Product> getProductByDescription(ShortDescription shortDescription) {
-        return productRepository.findByDescription(shortDescription);
+    public AGV agvToPrepOrder(AGV agv,ProductOrder productOrder) {
+        agv.changeOrder(productOrder);
+        agv.changeStatus(Status.OCCUPIED);
+        agvRepository.save(agv);
+        return agv;
     }
 # 6. Observações
 
