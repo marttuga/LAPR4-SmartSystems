@@ -1,17 +1,19 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
-import eapli.base.ordersmanagement.category.application.DefineCategoryController;
+
 import eapli.base.ordersmanagement.customer.applicaion.RegisterCustomerController;
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.customer.domain.CustomerId;
 import eapli.base.ordersmanagement.order.application.NewProductOrderController;
-import eapli.base.ordersmanagement.order.domain.*;
+
 import eapli.base.ordersmanagement.product.application.ViewCatalogController;
 import eapli.base.ordersmanagement.product.domain.Product;
+import eapli.base.ordersmanagement.shoppingCart.application.AddProductShopCartController;
 import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
 import eapli.base.ordersmanagement.shoppingCart.domain.ShoppingCart;
 import eapli.base.ordersmanagement.shoppingCart.domain.ShoppingCartID;
 import eapli.base.utilitarianClasses.Utils;
+import eapli.framework.domain.repositories.IntegrityViolationException;
 import eapli.framework.presentation.console.AbstractUI;
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -21,12 +23,13 @@ public class AddProductShopCartUI extends AbstractUI {
     private static final ViewCatalogController catalogueController = new ViewCatalogController();
     private static final NewProductOrderController productOrderController = new NewProductOrderController();
     private static final RegisterCustomerController registerCustomerController = new RegisterCustomerController();
+    private static final AddProductShopCartController addProductShopCartController = new AddProductShopCartController();
 
     public boolean doShow() {
-
+        try{
         Customer customer;
         Set<ProductItem> pi = new HashSet<>();
-        String costumerID = Utils.readLineFromConsole("Please enter the costumerID: " + "\n(must have 7 digits)");
+        String costumerID = Utils.readLineFromConsole("Please enter your ID: " + "\n(must have 7 digits)");
 
         customer = registerCustomerController.findByCustomerId(CustomerId.valueOf(costumerID));
         System.out.println(customer.toString());
@@ -106,10 +109,13 @@ public class AddProductShopCartUI extends AbstractUI {
         String id = RandomStringUtils.randomAlphanumeric(6);
         ShoppingCartID shoppingCartID = new ShoppingCartID(id);
 
-        ShoppingCart shoppingCart= new ShoppingCart(shoppingCartID,customer,pi);
+        ShoppingCart shoppingCart= addProductShopCartController.addProdShopCart(shoppingCartID,customer,pi);
         System.out.println(shoppingCart);
 
-        return true;
+        } catch (final IntegrityViolationException ex){
+            System.out.println("Error adding to shoppingCart.");
+        }
+        return false;
     }
 
     @Override

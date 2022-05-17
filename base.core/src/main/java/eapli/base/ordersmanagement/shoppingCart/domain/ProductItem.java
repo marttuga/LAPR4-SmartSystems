@@ -37,11 +37,6 @@ public class ProductItem implements AggregateRoot<ProductItemID> {
         this.products = products;
     }
 
-    public ProductItem(Money priceItem, Set<Product> products, int quantity) {
-        this.priceItem = priceItem;
-        this.products = products;
-        this.quantity = quantity;
-    }
 
     protected ProductItem() {
     }
