@@ -1,7 +1,6 @@
 package eapli.base.app.backoffice.console.presentation.UI;
-
 import eapli.base.ordersmanagement.category.application.DefineCategoryController;
-import eapli.base.ordersmanagement.category.domain.Category;
+
 import eapli.base.ordersmanagement.customer.applicaion.RegisterCustomerController;
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.customer.domain.CustomerId;
@@ -12,7 +11,9 @@ import eapli.base.ordersmanagement.product.application.ViewCatalogController;
 import eapli.base.ordersmanagement.product.domain.*;
 import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
 import eapli.base.utilitarianClasses.Utils;
+import eapli.framework.domain.repositories.IntegrityViolationException;
 import eapli.framework.presentation.console.AbstractUI;
+import org.apache.commons.lang3.RandomStringUtils;
 
 import java.util.*;
 
@@ -22,71 +23,57 @@ public class NewProductOrderUI extends AbstractUI {
     private static final NewProductOrderController productOrderController = new NewProductOrderController();
     private static final RegisterCustomerController registerCustomerController = new RegisterCustomerController();
     private static final DefineCategoryController categoryController = new DefineCategoryController();
+    // private final TransactionalContext txCtx = PersistenceContext.repositories().newTransactionalContext();
 
     public boolean doShow() {
+        try{
+        String orderActorID = Utils.readLineFromConsole("Please enter the Sales Clerck email: ");
 
-        String orderActorID = Utils.readLineFromConsole("Please enter the Sales Clerck ID: ");
-
+        LineOrder lineOrder;
         Customer customer;
+        Set<ProductItem> pi = new HashSet<>();
+        String costumerID = Utils.readLineFromConsole("Please enter the costumerID: " + "\n(must have 7 digits)");
+
+        customer = registerCustomerController.findByCustomerId(CustomerId.valueOf(costumerID));
+        System.out.println(customer.toString());
+
+        System.out.println();
         do {
-            String costumerID = Utils.readLineFromConsole("Please enter the costumerID: " + "\n(must have 7 numbers)");
-            CustomerId code = new CustomerId(costumerID);
-            customer = registerCustomerController.findByCustomerId(code);
-            System.out.println(customer);
-        } while (registerCustomerController.findAllCustomers().contains(customer));
+            int optionFilter = 0;
+            int optionOrdering = 0;
 
-        int optionFilter = 0;
-        int optionOrdering = 0;
+            List<Product> productList = catalogueController.findAllProducts();
+            catalogueController.printProductsList(productList);
+            List<Product> productListt = new ArrayList<>();
 
-        List<Product> productList =  catalogueController.findAllProducts();
-        catalogueController.printProductsList(productList);
-
-        do {
 /////////FILTERING MENU
             optionFilter = catalogueController.showOptionsFilter();
+            //ORDENAR A LISTA DE PRODUTOS
             switch (optionFilter) {
                 case 0:
                     System.out.println("Exiting ...");
                     break;
 
                 case 1:
-                    List<Category> categoryList = categoryController.findAllCategories();
-                    catalogueController.printCategoriesList(categoryList);
                     String categoryCode = Utils.readLine("Category code: ");
-                    catalogueController.printCategoriesList(categoryCode);
+                    productListt = catalogueController.printCategoriesList(categoryCode);
                     break;
 
                 case 2:
-                    List<Brand> brandList = catalogueController.findAllBrands();
-                    catalogueController.printBrandsList(brandList);
                     String brandName = Utils.readLine("Brand: ");
-                    catalogueController.printBrandList(brandName);
+                    productListt = catalogueController.printBrandList(brandName);
                     break;
 
                 case 3:
                     String description = Utils.readLine("Description: ");
-                    catalogueController.printDescriptionList(description);
+                    productListt = catalogueController.printDescriptionList(description);
                     break;
-    /*        case 4:
-                Brand and Category();
-                break;
-            case 5:
-                Brand and Short Description();
-                break;
-            case 6:
-                Short Description and Category();
-                break;
-            case 7:
-                Brand, Short Description and Category();
-                break;*/
-
                 default:
                     System.out.println("Option does not exist!");
                     break;
             }
-        } while (optionFilter != 0);
 
-        do {
+
             //////ORDERING MENU
             optionOrdering = catalogueController.showOptionsOrdering();
             //ORDENAR A LISTA DE PRODUTOS
@@ -95,64 +82,54 @@ public class NewProductOrderUI extends AbstractUI {
                     System.out.println("Exiting ...");
                     break;
                 case 1:
-                    catalogueController.printOrderedDescription();
+                    catalogueController.printOrderedDescription(productListt);
                     break;
                 case 2:
-                    catalogueController.printOrderedPrice();
+                    catalogueController.printOrderedPrice(productListt);
                     break;
                 default:
                     System.out.println("Option does not exist!");
                     break;
             }
-        } while (optionOrdering != 0);
 
-        LineOrder lineOrder = null;
-        do {
 
             String productCode = Utils.readLine("Insert Product Internal Code: ");
-            try {
-                UniqueInternalCode pcode = new UniqueInternalCode(productCode);
-                Product product = catalogueController.findByProductCode(pcode);
-                System.out.println(product);
+            Product product = catalogueController.findByProductCode(productCode);
+            System.out.println(product);
 
-                int quantity = Utils.readIntegerFromConsole("Insert the quantity of the product: ");
-                Set<Product> p = new HashSet<>();
-                for (int i = 0; i < quantity; i++) {
-                    p.add(product);
-                }
-                ProductItem productItem = productOrderController.productItem(p, quantity);
-
-                Set<ProductItem> pi = new HashSet<>();
-                pi.add(productItem);
-                lineOrder = productOrderController.lineOrder(pi);
-
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-                System.out.println("Product does not exist");
+            int quantity = Utils.readIntegerFromConsole("Insert the quantity of the product: ");
+            Set<Product> p = new HashSet<>();
+            for (int i = 0; i < quantity; i++) {
+                p.add(product);
             }
+            ProductItem productItem = productOrderController.productItemSet(p, quantity);
+
+
+            pi.add(productItem);
+
         } while (Utils.confirm("Want to add more products? (y/n)"));
 
+        lineOrder = productOrderController.lineOrderSet(pi);
 
-        int pm = Utils.readIntegerFromConsole("Choose the payment method: \n");
-        PaymentMethod paymentMethod = productOrderController.paymentMethod(pm);
+        PaymentMethod paymentMethod = productOrderController.paymentMethod(productOrderController.showOptionsPayment());
 
-        int sm = Utils.readIntegerFromConsole("Choose the shipping method: \n");
-        ShippingMethod shippingMethod = productOrderController.shippingMethod(sm);
+        ShippingMethod shippingMethod = productOrderController.shippingMethod(productOrderController.showOptionsShipping());
 
-        int sr = Utils.readIntegerFromConsole("Choose the region: \n");
-        SalesRegion salesRegion = productOrderController.salesRegion(sr);
-
+        SalesRegion salesRegion = productOrderController.salesRegion(productOrderController.showSalesRegion());
         PriceOrder priceOrder = productOrderController.priceOfOrder(lineOrder, salesRegion, shippingMethod);
-
+        System.out.println(priceOrder);
         Calendar orderDate = Calendar.getInstance();
 
-        Random rand = new Random();
-        String id = String.valueOf(rand.nextInt(999999999));
+        String id = RandomStringUtils.randomAlphanumeric(6);
         OrderID orderID = new OrderID(id);
 
-        ProductOrder order = productOrderController.registerNewOrder(productOrderController.orderActor(orderActorID), orderID, customer, orderDate, lineOrder, priceOrder, paymentMethod, shippingMethod, Status.REGISTERED);
-        System.out.println(order);
+        OrderActor orderActor = productOrderController.orderActor(orderActorID);
 
+        ProductOrder order = productOrderController.registerNewOrder(orderActor, orderID, customer, orderDate, lineOrder, priceOrder, paymentMethod, shippingMethod, Status.REGISTERED);
+        System.out.println(order);
+        } catch (final IntegrityViolationException ex){
+            System.out.println("Error registrating order.");
+        }
         return false;
     }
 

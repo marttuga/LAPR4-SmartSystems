@@ -8,11 +8,10 @@ import javax.persistence.Embeddable;
 public enum Status implements ValueObject {
 
     REGISTERED,
-    PAYMENT_PENDING,
-    PAID,
+    TO_BE_PREPARED,
     BEING_PREPARED,
     DISPATCHED,
-    DELIVERED_BY_CARRIER,
+    DELIVERED,
 
 
 }

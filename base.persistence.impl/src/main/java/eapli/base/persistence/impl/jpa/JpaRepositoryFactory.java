@@ -25,8 +25,11 @@ import eapli.base.clientusermanagement.repositories.SignupRequestRepository;
 import eapli.base.infrastructure.persistence.RepositoryFactory;
 import eapli.base.ordersmanagement.category.repository.CategoryRepository;
 import eapli.base.ordersmanagement.customer.repositories.CustomerRepository;
+import eapli.base.ordersmanagement.order.repositories.LineOrderRepository;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
 import eapli.base.ordersmanagement.product.repositories.ProductRepository;
+import eapli.base.ordersmanagement.shoppingCart.repositories.ProductItemRepository;
+import eapli.base.ordersmanagement.shoppingCart.repositories.ShoppingCartRepository;
 import eapli.base.warehousemanagement.repositories.AGVRepository;
 import eapli.base.warehousemanagement.repositories.WarehouseRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
@@ -82,6 +85,17 @@ public class JpaRepositoryFactory implements RepositoryFactory {
     }
 
     @Override
+    public ShoppingCartRepository shoppingCarts(TransactionalContext autoTx) {
+        return new JpaShoppingCartRepository(autoTx);
+    }
+
+    @Override
+    public ShoppingCartRepository shoppingCarts() {
+        return new JpaShoppingCartRepository(Application.settings().getPersistenceUnitName());
+    }
+
+
+    @Override
     public ProductRepository products(TransactionalContext autoTx) {
         return new JpaProductRepository(autoTx);
     }
@@ -99,6 +113,25 @@ public class JpaRepositoryFactory implements RepositoryFactory {
     @Override
     public CustomerRepository customers() {
         return new JpaCustomerRepository(Application.settings().getPersistenceUnitName());
+    }
+    @Override
+    public ProductItemRepository productItems(TransactionalContext autoTx) {
+        return new JpaProductItemRepository(autoTx);
+    }
+
+    @Override
+    public ProductItemRepository productItems() {
+        return new JpaProductItemRepository(Application.settings().getPersistenceUnitName());
+    }
+
+    @Override
+    public LineOrderRepository lineOrders(TransactionalContext autoTx) {
+        return new JpaLineOrderRepository(autoTx);
+    }
+
+    @Override
+    public LineOrderRepository lineOrders() {
+        return new JpaLineOrderRepository(Application.settings().getPersistenceUnitName());
     }
 
     @Override

@@ -24,8 +24,12 @@ import eapli.base.clientusermanagement.repositories.ClientUserRepository;
 import eapli.base.clientusermanagement.repositories.SignupRequestRepository;
 import eapli.base.ordersmanagement.category.repository.CategoryRepository;
 import eapli.base.ordersmanagement.customer.repositories.CustomerRepository;
+import eapli.base.ordersmanagement.order.repositories.LineOrderRepository;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
 import eapli.base.ordersmanagement.product.repositories.ProductRepository;
+import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
+import eapli.base.ordersmanagement.shoppingCart.repositories.ProductItemRepository;
+import eapli.base.ordersmanagement.shoppingCart.repositories.ShoppingCartRepository;
 import eapli.base.warehousemanagement.repositories.AGVRepository;
 import eapli.base.warehousemanagement.repositories.WarehouseRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
@@ -88,6 +92,14 @@ public interface RepositoryFactory {
      */
     SignupRequestRepository signupRequests();
 
+    ProductItemRepository productItems(TransactionalContext autoTx);
+    ProductItemRepository productItems();
+
+    ShoppingCartRepository shoppingCarts(TransactionalContext autoTx);
+    ShoppingCartRepository shoppingCarts();
+
+    LineOrderRepository lineOrders(TransactionalContext autoTx);
+    LineOrderRepository lineOrders();
 
     OrderRepository orders(TransactionalContext autoTx);
     OrderRepository orders();

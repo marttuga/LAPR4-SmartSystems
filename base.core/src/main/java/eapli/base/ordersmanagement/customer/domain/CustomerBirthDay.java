@@ -27,6 +27,11 @@ public class CustomerBirthDay implements ValueObject {
         this.birthDate = dateBirht;
     }
 
+    @Override
+    public String toString() {
+        return String.valueOf(birthDate) ;
+    }
+
     public static int getAge(Date date){
         return AgeCalculator.getCalculateAge(date);
     }

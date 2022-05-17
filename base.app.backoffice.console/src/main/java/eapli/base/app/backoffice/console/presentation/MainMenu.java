@@ -69,7 +69,10 @@ public class MainMenu extends AbstractUI {
     private static final int SPECIFY_NEW_PRODUCT = 5;
     private static final int CONFIGURE_AGV = 1;
     private static final int UPLOAD_FILE = 2;
+    private static final int AGV_TO_PREP_ORDER = 3;
 
+
+    private static final int ADD_PRODUCT_SHOPCART = 1;
     // SETTINGS
     private static final int SET_KITCHEN_ALERT_LIMIT_OPTION = 1;
 
@@ -110,10 +113,8 @@ public class MainMenu extends AbstractUI {
     private static final int SETTINGS_OPTION = 3;
     private static final int SALES_OPTION = 4;
     private static final int WAREHOUSE_MANAGEMENT_OPTION = 5;
-    private static final int DISH_OPTION = 5;
-    private static final int TRACEABILITY_OPTION = 6;
-    private static final int MEALS_OPTION = 7;
-    private static final int REPORTING_DISHES_OPTION = 8;
+    private static final int CUSTOMER_OPTION = 6;
+
 
     private static final String SEPARATOR_LABEL = "--------------";
 
@@ -173,6 +174,10 @@ public class MainMenu extends AbstractUI {
             final Menu warehouseMenu = buildWarehouseEmployeeMenu();
             mainMenu.addSubMenu(WAREHOUSE_MANAGEMENT_OPTION,warehouseMenu);
         }
+        if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.CLIENT_USER)) {
+            final Menu customerMenu = buildCustomerMenu();
+            mainMenu.addSubMenu(CUSTOMER_OPTION,customerMenu);
+        }
 
         if (!Application.settings().isMenuLayoutHorizontal()) {
             mainMenu.addItem(MenuItem.separator(SEPARATOR_LABEL));
@@ -210,8 +215,17 @@ public class MainMenu extends AbstractUI {
    private Menu buildWarehouseEmployeeMenu() {
         final Menu menusMenu = new Menu("Warehouse Management >");
         menusMenu.addItem(CONFIGURE_AGV, "Configure AGV", new ConfigureAGVUI()::show);
-
         menusMenu.addItem(UPLOAD_FILE, "Upload File", new UploadFileUI()::show);
+       menusMenu.addItem(AGV_TO_PREP_ORDER, "Get an order to an AGV", new AGVToPrepOrderUI()::doShow);
+
+        menusMenu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
+
+        return menusMenu;
+    }
+
+    private Menu buildCustomerMenu() {
+        final Menu menusMenu = new Menu("Customer >");
+        menusMenu.addItem(ADD_PRODUCT_SHOPCART, "Add Product to ShoppinCart", new AddProductShopCartUI()::show);
 
         menusMenu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 

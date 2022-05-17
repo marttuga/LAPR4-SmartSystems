@@ -3,9 +3,11 @@ import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.survey.domain.Survey;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
+import org.hibernate.type.CalendarDateType;
 
 import javax.persistence.*;
 import java.util.Calendar;
+import java.util.Objects;
 
 @Entity
 public class ProductOrder implements AggregateRoot<OrderID> {
@@ -33,9 +35,9 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     private ShippingMethod shippingMethod;
 
     @Embedded
-    @AttributeOverrides(value= {
-            @AttributeOverride(name="priceMoney.amount", column=@Column(name="priceMoneyAmount")),
-            @AttributeOverride(name="priceMoney.currency", column=@Column(name="priceMoneyCurrency"))
+    @AttributeOverrides(value = {
+            @AttributeOverride(name = "priceMoney.amount", column = @Column(name = "priceMoneyAmount")),
+            @AttributeOverride(name = "priceMoney.currency", column = @Column(name = "priceMoneyCurrency"))
     })
     private PriceOrder priceOrder;
 
@@ -65,16 +67,16 @@ public class ProductOrder implements AggregateRoot<OrderID> {
 
     @Override
     public String toString() {
-        return "Order:" +
-                "dateTime=" + dateTime +
-                ", orderID=" + orderID +
-                ", status=" + status +
-                ", orderActor=" + orderActor +
-                ", paymentMethod=" + paymentMethod +
-                ", shippingMethod=" + shippingMethod +
-                ", priceOrder=" + priceOrder +
-                ", lineOrder=" + lineOrder +
-                ", costumer=" + customer;
+        return "\nOrder:" +
+                "\ndateTime="  + dateTime.getTime() +
+                "\norderID=" + orderID +
+                "\nstatus=" + status +
+                "\norderActor=" + orderActor +
+                "\npaymentMethod=" + paymentMethod +
+                "\nshippingMethod=" + shippingMethod +
+                "\npriceOrder=" + priceOrder +
+                "\nlineOrder=" + lineOrder +
+                "\ncostumer=" + customer;
     }
 
     @Override
@@ -123,11 +125,14 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     }
 
 
-
     public LineOrder getLineOrder() {
         return lineOrder;
     }
 
+    public Customer getCustomer() {
+        return customer;
+    }
 
-
+    public void changeStatus(Status status) {this.status = status;
+    }
 }

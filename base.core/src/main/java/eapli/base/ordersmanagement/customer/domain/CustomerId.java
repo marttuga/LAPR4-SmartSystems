@@ -3,9 +3,12 @@ package eapli.base.ordersmanagement.customer.domain;
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.validations.Preconditions;
 
+import javax.persistence.Embeddable;
 import java.util.Objects;
 
+@Embeddable
 public class CustomerId implements ValueObject, Comparable<CustomerId> {
+
     private String customerId;
 
     public CustomerId(final String customerId) {
@@ -39,7 +42,7 @@ public class CustomerId implements ValueObject, Comparable<CustomerId> {
         return  customerId ;
     }
 
-    public CustomerId valueOf(final String id){
+    public static CustomerId valueOf(final String id){
         return new CustomerId(id);
     }
 }

@@ -48,16 +48,19 @@ public class BaseDemoBootstrapper implements Action {
 
     @Override
     public boolean execute() {
+
+        authenticateForBootstrapping();
+
         // declare bootstrap actions
-        final Action[] actions = { //new BackofficeUsersBootstrapper(),
+        final Action[] actions = {
+                new BackofficeUsersBootstrapper(),
                 new ClientUserBootstrapper(),
                 new CustomerBootstrapper(),
                 new CategoryBootstrapper(),
                 new ProductBootstrapper(),
                 new ProductOrderBootstrapper(),
+                new AgvBootstrapper(),
         };
-
-        authenticateForBootstrapping();
 
         // execute all bootstrapping
         boolean ret = true;

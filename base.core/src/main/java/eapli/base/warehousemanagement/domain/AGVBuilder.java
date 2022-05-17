@@ -17,6 +17,8 @@ public class AGVBuilder {
 
     private AGVDock agvDock;
 
+    private Status status;
+
     public AGVBuilder withIdentifier(final Identifier identifier) {
         this.identifier = identifier;
         return this;
@@ -47,7 +49,12 @@ public class AGVBuilder {
         return this;
     }
 
+    public AGVBuilder withStatus(final Status status) {
+        this.status = status;
+        return this;
+    }
+
     public AGV build(){
-        return new AGV(identifier,autonomy,agvDock,AGVDescription,model,maxWeightCarry);
+        return new AGV(identifier,autonomy,agvDock,AGVDescription,model,maxWeightCarry,status);
     }
 }

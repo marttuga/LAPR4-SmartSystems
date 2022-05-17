@@ -65,9 +65,9 @@ class LineOrderTest {
     @Test
     void testToString() {
         LineOrder lineOrder = new LineOrder(lineOrderList, priceOrderWithoutTaxes);
-        String expected = "LineOrder:" +
-                "productItems=" + lineOrderList +
-                ", priceOrderWithoutTaxes=" + priceOrderWithoutTaxes;
+        String expected ="LineOrder: " +
+                "\nproductItems=" + lineOrderList +
+                "\npriceOrderWithoutTaxes=" + priceOrderWithoutTaxes;
         Assertions.assertEquals(expected, lineOrder.toString());
 
     }

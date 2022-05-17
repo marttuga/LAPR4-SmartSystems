@@ -7,6 +7,7 @@ import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import java.util.Currency;
 import java.util.Objects;
 
 /**
@@ -37,17 +38,18 @@ public class ProductPriceDetail implements ValueObject, Comparable<ProductPriceD
 
     @Override
     public String toString() {
-        return "ProductPriceDetail:" +
-                "price=" + price;
+        return String.valueOf(Money.euros(price.amountAsDouble()));
     }
 
     public static ProductPriceDetail valueOf(final Money price) throws IllegalAccessException {
         return new ProductPriceDetail(price);
     }
 
-    public Money getPrice() {
+    public  Money getPrice() {
         return price;
     }
+
+
 
     @Override
     public int hashCode() {
@@ -58,4 +60,6 @@ public class ProductPriceDetail implements ValueObject, Comparable<ProductPriceD
     public int compareTo(ProductPriceDetail o) {
         return 0;
     }
+
+
 }

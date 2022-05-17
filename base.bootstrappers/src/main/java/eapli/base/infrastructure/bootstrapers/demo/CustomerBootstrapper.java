@@ -26,18 +26,18 @@ public class CustomerBootstrapper implements Action {
     @Override
     public boolean execute() {
         createCostumer("Jonathan", "Mendes", "jonathan@gmail.com",
-                    date, "937263547", "0936527",
-                    "Sunset Boulevard", 78, "Los angeles", "USA",90210);
+                date, "937263547", "0936527",
+                "Sunset Boulevard", 78, "Los angeles", "USA",90210);
         return true;
     }
 
     private void createCostumer(String customerFirstName,
-            String customerLastName,
-            String customerEmailAddress,
-            Date customerBirthDay,
-            String customerPhoneNumber,
-            String customerVatIdentifier,
-            String street, int doorNumber, String city, String country, int postalCode) {
+                                String customerLastName,
+                                String customerEmailAddress,
+                                Date customerBirthDay,
+                                String customerPhoneNumber,
+                                String customerVatIdentifier,
+                                String street, int doorNumber, String city, String country, int postalCode) {
 
         try {
             Set<CustomerPostalAddress> postalAddress = new HashSet<CustomerPostalAddress>();
@@ -45,7 +45,7 @@ public class CustomerBootstrapper implements Action {
             postalAddress.add(customerPostalAddress);
 
             registerCustomerController.registerCustomer(customerFirstName, customerLastName,
-                   customerEmailAddress,  customerPhoneNumber,
+                    customerEmailAddress,  customerPhoneNumber,
                     customerVatIdentifier,  customerBirthDay,
                     "MALE", postalAddress);
         } catch (final ConcurrencyException | IntegrityViolationException e) {

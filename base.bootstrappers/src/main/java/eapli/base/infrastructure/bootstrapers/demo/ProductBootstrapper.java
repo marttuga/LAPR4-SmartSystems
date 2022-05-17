@@ -25,7 +25,7 @@ public class ProductBootstrapper implements Action {
     @Override
     public boolean execute() {
         createProduct("555", "shortDescription1", "longDescription1",
-                "technicalDescription1", "Levs","test", "222", 10,
+                "technicalDescription1", "Levis","test", "222", 10,
                 "2222222222222", Money.euros(10), "555", 100, 100, 100,
                 1, 1, 1);
         createProduct("556", "shortDescription2", "longDescription2",
@@ -37,14 +37,44 @@ public class ProductBootstrapper implements Action {
                 "2222222222224", Money.euros(30), "556", 100, 100, 100,
                 3, 3, 3);
         createProduct("558", "shortDescription4", "longDescription4",
-                "technicalDescription4", "Levs","test", "222", 10,
+                "technicalDescription4", "Levis","test", "222", 10,
                 "2222222222225", Money.euros(5), "556", 100, 100, 100,
                 4, 4, 4);
 
         createProduct("559", "shortDescription5", "longDescription5",
                 "technicalDescription5", "Levis","test", "222", 10,
                 "2222222222226", Money.euros(35), "556", 100, 100, 100,
-                4, 4, 4);
+                5, 5, 5);
+
+        createProduct("560", "shortDescription6", "longDescription6",
+                "technicalDescription6", "ikea","test", "222", 17,
+                "2222222222227", Money.euros(40), "557", 100, 100, 100,
+                6, 6, 6);
+
+        createProduct("561", "shortDescription7", "longDescription7",
+                "technicalDescription7", "ikea","test", "222", 10,
+                "2222222222228", Money.euros(10), "557", 100, 100, 100,
+                7, 7, 7);
+
+        createProduct("562", "shortDescription8", "longDescription8",
+                "technicalDescription8", "milka","test", "222", 7,
+                "2222222222229", Money.euros(5), "558", 4, 4, 10,
+                8, 8, 8);
+
+        createProduct("563", "shortDescription9", "longDescription9",
+                "technicalDescription9", "milka","test", "222", 9,
+                "2222222222230", Money.euros(5), "558", 4, 4, 10,
+                9, 9, 9);
+
+        createProduct("564", "shortDescription10", "longDescription10",
+                "technicalDescription10", "joom","test", "222", 9,
+                "2222222222231", Money.euros(25), "557", 20, 10, 15,
+                10, 10, 10);
+
+        createProduct("565", "shortDescription11", "longDescription11",
+                "technicalDescription11", "oreo","test", "222", 9,
+                "2222222222232", Money.euros(30), "558", 15, 15, 10,
+                11, 11, 11);
 
         return true;
     }

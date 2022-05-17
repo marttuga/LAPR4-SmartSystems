@@ -9,8 +9,6 @@ participant ":RepositoryFactory" as RF
 participant ":CostumerRepository" as CostRepo
 participant ":CategoryRepository" as CatRepo
 participant ":ProductRepository" as ProdRepo
-participant ":ShoppingCartRepository" as ShopRepo
-participant ":PayMethodRepository" as PayRepo
 participant ":OrderRepository" as OrdRepo
 
 
@@ -60,24 +58,30 @@ SC -> UI : types the field
 activate UI
 
 
-UI -> CTRL : getCategory
+alt chooses category
+UI -> CTRL : getProductByCategory
 activate CTRL
-CTRL -> PC : repositories()
-
-activate PC
-PC -> RF : create
-deactivate PC
-activate RF
-RF -> CatRepo : create
-deactivate RF
-activate CatRepo
-deactivate CatRepo
-loop until exits
-CTRL -> CatRepo : getCategory= getCategory()
+CTRL -> ProdRepo : getProductByCategory= getProductByCategory()
+activate ProdRepo
 deactivate CTRL
-deactivate CatRepo
+deactivate ProdRepo
 
-end loop
+else chooses brand
+UI -> CTRL : getProductByBrand
+activate CTRL
+CTRL -> ProdRepo : getProductByBrand= getProductByBrand()
+activate ProdRepo
+deactivate CTRL
+deactivate ProdRepo
+
+else chooses shortdescription
+UI -> CTRL : getProductByShortDescription
+activate CTRL
+CTRL -> ProdRepo : getProductByShortDescription= getProductByShortDescription()
+activate ProdRepo
+deactivate CTRL
+deactivate ProdRepo
+end
 UI --> SC : shows list of products and asks to choose how to order the list (by name or price)
 deactivate UI
 
@@ -133,19 +137,7 @@ deactivate ProdRepo
 
 UI --> SC :shows all data(code,description,brand,category,price)
 deactivate UI
-SC -> UI : check product's stock
-activate UI
 
-UI -> CTRL : checkStock
-activate CTRL
-CTRL -> ProdRepo : checkStock= checkStock()
-activate ProdRepo
-deactivate CTRL
-deactivate ProdRepo
-
-
-UI --> SC : Shows available stock
-deactivate UI
 
 end loop
 
@@ -169,13 +161,13 @@ activate PC
 PC -> RF : create
 deactivate PC
 activate RF
-RF -> PayRepo : create
+RF -> OrdRepo : create
 deactivate RF
-activate PayRepo
-deactivate PayRepo
-CTRL -> PayRepo : choosesPayMethod= choosesPayMethod()
+activate OrdRepo
+deactivate OrdRepo
+CTRL -> OrdRepo : choosesPayMethod= choosesPayMethod()
 deactivate CTRL
-deactivate PayRepo
+deactivate OrdRepo
 
 
 

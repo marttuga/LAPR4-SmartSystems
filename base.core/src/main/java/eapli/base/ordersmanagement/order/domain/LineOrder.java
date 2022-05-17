@@ -42,9 +42,9 @@ public class LineOrder implements AggregateRoot<LineOrderID> {
 
     @Override
     public String toString() {
-        return "LineOrder:" +
-                "productItems=" + lineOrderList +
-                ", priceOrderWithoutTaxes=" + priceOrderWithoutTaxes;
+        return "LineOrder: " +
+                "\nproductItems=" + lineOrderList +
+                "\npriceOrderWithoutTaxes=" + priceOrderWithoutTaxes;
     }
 
     public LineOrderID getLoid() {

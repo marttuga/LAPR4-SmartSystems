@@ -1,0 +1,202 @@
+@startuml
+autonumber
+'hide footbox
+actor "Customer" as C
+participant ":AddProductShopCartUI" as UI
+participant ":AddProductShopCartController" as CTRL
+participant ":PersistenceContext" as PC
+participant ":RepositoryFactory" as RF
+participant ":CostumerRepository" as CostRepo
+participant ":CategoryRepository" as CatRepo
+participant ":ProductRepository" as ProdRepo
+participant ":OrderRepository" as OrdRepo
+participant ":ShoppingCartRepository" as ShopRepo
+
+
+activate C
+
+C -> UI : starts to create new product's order for a given costumer
+activate UI
+
+UI -> CTRL : getCostumerList
+activate CTRL
+CTRL -> PC : repositories()
+
+activate PC
+PC -> RF : create
+deactivate PC
+activate RF
+RF -> CostRepo : create
+deactivate RF
+activate CostRepo
+deactivate CostRepo
+CTRL -> CostRepo : getCostumerList= getCostumerList()
+deactivate CTRL
+deactivate CostRepo
+UI --> C : shows list of costumers
+deactivate PC
+deactivate UI
+
+C -> UI : types the chosen costumer's id
+activate UI
+
+UI -> CTRL : getCostumer
+activate CTRL
+CTRL -> CostRepo : getCostumer= getCostumer()
+activate CostRepo
+deactivate CTRL
+deactivate CostRepo
+
+
+
+loop until exits
+
+UI --> C : asks for a field to filter the catalog
+deactivate UI
+C -> UI : types the field
+activate UI
+
+alt chooses category
+UI -> CTRL : getProductByCategory
+activate CTRL
+CTRL -> ProdRepo : getProductByCategory= getProductByCategory()
+activate ProdRepo
+deactivate CTRL
+deactivate ProdRepo
+
+else chooses brand
+UI -> CTRL : getProductByBrand
+activate CTRL
+CTRL -> ProdRepo : getProductByBrand= getProductByBrand()
+activate ProdRepo
+deactivate CTRL
+deactivate ProdRepo
+
+else chooses shortdescription
+UI -> CTRL : getProductByShortDescription
+activate CTRL
+CTRL -> ProdRepo : getProductByShortDescription= getProductByShortDescription()
+activate ProdRepo
+deactivate CTRL
+deactivate ProdRepo
+end
+
+UI --> C : shows list of products and asks to choose how to order the list (by name or price)
+deactivate UI
+
+C -> UI : chooses how to order
+activate UI
+
+
+UI -> CTRL : getProducts
+activate CTRL
+CTRL -> PC : repositories()
+
+activate PC
+PC -> RF : create
+deactivate PC
+activate RF
+RF -> ProdRepo : create
+deactivate RF
+activate ProdRepo
+deactivate ProdRepo
+CTRL -> ProdRepo : getProducts= getProducts()
+deactivate CTRL
+deactivate ProdRepo
+
+UI -> CTRL : orderProducts
+activate CTRL
+
+alt chooses to sort by name
+CTRL -> ProdRepo : orderByName= orderByName()
+activate ProdRepo
+deactivate ProdRepo
+
+else chooses to sort by price
+CTRL -> ProdRepo : orderByPrice= orderByPrice()
+activate ProdRepo
+deactivate CTRL
+deactivate ProdRepo
+end
+
+
+UI --> C : shows list of products and asks for the ID
+deactivate UI
+
+C -> UI : types the chosen product's ID
+activate UI
+
+
+UI -> CTRL : getProduct
+activate CTRL
+CTRL -> ProdRepo : getProduct= getProduct()
+activate ProdRepo
+deactivate CTRL
+deactivate ProdRepo
+
+UI --> C :shows all data(code,description,brand,category,price)
+deactivate UI
+
+C -> UI : adds product to the shopping cart
+activate UI
+UI -> CTRL : ":addProductShopCart
+activate CTRL
+CTRL -> PC : repositories()
+
+activate PC
+PC -> RF : create
+deactivate PC
+activate RF
+RF -> ShopRepo : create
+deactivate RF
+activate ShopRepo
+deactivate ShopRepo
+CTRL -> ShopRepo : addProductShopCart= addProductShopCart()
+deactivate CTRL
+deactivate ShopRepo
+
+
+end loop
+
+activate UI
+
+
+UI --> C : shows price of the order with the shipping
+deactivate UI
+
+C -> UI : chooses payment method
+activate UI
+
+
+UI -> CTRL : choosesPayMethod
+activate CTRL
+
+CTRL -> OrdRepo : choosesPayMethod= choosesPayMethod()
+activate OrdRepo
+deactivate CTRL
+
+deactivate OrdRepo
+
+
+
+UI -> CTRL : savesOrder
+activate CTRL
+CTRL -> PC : repositories()
+
+activate PC
+PC -> RF : create
+deactivate PC
+activate RF
+RF -> OrdRepo : create
+deactivate RF
+activate OrdRepo
+deactivate OrdRepo
+CTRL -> OrdRepo : savesOrder= savesOrder()
+deactivate CTRL
+deactivate OrdRepo
+
+UI --> C : informs operation success
+deactivate UI
+deactivate C
+
+@enduml

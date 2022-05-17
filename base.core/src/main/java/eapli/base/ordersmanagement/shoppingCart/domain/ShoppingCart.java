@@ -1,8 +1,10 @@
 package eapli.base.ordersmanagement.shoppingCart.domain;
+import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 
 import javax.persistence.*;
+import java.util.Set;
 
 
 @Entity
@@ -12,19 +14,32 @@ public class ShoppingCart implements AggregateRoot<ShoppingCartID>{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private ShoppingCartID shoppingCartID;
 
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Customer customer;
+
     public ShoppingCart(ShoppingCartID shoppingCartID) {
         this.shoppingCartID = shoppingCartID;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "product_item")
-    private ProductItem productItem;
+    private Set< ProductItem> productItem;
 
     protected ShoppingCart() {
     }
 
-    public ShoppingCart(ShoppingCartID shoppingCartID, ProductItem productItem) {
+    public ShoppingCart(ShoppingCartID shoppingCartID, Customer customer, Set<ProductItem> productItem) {
+        this.shoppingCartID = shoppingCartID;
+        this.customer = customer;
         this.productItem = productItem;
+    }
+
+    @Override
+    public String toString() {
+        return "ShoppingCart:" +
+                "\nshoppingCartID=" + shoppingCartID  +
+                "\nproductItem=" + productItem +
+                "\ncustomer=" + customer;
     }
 
     @Override
@@ -55,7 +70,11 @@ public class ShoppingCart implements AggregateRoot<ShoppingCartID>{
         return shoppingCartID;
     }
 
-    public ProductItem getProductItem() {
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public Set<ProductItem> getProductItem() {
         return productItem;
     }
 }

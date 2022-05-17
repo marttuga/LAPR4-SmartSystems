@@ -12,48 +12,47 @@ deactivate ":System"
 SC -> ":System" : types the chosen costumer's id
 activate ":System"
 loop until exits
-loop until exits
 ":System" --> SC : asks for a field(category,description, brand..)to filter the catalog
 deactivate ":System"
 
 SC -> ":System" : types the field
 activate ":System"
 
-end loop
 ":System" --> SC : shows list of products and asks to choose how to order the list (by name or price)
 deactivate ":System"
 
 SC -> ":System" : chooses how to order
 activate ":System"
 
-":System" --> SC : shows list of products and asks for the barcode
+":System" --> SC : shows list of products and asks for the id
 deactivate ":System"
 
-SC -> ":System" : types the chosen product's barcode
+SC -> ":System" : types the chosen product's id
+
 activate ":System"
 
-":System" --> SC :shows all data(code,description,brand,category,price)
+":System" --> SC : creates the lineOrder
 deactivate ":System"
 
-SC -> ":System" : check product's stock
+SC -> ":System" : adds product to the lineOrder
+
 activate ":System"
-":System" --> SC : Shows available stock
+end loop;
+
+":System" --> SC : shows price of the order with the shipping and sales region
+
 deactivate ":System"
-
-
-
-
-":System" --> SC : shows price of the order with the shipping
-activate ":System"
-
 SC -> ":System" : chooses payment method
-deactivate ":System"
-
-":System" --> SC : requests confirmation
-
 activate ":System"
 
-":System" --> SC :confirms the data and informs operation success
+":System" --> SC :shows all data and requests confirmation
+
+deactivate ":System"
+
+SC -> ":System" :confirms the data
+activate ":System"
+
+":System" --> SC : informs operation success
 deactivate ":System"
 deactivate SC
 

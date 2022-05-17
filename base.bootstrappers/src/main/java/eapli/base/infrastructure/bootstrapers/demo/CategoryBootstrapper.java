@@ -22,6 +22,8 @@ public class CategoryBootstrapper implements Action {
     public boolean execute() {
         createCategory("555", "Categoria das Camisolas");
         createCategory("556", "Categoria das Calças");
+        createCategory("557", "Categoria de interior de casa");
+        createCategory("558", "Categoria de alimentação");
         return true;
     }
 
