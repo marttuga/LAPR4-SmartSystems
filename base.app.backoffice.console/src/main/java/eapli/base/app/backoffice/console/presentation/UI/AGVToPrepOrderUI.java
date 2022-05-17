@@ -1,6 +1,6 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
-import eapli.base.ordersmanagement.order.application.AGVToPrepOrderController;
+import eapli.base.warehousemanagement.application.AGVToPrepOrderController;
 import eapli.base.ordersmanagement.order.domain.ProductOrder;
 import eapli.base.utilitarianClasses.Utils;
 import eapli.base.warehousemanagement.domain.AGV;

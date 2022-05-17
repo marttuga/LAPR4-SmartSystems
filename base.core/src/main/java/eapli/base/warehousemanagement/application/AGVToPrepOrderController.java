@@ -1,11 +1,14 @@
-package eapli.base.ordersmanagement.order.application;
+package eapli.base.warehousemanagement.application;
 
 import eapli.base.infrastructure.persistence.PersistenceContext;
+import eapli.base.ordersmanagement.order.application.OrderService;
 import eapli.base.ordersmanagement.order.domain.ProductOrder;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
-import eapli.base.warehousemanagement.application.AGVService;
+import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.base.warehousemanagement.domain.*;
 import eapli.base.warehousemanagement.repositories.AGVRepository;
+import eapli.framework.infrastructure.authz.application.AuthorizationService;
+import eapli.framework.infrastructure.authz.application.AuthzRegistry;
 
 import java.util.List;
 
@@ -14,6 +17,8 @@ public class AGVToPrepOrderController {
     private final AGVRepository agvRepository = PersistenceContext.repositories().agv();
     private final OrderService orderService = new OrderService();
     private final AGVService agvService = new AGVService();
+    private final AuthorizationService authorizationService = AuthzRegistry.authorizationService();
+
 
     public List<ProductOrder> findAllOrders() {
         return orderRepository.findAllOrders();
@@ -35,11 +40,15 @@ public class AGVToPrepOrderController {
     }
 
     public AGV agvToPrepOrder(AGV agv,ProductOrder productOrder) {
+        authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.WAREHOUSE_EMPLOYEE);
         agv.changeOrder(productOrder);
         agv.changeStatus(Status.OCCUPIED);
         agvRepository.save(agv);
+        productOrder.changeStatus(eapli.base.ordersmanagement.order.domain.Status.BEING_PREPARED);
+        orderRepository.save(productOrder);
         return agv;
     }
+
 
     public void printOrdersList(List<ProductOrder> orderList) {
         orderService.printOrdersList(orderList);
