@@ -25,7 +25,7 @@ and/or search for a specific one and its details and add them to the shopping ca
 # 3. Design
 * Utilizar a estrutura base standard da aplicação baseada em camadas 
 
->   Classes do domínio: Category, Product, Brand, ShortDescription, ProductOrder, shoppingCart
+>   Classes do domínio: Category, Product, Brand, ShortDescription, ProductOrder, ShoppingCart
 >
 >   Controlador: AddProductShopCartController
 >

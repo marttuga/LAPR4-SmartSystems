@@ -3,6 +3,7 @@ package eapli.base.ordersmanagement.order.domain;
 import eapli.base.ordersmanagement.category.domain.CategoryCode;
 import eapli.base.ordersmanagement.product.domain.*;
 import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
+import eapli.base.ordersmanagement.shoppingCart.domain.ProductItemID;
 import eapli.framework.general.domain.model.Money;
 import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
@@ -40,9 +41,10 @@ class LineOrderTest {
 
     Money priceItem = Money.euros(5);
     Money priceI = Money.euros(2);
-
-    ProductItem productItem = new ProductItem(priceItem, list, 2);
-    ProductItem productI = new ProductItem(priceI, listt, 1);
+    ProductItemID productItemID= new ProductItemID("3");
+    ProductItemID productIID= new ProductItemID("4");
+    ProductItem productItem = new ProductItem(priceItem,2,productItemID,list);
+    ProductItem productI = new ProductItem(priceI,2,productIID,listt);
 
     Set<ProductItem> lineOrderList;
 
@@ -85,11 +87,5 @@ class LineOrderTest {
         Assertions.assertEquals(priceOrderWithoutTaxe, lineOrder.getPriceOrderWithoutTaxes());
     }
 
-    @Test
-    void sameAs() {
-    }
 
-    @Test
-    void identity() {
-    }
 }
