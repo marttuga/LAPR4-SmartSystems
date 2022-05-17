@@ -161,39 +161,7 @@ end loop
 activate UI
 
 
-UI --> C : shows price of the order with the shipping
-deactivate UI
 
-C -> UI : chooses payment method
-activate UI
-
-
-UI -> CTRL : choosesPayMethod
-activate CTRL
-
-CTRL -> OrdRepo : choosesPayMethod= choosesPayMethod()
-activate OrdRepo
-deactivate CTRL
-
-deactivate OrdRepo
-
-
-
-UI -> CTRL : savesOrder
-activate CTRL
-CTRL -> PC : repositories()
-
-activate PC
-PC -> RF : create
-deactivate PC
-activate RF
-RF -> OrdRepo : create
-deactivate RF
-activate OrdRepo
-deactivate OrdRepo
-CTRL -> OrdRepo : savesOrder= savesOrder()
-deactivate CTRL
-deactivate OrdRepo
 
 UI --> C : informs operation success
 deactivate UI

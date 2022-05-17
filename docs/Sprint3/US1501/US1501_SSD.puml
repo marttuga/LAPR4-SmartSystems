@@ -39,11 +39,6 @@ C -> ":System" : adds product to the shopping cart
 activate ":System"
 end loop;
 
-":System" --> C : shows price of the order with the shipping and sales region
-
-deactivate ":System"
-C -> ":System" : chooses payment method
-activate ":System"
 
 ":System" --> C :shows all data and informs operation success
 
