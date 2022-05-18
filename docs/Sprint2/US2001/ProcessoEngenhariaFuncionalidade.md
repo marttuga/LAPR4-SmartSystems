@@ -26,10 +26,9 @@ I interpret that:
 
 # 3. Design
 
-* Use a layered application framework base pattern.
-
 * Domain Classes: Warehouse, WarehouseID, AGVDock, Plan, Row, Shelf, Aisle
 * Controller: UploadFileController
+* Service : UploadFileService
 * Repository: UploadFileRepository
 
 
