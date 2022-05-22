@@ -25,11 +25,13 @@ and/or search for a specific one and its details and add them to the shopping ca
 # 3. Design
 * Utilizar a estrutura base standard da aplicação baseada em camadas 
 
->   Classes do domínio: Category, Product, Brand, ShortDescription, ProductOrder, ShoppingCart
+>   Classes do domínio: ProductOrder, AGV
 >
->   Controlador: AddProductShopCartController
+>   Controlador: ViewCatalogController NewProductOrderController RegisterCustomerController  AddProductShopCartController;
 >
->   Repository:  ProductRepository, ShoppingCartRepository
+>   Repository:   ShoppingCartRepository
+>
+>   UI:  AddProductShopCartUI
 
 ## 3.1. Realização da Funcionalidade
 ![SSD](US1501_SSD.svg)
@@ -41,16 +43,14 @@ and/or search for a specific one and its details and add them to the shopping ca
 
 ## 3.3. Padrões Aplicados
 
-Repository factory to store in database and controller.
+Repository, factory, controller,GRASP.
 
 ## 3.4. Testes
-**Teste 1:** Verificar se duas brands sao iguais
+**Teste 1:** Verificar se o ID do carrinho é nulo
 
-	  @Test
-    void testEquals() throws IllegalAccessException {
-        Brand b= new Brand("oi");
-        Brand bo= new Brand("oi");
-        Assertions.assertEquals(bo.toString(), b.toString());
+    @Test
+    void ensureIsNotEmpty() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new ProductItemID(""));
     }
 
 # 4. Implementação
@@ -61,16 +61,12 @@ Repository factory to store in database and controller.
 
 # 5. Integração/Demonstração
 
-    public List<Product> getProductByBrand(Brand brand) {
-        return productRepository.findByBrand(brand);
-    }
+    public ShoppingCart addProdShopCart(ShoppingCartID shoppingCartID, Customer customer, Set<ProductItem> productItem) {
+        authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.CLIENT_USER);
 
-    public List<Product> getProductByCategory(Category category) {
-        return productRepository.findByCategory(category);
-    }
+        ShoppingCart shoppingCart = new ShoppingCart(shoppingCartID,  customer,  productItem);
 
-    public List<Product> getProductByDescription(ShortDescription shortDescription) {
-        return productRepository.findByDescription(shortDescription);
+        return shoppingCartRepo.save(shoppingCart);
     }
 # 6. Observações
 
