@@ -35,6 +35,10 @@ prepared by an AGV (in the status to be prepared)
 >   Controlador: AGVToPrepOrderController
 >
 >   Repository:  ProductOrderRepository AGVRepository
+> 
+>   Service:  OrderService AGVService
+> 
+>   UI:  AGVToPrepOrderUI 
 
 ## 3.1. Realização da Funcionalidade
 ![SSD](US2003_SSD.svg)
@@ -46,7 +50,7 @@ prepared by an AGV (in the status to be prepared)
 
 ## 3.3. Padrões Aplicados
 
-Repository factory to store in database and controller.
+Repository, factory, controller,Service,GRASP.
 
 ## 3.4. Testes
 **Teste 1:** Change the status of an agv
