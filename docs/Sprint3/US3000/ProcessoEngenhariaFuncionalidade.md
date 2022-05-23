@@ -14,6 +14,7 @@
 this project (e.g., pedagogical questionnaires).
 * Teams are free to adopt the format foreseen as best suitable for the project purposes.
 Section 5.1.3 of the specifications' document provides a complete example of a questionnaire that all teams' solutions must support.
+* There is no intend to reutilize questions and/or sections. If that happens, the user will type the question/section again.
 
 # 2. Analysis
 - The questionnaire should be developed according to the needs of each team. There are several types of questionnaires that 
@@ -27,7 +28,9 @@ can be made following a structure, and taking into account the indications given
 
 ## 3.1. Realização da Funcionalidade
 
-*Nesta secção deve apresentar e descrever o fluxo/sequência que permite realizar a funcionalidade.*
+[US3000_SD](/docs/Sprint3/US3000/US3000_SD.puml)
+
+[US3000_SSD](/docs/Sprint3/US3000/US3000_SSD.puml)
 
 ## 3.2. Diagrama de Classes
 
