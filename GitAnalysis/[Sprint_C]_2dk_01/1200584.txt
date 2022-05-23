@@ -1,3 +1,80 @@
+commit d0fa98262bec0808e76fa34d53077355b7f865d5
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Mon May 23 15:51:52 2022 +0100
+
+    <L2L20-42> US2005- Analysis: Created and added US2005.md analysis
+
+A	docs/Sprint3/US2005/US2005.md
+
+commit a41f0b8d899f57b19019e60de12f2daae14b86a9
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Mon May 23 15:45:33 2022 +0100
+
+    <L2L20-36> US3001- Analyis: updated US3001.md
+
+M	docs/Sprint3/US3001/US3001.md
+
+commit 23b799aa235a171da1cc242c9ce8ef787fb4fcc9
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Mon May 23 15:26:18 2022 +0100
+
+    Added and updated Planeamento.md
+
+A	docs/Sprint3/Planeamento.md
+
+commit 54d5c1e4aa92b1ec69b4a4b32754a1bcea0ebb9d
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Mon May 23 11:58:21 2022 +0100
+
+    <L2L20-36> US3001 - Design: created and added US3001_SD.puml
+
+A	docs/Sprint3/US3001/US3001_SD.puml
+
+commit 18bf6cd8bcca79d2906139017d81160de8ebf76b
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Mon May 23 11:52:24 2022 +0100
+
+    <L2L20-36> US3001 - Design: created and added US3001_SSD.puml
+
+A	docs/Sprint3/US3001/US3001_SSD.puml
+
+commit 49388224642ae439b4ea362b69ef90ef2e370c55
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Mon May 23 11:52:15 2022 +0100
+
+    <L2L20-36> US3001 - Design: created and added US3001_CD.puml
+
+A	docs/Sprint3/US3001/US3001_CD.puml
+
+commit a836baf0b4b9f7946f618e1fb36262380276d190
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Mon May 23 11:42:59 2022 +0100
+
+    <L2L20-36> US3001 - Analysis: updated 3. Design at US3001.md analysis
+
+M	docs/Sprint3/US3001/US3001.md
+
+commit cf188e2a1abaeb8780f2c74079b8f0c3e120b1f5
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Mon May 23 11:40:35 2022 +0100
+
+    <L2L20-36> US3001 - Analysis: Created and added US3001.md analysis
+
+A	docs/Sprint3/US3001/US3001.md
+
+commit 725a179728e1cedcfe02e58688f067fee6618635
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat May 14 13:22:49 2022 +0100
+
+    AGV status update
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/ConfigureAGVUI.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/application/AGVService.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/application/ConfigureAGVController.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGV.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGVBuilder.java
+M	base.core/src/test/java/eapli/base/warehousemanagement/domain/AGVTest.java
+
 commit bd28e375b9561ab8b182fd7811435d41fa599d88
 Author: João Tiago Araújo <1200584@isep.ipp.pt>
 Date:   Wed May 11 17:13:33 2022 +0100
