@@ -1,0 +1,35 @@
+@startuml
+autonumber
+actor "Sales Manager" as SM
+
+loop
+activate SM
+
+SM -> ":System" : Starts to create a new questionnaire
+activate ":System"
+
+":System" --> SM : Asks the type of questionnaire(single-choice, free text...)
+deactivate ":System"
+
+SM -> ":System" : Chooses the type
+activate ":System"
+
+":System" --> SM : Requests question
+deactivate ":System"
+
+SM -> ":System" : Types the question
+activate ":System"
+
+":System" --> SM : Requests answer options
+deactivate ":System"
+
+SM -> ":System" : Types the answers
+activate ":System"
+
+":System" --> SM : Informs operation (in)success
+deactivate ":System"
+
+deactivate SM
+end loop
+
+@enduml
