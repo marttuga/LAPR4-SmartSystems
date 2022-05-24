@@ -30,4 +30,9 @@ public class InMemoryOrderRepository  extends InMemoryDomainRepository<ProductOr
     public ProductOrder findByOrderID(String id) {
         return findByOrderID(id);
     }
+
+    @Override
+    public ProductOrder findOrderByAGV(String id) {
+        return findOrderByAGV(id);
+    }
 }
