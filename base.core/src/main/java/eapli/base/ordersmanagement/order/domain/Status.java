@@ -10,6 +10,8 @@ public enum Status implements ValueObject {
     REGISTERED,
     TO_BE_PREPARED,
     BEING_PREPARED,
+
+    PREPARED,
     DISPATCHED,
     DELIVERED,
 
