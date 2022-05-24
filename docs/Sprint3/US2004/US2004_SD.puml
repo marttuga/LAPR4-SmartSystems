@@ -1,0 +1,96 @@
+@startuml
+autonumber
+'hide footbox
+actor "Warehouse Employee" as WE
+participant ":DispatchOrdersUI" as UI
+participant ":AGVToPrepOrderController" as CTRL
+participant "productOrder:ProductOrder" as PO
+participant ":OrderRepository" as OrderRepo
+
+
+activate WE
+
+WE -> UI : Starts to view orders ready to be dispatched
+activate UI
+
+
+
+
+
+UI -> CTRL : findOrderByStatus()
+activate CTRL
+CTRL -> OrderRepo : findOrderByStatus()
+activate OrderRepo
+deactivate CTRL
+deactivate OrderRepo
+
+UI --> WE :  Shows list of orders with status PREPARED
+deactivate UI
+
+alt Orders filtered by AGV ready to be dispatched
+WE -> UI : Chooses to see orders filtered by AGV
+activate UI
+UI --> WE : Asks for AGV_ID
+deactivate UI
+WE -> UI : Types AGV_ID
+activate UI
+UI -> CTRL: findOrderByAGV(id)
+
+activate CTRL
+CTRL -> OrderRepo : findOrderByAGV(id)
+activate OrderRepo
+OrderRepo -> CTRL : productOrder
+deactivate OrderRepo
+CTRL -> UI : productOrder
+deactivate CTRL
+UI --> WE : Shows product order
+deactivate UI
+
+
+
+else All orders ready to be dispatched
+WE -> UI : Chooses OrderID
+activate UI
+UI -> CTRL: findByOrderID(id)
+
+activate CTRL
+CTRL -> OrderRepo : findByOrderID(id)
+activate OrderRepo
+OrderRepo -> CTRL : productOrder
+deactivate OrderRepo
+CTRL -> UI : productOrder
+deactivate CTRL
+UI --> WE : Shows product order
+deactivate UI
+end
+
+
+WE -> UI : Confirms order to dispatch
+activate UI
+
+UI -> CTRL : dispatchOrders()
+
+activate CTRL
+CTRL -> PO : changeStatus(dispatched)
+activate  PO
+deactivate PO
+CTRL -> OrderRepo : save(productOrder)
+
+
+deactivate CTRL
+activate OrderRepo
+deactivate OrderRepo
+
+
+
+
+
+
+UI --> WE : informs operation success
+deactivate UI
+
+
+deactivate UI
+deactivate WE
+
+@enduml
