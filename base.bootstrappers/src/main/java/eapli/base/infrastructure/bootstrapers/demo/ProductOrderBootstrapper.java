@@ -48,6 +48,11 @@ public class ProductOrderBootstrapper implements Action {
         assert productOrder3 != null;
         productOrder3.changeStatus(Status.TO_BE_PREPARED);
         orderRepository.save(productOrder3);
+        ProductOrder productOrder4 = createProductOrder("123", "558", new Date(23/10/2021), "555", 2,
+                "EUR", 10L);
+        assert productOrder4 != null;
+        productOrder4.changeStatus(Status.PREPARED);
+        orderRepository.save(productOrder4);
 
         return true;
     }

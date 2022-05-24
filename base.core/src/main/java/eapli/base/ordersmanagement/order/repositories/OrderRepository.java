@@ -15,4 +15,6 @@ public interface OrderRepository extends DomainRepository<OrderID, ProductOrder>
 
     ProductOrder findByOrderID(String id);
 
+    ProductOrder findOrderByAGV(String id);
+
 }
