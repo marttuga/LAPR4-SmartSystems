@@ -1,0 +1,76 @@
+@startuml
+autonumber
+actor "Sales Manager" as SM
+participant ":CreateNewQuestionnaireUI" as UI
+participant ":CreateNewQuestionnaireController" as CTRL
+participant ":PersistenceContext" as PC
+participant ":RepositoryFactory" as RF
+participant ":Questionnaire" as Quest
+participant ":QuestionnaireRepository" as QuestRep
+
+
+activate SM
+
+SM -> UI : Starts to create a new questionnaire
+activate UI
+
+UI --> SM : Asks the type of questionnaire(single-choice, free text...)
+deactivate UI
+
+SM -> UI : Chooses the type
+activate UI
+
+UI --> SM : Requests question
+deactivate UI
+
+SM -> UI : Types the question
+activate UI
+
+UI -> CTRL : create
+deactivate UI
+activate CTRL
+
+
+CTRL -> PC : repositories()
+deactivate CTRL
+activate PC
+PC -> RF : create
+deactivate PC
+activate RF
+
+RF -> QuestRep : create
+activate QuestRep
+deactivate RF
+
+
+deactivate QuestRep
+
+activate PC
+PC -> CTRL : QuestionnaireRepository
+deactivate PC
+activate CTRL
+deactivate CTRL
+
+activate UI
+UI -> CTRL : createNewQuestionnaire()
+
+CTRL -> Quest : newQuestionnaire = create()
+activate Quest
+deactivate Quest
+
+
+CTRL -> QuestRep : save(newQuestionnaire)
+activate QuestRep
+
+CTRL -> UI : newQuestionnaire
+
+deactivate CTRL
+
+deactivate QuestRep
+UI --> SM : Informs operation (in)success
+deactivate UI
+
+deactivate SM
+
+
+@enduml

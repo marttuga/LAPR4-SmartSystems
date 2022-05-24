@@ -1,0 +1,47 @@
+commit 3a6cdeb6d8556f5b15e3fabed3ae63a4f752b8a2
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Mon May 23 17:44:47 2022 +0100
+
+    <L2L20-46> Design of US3000: SSD
+
+A	docs/Sprint3/US3000/US3000_SSD.puml
+
+commit fbc4c46021e0ced4eff6decdd6a3d8c824c795e9
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Mon May 23 17:44:35 2022 +0100
+
+    <L2L20-45> Design of US3000: SD
+
+A	docs/Sprint3/US3000/US3000_SD.puml
+
+commit 3286caa947f59df415c30691979e5a1b800dc68b
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Mon May 23 17:43:54 2022 +0100
+
+    <L2L20-66> Analysis of US3000
+
+M	docs/Sprint3/US3000/ProcessoEngenhariaFuncionalidade.md
+
+commit af40d2e62adcecb199f33c387b8b4021eb1f135c
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Wed May 18 20:13:51 2022 +0100
+
+    <L2L20-66> Analysis of US3000
+
+A	docs/Sprint3/US3000/ProcessoEngenhariaFuncionalidade.md
+
+commit 2050c0b9e3c8253027e31ea2b61cc77ac47b91eb
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Wed May 18 19:53:15 2022 +0100
+
+    Correction
+
+M	docs/Sprint2/US2001/ProcessoEngenhariaFuncionalidade.md
+
+commit aabd364be469794b887b2329efe332c82c9cb999
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Wed May 18 17:05:44 2022 +0100
+
+    Correction
+
+M	docs/Sprint2/US2001/ProcessoEngenhariaFuncionalidade.md
