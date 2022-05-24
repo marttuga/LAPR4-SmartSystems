@@ -76,37 +76,6 @@ public class MainMenu extends AbstractUI {
     // SETTINGS
     private static final int SET_KITCHEN_ALERT_LIMIT_OPTION = 1;
 
-    // DISH TYPES
-    private static final int DISH_TYPE_REGISTER_OPTION = 1;
-    private static final int DISH_TYPE_LIST_OPTION = 2;
-    private static final int DISH_TYPE_CHANGE_OPTION = 3;
-    private static final int DISH_TYPE_ACTIVATE_DEACTIVATE_OPTION = 4;
-
-    // DISHES
-    private static final int DISH_REGISTER_OPTION = 5;
-    private static final int DISH_LIST_OPTION = 6;
-    private static final int DISH_REGISTER_DTO_OPTION = 7;
-    private static final int DISH_LIST_DTO_OPTION = 8;
-    private static final int DISH_ACTIVATE_DEACTIVATE_OPTION = 9;
-    private static final int DISH_CHANGE_OPTION = 10;
-
-    // DISH PROPERTIES
-    private static final int CHANGE_DISH_NUTRICIONAL_INFO_OPTION = 1;
-    private static final int CHANGE_DISH_PRICE_OPTION = 2;
-
-    // MATERIALS
-    private static final int MATERIAL_REGISTER_OPTION = 1;
-    private static final int MATERIAL_LIST_OPTION = 2;
-
-    // REPORTING
-    private static final int REPORTING_DISHES_PER_DISHTYPE_OPTION = 1;
-    private static final int REPORTING_HIGH_CALORIES_DISHES_OPTION = 2;
-    private static final int REPORTING_DISHES_PER_CALORIC_CATEGORY_OPTION = 3;
-
-    // MEALS
-    private static final int LIST_MEALS_OPTION = 1;
-    private static final int MEAL_REGISTER_OPTION = 2;
-
     // MAIN MENU
     private static final int MY_USER_OPTION = 1;
     private static final int USERS_OPTION = 2;
@@ -174,7 +143,7 @@ public class MainMenu extends AbstractUI {
             final Menu warehouseMenu = buildWarehouseEmployeeMenu();
             mainMenu.addSubMenu(WAREHOUSE_MANAGEMENT_OPTION,warehouseMenu);
         }
-        if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.CLIENT_USER)) {
+        if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.CLIENT_USER)) {
             final Menu customerMenu = buildCustomerMenu();
             mainMenu.addSubMenu(CUSTOMER_OPTION,customerMenu);
         }
@@ -186,6 +155,16 @@ public class MainMenu extends AbstractUI {
         mainMenu.addItem(EXIT_OPTION, "Exit", new ExitWithMessageAction("Bye, Bye"));
 
         return mainMenu;
+    }
+
+
+    private Menu buildCustomerMenu() {
+        final Menu menu = new Menu("Shopping >");
+
+        menu.addItem(ADD_PRODUCT_SHOPCART, "Add products to Shopping Cart ",new AddProductShopCartUI()::show);
+        menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
+
+        return menu;
     }
 
     private Menu buildAdminSettingsMenu() {
@@ -217,15 +196,6 @@ public class MainMenu extends AbstractUI {
         menusMenu.addItem(CONFIGURE_AGV, "Configure AGV", new ConfigureAGVUI()::show);
         menusMenu.addItem(UPLOAD_FILE, "Upload File", new UploadFileUI()::show);
        menusMenu.addItem(AGV_TO_PREP_ORDER, "Get an order to an AGV", new AGVToPrepOrderUI()::doShow);
-
-        menusMenu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
-
-        return menusMenu;
-    }
-
-    private Menu buildCustomerMenu() {
-        final Menu menusMenu = new Menu("Customer >");
-        menusMenu.addItem(ADD_PRODUCT_SHOPCART, "Add Product to ShoppinCart", new AddProductShopCartUI()::show);
 
         menusMenu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
