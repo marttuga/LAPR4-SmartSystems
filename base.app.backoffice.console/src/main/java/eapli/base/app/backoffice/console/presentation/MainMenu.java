@@ -71,6 +71,7 @@ public class MainMenu extends AbstractUI {
     private static final int UPLOAD_FILE = 2;
     private static final int AGV_TO_PREP_ORDER = 3;
 
+    private static final int DISPATCH_ORDER = 4;
 
     private static final int ADD_PRODUCT_SHOPCART = 1;
     // SETTINGS
@@ -217,6 +218,7 @@ public class MainMenu extends AbstractUI {
         menusMenu.addItem(CONFIGURE_AGV, "Configure AGV", new ConfigureAGVUI()::show);
         menusMenu.addItem(UPLOAD_FILE, "Upload File", new UploadFileUI()::show);
        menusMenu.addItem(AGV_TO_PREP_ORDER, "Get an order to an AGV", new AGVToPrepOrderUI()::doShow);
+        menusMenu.addItem(DISPATCH_ORDER, "Dispatch orders for customer delivery", new DispatchOrdersUI()::doShow);
 
         menusMenu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 

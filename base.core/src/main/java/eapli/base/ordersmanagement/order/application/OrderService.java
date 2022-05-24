@@ -176,13 +176,14 @@ public class OrderService {
     public int showOptionsStatusOrder() {
         int option = -1;
         System.out.println("===================================================");
-        System.out.println("               ORDER STATUS:          ");
-        System.out.println("=================================================\n");
+        System.out.println("                    ORDER STATUS:                  ");
+        System.out.println("===================================================\n");
         System.out.println("1-REGISTERED");
         System.out.println("2-TO BE PREPARED");
         System.out.println("3-BEING PREPARED");
-        System.out.println("4-DISPATCHED");
-        System.out.println("3-DELIVERED");
+        System.out.println("4-PREPARED");
+        System.out.println("5-DISPATCHED");
+        System.out.println("6-DELIVERED");
         System.out.println("===================================================");
         System.out.println("0. Back\n\n");
         option = Console.readInteger("Please select an option");
@@ -198,11 +199,15 @@ public class OrderService {
             case (3):
                 return Status.BEING_PREPARED;
             case (4):
-                return Status.DISPATCHED;
+                return Status.PREPARED;
             case (5):
+                return Status.DISPATCHED;
+            case (6):
                 return Status.DELIVERED;
         }
 
         return null;
     }
+
+
 }
