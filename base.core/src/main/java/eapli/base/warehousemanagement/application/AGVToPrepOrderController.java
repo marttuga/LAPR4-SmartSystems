@@ -29,6 +29,10 @@ public class AGVToPrepOrderController {
     public List<ProductOrder> findOrdersByStatus(eapli.base.ordersmanagement.order.domain.Status status) {
         return orderRepository.findOrdersByStatus(status);
     }
+    public ProductOrder findOrderByAGV(String ident) {
+        return orderRepository.findOrderByAGV(ident);
+    }
+
     public List<AGV> findAllAGV() {
         return agvRepository.findAllAGV();
     }
@@ -39,6 +43,9 @@ public class AGVToPrepOrderController {
         return agvRepository.findAGVByStatus(status);
     }
 
+
+
+
     public AGV agvToPrepOrder(AGV agv,ProductOrder productOrder) {
         authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.WAREHOUSE_EMPLOYEE);
         agv.changeOrder(productOrder);
@@ -47,6 +54,11 @@ public class AGVToPrepOrderController {
         productOrder.changeStatus(eapli.base.ordersmanagement.order.domain.Status.BEING_PREPARED);
         orderRepository.save(productOrder);
         return agv;
+    }
+
+    public void dispatchOrders (ProductOrder productOrder){
+        productOrder.changeStatus(eapli.base.ordersmanagement.order.domain.Status.DISPATCHED);
+        orderRepository.save(productOrder);
     }
 
 
