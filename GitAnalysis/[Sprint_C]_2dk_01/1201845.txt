@@ -1,3 +1,205 @@
+commit 8a783305ef441469110211a59a38df5edac25cb5
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Tue May 17 20:23:34 2022 +0100
+
+    tests for us 1501 and corrections on tests from previous us
+
+M	base.core/src/test/java/eapli/base/ordersmanagement/order/domain/LineOrderTest.java
+A	base.core/src/test/java/eapli/base/ordersmanagement/shoppingCart/domain/ProductItemIDTest.java
+A	base.core/src/test/java/eapli/base/ordersmanagement/shoppingCart/domain/ProductItemTest.java
+A	base.core/src/test/java/eapli/base/ordersmanagement/shoppingCart/domain/ShoppingCartIDTest.java
+A	base.core/src/test/java/eapli/base/ordersmanagement/shoppingCart/domain/ShoppingCartTest.java
+M	docs/Sprint3/US1501/US1501_SSD.svg
+
+commit dedf50612fced67e81bf6850f47a56a895f89153
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Tue May 17 14:16:47 2022 +0100
+
+    correction on sd and ssd of us1501
+
+M	docs/Sprint3/US1501/ProcessoEngenhariaFuncionalidade.md
+M	docs/Sprint3/US1501/US1501_SD.puml
+M	docs/Sprint3/US1501/US1501_SD.svg
+M	docs/Sprint3/US1501/US1501_SSD.puml
+
+commit a9e1cec5c6df45c7092bf157c4f42bc8e3d77ad5
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Tue May 17 14:12:44 2022 +0100
+
+    controller and ui method additions for us1501
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/AddProductShopCartUI.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/shoppingCart/application/AddProductShopCartController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/shoppingCart/domain/ProductItem.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/shoppingCart/repositories/ProductItemRepository.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/shoppingCart/repositories/ShoppingCartRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaProductItemRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaShoppingCartRepository.java
+
+commit 7be934470f3b10808329e0a8cfe1cd87cde8731b
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Tue May 17 14:11:23 2022 +0100
+
+    corrections on us 2003
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/AGVToPrepOrderUI.java
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/ProductOrderBootstrapper.java
+R076	base.core/src/main/java/eapli/base/ordersmanagement/order/application/AGVToPrepOrderController.java	base.core/src/main/java/eapli/base/warehousemanagement/application/AGVToPrepOrderController.java
+
+commit 3e790df5436af5dbf7e61981de779560cbd13bc9
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon May 16 18:20:47 2022 +0100
+
+    tests for us 2003 and corrections on previous tests for the other us
+
+M	base.core/src/test/java/eapli/base/ordersmanagement/order/domain/LineOrderTest.java
+M	base.core/src/test/java/eapli/base/ordersmanagement/order/domain/PriceTableIDTest.java
+M	base.core/src/test/java/eapli/base/ordersmanagement/order/domain/ProductOrderTest.java
+M	base.core/src/test/java/eapli/base/warehousemanagement/domain/AGVTest.java
+M	base.core/src/test/java/eapli/base/warehousemanagement/domain/IdentifierTest.java
+M	docs/Sprint3/US2003/ProcessoEngenhariaFuncionalidade.md
+
+commit c1708dc24d715fd9051e76003034a9b612c2cf85
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon May 16 17:32:52 2022 +0100
+
+    final methods upgrade on controller and UI for us 2003
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/AGVToPrepOrderUI.java
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/AgvBootstrapper.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/AGVToPrepOrderController.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/application/AGVService.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGV.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/repositories/AGVRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaAGVRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaOrderRepository.java
+
+commit 9661f6f52cc7278fae945c16d6a05af240b74796
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon May 16 17:31:35 2022 +0100
+
+    correction on previous us methods
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/NewProductOrderUI.java
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/ViewCatalogUI.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/OrderService.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/domain/ProductOrder.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/domain/Status.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/repositories/OrderRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryOrderRepository.java
+
+commit 62595e797dbf604b2af6113b44a184ff34f781a4
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun May 15 23:51:44 2022 +0100
+
+    correction on bootstrapper
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/ProductOrderBootstrapper.java
+
+commit b83cee1cdcc8685417bd53cd5d614f6e181ccb3e
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun May 15 23:13:04 2022 +0100
+
+    correction: status on ProductOrder and method on controller
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/NewProductOrderController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/domain/ProductOrder.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/domain/Status.java
+
+commit 34aa95504201c926b47acfe19baa07eefe018b23
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun May 15 23:12:26 2022 +0100
+
+    CORRECTION ON BOOTSTRAPPERS BY BRUNO
+
+A	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/AgvBootstrapper.java
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/BaseDemoBootstrapper.java
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/ProductOrderBootstrapper.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGV.java
+
+commit fcfd223e9eb034583da910aed3c2af9d33d041d4
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun May 15 22:32:06 2022 +0100
+
+    us1501 adition of customer on shopping cart and controller and UI
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/MainMenu.java
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/AGVToPrepOrderUI.java
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/AddProductShopCartUI.java
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/NewProductOrderUI.java
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/ViewCatalogUI.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/shoppingCart/application/AddProductShopCartController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/shoppingCart/domain/ShoppingCart.java
+
+commit 304ed8b045c7b0d93b6dc7c7b9fac0021141ed4a
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sat May 14 17:00:35 2022 +0100
+
+    us2003 AGV find by status method addition
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/AGVToPrepOrderUI.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/AGVToPrepOrderController.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGV.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/repositories/AGVRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaAGVRepository.java
+
+commit e282c9306f350a59d7c031738b857f88775db9ce
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sat May 14 01:13:54 2022 +0100
+
+    corrections on sd of us 1004 and 1002 and ssd, sd and cd for us 1501 not finished analise
+
+M	base.core/target/classes/eapli/base/infrastructure/persistence/RepositoryFactory.class
+M	base.persistence.impl/target/classes/eapli/base/persistence/impl/jpa/JpaRepositoryFactory.class
+M	docs/Sprint2/US1002/US1002_SSD.puml
+M	docs/Sprint2/US1002/US1002_SSD.svg
+M	docs/Sprint2/US1004/US1004_SD.puml
+M	docs/Sprint2/US1004/US1004_SD.svg
+M	docs/Sprint2/US1004/US1004_SSD.puml
+M	docs/Sprint2/US1004/US1004_SSD.svg
+M	docs/Sprint3/US1501/ProcessoEngenhariaFuncionalidade.md
+A	docs/Sprint3/US1501/US1501_CD.puml
+A	docs/Sprint3/US1501/US1501_CD.svg
+A	docs/Sprint3/US1501/US1501_SD.puml
+A	docs/Sprint3/US1501/US1501_SD.svg
+A	docs/Sprint3/US1501/US1501_SSD.puml
+A	docs/Sprint3/US1501/US1501_SSD.svg
+M	docs/Sprint3/US2003/ProcessoEngenhariaFuncionalidade.md
+
+commit baba5fceb7bdd5ba830159dd0281c10760766b30
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri May 13 18:51:06 2022 +0100
+
+    start of controller and UI for us 2003
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/MainMenu.java
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/AGVToPrepOrderUI.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/order/application/AGVToPrepOrderController.java
+
+commit 8ab7a8c8cb0155b9a18399b49b5142d1ad566fc2
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri May 13 18:50:30 2022 +0100
+
+    alterations and addition of methods in order repository and service for us 2003
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/OrderService.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/domain/ProductOrder.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/repositories/OrderRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryOrderRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaOrderRepository.java
+
+commit 7ba0dc9d7a60106b2ed64b01886846c4e5075f0f
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri May 13 18:49:07 2022 +0100
+
+    alterations and addition of methods in agv repository and service for us 2003
+
+M	base.core/src/main/java/eapli/base/infrastructure/persistence/RepositoryFactory.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/application/AGVService.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/repositories/AGVRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaAGVRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaRepositoryFactory.java
+
 commit 520cde62beec84df9653de63f44157de7b7c3936
 Author: Marta Portugal <1201845@isep.ipp.pt>
 Date:   Thu May 12 23:54:58 2022 +0100

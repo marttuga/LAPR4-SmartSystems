@@ -1,0 +1,55 @@
+@startuml
+autonumber
+'hide footbox
+actor "Project Manager" as PM
+participant ":GrammarUI" as UI
+participant ":TextFile" as TF
+participant ":GrammarLexer" as GL
+participant ":GrammarParser" as GP
+participant ":ParseTree" as PS
+
+
+
+activate PM
+
+PM -> UI : start to specify the questionnaire in a file
+activate UI
+
+UI -> TF : getFile
+activate TF
+
+deactivate TF
+
+UI --> PM : saves the file
+deactivate UI
+
+PM -> UI : asks to validate the grammar of questionnaire
+activate UI
+
+UI -> GL : analise()
+deactivate TF
+
+activate GL
+GL -> GP : analise by tokens()
+deactivate GL
+activate GP
+GP -> PS : create()
+activate PS
+deactivate GP
+
+deactivate PS
+UI --> PM : shows all data and request confirmation
+deactivate UI
+
+
+
+PM -> UI : confirms the data
+
+activate UI
+UI --> PM : informs operation success
+deactivate UI
+
+deactivate UI
+deactivate PM
+
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+autonumber
+actor "Project Manager" as PM
+
+activate PM
+PM -> ":System" : start to specify the questionnaire in a file
+activate ":System"
+
+":System" --> PM : saves the file
+deactivate ":System"
+
+PM -> ":System" : asks to validate the grammar of questionnaire
+activate ":System"
+
+":System" --> PM : shows all data and request confirmation
+deactivate ":System"
+
+PM -> ":System" : confirms the data
+activate ":System"
+
+":System" --> PM : informs operation success
+deactivate ":System"
+
+deactivate ":System"
+deactivate PM
+
+@enduml
