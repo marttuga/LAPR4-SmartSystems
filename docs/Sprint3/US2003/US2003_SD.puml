@@ -8,7 +8,8 @@ participant ":PersistenceContext" as PC
 participant ":RepositoryFactory" as RF
 participant ":ProductOrderRepository" as ProdRepo
 participant ":AGVRepository" as AGVRepo
-
+participant ":ProductOrderService" as ProdS
+participant ":AGVService" as AGVS
 
 activate WE
 
@@ -29,10 +30,12 @@ deactivate RF
 activate ProdRepo
 deactivate ProdRepo
 CTRL -> ProdRepo : getOrders= getOrders()
-deactivate CTRL
+
 deactivate ProdRepo
 
 
+CTRL --> UI :  getOrders
+deactivate CTRL
 
 UI --> WE : shows list of orders
 deactivate UI
@@ -44,6 +47,7 @@ UI -> CTRL : getOrderByStatus
 activate CTRL
 CTRL -> ProdRepo : getOrderByStatus= getOrderByStatus()
 activate ProdRepo
+CTRL --> UI :  getOrderByStatus
 deactivate CTRL
 deactivate ProdRepo
 
@@ -67,7 +71,7 @@ deactivate RF
 activate AGVRepo
 deactivate AGVRepo
 CTRL -> AGVRepo : getAGVs= getAGVs()
-
+CTRL --> UI :  getAGVs
 deactivate CTRL
 deactivate AGVRepo
 
@@ -82,15 +86,20 @@ UI -> CTRL : getAvailableAGV
 activate CTRL
 CTRL -> AGVRepo : getAvailableAGV= getAvailableAGV()
 activate AGVRepo
-CTRL -> ProdRepo : changeOrderStatus= changeOrderStatus()
+CTRL -> AGVS: changeAGVStatus= changeAGVStatus()
 deactivate AGVRepo
-activate ProdRepo
+activate AGVS
+CTRL -> ProdS : changeOrderStatus= changeOrderStatus()
+deactivate AGVS
+deactivate AGVRepo
+activate ProdS
+CTRL --> UI :  getAvailableAGV
 deactivate CTRL
 
 
 UI --> WE :shows all data
 deactivate UI
-deactivate ProdRepo
+deactivate ProdS
 deactivate UI
 
 

@@ -25,6 +25,7 @@ public class CategoryCode implements ValueObject, Comparable<CategoryCode> {
 
     public CategoryCode(final String code) {
         if (StringPredicates.isNullOrEmpty(code)||code.length()>10) {
+
             throw new IllegalArgumentException(
                     "Category alpha numeric code should neither be null nor empty, or have more than 10 characters");
         }

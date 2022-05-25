@@ -31,6 +31,7 @@ deactivate RF
 activate CostRepo
 deactivate CostRepo
 CTRL -> CostRepo : getCostumerList= getCostumerList()
+CTRL --> UI :  getCostumerList
 deactivate CTRL
 deactivate CostRepo
 UI --> C : shows list of costumers
@@ -44,6 +45,7 @@ UI -> CTRL : getCostumer
 activate CTRL
 CTRL -> CostRepo : getCostumer= getCostumer()
 activate CostRepo
+CTRL --> UI :  getCostumer
 deactivate CTRL
 deactivate CostRepo
 
@@ -61,6 +63,7 @@ UI -> CTRL : getProductByCategory
 activate CTRL
 CTRL -> ProdRepo : getProductByCategory= getProductByCategory()
 activate ProdRepo
+CTRL --> UI :  getProductByCategory
 deactivate CTRL
 deactivate ProdRepo
 
@@ -69,6 +72,8 @@ UI -> CTRL : getProductByBrand
 activate CTRL
 CTRL -> ProdRepo : getProductByBrand= getProductByBrand()
 activate ProdRepo
+CTRL --> UI :  getProductByBrand
+
 deactivate CTRL
 deactivate ProdRepo
 
@@ -77,6 +82,8 @@ UI -> CTRL : getProductByShortDescription
 activate CTRL
 CTRL -> ProdRepo : getProductByShortDescription= getProductByShortDescription()
 activate ProdRepo
+CTRL --> UI :  getProductByShortDescription
+
 deactivate CTRL
 deactivate ProdRepo
 end
@@ -101,6 +108,7 @@ deactivate RF
 activate ProdRepo
 deactivate ProdRepo
 CTRL -> ProdRepo : getProducts= getProducts()
+CTRL --> UI :  getProducts
 deactivate CTRL
 deactivate ProdRepo
 
@@ -131,6 +139,7 @@ UI -> CTRL : getProduct
 activate CTRL
 CTRL -> ProdRepo : getProduct= getProduct()
 activate ProdRepo
+CTRL --> UI :  getProduct
 deactivate CTRL
 deactivate ProdRepo
 

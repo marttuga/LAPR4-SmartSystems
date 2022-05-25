@@ -1,0 +1,20 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+
+class DispatchOrdersUI <<presentation>>
+
+
+
+class AGVToPrepOrderController <<application>>
+
+class OrderRepository <<repository>>
+
+entity ProductOrder <<Entity>> <<Root>>
+
+
+AGVToPrepOrderController --> ProductOrder
+DispatchOrdersUI --> AGVToPrepOrderController : theControlle
+AGVToPrepOrderController --> OrderRepository : repo
+
+@enduml

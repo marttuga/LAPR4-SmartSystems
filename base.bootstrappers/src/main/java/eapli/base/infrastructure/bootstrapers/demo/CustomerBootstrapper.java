@@ -25,7 +25,7 @@ public class CustomerBootstrapper implements Action {
 
     @Override
     public boolean execute() {
-        createCostumer("Jonathan", "Mendes", "jonathan@gmail.com",
+        createCostumer("Mary", "Mendes", "mary@gmail.com",
                 date, "937263547", "0936527",
                 "Sunset Boulevard", 78, "Los angeles", "USA",90210);
         return true;
@@ -47,7 +47,7 @@ public class CustomerBootstrapper implements Action {
             registerCustomerController.registerCustomer(customerFirstName, customerLastName,
                     customerEmailAddress,  customerPhoneNumber,
                     customerVatIdentifier,  customerBirthDay,
-                    "MALE", postalAddress);
+                    "FEMALE", postalAddress);
         } catch (final ConcurrencyException | IntegrityViolationException e) {
             // ignoring exception. assuming it is just a primary key violation
             // due to the tentative of inserting a duplicated user
