@@ -49,8 +49,9 @@ public class JpaOrderRepository extends JpaAutoTxRepository<ProductOrder, String
 
     @Override
     public ProductOrder findOrderByAGV(String ident) {
-        Query q = entityManager().createQuery("SELECT po FROM ProductOrder po " +
-                " WHERE po.orderID.orderIden IN(SELECT a.order.id FROM AGV a  WHERE a.identifier.identifier = :ident)");
+        Query q = entityManager().createQuery(
+                "SELECT order FROM AGV a "+
+                " WHERE a.identifier.identifier = :ident");
             q.setParameter("ident", ident);
         return (ProductOrder) q.getSingleResult();
 
