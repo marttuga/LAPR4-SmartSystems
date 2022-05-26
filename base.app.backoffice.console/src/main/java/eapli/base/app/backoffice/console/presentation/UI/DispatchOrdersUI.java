@@ -26,16 +26,19 @@ public class DispatchOrdersUI extends AbstractUI {
             System.out.println("=================================================================================");
             List<ProductOrder> productOrderList = controller.findOrdersByStatus(Status.PREPARED);
             controller.printOrdersList(productOrderList);
+            System.out.println("=================================================================================");
             if (Utils.confirm("Do you wish to filter by an AGV?")){
                 System.out.println("=================================================================================");
                 String idAGV = Utils.readLineFromConsole("Please enter its ID: ");
                 System.out.println("=================================================================================");
                 AGV agv = controller.findByAGVID(idAGV);
                 ProductOrder productOrderByAgv = controller.findOrderByAGV(agv.getIdentifier().toString());
-                System.out.println(productOrderByAgv);
+                System.out.println(productOrderByAgv.toString());
+                System.out.println("=================================================================================");
                 if (Utils.confirm("Do you wish to dispatch this order?")){
                    controller.dispatchOrders(productOrderByAgv);
-                    System.out.println("Order has been dispatched for customer delivery!");
+                   System.out.println("=================================================================================");
+                   System.out.println("Order has been dispatched for customer delivery!");
                 }
             }else {
                 System.out.println("=================================================================================");
@@ -43,6 +46,7 @@ public class DispatchOrdersUI extends AbstractUI {
                 System.out.println("=================================================================================");
                 ProductOrder productOrder = controller.findByOrderID(id);
                 System.out.println(productOrder);
+                System.out.println("=================================================================================");
                 if (Utils.confirm("Do you wish to dispatch this order?")){
                     controller.dispatchOrders(productOrder);
                     System.out.println("=================================================================================");
