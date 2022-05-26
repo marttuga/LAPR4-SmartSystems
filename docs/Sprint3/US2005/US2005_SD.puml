@@ -1,0 +1,16 @@
+@startuml
+autonumber
+actor "Warehouse Employee" as WE
+participant ":HTTPAjaxRequest" as AJAX
+participant ":WebDashboard" as WEB
+participant ":HTTPmessage" as HTTPM
+participant ":Application" as APP
+participant ":AppSettings" as APPS
+participant ":UploadFileService" as FILE
+participant ":Warehouse" as W
+participant ":AGV" as AGV
+
+
+
+
+@enduml
