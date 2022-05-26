@@ -32,6 +32,6 @@ public class Identifier implements ValueObject, Comparable<Identifier> {
 
     @Override
     public String toString() {
-        return "Identifier:"+ identifier;
+        return identifier;
     }
 }
