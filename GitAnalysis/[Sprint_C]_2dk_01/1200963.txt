@@ -1,0 +1,93 @@
+commit 4d5f744df87a11b89a954489919f12a7f46023a2
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Thu May 26 10:14:40 2022 +0100
+
+    <L2L20-41> US2004 Last changes to UI
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/DispatchOrdersUI.java
+
+commit 730857474844b4c6ec6b9b81f7e55542865fbb26
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Thu May 26 10:14:13 2022 +0100
+
+    <L2L20-41> US2004 Sql query change
+
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaOrderRepository.java
+
+commit 2d948fc6cd9782bfa996978e513447c05432b028
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Thu May 26 10:13:05 2022 +0100
+
+    <L2L20-41> US2004 Bootstraper minor changes
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/AgvBootstrapper.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/Identifier.java
+
+commit 4888e1ec1615edd1fb93595c9ff4e9fb8abb40fc
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Tue May 24 15:56:26 2022 +0100
+
+    <L2L20-41> US2004 Status enum - added states
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/domain/Status.java
+
+commit 683e35251f5d3f808997ea2909a96b0981533107
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Tue May 24 15:55:25 2022 +0100
+
+    <L2L20-41> US2004 interface method in order repository
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/repositories/OrderRepository.java
+
+commit cb02cb3adb068eaad4e36a3bef71df72ddb4484d
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Tue May 24 15:54:47 2022 +0100
+
+    <L2L20-41> US2004 UI needed methods
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/MainMenu.java
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/ProductOrderBootstrapper.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/OrderService.java
+
+commit 2549ba610c16aa7bd626bf922cb5fb96822d137c
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Tue May 24 15:52:41 2022 +0100
+
+    <L2L20-41> US2004 New DispatchOrdersUI class
+
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/DispatchOrdersUI.java
+
+commit 47b6c0900630f490f074cd069312023db1ed25b9
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Tue May 24 15:52:08 2022 +0100
+
+    <L2L20-41> US2004 Methods for repository class
+
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryOrderRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaOrderRepository.java
+
+commit b1c34a8abcc92121d899509c430a186a1af35aa1
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Tue May 24 15:50:09 2022 +0100
+
+    <L2L20-41> US2004 Methods for controller class
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/application/AGVToPrepOrderController.java
+
+commit ee68c607e19f14b3e628b81a71f2897d2d28dc66
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Tue May 24 15:48:04 2022 +0100
+
+    <L2L20-77> US2004 Analysis and design
+
+A	docs/Sprint3/US2004/ProcessoEngenhariaFuncionalidade.md
+A	docs/Sprint3/US2004/US2004_CD.puml
+A	docs/Sprint3/US2004/US2004_SD.puml
+
+commit 4f9558d2f650a9f56a3f1edb7f43ea7e6719056f
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Wed May 4 18:59:53 2022 +0100
+
+    Fixed error category code length
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/category/domain/CategoryCode.java
