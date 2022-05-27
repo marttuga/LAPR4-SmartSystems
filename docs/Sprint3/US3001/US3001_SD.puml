@@ -1,76 +1,53 @@
 @startuml
 autonumber
 actor "Sales Manager" as SM
-participant ":CreateNewQuestionnaireUI" as UI
-participant ":CreateNewQuestionnaireController" as CTRL
-participant ":PersistenceContext" as PC
-participant ":RepositoryFactory" as RF
-participant ":Questionnaire" as Quest
-participant ":QuestionnaireRepository" as QuestRep
+participant ":GrammarUI" as UI
+participant ":TextFile" as TF
+participant ":GrammarLexer" as GL
+participant ":GrammarParser" as GP
+participant ":ParseTree" as PS
 
 
 activate SM
 
-SM -> UI : Starts to create a new questionnaire
+SM -> UI : Start to create a new questionnaire
 activate UI
 
-UI --> SM : Asks the type of questionnaire(single-choice, free text...)
+UI -> TF : getFile
+activate TF
+
+deactivate TF
+
+UI --> SM : saves the file
 deactivate UI
 
-SM -> UI : Chooses the type
+SM -> UI : asks to validate the grammar of questionnaire
 activate UI
 
-UI --> SM : Requests question
+UI -> GL : analise()
+deactivate TF
+
+activate GL
+GL -> GP : analise by tokens()
+deactivate GL
+activate GP
+GP -> PS : create()
+activate PS
+deactivate GP
+
+deactivate PS
+UI --> SM : shows all data and request confirmation
 deactivate UI
 
-SM -> UI : Types the question
-activate UI
-
-UI -> CTRL : create
-deactivate UI
-activate CTRL
 
 
-CTRL -> PC : repositories()
-deactivate CTRL
-activate PC
-PC -> RF : create
-deactivate PC
-activate RF
-
-RF -> QuestRep : create
-activate QuestRep
-deactivate RF
-
-
-deactivate QuestRep
-
-activate PC
-PC -> CTRL : QuestionnaireRepository
-deactivate PC
-activate CTRL
-deactivate CTRL
+SM -> UI : confirms the data
 
 activate UI
-UI -> CTRL : createNewQuestionnaire()
-
-CTRL -> Quest : newQuestionnaire = create()
-activate Quest
-deactivate Quest
-
-
-CTRL -> QuestRep : save(newQuestionnaire)
-activate QuestRep
-
-CTRL -> UI : newQuestionnaire
-
-deactivate CTRL
-
-deactivate QuestRep
-UI --> SM : Informs operation (in)success
+UI --> SM : informs operation success
 deactivate UI
 
+deactivate UI
 deactivate SM
-
 
 @enduml
