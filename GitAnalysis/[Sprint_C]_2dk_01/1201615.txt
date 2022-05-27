@@ -1,3 +1,36 @@
+commit 90953c048f9a0e261f96fae029fb46f2157ba65e
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Fri May 27 17:10:08 2022 +0100
+
+    Use_Case_Diagram (update)
+
+A	docs/Sprint3/Use Case Diagram/Use_Case_Diagram.svg
+
+commit 61dd30ed1b7a5af619595eb5c87b3ad98c859575
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Fri May 27 15:58:50 2022 +0100
+
+    <L2L20-70> SD of US5002
+
+A	docs/Sprint3/US5002/US5002_SD.puml
+
+commit eca923d569d33a6229a9d293aeb1ce52af8138c5
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Thu May 26 23:24:59 2022 +0100
+
+    <L2L20-47> Grammar and questionnaire of US3000
+
+A	base.core/src/main/java/eapli/base/surveys/FormGrammar.g4
+A	base.core/src/main/java/eapli/base/surveys/questionnaire.txt
+
+commit 156aece2735a6fd080642011176f7a43fcbf0236
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Wed May 25 14:25:12 2022 +0100
+
+    <L2L20-69> Analysis of US5002
+
+A	docs/Sprint3/US5002/ProcessoEngenhariaFuncionalidade.md
+
 commit 3a6cdeb6d8556f5b15e3fabed3ae63a4f752b8a2
 Author: Maria Flores <1201615@isep.ipp.pt>
 Date:   Mon May 23 17:44:47 2022 +0100
