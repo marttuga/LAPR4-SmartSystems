@@ -67,6 +67,7 @@ public class MainMenu extends AbstractUI {
     private static final int CUSTOMER_REGISTER = 1;
     private static final int DEFINE_CATEGORY = 2;
     private static final int SPECIFY_NEW_PRODUCT = 5;
+    private static final int CREATE_NEW_QUESTIONNAIRE = 6;
     private static final int CONFIGURE_AGV = 1;
     private static final int UPLOAD_FILE = 2;
     private static final int AGV_TO_PREP_ORDER = 3;
@@ -187,6 +188,7 @@ public class MainMenu extends AbstractUI {
         menusMenu.addItem(VIEW_CATALOG, "View Catalog", new ViewCatalogUI()::show);
         menusMenu.addItem(NEW_ORDER, "New Product Order", new NewProductOrderUI()::show);
         menusMenu.addItem(SPECIFY_NEW_PRODUCT, "Specify New Product", new SpecifyNewProductUI()::show);
+        menusMenu.addItem(CREATE_NEW_QUESTIONNAIRE, "Create New Questionnaire", new CreateNewQuestionnaireUI()::show);
         menusMenu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
         return menusMenu;

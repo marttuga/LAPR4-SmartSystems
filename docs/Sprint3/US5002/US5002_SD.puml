@@ -1,0 +1,56 @@
+@startuml
+autonumber
+'hide footbox
+
+participant BackofficeApp <<client>>
+participant "AGVManager" as AM
+participant "OrderService" as OS
+participant "AGVManagerServer" as AMS
+participant HandleClient <<Thread>>
+participant "MessageParser" as MP
+participant "SPOMSProtocol" as SP
+
+
+AM -> AMS : new()
+
+AM -> AMS : start()
+activate AMS
+
+AMS -> AMS : accept
+
+BackofficeApp --> AMS: request
+activate HandleClient
+
+AMS -> HandleClient : start
+deactivate AMS
+
+HandleClient -> MP : parse(request)
+
+MP -> SP : new
+
+HandleClient -> SP : execute
+activate SP
+
+SP -> SP : buildResponse
+
+SP --> HandleClient : response
+deactivate SP
+
+HandleClient --> AM : response
+
+AM -> OS : analise
+activate OS
+
+OS -> OS : updateStatus
+deactivate OS
+
+HandleClient --> BackofficeApp : response
+deactivate HandleClient
+
+
+
+
+
+
+
+@enduml
