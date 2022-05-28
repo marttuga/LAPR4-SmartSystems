@@ -1,9 +1,10 @@
 @startuml
 autonumber
 actor "Sales Manager" as SM
-participant ":GrammarUI" as UI
-participant ":TextFile" as TF
-participant ":GrammarLexer" as GL
+participant ":CreateNewQuestionnaireUI" as UI
+participant ":CreateNewQuestionnaireController" as CTRL
+participant "TextFile" as TF
+participant ":FormGrammarLexer" as GL
 participant ":GrammarParser" as GP
 participant ":ParseTree" as PS
 
@@ -13,38 +14,41 @@ activate SM
 SM -> UI : Start to create a new questionnaire
 activate UI
 
-UI -> TF : getFile
+UI -> SM : Asks for the file path
+deactivate UI
+
+SM -> UI : Inserts file path
+activate UI
+
+UI -> CTRL : getFilePath
+activate CTRL
+
+CTRL -> TF : getFilePath
 activate TF
 
 deactivate TF
 
-UI --> SM : saves the file
-deactivate UI
+CTRL -> GL : sends path
+activate GL
+deactivate GL
 
-SM -> UI : asks to validate the grammar of questionnaire
-activate UI
 
-UI -> GL : analise()
+CTRL -> GL : validate()
 deactivate TF
+deactivate CTRL
 
 activate GL
 GL -> GP : analise by tokens()
 deactivate GL
 activate GP
+
 GP -> PS : create()
 activate PS
 deactivate GP
 
 deactivate PS
-UI --> SM : shows all data and request confirmation
-deactivate UI
 
-
-
-SM -> UI : confirms the data
-
-activate UI
-UI --> SM : informs operation success
+UI --> SM : informs operation (in)success
 deactivate UI
 
 deactivate UI
