@@ -1,5 +1,5 @@
 // Generated from /Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/surveys/FormGrammar.g4 by ANTLR 4.10.1
-package eapli.base.surveys.src;
+package eapli.base.surveys.src.domain;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
