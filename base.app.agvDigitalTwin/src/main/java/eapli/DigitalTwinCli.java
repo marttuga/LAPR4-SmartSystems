@@ -1,9 +1,12 @@
 package eapli;
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.net.*;
 
 class DigitalTwinCli {
+
+    //static byte[] STATUS = new byte[] {1, 12, 0,0};
 
 
     static InetAddress serverIP;
@@ -35,6 +38,7 @@ class DigitalTwinCli {
             System.exit(1);
         }
 
+
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         DataOutputStream sOut = new DataOutputStream(sock.getOutputStream());
 
@@ -57,6 +61,7 @@ class DigitalTwinCli {
             data = frase.getBytes();
             sOut.write((byte) frase.length());
             sOut.write(data, 0, (byte) frase.length());
+
         }
 
         serverConn.join();
