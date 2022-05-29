@@ -14,14 +14,30 @@ product to the shopping cart, check the status of his/her open orders).
 * It must be used the provided application protocol (SPOMS2022).
 * It is suggested the adoptiong of concurrent mechanisms (e.g. threads) and state sharing between these mechanisms.
 * In this sprint, for demonstration purposes, it is acceptable to mock processing some of the incoming requests.
-
+* Every request (sent by the client) has a mandatory response (sent by the server), both share a
+same message format described ahead
+* Once established, the TCP connection between client and server is kept alive and used for all
+requests needed while the client application is running
+* Every data exchange through the TCP connection (requests and responses) must comply with the
+bytes sequence description in Table
 
 # 2. Analysis
 * To complete this user story, the us1001 (responsable for specifying a new product for sale),the  us1002 (responsable for
 viewing the catalog), the us1004 (responsable for registering new orders) and us1005 (responsible for 
 defining a new category of products) are going to be necessary.
-* This user story focuses on creating solutions to common requests that may be asked from the customers point of view, for example
+* This user story focuses on data exchange through TCP connection that may be asked from the customers point of view, for example
 checking the status of his/her open orders... 
+* Once a TCP connection is established, the client-server relation persists and only the client
+application is allowed to take the initiative of sending data, i.e.: a request. The server application
+must be passively waiting for a request and only then is authorized to send data, i.e.: a response,
+to the received request.
+![table](table1.png)
+
+
+* List of some message codes that must be implemented by every application using
+SPOMSP.
+  ![table](table2.png)
+
 
 # 3. Design
 * Utilizar a estrutura base standard da aplicação baseada em camadas 
@@ -37,50 +53,31 @@ checking the status of his/her open orders...
 
 ![SD](US1901_SD.svg)
 
-## 3.2. Diagrama de Classes
-![CD](US1901_CD.svg)
-
-
-*Nesta secção deve apresentar e descrever as principais classes envolvidas na realização da funcionalidade.*
-
 ## 3.3. Padrões Aplicados
 
-*Nesta secção deve apresentar e explicar quais e como foram os padrões de design aplicados e as melhores práticas.*
-
-## 3.4. Testes
-*Nesta secção deve sistematizar como os testes foram concebidos para permitir uma correta aferição da satisfação dos requisitos.*
-
-**Teste 1:** Verificar se duas brands sao iguais
-
-	  @Test
-    void testEquals() throws IllegalAccessException {
-        Brand b= new Brand("oi");
-        Brand bo= new Brand("oi");
-        Assertions.assertEquals(bo.toString(), b.toString());
-    }
+* This functionality will be provided with a server socket on a well-known address using TCP as transport mecanism.
 
 # 4. Implementação
 
-*Nesta secção a equipa deve providenciar, se necessário, algumas evidências de que a implementação está em conformidade com o design efetuado. Para além disso, deve mencionar/descrever a existência de outros ficheiros (e.g. de configuração) relevantes e destacar commits relevantes;*
+    public static void main(String args[]) throws Exception {
+      int i;
 
-*Recomenda-se que organize este conteúdo por subsecções.*
+            try {
+                sock = new ServerSocket(1111);
+            } catch (IOException ex) {
+                System.out.println("Local port number not available.");
+                System.exit(1);
+            }
 
-# 5. Integração/Demonstração
 
-    public List<Product> getProductByBrand(Brand brand) {
-        return productRepository.findByBrand(brand);
+            while (true) {
+                Socket s = sock.accept(); // wait for a new client connection request
+                addCli(s);
+                Thread cli = new OrderServerClient(s);
+                cli.start();
+            }
+        }
     }
-
-    public List<Product> getProductByCategory(Category category) {
-        return productRepository.findByCategory(category);
-    }
-
-    public List<Product> getProductByDescription(ShortDescription shortDescription) {
-        return productRepository.findByDescription(shortDescription);
-    }
-# 6. Observações
-
-*Nesta secção sugere-se que a equipa apresente uma perspetiva critica sobre o trabalho desenvolvido apontando, por exemplo, outras alternativas e ou trabalhos futuros relacionados.*
 
 
 
