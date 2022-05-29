@@ -53,8 +53,19 @@ public class AgvServerThread implements Runnable {
             }
 
             if(message.getCode()==GETAGVSTATUS){
-                String id = String.valueOf(message.getData_message()[0]);
-                System.out.println("EM DESENVOLVIMENTO!");
+                String agvId = String.valueOf(message.getData_message()[0]);
+                String status = String.valueOf(message.getData_message()[4]);
+                AGV agv = agvRepository.findByAGVID(agvId);
+                if (status.equals("FREE")) {
+                    agv.changeStatus(Status.FREE);
+                    System.out.println("AGV Status Changed to " + status);
+                } else if (status.equals("CHARGING")) {
+                    agv.changeStatus(Status.CHARGING);
+                    System.out.println("AGV Status Changed to " + status);
+                } else if (status.equals("OCCUPIED")) {
+                    agv.changeStatus(Status.OCCUPIED);
+                    System.out.println("AGV Status Changed to " + status);
+                }
             }
         } catch (IOException ex) {
             System.out.println("IOException");
