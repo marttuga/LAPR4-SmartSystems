@@ -1,0 +1,34 @@
+@startuml
+autonumber
+'hide footbox
+actor "client:AGVManagerCli" as Client
+participant "Server:DigitalTwinServer" as Server
+participant "threads:HandleClient" as Threads
+participant "MessageParser" as MessageParser
+participant "SPOMSProtocolRequest" as SPOMS
+
+
+activate Client
+
+Client --> Server : Sync
+activate Server
+Server -> Server : Accept
+Client -> Server : Request
+Server -> Threads : Start
+deactivate Server
+activate Threads
+Threads -> MessageParser : parse(request)
+activate MessageParser
+MessageParser -> SPOMS **: new
+deactivate MessageParser
+Threads -> SPOMS : execute
+activate SPOMS
+SPOMS -> SPOMS : response
+SPOMS --> Threads : response
+deactivate SPOMS
+Threads --> Client : response
+deactivate Threads
+
+deactivate Client
+
+@enduml
