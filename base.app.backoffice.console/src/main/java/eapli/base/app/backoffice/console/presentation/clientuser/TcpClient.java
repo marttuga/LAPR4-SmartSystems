@@ -18,6 +18,8 @@ public class TcpClient {
     private static CodingAndDecoding cod = new CodingAndDecoding();
 
     public static void main(String[] args) throws Exception {
+
+        /*
         if (args.length != 1) {
             System.out.println("Server IPv4/IPv6 address ou DNS é requerido");
             System.exit(1);
@@ -28,8 +30,10 @@ public class TcpClient {
             System.out.println("Server invalido: " + args[0]);
             System.exit(1);
         }
+         */
+
         try {
-            sock = new Socket(serverIP, 9999);
+            sock = new Socket("localhost", 9999);
 
             BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
             DataOutputStream sOut = new DataOutputStream(sock.getOutputStream());
@@ -55,17 +59,22 @@ public class TcpClient {
                 }
 
                 if (Objects.equals(input, "2")) {
+                    System.out.println("AGV ID:");
+                    String agvId = in.readLine();
                     System.out.println("Choose AGV Status to update:");
                     System.out.println("1 - Free");
                     System.out.println("2 - Occupied");
                     System.out.println("3 - Charging");
                     String status = in.readLine();
                     if (status.equals("1")) {
-                        cod.Coding_String(1,1, Status.FREE.toString());
+                        byte[] codedMessage = cod.Coding_String(1,1, agvId + Status.FREE);
+                        sOut.write(codedMessage);
                     } else if (status.equals("2")) {
-                        cod.Coding_String(1,1, Status.OCCUPIED.toString());
+                        byte[] codedMessage = cod.Coding_String(1,1, agvId + Status.OCCUPIED);
+                        sOut.write(codedMessage);
                     } else if (status.equals("3")) {
-                        cod.Coding_String(1,1, Status.CHARGING.toString());
+                        byte[] codedMessage = cod.Coding_String(1,1, agvId + Status.CHARGING);
+                        sOut.write(codedMessage);
                     } else {
                         System.out.println("Select one valid option!");
                     }
