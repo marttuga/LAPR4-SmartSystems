@@ -290,7 +290,6 @@ ShoppingCart --- "1" ShoppingCartID: has >
 /' Category '/
 Category --- "1" AlphaNumericCode  : categorized >
 Category --- "1" Description  : categorized >
-Category "0..1" --- "1" Category: is sub-category of >
 
 
 /' Warehouse '/
