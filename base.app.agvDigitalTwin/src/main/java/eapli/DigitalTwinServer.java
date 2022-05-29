@@ -2,6 +2,7 @@ package eapli;
 
 import java.io.*;
 import java.net.*;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 
 public class DigitalTwinServer {
@@ -34,6 +35,7 @@ public class DigitalTwinServer {
 
         try {
             sock = new ServerSocket(2222);
+
         } catch (IOException ex) {
             System.out.println("Local port number not available.");
             System.exit(1);
@@ -53,8 +55,6 @@ class TcpChatSrvClient extends Thread {
     private Socket myS;
     private DataInputStream sIn;
 
-    private DataOutputStream sOut;
-
     public TcpChatSrvClient(Socket s) {
         myS = s;
     }
@@ -66,14 +66,13 @@ class TcpChatSrvClient extends Thread {
 
         try {
             sIn = new DataInputStream(myS.getInputStream());
-            sOut = new DataOutputStream((myS.getOutputStream()));
+            System.out.println("Client connected");
             while (true) {
                 nChars = sIn.read();
                 if (nChars == 0) break; // empty line means client wants to exit
-                message = String.valueOf(sIn.readChar());
-                System.out.println(sIn.read(data, 0, nChars));
-                sOut.write((byte) message.length());
-                sOut.write(data, 0, (byte) message.length());
+                sIn.read(data, 0, nChars);
+                message = new String(data, StandardCharsets.UTF_8);
+                System.out.println(message);
                 DigitalTwinServer.sendToAll(nChars, data);
             }
             // the client wants to exit
