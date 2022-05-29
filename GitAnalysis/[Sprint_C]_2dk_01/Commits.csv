@@ -1,3 +1,54 @@
+2101a73,2022-05-29 22:47:18 +0100,João Tiago Araújo,1200584@isep.ipp.pt,updated DomainModel
+11ba8f5,2022-05-29 22:33:47 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-39> Last changes to server class
+df589e1,2022-05-29 22:21:10 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-39> US5001 Last changes in explanation of us and svg file update
+6b956a5,2022-05-29 22:11:47 +0100,João Tiago Araújo,1200584@isep.ipp.pt,deleted package base.app.agvmanager
+28d2d6c,2022-05-29 21:47:36 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Added DataModel.png Sprint C
+ab5285a,2022-05-29 21:31:17 +0100,Marta Portugal,1201845@isep.ipp.pt,addition of method to search client through email
+2fd469d,2022-05-29 21:30:39 +0100,Marta Portugal,1201845@isep.ipp.pt,addition of method to search client through email
+ff7b072,2022-05-29 21:30:05 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on bootstrappers for customer
+c9d7432,2022-05-29 21:29:25 +0100,Marta Portugal,1201845@isep.ipp.pt,UI addition of method to search customer for us1901
+bf55c56,2022-05-29 20:06:21 +0100,Marta Portugal,1201845@isep.ipp.pt,.md correction for us1901
+99b628e,2022-05-29 20:01:33 +0100,Marta Portugal,1201845@isep.ipp.pt,pom for new modules on us1901 conection between client and server
+4af3e73,2022-05-29 20:00:53 +0100,Marta Portugal,1201845@isep.ipp.pt,classes for us1901 conection between client and server and addition on pom
+be534ed,2022-05-29 20:00:02 +0100,Marta Portugal,1201845@isep.ipp.pt,classes for us1501 to encorporate the orderserver on ui
+af7bbb3,2022-05-29 19:59:06 +0100,Marta Portugal,1201845@isep.ipp.pt,update on UI for 1901
+f88b343,2022-05-29 19:57:32 +0100,Marta Portugal,1201845@isep.ipp.pt,update on SD for 1901
+96b59bd,2022-05-29 19:57:14 +0100,Marta Portugal,1201845@isep.ipp.pt,correction and update on documentation for 1901
+0282196,2022-05-29 19:20:31 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-69> Analysis US5002: Test class AGV (changeStatus())
+f62a5aa,2022-05-29 18:54:16 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-36> US3001 - Implementation: Updated CreateNewQuestionnaireUI.java
+2c560ea,2022-05-29 18:48:56 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-42> US2005 - Implementation: Updated HTTPAjaxRequest.java
+bd247e3,2022-05-29 18:48:38 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-42> US2005 - Implementation: added run-dashboard.bat and run-dashboard.sh
+3926074,2022-05-29 18:46:18 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-36> US3001 - Implementation: added questionnaire3.txt and updated questionnaire.txt and questionnaire2.txt
+6023eff,2022-05-29 17:51:13 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-42> US2005 - Implementation: added application.properties and updated WebDashboard
+f882963,2022-05-29 17:07:06 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-40> Conclusion of US5002, SPOMS: port
+182eb62,2022-05-29 16:59:39 +0100,brunommgoncalves,1190456@isep.ipp.pt,[UC4001] AgvManager and Backoffice TcpClient
+3d695ed,2022-05-29 16:58:09 +0100,Maria Flores,1201615@isep.ipp.pt,LAPR4_ Presentation
+5896438,2022-05-29 16:57:37 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-40> Conclusion of US5002, SPOMS
+9acb0f3,2022-05-29 16:34:50 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-36> US3001 - Implementation: added EvalVisitor.java
+ba825a8,2022-05-29 16:32:36 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-39> US5001 output to server added
+24707e0,2022-05-29 16:27:49 +0100,brunommgoncalves,1190456@isep.ipp.pt,[UC4001] AgvManager and Backoffice TcpClient
+8cece60,2022-05-29 13:12:12 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-36> US3001 - Implementation: added FormGrammar.java
+eaae1d8,2022-05-29 13:11:25 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-42> US2005 - Implementation: updated cherry.png
+1f5a2fc,2022-05-29 13:10:59 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-36> US3001 - Analysis: updated US3001.md doc analysis
+f82b44d,2022-05-29 13:10:21 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-42> US2005 - Implementation: Added GetAGVController
+96d95cb,2022-05-29 13:10:00 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-42> US2005 - Design: updated US2005_SD.puml and added US2005_SD.svg
+e3265ce,2022-05-29 13:08:56 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-42> US2005 - Analysis: updated analysis
+4380811,2022-05-28 22:01:41 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-69> Conclusion of US5002's Analysis
+2d737a0,2022-05-28 21:52:03 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-66> Conclusion of US3000
+23700f7,2022-05-28 19:03:21 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-71> Implementation of US5002: modification in server and client classes
+e898847,2022-05-28 17:42:22 +0100,brunommgoncalves,1190456@isep.ipp.pt,AgvManager and TcpClient for backoffice
+25092a9,2022-05-28 16:23:59 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-39> US5001 Pom with modules
+92bc269,2022-05-28 16:20:49 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-42> US2005 - Implementation: WebDashboard
+cfed350,2022-05-28 16:20:27 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-42> US2005 - Implementation: Created html, js, css and HTTP classes
+c3454f3,2022-05-28 16:18:35 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-39> US5001 Poms from modules and renamed modules
+92df76f,2022-05-28 16:18:28 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-42> US2005 - Design: Created and added US2005_SD.puml
+a99c223,2022-05-28 15:39:13 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-39> US5001 AgvManager client and Agv digitalTwin server and client working with "localhost"
+cec0550,2022-05-28 11:30:13 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-36> US3001 - Analysis: Updated analysis
+b95a121,2022-05-28 11:16:49 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-36> US3001 - Design: Final update to US3001_SD
+e0bcb40,2022-05-28 10:45:14 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-36> US3001 - Implementation: Added CreateNewQuestionnaireController, CreateNewQuestionnaireUI and updated MainMenu
+90ad5a1,2022-05-28 10:44:18 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-36> US3001 - Implementation: Changed folder to domain
+3fa4545,2022-05-28 00:15:12 +0100,Maria Flores,1201615@isep.ipp.pt,LAPR4_Presentation (added)
+634ee0b,2022-05-27 23:41:15 +0100,Paulo Proen�a,prp@isep.ipp.pt,Repository Analysis
 533f4ee,2022-05-27 19:37:03 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-36> US3001 - Implementation: Added FormGrammar Lexer, Parser, Listener, Visitor
 fa8d54c,2022-05-27 17:45:51 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-36> US3001 - Design: Updated US3001_SD.md added US3001_SD.svg and deleted US3001_CD.puml and US3001_SSD.puml
 90953c0,2022-05-27 17:10:08 +0100,Maria Flores,1201615@isep.ipp.pt,Use_Case_Diagram (update)
@@ -75,3 +126,4 @@ d882834,2022-05-10 14:33:27 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Prod
 4f9558d,2022-05-04 18:59:53 +0100,Rui Dias,1200963@isep.ipp.pt,Fixed error category code length
 f9f3b7f,2022-05-04 17:43:11 +0100,Marta Portugal,1201845@isep.ipp.pt,changes to make us work and corrections on other classes
 4188a7b,2022-05-04 15:44:33 +0100,Marta Portugal,1201845@isep.ipp.pt,changes to make us work and corrections on other classes
+cbfa536,2022-05-02 09:15:16 +0100,Paulo Proen�a,prp@isep.ipp.pt,Repository Analysis

@@ -1,3 +1,104 @@
+commit ab5285a880ced64fb4d47e2de029c7df0199f6b9
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun May 29 21:31:17 2022 +0100
+
+    addition of method to search client through email
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/customer/applicaion/RegisterCustomerController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/customer/domain/EmailAddress.java
+
+commit 2fd469d12990226721d3c2ccdeb9f6485a215dd2
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun May 29 21:30:39 2022 +0100
+
+    addition of method to search client through email
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/customer/repositories/CustomerRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryCustomerRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaCustomerRepository.java
+
+commit ff7b072c5157ef62769797a14522d1131a6614b7
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun May 29 21:30:05 2022 +0100
+
+    correction on bootstrappers for customer
+
+M	base.app.bootstrap/src/main/java/eapli/base/app/bootstrap/BaseBootstrap.java
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/ClientUserBootstrapper.java
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/CustomerBootstrapper.java
+
+commit c9d7432888bcf59af545207e354787b06ffc0fa3
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun May 29 21:29:25 2022 +0100
+
+    UI addition of method to search customer for us1901
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/AddProductShopCartUI.java
+
+commit bf55c56476ca7d21af589fe3f1f7bcb0b9a4d7e0
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun May 29 20:06:21 2022 +0100
+
+    .md correction for us1901
+
+M	docs/Sprint3/US1901/ProcessoEngenhariaFuncionalidade.md
+
+commit 99b628ef0f9c1f81f5cac85410f61f62399e8f9d
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun May 29 20:01:33 2022 +0100
+
+    pom for new modules on us1901 conection between client and server
+
+A	base.customerApp/pom.xml
+A	base.orderServer/pom.xml
+
+commit 4af3e73f6924dd219c9f8012088c72d273849239
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun May 29 20:00:53 2022 +0100
+
+    classes for us1901 conection between client and server and addition on pom
+
+A	base.customerApp/src/main/java/CustomerAppCli.java
+A	base.orderServer/src/main/java/eapli/OrderServer.java
+M	pom.xml
+
+commit be534ed322d030d581a6acde621050170413ddc4
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun May 29 20:00:02 2022 +0100
+
+    classes for us1501 to encorporate the orderserver on ui
+
+A	base.core/src/main/java/eapli/base/ordersmanagement/CustomerCliOrderServer/BookingToken.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/CustomerCliOrderServer/CsvAddProductProtocolProxy.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/CustomerCliOrderServer/FailedRequestException.java
+
+commit af7bbb33d9c34fd1ff7eb55fdf701d97fd8be1c4
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun May 29 19:59:06 2022 +0100
+
+    update on UI for 1901
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/AddProductShopCartUI.java
+
+commit f88b343bdbe55ef44915eb6ad73354bc508bd9dc
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun May 29 19:57:32 2022 +0100
+
+    update on SD for 1901
+
+A	docs/Sprint3/US1901/US1901_SD.puml
+A	docs/Sprint3/US1901/US1901_SD.svg
+
+commit 96b59bdd989da4c58092b42af1ab167c2f036712
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun May 29 19:57:14 2022 +0100
+
+    correction and update on documentation for 1901
+
+M	docs/Sprint3/US1901/ProcessoEngenhariaFuncionalidade.md
+A	docs/Sprint3/US1901/table1.png
+A	docs/Sprint3/US1901/table2.png
+
 commit 67addb57922ad67b4da50006dff7616573c116db
 Author: Marta Portugal <1201845@isep.ipp.pt>
 Date:   Tue May 24 18:06:01 2022 +0100

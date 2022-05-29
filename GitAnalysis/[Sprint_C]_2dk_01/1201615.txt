@@ -1,3 +1,70 @@
+commit 02821961fef0a9f862885cd695e4129690818d83
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sun May 29 19:20:31 2022 +0100
+
+    <L2L20-69> Analysis US5002: Test class AGV (changeStatus())
+
+M	docs/Sprint3/US5002/ProcessoEngenhariaFuncionalidade.md
+
+commit f88296375d7af0768d16ddcfa1e9b03f4835085b
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sun May 29 17:07:06 2022 +0100
+
+    <L2L20-40> Conclusion of US5002, SPOMS: port
+
+M	base.app.agvDigitalTwin/src/main/java/eapli/DigitalTwinCli.java
+
+commit 3d695edd0bdc605ef092e00b7a29bebfe33f8807
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sun May 29 16:58:09 2022 +0100
+
+    LAPR4_ Presentation
+
+M	"docs/Sprint3/Apresenta\303\247\303\243o/LAPR4_Presentation.pptx"
+
+commit 5896438c35ccaa16e2d60e6c6b253c1dccd6c6eb
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sun May 29 16:57:37 2022 +0100
+
+    <L2L20-40> Conclusion of US5002, SPOMS
+
+M	base.app.agvDigitalTwin/src/main/java/eapli/DigitalTwinCli.java
+
+commit 4380811eb80e9cd14bd1079778920de0ca5eec8e
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sat May 28 22:01:41 2022 +0100
+
+    <L2L20-69> Conclusion of US5002's Analysis
+
+M	docs/Sprint3/US5002/ProcessoEngenhariaFuncionalidade.md
+
+commit 2d737a0aba5623cdea30897e23f78f3c510c0260
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sat May 28 21:52:03 2022 +0100
+
+    <L2L20-66> Conclusion of US3000
+
+M	docs/Sprint3/US3000/ProcessoEngenhariaFuncionalidade.md
+
+commit 23700f74f59ea8c56206583cdcdcc4d4313123fc
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sat May 28 19:03:21 2022 +0100
+
+    <L2L20-71> Implementation of US5002: modification in server and client classes
+
+M	base.app.agvDigitalTwin/src/main/java/eapli/DigitalTwinCli.java
+M	base.app.agvManagers/src/main/java/eapli/AgvServer.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGV.java
+
+commit 3fa4545e66e440ca6e8025db0ea930df9dc0cbe0
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sat May 28 00:15:12 2022 +0100
+
+    LAPR4_Presentation (added)
+
+A	"docs/Sprint3/Apresenta\303\247\303\243o/LAPR4_Presentation.pptx"
+A	"docs/Sprint3/Apresenta\303\247\303\243o/~$LAPR4_Presentation.pptx"
+
 commit 90953c048f9a0e261f96fae029fb46f2157ba65e
 Author: Maria Flores <1201615@isep.ipp.pt>
 Date:   Fri May 27 17:10:08 2022 +0100

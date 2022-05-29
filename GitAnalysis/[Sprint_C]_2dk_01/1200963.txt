@@ -1,3 +1,60 @@
+commit 11ba8f5323a1a257f787e9d7fe8792d7bb004902
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sun May 29 22:33:47 2022 +0100
+
+    <L2L20-39> Last changes to server class
+
+M	base.app.agvDigitalTwin/src/main/java/eapli/DigitalTwinServer.java
+
+commit df589e1500330580353b33b3f36f11b315dc7a7d
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sun May 29 22:21:10 2022 +0100
+
+    <L2L20-39> US5001 Last changes in explanation of us and svg file update
+
+A	docs/Sprint3/US5001/ProcessoEngenhariaFuncionalidade.md
+A	docs/Sprint3/US5001/US5001_SD.puml
+A	docs/Sprint3/US5001/US5001_SD.svg
+
+commit ba825a85c29b5746de85836fd58a02ed6a9e3c15
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sun May 29 16:32:36 2022 +0100
+
+    <L2L20-39> US5001 output to server added
+
+M	base.app.agvDigitalTwin/src/main/java/eapli/DigitalTwinServer.java
+M	base.app.agvManagers/src/main/java/eapli/AgvManagerCli.java
+
+commit 25092a978aaedb403b19a675fb86ae216c317484
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sat May 28 16:23:59 2022 +0100
+
+    <L2L20-39> US5001 Pom with modules
+
+M	pom.xml
+
+commit c3454f33ea529de7b7d483469ba9491eb2afa2ad
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sat May 28 16:18:35 2022 +0100
+
+    <L2L20-39> US5001 Poms from modules and renamed modules
+
+A	base.app.agvDigitalTwin/pom.xml
+R100	base.app.AgvDigitalTwin/src/main/java/eapli/DigitalTwinCli.java	base.app.agvDigitalTwin/src/main/java/eapli/DigitalTwinCli.java
+R100	base.app.AgvDigitalTwin/src/main/java/eapli/DigitalTwinServer.java	base.app.agvDigitalTwin/src/main/java/eapli/DigitalTwinServer.java
+A	base.app.agvManagers/pom.xml
+R100	base.app.AGVManagers/src/main/java/eapli/AgvManagerCli.java	base.app.agvManagers/src/main/java/eapli/AgvManagerCli.java
+
+commit a99c2232ba52297946213fd32a0cffe48981dbf6
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sat May 28 15:39:13 2022 +0100
+
+    <L2L20-39> US5001 AgvManager client and Agv digitalTwin server and client working with "localhost"
+
+A	base.app.AGVManagers/src/main/java/eapli/AgvManagerCli.java
+A	base.app.AgvDigitalTwin/src/main/java/eapli/DigitalTwinCli.java
+A	base.app.AgvDigitalTwin/src/main/java/eapli/DigitalTwinServer.java
+
 commit 4d5f744df87a11b89a954489919f12a7f46023a2
 Author: Rui Dias <1200963@isep.ipp.pt>
 Date:   Thu May 26 10:14:40 2022 +0100
