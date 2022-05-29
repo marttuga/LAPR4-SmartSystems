@@ -1,0 +1,68 @@
+CHERRY22-01
+Title: CHERRYSUPERMARKET Questionnaire3;
+
+Welcome Message:
+This questionnaire takes approximately 5 minutes.
+Thank you very much for your time and support.
+
+Section: 1.
+
+STitle: Basic Personal Information;
+Description: Customer directed questions and personal information ;
+Obligatoriness: Mandatory.
+
+Q 1.
+Obligatoriness: Mandatory.
+What is your costumerID?
+Type: Free-Text.
+
+Q 2.
+Obligatoriness: Optional.
+What is your age?
+Type: Free-Text.
+
+Q 3.
+Obligatoriness: Optional.
+What is your gender?
+Type: Single-Choice.
+1. Male;
+2. Female;
+3. Other;
+
+Section: 2.
+
+STitle: Satisfaction;
+Description: Section Description;
+Obligatoriness: Optional.
+
+Q5.
+Obligatoriness: Mandatory.
+Are satisfied with the speed of the service?
+Type: Single-Choice.
+1. Yes;
+2. No;
+
+Q6.
+Obligatoriness: Mandatory.
+Would you recommend our company to someone?
+Type: Free-Text.
+
+Q7.
+Obligatoriness: Mandatory.
+How likely are you to purchase again from us?
+Type: Free-Text.
+
+Section: 3.
+
+STitle: Opinion;
+Description: Section Description;
+Obligatoriness: Mandatory.
+
+Q8.
+Obligatoriness: Mandatory.
+How would you rate our prices?
+Type: Free-Text.
+
+Final Message:
+You have successfully completed the questionnaire.
+Thank you for your help.

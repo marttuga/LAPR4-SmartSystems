@@ -2,15 +2,35 @@
 autonumber
 actor "Warehouse Employee" as WE
 participant ":HTTPAjaxRequest" as AJAX
-participant ":WebDashboard" as WEB
 participant ":HTTPmessage" as HTTPM
-participant ":Application" as APP
-participant ":AppSettings" as APPS
-participant ":UploadFileService" as FILE
-participant ":Warehouse" as W
+participant ":WebDashboard" as WEB
+participant ":GetAGVController" as CTRL
+participant ":AGVRepository" as REPO
 participant ":AGV" as AGV
 
+activate WEB
+activate CTRL
+
+WEB -> CTRL :getAGVfromDB()
+
+CTRL -> REPO: findAll()
+
+deactivate CTRL
+activate REPO
+
+REPO -> CTRL: returns AGV
+
+deactivate REPO
+activate CTRL
+
+CTRL -> WEB: returns AGV
+
+deactivate CTRL
 
 
+WEB -> AJAX: initializes
+activate AJAX
+AJAX -> AJAX: waiting for GET request
+deactivate WEB
 
 @enduml

@@ -29,6 +29,9 @@
         <module>base.bootstrappers</module>
         <module>base.core</module>
         <module>base.persistence.impl</module>
+        <module>base.app.agvDigitalTwin</module>
+        <module>base.app.agvManagers</module>
+        <module>base.dashboard</module>
         <module>base.orderServer</module>
         <module>base.customerApp</module>
     </modules>

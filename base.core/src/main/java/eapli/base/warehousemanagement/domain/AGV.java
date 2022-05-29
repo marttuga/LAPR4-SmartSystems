@@ -32,7 +32,7 @@ public class AGV implements AggregateRoot<Identifier> {
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private ProductOrder order;
 
-    protected AGV(){
+    public AGV(){
 
     }
 

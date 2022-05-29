@@ -11,51 +11,42 @@ I interpret that:
 
 ## Acceptance criteria
 * It must be used the provided application protocol (SPOMS2022).
+* The communication between the two involved components must be implemented in accordance with the SPOMS2022.
 
 # 2. Analysis
-- For the output part of communication module, the information to be updated could be 
+
+- For the output part of the communication module, the information to be updated can be from the AGV status, that is, the AGVManager has the ability to update the
+AGV status, in this case, for free.
 
 # 3. Design
 
-*Nesta secção a equipa deve descrever o design adotado para satisfazer a funcionalidade. Entre outros, a equipa deve apresentar diagrama(s) de realização da funcionalidade, diagrama(s) de classes, identificação de padrões aplicados e quais foram os principais testes especificados para validar a funcionalidade.*
+* Domain Classes: AGV
 
-*Para além das secções sugeridas, podem ser incluídas outras.*
+## 3.1. Realization of Functionality
 
-## 3.1. Realização da Funcionalidade
+[US5002_SD](/docs/Sprint3/US5002/US5002_SD.puml)
 
-*Nesta secção deve apresentar e descrever o fluxo/sequência que permite realizar a funcionalidade.*
+## 3.3. Applied Patterns
 
-## 3.2. Diagrama de Classes
 
-*Nesta secção deve apresentar e descrever as principais classes envolvidas na realização da funcionalidade.*
+## 3.4. Tests
+**Test 1:** Check if the agv status is correct
 
-## 3.3. Padrões Aplicados
+    @Test
+    void changeStatus() {
+    Identifier id = new Identifier("1");
+    AGV agV = new AGV(id, 70,agvDock,"auto", model, maxWeightCarry, Status.FREE );
+    agV.changeStatus(Status.CHARGING);
+    Assertions.assertEquals(Status.CHARGING, agV.getStatus());
+}
 
-*Nesta secção deve apresentar e explicar quais e como foram os padrões de design aplicados e as melhores práticas.*
+# 4. Implementation
 
-## 3.4. Testes 
-*Nesta secção deve sistematizar como os testes foram concebidos para permitir uma correta aferição da satisfação dos requisitos.*
+- Create a server for AGVManager and an AGV Digital Twin client so that they could communicate with each other and, in this way,
+- pass on the desired information to the purpose of the US.
 
-**Teste 1:** Verificar que não é possível criar uma instância da classe Exemplo com valores nulos.
 
-	@Test(expected = IllegalArgumentException.class)
-		public void ensureNullIsNotAllowed() {
-		Exemplo instance = new Exemplo(null, null);
-	}
-
-# 4. Implementação
-
-*Nesta secção a equipa deve providenciar, se necessário, algumas evidências de que a implementação está em conformidade com o design efetuado. Para além disso, deve mencionar/descrever a existência de outros ficheiros (e.g. de configuração) relevantes e destacar commits relevantes;*
-
-*Recomenda-se que organize este conteúdo por subsecções.*
-
-# 5. Integração/Demonstração
-
-*Nesta secção a equipa deve descrever os esforços realizados no sentido de integrar a funcionalidade desenvolvida com as restantes funcionalidades do sistema.*
-
-# 6. Observações
-
-*Nesta secção sugere-se que a equipa apresente uma perspetiva critica sobre o trabalho desenvolvido apontando, por exemplo, outras alternativas e ou trabalhos futuros relacionados.*
+# 5. Integration/Demonstration
 
 
 
