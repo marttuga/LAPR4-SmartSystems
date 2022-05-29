@@ -48,7 +48,8 @@ public class ClientUserBootstrapper implements Action {
     public boolean execute() {
         signupAndApprove(TestDataConstants.USER_TEST1, "Password1", "John", "Smith",
                 "john@smith.com", TestDataConstants.USER_TEST1);
-        signupAndApprove("Mary", "Password1", "Mary", "Smith", "mary@smith.com", "isep959");
+        signupAndApprove("Mary", "Password1", "Mary", "Mendes", "mary@gmail.com", "isep959");
+        signupAndApprove("Elsa", "Password1", "Elsa", "Mendes", "elsa@gmail.com", "isep950");
         return true;
     }
 
