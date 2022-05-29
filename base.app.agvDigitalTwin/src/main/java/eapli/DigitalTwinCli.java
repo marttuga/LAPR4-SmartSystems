@@ -17,7 +17,7 @@ class DigitalTwinCli {
         String nick, frase;
         byte[] data = new byte[300];
 
-        if (args.length != 1) {
+        /*if (args.length != 1) {
             System.out.println(
                     "Server IPv4/IPv6 address or DNS name is required as argument");
             System.exit(1);
@@ -28,7 +28,7 @@ class DigitalTwinCli {
         } catch (UnknownHostException ex) {
             System.out.println("Invalid server: " + args[0]);
             System.exit(1);
-        }
+        }*/
 
         try {
             //Cria o socket com o port 9999
