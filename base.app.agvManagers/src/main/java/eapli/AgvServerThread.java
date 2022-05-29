@@ -6,6 +6,7 @@ import eapli.base.ordersmanagement.order.repositories.OrderRepository;
 import eapli.base.warehousemanagement.application.AGVToPrepOrderController;
 import eapli.base.warehousemanagement.domain.AGV;
 import eapli.base.warehousemanagement.domain.Status;
+import eapli.base.warehousemanagement.repositories.AGVRepository;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -22,11 +23,12 @@ public class AgvServerThread implements Runnable {
 
     private DataOutputStream sOut;
     private DataInputStream sIn;
-    private CodingAndDecoding cod= new CodingAndDecoding();
+    private CodingAndDecoding cod = new CodingAndDecoding();
 
     private AGVToPrepOrderController agvToPrepOrderController = new AGVToPrepOrderController();
     private final OrderRepository orderRepository = PersistenceContext.repositories().orders();
 
+    private final AGVRepository agvRepository = PersistenceContext.repositories().agv();
     public AgvServerThread(Socket cli_s) {
         s=cli_s;
     }
@@ -43,8 +45,10 @@ public class AgvServerThread implements Runnable {
             if(message.getCode() == ASSIGNTASK){
                 int orderId = message.getData_message()[0];
                 ProductOrder productOrder = orderRepository.findByOrderID(String.valueOf(orderId));
+
                 List<AGV> agvList = agvToPrepOrderController.findAGVByStatus(Status.FREE);
-                agvToPrepOrderController.agvToPrepOrder(agvList.get(0), productOrder);
+                AGV agv = agvToPrepOrderController.agvToPrepOrder(agvList.get(0), productOrder);
+                agvRepository.save(agv);
                 System.out.println("Order number + " + orderId + "assigned to AGV number" + agvList.get(0).getIdentifier());
             }
 

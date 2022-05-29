@@ -4,6 +4,7 @@ import eapli.CodingAndDecoding;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.ordersmanagement.order.domain.ProductOrder;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
+import eapli.base.warehousemanagement.domain.Status;
 
 import java.io.*;
 import java.net.InetAddress;
@@ -53,8 +54,21 @@ public class TcpClient {
                     cod.Coding_String(1,1, orderId);
                 }
 
-                if (Objects.equals(input, "1")) {
-                    System.out.println("EM DESENVOLVIMENTO!\n");
+                if (Objects.equals(input, "2")) {
+                    System.out.println("Choose AGV Status to update:");
+                    System.out.println("1 - Free");
+                    System.out.println("2 - Occupied");
+                    System.out.println("3 - Charging");
+                    String status = in.readLine();
+                    if (status.equals("1")) {
+                        cod.Coding_String(1,1, Status.FREE.toString());
+                    } else if (status.equals("2")) {
+                        cod.Coding_String(1,1, Status.OCCUPIED.toString());
+                    } else if (status.equals("3")) {
+                        cod.Coding_String(1,1, Status.CHARGING.toString());
+                    } else {
+                        System.out.println("Select one valid option!");
+                    }
                 }
 
                 if(Objects.equals(input, "3")) {

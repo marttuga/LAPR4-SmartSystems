@@ -26,8 +26,11 @@ activate CTRL
 CTRL -> WEB: returns AGV
 
 deactivate CTRL
+
+
+WEB -> AJAX: initializes
+activate AJAX
+AJAX -> AJAX: waiting for GET request
 deactivate WEB
-
-
 
 @enduml
