@@ -51,7 +51,7 @@ Type: Single-Choice.
 
 Q6.
 Obligatoriness: Mandatory.
-Are satisfied with the site and the order?
+Are you satisfied with the site and the order?
 Type: Free-Text.
 
 Q7.
@@ -61,9 +61,9 @@ Type: Free-Text.
 
 Section3.
 
-Obligatoriness: Opinion;
-Section Description;
-Mandatory.
+STitle: Opinion;
+Description: Section Description;
+Obligatoriness: Mandatory.
 
 Q8.
 Obligatoriness: Mandatory.

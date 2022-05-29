@@ -13,8 +13,8 @@ public class HTTPAjaxRequest extends Thread{
     DataOutputStream outS;
 
 
-    public HTTPAjaxRequest(Socket cliSock, String baseFolder) {
-
+    public HTTPAjaxRequest(Socket s, String f) {
+        baseFolder=f; sock=s;
     }
 
     public void run() {

@@ -18,6 +18,7 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
         try{
             System.out.println("Path inserted! \n");
             ctrl.validation(path);
+            System.out.println("Successfull Operation!");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
