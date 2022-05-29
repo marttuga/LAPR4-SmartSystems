@@ -28,6 +28,9 @@ public class CustomerBootstrapper implements Action {
         createCostumer("Mary", "Mendes", "mary@gmail.com",
                 date, "937263547", "0936527",
                 "Sunset Boulevard", 78, "Los angeles", "USA",90210);
+        createCostumer("Elsa", "Mendes", "elsa@gmail.com",
+                date, "937263549", "0936528",
+                "Sunset Boulevard", 78, "Los angeles", "USA",90211);
         return true;
     }
 
@@ -40,7 +43,7 @@ public class CustomerBootstrapper implements Action {
                                 String street, int doorNumber, String city, String country, int postalCode) {
 
         try {
-            Set<CustomerPostalAddress> postalAddress = new HashSet<CustomerPostalAddress>();
+            Set<CustomerPostalAddress> postalAddress = new HashSet<>();
             CustomerPostalAddress customerPostalAddress = new CustomerPostalAddress(street, doorNumber, city, country, postalCode);
             postalAddress.add(customerPostalAddress);
 
