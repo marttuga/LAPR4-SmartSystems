@@ -18,8 +18,8 @@ import java.util.*;
 public class WebDashboard {
     static private final String BASE_FOLDER ="base.app.web.dashboard/src/main/java/base/dashboard/web/www";
     static private ServerSocket sock;
-    static private final AGVRepository agvRepository = PersistenceContext.repositories().agv();
-    static private final AGVService agvService = new AGVService();
+    //static private final AGVRepository agvRepository = PersistenceContext.repositories().agv();
+    //static private final AGVService agvService = new AGVService();
 
     public static void main(String[] args) throws IOException {
         Socket cliSock;
@@ -61,13 +61,13 @@ public class WebDashboard {
     }
 
 
-    public static List<AGV> findAllAGV() {
+    /*public static List<AGV> findAllAGV() {
             return (agvRepository.findAllAGV());
-    }
+    }*/
 
-    public void printAGVList(List<AGV> agvList) {
+    /*public void printAGVList(List<AGV> agvList) {
         agvService.printAGVsList(agvList);
-    }
+    }*/
 
 
     private static List<AGV> getAGVfromDB(){
