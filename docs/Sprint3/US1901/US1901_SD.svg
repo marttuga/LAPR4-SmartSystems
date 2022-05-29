@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="473.4px" preserveAspectRatio="none" style="width:711px;height:473px;background:#FFFFFF;" version="1.1" viewBox="0 0 711 473" width="711px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="300.3961" style="stroke:#181818;stroke-width:0.9;" width="9" x="77.85" y="83.3484"/><rect fill="#FFFFFF" height="93.6492" style="stroke:#181818;stroke-width:0.9;" width="9" x="227.25" y="103.4648"/><rect fill="#FFFFFF" height="186.6305" style="stroke:#181818;stroke-width:0.9;" width="9" x="364.5" y="197.1141"/><rect fill="#FFFFFF" height="27.3164" style="stroke:#181818;stroke-width:0.9;" width="9" x="490.05" y="224.4305"/><rect fill="#FFFFFF" height="66.3328" style="stroke:#181818;stroke-width:0.9;" width="9" x="625.5" y="290.0953"/><line style="stroke:#181818;stroke-width:0.45;stroke-dasharray:5.0,5.0;" x1="81.9" x2="81.9" y1="74.3484" y2="399.9445"/><line style="stroke:#181818;stroke-width:0.45;stroke-dasharray:5.0,5.0;" x1="231.3" x2="231.3" y1="74.3484" y2="399.9445"/><line style="stroke:#181818;stroke-width:0.45;stroke-dasharray:5.0,5.0;" x1="369" x2="369" y1="74.3484" y2="399.9445"/><line style="stroke:#181818;stroke-width:0.45;stroke-dasharray:5.0,5.0;" x1="494.1" x2="494.1" y1="74.3484" y2="399.9445"/><line style="stroke:#181818;stroke-width:0.45;stroke-dasharray:5.0,5.0;" x1="630" x2="630" y1="259.8047" y2="399.9445"/><text fill="#000000" font-family="sans-serif" font-size="12.6" lengthAdjust="spacing" textLength="150.3" x="4.5" y="71.5799">client:CustomerApplication</text><ellipse cx="82.35" cy="12.15" fill="#E2E2F0" rx="7.2" ry="7.2" style="stroke:#181818;stroke-width:0.45;"/><path d="M82.35,19.35 L82.35,43.65 M70.65,26.55 L94.05,26.55 M82.35,43.65 L70.65,57.15 M82.35,43.65 L94.05,57.15 " fill="none" style="stroke:#181818;stroke-width:0.45;"/><text fill="#000000" font-family="sans-serif" font-size="12.6" lengthAdjust="spacing" textLength="150.3" x="4.5" y="412.1244">client:CustomerApplication</text><ellipse cx="82.35" cy="422.543" fill="#E2E2F0" rx="7.2" ry="7.2" style="stroke:#181818;stroke-width:0.45;"/><path d="M82.35,429.743 L82.35,454.043 M70.65,436.943 L94.05,436.943 M82.35,454.043 L70.65,467.543 M82.35,454.043 L94.05,467.543 " fill="none" style="stroke:#181818;stroke-width:0.45;"/><rect fill="#E2E2F0" height="28.4484" rx="2.25" ry="2.25" style="stroke:#181818;stroke-width:0.45;" width="125.1" x="169.2" y="45"/><text fill="#000000" font-family="sans-serif" font-size="12.6" lengthAdjust="spacing" textLength="112.5" x="175.5" y="64.3799">Server:OrderServer</text><rect fill="#E2E2F0" height="28.4484" rx="2.25" ry="2.25" style="stroke:#181818;stroke-width:0.45;" width="125.1" x="169.2" y="399.0445"/><text fill="#000000" font-family="sans-serif" font-size="12.6" lengthAdjust="spacing" textLength="112.5" x="175.5" y="418.4244">Server:OrderServer</text><rect fill="#E2E2F0" height="28.4484" rx="2.25" ry="2.25" style="stroke:#181818;stroke-width:0.45;" width="131.4" x="303.3" y="45"/><text fill="#000000" font-family="sans-serif" font-size="12.6" lengthAdjust="spacing" textLength="118.8" x="309.6" y="64.3799">threads:HandleClient</text><rect fill="#E2E2F0" height="28.4484" rx="2.25" ry="2.25" style="stroke:#181818;stroke-width:0.45;" width="131.4" x="303.3" y="399.0445"/><text fill="#000000" font-family="sans-serif" font-size="12.6" lengthAdjust="spacing" textLength="118.8" x="309.6" y="418.4244">threads:HandleClient</text><rect fill="#E2E2F0" height="28.4484" rx="2.25" ry="2.25" style="stroke:#181818;stroke-width:0.45;" width="101.7" x="443.7" y="45"/><text fill="#000000" font-family="sans-serif" font-size="12.6" lengthAdjust="spacing" textLength="89.1" x="450" y="64.3799">MessageParser</text><rect fill="#E2E2F0" height="28.4484" rx="2.25" ry="2.25" style="stroke:#181818;stroke-width:0.45;" width="101.7" x="443.7" y="399.0445"/><text fill="#000000" font-family="sans-serif" font-size="12.6" lengthAdjust="spacing" textLength="89.1" x="450" y="418.4244">MessageParser</text><rect fill="#E2E2F0" height="28.4484" rx="2.25" ry="2.25" style="stroke:#181818;stroke-width:0.45;" width="151.2" x="554.4" y="399.0445"/><text fill="#000000" font-family="sans-serif" font-size="12.6" lengthAdjust="spacing" textLength="138.6" x="560.7" y="418.4244">SPOMSProtocolRequest</text><rect fill="#FFFFFF" height="300.3961" style="stroke:#181818;stroke-width:0.9;" width="9" x="77.85" y="83.3484"/><rect fill="#FFFFFF" height="93.6492" style="stroke:#181818;stroke-width:0.9;" width="9" x="227.25" y="103.4648"/><rect fill="#FFFFFF" height="186.6305" style="stroke:#181818;stroke-width:0.9;" width="9" x="364.5" y="197.1141"/><rect fill="#FFFFFF" height="27.3164" style="stroke:#181818;stroke-width:0.9;" width="9" x="490.05" y="224.4305"/><rect fill="#FFFFFF" height="66.3328" style="stroke:#181818;stroke-width:0.9;" width="9" x="625.5" y="290.0953"/><polygon fill="#181818" points="216.45,99.8648,225.45,103.4648,216.45,107.0648,220.05,103.4648" style="stroke:#181818;stroke-width:0.9;"/><line style="stroke:#181818;stroke-width:0.9;stroke-dasharray:2.0,2.0;" x1="86.85" x2="221.85" y1="103.4648" y2="103.4648"/><text fill="#000000" font-family="sans-serif" font-size="11.7" font-weight="bold" lengthAdjust="spacing" textLength="6.3" x="93.15" y="99.094">1</text><text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="27" x="103.05" y="99.094">Sync</text><line style="stroke:#181818;stroke-width:0.9;" x1="236.25" x2="274.05" y1="130.7813" y2="130.7813"/><line style="stroke:#181818;stroke-width:0.9;" x1="274.05" x2="274.05" y1="130.7813" y2="142.4813"/><line style="stroke:#181818;stroke-width:0.9;" x1="237.15" x2="274.05" y1="142.4813" y2="142.4813"/><polygon fill="#181818" points="246.15,138.8813,237.15,142.4813,246.15,146.0813,242.55,142.4813" style="stroke:#181818;stroke-width:0.9;"/><text fill="#000000" font-family="sans-serif" font-size="11.7" font-weight="bold" lengthAdjust="spacing" textLength="6.3" x="242.55" y="126.4104">2</text><text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="36.9" x="252.45" y="126.4104">Accept</text><polygon fill="#181818" points="216.45,166.1977,225.45,169.7977,216.45,173.3977,220.05,169.7977" style="stroke:#181818;stroke-width:0.9;"/><line style="stroke:#181818;stroke-width:0.9;" x1="86.85" x2="221.85" y1="169.7977" y2="169.7977"/><text fill="#000000" font-family="sans-serif" font-size="11.7" font-weight="bold" lengthAdjust="spacing" textLength="6.3" x="93.15" y="165.4269">3</text><text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="43.2" x="103.05" y="165.4269">Request</text><polygon fill="#181818" points="353.7,193.5141,362.7,197.1141,353.7,200.7141,357.3,197.1141" style="stroke:#181818;stroke-width:0.9;"/><line style="stroke:#181818;stroke-width:0.9;" x1="231.75" x2="359.1" y1="197.1141" y2="197.1141"/><text fill="#000000" font-family="sans-serif" font-size="11.7" font-weight="bold" lengthAdjust="spacing" textLength="6.3" x="238.05" y="192.7433">4</text><text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="25.2" x="247.95" y="192.7433">Start</text><polygon fill="#181818" points="479.25,220.8305,488.25,224.4305,479.25,228.0305,482.85,224.4305" style="stroke:#181818;stroke-width:0.9;"/><line style="stroke:#181818;stroke-width:0.9;" x1="373.5" x2="484.65" y1="224.4305" y2="224.4305"/><text fill="#000000" font-family="sans-serif" font-size="11.7" font-weight="bold" lengthAdjust="spacing" textLength="6.3" x="379.8" y="220.0597">5</text><text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="74.7" x="389.7" y="220.0597">parse(request)</text><polygon fill="#181818" points="543.6,248.1469,552.6,251.7469,543.6,255.3469,547.2,251.7469" style="stroke:#181818;stroke-width:0.9;"/><line style="stroke:#181818;stroke-width:0.9;" x1="494.55" x2="549" y1="251.7469" y2="251.7469"/><text fill="#000000" font-family="sans-serif" font-size="11.7" font-weight="bold" lengthAdjust="spacing" textLength="6.3" x="500.85" y="247.3761">6</text><text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="20.7" x="510.75" y="247.3761">new</text><rect fill="#E2E2F0" height="28.4484" rx="2.25" ry="2.25" style="stroke:#181818;stroke-width:0.45;" width="151.2" x="554.4" y="231.6305"/><text fill="#000000" font-family="sans-serif" font-size="12.6" lengthAdjust="spacing" textLength="138.6" x="560.7" y="251.0104">SPOMSProtocolRequest</text><polygon fill="#181818" points="614.7,286.4953,623.7,290.0953,614.7,293.6953,618.3,290.0953" style="stroke:#181818;stroke-width:0.9;"/><line style="stroke:#181818;stroke-width:0.9;" x1="373.5" x2="620.1" y1="290.0953" y2="290.0953"/><text fill="#000000" font-family="sans-serif" font-size="11.7" font-weight="bold" lengthAdjust="spacing" textLength="6.3" x="379.8" y="285.7245">7</text><text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="41.4" x="389.7" y="285.7245">execute</text><line style="stroke:#181818;stroke-width:0.9;" x1="634.5" x2="672.3" y1="317.4117" y2="317.4117"/><line style="stroke:#181818;stroke-width:0.9;" x1="672.3" x2="672.3" y1="317.4117" y2="329.1117"/><line style="stroke:#181818;stroke-width:0.9;" x1="635.4" x2="672.3" y1="329.1117" y2="329.1117"/><polygon fill="#181818" points="644.4,325.5117,635.4,329.1117,644.4,332.7117,640.8,329.1117" style="stroke:#181818;stroke-width:0.9;"/><text fill="#000000" font-family="sans-serif" font-size="11.7" font-weight="bold" lengthAdjust="spacing" textLength="6.3" x="640.8" y="313.0409">8</text><text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="47.7" x="650.7" y="313.0409">response</text><polygon fill="#181818" points="383.4,352.8281,374.4,356.4281,383.4,360.0281,379.8,356.4281" style="stroke:#181818;stroke-width:0.9;"/><line style="stroke:#181818;stroke-width:0.9;stroke-dasharray:2.0,2.0;" x1="378" x2="629.1" y1="356.4281" y2="356.4281"/><text fill="#000000" font-family="sans-serif" font-size="11.7" font-weight="bold" lengthAdjust="spacing" textLength="6.3" x="388.8" y="352.0573">9</text><text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="47.7" x="398.7" y="352.0573">response</text><polygon fill="#181818" points="92.25,380.1445,83.25,383.7445,92.25,387.3445,88.65,383.7445" style="stroke:#181818;stroke-width:0.9;"/><line style="stroke:#181818;stroke-width:0.9;stroke-dasharray:2.0,2.0;" x1="86.85" x2="368.1" y1="383.7445" y2="383.7445"/><text fill="#000000" font-family="sans-serif" font-size="11.7" font-weight="bold" lengthAdjust="spacing" textLength="12.6" x="97.65" y="379.3737">10</text><text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="47.7" x="113.85" y="379.3737">response</text><!--MD5=[752ed0ad47ec1d0a9ecfcb39a87bb946]
+@startuml
+autonumber
+'hide footbox
+actor "client:CustomerApplication" as Client
+participant "Server:OrderServer" as Server
+participant "threads:HandleClient" as Threads
+participant "MessageParser" as MessageParser
+participant "SPOMSProtocolRequest" as SPOMS
+
+
+activate Client
+
+Client - -> Server : Sync
+activate Server
+Server -> Server : Accept
+Client -> Server : Request
+Server -> Threads : Start
+deactivate Server
+activate Threads
+Threads -> MessageParser : parse(request)
+activate MessageParser
+MessageParser -> SPOMS **: new
+deactivate MessageParser
+Threads -> SPOMS : execute
+activate SPOMS
+SPOMS -> SPOMS : response
+SPOMS - -> Threads : response
+deactivate SPOMS
+Threads - -> Client : response
+deactivate Threads
+
+deactivate Client
+
+@enduml
+
+@startuml
+autonumber
+actor "client:CustomerApplication" as Client
+participant "Server:OrderServer" as Server
+participant "threads:HandleClient" as Threads
+participant "MessageParser" as MessageParser
+participant "SPOMSProtocolRequest" as SPOMS
+
+
+activate Client
+
+Client - -> Server : Sync
+activate Server
+Server -> Server : Accept
+Client -> Server : Request
+Server -> Threads : Start
+deactivate Server
+activate Threads
+Threads -> MessageParser : parse(request)
+activate MessageParser
+MessageParser -> SPOMS **: new
+deactivate MessageParser
+Threads -> SPOMS : execute
+activate SPOMS
+SPOMS -> SPOMS : response
+SPOMS - -> Threads : response
+deactivate SPOMS
+Threads - -> Client : response
+deactivate Threads
+
+deactivate Client
+
+@enduml
+
+PlantUML version 1.2022.4(Sat Apr 09 14:29:17 BST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>
