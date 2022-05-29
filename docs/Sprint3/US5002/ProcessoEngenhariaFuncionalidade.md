@@ -28,16 +28,25 @@ AGV status, in this case, for free.
 
 ## 3.3. Applied Patterns
 
-*Nesta secção deve apresentar e explicar quais e como foram os padrões de design aplicados e as melhores práticas.*
+
+## 3.4. Tests
+**Test 1:** Check if the agv status is correct
+
+    @Test
+    void changeStatus() {
+    Identifier id = new Identifier("1");
+    AGV agV = new AGV(id, 70,agvDock,"auto", model, maxWeightCarry, Status.FREE );
+    agV.changeStatus(Status.CHARGING);
+    Assertions.assertEquals(Status.CHARGING, agV.getStatus());
+}
 
 # 4. Implementation
 
 - Create a server for AGVManager and an AGV Digital Twin client so that they could communicate with each other and, in this way,
 - pass on the desired information to the purpose of the US.
 
-# 5. Integration/Demonstration
 
-*Nesta secção a equipa deve descrever os esforços realizados no sentido de integrar a funcionalidade desenvolvida com as restantes funcionalidades do sistema.*
+# 5. Integration/Demonstration
 
 
 
