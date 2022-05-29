@@ -32,7 +32,7 @@ class DigitalTwinCli {
 
         try {
             //Cria o socket com o port 9999
-            sock = new Socket("localhost", 1253);
+            sock = new Socket("localhost", 9999);
         } catch (IOException ex) {
             System.out.println("Failed to connect.");
             System.exit(1);
