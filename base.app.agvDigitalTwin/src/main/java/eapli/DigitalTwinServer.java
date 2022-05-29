@@ -53,20 +53,27 @@ class TcpChatSrvClient extends Thread {
     private Socket myS;
     private DataInputStream sIn;
 
+    private DataOutputStream sOut;
+
     public TcpChatSrvClient(Socket s) {
         myS = s;
     }
 
     public void run() {
         int nChars;
+        String message;
         byte[] data = new byte[300];
 
         try {
             sIn = new DataInputStream(myS.getInputStream());
+            sOut = new DataOutputStream((myS.getOutputStream()));
             while (true) {
                 nChars = sIn.read();
                 if (nChars == 0) break; // empty line means client wants to exit
+                message = String.valueOf(sIn.readChar());
                 System.out.println(sIn.read(data, 0, nChars));
+                sOut.write((byte) message.length());
+                sOut.write(data, 0, (byte) message.length());
                 DigitalTwinServer.sendToAll(nChars, data);
             }
             // the client wants to exit
