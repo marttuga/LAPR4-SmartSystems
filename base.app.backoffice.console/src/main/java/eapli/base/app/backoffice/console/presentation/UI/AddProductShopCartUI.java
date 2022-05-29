@@ -1,6 +1,8 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
 
+import eapli.base.ordersmanagement.CustomerCliOrderServer.CsvAddProductProtocolProxy;
+import eapli.base.ordersmanagement.CustomerCliOrderServer.FailedRequestException;
 import eapli.base.ordersmanagement.customer.applicaion.RegisterCustomerController;
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.customer.domain.CustomerId;
@@ -17,6 +19,7 @@ import eapli.framework.domain.repositories.IntegrityViolationException;
 import eapli.framework.presentation.console.AbstractUI;
 import org.apache.commons.lang3.RandomStringUtils;
 
+import java.io.IOException;
 import java.util.*;
 
 public class AddProductShopCartUI extends AbstractUI {
@@ -24,6 +27,7 @@ public class AddProductShopCartUI extends AbstractUI {
     private static final NewProductOrderController productOrderController = new NewProductOrderController();
     private static final RegisterCustomerController registerCustomerController = new RegisterCustomerController();
     private static final AddProductShopCartController addProductShopCartController = new AddProductShopCartController();
+    private static final CsvAddProductProtocolProxy proxy = new CsvAddProductProtocolProxy();
 
     public boolean doShow() {
         try{
@@ -104,6 +108,7 @@ public class AddProductShopCartUI extends AbstractUI {
 
             pi.add(productItem);
 
+
         } while (Utils.confirm("Want to add more products to the ShoppingCart? (y/n)"));
 
         String id = RandomStringUtils.randomAlphanumeric(6);
@@ -111,9 +116,11 @@ public class AddProductShopCartUI extends AbstractUI {
 
         ShoppingCart shoppingCart= addProductShopCartController.addProdShopCart(shoppingCartID,customer,pi);
         System.out.println(shoppingCart);
-
+        proxy.bookMeal(shoppingCart);
         } catch (final IntegrityViolationException ex){
             System.out.println("Error adding to shoppingCart.");
+        } catch (FailedRequestException | IOException e) {
+            e.printStackTrace();
         }
         return false;
     }
