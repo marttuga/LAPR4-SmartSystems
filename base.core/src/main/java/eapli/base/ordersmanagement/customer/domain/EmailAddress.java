@@ -21,7 +21,9 @@ public class EmailAddress implements ValueObject {
         Preconditions.ensure(StringPredicates.isEmail(emailAddress), "Invalid email format");
         this.emailAddress = emailAddress;
     }
-
+    public static EmailAddress valueOf(final String id){
+        return new EmailAddress(id);
+    }
     @Override
     public String toString() {
         return emailAddress;
