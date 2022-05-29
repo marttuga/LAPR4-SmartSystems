@@ -11,9 +11,6 @@ import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
 import eapli.framework.infrastructure.authz.application.UserManagementService;
-import eapli.framework.infrastructure.authz.domain.model.Role;
-import eapli.framework.infrastructure.authz.domain.model.SystemUser;
-import eapli.framework.time.util.Calendars;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import java.util.*;
@@ -53,6 +50,9 @@ public class RegisterCustomerController {
 
     public Customer findByCustomerId(CustomerId c){
         return customerRepository.findByCustomerId(c);
+    }
+    public Customer findByCustomerEmail(String c){
+        return customerRepository.findByCustomerEmail(c);
     }
     public Customer findByCustomerIdOrder(String c){
         return customerRepository.findByCustomerIdOrder(c);

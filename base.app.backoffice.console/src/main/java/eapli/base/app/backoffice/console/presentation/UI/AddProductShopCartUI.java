@@ -1,9 +1,12 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
 
+import eapli.base.ordersmanagement.CustomerCliOrderServer.CsvAddProductProtocolProxy;
+import eapli.base.ordersmanagement.CustomerCliOrderServer.FailedRequestException;
 import eapli.base.ordersmanagement.customer.applicaion.RegisterCustomerController;
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.customer.domain.CustomerId;
+import eapli.base.ordersmanagement.customer.domain.EmailAddress;
 import eapli.base.ordersmanagement.order.application.NewProductOrderController;
 
 import eapli.base.ordersmanagement.product.application.ViewCatalogController;
@@ -12,11 +15,16 @@ import eapli.base.ordersmanagement.shoppingCart.application.AddProductShopCartCo
 import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
 import eapli.base.ordersmanagement.shoppingCart.domain.ShoppingCart;
 import eapli.base.ordersmanagement.shoppingCart.domain.ShoppingCartID;
+import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.base.utilitarianClasses.Utils;
 import eapli.framework.domain.repositories.IntegrityViolationException;
+import eapli.framework.infrastructure.authz.application.AuthorizationService;
+import eapli.framework.infrastructure.authz.application.AuthzRegistry;
+import eapli.framework.infrastructure.authz.domain.model.Role;
 import eapli.framework.presentation.console.AbstractUI;
 import org.apache.commons.lang3.RandomStringUtils;
 
+import java.io.IOException;
 import java.util.*;
 
 public class AddProductShopCartUI extends AbstractUI {
@@ -24,14 +32,17 @@ public class AddProductShopCartUI extends AbstractUI {
     private static final NewProductOrderController productOrderController = new NewProductOrderController();
     private static final RegisterCustomerController registerCustomerController = new RegisterCustomerController();
     private static final AddProductShopCartController addProductShopCartController = new AddProductShopCartController();
-
+    private static final CsvAddProductProtocolProxy proxy = new CsvAddProductProtocolProxy();
+    private final AuthorizationService authz = AuthzRegistry.authorizationService();
     public boolean doShow() {
         try{
         Customer customer;
         Set<ProductItem> pi = new HashSet<>();
-        String costumerID = Utils.readLineFromConsole("Please enter your ID: " + "\n(must have 7 digits)");
+        String costumerID = authz.session().get().authenticatedUser().email().toString();
+            System.out.println(costumerID);
+                //= Utils.readLineFromConsole("Please enter your ID: " + "\n(must have 7 digits)");
 
-        customer = registerCustomerController.findByCustomerId(CustomerId.valueOf(costumerID));
+        customer = registerCustomerController.findByCustomerEmail(costumerID);
         System.out.println(customer.toString());
 
         System.out.println();
@@ -104,6 +115,7 @@ public class AddProductShopCartUI extends AbstractUI {
 
             pi.add(productItem);
 
+
         } while (Utils.confirm("Want to add more products to the ShoppingCart? (y/n)"));
 
         String id = RandomStringUtils.randomAlphanumeric(6);
@@ -111,9 +123,11 @@ public class AddProductShopCartUI extends AbstractUI {
 
         ShoppingCart shoppingCart= addProductShopCartController.addProdShopCart(shoppingCartID,customer,pi);
         System.out.println(shoppingCart);
-
+        proxy.bookMeal(shoppingCart);
         } catch (final IntegrityViolationException ex){
             System.out.println("Error adding to shoppingCart.");
+        } catch (FailedRequestException | IOException e) {
+            e.printStackTrace();
         }
         return false;
     }

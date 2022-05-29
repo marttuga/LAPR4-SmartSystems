@@ -13,7 +13,7 @@ public interface CustomerRepository extends DomainRepository<CustomerId, Custome
     Optional<Customer> findByUsername(Username username);
 
     Customer findByCustomerId(CustomerId customerId);
-
+    Customer findByCustomerEmail(String emailAddress);
     Customer findByCustomerIdOrder(String customerId);
     Optional<Customer> findByEmail(EmailAddress email);
 
