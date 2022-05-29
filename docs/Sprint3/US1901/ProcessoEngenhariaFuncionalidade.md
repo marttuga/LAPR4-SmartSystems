@@ -41,23 +41,20 @@ SPOMSP.
 
 # 3. Design
 * Utilizar a estrutura base standard da aplicação baseada em camadas 
+ 
+>   Server: OrderServer
+> 
+>   Client: CustomerAppCli
 
->   Classes do domínio: Category, Product, Barcode, Brand, ShortDescription, ProductPriceDetail
->
->   Controlador: ViewCatalogController
->
->   Repository:  ProductRepository
-
-## 3.1. Realização da Funcionalidade
-![SSD](US1901_SSD.svg)
+## 3.1. Realization of Functionality
 
 ![SD](US1901_SD.svg)
 
-## 3.3. Padrões Aplicados
+## 3.3. Applied Patterns
 
 * This functionality will be provided with a server socket on a well-known address using TCP as transport mecanism.
 
-# 4. Implementação
+# 4. Implementation
 
     public static void main(String args[]) throws Exception {
       int i;
