@@ -1,0 +1,24 @@
+@startuml
+autonumber
+
+actor "Customer" as WE
+
+activate WE
+WE -> ":System" : asks to view the list of open orders
+activate ":System"
+
+":System" --> WE : shows list of orders with the status on each one
+deactivate ":System"
+
+
+deactivate ":System"
+WE -> ":System" : confirms the data
+
+activate ":System"
+":System" --> WE : informs operation success
+deactivate ":System"
+
+deactivate ":System"
+deactivate WE
+
+@enduml
