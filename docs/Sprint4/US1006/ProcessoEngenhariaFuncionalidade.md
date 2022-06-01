@@ -24,10 +24,10 @@ To simplify this requirement the sales clerk has ability to filter the orders by
 * Utilizar a estrutura base standard da aplicação baseada em camadas 
 
 * Domain Classes: ProductOrder
-* Controller: AGVToPrepOrderController
+* Controller: OrdersDispatchedController
 * Repository: ProductOrderRepository 
 * Service: OrderService 
-* UI: AGVToPrepOrderUI 
+* UI: OrdersDispatchedUI 
 
 ## 3.1. Realization of Functionality
 
