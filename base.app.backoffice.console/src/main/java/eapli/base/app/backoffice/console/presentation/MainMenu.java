@@ -75,6 +75,8 @@ public class MainMenu extends AbstractUI {
     private static final int DISPATCH_ORDER = 4;
 
     private static final int ADD_PRODUCT_SHOPCART = 1;
+    private static final int ANSWER_QUESTIONNAIRE= 2;
+    private static final int CHECK_OPEN_ORDERS= 3;
     // SETTINGS
     private static final int SET_KITCHEN_ALERT_LIMIT_OPTION = 1;
 
@@ -161,9 +163,11 @@ public class MainMenu extends AbstractUI {
 
 
     private Menu buildCustomerMenu() {
-        final Menu menu = new Menu("Shopping >");
+        final Menu menu = new Menu("Customer Menu >");
 
         menu.addItem(ADD_PRODUCT_SHOPCART, "Add products to Shopping Cart ",new AddProductShopCartUI()::show);
+        menu.addItem(ANSWER_QUESTIONNAIRE, "Answer questionnaire ",new QuestionnaireAnswerUI()::show);
+        menu.addItem(CHECK_OPEN_ORDERS, "Check your open orders ",new CheckOpenOrderUI()::show);
         menu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
         return menu;
