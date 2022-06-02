@@ -20,6 +20,11 @@
  */
 package eapli.base.ordersmanagement.CustomerCliOrderServer;
 
+import eapli.base.ordersmanagement.order.domain.ProductOrder;
+import eapli.base.ordersmanagement.shoppingCart.domain.ShoppingCart;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -29,17 +34,13 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-import eapli.base.ordersmanagement.shoppingCart.domain.ShoppingCart;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 /**
  * Proxy for the CsvBookingProtocol.
  *
  * @author Paulo Gandra de Sousa 2021.05.25
  */
-public class CsvAddProductProtocolProxy {
-    private static final Logger LOGGER = LogManager.getLogger(CsvAddProductProtocolProxy.class);
+public class CsvCheckOpenOrdersProtocolProxy {
+    private static final Logger LOGGER = LogManager.getLogger(CsvCheckOpenOrdersProtocolProxy.class);
 
     /**
      * @author Paulo Gandra de Sousa 2021.05.25
@@ -128,7 +129,7 @@ public class CsvAddProductProtocolProxy {
     }
 
 
-    public BookingToken addProd(final ShoppingCart pi)
+    public BookingToken checkOpenOrders(final List<ProductOrder> pi)
             throws IOException, FailedRequestException {
         final var socket = new ClientSocket();
         socket.connect(getAddress(), getPort());
@@ -148,8 +149,8 @@ public class CsvAddProductProtocolProxy {
         return BookingToken.valueOf(removeDoubleQuotes(tokens[1]));
     }
 
-    private String buildBookMeal(ShoppingCart pi) {
-        return " \nSHOPPING_CART\n " + pi;
+    private String buildBookMeal(List<ProductOrder> pi) {
+        return " \nOPEN ORDERS\n " + pi;
     }
 
     private String removeDoubleQuotes(final String token) {
