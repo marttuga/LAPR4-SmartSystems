@@ -1,0 +1,106 @@
+@startuml
+autonumber
+'hide footbox
+actor "Sales Clerk" as SC
+participant ":OrdersDispatchedUI" as UI
+participant ":OrdersDispatchedController" as CTRL
+participant ":PersistenceContext" as PC
+participant ":RepositoryFactory" as RF
+participant ":ProductOrderRepository" as ProdRepo
+participant ":ProductOrderService" as ProdS
+
+activate SC
+
+SC -> UI : asks to view the list of previous orders made
+activate UI
+
+UI -> CTRL : getOrders
+activate CTRL
+CTRL -> PC : repositories()
+
+activate PC
+PC -> RF : create
+deactivate PC
+activate RF
+RF -> ProdRepo : create
+deactivate RF
+activate ProdRepo
+deactivate ProdRepo
+CTRL -> ProdRepo : getOrders= getOrders()
+
+deactivate ProdRepo
+
+CTRL --> UI :  getOrders
+deactivate CTRL
+
+UI --> SC : shows list of orders
+deactivate UI
+SC -> UI : asks to see the ones with status: DISPATCHED
+activate UI
+
+UI -> CTRL : getOrderByStatus
+activate CTRL
+CTRL -> ProdRepo : getOrderByStatus= getOrderByStatus()
+activate ProdRepo
+CTRL --> UI :  getOrderByStatus
+deactivate CTRL
+deactivate ProdRepo
+
+UI --> SC :  shows list of orders with that status
+deactivate UI
+
+SC -> UI : asks which of these orders you want to change the status
+activate UI
+
+UI -> CTRL : getOrdersModified
+activate CTRL
+CTRL -> PC : repositories()
+
+activate PC
+PC -> RF : create
+deactivate PC
+activate RF
+RF -> ProdRepo : create
+activate ProdRepo
+deactivate RF
+
+deactivate ProdRepo
+CTRL -> ProdRepo : getOrdersModified= getOrdersModified()
+activate ProdRepo
+CTRL --> UI :  getOrdersModified
+deactivate CTRL
+deactivate ProdRepo
+
+UI --> SC : shows the list of orders
+deactivate UI
+
+SC -> UI : chooses one to change the status
+activate UI
+
+UI -> CTRL : getOrder
+activate CTRL
+CTRL -> ProdRepo : getOrder= getOrder()
+activate ProdRepo
+CTRL -> ProdS: changeStatus= changeStatus()
+deactivate ProdRepo
+activate ProdS
+CTRL -> ProdS : changeOrderStatus= changeOrderStatus()
+deactivate ProdRepo
+CTRL --> UI :  getOrder
+deactivate CTRL
+
+UI --> SC :shows all data
+deactivate UI
+deactivate ProdS
+deactivate UI
+
+SC -> UI : confirms the data
+
+activate UI
+UI --> SC : informs operation success
+deactivate UI
+
+deactivate UI
+deactivate SC
+
+@enduml

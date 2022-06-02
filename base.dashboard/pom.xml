@@ -9,6 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <name>base.dashboard</name>
+
     <artifactId>base.dashboard</artifactId>
     <dependencies>
         <dependency>
@@ -16,6 +18,12 @@
             <artifactId>base.core</artifactId>
             <version>1.4.0-SNAPSHOT</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>eapli</groupId>
+            <artifactId>base.persistence.impl</artifactId>
+            <version>${project.parent.version}</version>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 

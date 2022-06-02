@@ -1,0 +1,38 @@
+@startuml
+autonumber
+actor "Sales Clerk" as SC
+
+activate SC
+SC -> ":System" : asks to view the list of orders made
+activate ":System"
+
+":System" --> SC : shows list of orders
+deactivate ":System"
+
+SC -> ":System" : asks to see the ones with status: DISPATCHED
+activate ":System"
+
+":System" --> SC : shows list of orders with that status
+deactivate ":System"
+
+SC -> ":System" : asks which of these orders you want to change the status
+activate ":System"
+
+":System" --> SC : shows the list of orders
+deactivate ":System"
+
+SC -> ":System" : chooses one to change the status
+activate ":System"
+
+":System" --> SC :shows all data and requests confirmation
+deactivate ":System"
+SC -> ":System" : confirms the data
+
+activate ":System"
+":System" --> SC : informs operation success
+deactivate ":System"
+
+deactivate ":System"
+deactivate SC
+
+@enduml
