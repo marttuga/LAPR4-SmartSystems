@@ -1,6 +1,7 @@
 package eapli.base.persistence.impl.jpa;
 
 import eapli.base.Application;
+import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.order.domain.ProductOrder;
 import eapli.base.ordersmanagement.order.domain.OrderID;
 import eapli.base.ordersmanagement.order.domain.Status;
@@ -35,6 +36,15 @@ public class JpaOrderRepository extends JpaAutoTxRepository<ProductOrder, String
         Query q = entityManager().createQuery("SELECT ord FROM ProductOrder ord " +
                 " WHERE ord.status = :status");
         q.setParameter("status", status);
+        return (q.getResultList());
+    }
+
+    @Override
+    public List<ProductOrder> findOpenOrders(Status status, Customer customer) {
+        Query q = entityManager().createQuery("SELECT ord FROM ProductOrder ord " +
+                " WHERE ord.status != :status AND ord.customer = :customer");
+        q.setParameter("status", status);
+        q.setParameter("customer", customer);
         return (q.getResultList());
     }
 
