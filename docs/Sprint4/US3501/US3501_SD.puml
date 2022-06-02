@@ -3,7 +3,8 @@ autonumber
 'hide footbox
 actor "Customer" as PM
 participant ":QuestionnaireAnswerUI" as UI
-participant ":TextFile" as TF
+participant ":QuestionnaireAnswerController" as C
+participant ":SurveysService" as S
 participant ":TextFileAnswers" as T
 
 
@@ -12,11 +13,16 @@ activate PM
 PM -> UI : aks to see the questionnaires
 activate UI
 
-UI -> TF : getQuestionnaires
-activate TF
-
-deactivate TF
-
+UI -> C : getQuestionnaires
+activate C
+C -> S : getQuestionnaires
+deactivate C
+activate S
+S -> C: shows the questionnaires
+deactivate S
+activate C
+C --> UI : shows the questionnaires
+deactivate C
 UI --> PM : shows the questionnaires
 deactivate UI
 
