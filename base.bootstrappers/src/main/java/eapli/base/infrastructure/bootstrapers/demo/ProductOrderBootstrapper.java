@@ -46,7 +46,7 @@ public class ProductOrderBootstrapper implements Action {
         ProductOrder productOrder3 = createProductOrder("123", "557", new Date(23/9/2021), "555", 2,
                 "EUR", 10L);
         assert productOrder3 != null;
-        productOrder3.changeStatus(Status.TO_BE_PREPARED);
+        productOrder3.changeStatus(Status.DELIVERED);
         orderRepository.save(productOrder3);
         ProductOrder productOrder4 = createProductOrder("123", "558", new Date(23/10/2021), "555", 2,
                 "EUR", 10L);
