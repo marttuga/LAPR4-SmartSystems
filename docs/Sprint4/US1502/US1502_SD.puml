@@ -1,0 +1,56 @@
+@startuml
+autonumber
+'hide footbox
+actor "Customer" as WE
+participant ":CheckOpenOrderUI" as UI
+participant ":CheckOpenOrderController" as CTRL
+participant ":PersistenceContext" as PC
+participant ":RepositoryFactory" as RF
+participant ":ProductOrderRepository" as ProdRepo
+participant ":ProductOrderService" as ProdS
+
+
+activate WE
+
+WE -> UI : asks to view the list of open orders
+activate UI
+
+
+UI -> CTRL : getOpenOrders
+activate CTRL
+CTRL -> PC : repositories()
+
+activate PC
+PC -> RF : create
+deactivate PC
+activate RF
+RF -> ProdRepo : create
+deactivate RF
+activate ProdRepo
+deactivate ProdRepo
+CTRL -> ProdRepo : getOpenOrders= getOpenOrders()
+deactivate ProdRepo
+CTRL -> ProdS : printOpenOrderList=printOpenOrderList(getOpenOrders)
+
+
+activate ProdS
+
+CTRL --> UI :  getOpenOrders
+deactivate ProdS
+deactivate CTRL
+
+UI --> WE :shows list of orders with the status on each one
+deactivate UI
+
+
+WE -> UI : confirms the data
+
+activate UI
+UI --> WE : informs operation success
+deactivate UI
+
+deactivate UI
+deactivate WE
+
+@enduml
+
