@@ -16,7 +16,6 @@ public class WebDashboard {
 
     public static void main(String[] args) throws IOException {
         Socket cliSock;
-        //String localPort = "32509";
 
         if (args.length != 1) {
             System.out.println("Local port number required at the command line.");
@@ -32,7 +31,6 @@ public class WebDashboard {
             cliSock = sock.accept();
             HTTPAjaxRequest req = new HTTPAjaxRequest(cliSock, BASE_FOLDER);
             req.start();
-            //incAccessesCounter();
         }
     }
 
