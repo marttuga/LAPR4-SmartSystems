@@ -11,17 +11,17 @@ STitle: Basic Personal Information;
 Description: Customer directed questions and personal information ;
 Obligatoriness: Mandatory.
 
-Q 1.
+Q1.
 Obligatoriness: Mandatory.
 What is your costumerID?
 Type: Free-Text.
 
-Q 2.
+Q2.
 Obligatoriness: Optional.
 What is your age?
 Type: Free-Text.
 
-Q 3.
+Q3.
 Obligatoriness: Optional.
 What is your gender?
 Type: Single-Choice.
@@ -33,7 +33,7 @@ Section: 2.
 
 STitle: Satisfaction;
 Description: Section Description;
-Obligatoriness: Optional.
+Obligatoriness: Optional
 
 Q5.
 Obligatoriness: Mandatory.

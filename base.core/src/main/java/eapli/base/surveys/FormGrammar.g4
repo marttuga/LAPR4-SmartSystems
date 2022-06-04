@@ -55,7 +55,7 @@ parameterFinalMes : 'Final Message: ' parameterText | ;
 INT : [0-9]+ ;
 STRING : [A-Za-z0-9]+ | '_' | '\''  ;
 END : '.' | '?' | | ':' | ';' | ',' ;
-QUESTION : 'Q ' [0-9]+ '.' ;
+QUESTION : 'Q' [0-9]+ '.' ;
 QUEST : 'Questionnaire' ;
 SECTION : 'Section: ' ;
 SIGNAL : ':' | '-' | '.' ;

@@ -1,0 +1,51 @@
+@startuml
+autonumber
+'hide footbox
+actor "Customer" as PM
+participant ":QuestionnaireAnswerUI" as UI
+participant ":QuestionnaireAnswerController" as C
+participant ":SurveysService" as S
+participant ":TextFileAnswers" as T
+
+
+activate PM
+
+PM -> UI : aks to see the questionnaires
+activate UI
+
+UI -> C : getQuestionnaires
+activate C
+C -> S : getQuestionnaires
+deactivate C
+activate S
+S -> C: shows the questionnaires
+deactivate S
+activate C
+C --> UI : shows the questionnaires
+deactivate C
+UI --> PM : shows the questionnaires
+deactivate UI
+
+PM -> UI : chooses the questionnaire to answer
+activate UI
+
+
+UI --> PM : shows questions
+deactivate UI
+
+PM -> UI : chooses if wants to answer the optional questions
+activate UI
+UI --> PM : shows questions to answer
+deactivate UI
+PM -> UI : answers the questions
+activate UI
+UI --> T : answers are stored in the .txt
+activate T
+UI --> PM : answers are stored in a .txt
+deactivate T
+deactivate UI
+
+deactivate UI
+deactivate PM
+
+@enduml

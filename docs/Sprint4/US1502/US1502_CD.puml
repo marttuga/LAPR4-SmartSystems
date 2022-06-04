@@ -1,0 +1,27 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+
+class CheckOpenOrderUI <<presentation>>
+
+
+
+class CheckOpenOrderController <<application>>
+
+class ProductOrderRepository <<repository>>
+
+
+
+entity ProductOrder <<Entity>> <<Root>>
+
+
+
+
+
+CheckOpenOrderController --> ProductOrder
+CheckOpenOrderUI --> CheckOpenOrderController : theController
+CheckOpenOrderUI : doShow()
+CheckOpenOrderController --> ProductOrderRepository : repo
+CheckOpenOrderController : getAllOpenOrders()
+
+@enduml
