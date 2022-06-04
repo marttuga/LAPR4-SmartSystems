@@ -1,5 +1,11 @@
 package eapli.base.app.backoffice.console.presentation.clientuser;
 
+import eapli.CodingAndDecoding;
+import eapli.base.infrastructure.persistence.PersistenceContext;
+import eapli.base.ordersmanagement.order.domain.ProductOrder;
+import eapli.base.ordersmanagement.order.repositories.OrderRepository;
+import eapli.base.warehousemanagement.domain.Status;
+
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -49,6 +55,8 @@ public class TcpClient {
                     out.writeInt(option);
                     out.writeInt(orderId);
 
+                    System.out.println("Pedido solicitado ao Servidor! Aguarde um momento!");
+
                     int length = in.readInt();
                     byte[] data = new byte[length];
                     in.readFully(data);
@@ -68,7 +76,7 @@ public class TcpClient {
             sock.close();
 
         } catch (IOException ex) {
-            System.out.println("Estabeleceu a ligação TCP");
+            System.out.println("Erro ao establecer a ligação TCP");
             System.exit(1);
         }
 
