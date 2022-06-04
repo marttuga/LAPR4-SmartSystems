@@ -11,22 +11,22 @@ STitle: Basic Personal Information;
 Description: Customer directed questions and personal information ;
 Obligatoriness: Mandatory.
 
-Q 1.
+Q1.
 Obligatoriness: Mandatory.
 What is your costumerID?
 Type: Free-Text.
 
-Q 2.
+Q2.
 Obligatoriness: Optional.
 What is your nationality?
 Type: Free-Text.
 
-Q 3.
+Q3.
 Obligatoriness: Optional.
 What is your phone number?
 Type: Free-Text.
 
-Q 4.
+Q4.
 Obligatoriness: Optional.
 What is your gender?
 Type: Single-Choice.
