@@ -9,20 +9,20 @@ Section: 1.
 
 STitle: Basic Personal Information;
 Description: Customer directed questions and personal information ;
-Obligatoriness: Mandatory
+Obligatoriness: Mandatory.
 
 Q1.
-Obligatoriness: Mandatory
+Obligatoriness: Mandatory.
 What is your costumerID?
 Type: Free-Text.
 
 Q2.
-Obligatoriness: Optional
+Obligatoriness: Optional.
 What is your age?
 Type: Free-Text.
 
 Q3.
-Obligatoriness: Optional
+Obligatoriness: Optional.
 What is your gender?
 Type: Single-Choice.
 1. Male;
@@ -33,22 +33,22 @@ Section: 2.
 
 STitle: Satisfaction;
 Description: Section Description;
-Obligatoriness: Optional
+Obligatoriness: Optional.
 
 Q5.
-Obligatoriness: Mandatory
+Obligatoriness: Mandatory.
 Are satisfied with the speed of the service?
 Type: Single-Choice.
 1. Yes;
 2. No;
 
 Q6.
-Obligatoriness: Mandatory
+Obligatoriness: Mandatory.
 Would you recommend our company to someone?
 Type: Free-Text.
 
 Q7.
-Obligatoriness: Mandatory
+Obligatoriness: Mandatory.
 How likely are you to purchase again from us?
 Type: Free-Text.
 
@@ -56,10 +56,10 @@ Section: 3.
 
 STitle: Opinion;
 Description: Section Description;
-Obligatoriness: Mandatory
+Obligatoriness: Mandatory.
 
 Q8.
-Obligatoriness: Mandatory
+Obligatoriness: Mandatory.
 How would you rate our prices?
 Type: Free-Text.
 
