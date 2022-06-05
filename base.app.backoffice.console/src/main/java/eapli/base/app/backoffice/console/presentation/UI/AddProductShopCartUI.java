@@ -14,6 +14,7 @@ import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
 import eapli.base.ordersmanagement.shoppingCart.domain.ShoppingCart;
 import eapli.base.ordersmanagement.shoppingCart.domain.ShoppingCartID;
 import eapli.base.utilitarianClasses.Utils;
+import eapli.framework.actions.menu.Menu;
 import eapli.framework.domain.repositories.IntegrityViolationException;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
@@ -32,6 +33,7 @@ public class AddProductShopCartUI extends AbstractUI {
     private final AuthorizationService authz = AuthzRegistry.authorizationService();
     public boolean doShow() {
         try{
+
         Customer customer;
         Set<ProductItem> pi = new HashSet<>();
         String costumerID = authz.session().get().authenticatedUser().email().toString();
@@ -119,7 +121,7 @@ public class AddProductShopCartUI extends AbstractUI {
 
         ShoppingCart shoppingCart= addProductShopCartController.addProdShopCart(shoppingCartID,customer,pi);
         System.out.println(shoppingCart);
-        addProductProtocolProxyController.addProd(shoppingCart);
+        addProductProtocolProxyController.addProd(String.valueOf(shoppingCart));
         } catch (final IntegrityViolationException ex){
             System.out.println("Error adding to shoppingCart.");
         } catch (FailedRequestException | IOException e) {
