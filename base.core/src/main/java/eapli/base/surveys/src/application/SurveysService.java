@@ -9,9 +9,9 @@ public class SurveysService {
         System.out.println("===================================================");
         System.out.println("               Questionnaires:          ");
         System.out.println("=================================================\n");
-        System.out.println("1");
-        System.out.println("2");
-        System.out.println("3");
+        System.out.println("questionnaire 1");
+        System.out.println("questionnaire 2");
+        System.out.println("questionnaire 3");
         System.out.println("===================================================");
         System.out.println("0. Back\n\n");
         option = Console.readInteger("Please select an option");
@@ -22,11 +22,11 @@ public class SurveysService {
     public String questionnaires(int options) {
         switch (options) {
             case (1):
-                return "questionnaire.txt";
+                return "C:\\Users\\marti\\Documents\\2ANO2SEMESTRE\\LAPR4\\LEI21_22_S4_2DK_01\\base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire.txt";
             case (2):
-                return "questionnaire2.txt";
+                return "C:\\Users\\marti\\Documents\\2ANO2SEMESTRE\\LAPR4\\LEI21_22_S4_2DK_01\\base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire2.txt";
             case (3):
-                return "questionnaire3.txt";
+                return "C:\\Users\\marti\\Documents\\2ANO2SEMESTRE\\LAPR4\\LEI21_22_S4_2DK_01\\base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire3.txt";
         }
         return null;
     }
