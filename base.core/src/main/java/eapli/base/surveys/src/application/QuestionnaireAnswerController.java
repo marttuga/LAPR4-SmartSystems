@@ -1,5 +1,7 @@
 package eapli.base.surveys.src.application;
 
+import eapli.base.surveys.src.domain.FileAnswers;
+
 public class QuestionnaireAnswerController {
     private final SurveysService surveysService = new SurveysService();
 
@@ -10,4 +12,10 @@ public class QuestionnaireAnswerController {
     public String questionnaires(int options) {
         return surveysService.questionnaires(options);
     }
+
+    public void outPutResume(String answer) {
+        FileAnswers.outPutResume(answer);
+    }
+
+
 }
