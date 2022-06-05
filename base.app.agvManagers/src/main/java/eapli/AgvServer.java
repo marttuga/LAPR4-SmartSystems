@@ -1,7 +1,5 @@
 package eapli;
 
-import eapli.base.warehousemanagement.domain.AGV;
-import eapli.base.warehousemanagement.domain.Status;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -12,7 +10,7 @@ import java.util.HashMap;
 
 public class AgvServer {
 
-    AGV agv = new AGV();
+    //AGV agv = new AGV();
 
     static byte[] STATUS = new byte[] {1, 12, 0,0};
 
@@ -69,9 +67,9 @@ public class AgvServer {
                     if (nChars == 0) break; // empty line means client wants to exit
                     System.out.println(sIn.read(data, 0, nChars));
                     AgvServer.sendToAll(nChars, data);
-                    if(data == STATUS){
+                    /*if(data == STATUS){
                         agv.changeStatus(Status.FREE);
-                    }
+                    }*/
                 }
                 // the client wants to exit
                 AgvServer.remCli(myS);
