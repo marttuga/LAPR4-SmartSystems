@@ -32,7 +32,8 @@ public class CheckOpenOrderUI extends AbstractUI {
             List<ProductOrder> ordersList = checkOpenOrderController.findOpenOrders(Status.DELIVERED,customer);
             checkOpenOrderController.printOrdersList(ordersList);
 
-            addProductProtocolProxyController.checkOpenOrders(ordersList);
+
+            addProductProtocolProxyController.checkOpenOrders( checkOpenOrderController.printList(ordersList));
 
         } catch (final IntegrityViolationException ex) {
             System.out.println("Error checking the orders");
@@ -46,4 +47,5 @@ public class CheckOpenOrderUI extends AbstractUI {
     public String headline() {
         return "Check open orders";
     }
+
 }

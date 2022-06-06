@@ -9,6 +9,7 @@ import eapli.framework.application.ApplicationService;
 import eapli.framework.general.domain.model.Money;
 import eapli.framework.io.util.Console;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -22,6 +23,16 @@ public class OrderService {
             System.out.println("orderID- " + c.getOrderID() + "\nCustomerID- " + c.getCustomer().toString()
                     + "\nStatus- " + c.getStatus() +"\n");
         }
+    }
+    public List<String> printList(List<ProductOrder> orderList) {
+        String s;
+        List<String> o = new ArrayList<>();
+        for (ProductOrder c : orderList) {
+            s="orderID- " + c.getOrderID() + "\nCustomerID- " + c.getCustomer().toString()
+                    + "\nStatus- " + c.getStatus() +"\n";
+            o.add(s);
+        }
+        return o;
     }
     public void printOrder(ProductOrder c) {
             System.out.println("orderID- " + c.getOrderID() + "\nCustomerID- " + c.getCustomer().toString()

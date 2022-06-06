@@ -29,6 +29,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
+import eapli.base.ordersmanagement.order.domain.ProductOrder;
 import eapli.base.ordersmanagement.shoppingCart.domain.ShoppingCart;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -38,8 +39,8 @@ import org.apache.logging.log4j.Logger;
  *
  * @author Paulo Gandra de Sousa 2021.05.25
  */
-public class CsvAddProductProtocolProxy {
-    private static final Logger LOGGER = LogManager.getLogger(CsvAddProductProtocolProxy.class);
+public class CsvProtocolProxy {
+    private static final Logger LOGGER = LogManager.getLogger(CsvProtocolProxy.class);
 
     /**
      * @author Paulo Gandra de Sousa 2021.05.25
@@ -59,9 +60,9 @@ public class CsvAddProductProtocolProxy {
         public void connect(final String address, final int port) throws IOException {
             InetAddress serverIP;
 
-            serverIP = InetAddress.getByName(address);
+            //serverIP = InetAddress.getByName(address);
 
-            sock = new Socket(serverIP, port);
+            sock = new Socket("localhost", port);
             output = new PrintWriter(sock.getOutputStream(), true);
             input = new BufferedReader(new InputStreamReader(sock.getInputStream()));
             LOGGER.debug("Connected to {}", address);
@@ -128,12 +129,25 @@ public class CsvAddProductProtocolProxy {
     }
 
 
-    public BookingToken addProd(final ShoppingCart pi)
+    public BookingToken addProd(final String pi)
             throws IOException, FailedRequestException {
         final var socket = new ClientSocket();
-        socket.connect(getAddress(), getPort());
+        socket.connect("localhost", getPort());
 
         final String request = buildBookMeal(pi);
+        final List<String> response = socket.sendAndRecv(request);
+
+        socket.stop();
+
+        return parseResponseMessageBookMeal(response);
+    }
+
+    public BookingToken checkOpenOrders(final List<String> pi)
+            throws IOException, FailedRequestException {
+        final var socket = new ClientSocket();
+        socket.connect("localhost", getPort());
+
+        final String request = buildBookMeal2(pi);
         final List<String> response = socket.sendAndRecv(request);
 
         socket.stop();
@@ -148,8 +162,12 @@ public class CsvAddProductProtocolProxy {
         return BookingToken.valueOf(removeDoubleQuotes(tokens[1]));
     }
 
-    private String buildBookMeal(ShoppingCart pi) {
+    private String buildBookMeal(String pi) {
         return " \nSHOPPING_CART\n " + pi;
+    }
+
+    private String buildBookMeal2(List<String> pi) {
+        return " \nOPEN ORDERS\n " + pi;
     }
 
     private String removeDoubleQuotes(final String token) {

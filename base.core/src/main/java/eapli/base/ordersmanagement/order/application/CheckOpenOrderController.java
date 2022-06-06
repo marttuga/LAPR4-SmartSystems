@@ -16,6 +16,9 @@ public class CheckOpenOrderController {
     public void printOrdersList(List<ProductOrder> orderList) {
         orderService.printOrdersList(orderList);
     }
+    public List<String> printList(List<ProductOrder> orderList) {
+        return orderService.printList(orderList);
+    }
 
     public List<ProductOrder> findOpenOrders(eapli.base.ordersmanagement.order.domain.Status status,Customer c) {
         return orderRepository.findOpenOrders(status,c);

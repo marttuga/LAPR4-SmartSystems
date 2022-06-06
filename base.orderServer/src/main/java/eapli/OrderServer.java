@@ -10,8 +10,8 @@ public class OrderServer {
         private static HashMap<Socket, DataOutputStream> cliList = new HashMap<>();
 
         public static synchronized void sendToAll(int len, byte[] data) throws Exception {
+            //System.out.println("Client Connected");
             for (DataOutputStream cOut : cliList.values()) {
-                System.out.println("Client Connected");
                 cOut.write(len);
                 cOut.write(data, 0, len);
 
