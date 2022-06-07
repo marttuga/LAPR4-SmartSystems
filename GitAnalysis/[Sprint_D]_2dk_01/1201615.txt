@@ -1,0 +1,102 @@
+commit 9d4fe71174aaa6905cf6a8adf92d26bf8338de70
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Tue Jun 7 16:51:02 2022 +0100
+
+    <L2L20-97> Use Case Diagram.svg
+
+M	docs/Sprint4/Use Case Diagram/Use_Case_Diagram.svg
+
+commit ac2f629b5219f018644f2f9f608c239d8c7acbc0
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Tue Jun 7 01:15:05 2022 +0100
+
+    US5002 corrections
+
+M	base.app.agvDigitalTwin/src/main/java/eapli/DigitalTwinCli.java
+
+commit 1cb55404b2739e0fdcdd5612dbe20366b095143d
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Mon Jun 6 02:36:11 2022 +0100
+
+    <L2L20-96> US5100: Analysis
+
+A	docs/Sprint4/US5100/ProcessoEngenhariaFuncionalidade.md
+
+commit f8d3ee86184c8320678fc78c5569933b2dcda78e
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sun Jun 5 00:25:21 2022 +0100
+
+    Corrections (TCP CLient)
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/clientuser/TcpClient.java
+
+commit 3be759f2cc65dc59694fe1a8301f398ccfa74dcf
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sun Jun 5 00:19:39 2022 +0100
+
+    <L2L20-94> US5004: Analysis
+
+A	docs/Sprint4/US5004/ProcessoEngenhariaFuncionalidade.md
+
+commit bc0e07194895620445ca2d1ef2c18bf87d7867dd
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Fri Jun 3 13:45:13 2022 +0100
+
+    Corrections (US RCOMP)
+
+M	base.app.agvManagers/src/main/java/eapli/AgvServer.java
+M	base.app.agvManagers/src/main/java/eapli/AgvServerThread.java
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/clientuser/TcpClient.java
+
+commit 01ab86f1803b51187514bb3879e9b3ad3bb5e272
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Thu Jun 2 20:05:22 2022 +0100
+
+    <L2L20-91> US1006: Design, SD
+
+A	docs/Sprint4/US1006/US1006_SD.puml
+
+commit 6095b90d108e6b91e79d8a4e79ab99dbdb9b22f7
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Thu Jun 2 12:57:26 2022 +0100
+
+    <L2L20-92> US1006: Design, SSD
+
+A	docs/Sprint4/US1006/US1006_SSD.puml
+
+commit 9ce68f61c1a78c90c97df29ab3b699acf97a83b2
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Thu Jun 2 00:18:32 2022 +0100
+
+    <L2L20-93> US1006: Analysis (correction)
+
+M	docs/Sprint4/US1006/ProcessoEngenhariaFuncionalidade.md
+
+commit a244bb52dc33a1012fa3bb444af483d0c9754840
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Thu Jun 2 00:15:47 2022 +0100
+
+    <L2L20-93> US1006: Analysis
+
+A	docs/Sprint4/US1006/ProcessoEngenhariaFuncionalidade.md
+
+commit 463a584f3e3e6460a9cd53c17c1c914b5dbc1c27
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Wed Jun 1 17:34:29 2022 +0100
+
+    US3000 (SD.svg SSD.svg) US5002 (SD.svg)
+
+A	docs/Sprint3/US3000/US3000_SD.svg
+A	docs/Sprint3/US3000/US3000_SSD.svg
+A	docs/Sprint3/US5002/US5002_SD.svg
+
+commit 0b45e988cf42faafae21e1d4ce881411d290c933
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Wed Jun 1 13:24:53 2022 +0100
+
+    Start of Sprint 4
+
+A	docs/Sprint4/Domain Model/DM.puml
+A	docs/Sprint4/Domain Model/DM.svg
+A	docs/Sprint4/Planeamento.md
+A	docs/Sprint4/Use Case Diagram/Use_Case_Diagram.svg
