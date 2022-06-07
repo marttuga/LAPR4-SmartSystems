@@ -1,0 +1,251 @@
+commit c170b70f307203e2d60a0b52cdf514047ca4d54e
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Tue Jun 7 20:42:21 2022 +0100
+
+    questionnaireAnswersUI ateration to store the answers
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/QuestionnaireAnswerUI.java
+
+commit 6c34d49f95d58b005eb840736e7abc8624148a03
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Tue Jun 7 20:41:41 2022 +0100
+
+    alteration and corrections on .mds
+
+M	docs/Sprint3/US1901/ProcessoEngenhariaFuncionalidade.md
+M	docs/Sprint4/US1502/ProcessoEngenhariaFuncionalidade.md
+M	docs/Sprint4/US1902/ProcessoEngenhariaFuncionalidade.md
+
+commit b33a4e7042960722b253d672a8eae317791b7cf0
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Tue Jun 7 20:41:01 2022 +0100
+
+    alteration on txts and answers.txt
+
+M	base.core/src/main/java/eapli/base/surveys/Answers.txt
+M	base.core/src/main/java/eapli/base/surveys/questionnaire2.txt
+M	base.core/src/main/java/eapli/base/surveys/questionnaire3.txt
+
+commit f797dc18e94dc9bde95b3cfba85489826b62a60f
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon Jun 6 00:20:03 2022 +0100
+
+    surveys service for us3501
+
+M	base.core/src/main/java/eapli/base/surveys/src/application/SurveysService.java
+
+commit 124f9ca864e0dedd82d1c87d5c4829746e18863b
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon Jun 6 00:19:35 2022 +0100
+
+    Controller for 3501
+
+M	base.core/src/main/java/eapli/base/surveys/src/application/QuestionnaireAnswerController.java
+
+commit a463353a45d6765a75a8b23de965f0ac32bdaee6
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon Jun 6 00:19:11 2022 +0100
+
+     UI for 3501
+
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/QuestionnaireAnswerUI.java
+
+commit eb61989ffae2c6efbb166a73a6e5ef9eaee0e820
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon Jun 6 00:18:56 2022 +0100
+
+    correction on UIs for us1501 and 1502 and add UI for 3501
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/AddProductShopCartUI.java
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CheckOpenOrderUI.java
+
+commit fbc949cc35cc1456bad5611c86f5f85bbc5063b1
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon Jun 6 00:17:14 2022 +0100
+
+    controller added method for us1502
+
+D	base.core/src/main/java/eapli/base/ordersmanagement/CustomerCliOrderServer/CsvAddProductProtocolProxy.java
+R086	base.core/src/main/java/eapli/base/ordersmanagement/CustomerCliOrderServer/CsvCheckOpenOrdersProtocolProxy.java	base.core/src/main/java/eapli/base/ordersmanagement/CustomerCliOrderServer/CsvProtocolProxy.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/CustomerCliOrderServer/application/ProtocolProxyController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/CheckOpenOrderController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/OrderService.java
+M	base.orderServer/src/main/java/eapli/OrderServer.java
+
+commit a46579fc3aa18562c98f0d1391da83e7cddbab55
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sat Jun 4 15:31:44 2022 +0100
+
+    taking out one period on questionnaires.txt of surveys fot the gramatics
+
+M	base.core/src/main/java/eapli/base/surveys/questionnaire.txt
+M	base.core/src/main/java/eapli/base/surveys/questionnaire2.txt
+M	base.core/src/main/java/eapli/base/surveys/questionnaire3.txt
+
+commit 46bcee868bd11cfb83b8501b8bd18f2c921d9a04
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sat Jun 4 15:04:00 2022 +0100
+
+    adding periods on questionnaires.txt of surveys and gramatics
+
+M	base.core/src/main/java/eapli/base/surveys/FormGrammar.g4
+M	base.core/src/main/java/eapli/base/surveys/questionnaire.txt
+M	base.core/src/main/java/eapli/base/surveys/questionnaire2.txt
+M	base.core/src/main/java/eapli/base/surveys/questionnaire3.txt
+
+commit 5374ef4dfa04c1e69171d36ff47db429c6bfdeea
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sat Jun 4 14:51:27 2022 +0100
+
+    correction on questionnaires.txt of surveys and gramatics
+
+M	base.core/src/main/java/eapli/base/surveys/FormGrammar.g4
+M	base.core/src/main/java/eapli/base/surveys/questionnaire.txt
+M	base.core/src/main/java/eapli/base/surveys/questionnaire2.txt
+M	base.core/src/main/java/eapli/base/surveys/questionnaire3.txt
+
+commit d51b7876a1126a63cfe54ff407b77033f307a18c
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sat Jun 4 13:06:33 2022 +0100
+
+    correction on questionnaires.txt of surveys
+
+M	base.core/src/main/java/eapli/base/surveys/questionnaire.txt
+M	base.core/src/main/java/eapli/base/surveys/questionnaire2.txt
+M	base.core/src/main/java/eapli/base/surveys/questionnaire3.txt
+
+commit a061fc1222504961ad450fccfcdad04ed9b1ba1e
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sat Jun 4 12:51:30 2022 +0100
+
+    FileAnswer txt for us 3501
+
+A	base.core/src/main/java/eapli/base/surveys/Answers.txt
+A	base.core/src/main/java/eapli/base/surveys/src/domain/FileAnswers.java
+
+commit af07e1694195b0ada7590fecf4cef6d7fb3cb1ef
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 3 00:16:06 2022 +0100
+
+    correction on SD for us 3501
+
+M	docs/Sprint4/US3501/US3501_SD.puml
+M	docs/Sprint4/US3501/US3501_SD.svg
+
+commit ae978b32bdd65b6671140d5f34f73f86f4a53eca
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 3 00:15:44 2022 +0100
+
+    surveys service for us 3501
+
+A	base.core/src/main/java/eapli/base/surveys/src/application/SurveysService.java
+
+commit 09e452f353ed21a85abe388db60e7733203fbee5
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 3 00:15:30 2022 +0100
+
+    creation of controller for proxy and controller for us 3501
+
+A	base.core/src/main/java/eapli/base/ordersmanagement/CustomerCliOrderServer/application/ProtocolProxyController.java
+A	base.core/src/main/java/eapli/base/surveys/src/application/QuestionnaireAnswerController.java
+
+commit 21d8f3c32e7ee7763c4451fd68df1802b956bfcb
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 3 00:14:39 2022 +0100
+
+    Proxy for us1502 and proxy correction on us1501
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/CustomerCliOrderServer/CsvAddProductProtocolProxy.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/CustomerCliOrderServer/CsvCheckOpenOrdersProtocolProxy.java
+
+commit 9c54a11663d7f044ca5aa49d8846193a16b2cec1
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 3 00:14:00 2022 +0100
+
+    UI to check open orders added proxy for us1502 and UI correction on us1501
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/AddProductShopCartUI.java
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CheckOpenOrderUI.java
+
+commit 4cdd5ebdfddc9cf96036cf5fe7571ade7cfd8daf
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Thu Jun 2 10:34:34 2022 +0100
+
+    UI to check open orders and added to main menu for us1502
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/MainMenu.java
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CheckOpenOrderUI.java
+
+commit 3de1186fff861c6a9620e8bc0dfe1c0b067ee899
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Thu Jun 2 10:34:10 2022 +0100
+
+    controller to check open orders for us1502
+
+A	base.core/src/main/java/eapli/base/ordersmanagement/order/application/CheckOpenOrderController.java
+
+commit fb98548cd0c863a5dcdf55fa74090f6edecdd9a4
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Thu Jun 2 10:33:42 2022 +0100
+
+    modification on one order for us1502
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/ProductOrderBootstrapper.java
+
+commit fbdbad91766ac2982979e796c25ab7da45e24d74
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Thu Jun 2 10:33:02 2022 +0100
+
+    added method of listing orders with their status and customer for us1502
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/repositories/OrderRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryOrderRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaOrderRepository.java
+
+commit 6c6c70a5da06360f3014edf9de917bf70ec1e23a
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Wed Jun 1 22:34:06 2022 +0100
+
+    documentation for us3501 ssd and sd in svg
+
+A	docs/Sprint4/US3501/US3501_SD.svg
+A	docs/Sprint4/US3501/US3501_SSD.svg
+
+commit 9e2366f91880653b6032459f2217fbc82efa06ae
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Wed Jun 1 22:33:47 2022 +0100
+
+    documentation for us3501 .md,ssd and sd
+
+A	docs/Sprint4/US3501/ProcessoEngenhariaFuncionalidade.md
+A	docs/Sprint4/US3501/US3501_SD.puml
+A	docs/Sprint4/US3501/US3501_SSD.puml
+
+commit 53898097d8b0d9366177c1a31295989f27235728
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Wed Jun 1 21:54:20 2022 +0100
+
+    documentation for us1902 .md
+
+A	docs/Sprint4/US1902/ProcessoEngenhariaFuncionalidade.md
+
+commit 50c957e2e3b8ddc3ecd1ebb7e4ba98ef179aaeb0
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Wed Jun 1 21:48:11 2022 +0100
+
+    documentation for us1501 cd,sd and ssd in svg
+
+A	docs/Sprint4/US1502/US1502_CD.svg
+A	docs/Sprint4/US1502/US1502_SD.svg
+A	docs/Sprint4/US1502/US1502_SSD.svg
+
+commit caffdf8ca8f4f38105d60b544996a6be823d3b22
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Wed Jun 1 21:47:35 2022 +0100
+
+    documentation for us1501 .md,cd,sd and ssd
+
+A	docs/Sprint4/US1502/ProcessoEngenhariaFuncionalidade.md
+A	docs/Sprint4/US1502/US1502_CD.puml
+A	docs/Sprint4/US1502/US1502_SD.puml
+A	docs/Sprint4/US1502/US1502_SSD.puml

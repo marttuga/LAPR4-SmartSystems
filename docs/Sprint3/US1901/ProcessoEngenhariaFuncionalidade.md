@@ -41,7 +41,11 @@ SPOMSP.
 
 # 3. Design
 * Utilizar a estrutura base standard da aplicação baseada em camadas 
- 
+
+>   Classes do domínio: CsvProtocolProxy, BookingToken
+>
+>   Controlador: CsvProtocolProxyController;
+>
 >   Server: OrderServer
 > 
 >   Client: CustomerAppCli
@@ -52,7 +56,7 @@ SPOMSP.
 
 ## 3.3. Applied Patterns
 
-* This functionality will be provided with a server socket on a well-known address using TCP as transport mecanism.
+* Proxy,Controller,Grasp
 
 # 4. Implementation
 

@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Scanner;
 
 
-
 public class QuestionnaireAnswerUI extends AbstractUI {
     private static final QuestionnaireAnswerController questionnaireAnswerController = new QuestionnaireAnswerController();
 
@@ -24,7 +23,7 @@ public class QuestionnaireAnswerUI extends AbstractUI {
 
         List<String> questionary = new LinkedList();
         Scanner in = new Scanner(System.in);
-
+        List<String> answers = new LinkedList();
         try {
             System.out.println("========================================");
 
@@ -32,12 +31,16 @@ public class QuestionnaireAnswerUI extends AbstractUI {
             boolean flag = false; //se for uma questao
             boolean flagSC = false; //se for de escolha
             boolean flagTf = false; //se for de texto
-            questionary.add("========================================");
+            questionary.add("========================================"); //para mostrar o questionario junto com as respostas
             questionary.add(" ");
+            answers.add("========================================"); //para mostrar so as respostas
+            answers.add(" ");
 
             while (sc.hasNextLine()) {
                 String linha = sc.nextLine();
-
+                if (linha.contains("CHERRY22")) {
+                    answers.add(linha);
+                }
                 System.out.println(linha);
 
                 questionary.add(linha);
@@ -65,8 +68,9 @@ public class QuestionnaireAnswerUI extends AbstractUI {
                         String answer = in.nextLine();
                         System.out.println("====================");
                         System.out.println();
-
                         if (answer.equals("2")) {
+
+                            answers.add("Not Answered");
                             questionary.add(questionary.size() - 1, "Not Answered"); //se nao quiser fica como n respondida no txt e continua a ler
 
                             linha = sc.nextLine();
@@ -103,13 +107,17 @@ public class QuestionnaireAnswerUI extends AbstractUI {
                             }
                             index--;
                         }
+
                         questionary.add(questionary.size() - 1, "Answer:" + finalAnswer + "\n");//adicionar a resposta à lista q vai para o txt
+                        answers.add("Answer:" + finalAnswer);
                         flagSC = false;
 
                     } else if (linha.equals("") || flagTf) { //se a linha for vazia e for de free text vai ler a proxima linha q é a resposta e adiciona la ao txt
                         String answer = in.nextLine();
                         if (!answer.equals("")) {
+
                             questionary.add(questionary.size() - 1, "Answer:" + answer + "\n");
+                            answers.add("Answer:" + answer);
                         }
                         flagTf = false;
                     }
@@ -117,7 +125,7 @@ public class QuestionnaireAnswerUI extends AbstractUI {
             }
             sc.close();
 
-            for (String a : questionary) {
+            for (String a : answers) {
                 questionnaireAnswerController.outPutResume(a); // print para o txt
             }
             System.out.println("========================================");

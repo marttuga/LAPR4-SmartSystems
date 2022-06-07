@@ -7,6 +7,8 @@
 
 The interpretation made of this requirement was that the project manager wishes that the communications made through the 
 SPOMS2022 protocol are secured/protected using mutual authentication based on public key certificates.
+SSL/TLS is a protocol designed to enforce security in network communications at layer four, meaning over
+UDP and over TCP, so, unlike IPsec operating at layer three, it’s directly used by network applications.
 
 ## Acceptance criteria
 * It must be used the provided application protocol (SPOMS2022).
@@ -22,7 +24,11 @@ that the communications made through the SPOMS2022 protocol can be secured/prote
 
 # 3. Design
 * Utilizar a estrutura base standard da aplicação baseada em camadas 
- 
+
+>   Classes do domínio: CsvProtocolProxy, BookingToken
+>
+>   Controlador: CsvProtocolProxyController;
+>
 >   Server: OrderServer
 > 
 >   Client: CustomerAppCli
@@ -33,8 +39,7 @@ that the communications made through the SPOMS2022 protocol can be secured/prote
 
 ## 3.2. Applied Patterns
 
-* It will be used SSL/TLS with mutual authentication based on public key certificates 
-* Proxy
+* Proxy,Controller,Grasp
 
 # 4. Implementation
 
