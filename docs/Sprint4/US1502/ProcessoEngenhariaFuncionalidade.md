@@ -44,7 +44,7 @@ view/check the status of his open orders.
 
 ## 3.2. Patterns
 
-Repository, factory, controller,GRASP and service
+Repository, factory, controller,GRASP, proxy and service
 
 ## 3.3. Tests
 **Teste 1:** buscar o status da order
