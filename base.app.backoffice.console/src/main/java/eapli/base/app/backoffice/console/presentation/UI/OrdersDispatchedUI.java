@@ -2,6 +2,7 @@ package eapli.base.app.backoffice.console.presentation.UI;
 
 import eapli.base.ordersmanagement.order.application.OrdersDispatchedController;
 import eapli.base.ordersmanagement.order.domain.ProductOrder;
+import eapli.base.ordersmanagement.order.domain.ProductOrderDto;
 import eapli.base.utilitarianClasses.Utils;
 import eapli.framework.domain.repositories.IntegrityViolationException;
 import eapli.framework.presentation.console.AbstractUI;
