@@ -10,7 +10,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class LineOrder implements AggregateRoot<LineOrderID> {
+public class LineOrder {
 
     @EmbeddedId
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -54,13 +54,4 @@ public class LineOrder implements AggregateRoot<LineOrderID> {
         return priceOrderWithoutTaxes;
     }
 
-    @Override
-    public boolean sameAs(Object other) {
-        return DomainEntities.areEqual(this, other);
-    }
-
-    @Override
-    public LineOrderID identity() {
-        return this.loid;
-    }
 }
