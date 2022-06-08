@@ -1,0 +1,27 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+
+class OrdersDispatchedUI <<presentation>>
+
+
+
+class OrdersDispatchedController <<application>>
+
+class ProductOrderRepository <<repository>>
+
+
+
+entity ProductOrder <<Entity>> <<Root>>
+
+
+
+
+
+OrdersDispatchedController --> ProductOrder
+OrdersDispatchedUI --> OrdersDispatchedController : theController
+OrdersDispatchedUI : doShow()
+OrdersDispatchedController --> ProductOrderRepository : repo
+OrdersDispatchedController : findAllOrders()
+
+@enduml
