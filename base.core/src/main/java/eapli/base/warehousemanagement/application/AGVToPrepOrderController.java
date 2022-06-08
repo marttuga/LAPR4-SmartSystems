@@ -21,13 +21,13 @@ public class AGVToPrepOrderController {
 
 
     public List<ProductOrder> findAllOrders() {
-        return orderRepository.findAllOrders();
+        return (List<ProductOrder>) orderRepository.findAllOrders();
     }
     public ProductOrder findByOrderID(String id) {
         return orderRepository.findByOrderID(id);
     }
     public List<ProductOrder> findOrdersByStatus(eapli.base.ordersmanagement.order.domain.Status status) {
-        return orderRepository.findOrdersByStatus(status);
+        return (List<ProductOrder>) orderRepository.findOrdersByStatus(status);
     }
     public ProductOrder findOrderByAGV(String ident) {
         return orderRepository.findOrderByAGV(ident);

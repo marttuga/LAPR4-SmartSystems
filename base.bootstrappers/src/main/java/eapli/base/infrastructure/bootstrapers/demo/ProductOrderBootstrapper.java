@@ -5,7 +5,7 @@ import eapli.base.ordersmanagement.customer.domain.*;
 import eapli.base.ordersmanagement.customer.repositories.CustomerRepository;
 import eapli.base.ordersmanagement.order.application.NewProductOrderController;
 import eapli.base.ordersmanagement.order.domain.*;
-import eapli.base.ordersmanagement.order.repositories.LineOrderRepository;
+//import eapli.base.ordersmanagement.order.repositories.LineOrderRepository;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
 import eapli.base.ordersmanagement.product.domain.*;
 import eapli.base.ordersmanagement.product.repositories.ProductRepository;
@@ -26,7 +26,7 @@ public class ProductOrderBootstrapper implements Action {
     private final NewProductOrderController newProductOrderController = new NewProductOrderController();
     private final CustomerRepository customerRepository = PersistenceContext.repositories().customers();
     private final ProductRepository productRepository = PersistenceContext.repositories().products();
-    private final LineOrderRepository lineOrderRepository = PersistenceContext.repositories().lineOrders();
+    //private final LineOrderRepository lineOrderRepository = PersistenceContext.repositories().lineOrders();
     private final ProductItemRepository productItemRepository = PersistenceContext.repositories().productItems();
     private final OrderRepository orderRepository = PersistenceContext.repositories().orders();
 
@@ -95,7 +95,7 @@ public class ProductOrderBootstrapper implements Action {
 
             LineOrderID lineOrderID = new LineOrderID("365");
             LineOrder lineOrder = new LineOrder(lineOrderID, productItems, money);
-            lineOrderRepository.save(lineOrder);
+            //lineOrderRepository.save(lineOrder);
             System.out.println("-----LINE ORDER-----");
             System.out.println(lineOrder);
 

@@ -4,7 +4,7 @@ import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.order.domain.*;
 
-import eapli.base.ordersmanagement.order.repositories.LineOrderRepository;
+//import eapli.base.ordersmanagement.order.repositories.LineOrderRepository;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
 import eapli.base.ordersmanagement.product.application.ViewCatalogController;
 import eapli.base.ordersmanagement.product.domain.Product;
@@ -25,7 +25,7 @@ import java.util.Set;
 
 public class NewProductOrderController {
     private final ProductItemRepository productItemRepository = PersistenceContext.repositories().productItems();
-    private final LineOrderRepository lineOrderRepository = PersistenceContext.repositories().lineOrders();
+    //private final LineOrderRepository lineOrderRepository = PersistenceContext.repositories().lineOrders();
     private final OrderRepository orderRepository = PersistenceContext.repositories().orders();
     private final OrderService orderService = new OrderService();
     private final ViewCatalogController catalogController = new ViewCatalogController();
@@ -69,7 +69,7 @@ public class NewProductOrderController {
         Money lineOrderPrice = Money.euros(sum);
         LineOrder ln = new LineOrder(lorderID, productItens, lineOrderPrice);
 
-        return this.lineOrderRepository.save(ln);
+        return ln;
     }
 
     public PaymentMethod paymentMethod(int options) {
@@ -108,9 +108,9 @@ public class NewProductOrderController {
         return orderService.showSalesRegion();
     }
 
-    public List<ProductOrder> findAllOrders() {
+    /*public List<ProductOrder> findAllOrders() {
         return orderRepository.findAllOrders();
-    }
+    }*/
 
     public ProductOrder findByOrderID(String id) {
         return orderRepository.findByOrderID(id);
