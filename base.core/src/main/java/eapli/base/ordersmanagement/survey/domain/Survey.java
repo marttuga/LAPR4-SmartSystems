@@ -2,34 +2,60 @@ package eapli.base.ordersmanagement.survey.domain;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 
 
 @Entity
-public class Survey implements AggregateRoot<SurveyCode> {
+public class Survey implements AggregateRoot<AlphanumericCode> {
 
     @EmbeddedId
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private SurveyCode surveyCode;
+    private AlphanumericCode alphanumericCode;
+
+    @Embedded
+    private SurveyDescription surveyDescription;
+
+    @Embedded
+    private SurveyPeriod surveyPeriod;
+
+    @Lob
+    @Basic(fetch=FetchType.EAGER)
+    private byte[] surveyFile;
 
     protected Survey() {
     }
 
+    public Survey(AlphanumericCode alphanumericCode, SurveyDescription surveyDescription, SurveyPeriod surveyPeriod, byte[] surveyFile) {
+        this.alphanumericCode = alphanumericCode;
+        this.surveyDescription = surveyDescription;
+        this.surveyPeriod = surveyPeriod;
+        this.surveyFile = surveyFile;
+    }
+
+    public SurveyDescription getSurveyDescription() {
+        return surveyDescription;
+    }
+
+    public SurveyPeriod getSurveyPeriod() {
+        return surveyPeriod;
+    }
+
+    public AlphanumericCode getAlphanumericCode() {
+        return alphanumericCode;
+    }
+
     @Override
-    public int compareTo(SurveyCode other) {
+    public int compareTo(AlphanumericCode other) {
         return AggregateRoot.super.compareTo(other);
     }
 
     @Override
-    public SurveyCode identity() {
-        return this.surveyCode;
+    public AlphanumericCode identity() {
+        return this.alphanumericCode;
     }
 
     @Override
-    public boolean hasIdentity(SurveyCode id) {
+    public boolean hasIdentity(AlphanumericCode id) {
         return AggregateRoot.super.hasIdentity(id);
     }
 
@@ -38,11 +64,4 @@ public class Survey implements AggregateRoot<SurveyCode> {
         return DomainEntities.areEqual(this, other);
     }
 
-    public SurveyCode surveyCode() {
-        return identity();
-    }
-
-    public SurveyCode getSurveyCode() {
-        return surveyCode;
-    }
 }
