@@ -25,7 +25,7 @@ import eapli.base.clientusermanagement.repositories.SignupRequestRepository;
 import eapli.base.infrastructure.persistence.RepositoryFactory;
 import eapli.base.ordersmanagement.category.repository.CategoryRepository;
 import eapli.base.ordersmanagement.customer.repositories.CustomerRepository;
-import eapli.base.ordersmanagement.order.repositories.LineOrderRepository;
+//import eapli.base.ordersmanagement.order.repositories.LineOrderRepository;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
 import eapli.base.ordersmanagement.product.repositories.ProductRepository;
 import eapli.base.ordersmanagement.shoppingCart.repositories.ProductItemRepository;
@@ -124,15 +124,7 @@ public class JpaRepositoryFactory implements RepositoryFactory {
         return new JpaProductItemRepository(Application.settings().getPersistenceUnitName());
     }
 
-    @Override
-    public LineOrderRepository lineOrders(TransactionalContext autoTx) {
-        return new JpaLineOrderRepository(autoTx);
-    }
 
-    @Override
-    public LineOrderRepository lineOrders() {
-        return new JpaLineOrderRepository(Application.settings().getPersistenceUnitName());
-    }
 
     @Override
     public WarehouseRepository warehouse(TransactionalContext autoTx) {
