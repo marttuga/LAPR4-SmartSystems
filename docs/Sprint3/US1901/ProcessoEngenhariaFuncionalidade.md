@@ -44,8 +44,6 @@ SPOMSP.
 
 >   Classes do domínio: CsvProtocolProxy, BookingToken
 >
->   Controlador: CsvProtocolProxyController;
->
 >   Server: OrderServer
 > 
 >   Client: CustomerAppCli
@@ -56,7 +54,7 @@ SPOMSP.
 
 ## 3.3. Applied Patterns
 
-* Proxy,Controller,Grasp
+* Proxy
 
 # 4. Implementation
 
