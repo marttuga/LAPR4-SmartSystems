@@ -30,6 +30,7 @@ import eapli.base.ordersmanagement.product.repositories.ProductRepository;
 import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
 import eapli.base.ordersmanagement.shoppingCart.repositories.ProductItemRepository;
 import eapli.base.ordersmanagement.shoppingCart.repositories.ShoppingCartRepository;
+import eapli.base.ordersmanagement.survey.repositories.SurveyRepository;
 import eapli.base.warehousemanagement.repositories.AGVRepository;
 import eapli.base.warehousemanagement.repositories.WarehouseRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
@@ -118,5 +119,8 @@ public interface RepositoryFactory {
 
     AGVRepository agv(TransactionalContext autoTx);
     AGVRepository agv();
+
+    SurveyRepository survey(TransactionalContext autoTx);
+    SurveyRepository survey();
 
 }
