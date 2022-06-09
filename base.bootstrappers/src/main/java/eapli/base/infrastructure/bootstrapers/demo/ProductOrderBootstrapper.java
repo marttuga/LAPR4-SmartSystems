@@ -5,7 +5,7 @@ import eapli.base.ordersmanagement.customer.domain.*;
 import eapli.base.ordersmanagement.customer.repositories.CustomerRepository;
 import eapli.base.ordersmanagement.order.application.NewProductOrderController;
 import eapli.base.ordersmanagement.order.domain.*;
-//import eapli.base.ordersmanagement.order.repositories.LineOrderRepository;
+import eapli.base.ordersmanagement.order.repositories.LineOrderRepository;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
 import eapli.base.ordersmanagement.product.domain.*;
 import eapli.base.ordersmanagement.product.repositories.ProductRepository;

@@ -1,5 +1,5 @@
 package eapli.base.persistence.impl.inmemory;
-/*
+
 import eapli.base.ordersmanagement.order.domain.LineOrder;
 import eapli.base.ordersmanagement.order.domain.LineOrderID;
 import eapli.base.ordersmanagement.order.domain.OrderID;
@@ -15,4 +15,3 @@ public class InMemoryLineOrderRepository extends InMemoryDomainRepository<LineOr
         InMemoryInitializer.init();
     }
 }
-*/
