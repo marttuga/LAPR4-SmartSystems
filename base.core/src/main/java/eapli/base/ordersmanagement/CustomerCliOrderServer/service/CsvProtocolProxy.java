@@ -18,7 +18,7 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package eapli.base.ordersmanagement.CustomerCliOrderServer;
+package eapli.base.ordersmanagement.CustomerCliOrderServer.service;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,8 +29,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-import eapli.base.ordersmanagement.order.domain.ProductOrder;
-import eapli.base.ordersmanagement.shoppingCart.domain.ShoppingCart;
+import eapli.base.ordersmanagement.CustomerCliOrderServer.domain.BookingToken;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -1,10 +1,8 @@
 package eapli.base.ordersmanagement.CustomerCliOrderServer.application;
 
-import eapli.base.ordersmanagement.CustomerCliOrderServer.BookingToken;
-import eapli.base.ordersmanagement.CustomerCliOrderServer.CsvProtocolProxy;
-import eapli.base.ordersmanagement.CustomerCliOrderServer.FailedRequestException;
-import eapli.base.ordersmanagement.order.domain.ProductOrder;
-import eapli.base.ordersmanagement.shoppingCart.domain.ShoppingCart;
+import eapli.base.ordersmanagement.CustomerCliOrderServer.domain.BookingToken;
+import eapli.base.ordersmanagement.CustomerCliOrderServer.service.CsvProtocolProxy;
+import eapli.base.ordersmanagement.CustomerCliOrderServer.service.FailedRequestException;
 
 import java.io.IOException;
 import java.util.List;
