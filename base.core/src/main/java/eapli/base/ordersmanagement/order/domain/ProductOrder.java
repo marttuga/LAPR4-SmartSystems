@@ -3,16 +3,16 @@ import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.survey.domain.Survey;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
-import org.hibernate.type.CalendarDateType;
+import eapli.framework.representations.dto.DTOable;
 
 import javax.persistence.*;
 import java.util.Calendar;
-import java.util.Objects;
 
 @Entity
-public class ProductOrder implements AggregateRoot<OrderID> {
+public class ProductOrder implements AggregateRoot<OrderID>, DTOable<ProductOrderDto> {
 
     private Calendar dateTime;
+
 
     @EmbeddedId
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -134,5 +134,11 @@ public class ProductOrder implements AggregateRoot<OrderID> {
     }
 
     public void changeStatus(Status status) {this.status = status;
+    }
+
+    @Override
+    public ProductOrderDto toDTO(){
+        return new ProductOrderDto(this.orderActor, this.orderID, this.customer, this.dateTime, this.lineOrder,
+                this.priceOrder, this.paymentMethod, this.shippingMethod, this.status, this.survey);
     }
 }

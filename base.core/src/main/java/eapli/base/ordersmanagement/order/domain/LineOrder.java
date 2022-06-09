@@ -56,11 +56,11 @@ public class LineOrder implements AggregateRoot<LineOrderID> {
 
     @Override
     public boolean sameAs(Object other) {
-        return DomainEntities.areEqual(this, other);
+        return false;
     }
 
     @Override
     public LineOrderID identity() {
-        return this.loid;
+        return null;
     }
 }

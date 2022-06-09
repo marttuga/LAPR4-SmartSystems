@@ -13,7 +13,8 @@ public class AGV implements AggregateRoot<Identifier> {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Identifier identifier;
 
-    private int autonomy;
+    @Embedded
+    private Autonomy autonomy;
 
     @Embedded
     private AGVDock agvDock;
@@ -36,7 +37,7 @@ public class AGV implements AggregateRoot<Identifier> {
 
     }
 
-    public AGV(Identifier identifier, int autonomy, AGVDock agvDock, String AGVDescription, Model model, MaxWeightCarry maxWeightCarry, Status status) {
+    public AGV(Identifier identifier, Autonomy autonomy, AGVDock agvDock, String AGVDescription, Model model, MaxWeightCarry maxWeightCarry, Status status) {
         this.identifier = identifier;
         this.autonomy = autonomy;
         this.agvDock = agvDock;
@@ -46,7 +47,7 @@ public class AGV implements AggregateRoot<Identifier> {
         this.status = status;
     }
 
-    public AGV(Identifier identifier, int autonomy, AGVDock agvDock, String AGVDescription, Model model, MaxWeightCarry maxWeightCarry, Status status, ProductOrder order) {
+    public AGV(Identifier identifier, Autonomy autonomy, AGVDock agvDock, String AGVDescription, Model model, MaxWeightCarry maxWeightCarry, Status status, ProductOrder order) {
         this.identifier = identifier;
         this.autonomy = autonomy;
         this.agvDock = agvDock;
@@ -57,9 +58,6 @@ public class AGV implements AggregateRoot<Identifier> {
         this.order = order;
     }
 
-    public static int valueOfAutonomy(final int autonomy) {
-        return (autonomy);
-    }
 
     public static String valueOfDescription(final String description) {
         return description;
@@ -84,10 +82,6 @@ public class AGV implements AggregateRoot<Identifier> {
         return identifier;
     }
 
-    public int getAutonomy() {
-        return autonomy;
-    }
-
     public AGVDock getAgvDock() {
         return agvDock;
     }
@@ -107,6 +101,8 @@ public class AGV implements AggregateRoot<Identifier> {
     public MaxWeightCarry getMaxWeightCarry() {
         return maxWeightCarry;
     }
+
+    public Autonomy getAutonomy(){return autonomy;}
 
     public void changeStatus(Status status) {
         this.status = status;

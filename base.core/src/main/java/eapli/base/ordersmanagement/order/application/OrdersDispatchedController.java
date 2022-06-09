@@ -3,6 +3,7 @@ package eapli.base.ordersmanagement.order.application;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.order.domain.ProductOrder;
+import eapli.base.ordersmanagement.order.domain.ProductOrderDto;
 import eapli.base.ordersmanagement.order.domain.Status;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
 import eapli.base.usermanagement.domain.BaseRoles;
@@ -18,13 +19,13 @@ public class OrdersDispatchedController {
     private final AuthorizationService authorizationService = AuthzRegistry.authorizationService();
 
     public List<ProductOrder> findAllOrders() {
-        return orderRepository.findAllOrders();
+        return (List<ProductOrder>) orderRepository.findAllOrders();
     }
     public ProductOrder findByOrderID(String id) {
         return orderRepository.findByOrderID(id);
     }
     public List<ProductOrder> findOrdersByStatus(eapli.base.ordersmanagement.order.domain.Status status) {
-        return orderRepository.findOrdersByStatus(status);
+        return (List<ProductOrder>) orderRepository.findOrdersByStatus(status);
     }
 
     public ProductOrder changeStatus(ProductOrder productOrder) {

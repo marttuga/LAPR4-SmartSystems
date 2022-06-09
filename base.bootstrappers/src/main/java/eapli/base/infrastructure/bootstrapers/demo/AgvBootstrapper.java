@@ -21,7 +21,7 @@ public class AgvBootstrapper implements Action {
     public boolean execute() {
         AGVDock agvDock = new AGVDock("555", 2, 2, 2,
                 2, 2, 2, "test");
-        AGV agv1 = createAgv("556", 10, agvDock, "test", "test", 10);
+        AGV agv1 = createAgv("556",10 , agvDock, "test", "test", 10);
         assert agv1 != null;
         agv1.changeStatus(Status.FREE);
         agvRepository.save(agv1);
@@ -46,7 +46,7 @@ public class AgvBootstrapper implements Action {
                            String model,
                            int maxWeightCarry) {
         try {
-            AGV agv = configureAGVController.configureAGV(new Identifier(identifier), autonomy, agvDock, AGVDescription,
+            AGV agv = configureAGVController.configureAGV(new Identifier(identifier), new Autonomy(autonomy), agvDock, AGVDescription,
                     new Model(model), new MaxWeightCarry(maxWeightCarry), Status.FREE);
             return agv;
         } catch (final ConcurrencyException | IllegalAccessException e) {
@@ -67,7 +67,7 @@ public class AgvBootstrapper implements Action {
                                     String orderId) {
         try {
             ProductOrder order = orderRepository.findByOrderID(orderId);
-            AGV agv = configureAGVController.configureAGVWithOrder(new Identifier(identifier), autonomy, agvDock, AGVDescription,
+            AGV agv = configureAGVController.configureAGVWithOrder(new Identifier(identifier), new Autonomy(autonomy), agvDock, AGVDescription,
                     new Model(model), new MaxWeightCarry(maxWeightCarry), order);
             return agv;
         } catch (final ConcurrencyException | IllegalAccessException e) {

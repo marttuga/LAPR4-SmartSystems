@@ -17,13 +17,17 @@ class AGVTest {
     Identifier identifier = new Identifier("2");
     Model model = new Model("x");
     MaxWeightCarry maxWeightCarry = new MaxWeightCarry(120);
+    Autonomy autonomy = new Autonomy(100);
     AGVDock agvDock = new AGVDock("D1", 1, 3, 1, 3, 1, 3, "l+");
-    AGV agv = new AGV(identifier, 90, agvDock, "automatic", model, maxWeightCarry , Status.FREE);
+    AGV agv = new AGV(identifier, autonomy, agvDock, "automatic", model, maxWeightCarry , Status.FREE);
+
+    AGVTest() throws IllegalAccessException {
+    }
 
     @Test
     void getIdentifier() {
         Identifier id = new Identifier("1");
-        AGV agV = new AGV(id, 70,agvDock,"auto", model, maxWeightCarry , Status.FREE);
+        AGV agV = new AGV(id, autonomy,agvDock,"auto", model, maxWeightCarry , Status.FREE);
         Assertions.assertEquals(id, agV.getIdentifier());
 
     }
@@ -31,42 +35,42 @@ class AGVTest {
     @Test
     void getAutonomy() {
         Identifier id = new Identifier("1");
-        AGV agV = new AGV(id, 70,agvDock,"auto", model, maxWeightCarry , Status.FREE);
-        Assertions.assertEquals(70, agV.getAutonomy());
+        AGV agV = new AGV(id, autonomy,agvDock,"auto", model, maxWeightCarry , Status.FREE);
+        Assertions.assertEquals(autonomy, agV.getAutonomy());
     }
 
     @Test
     void getAgvDock() {
         Identifier id = new Identifier("1");
-        AGV agV = new AGV(id, 70,agvDock,"auto", model, maxWeightCarry , Status.FREE);
+        AGV agV = new AGV(id, autonomy,agvDock,"auto", model, maxWeightCarry , Status.FREE);
         Assertions.assertEquals(agvDock, agV.getAgvDock());
     }
 
     @Test
     void getAGVDescription() {
         Identifier id = new Identifier("1");
-        AGV agV = new AGV(id, 70,agvDock,"auto", model, maxWeightCarry , Status.FREE);
+        AGV agV = new AGV(id, autonomy,agvDock,"auto", model, maxWeightCarry , Status.FREE);
         Assertions.assertEquals("auto", agV.getAGVDescription());
     }
 
     @Test
     void getModel() {
         Identifier id = new Identifier("1");
-        AGV agV = new AGV(id, 70,agvDock,"auto", model, maxWeightCarry , Status.FREE);
+        AGV agV = new AGV(id, autonomy,agvDock,"auto", model, maxWeightCarry , Status.FREE);
         Assertions.assertEquals(model, agV.getModel());
     }
 
     @Test
     void getMaxWeightCarry() {
         Identifier id = new Identifier("1");
-        AGV agV = new AGV(id, 70,agvDock,"auto", model, maxWeightCarry, Status.FREE );
+        AGV agV = new AGV(id, autonomy,agvDock,"auto", model, maxWeightCarry, Status.FREE );
         Assertions.assertEquals(maxWeightCarry, agV.getMaxWeightCarry());
     }
 
     @Test
     void changeStatus() {
         Identifier id = new Identifier("1");
-        AGV agV = new AGV(id, 70,agvDock,"auto", model, maxWeightCarry, Status.FREE );
+        AGV agV = new AGV(id, autonomy,agvDock,"auto", model, maxWeightCarry, Status.FREE );
         agV.changeStatus(Status.CHARGING);
         Assertions.assertEquals(Status.CHARGING, agV.getStatus());
     }
@@ -96,7 +100,7 @@ class AGVTest {
 
         Identifier i = new Identifier("10");
         ProductOrder order1 = new ProductOrder(o, orderID, c, d, lineOrder, po, PaymentMethod.MBWAY, ShippingMethod.Blue, eapli.base.ordersmanagement.order.domain.Status.REGISTERED);
-        AGV agV = new AGV(id, 70,agvDock,"auto", model, maxWeightCarry, Status.FREE,order );
+        AGV agV = new AGV(id, autonomy,agvDock,"auto", model, maxWeightCarry, Status.FREE,order );
         agV.changeOrder(order1);
         Assertions.assertEquals(order1, agV.getOrder());
     }
@@ -123,7 +127,7 @@ class AGVTest {
         PriceOrder po = new PriceOrder(priceOrder, s);
         Identifier id = new Identifier("1");
         ProductOrder order = new ProductOrder(o, orderID, c, d, lineOrder, po, PaymentMethod.MBWAY, ShippingMethod.Blue, eapli.base.ordersmanagement.order.domain.Status.REGISTERED);
-        AGV agV = new AGV(id, 70,agvDock,"auto", model, maxWeightCarry, Status.FREE,order );
+        AGV agV = new AGV(id, autonomy,agvDock,"auto", model, maxWeightCarry, Status.FREE,order );
         Assertions.assertEquals(order, agV.getOrder());
     }
 }

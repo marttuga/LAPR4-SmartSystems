@@ -10,7 +10,7 @@ import eapli.base.ordersmanagement.order.repositories.LineOrderRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
 
-public class JpaLineOrderRepository extends JpaAutoTxRepository<LineOrder, LineOrderID, LineOrderID> implements LineOrderRepository {
+public class JpaLineOrderRepository extends JpaAutoTxRepository<LineOrder, LineOrderID, LineOrderID> {
 
     public JpaLineOrderRepository(TransactionalContext autoTx) {
         super(autoTx, "lineOrderId");

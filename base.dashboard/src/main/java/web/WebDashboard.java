@@ -11,8 +11,6 @@ import java.util.*;
 public class WebDashboard {
     static private final String BASE_FOLDER ="base.dashboard/src/main/java/base/dashboard/web/www";
     static private ServerSocket sock;
-    //static private final AGVRepository agvRepository = PersistenceContext.repositories().agv();
-    //static private final AGVService agvService = new AGVService();
 
     public static void main(String[] args) throws IOException {
         Socket cliSock;
