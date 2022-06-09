@@ -125,11 +125,10 @@ public class QuestionnaireAnswerUI extends AbstractUI {
             }
             sc.close();
 
-            for (String a : answers) {
+            for (String a : questionary) {
                 questionnaireAnswerController.outPutResume(a); // print para o txt
             }
             System.out.println("========================================");
-
         } catch (RuntimeException ex) {
             ex.printStackTrace();
             System.out.println("Ocorreu um erro Tipo RunTime");

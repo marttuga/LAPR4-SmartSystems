@@ -1,6 +1,6 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
-import eapli.base.ordersmanagement.CustomerCliOrderServer.FailedRequestException;
+import eapli.base.ordersmanagement.CustomerCliOrderServer.service.FailedRequestException;
 import eapli.base.ordersmanagement.CustomerCliOrderServer.application.ProtocolProxyController;
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.order.application.CheckOpenOrderController;
