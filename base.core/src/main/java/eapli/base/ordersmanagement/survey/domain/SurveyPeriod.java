@@ -14,6 +14,9 @@ public class SurveyPeriod implements ValueObject, Comparable<SurveyPeriod>{
     protected SurveyPeriod() {
     }
 
+    public SurveyPeriod(int surveyPeriod) {
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -27,8 +30,8 @@ public class SurveyPeriod implements ValueObject, Comparable<SurveyPeriod>{
         return Objects.hash(surveyPeriod);
     }
 
-    public int getSurveyPeriod() {
-        return surveyPeriod;
+    public static SurveyPeriod valueOf(final int surveyPeriod) {
+        return new SurveyPeriod(surveyPeriod);
     }
 
     @Override
