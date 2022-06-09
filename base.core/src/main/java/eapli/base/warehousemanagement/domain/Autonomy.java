@@ -3,6 +3,7 @@ package eapli.base.warehousemanagement.domain;
 import eapli.framework.domain.model.ValueObject;
 
 import javax.persistence.Embeddable;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 @Embeddable
@@ -24,6 +25,26 @@ public class Autonomy implements ValueObject, Comparable<Autonomy>{
 
     public static Autonomy valueOf(final int autonomy) throws IllegalAccessException {
         return new Autonomy(autonomy);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Autonomy autonomy1 = (Autonomy) o;
+        return autonomy == autonomy1.autonomy;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(autonomy);
+    }
+
+    @Override
+    public String toString() {
+        return "Autonomy{" +
+                "autonomy=" + autonomy +
+                '}';
     }
 
     @Override
