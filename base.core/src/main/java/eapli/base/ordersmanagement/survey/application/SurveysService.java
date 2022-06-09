@@ -1,4 +1,4 @@
-package eapli.base.surveys.src.application;
+package eapli.base.ordersmanagement.survey.application;
 
 import eapli.framework.io.util.Console;
 

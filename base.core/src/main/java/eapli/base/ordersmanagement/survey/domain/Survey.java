@@ -3,6 +3,7 @@ import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 
 import javax.persistence.*;
+import java.util.Arrays;
 
 
 @Entity
@@ -29,7 +30,7 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
         this.alphanumericCode = alphanumericCode;
         this.surveyDescription = surveyDescription;
         this.surveyPeriod = surveyPeriod;
-        this.surveyFile = surveyFile;
+        this.surveyFile = Arrays.copyOf(surveyFile, surveyFile.length);
     }
 
     public SurveyDescription getSurveyDescription() {

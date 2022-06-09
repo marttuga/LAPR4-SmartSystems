@@ -1,6 +1,6 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
-import eapli.base.surveys.src.application.QuestionnaireAnswerController;
+import eapli.base.ordersmanagement.survey.application.QuestionnaireAnswerController;
 
 import eapli.framework.presentation.console.AbstractUI;
 
