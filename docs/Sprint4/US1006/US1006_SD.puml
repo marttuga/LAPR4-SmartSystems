@@ -31,7 +31,7 @@ CTRL -> ProdRepo : getOrders= getOrders()
 
 deactivate ProdRepo
 
-CTRL --> UI :  Iterable<ProductOrderDTO>
+CTRL --> UI :  List<ProductOrderDTO>
 deactivate CTRL
 
 UI --> SC : shows list of orders
@@ -43,7 +43,7 @@ UI -> CTRL : getOrderByStatus
 activate CTRL
 CTRL -> ProdS : getOrderByStatus= getOrderByStatus()
 activate ProdS
-CTRL --> UI :  Iterable<ProductOrderDTO>
+CTRL --> UI :  List<ProductOrderDTO>
 deactivate CTRL
 deactivate ProdS
 
