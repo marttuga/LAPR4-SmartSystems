@@ -1,0 +1,19 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+
+class WebDashboard {
+}
+
+class HTTPAjaxRequest {
+}
+
+class HTTPmessage {
+}
+
+
+WebDashboard ...> HTTPAjaxRequest
+HTTPAjaxRequest ...> HTTPmessage
+
+
+@enduml

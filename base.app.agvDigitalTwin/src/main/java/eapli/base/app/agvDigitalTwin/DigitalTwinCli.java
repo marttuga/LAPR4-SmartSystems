@@ -1,7 +1,6 @@
-package eapli;
+package eapli.base.app.agvDigitalTwin;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.net.*;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;

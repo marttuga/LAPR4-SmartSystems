@@ -127,12 +127,12 @@ public class JpaRepositoryFactory implements RepositoryFactory {
 
     @Override
     public LineOrderRepository lineOrders(TransactionalContext autoTx) {
-        return (LineOrderRepository) new JpaLineOrderRepository(autoTx);
+        return new JpaLineOrderRepository(autoTx);
     }
 
     @Override
     public LineOrderRepository lineOrders() {
-        return (LineOrderRepository) new JpaLineOrderRepository(Application.settings().getPersistenceUnitName());
+        return new JpaLineOrderRepository(Application.settings().getPersistenceUnitName());
     }
 
 
