@@ -2,19 +2,20 @@
 autonumber
 'hide footbox
 actor "Sales Clerk" as SC
-participant ":OrdersDispatchedUI" as UI
-participant ":OrdersDispatchedController" as CTRL
-participant ":PersistenceContext" as PC
-participant ":RepositoryFactory" as RF
-participant ":ProductOrderRepository" as ProdRepo
-participant ":ProductOrderService" as ProdS
+participant ":OrdersDispatchedUI" as UI <<presentation>>
+participant ":OrdersDispatchedController" as CTRL <<application>>
+participant ":ProductOrderService" as ProdS <<service>>
+participant ":ProductOrder" as PORd <<domain>>
+participant "PersistenceContext" as PC <<persistence>>
+participant "RepositoryFactory" as RF <<factory>>
+database "ProductOrderRepository" as ProdRepo <<repository>>
 
 activate SC
 
 SC -> UI : asks to view the list of previous orders made
 activate UI
 
-UI -> CTRL : getOrders
+UI -> CTRL : findAllOrders()
 activate CTRL
 CTRL -> PC : repositories()
 
@@ -30,7 +31,7 @@ CTRL -> ProdRepo : getOrders= getOrders()
 
 deactivate ProdRepo
 
-CTRL --> UI :  getOrders
+CTRL --> UI :  List<ProductOrderDTO>
 deactivate CTRL
 
 UI --> SC : shows list of orders
@@ -40,11 +41,11 @@ activate UI
 
 UI -> CTRL : getOrderByStatus
 activate CTRL
-CTRL -> ProdRepo : getOrderByStatus= getOrderByStatus()
-activate ProdRepo
-CTRL --> UI :  getOrderByStatus
+CTRL -> ProdS : getOrderByStatus= getOrderByStatus()
+activate ProdS
+CTRL --> UI :  List<ProductOrderDTO>
 deactivate CTRL
-deactivate ProdRepo
+deactivate ProdS
 
 UI --> SC :  shows list of orders with that status
 deactivate UI
@@ -52,7 +53,7 @@ deactivate UI
 SC -> UI : asks which of these orders you want to change the status
 activate UI
 
-UI -> CTRL : getOrdersModified
+UI -> CTRL : getOrderToModified
 activate CTRL
 CTRL -> PC : repositories()
 
@@ -65,27 +66,17 @@ activate ProdRepo
 deactivate RF
 
 deactivate ProdRepo
-CTRL -> ProdRepo : getOrdersModified= getOrdersModified()
+CTRL -> ProdRepo : findByOrderId()
 activate ProdRepo
-CTRL --> UI :  getOrdersModified
-deactivate CTRL
+
 deactivate ProdRepo
 
-UI --> SC : shows the list of orders
-deactivate UI
-
-SC -> UI : chooses one to change the status
-activate UI
-
-UI -> CTRL : getOrder
-activate CTRL
-CTRL -> ProdRepo : getOrder= getOrder()
-activate ProdRepo
-CTRL -> ProdS: changeStatus= changeStatus()
+CTRL -> PORd : changeOrderStatus= changeOrderStatus()
+activate PORd
 deactivate ProdRepo
-activate ProdS
-CTRL -> ProdS : changeOrderStatus= changeOrderStatus()
-deactivate ProdRepo
+deactivate PORd
+CTRL -> ProdRepo : save()
+
 CTRL --> UI :  getOrder
 deactivate CTRL
 

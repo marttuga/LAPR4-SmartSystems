@@ -109,7 +109,7 @@ public class NewProductOrderController {
     }
 
     public List<ProductOrder> findAllOrders() {
-        return orderRepository.findAllOrders();
+        return (List<ProductOrder>) orderRepository.findAllOrders();
     }
 
     public ProductOrder findByOrderID(String id) {

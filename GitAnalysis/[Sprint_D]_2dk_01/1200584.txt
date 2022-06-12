@@ -1,0 +1,27 @@
+commit 4755cb4e90cf16cc4ab75bbe08b7c398eb8bf1ac
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Jun 4 12:00:19 2022 +0100
+
+    FormGrammar.g4 update
+
+M	base.core/src/main/java/eapli/base/surveys/FormGrammar.g4
+
+commit 5cccdb057fa2cb63af7a5051ccf3f2385e46566a
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Jun 3 13:42:06 2022 +0100
+
+    2005 update
+
+M	base.dashboard/src/main/java/web/WebDashboard.java
+M	base.dashboard/src/main/java/web/www/index.html
+M	base.dashboard/src/main/java/web/www/myStyle.css
+
+commit d4edd816575a3f11d8796f6ae869c657e1db74d7
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Jun 1 17:19:24 2022 +0100
+
+    base.dashboard pom.xml, run-dashboard.sh and WebDashboard update
+
+M	base.dashboard/pom.xml
+M	base.dashboard/src/main/java/web/WebDashboard.java
+M	run-dashboard.sh

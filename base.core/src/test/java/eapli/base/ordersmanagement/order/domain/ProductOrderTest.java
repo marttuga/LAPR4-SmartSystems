@@ -95,4 +95,25 @@ class ProductOrderTest {
         order.changeStatus(Status.BEING_PREPARED);
         Assertions.assertEquals(Status.BEING_PREPARED, order.getStatus());
     }
+
+    @Test
+    void changeStatus1() {
+        ProductOrder order = new ProductOrder(o, orderID, c, d, lineOrder, po, PaymentMethod.MBWAY, ShippingMethod.Blue, Status.PREPARED);
+        order.changeStatus(Status.DISPATCHED);
+        Assertions.assertEquals(Status.DISPATCHED, order.getStatus());
+    }
+
+    @Test
+    void changeStatus2() {
+        ProductOrder order = new ProductOrder(o, orderID, c, d, lineOrder, po, PaymentMethod.MBWAY, ShippingMethod.Blue, Status.DISPATCHED);
+        order.changeStatus(Status.DELIVERED);
+        Assertions.assertEquals(Status.DELIVERED, order.getStatus());
+    }
+
+    @Test
+    void changeStatus3() {
+        ProductOrder order = new ProductOrder(o, orderID, c, d, lineOrder, po, PaymentMethod.MBWAY, ShippingMethod.Blue, Status.DISPATCHED);
+        order.changeStatus(Status.DELIVERED);
+        Assertions.assertNotEquals(Status.DISPATCHED, order.getStatus());
+    }
 }

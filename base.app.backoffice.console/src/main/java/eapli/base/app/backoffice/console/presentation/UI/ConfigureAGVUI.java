@@ -23,7 +23,7 @@ public class ConfigureAGVUI extends AbstractUI {
             final String description = Console.readLine("Description: ");
             final String model = Console.readLine("Model: ");
             final int maxWeightCarry = Console.readInteger("Maximum Weight: ");
-                controller.configureAGV(Identifier.valueOf(identifier), AGV.valueOfAutonomy(autonomy), AGVDock.valueOf(agvDock), AGV.valueOfDescription(description), Model.valueOf(model), MaxWeightCarry.valueOf(maxWeightCarry), Status.FREE);
+                controller.configureAGV(Identifier.valueOf(identifier), Autonomy.valueOf(autonomy), AGVDock.valueOf(agvDock), AGV.valueOfDescription(description), Model.valueOf(model), MaxWeightCarry.valueOf(maxWeightCarry), Status.FREE);
 
             System.out.println("Successful operation!");
         } catch (final IntegrityViolationException | IllegalAccessException ex){

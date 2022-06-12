@@ -7,7 +7,7 @@ public class AGVBuilder {
 
     private Identifier identifier;
 
-    private int autonomy;
+    private Autonomy autonomy;
 
     private String AGVDescription;
 
@@ -24,7 +24,7 @@ public class AGVBuilder {
         return this;
     }
 
-    public AGVBuilder withAutonomy(final int autonomy) {
+    public AGVBuilder withAutonomy(final Autonomy autonomy) {
         this.autonomy = autonomy;
         return this;
     }

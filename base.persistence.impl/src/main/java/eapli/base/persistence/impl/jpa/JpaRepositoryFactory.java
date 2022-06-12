@@ -30,6 +30,7 @@ import eapli.base.ordersmanagement.order.repositories.OrderRepository;
 import eapli.base.ordersmanagement.product.repositories.ProductRepository;
 import eapli.base.ordersmanagement.shoppingCart.repositories.ProductItemRepository;
 import eapli.base.ordersmanagement.shoppingCart.repositories.ShoppingCartRepository;
+import eapli.base.ordersmanagement.survey.repositories.SurveyRepository;
 import eapli.base.warehousemanagement.repositories.AGVRepository;
 import eapli.base.warehousemanagement.repositories.WarehouseRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
@@ -134,6 +135,7 @@ public class JpaRepositoryFactory implements RepositoryFactory {
         return new JpaLineOrderRepository(Application.settings().getPersistenceUnitName());
     }
 
+
     @Override
     public WarehouseRepository warehouse(TransactionalContext autoTx) {
         return new JpaWarehouseRepository(autoTx);
@@ -162,6 +164,16 @@ public class JpaRepositoryFactory implements RepositoryFactory {
     @Override
     public AGVRepository agv() {
         return new JpaAGVRepository(Application.settings().getPersistenceUnitName());
+    }
+
+    @Override
+    public SurveyRepository survey(TransactionalContext autoTx) {
+        return new JpaSurveyRepository(autoTx);
+    }
+
+    @Override
+    public SurveyRepository survey() {
+        return new JpaSurveyRepository(Application.settings().getPersistenceUnitName());
     }
 
     @Override

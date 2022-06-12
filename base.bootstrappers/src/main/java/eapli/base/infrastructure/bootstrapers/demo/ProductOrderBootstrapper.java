@@ -26,7 +26,7 @@ public class ProductOrderBootstrapper implements Action {
     private final NewProductOrderController newProductOrderController = new NewProductOrderController();
     private final CustomerRepository customerRepository = PersistenceContext.repositories().customers();
     private final ProductRepository productRepository = PersistenceContext.repositories().products();
-    private final LineOrderRepository lineOrderRepository = PersistenceContext.repositories().lineOrders();
+    //private final LineOrderRepository lineOrderRepository = PersistenceContext.repositories().lineOrders();
     private final ProductItemRepository productItemRepository = PersistenceContext.repositories().productItems();
     private final OrderRepository orderRepository = PersistenceContext.repositories().orders();
 
@@ -53,6 +53,11 @@ public class ProductOrderBootstrapper implements Action {
         assert productOrder4 != null;
         productOrder4.changeStatus(Status.PREPARED);
         orderRepository.save(productOrder4);
+        ProductOrder productOrder5 = createProductOrder("123", "559", new Date(21/6/2021), "555", 2,
+                "EUR", 10L);
+        assert productOrder5 != null;
+        productOrder5.changeStatus(Status.DISPATCHED);
+        orderRepository.save(productOrder5);
 
         return true;
     }
@@ -90,7 +95,7 @@ public class ProductOrderBootstrapper implements Action {
 
             LineOrderID lineOrderID = new LineOrderID("365");
             LineOrder lineOrder = new LineOrder(lineOrderID, productItems, money);
-            lineOrderRepository.save(lineOrder);
+            //lineOrderRepository.save(lineOrder);
             System.out.println("-----LINE ORDER-----");
             System.out.println(lineOrder);
 

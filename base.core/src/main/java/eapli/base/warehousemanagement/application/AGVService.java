@@ -15,7 +15,7 @@ public class AGVService {
 
     private final AGVRepository agvRepository = PersistenceContext.repositories().agv();
 
-    public AGV createAGV(Identifier identifier, int autonomy, AGVDock agvDock, String description, Model model, MaxWeightCarry maxWeightCarry, Status status) {
+    public AGV createAGV(Identifier identifier, Autonomy autonomy, AGVDock agvDock, String description, Model model, MaxWeightCarry maxWeightCarry, Status status) {
         final AGVBuilder agvBuilder = new AGVBuilder();
         AGV agv;
         agv = agvBuilder.build();

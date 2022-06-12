@@ -16,7 +16,7 @@ public class ConfigureAGVController {
     private final TransactionalContext txCtx = PersistenceContext.repositories().newTransactionalContext();
     private final AGVRepository agvRepository = PersistenceContext.repositories().agv();
 
-    public AGV configureAGV(Identifier identifier, int autonomy, AGVDock agvDock, String AGVDescription, Model model, MaxWeightCarry maxWeightCarry, Status status) throws IllegalAccessException{
+    public AGV configureAGV(Identifier identifier, Autonomy autonomy, AGVDock agvDock, String AGVDescription, Model model, MaxWeightCarry maxWeightCarry, Status status) throws IllegalAccessException{
         authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.WAREHOUSE_EMPLOYEE);
         //begin transaction
         txCtx.beginTransaction();
@@ -28,7 +28,7 @@ public class ConfigureAGVController {
         return agv;
     }
 
-    public AGV configureAGVWithOrder(Identifier identifier, int autonomy, AGVDock agvDock,
+    public AGV configureAGVWithOrder(Identifier identifier, Autonomy autonomy, AGVDock agvDock,
                                      String AGVDescription, Model model, MaxWeightCarry maxWeightCarry,
                                      ProductOrder order) throws IllegalAccessException{
         authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.WAREHOUSE_EMPLOYEE);

@@ -4,12 +4,14 @@ autonumber
 
 participant BackofficeApp <<client>>
 participant "AGVManager" as AM
-participant "OrderService" as OS
+participant "AGVController" as OS
+participant ":PersistenceContext" as PC
 participant "AGVManagerServer" as AMS
 participant HandleClient <<Thread>>
 participant "MessageParser" as MP
 participant "SPOMSProtocol" as SP
-
+participant ":RepositoryFactory" as RF
+participant ":AGVRepository" as AGVRepo
 
 AM -> AMS : new()
 
@@ -38,11 +40,21 @@ deactivate SP
 
 HandleClient --> AM : response
 
-AM -> OS : analise
+AM -> OS : updateStatus()
 activate OS
 
-OS -> OS : updateStatus
+OS -> PC : repositories()
+activate PC
 deactivate OS
+
+PC -> RF : create()
+activate RF
+deactivate PC
+
+RF -> AGVRepo : create()
+deactivate RF
+activate AGVRepo
+
 
 HandleClient --> BackofficeApp : response
 deactivate HandleClient

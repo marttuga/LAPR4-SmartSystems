@@ -24,9 +24,11 @@ AGV status, in this case, for free.
 
 ## 3.1. Realization of Functionality
 
-[US5002_SD](/docs/Sprint3/US5002/US5002_SD.puml)
+[US5002_SD](US5002_SD.puml)
 
 ## 3.3. Applied Patterns
+
+Controller
 
 
 ## 3.4. Tests

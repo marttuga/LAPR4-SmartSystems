@@ -31,20 +31,13 @@ checking the status of his/her open orders...
 application is allowed to take the initiative of sending data, i.e.: a request. The server application
 must be passively waiting for a request and only then is authorized to send data, i.e.: a response,
 to the received request.
-![table](table1.png)
 
-
-* List of some message codes that must be implemented by every application using
-SPOMSP.
-  ![table](table2.png)
 
 
 # 3. Design
 * Utilizar a estrutura base standard da aplicação baseada em camadas 
 
 >   Classes do domínio: CsvProtocolProxy, BookingToken
->
->   Controlador: CsvProtocolProxyController;
 >
 >   Server: OrderServer
 > 
@@ -56,7 +49,7 @@ SPOMSP.
 
 ## 3.3. Applied Patterns
 
-* Proxy,Controller,Grasp
+* Proxy
 
 # 4. Implementation
 
