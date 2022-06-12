@@ -122,10 +122,11 @@ public class AGV implements AggregateRoot<Identifier> {
 
     @Override
     public String toString() {
-        return "AGV:" + identifier +
-                "\nDock=" + agvDock +
-                "\nDescription='" + AGVDescription + '\'' +
-                "\nModel=" + model +
-                "\nStatus=" + status ;
+        return "AGV=" + identifier +
+                ",Dock=" + agvDock +
+                ",Autonomy=" + autonomy +
+                ",Description='" + AGVDescription +
+                ",Model=" + model +
+                ",Status=" + status ;
     }
 }
