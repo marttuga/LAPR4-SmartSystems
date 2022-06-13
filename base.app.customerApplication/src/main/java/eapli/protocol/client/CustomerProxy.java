@@ -18,7 +18,17 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package eapli.base.ordersmanagement.CustomerCliOrderServer.service;
+package eapli.protocol.client;
+
+
+import eapli.base.ordersmanagement.customer.domain.Customer;
+import eapli.base.ordersmanagement.customer.domain.CustomerId;
+import eapli.base.ordersmanagement.order.domain.OrderID;
+import eapli.base.ordersmanagement.order.domain.ProductOrderDto;
+import eapli.base.ordersmanagement.order.domain.Status;
+import eapli.framework.time.util.Calendars;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,27 +37,14 @@ import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
-import eapli.base.ordersmanagement.CustomerCliOrderServer.domain.BookingToken;
-import eapli.base.ordersmanagement.customer.domain.Customer;
-import eapli.base.ordersmanagement.order.domain.OrderID;
-import eapli.base.ordersmanagement.order.domain.ProductOrderDto;
-import eapli.base.ordersmanagement.order.domain.Status;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
-/**
- * Proxy for the CsvBookingProtocol.
- *
- * @author Paulo Gandra de Sousa 2021.05.25
- */
-public class CsvProtocolProxy {
-    private static final Logger LOGGER = LogManager.getLogger(CsvProtocolProxy.class);
+public class CustomerProxy {
+    private static final Logger LOGGER = LogManager.getLogger(CustomerProxy.class);
 
-    /**
-     * @author Paulo Gandra de Sousa 2021.05.25
-     */
+
     private static class ClientSocket {
 
         private Socket sock;
@@ -63,9 +60,9 @@ public class CsvProtocolProxy {
         public void connect(final String address, final int port) throws IOException {
             InetAddress serverIP;
 
-            //serverIP = InetAddress.getByName(address);
+            serverIP = InetAddress.getByName(address);
 
-            sock = new Socket("localhost", port);
+            sock = new Socket(serverIP, port);
             output = new PrintWriter(sock.getOutputStream(), true);
             input = new BufferedReader(new InputStreamReader(sock.getInputStream()));
             LOGGER.debug("Connected to {}", address);
@@ -121,51 +118,19 @@ public class CsvProtocolProxy {
         }
     }
 
-    private int getPort() {
-        // TODO read from config file
-        return 1111;
-    }
-
-    private String getAddress() {
-        // TODO read from config file
-        return "127.0.0.1";
-    }
-
-
-    public BookingToken addProd(final String pi)
-            throws IOException, FailedRequestException {
+    public List<ProductOrderDto> getOpenOrders(final Status id, final String c) throws IOException, FailedRequestException {
         final var socket = new ClientSocket();
-        socket.connect("localhost", getPort());
+        socket.connect(getAddress(), getPort());
 
-        final String request = buildBookMeal(pi);
+        final String request = getOrders(id,c);
         final List<String> response = socket.sendAndRecv(request);
 
         socket.stop();
 
-        return parseResponseMessageBookMeal(response);
+        return parseResponseMessageGetAvailableMeals(response);
     }
 
-    public List<ProductOrderDto> checkOpenOrders(final List<ProductOrderDto> pi)
-            throws IOException, FailedRequestException {
-        final var socket = new ClientSocket();
-        socket.connect("localhost", getPort());
-
-        final String request = buildBookMeal2(pi);
-        final List<String> response = socket.sendAndRecv(request);
-
-        socket.stop();
-
-        return parseResponseMessageBookMeal2(response);
-    }
-
-    private BookingToken parseResponseMessageBookMeal(final List<String> response) throws FailedRequestException {
-        checkForErrorMessage(response);
-
-        final String[] tokens = response.get(0).split(",");
-        return BookingToken.valueOf(removeDoubleQuotes(tokens[1]));
-    }
-
-    private List<ProductOrderDto> parseResponseMessageBookMeal2(final List<String> response)
+    private List<ProductOrderDto> parseResponseMessageGetAvailableMeals(final List<String> response)
             throws FailedRequestException {
         checkForErrorMessage(response);
 
@@ -175,20 +140,29 @@ public class CsvProtocolProxy {
         response.forEach(s -> ret.add(parseResponseMessageLineGetAvailableMeals(s)));
         return ret;
     }
+
     private ProductOrderDto parseResponseMessageLineGetAvailableMeals(final String s) {
         final String[] tokens = s.split(",");
-
         return new ProductOrderDto(OrderID.valueOf(tokens[0]),
-                Status.valueOf(tokens[1]));
+                Status.valueOf(tokens[2]));
     }
 
-    private String buildBookMeal(String pi) {
-        return " \nSHOPPING_CART\n " + pi;
+    public String getOrders(final Status id, final String c){
+        return "OPEN_ORDERS, " + id + ","+ c;
     }
 
-    private String buildBookMeal2(List<ProductOrderDto> pi) {
-        return " \nOPEN ORDERS\n " + pi;
+
+
+    private int getPort() {
+        // TODO read from config file
+        return 3333;
     }
+
+    private String getAddress() {
+        // TODO read from config file
+        return "localhost";
+    }
+
 
     private String removeDoubleQuotes(final String token) {
         return token.replace("\"", "").trim();
