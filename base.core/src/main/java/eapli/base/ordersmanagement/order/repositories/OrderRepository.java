@@ -15,8 +15,8 @@ public interface OrderRepository extends DomainRepository<OrderID, ProductOrder>
     Iterable <ProductOrder> findAllOrders();
 
     Iterable<ProductOrder> findOrdersByStatus(eapli.base.ordersmanagement.order.domain.Status status);
-    List<ProductOrder> findOpenOrders(Status status, Customer c);
-
+    List<ProductOrder> findOpenOrders(Status status, String c);
+    List<ProductOrder> findOpenOrdersCustomer(Status status, Customer c);
     ProductOrder findByOrderID(String id);
 
     ProductOrder findOrderByAGV(String id);

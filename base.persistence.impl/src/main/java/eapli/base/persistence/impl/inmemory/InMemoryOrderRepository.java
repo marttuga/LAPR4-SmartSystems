@@ -25,7 +25,12 @@ public class InMemoryOrderRepository  extends InMemoryDomainRepository<ProductOr
         return null;
     }
     @Override
-    public List<ProductOrder> findOpenOrders(Status status, Customer c) {
+    public List<ProductOrder> findOpenOrders(Status status, String c) {
+        return null;
+    }
+
+    @Override
+    public List<ProductOrder> findOpenOrdersCustomer(Status status, Customer c) {
         return null;
     }
 
