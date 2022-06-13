@@ -21,14 +21,14 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
     @Override
     protected boolean doShow() {
         final String fileName = Console.readLine("Please insert the questionnaire file path:");
-        boolean passes = false;
-/*        try {
-            passes = ctrl.validateSurvey(fileName);
+        boolean valid = false;
+        try {
+            valid = ctrl.validateSurvey(fileName);
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
 
-        //
+        if(valid) {
             String alphanumericCode = Console.readLine("Survey Alphanumeric code: ");
             String surveyDescription = Console.readLine("Survey Description: ");
             int surveyPeriod = Console.readInteger("Survey period (days): ");
@@ -55,6 +55,7 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
             } catch (IOException ex) {
                 throw new IllegalStateException("Error saving the questionnaire: " + ex);
             }
+        }
         return false;
         }
 

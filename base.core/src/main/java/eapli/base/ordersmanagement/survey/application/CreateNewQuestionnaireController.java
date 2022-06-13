@@ -7,11 +7,17 @@ import eapli.base.ordersmanagement.survey.domain.SurveyDescription;
 import eapli.base.ordersmanagement.survey.domain.SurveyPeriod;
 import eapli.base.ordersmanagement.survey.repositories.SurveyRepository;
 import eapli.base.surveys.src.domain.FormGrammarLexer;
+import eapli.base.surveys.src.domain.FormGrammarParser;
+import eapli.base.surveys.src.domain.ThrowingErrorListener;
 import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
+import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.ParserRuleContext;
+import org.antlr.v4.runtime.misc.ParseCancellationException;
 
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -37,39 +43,29 @@ public class CreateNewQuestionnaireController {
         repo.save(survey);
     }
 
-
-    /*public void validateSurvey(String fileName) throws IOException {
-        boolean passes = parse(fileName);
-        if (passes) {
-            System.out.println("Survey create successfully!");
-        } else {
-            System.out.println("Survey was not created!");
-        }
-    }*/
-
-    /*public static boolean validateSurvey(String fileName) throws IOException {
+    public static boolean validateSurvey(String fileName) throws IOException {
         ParserRuleContext tree = null;
-        boolean passes = false;
+        boolean valid = false;
         try {
             CharStream codePointCharStream = CharStreams.fromFileName(fileName);
-            SurveyLexer lexer = new SurveyLexer(codePointCharStream);
+            FormGrammarLexer lexer = new FormGrammarLexer(codePointCharStream);
             lexer.removeErrorListeners();
             lexer.addErrorListener(ThrowingErrorListener.INSTANCE);
 
             CommonTokenStream tokens = new CommonTokenStream(lexer);
 
-            SurveyParser parser = new SurveyParser(tokens);
+            FormGrammarParser parser = new FormGrammarParser(tokens);
             parser.removeErrorListeners();
             parser.addErrorListener(ThrowingErrorListener.INSTANCE);
 
             //ParseTree tree = parser.survey();
-            tree = parser.survey();
+            tree = parser.lprog();
 
         } catch (ParseCancellationException e) {
             System.out.println("File does not pass the grammar:\n" + e.getMessage());
         }
-        if (tree != null) passes = true;
+        if (tree != null) valid = true;
 
-        return passes;
-    }*/
+        return valid;
+    }
 }
