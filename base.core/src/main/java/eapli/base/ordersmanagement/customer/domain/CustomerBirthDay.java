@@ -32,8 +32,16 @@ public class CustomerBirthDay implements ValueObject {
         return String.valueOf(birthDate) ;
     }
 
-    public static int getAge(Date date){
+    public int getAge(Date date){
         return AgeCalculator.getCalculateAge(date);
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public static CustomerBirthDay valueOf(final Date birthDate){

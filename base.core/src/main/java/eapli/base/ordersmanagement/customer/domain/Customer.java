@@ -75,6 +75,14 @@ public class Customer implements AggregateRoot<CustomerId>  {
         return customerEmailAddress;
     }
 
+    public CustomerBirthDay getCustomerBirthDay() {
+        return customerBirthDay;
+    }
+
+    public CustomerGender getCustomerGender() {
+        return customerGender;
+    }
+
     @Override
     public boolean sameAs(Object other) {
         return false;
