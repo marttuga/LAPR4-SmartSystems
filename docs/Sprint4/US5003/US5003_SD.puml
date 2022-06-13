@@ -1,0 +1,92 @@
+@startuml
+autonumber
+'hide footbox
+actor "Sales Clerck" as SC
+participant "RegisterCustomerUI" as UI <<presentation>>
+participant "RegisterCustomerController" as CTRL <<application>>
+participant "CustomerBuilder" as BD <<builder>>
+participant "customer:Customer" as Customer <<domain>>
+participant "PersistenceContext" as PC <<persistence>>
+participant "RepositoryFactory" as RF <<factory>>
+database "CustomerRepository" as CR <<repository>>
+database "UserRepository" as UR <<repository>>
+
+
+activate SC
+SC -> UI : Starts to register a new customer
+activate UI
+opt birthdate, gender, billing and delivering addresses are not mandatory
+UI --> SC : Requests data (name, VAT identifier, email, phone number, birthdate, gender, billing address, delivering address)
+deactivate UI
+end opt
+
+
+SC -> UI : Inserts requested data
+activate UI
+
+UI -> CTRL : addCustomer(name, VATid, email, phoneNumber, birthdate, gender, billingAddress, deliveringAddress)
+activate CTRL
+
+note right BD #CCE2CB
+    CustomerBuilder is used to create an entity of Customer in a valid state
+end note
+
+CTRL -> BD : create
+CTRL -> BD : putName(name)
+
+note right CTRL #CCE2CB
+    Places rest of customer information
+end note
+
+CTRL -> BD : createCustomer()
+activate BD
+BD -> Customer : create(name, VATid, email, phoneNumber, birthdate, gender, billingAddress, deliveringAddress)
+Customer -> BD : customer
+
+BD -> CTRL : customer
+deactivate BD
+
+CTRL -> PC : repositories()
+activate PC
+note right PC #CCE2CB
+    can create repository in memory or JPA
+end note
+PC -> RF : create
+PC -> CTRL : factory
+deactivate PC
+
+
+
+CTRL -> RF : customers()
+activate RF
+RF -> CR : create
+RF -> CTRL : customerRepository
+deactivate RF
+CTRL -> CR : save(customer)
+CTRL -> UI : customer
+
+
+
+CTRL -> RF : users()
+activate RF
+RF -> UR : create
+RF -> CTRL : userRepository
+deactivate RF
+CTRL -> UR : save(user)
+CTRL -> UI : user
+deactivate CTRL
+
+UI --> SC :shows all data and requests confirmation
+deactivate UI
+
+
+SC -> UI : confirms the data
+activate UI
+UI --> SC : Generates customerID and informs operation success
+deactivate UI
+
+deactivate SC
+
+
+
+@enduml

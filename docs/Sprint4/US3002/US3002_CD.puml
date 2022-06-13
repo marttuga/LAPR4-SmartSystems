@@ -1,0 +1,24 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package UI {
+class RegisterCustomerUI <<presentation>> {
+}
+}
+
+package Controller <<application>>{
+class RegisterCustomerController {
+
+}
+}
+
+package Customer <<Aggregate>>{
+
+entity Customer <<Entity>> <<Root>> {
+}
+
+
+
+RegisterCustomerUI ..> RegisterCustomerController
+RegisterCustomerController ..> Customer
+@enduml

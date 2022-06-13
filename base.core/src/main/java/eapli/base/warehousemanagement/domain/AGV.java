@@ -1,7 +1,7 @@
 package eapli.base.warehousemanagement.domain;
 
-import eapli.base.ordersmanagement.order.domain.LineOrder;
 import eapli.base.ordersmanagement.order.domain.ProductOrder;
+import eapli.base.warehousemanagement.activity.Positioning;
 import eapli.framework.domain.model.AggregateRoot;
 
 import javax.persistence.*;
@@ -23,6 +23,10 @@ public class AGV implements AggregateRoot<Identifier> {
 
     @Embedded
     private Model model;
+
+    @Embedded
+    private Speed speed;
+
 
     @Embedded
     private MaxWeightCarry maxWeightCarry;
