@@ -1,0 +1,7 @@
+@startuml
+autonumber
+
+actor "Project Manager" as PM
+participant ":AGV" as AGV
+
+@enduml
