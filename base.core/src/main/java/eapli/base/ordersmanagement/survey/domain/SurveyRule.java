@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class SurveyRule {
 
 
+
     @EmbeddedId
     @GeneratedValue(strategy = GenerationType.AUTO)
     private SurveyRuleID surveyRuleID;
