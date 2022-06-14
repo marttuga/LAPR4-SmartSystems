@@ -10,12 +10,6 @@ import java.util.HashMap;
 
 public class AgvServer {
 
-    //AGV agv = new AGV();
-
-    static byte[] STATUS = new byte[] {1, 12, 0,0};
-
-    static ServerSocket sock;
-
     private static HashMap<Socket, DataOutputStream> cliList = new HashMap<>();
 
     public static synchronized void sendToAll(int len, byte[] data) throws Exception {
@@ -36,19 +30,30 @@ public class AgvServer {
         s.close();
     }
 
+
+    private static ServerSocket sock;
+
     public static void main(String args[]) throws Exception {
+        int i;
+
         try {
             sock = new ServerSocket(9999);
-        } catch(IOException ex) {
-            System.out.println("Falha ao abrir a server socket"); System.exit(1);
+
+        } catch (IOException ex) {
+            System.out.println("Local port number not available.");
+            System.exit(1);
         }
-        while(true) {
-            Socket cliSock = sock.accept();
-            new Thread(new AgvServerThread(cliSock)).start();
+
+        while (true) {
+            Socket s = sock.accept(); // wait for a new client connection request
+            addCli(s);
+            Thread cli = new TCPChatSrvClient(s);
+            cli.start();
         }
     }
+}
 
-    class TCPChatSrvClient extends Thread {
+class TCPChatSrvClient extends Thread {
         private Socket myS;
         private DataInputStream sIn;
 
@@ -80,4 +85,4 @@ public class AgvServer {
 
         }
     }
-}
+
