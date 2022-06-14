@@ -1,6 +1,5 @@
 package eapli.base.ordersmanagement.survey.domain;
 import eapli.base.ordersmanagement.customer.domain.Customer;
-import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 
@@ -27,7 +26,7 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
     private byte[] surveyFile;
 
     @OneToOne
-    private SurveyRules surveyRules;
+    private SurveyRule surveyRule;
 
     @OneToMany
     private Set<Customer> customers;
@@ -36,12 +35,12 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
     }
 
 
-    public Survey(AlphanumericCode alphanumericCode, SurveyDescription surveyDescription, SurveyPeriod surveyPeriod, byte[] surveyFile, SurveyRules surveyRules, Set<Customer> customers) {
+    public Survey(AlphanumericCode alphanumericCode, SurveyDescription surveyDescription, SurveyPeriod surveyPeriod, byte[] surveyFile, SurveyRule surveyRule, Set<Customer> customers) {
         this.alphanumericCode = alphanumericCode;
         this.surveyDescription = surveyDescription;
         this.surveyPeriod = surveyPeriod;
         this.surveyFile = Arrays.copyOf(surveyFile, surveyFile.length);;
-        this.surveyRules = surveyRules;
+        this.surveyRule = surveyRule;
         this.customers = customers;
     }
 
@@ -61,8 +60,8 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
         return surveyFile;
     }
 
-    public SurveyRules getSurveyRules() {
-        return surveyRules;
+    public SurveyRule getSurveyRules() {
+        return surveyRule;
     }
 
 

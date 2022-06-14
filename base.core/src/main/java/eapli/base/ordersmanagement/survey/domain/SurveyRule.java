@@ -4,7 +4,8 @@ package eapli.base.ordersmanagement.survey.domain;
 import javax.persistence.*;
 
 @Entity
-public class SurveyRules {
+public class SurveyRule {
+
 
     @EmbeddedId
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,22 +18,22 @@ public class SurveyRules {
     private RuleGender ruleGender;
 
 
-    protected SurveyRules() {
+    protected SurveyRule() {
 
     }
 
-    public SurveyRules(SurveyRuleID surveyRuleID, RuleAge ruleAge, RuleGender ruleGender) {
+    public SurveyRule(SurveyRuleID surveyRuleID, RuleAge ruleAge, RuleGender ruleGender) {
         this.surveyRuleID = surveyRuleID;
         this.ruleAge = ruleAge;
         this.ruleGender = ruleGender;
     }
 
-    public SurveyRules(SurveyRuleID surveyRuleID, RuleAge ruleAge) {
+    public SurveyRule(SurveyRuleID surveyRuleID, RuleAge ruleAge) {
         this.surveyRuleID = surveyRuleID;
         this.ruleAge = ruleAge;
     }
 
-    public SurveyRules(SurveyRuleID surveyRuleID, RuleGender ruleGender) {
+    public SurveyRule(SurveyRuleID surveyRuleID, RuleGender ruleGender) {
         this.surveyRuleID = surveyRuleID;
         this.ruleGender = ruleGender;
     }
