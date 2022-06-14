@@ -12,7 +12,6 @@ import org.apache.commons.lang3.RandomStringUtils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -40,7 +39,7 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
             String id = RandomStringUtils.randomAlphanumeric(6);
             String ruleA = Console.readLine("Minimum age rule: ");
             String ruleG = Console.readLine("Gender rule: ");
-            SurveyRules s = new SurveyRules(SurveyRuleID.valueOf(id), RuleAge.valueOf(ruleA), RuleGender.valueOf(ruleG));
+            SurveyRule s = new SurveyRule(SurveyRuleID.valueOf(id), RuleAge.valueOf(ruleA), RuleGender.valueOf(ruleG));
 
             List<Customer> allCustomers = controller.findAllCustomers();
             Set<Customer> customers = new HashSet<>();
