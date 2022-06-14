@@ -1,8 +1,15 @@
 package eapli.base.ordersmanagement.survey.application;
 
+import eapli.base.infrastructure.persistence.PersistenceContext;
+import eapli.base.ordersmanagement.survey.domain.Survey;
+import eapli.base.ordersmanagement.survey.repositories.SurveyRepository;
 import eapli.framework.io.util.Console;
 
+import java.util.List;
+
 public class SurveysService {
+
+    private final SurveyRepository surveyRepository = PersistenceContext.repositories().survey();
 
     public int showOptionsQuestionaires() {
         int option = -1;
@@ -29,5 +36,9 @@ public class SurveysService {
                 return "C:\\Users\\marti\\Documents\\2ANO2SEMESTRE\\LAPR4\\LEI21_22_S4_2DK_01\\base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire3.txt";
         }
         return null;
+    }
+
+    public List<Survey> findAll(){
+        return surveyRepository.findAll();
     }
 }
