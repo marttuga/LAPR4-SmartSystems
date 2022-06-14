@@ -17,9 +17,13 @@ public class StatisticalReportUI extends AbstractUI {
             System.out.println("============================================================");
             controller.showSurveys();
             String choice = Utils.readLine("=====Please select the SurveyID to see a statistical report=====");
-            /*switch (choice){
-                case
-            }*/
+            switch (choice){
+                case "1":
+                    System.out.println("====================== UNIVERSE ============================");
+                    System.out.println("For this report there were considered a total of " + controller.calculateUniverse(choice) + " customers.");
+                    System.out.println("============================================================");
+
+            }
             return true;
         }catch (Exception e) {
             System.out.println("Something went wrong");

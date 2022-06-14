@@ -34,13 +34,15 @@ public class CreateNewQuestionnaireController {
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER);
         txCtx.beginTransaction();
         saveCustomers(customers);
-        final Survey survey= new Survey(alphanumericCode,description,surveyPeriod,surveyFile, surveyRule,customers);
+        final Survey survey= new Survey(alphanumericCode,description,surveyPeriod,surveyFile, surveyRule,customers, null);
         this.repo.save(survey);
 
         txCtx.commit();
 
         return survey;
     }
+
+
 
     public void saveSurvey(Survey survey) {
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER);
