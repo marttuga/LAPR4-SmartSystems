@@ -65,6 +65,7 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
         return surveyRules;
     }
 
+
     public Set<Customer> getCustomers() {
         return customers;
     }
