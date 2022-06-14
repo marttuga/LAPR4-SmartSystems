@@ -2,6 +2,7 @@ package eapli.base.ordersmanagement.survey.application;
 
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.ordersmanagement.customer.domain.Customer;
+import eapli.base.ordersmanagement.customer.repositories.CustomerRepository;
 import eapli.base.ordersmanagement.survey.domain.*;
 import eapli.base.ordersmanagement.survey.repositories.SurveyRepository;
 import eapli.base.surveys.src.domain.FormGrammarLexer;
@@ -18,19 +19,23 @@ import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.misc.ParseCancellationException;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Set;
 
 public class CreateNewQuestionnaireController {
 
     private final AuthorizationService authz = AuthzRegistry.authorizationService();
     private final SurveyRepository repo = PersistenceContext.repositories().survey();
+    private final CustomerRepository r = PersistenceContext.repositories().customers();
     private final TransactionalContext txCtx = PersistenceContext.repositories().newTransactionalContext();
 
-    public Survey createSurvey(AlphanumericCode alphanumericCode, SurveyDescription description, SurveyPeriod surveyPeriod, byte[] surveyFile, SurveyRule surveyRule, Set<Customer> customers) {
+    public Survey createSurvey(AlphanumericCode alphanumericCode, SurveyDescription description, SurveyPeriod surveyPeriod, byte[] surveyFile, SurveyRule surveyRule, List<Customer> customers) {
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER);
         txCtx.beginTransaction();
+        saveCustomers(customers);
         final Survey survey= new Survey(alphanumericCode,description,surveyPeriod,surveyFile, surveyRule,customers);
         this.repo.save(survey);
+
         txCtx.commit();
 
         return survey;
@@ -39,6 +44,13 @@ public class CreateNewQuestionnaireController {
     public void saveSurvey(Survey survey) {
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER);
         repo.save(survey);
+    }
+    public void saveCustomers( List<Customer> customers) {
+        authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER);
+        for (Customer c: customers) {
+            this.r.save(c);
+        }
+
     }
 
     public static boolean validateSurvey(String fileName) throws IOException {

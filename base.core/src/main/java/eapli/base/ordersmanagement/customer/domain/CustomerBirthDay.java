@@ -5,6 +5,8 @@ import eapli.framework.domain.model.ValueObject;
 import javax.persistence.Embeddable;
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
 import java.util.Date;
 
 @Embeddable
@@ -32,8 +34,15 @@ public class CustomerBirthDay implements ValueObject {
         return String.valueOf(birthDate) ;
     }
 
-    public int getAge(Date date){
-        return AgeCalculator.getCalculateAge(date);
+    public int getAge(){
+        LocalDate bd = this.birthDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        LocalDate cr = LocalDate.now();
+
+        if (bd != null) {
+            return Period.between(bd, cr).getYears();
+        } else {
+            return 0;
+        }
     }
 
     public Date getBirthDate() {
