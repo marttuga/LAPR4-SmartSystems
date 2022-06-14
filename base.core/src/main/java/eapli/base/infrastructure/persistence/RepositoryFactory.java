@@ -22,6 +22,7 @@ package eapli.base.infrastructure.persistence;
 
 import eapli.base.clientusermanagement.repositories.ClientUserRepository;
 import eapli.base.clientusermanagement.repositories.SignupRequestRepository;
+import eapli.base.ordersmanagement.answer.repository.AnswerRepository;
 import eapli.base.ordersmanagement.category.repository.CategoryRepository;
 import eapli.base.ordersmanagement.customer.repositories.CustomerRepository;
 import eapli.base.ordersmanagement.order.repositories.LineOrderRepository;
@@ -122,5 +123,8 @@ public interface RepositoryFactory {
 
     SurveyRepository survey(TransactionalContext autoTx);
     SurveyRepository survey();
+
+    AnswerRepository answer(TransactionalContext autoTx);
+    AnswerRepository answer();
 
 }
