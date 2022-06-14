@@ -23,7 +23,7 @@
     <class>eapli.base.ordersmanagement.order.domain.LineOrder</class>
     <class>eapli.base.ordersmanagement.order.domain.PriceTable</class>
     <class>eapli.base.warehousemanagement.domain.AGV</class>
-    <class>eapli.base.ordersmanagement.survey.domain.SurveyRules</class>
+    <class>eapli.base.ordersmanagement.survey.domain.SurveyRule</class>
 
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://vsgate-s2.dei.isep.ipp.pt:10327/DB;DB_CLOSE_ON_EXIT=FALSE"/>
