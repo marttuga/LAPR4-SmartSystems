@@ -224,7 +224,7 @@ public class MainMenu extends AbstractUI {
 
     private Menu buildSalesManagerMenu() {
         final Menu menusMenu = new Menu("Sales Manager Menu >");
-        menusMenu.addItem(SEE_REPORT, "Surveys statistical report", new ConfigureAGVUI()::show);
+        menusMenu.addItem(SEE_REPORT, "Surveys statistical report", new StatisticalReportUI()::show);
 
         menusMenu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
