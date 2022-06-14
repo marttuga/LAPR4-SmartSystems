@@ -1,9 +1,11 @@
 package eapli.base.ordersmanagement.survey.domain;
+import eapli.base.ordersmanagement.answer.domain.Answer;
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
@@ -22,6 +24,9 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
     @Embedded
     private SurveyPeriod surveyPeriod;
 
+    @OneToMany
+    private List<Answer> answers = new ArrayList<>();
+
     @Lob
     @Basic(fetch=FetchType.EAGER)
     private byte[] surveyFile;
@@ -35,25 +40,28 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
     }
 
 
-    public Survey(AlphanumericCode alphanumericCode, SurveyDescription surveyDescription, SurveyPeriod surveyPeriod, byte[] surveyFile, SurveyRule surveyRule, List<Customer> customers) {
+    public Survey(AlphanumericCode alphanumericCode, SurveyDescription surveyDescription, SurveyPeriod surveyPeriod, byte[] surveyFile, SurveyRule surveyRule, List<Customer> customers, List<Answer> answers) {
         this.alphanumericCode = alphanumericCode;
         this.surveyDescription = surveyDescription;
         this.surveyPeriod = surveyPeriod;
         this.surveyFile = Arrays.copyOf(surveyFile, surveyFile.length);;
         this.surveyRule = surveyRule;
         this.customers = customers;
+        this.answers = answers;
     }
 
-    public SurveyDescription getSurveyDescription() {
-        return surveyDescription;
+
+
+    public String getSurveyDescription() {
+        return surveyDescription.toString();
     }
 
     public SurveyPeriod getSurveyPeriod() {
         return surveyPeriod;
     }
 
-    public AlphanumericCode getAlphanumericCode() {
-        return alphanumericCode;
+    public String getAlphanumericCode() {
+        return alphanumericCode.toString();
     }
 
     public byte[] getSurveyFile() {
