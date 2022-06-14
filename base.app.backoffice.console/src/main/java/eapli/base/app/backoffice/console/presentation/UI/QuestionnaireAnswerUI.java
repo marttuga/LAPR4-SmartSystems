@@ -1,25 +1,49 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
+import eapli.base.ordersmanagement.customer.domain.Customer;
+import eapli.base.ordersmanagement.order.application.CheckOpenOrderController;
 import eapli.base.ordersmanagement.survey.application.QuestionnaireAnswerController;
 
+import eapli.base.ordersmanagement.survey.domain.Survey;
+import eapli.base.ordersmanagement.survey.dto.SurveyDTO;
+import eapli.base.utilitarianClasses.Utils;
+import eapli.framework.infrastructure.authz.application.AuthorizationService;
+import eapli.framework.infrastructure.authz.application.AuthzRegistry;
 import eapli.framework.presentation.console.AbstractUI;
 
 
 import java.io.*;
-import java.util.LinkedList;
-import java.util.List;
-
-import java.util.Scanner;
+import java.util.*;
 
 
 public class QuestionnaireAnswerUI extends AbstractUI {
     private static final QuestionnaireAnswerController questionnaireAnswerController = new QuestionnaireAnswerController();
+    private final AuthorizationService authz = AuthzRegistry.authorizationService();
+    private final CheckOpenOrderController checkOpenOrderController = new CheckOpenOrderController();
 
     @Override
     protected boolean doShow() {
+        Customer customer;
+        String email = authz.session().get().authenticatedUser().email().toString();
+        customer = checkOpenOrderController.findByCustomerEmail(email);
+        List<Survey> allSurvey = questionnaireAnswerController.findAllSurveys();
+        List<SurveyDTO> surveysForCustomer = new ArrayList<>();
 
+        for (Survey s : allSurvey) {
+            for (Customer c : s.getCustomers()) {
+                if (c == customer) {
+                    surveysForCustomer.add(questionnaireAnswerController.fromEntityToDTO(s));
+                }
+            }
+        }
 
-        String q = questionnaireAnswerController.questionnaires(questionnaireAnswerController.showOptionsQuestionaires());
+        for (SurveyDTO sd:surveysForCustomer) {
+            System.out.println(sd);
+        }
+        String oi = Utils.readLine("Choose the questionnaire to answer: ");
+        Survey o= questionnaireAnswerController.findSurveyId(oi);
+
+        //String q = questionnaireAnswerController.questionnaires(questionnaireAnswerController.showOptionsQuestionaires());
 
         List<String> questionary = new LinkedList();
         Scanner in = new Scanner(System.in);
@@ -27,7 +51,7 @@ public class QuestionnaireAnswerUI extends AbstractUI {
         try {
             System.out.println("========================================");
 
-            Scanner sc = new Scanner(new FileReader((q)));
+            Scanner sc = new Scanner(new FileReader((Arrays.toString(o.getSurveyFile()))));
             boolean flag = false; //se for uma questao
             boolean flagSC = false; //se for de escolha
             boolean flagTf = false; //se for de texto
