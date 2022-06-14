@@ -37,8 +37,8 @@ Type: Free-Text.
 Section: 2.
 
 STitle: Satisfaction;
-Description: Section Description;
-Obligatoriness: Optional
+Description: Quality assessment ;
+Obligatoriness: Optional.
 
 Q5.
 Obligatoriness: Mandatory.
@@ -59,10 +59,10 @@ Obligatoriness: Mandatory.
 Did the order arrive within the expected delivery time?
 Type: Free-Text.
 
-Section3.
+Section: 3.
 
 STitle: Opinion;
-Description: Section Description;
+Description: Caution;
 Obligatoriness: Mandatory.
 
 Q8.
