@@ -45,6 +45,14 @@ public class SurveysService {
         List<Survey> surveyList =  surveyRepository.findAll();
         return surveyList.stream().map(this::fromEntityToDTO).collect(Collectors.toList());
     }
+    public List<Survey> findAllSurveys(){
+        return surveyRepository.findAll();
+
+    }
+
+    public Survey findByID(String s){
+        return surveyRepository.findByID(s);
+    }
 
     public SurveyDTO fromEntityToDTO(Survey survey){
         return new SurveyDTO(survey.getAlphanumericCode(), survey.getSurveyDescription());
