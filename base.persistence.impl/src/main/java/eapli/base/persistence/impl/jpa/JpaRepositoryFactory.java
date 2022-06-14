@@ -23,6 +23,8 @@ package eapli.base.persistence.impl.jpa;
 import eapli.base.Application;
 import eapli.base.clientusermanagement.repositories.SignupRequestRepository;
 import eapli.base.infrastructure.persistence.RepositoryFactory;
+import eapli.base.ordersmanagement.answer.domain.Answer;
+import eapli.base.ordersmanagement.answer.repository.AnswerRepository;
 import eapli.base.ordersmanagement.category.repository.CategoryRepository;
 import eapli.base.ordersmanagement.customer.repositories.CustomerRepository;
 import eapli.base.ordersmanagement.order.repositories.LineOrderRepository;
@@ -174,6 +176,16 @@ public class JpaRepositoryFactory implements RepositoryFactory {
     @Override
     public SurveyRepository survey() {
         return new JpaSurveyRepository(Application.settings().getPersistenceUnitName());
+    }
+
+    @Override
+    public AnswerRepository answer(TransactionalContext autoTx) {
+        return new JpaAnswerRepository(autoTx);
+    }
+
+    @Override
+    public AnswerRepository answer() {
+        return new JpaAnswerRepository(Application.settings().getPersistenceUnitName());
     }
 
     @Override

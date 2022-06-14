@@ -76,6 +76,8 @@ public class MainMenu extends AbstractUI {
     private static final int DISPATCH_ORDER = 4;
     private static final int REQUEST = 5;
 
+    private static final int SEE_REPORT = 1;
+
     private static final int ADD_PRODUCT_SHOPCART = 1;
     private static final int ANSWER_QUESTIONNAIRE= 2;
     private static final int CHECK_OPEN_ORDERS= 3;
@@ -89,6 +91,8 @@ public class MainMenu extends AbstractUI {
     private static final int SALES_OPTION = 4;
     private static final int WAREHOUSE_MANAGEMENT_OPTION = 5;
     private static final int CUSTOMER_OPTION = 6;
+
+    private static final int SALES_MANAGER_OPTION = 7;
 
 
     private static final String SEPARATOR_LABEL = "--------------";
@@ -149,6 +153,11 @@ public class MainMenu extends AbstractUI {
             final Menu warehouseMenu = buildWarehouseEmployeeMenu();
             mainMenu.addSubMenu(WAREHOUSE_MANAGEMENT_OPTION,warehouseMenu);
         }
+
+        if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.POWER_USER, BaseRoles.SALES_MANAGER)) {
+            final Menu salesMenu = buildSalesManagerMenu();
+            mainMenu.addSubMenu(SALES_MANAGER_OPTION,salesMenu);
+        }
         if (authz.isAuthenticatedUserAuthorizedTo(BaseRoles.CLIENT_USER)) {
             final Menu customerMenu = buildCustomerMenu();
             mainMenu.addSubMenu(CUSTOMER_OPTION,customerMenu);
@@ -208,6 +217,15 @@ public class MainMenu extends AbstractUI {
        menusMenu.addItem(AGV_TO_PREP_ORDER, "Get an order to an AGV", new AGVToPrepOrderUI()::doShow);
         menusMenu.addItem(DISPATCH_ORDER, "Dispatch orders for customer delivery", new DispatchOrdersUI()::doShow);
         menusMenu.addItem(REQUEST, "Requests", new GetAGVInfoUI()::doShow);
+        menusMenu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
+
+        return menusMenu;
+    }
+
+    private Menu buildSalesManagerMenu() {
+        final Menu menusMenu = new Menu("Sales Manager Menu >");
+        menusMenu.addItem(SEE_REPORT, "Surveys statistical report", new StatisticalReportUI()::show);
+
         menusMenu.addItem(EXIT_OPTION, RETURN_LABEL, Actions.SUCCESS);
 
         return menusMenu;

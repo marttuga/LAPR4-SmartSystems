@@ -12,6 +12,7 @@ import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
+import eapli.framework.io.util.Console;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -33,13 +34,15 @@ public class CreateNewQuestionnaireController {
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER);
         txCtx.beginTransaction();
         saveCustomers(customers);
-        final Survey survey= new Survey(alphanumericCode,description,surveyPeriod,surveyFile, surveyRule,customers);
+        final Survey survey= new Survey(alphanumericCode,description,surveyPeriod,surveyFile, surveyRule,customers, null);
         this.repo.save(survey);
 
         txCtx.commit();
 
         return survey;
     }
+
+
 
     public void saveSurvey(Survey survey) {
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER);
@@ -77,5 +80,19 @@ public class CreateNewQuestionnaireController {
         if (tree != null) valid = true;
 
         return valid;
+    }
+
+    public int showOptionsRules() {
+        int option = -1;
+        System.out.println("===================================================");
+        System.out.println("               Survey Rules:          ");
+        System.out.println("=================================================\n");
+        System.out.println("1-Minimum Age Rule");
+        System.out.println("2-Gender Rule");
+        System.out.println("3-Age and gender Rule");
+        System.out.println("===================================================");
+        System.out.println("0. Back\n\n");
+        option = Console.readInteger("Please select an option");
+        return option;
     }
 }

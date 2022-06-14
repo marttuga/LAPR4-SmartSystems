@@ -40,6 +40,7 @@ public class BackofficeUsersBootstrapper extends UsersBootstrapperBase implement
     public boolean execute() {
         registerSalesClerk("salesclerk", PASSWORD1, "Johny", "Sales", "sales@gmail.com");
         registerWarehouseEmployee("warehouseemployee", PASSWORD1, "Oven", "Stove", "stove@emai.l.com");
+        registerSalesManager("salesmanager", PASSWORD1, "Robert", "Dempsey", "sm@gmail.com");
         return true;
     }
 
@@ -55,6 +56,14 @@ public class BackofficeUsersBootstrapper extends UsersBootstrapperBase implement
                                            final String firstName, final String lastName, final String email) {
         final Set<Role> roles = new HashSet<>();
         roles.add(BaseRoles.WAREHOUSE_EMPLOYEE);
+
+        registerUser(username, password, firstName, lastName, email, roles);
+    }
+
+    private void registerSalesManager(final String username, final String password,
+                                           final String firstName, final String lastName, final String email) {
+        final Set<Role> roles = new HashSet<>();
+        roles.add(BaseRoles.SALES_MANAGER);
 
         registerUser(username, password, firstName, lastName, email, roles);
     }
