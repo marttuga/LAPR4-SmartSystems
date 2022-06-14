@@ -35,7 +35,7 @@ CTRL -> ProdS : printOpenOrderList=printOpenOrderList(getOpenOrders)
 
 activate ProdS
 
-CTRL --> UI :  getOpenOrders
+CTRL --> UI :  getOpenOrdersDto
 deactivate ProdS
 deactivate CTRL
 

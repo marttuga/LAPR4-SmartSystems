@@ -40,7 +40,16 @@ public class JpaOrderRepository extends JpaAutoTxRepository<ProductOrder, String
     }
 
     @Override
-    public List<ProductOrder> findOpenOrders(Status status, Customer customer) {
+    public List<ProductOrder> findOpenOrders(Status status, String email) {
+        Query q = entityManager().createQuery("SELECT ord FROM ProductOrder ord " +
+                " WHERE ord.status != :status AND ord.customer.customerEmailAddress.email = :email");
+        q.setParameter("status", status);
+        q.setParameter("email", email);
+        return (q.getResultList());
+    }
+
+    @Override
+    public List<ProductOrder> findOpenOrdersCustomer(Status status, Customer customer) {
         Query q = entityManager().createQuery("SELECT ord FROM ProductOrder ord " +
                 " WHERE ord.status != :status AND ord.customer = :customer");
         q.setParameter("status", status);

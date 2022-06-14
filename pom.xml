@@ -34,6 +34,8 @@
         <module>base.dashboard</module>
         <module>base.orderServer</module>
         <module>base.customerApp</module>
+        <module>base.app.customerApplication</module>
+        <module>base.app.orderServ</module>
     </modules>
 
     <dependencies>

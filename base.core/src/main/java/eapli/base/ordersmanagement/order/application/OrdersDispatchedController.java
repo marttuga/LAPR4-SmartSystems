@@ -35,7 +35,7 @@ public class OrdersDispatchedController {
         return productOrder;
     }
 
-    public List<ProductOrder> findOpenOrders(eapli.base.ordersmanagement.order.domain.Status status, Customer c) {
+    public List<ProductOrder> findOpenOrders(eapli.base.ordersmanagement.order.domain.Status status, String c) {
         return orderRepository.findOpenOrders(status,c);
     }
 

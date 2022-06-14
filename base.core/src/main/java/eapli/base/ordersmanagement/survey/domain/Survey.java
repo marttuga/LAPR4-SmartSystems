@@ -1,9 +1,12 @@
 package eapli.base.ordersmanagement.survey.domain;
+import eapli.base.ordersmanagement.customer.domain.Customer;
+import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 
 import javax.persistence.*;
 import java.util.Arrays;
+import java.util.Set;
 
 
 @Entity
@@ -23,14 +26,23 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
     @Basic(fetch=FetchType.EAGER)
     private byte[] surveyFile;
 
+    @OneToOne
+    private SurveyRules surveyRules;
+
+    @OneToMany
+    private Set<Customer> customers;
+
     protected Survey() {
     }
 
-    public Survey(AlphanumericCode alphanumericCode, SurveyDescription surveyDescription, SurveyPeriod surveyPeriod, byte[] surveyFile) {
+
+    public Survey(AlphanumericCode alphanumericCode, SurveyDescription surveyDescription, SurveyPeriod surveyPeriod, byte[] surveyFile, SurveyRules surveyRules, Set<Customer> customers) {
         this.alphanumericCode = alphanumericCode;
         this.surveyDescription = surveyDescription;
         this.surveyPeriod = surveyPeriod;
-        this.surveyFile = Arrays.copyOf(surveyFile, surveyFile.length);
+        this.surveyFile = Arrays.copyOf(surveyFile, surveyFile.length);;
+        this.surveyRules = surveyRules;
+        this.customers = customers;
     }
 
     public SurveyDescription getSurveyDescription() {
@@ -43,6 +55,18 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
 
     public AlphanumericCode getAlphanumericCode() {
         return alphanumericCode;
+    }
+
+    public byte[] getSurveyFile() {
+        return surveyFile;
+    }
+
+    public SurveyRules getSurveyRules() {
+        return surveyRules;
+    }
+
+    public Set<Customer> getCustomers() {
+        return customers;
     }
 
     @Override

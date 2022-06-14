@@ -4,6 +4,7 @@ import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.customer.repositories.CustomerRepository;
 import eapli.base.ordersmanagement.order.domain.ProductOrder;
+import eapli.base.ordersmanagement.order.domain.ProductOrderDto;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
 
 import java.util.List;
@@ -16,12 +17,15 @@ public class CheckOpenOrderController {
     public void printOrdersList(List<ProductOrder> orderList) {
         orderService.printOrdersList(orderList);
     }
-    public List<String> printList(List<ProductOrder> orderList) {
+    public List<ProductOrderDto> printList(List<ProductOrder> orderList) {
         return orderService.printList(orderList);
     }
 
-    public List<ProductOrder> findOpenOrders(eapli.base.ordersmanagement.order.domain.Status status,Customer c) {
+    public List<ProductOrder> findOpenOrders(eapli.base.ordersmanagement.order.domain.Status status,String c) {
         return orderRepository.findOpenOrders(status,c);
+    }
+    public List<ProductOrder> findOpenOrdersCustomer(eapli.base.ordersmanagement.order.domain.Status status,Customer c) {
+        return orderRepository.findOpenOrdersCustomer(status,c);
     }
     public Customer findByCustomerEmail(String c){
         return customerRepository.findByCustomerEmail(c);

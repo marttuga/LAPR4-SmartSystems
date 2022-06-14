@@ -138,7 +138,6 @@ public class ProductOrder implements AggregateRoot<OrderID>, DTOable<ProductOrde
 
     @Override
     public ProductOrderDto toDTO(){
-        return new ProductOrderDto(this.orderActor, this.orderID, this.customer, this.dateTime, this.lineOrder,
-                this.priceOrder, this.paymentMethod, this.shippingMethod, this.status, this.survey);
+        return new ProductOrderDto( this.orderID, this.status);
     }
 }
