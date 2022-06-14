@@ -5,6 +5,7 @@ import eapli.framework.domain.model.DomainEntities;
 
 import javax.persistence.*;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 
 
@@ -25,17 +26,16 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
     @Basic(fetch=FetchType.EAGER)
     private byte[] surveyFile;
 
-    @OneToOne
+    @Embedded
     private SurveyRule surveyRule;
-
     @OneToMany
-    private Set<Customer> customers;
+    private List<Customer> customers;
 
     protected Survey() {
     }
 
 
-    public Survey(AlphanumericCode alphanumericCode, SurveyDescription surveyDescription, SurveyPeriod surveyPeriod, byte[] surveyFile, SurveyRule surveyRule, Set<Customer> customers) {
+    public Survey(AlphanumericCode alphanumericCode, SurveyDescription surveyDescription, SurveyPeriod surveyPeriod, byte[] surveyFile, SurveyRule surveyRule, List<Customer> customers) {
         this.alphanumericCode = alphanumericCode;
         this.surveyDescription = surveyDescription;
         this.surveyPeriod = surveyPeriod;
@@ -65,7 +65,7 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
     }
 
 
-    public Set<Customer> getCustomers() {
+    public List<Customer> getCustomers() {
         return customers;
     }
 
