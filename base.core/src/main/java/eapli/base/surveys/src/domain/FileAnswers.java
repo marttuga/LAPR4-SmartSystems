@@ -12,7 +12,6 @@ public class FileAnswers {
             FileWriter myWriter;
             String outputLocation = null;
             outputLocation = "C:\\Users\\marti\\Documents\\2ANO2SEMESTRE\\LAPR4\\LEI21_22_S4_2DK_01\\base.core\\src\\main\\java\\eapli\\base\\surveys\\Answers.txt";
-
             myWriter = new FileWriter(outputLocation, true);
 
             try {
@@ -28,7 +27,6 @@ public class FileAnswers {
             return false;
         }
         return true;
-
     }
 
 }

@@ -18,7 +18,7 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package eapli.base.ordersmanagement.CustomerCliOrderServer;
+package eapli.base.ordersmanagement.CustomerCliOrderServer.service;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,8 +29,11 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-import eapli.base.ordersmanagement.order.domain.ProductOrder;
-import eapli.base.ordersmanagement.shoppingCart.domain.ShoppingCart;
+import eapli.base.ordersmanagement.CustomerCliOrderServer.domain.BookingToken;
+import eapli.base.ordersmanagement.customer.domain.Customer;
+import eapli.base.ordersmanagement.order.domain.OrderID;
+import eapli.base.ordersmanagement.order.domain.ProductOrderDto;
+import eapli.base.ordersmanagement.order.domain.Status;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -142,7 +145,7 @@ public class CsvProtocolProxy {
         return parseResponseMessageBookMeal(response);
     }
 
-    public BookingToken checkOpenOrders(final List<String> pi)
+    public List<ProductOrderDto> checkOpenOrders(final List<ProductOrderDto> pi)
             throws IOException, FailedRequestException {
         final var socket = new ClientSocket();
         socket.connect("localhost", getPort());
@@ -152,7 +155,7 @@ public class CsvProtocolProxy {
 
         socket.stop();
 
-        return parseResponseMessageBookMeal(response);
+        return parseResponseMessageBookMeal2(response);
     }
 
     private BookingToken parseResponseMessageBookMeal(final List<String> response) throws FailedRequestException {
@@ -162,11 +165,28 @@ public class CsvProtocolProxy {
         return BookingToken.valueOf(removeDoubleQuotes(tokens[1]));
     }
 
+    private List<ProductOrderDto> parseResponseMessageBookMeal2(final List<String> response)
+            throws FailedRequestException {
+        checkForErrorMessage(response);
+
+        final List<ProductOrderDto> ret = new ArrayList<>();
+
+        response.remove(0); // removes header
+        response.forEach(s -> ret.add(parseResponseMessageLineGetAvailableMeals(s)));
+        return ret;
+    }
+    private ProductOrderDto parseResponseMessageLineGetAvailableMeals(final String s) {
+        final String[] tokens = s.split(",");
+
+        return new ProductOrderDto(OrderID.valueOf(tokens[0]),
+                Status.valueOf(tokens[1]));
+    }
+
     private String buildBookMeal(String pi) {
         return " \nSHOPPING_CART\n " + pi;
     }
 
-    private String buildBookMeal2(List<String> pi) {
+    private String buildBookMeal2(List<ProductOrderDto> pi) {
         return " \nOPEN ORDERS\n " + pi;
     }
 

@@ -1,22 +1,26 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
+import eapli.base.ordersmanagement.customer.applicaion.RegisterCustomerController;
+import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.survey.application.CreateNewQuestionnaireController;
-import eapli.base.ordersmanagement.survey.domain.AlphanumericCode;
-import eapli.base.ordersmanagement.survey.domain.Survey;
-import eapli.base.ordersmanagement.survey.domain.SurveyDescription;
-import eapli.base.ordersmanagement.survey.domain.SurveyPeriod;
+import eapli.base.ordersmanagement.survey.domain.*;
 import eapli.framework.io.util.Console;
 import eapli.framework.presentation.console.AbstractUI;
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 
 public class CreateNewQuestionnaireUI extends AbstractUI {
 
     private final CreateNewQuestionnaireController ctrl = new CreateNewQuestionnaireController();
+    private final RegisterCustomerController controller = new RegisterCustomerController();
 
     @Override
     protected boolean doShow() {
@@ -28,13 +32,26 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
             e.printStackTrace();
         }
 
-        if(valid) {
+        if (valid) {
             String alphanumericCode = Console.readLine("Survey Alphanumeric code: ");
             String surveyDescription = Console.readLine("Survey Description: ");
             int surveyPeriod = Console.readInteger("Survey period (days): ");
+            String id = RandomStringUtils.randomAlphanumeric(6);
+            String ruleA = Console.readLine("Minimum age rule: ");
+            String ruleG = Console.readLine("Gender rule: ");
+            SurveyRule s = new SurveyRule(SurveyRuleID.valueOf(id), RuleAge.valueOf(ruleA), RuleGender.valueOf(ruleG));
 
+            List<Customer> allCustomers = controller.findAllCustomers();
+            Set<Customer> customers = new HashSet<>();
             int numBytes;
             try {
+
+                for (Customer c : allCustomers) {
+                    if (c.getCustomerBirthDay().getAge(c.getCustomerBirthDay().getBirthDate()) > Integer.parseInt(s.getRuleAge().getAge()) && c.getCustomerGender().toString().equals(s.getRuleGender().toString())) {
+                        customers.add(c);
+                    }
+                }
+
                 File file = new File(fileName);
                 String extension = FilenameUtils.getExtension(file.getName()).toLowerCase();
                 if (!extension.equals("txt"))
@@ -46,7 +63,7 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                 else {
                     fileInputStream.close();
                     try {
-                        ctrl.saveSurvey(ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile));
+                        ctrl.saveSurvey(ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers));
 
                     } catch (Exception e) {
                         System.out.println("Error saving the questionnaire: " + e);
@@ -57,7 +74,7 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
             }
         }
         return false;
-        }
+    }
 
     //}
     @Override

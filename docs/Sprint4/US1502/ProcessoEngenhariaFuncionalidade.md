@@ -30,10 +30,6 @@ view/check the status of his open orders.
 >   Repository:   OrderRepository
 >
 >   Service:  OrderService
-> 
->  Server: OrderServer
->
->   Client: CustomerAppCli
 
 
 ## 3.1. Realization of Functionality
@@ -44,10 +40,10 @@ view/check the status of his open orders.
 
 ## 3.2. Patterns
 
-Repository, factory, controller,GRASP, proxy and service
+Repository, factory, controller,GRASP,proxy,service and DTO
 
 ## 3.3. Tests
-**Teste 1:** buscar o status da order
+**Teste 1:** status of order
 
       @Test
     void getStatus() {
@@ -63,7 +59,12 @@ task of viewing and checking the status of his open orders.
 
 # 5. Integration
 
-   
+    public void printOrdersList(List<ProductOrder> orderList) {
+        for (ProductOrder c : orderList) {
+            System.out.println("orderID- " + c.toDTO().getOrderID() + "\nCustomerID- " + c.toDTO().getCustomerDto().toString()
+                    + "\nStatus- " + c.toDTO().getStatusDto() +"\n");
+        }
+    }
 
 
 

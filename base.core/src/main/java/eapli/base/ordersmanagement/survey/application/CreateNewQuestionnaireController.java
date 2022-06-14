@@ -1,10 +1,8 @@
 package eapli.base.ordersmanagement.survey.application;
 
 import eapli.base.infrastructure.persistence.PersistenceContext;
-import eapli.base.ordersmanagement.survey.domain.AlphanumericCode;
-import eapli.base.ordersmanagement.survey.domain.Survey;
-import eapli.base.ordersmanagement.survey.domain.SurveyDescription;
-import eapli.base.ordersmanagement.survey.domain.SurveyPeriod;
+import eapli.base.ordersmanagement.customer.domain.Customer;
+import eapli.base.ordersmanagement.survey.domain.*;
 import eapli.base.ordersmanagement.survey.repositories.SurveyRepository;
 import eapli.base.surveys.src.domain.FormGrammarLexer;
 import eapli.base.surveys.src.domain.FormGrammarParser;
@@ -20,7 +18,7 @@ import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.misc.ParseCancellationException;
 
 import java.io.IOException;
-import java.nio.file.Paths;
+import java.util.Set;
 
 public class CreateNewQuestionnaireController {
 
@@ -28,10 +26,10 @@ public class CreateNewQuestionnaireController {
     private final SurveyRepository repo = PersistenceContext.repositories().survey();
     private final TransactionalContext txCtx = PersistenceContext.repositories().newTransactionalContext();
 
-    public Survey createSurvey(AlphanumericCode alphanumericCode, SurveyDescription description, SurveyPeriod surveyPeriod, byte[] surveyFile) {
+    public Survey createSurvey(AlphanumericCode alphanumericCode, SurveyDescription description, SurveyPeriod surveyPeriod, byte[] surveyFile, SurveyRule surveyRule, Set<Customer> customers) {
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER);
         txCtx.beginTransaction();
-        final Survey survey= new Survey(alphanumericCode,description,surveyPeriod,surveyFile);
+        final Survey survey= new Survey(alphanumericCode,description,surveyPeriod,surveyFile, surveyRule,customers);
         this.repo.save(survey);
         txCtx.commit();
 

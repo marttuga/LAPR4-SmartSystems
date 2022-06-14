@@ -1,7 +1,7 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
 
-import eapli.base.ordersmanagement.CustomerCliOrderServer.FailedRequestException;
+import eapli.base.ordersmanagement.CustomerCliOrderServer.service.FailedRequestException;
 import eapli.base.ordersmanagement.CustomerCliOrderServer.application.ProtocolProxyController;
 import eapli.base.ordersmanagement.customer.applicaion.RegisterCustomerController;
 import eapli.base.ordersmanagement.customer.domain.Customer;
@@ -14,7 +14,6 @@ import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
 import eapli.base.ordersmanagement.shoppingCart.domain.ShoppingCart;
 import eapli.base.ordersmanagement.shoppingCart.domain.ShoppingCartID;
 import eapli.base.utilitarianClasses.Utils;
-import eapli.framework.actions.menu.Menu;
 import eapli.framework.domain.repositories.IntegrityViolationException;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
