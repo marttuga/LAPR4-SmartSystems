@@ -1,5 +1,8 @@
 package eapli.base.app.agvDigitalTwin;
 
+import eapli.base.app.agvDigitalTwin.application.ChangeStatusAgvController;
+import eapli.base.warehousemanagement.domain.Status;
+
 import java.io.*;
 import java.net.*;
 import java.nio.charset.StandardCharsets;
@@ -18,6 +21,7 @@ class DigitalTwinCli {
     public static void main(String args[]) throws Exception {
 
         try {
+            //Cria o socket com o port 9999
             sock = new Socket("localhost", 9999);
             System.out.println("Connected to server");
 
@@ -41,11 +45,12 @@ class DigitalTwinCli {
 
                     System.out.println("Pedido solicitado ao Servidor! Aguarde um momento!");
 
-                    int length = in.readInt();
-                    byte[] data = new byte[length];
-                    in.readFully(data);
-                    String str = new String(data, StandardCharsets.UTF_8);
-                    System.out.println("AGV number + " + agvId + "change status to FREE!");
+                    //int length = in.readInt();
+                    //byte[] data = new byte[length];
+                    //in.readFully(data);
+                    //String str = new String(data, StandardCharsets.UTF_8);
+                    ChangeStatusAgvController.getAgvs(Status.FREE);
+                    System.out.println("AGV number " + agvId + "change status to FREE!");
 
                 }
 
@@ -64,6 +69,7 @@ class DigitalTwinCli {
             System.exit(1);
         }
     }
+}
 
 
     class TcpChatCliConn implements Runnable {
@@ -93,6 +99,6 @@ class DigitalTwinCli {
             }
         }
     }
-}
+
 
 
