@@ -1,7 +1,5 @@
 grammar FormGrammar;
 
-lprog: start+;
-
 start : allParameter;
 
 allParameter:  parameterId parameterTitle parameterWelcomeMes parameterSection+ parameterFinalMes
