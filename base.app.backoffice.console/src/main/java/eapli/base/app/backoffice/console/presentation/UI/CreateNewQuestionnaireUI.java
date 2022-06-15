@@ -50,6 +50,10 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
         int ruleA;
         String ruleG;
 
+        System.out.println(alphanumericCode);
+        System.out.println(surveyDescription);
+        System.out.println(surveyPeriod);
+
         int answer= ctrl.showOptionsRules();
         switch (answer) {
             case (1):
@@ -57,16 +61,17 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                  s = new SurveyRule((ruleA));
 
                allCustomers = controller.findAllCustomers();
+                customers = new ArrayList<>();
 
-                for (Customer c : allCustomers) {
-                    if (c.getCustomerBirthDay().getAge() > s.getRuleAge()) {
-                        customers.add(c);
 
-                    }
-                }
                 try {
 
+                    for (Customer c : allCustomers) {
+                        if (c.getCustomerBirthDay().getAge() > s.getRuleAge()) {
+                            customers.add(c);
 
+                        }
+                    }
 
                     System.out.println(customers);
                     File file = new File(fileName);
@@ -80,7 +85,7 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                     else {
                         fileInputStream.close();
                         try {
-                            ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null);
+                            ctrl.saveSurvey(ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null));
 
                         } catch (Exception e) {
                             System.out.println("Error saving the questionnaire: " + e);
@@ -112,13 +117,11 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
 
 
                 for (Customer c : allCustomers) {
-                    if (c.getCustomerGender().toString().equals(s.getRuleGender())) {
+                    if (c.getCustomerGender().equals(s.getRuleGender())) {
                         customers.add(c);
 
                     }
                 }
-
-
 
                 //System.out.println(customers);
                 try {
@@ -168,17 +171,16 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                  s = new SurveyRule(ruleA,(ruleG));
 
                  allCustomers = controller.findAllCustomers();
+                 customers = new ArrayList<>();
 
-
-                for (Customer c : allCustomers) {
-                    if (c.getCustomerBirthDay().getAge() > s.getRuleAge() && c.getCustomerGender().toString().equals(s.getRuleGender())) {
-                        customers.add(c);
-
-                    }
-                }
                 try {
 
+                    for (Customer c : allCustomers) {
+                        if (c.getCustomerBirthDay().getAge() > s.getRuleAge() && c.getCustomerGender().toString().equals(s.getRuleGender())) {
+                            customers.add(c);
 
+                        }
+                    }
 
                     System.out.println(customers);
                     File file = new File(fileName);
@@ -192,7 +194,7 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                     else {
                         fileInputStream.close();
                         try {
-                          ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null);
+                            ctrl.saveSurvey(ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null));
 
                         } catch (Exception e) {
                             System.out.println("Error saving the questionnaire: " + e);
