@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -20,16 +21,16 @@ public class CustomerBootstrapper implements Action {
     private static final Logger LOGGER = LoggerFactory.getLogger(
             CustomerBootstrapper.class);
     private final RegisterCustomerController registerCustomerController = new RegisterCustomerController();
-    private final CustomerRepository customerRepository = PersistenceContext.repositories().customers();
-    private final Date date = new Date(1994,04,23);
 
     @Override
     public boolean execute() {
+        Date date1 = new Date(Calendar.YEAR+90, Calendar.FEBRUARY, Calendar.DAY_OF_MONTH);
+        Date date2 = new Date(Calendar.YEAR+110, Calendar.FEBRUARY, Calendar.DAY_OF_MONTH);
         createCostumer("Mary", "Mendes", "mary@gmail.com",
-                date, "937263547", "0936527",
+                date1, "937263547", "0936527",
                 "Sunset Boulevard", 78, "Los angeles", "USA",90210);
         createCostumer("Elsa", "Mendes", "elsa@gmail.com",
-                date, "937263549", "0936528",
+                date2, "937263549", "0936528",
                 "Sunset Boulevard", 78, "Los angeles", "USA",90211);
         return true;
     }
