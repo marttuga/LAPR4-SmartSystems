@@ -21,7 +21,6 @@ import org.antlr.v4.runtime.misc.ParseCancellationException;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Set;
 
 public class CreateNewQuestionnaireController {
 
@@ -72,7 +71,7 @@ public class CreateNewQuestionnaireController {
             parser.addErrorListener(ThrowingErrorListener.INSTANCE);
 
             //ParseTree tree = parser.survey();
-            tree = parser.lprog();
+            tree = parser.start();
 
         } catch (ParseCancellationException e) {
             System.out.println("File does not pass the grammar:\n" + e.getMessage());
