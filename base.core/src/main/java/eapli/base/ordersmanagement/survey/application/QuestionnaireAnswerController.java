@@ -1,5 +1,6 @@
 package eapli.base.ordersmanagement.survey.application;
 
+import eapli.base.ordersmanagement.order.domain.ProductOrder;
 import eapli.base.ordersmanagement.survey.domain.Survey;
 import eapli.base.ordersmanagement.survey.dto.SurveyDTO;
 import eapli.base.surveys.src.domain.FileAnswers;
@@ -30,5 +31,9 @@ public class QuestionnaireAnswerController {
 
     public SurveyDTO fromEntityToDTO(Survey survey) {
     return surveysService.fromEntityToDTO(survey);
+    }
+
+    public void printSurveysList(List<Survey> orderList) {
+        surveysService.printSurveysList(orderList);
     }
 }
