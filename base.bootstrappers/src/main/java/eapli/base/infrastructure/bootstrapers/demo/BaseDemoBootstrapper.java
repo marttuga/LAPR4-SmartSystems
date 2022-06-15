@@ -59,7 +59,10 @@ public class BaseDemoBootstrapper implements Action {
                 new CategoryBootstrapper(),
                 new ProductBootstrapper(),
                 new ProductOrderBootstrapper(),
+                new AnswerBootstrapper(),
+                new SurveyBootstrapper(),
                 new AgvBootstrapper(),
+
         };
 
         // execute all bootstrapping
