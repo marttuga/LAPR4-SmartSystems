@@ -63,6 +63,7 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                allCustomers = controller.findAllCustomers();
                 customers = new ArrayList<>();
 
+
                 try {
 
                     for (Customer c : allCustomers) {
@@ -121,8 +122,6 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
 
                     }
                 }
-
-
 
                 //System.out.println(customers);
                 try {

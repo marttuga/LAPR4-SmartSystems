@@ -35,6 +35,7 @@ public class SurveyBootstrapper implements Action {
         List<Customer>customers = new ArrayList<>();
         List<Answer>answerList = new ArrayList<>();
         customers.add(customer);
+
         Map<String, String> answers  = new HashMap<>();
         answers.put("1","A");
         answers.put("2","C");
