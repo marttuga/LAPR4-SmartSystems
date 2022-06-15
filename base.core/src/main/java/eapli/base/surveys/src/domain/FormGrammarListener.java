@@ -8,16 +8,6 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface FormGrammarListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link FormGrammarParser#lprog}.
-	 * @param ctx the parse tree
-	 */
-	void enterLprog(FormGrammarParser.LprogContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link FormGrammarParser#lprog}.
-	 * @param ctx the parse tree
-	 */
-	void exitLprog(FormGrammarParser.LprogContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link FormGrammarParser#start}.
 	 * @param ctx the parse tree
 	 */
@@ -38,16 +28,6 @@ public interface FormGrammarListener extends ParseTreeListener {
 	 */
 	void exitAllParameter(FormGrammarParser.AllParameterContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FormGrammarParser#parameterSections}.
-	 * @param ctx the parse tree
-	 */
-	void enterParameterSections(FormGrammarParser.ParameterSectionsContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link FormGrammarParser#parameterSections}.
-	 * @param ctx the parse tree
-	 */
-	void exitParameterSections(FormGrammarParser.ParameterSectionsContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link FormGrammarParser#parameterSection}.
 	 * @param ctx the parse tree
 	 */
@@ -57,16 +37,6 @@ public interface FormGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitParameterSection(FormGrammarParser.ParameterSectionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link FormGrammarParser#parameterQuestionPrinc}.
-	 * @param ctx the parse tree
-	 */
-	void enterParameterQuestionPrinc(FormGrammarParser.ParameterQuestionPrincContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link FormGrammarParser#parameterQuestionPrinc}.
-	 * @param ctx the parse tree
-	 */
-	void exitParameterQuestionPrinc(FormGrammarParser.ParameterQuestionPrincContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link FormGrammarParser#parameterQuestion}.
 	 * @param ctx the parse tree

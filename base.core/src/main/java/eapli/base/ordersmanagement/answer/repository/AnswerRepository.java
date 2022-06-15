@@ -9,5 +9,5 @@ import eapli.framework.domain.repositories.DomainRepository;
 import java.util.List;
 
 public interface AnswerRepository extends DomainRepository<AnswerId, Answer> {
-    public List<Customer> universe(String id);
+    public List<Answer> universe(String id);
 }

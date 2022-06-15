@@ -81,7 +81,7 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                     else {
                         fileInputStream.close();
                         try {
-                            ctrl.saveSurvey(ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers));
+                            ctrl.saveSurvey(ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null));
 
                         } catch (Exception e) {
                             System.out.println("Error saving the questionnaire: " + e);
@@ -134,7 +134,7 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                     else {
                         fileInputStream.close();
                         try {
-                            ctrl.saveSurvey(ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers));
+                            ctrl.saveSurvey(ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null));
 
                         } catch (Exception e) {
                             System.out.println("Error saving the questionnaire: " + e);
@@ -189,7 +189,7 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                     else {
                         fileInputStream.close();
                         try {
-                            ctrl.saveSurvey(ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers));
+                            ctrl.saveSurvey(ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null));
 
                         } catch (Exception e) {
                             System.out.println("Error saving the questionnaire: " + e);

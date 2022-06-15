@@ -24,9 +24,10 @@ public class JpaAnswerRepository extends JpaAutoTxRepository<Answer, AnswerId, A
     }
 
     @Override
-    public List<Customer> universe(String id){
-        Query q = entityManager().createQuery("SELECT c FROM Customer c WHERE c IN (SELECT a.customer FROM Answer a WHERE a.id IN ( SELECT s FROM Survey s WHERE s.id = :id))");
+    public List<Answer> universe(String id){
+        Query q = entityManager().createQuery(" SELECT s.answers FROM Survey s WHERE s.id = :id");
         q.setParameter("id", id);
         return (q.getResultList());
     }
+    //SELECT a.customer FROM Answer a WHERE a IN
 }
