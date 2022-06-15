@@ -16,18 +16,6 @@ public class FormGrammarBaseListener implements FormGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLprog(FormGrammarParser.LprogContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitLprog(FormGrammarParser.LprogContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterStart(FormGrammarParser.StartContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -52,18 +40,6 @@ public class FormGrammarBaseListener implements FormGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParameterSections(FormGrammarParser.ParameterSectionsContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitParameterSections(FormGrammarParser.ParameterSectionsContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterParameterSection(FormGrammarParser.ParameterSectionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -71,18 +47,6 @@ public class FormGrammarBaseListener implements FormGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitParameterSection(FormGrammarParser.ParameterSectionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterParameterQuestionPrinc(FormGrammarParser.ParameterQuestionPrincContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitParameterQuestionPrinc(FormGrammarParser.ParameterQuestionPrincContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

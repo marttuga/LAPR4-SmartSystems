@@ -32,8 +32,8 @@ Type: Single-Choice.
 Section: 2.
 
 STitle: Satisfaction;
-Description: Section Description;
-Obligatoriness: Optional
+Description: Section Description ;
+Obligatoriness: Optional.
 
 Q5.
 Obligatoriness: Mandatory.
@@ -55,7 +55,7 @@ Type: Free-Text.
 Section: 3.
 
 STitle: Opinion;
-Description: Section Description;
+Description: Section Description ;
 Obligatoriness: Mandatory.
 
 Q8.
