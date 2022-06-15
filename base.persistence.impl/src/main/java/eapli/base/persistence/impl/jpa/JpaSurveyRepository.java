@@ -1,12 +1,9 @@
 package eapli.base.persistence.impl.jpa;
 
 import eapli.base.Application;
-import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.survey.domain.AlphanumericCode;
 import eapli.base.ordersmanagement.survey.domain.Survey;
 import eapli.base.ordersmanagement.survey.repositories.SurveyRepository;
-import eapli.base.warehousemanagement.domain.AGV;
-import eapli.base.warehousemanagement.domain.Status;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
 
@@ -27,17 +24,15 @@ public class JpaSurveyRepository extends JpaAutoTxRepository<Survey, Alphanumeri
 
     @Override
     public List<Survey> findAll() {
-        List<Survey> surveyList = new ArrayList<>();
-        TypedQuery<Survey> query = super.createQuery("SELECT DISTINCT s FROM Survey s", Survey.class);
-        for (Survey s: query.getResultList()) {
-            surveyList.add(s);
-        }
-        return surveyList;
+        TypedQuery<Survey> query = super.createQuery("SELECT DISTINCT c FROM Survey c", Survey.class);
+        return new ArrayList<>(query.getResultList());
     }
-
-
-
-
-
+    @Override
+    public Survey findByID(String alphanumericCode) {
+        Query q = entityManager().createQuery("SELECT ord FROM Survey ord " +
+                " WHERE ord.alphanumericCode.alphanumericCode = :alphanumericCode");
+        q.setParameter("alphanumericCode", alphanumericCode);
+        return (Survey) q.getSingleResult();
+    }
 
 }
