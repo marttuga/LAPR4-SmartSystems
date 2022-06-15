@@ -1,6 +1,8 @@
 package eapli.base.ordersmanagement.survey.application;
 
 import eapli.base.infrastructure.persistence.PersistenceContext;
+import eapli.base.ordersmanagement.answer.domain.Answer;
+import eapli.base.ordersmanagement.answer.repository.AnswerRepository;
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.customer.repositories.CustomerRepository;
 import eapli.base.ordersmanagement.survey.domain.*;
@@ -28,13 +30,16 @@ public class CreateNewQuestionnaireController {
     private final AuthorizationService authz = AuthzRegistry.authorizationService();
     private final SurveyRepository repo = PersistenceContext.repositories().survey();
     private final CustomerRepository r = PersistenceContext.repositories().customers();
+
+    private final AnswerRepository answerRepository = PersistenceContext.repositories().answer();
     private final TransactionalContext txCtx = PersistenceContext.repositories().newTransactionalContext();
 
-    public Survey createSurvey(AlphanumericCode alphanumericCode, SurveyDescription description, SurveyPeriod surveyPeriod, byte[] surveyFile, SurveyRule surveyRule, List<Customer> customers) {
+    public Survey createSurvey(AlphanumericCode alphanumericCode, SurveyDescription description, SurveyPeriod surveyPeriod, byte[] surveyFile, SurveyRule surveyRule, List<Customer> customers, List<Answer> answers) {
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER);
         txCtx.beginTransaction();
         saveCustomers(customers);
-        final Survey survey= new Survey(alphanumericCode,description,surveyPeriod,surveyFile, surveyRule,customers, null);
+        saveAnswers(answers);
+        final Survey survey= new Survey(alphanumericCode,description,surveyPeriod,surveyFile, surveyRule,customers, answers);
         this.repo.save(survey);
 
         txCtx.commit();
@@ -52,6 +57,14 @@ public class CreateNewQuestionnaireController {
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER);
         for (Customer c: customers) {
             this.r.save(c);
+        }
+
+    }
+
+    public void saveAnswers( List<Answer> answers) {
+        authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER);
+        for (Answer a: answers) {
+            this.answerRepository.save(a);
         }
 
     }
