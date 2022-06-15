@@ -24,8 +24,20 @@ public class JpaSurveyRepository extends JpaAutoTxRepository<Survey, Alphanumeri
 
     @Override
     public List<Survey> findAll() {
-        TypedQuery<Survey> query = super.createQuery("SELECT DISTINCT c FROM Survey c", Survey.class);
-        return new ArrayList<>(query.getResultList());
+        List<Survey> surveyList = new ArrayList<>();
+        TypedQuery<Survey> query = super.createQuery("SELECT DISTINCT s FROM Survey s WHERE s.answers IS NOT NULL", Survey.class);
+        for (Survey s: query.getResultList()) {
+            surveyList.add(s);
+        }
+        return surveyList;
+    }
+
+    @Override
+    public List<Survey> findAllAnswered(){
+        Query q = entityManager().createQuery(" SELECT DISTINCT s FROM Survey s WHERE EXISTS (SELECT s.answers from Survey s)");
+        return q.getResultList();
+        /*ypedQuery<Survey> query = super.createQuery("SELECT DISTINCT c FROM Survey c", Survey.class);
+        return new ArrayList<>(query.getResultList());*/
     }
     @Override
     public Survey findByID(String alphanumericCode) {
