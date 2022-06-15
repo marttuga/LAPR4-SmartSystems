@@ -63,15 +63,15 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                allCustomers = controller.findAllCustomers();
                 customers = new ArrayList<>();
 
+                for (Customer c : allCustomers) {
+                    if (c.getCustomerBirthDay().getAge() > s.getRuleAge()) {
+                        customers.add(c);
 
+                    }
+                }
                 try {
 
-                    for (Customer c : allCustomers) {
-                        if (c.getCustomerBirthDay().getAge() > s.getRuleAge()) {
-                            customers.add(c);
 
-                        }
-                    }
 
                     System.out.println(customers);
                     File file = new File(fileName);
@@ -85,7 +85,7 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                     else {
                         fileInputStream.close();
                         try {
-                            ctrl.saveSurvey(ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null));
+                           ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null);
 
                         } catch (Exception e) {
                             System.out.println("Error saving the questionnaire: " + e);
@@ -119,8 +119,8 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                 for (Customer c : allCustomers) {
                     if (c.getCustomerGender().equals(s.getRuleGender())) {
                         customers.add(c);
-
                     }
+                   //00 System.out.println(customers);
                 }
 
                 //System.out.println(customers);
@@ -173,14 +173,14 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                  allCustomers = controller.findAllCustomers();
                  customers = new ArrayList<>();
 
+                for (Customer c : allCustomers) {
+                    if (c.getCustomerBirthDay().getAge() > s.getRuleAge() && c.getCustomerGender().toString().equals(s.getRuleGender())) {
+                        customers.add(c);
+
+                    }
+                }
                 try {
 
-                    for (Customer c : allCustomers) {
-                        if (c.getCustomerBirthDay().getAge() > s.getRuleAge() && c.getCustomerGender().toString().equals(s.getRuleGender())) {
-                            customers.add(c);
-
-                        }
-                    }
 
                     System.out.println(customers);
                     File file = new File(fileName);
@@ -194,7 +194,7 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                     else {
                         fileInputStream.close();
                         try {
-                            ctrl.saveSurvey(ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null));
+                            ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null);
 
                         } catch (Exception e) {
                             System.out.println("Error saving the questionnaire: " + e);
