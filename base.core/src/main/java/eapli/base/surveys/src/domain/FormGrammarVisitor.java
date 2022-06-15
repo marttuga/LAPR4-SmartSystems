@@ -11,12 +11,6 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface FormGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link FormGrammarParser#lprog}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitLprog(FormGrammarParser.LprogContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link FormGrammarParser#start}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -29,23 +23,11 @@ public interface FormGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAllParameter(FormGrammarParser.AllParameterContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link FormGrammarParser#parameterSections}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitParameterSections(FormGrammarParser.ParameterSectionsContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link FormGrammarParser#parameterSection}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitParameterSection(FormGrammarParser.ParameterSectionContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link FormGrammarParser#parameterQuestionPrinc}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitParameterQuestionPrinc(FormGrammarParser.ParameterQuestionPrincContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link FormGrammarParser#parameterQuestion}.
 	 * @param ctx the parse tree
