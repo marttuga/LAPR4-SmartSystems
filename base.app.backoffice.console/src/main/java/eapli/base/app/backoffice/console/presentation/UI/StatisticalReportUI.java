@@ -2,6 +2,7 @@ package eapli.base.app.backoffice.console.presentation.UI;
 
 import eapli.base.ordersmanagement.customer.applicaion.RegisterCustomerController;
 import eapli.base.ordersmanagement.survey.application.StatisticalReportController;
+import eapli.base.ordersmanagement.survey.dto.SurveyDTO;
 import eapli.base.utilitarianClasses.Utils;
 import eapli.framework.presentation.console.AbstractUI;
 
@@ -15,15 +16,15 @@ public class StatisticalReportUI extends AbstractUI {
             System.out.println("============================================================");
             System.out.println("==== Here are all the surveys available in the System! =====");
             System.out.println("============================================================");
-            controller.showSurveys();
-            String choice = Utils.readLine("=====Please select the SurveyID to see a statistical report=====");
-            switch (choice){
-                case "1":
-                    System.out.println("====================== UNIVERSE ============================");
-                    System.out.println("For this report there were considered a total of " + controller.calculateUniverse(choice) + " customers.");
-                    System.out.println("============================================================");
-
+            for (SurveyDTO dto: controller.showSurveys()) {
+                System.out.println(dto);
             }
+            //controller.showSurveys();
+            String choice = Utils.readLine("== Please select the SurveyID to see a statistical report ==");
+            System.out.println("====================== UNIVERSE ============================");
+            System.out.println("For this report there were considered a total of " + controller.calculateUniverse(choice) + " customers.");
+            System.out.println("============================================================");
+
             return true;
         }catch (Exception e) {
             System.out.println("Something went wrong");
