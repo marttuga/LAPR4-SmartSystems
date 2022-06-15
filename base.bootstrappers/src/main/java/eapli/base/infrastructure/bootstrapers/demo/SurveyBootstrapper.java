@@ -16,10 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class SurveyBootstrapper implements Action {
     private static final Logger LOGGER = LoggerFactory.getLogger(
@@ -31,7 +28,10 @@ public class SurveyBootstrapper implements Action {
 
     @Override
     public boolean execute() {
-        Customer customer = new Customer(CustomerId.valueOf("87654321") , CustomerFirstName.valueOf("Gabi"), CustomerLastName.valueOf("Hall"), CustomerEmailAdress.valueOf("gabi@gmail.com"), CustomerPhoneNumber.valueOf("910477203"), CustomerVATIdentifier.valueOf("9263748"));
+        Set<CustomerPostalAddress> postalAddress = new HashSet<>();
+        CustomerPostalAddress customerPostalAddress = new CustomerPostalAddress("Cornelia",22,"San Francisco", "USA",90213);
+        postalAddress.add(customerPostalAddress);
+        Customer customer = new Customer(CustomerId.valueOf("87654321") , CustomerFirstName.valueOf("Gabi"), CustomerLastName.valueOf("Hall"), CustomerEmailAdress.valueOf("gabi@gmail.com"), CustomerPhoneNumber.valueOf("910477203"), CustomerVATIdentifier.valueOf("9263748"), CustomerBirthDay.valueOf(new Date(2001, 3, 2)),CustomerGender.valueOf("FEMALE"),postalAddress);
         List<Customer>customers = new ArrayList<>();
         List<Answer>answerList = new ArrayList<>();
         customers.add(customer);
@@ -51,7 +51,7 @@ public class SurveyBootstrapper implements Action {
     private void createSurvey(String id, String description, int period, byte[] surveyfile, int  surveyruleA,String surveyruleG, List<Customer> customers, List<Answer> answers) {
 
         try {
-            controller.saveSurvey(controller.createSurvey(new AlphanumericCode(id),new SurveyDescription(description), new SurveyPeriod(period), surveyfile, new SurveyRule(surveyruleA,surveyruleG), customers, answers));
+            controller.createSurveyAnswered(new AlphanumericCode(id),new SurveyDescription(description), new SurveyPeriod(period), surveyfile, new SurveyRule(surveyruleA,surveyruleG), customers, answers);
         } catch (final ConcurrencyException | IntegrityViolationException e) {
             // ignoring exception. assuming it is just a primary key violation
             // due to the tentative of inserting a duplicated user
