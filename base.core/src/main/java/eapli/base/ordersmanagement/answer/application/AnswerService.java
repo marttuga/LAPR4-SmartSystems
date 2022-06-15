@@ -12,8 +12,9 @@ public class AnswerService {
     private final AnswerRepository answerRepository = PersistenceContext.repositories().answer();
 
     public String universe(String id){
-        List<Answer> customerList = answerRepository.universe(id);
+        List<Answer> customerList = answerRepository.universeAnswers(id);
         String size = String.valueOf(customerList.size());
         return size;
     }
+
 }

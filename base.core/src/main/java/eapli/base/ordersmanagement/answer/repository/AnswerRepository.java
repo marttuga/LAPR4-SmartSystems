@@ -10,4 +10,7 @@ import java.util.List;
 
 public interface AnswerRepository extends DomainRepository<AnswerId, Answer> {
     public List<Answer> universe(String id);
+
+    public List<Answer> universeAnswers(String id);
+    
 }

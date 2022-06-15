@@ -12,7 +12,6 @@ public class Answer implements AggregateRoot<AnswerId> {
     @EmbeddedId
     @Column(unique = true)
     private AnswerId answerId;
-
     @ManyToOne
     @JoinColumn
     private Customer customer;

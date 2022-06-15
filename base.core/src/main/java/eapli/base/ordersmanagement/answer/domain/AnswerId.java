@@ -11,7 +11,6 @@ public class AnswerId implements ValueObject, Comparable<AnswerId> {
         Preconditions.noneNull(answerId, "AnswerId cannot be null or empty");
         this.id = answerId;
     }
-
     protected AnswerId() {
     }
 
