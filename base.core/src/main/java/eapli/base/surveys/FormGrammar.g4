@@ -53,7 +53,7 @@ parameterFinalMes : 'Final Message: ' parameterText | ;
 
 INT : [0-9]+ ;
 STRING : [A-Za-z0-9]+ | '_' | '\''  ;
-END : '.' | '?' | | ':' | ';' | ',' ;
+END : '.' | '?' | ':' | ';' | ',' ;
 QUESTION : 'Q' [0-9]+ '.' ;
 CHOICE : INT '.' ;
 QUEST : 'Questionnaire' ;
