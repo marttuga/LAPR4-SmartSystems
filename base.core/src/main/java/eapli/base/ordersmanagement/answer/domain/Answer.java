@@ -20,6 +20,15 @@ public class Answer implements AggregateRoot<AnswerId> {
     @ElementCollection
     private Map<String,String> every_Answer;
 
+    protected Answer(){
+
+    }
+
+    public Answer(AnswerId answerId, Customer customer, Map<String,String> every_Answer){
+        this.answerId = answerId;
+        this.customer = customer;
+        this.every_Answer = every_Answer;
+    }
     @Override
     public boolean sameAs(Object other) {
         return false;

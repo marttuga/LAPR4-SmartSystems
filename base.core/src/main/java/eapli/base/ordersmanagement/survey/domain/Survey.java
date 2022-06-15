@@ -25,7 +25,7 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
     private SurveyPeriod surveyPeriod;
 
     @OneToMany
-    private List<Answer> answers = new ArrayList<>();
+    private List<Answer> answers;
 
     @Lob
     @Basic(fetch=FetchType.EAGER)

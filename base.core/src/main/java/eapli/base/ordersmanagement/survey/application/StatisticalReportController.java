@@ -14,7 +14,7 @@ public class StatisticalReportController {
         return surveysService.findAll();
     }
 
-    public int calculateUniverse(String id){
+    public String calculateUniverse(String id){
         return answerService.universe(id);
     }
 }

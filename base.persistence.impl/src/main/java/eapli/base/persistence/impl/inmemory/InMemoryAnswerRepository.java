@@ -14,5 +14,5 @@ public class InMemoryAnswerRepository extends InMemoryDomainRepository<Answer, A
     }
 
     @Override
-    public List<Customer> universe(String id){ return universe(id);  }
+    public List<Answer> universe(String id){ return universe(id);  }
 }
