@@ -10,7 +10,7 @@ public class FormGrammar {
         FormGrammarLexer lexer = new FormGrammarLexer(new ANTLRInputStream(fis));
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         FormGrammarParser parser = new FormGrammarParser(tokens);
-        ParseTree tree = parser.lprog(); // parse
+        ParseTree tree = parser.start(); // parse
         EvalVisitor eval = new EvalVisitor();
         eval.visit(tree);
     }
