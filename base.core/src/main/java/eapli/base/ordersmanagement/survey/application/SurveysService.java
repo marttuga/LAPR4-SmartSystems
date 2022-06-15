@@ -2,6 +2,7 @@ package eapli.base.ordersmanagement.survey.application;
 
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.ordersmanagement.customer.domain.Customer;
+import eapli.base.ordersmanagement.order.domain.ProductOrder;
 import eapli.base.ordersmanagement.survey.domain.Survey;
 import eapli.base.ordersmanagement.survey.dto.SurveyDTO;
 import eapli.base.ordersmanagement.survey.repositories.SurveyRepository;
@@ -56,6 +57,11 @@ public class SurveysService {
 
     public SurveyDTO fromEntityToDTO(Survey survey){
         return new SurveyDTO(survey.getAlphanumericCode(), survey.getSurveyDescription());
+    }
+    public void printSurveysList(List<Survey> ist) {
+        for (Survey c : ist) {
+            System.out.println("Questionnaire Code- " + c.getAlphanumericCode() + " / Description- "+ c.getSurveyDescription()+ "\n");
+        }
     }
 
 }
