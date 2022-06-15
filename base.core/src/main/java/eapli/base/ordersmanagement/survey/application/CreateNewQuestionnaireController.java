@@ -37,7 +37,6 @@ public class CreateNewQuestionnaireController {
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER);
         txCtx.beginTransaction();
         saveCustomers(customers);
-        saveAnswers(answers);
         final Survey survey= new Survey(alphanumericCode,description,surveyPeriod,surveyFile, surveyRule,customers, answers);
         this.repo.save(survey);
 
@@ -46,6 +45,18 @@ public class CreateNewQuestionnaireController {
         return survey;
     }
 
+    public Survey createSurveyAnswered(AlphanumericCode alphanumericCode, SurveyDescription description, SurveyPeriod surveyPeriod, byte[] surveyFile, SurveyRule surveyRule, List<Customer> customers, List<Answer> answers){
+        authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER);
+        txCtx.beginTransaction();
+        saveCustomers(customers);
+        saveAnswers(answers);
+        final Survey survey= new Survey(alphanumericCode,description,surveyPeriod,surveyFile, surveyRule,customers, answers);
+        this.repo.save(survey);
+
+        txCtx.commit();
+
+        return survey;
+    }
 
 
     public void saveSurvey(Survey survey) {

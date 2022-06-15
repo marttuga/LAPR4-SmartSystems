@@ -8,7 +8,9 @@ import eapli.framework.domain.repositories.DomainRepository;
 import java.util.List;
 
 public interface SurveyRepository extends DomainRepository<AlphanumericCode,Survey> {
-    List<Survey> findAll();
+    public List<Survey> findAll();
+
+    public List<Survey> findAllAnswered();
 
     Survey findByID(String alphanumericCode);
 }

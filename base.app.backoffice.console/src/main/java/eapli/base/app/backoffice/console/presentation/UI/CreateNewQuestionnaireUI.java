@@ -44,12 +44,15 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
         String surveyDescription = Console.readLine("Survey Description: ");
         int surveyPeriod = Console.readInteger("Survey period (days): ");
         List<Customer> allCustomers;
-        List<Customer> customers;
+        List<Customer> customers = new ArrayList<>();
         int numBytes;
         SurveyRule s;
         int ruleA;
         String ruleG;
 
+        System.out.println(alphanumericCode);
+        System.out.println(surveyDescription);
+        System.out.println(surveyPeriod);
 
         int answer= ctrl.showOptionsRules();
         switch (answer) {
@@ -109,20 +112,22 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                         break;
                 }
                  s = new SurveyRule((ruleG));
-
                  allCustomers = controller.findAllCustomers();
-                 customers = new ArrayList<>();
 
+
+                for (Customer c : allCustomers) {
+                    if (c.getCustomerGender().equals(s.getRuleGender())) {
+                        customers.add(c);
+
+                    }
+                }
+
+
+
+                //System.out.println(customers);
                 try {
 
-                    for (Customer c : allCustomers) {
-                        if (c.getCustomerGender().toString().equals(s.getRuleGender())) {
-                            customers.add(c);
 
-                        }
-                    }
-
-                    System.out.println(customers);
                     File file = new File(fileName);
                     String extension = FilenameUtils.getExtension(file.getName()).toLowerCase();
                     if (!extension.equals("txt"))
@@ -134,10 +139,11 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                     else {
                         fileInputStream.close();
                         try {
-                            ctrl.saveSurvey(ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null));
+
+                            ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null);
 
                         } catch (Exception e) {
-                            System.out.println("Error saving the questionnaire: " + e);
+                            System.out.println("Error saving the questionnaire in  question: " + e);
                         }
                     }
                 } catch (IOException ex) {

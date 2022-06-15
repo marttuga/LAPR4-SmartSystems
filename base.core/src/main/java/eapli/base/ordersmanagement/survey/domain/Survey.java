@@ -3,6 +3,7 @@ import eapli.base.ordersmanagement.answer.domain.Answer;
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
     @Embedded
     private SurveyPeriod surveyPeriod;
 
+    @Nullable
     @OneToMany
     private List<Answer> answers;
 

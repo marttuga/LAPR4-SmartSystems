@@ -23,6 +23,12 @@ public class InMemorySurveyRepository extends InMemoryDomainRepository<Survey, A
         return null;
     }
 
+    @Override
+    public List<Survey> findAllAnswered() {
+        return findAllAnswered();
+    }
+
+
 
 }
 

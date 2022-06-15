@@ -59,7 +59,7 @@ public class SurveyBootstrapper implements Action {
     private void createSurvey(String id, String description, int period, byte[] surveyfile, int  surveyruleA,String surveyruleG, List<Customer> customers, List<Answer> answers) {
 
         try {
-            controller.saveSurvey(controller.createSurvey(new AlphanumericCode(id),new SurveyDescription(description), new SurveyPeriod(period), surveyfile, new SurveyRule(surveyruleA,surveyruleG), customers, answers));
+            controller.createSurveyAnswered(new AlphanumericCode(id),new SurveyDescription(description), new SurveyPeriod(period), surveyfile, new SurveyRule(surveyruleA,surveyruleG), customers, answers);
         } catch (final ConcurrencyException | IntegrityViolationException e) {
             // ignoring exception. assuming it is just a primary key violation
             // due to the tentative of inserting a duplicated user

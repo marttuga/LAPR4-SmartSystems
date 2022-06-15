@@ -42,7 +42,7 @@ public class SurveysService {
     }
 
     public List<SurveyDTO> findAll(){
-        List<Survey> surveyList =  surveyRepository.findAll();
+        List<Survey> surveyList =  surveyRepository.findAllAnswered();
         return surveyList.stream().map(this::fromEntityToDTO).collect(Collectors.toList());
     }
     public List<Survey> findAllSurveys(){
