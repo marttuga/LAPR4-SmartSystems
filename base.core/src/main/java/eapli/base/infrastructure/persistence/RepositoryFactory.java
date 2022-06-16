@@ -28,11 +28,12 @@ import eapli.base.ordersmanagement.customer.repositories.CustomerRepository;
 import eapli.base.ordersmanagement.order.repositories.LineOrderRepository;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
 import eapli.base.ordersmanagement.product.repositories.ProductRepository;
-import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
 import eapli.base.ordersmanagement.shoppingCart.repositories.ProductItemRepository;
 import eapli.base.ordersmanagement.shoppingCart.repositories.ShoppingCartRepository;
 import eapli.base.ordersmanagement.survey.repositories.SurveyRepository;
+import eapli.base.warehousemanagement.repositories.AGVDockRepository;
 import eapli.base.warehousemanagement.repositories.AGVRepository;
+import eapli.base.warehousemanagement.repositories.AisleRepository;
 import eapli.base.warehousemanagement.repositories.WarehouseRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.authz.domain.repositories.UserRepository;
@@ -126,5 +127,12 @@ public interface RepositoryFactory {
 
     AnswerRepository answer(TransactionalContext autoTx);
     AnswerRepository answer();
+
+    AGVDockRepository agvDock(TransactionalContext autoTx);
+    AGVDockRepository agvDock();
+
+    AisleRepository aisle(TransactionalContext autoTx);
+
+    AisleRepository aisle();
 
 }
