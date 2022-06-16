@@ -26,9 +26,6 @@ public class AGV implements AggregateRoot<Identifier> {
     private Model model;
 
     @Embedded
-    private Speed speed;
-
-    @Embedded
     private Position position;
 
     @Transient
