@@ -56,6 +56,7 @@ public class BaseDemoBootstrapper implements Action {
                 new BackofficeUsersBootstrapper(),
                 new ClientUserBootstrapper(),
                 new CustomerBootstrapper(),
+                new WarehouseBootstrapper(),
                 new CategoryBootstrapper(),
                 new ProductBootstrapper(),
                 new ProductOrderBootstrapper(),
