@@ -23,6 +23,8 @@
     <class>eapli.base.ordersmanagement.order.domain.LineOrder</class>
     <class>eapli.base.ordersmanagement.order.domain.PriceTable</class>
     <class>eapli.base.warehousemanagement.domain.AGV</class>
+    <class>eapli.base.warehousemanagement.domain.Aisle</class>
+    <class>eapli.base.warehousemanagement.domain.AGVDock</class>
     <class>eapli.base.ordersmanagement.answer.domain.Answer</class>
 
     <properties>
