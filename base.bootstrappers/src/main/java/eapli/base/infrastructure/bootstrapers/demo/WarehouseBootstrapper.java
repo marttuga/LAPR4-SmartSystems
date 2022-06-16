@@ -25,7 +25,7 @@ public class WarehouseBootstrapper implements Action {
     public boolean execute() {
         Aisle aisle = new Aisle(1,5,1,5,1,1,1,"accessible");
         List<Aisle> aisles = new ArrayList<>();
-        AGVDock agvDock = new AGVDock("Dock1",1,3,1,3,1,1,"accessible");
+        AGVDock agvDock = new AGVDock("Dock1",new WarehouseID("1"),1,3,1,3,1,1,"accessible");
         List<AGVDock>agvDocks = new ArrayList<>();
         aisles.add(aisle);
         aisleRepository.save(aisle);

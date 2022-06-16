@@ -24,7 +24,7 @@ public class AgvBootstrapper implements Action {
 
     @Override
     public boolean execute() {
-        AGVDock agvDock = new AGVDock("555", 2, 2, 2,
+        AGVDock agvDock = new AGVDock("555",new WarehouseID("1"), 2, 2, 2,
                 2, 2, 2, "test");
         agvDockRepository.save(agvDock);
         List<Sensor> sensorList = new ArrayList<>();
