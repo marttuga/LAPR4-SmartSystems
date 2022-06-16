@@ -2,6 +2,9 @@ package eapli.base.warehousemanagement.domain;
 
 import eapli.framework.application.ApplicationService;
 
+import javax.persistence.Transient;
+import java.util.List;
+
 @ApplicationService
 public class AGVBuilder {
 
@@ -12,6 +15,10 @@ public class AGVBuilder {
     private String AGVDescription;
 
     private Model model;
+
+    private Position position;
+
+    private List<Sensor> sensorList;
 
     private MaxWeightCarry maxWeightCarry;
 
@@ -54,7 +61,17 @@ public class AGVBuilder {
         return this;
     }
 
+    public AGVBuilder withPosition(final Position position) {
+        this.position = position;
+        return this;
+    }
+
+    public AGVBuilder withSensors(final List<Sensor> sensorList) {
+        this.sensorList = sensorList;
+        return this;
+    }
+
     public AGV build(){
-        return new AGV(identifier,autonomy,agvDock,AGVDescription,model,maxWeightCarry,status);
+        return new AGV(identifier, autonomy, agvDock, AGVDescription, model, position, sensorList, maxWeightCarry,status);
     }
 }

@@ -10,9 +10,11 @@ import eapli.base.utilitarianClasses.Utils;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
 import eapli.framework.presentation.console.AbstractUI;
+import org.springframework.security.crypto.codec.Hex;
 
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 
@@ -29,6 +31,7 @@ public class QuestionnaireAnswerUI extends AbstractUI {
         List<Survey> allSurvey = questionnaireAnswerController.findAllSurveys();
         List<SurveyDTO> surveysForCustomer = new ArrayList<>();
 
+       questionnaireAnswerController.printSurveysList(allSurvey);
         for (Survey s : allSurvey) {
             for (Customer c : s.getCustomers()) {
                 if (c == customer) {
@@ -40,9 +43,22 @@ public class QuestionnaireAnswerUI extends AbstractUI {
         for (SurveyDTO sd:surveysForCustomer) {
             System.out.println(sd);
         }
+
         String oi = Utils.readLine("Choose the questionnaire to answer: ");
         Survey o= questionnaireAnswerController.findSurveyId(oi);
+        File file = null;
+        if (o.getSurveyDescription().contains("questionnaire1")){
+           file = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire.txt");
+        }else if (o.getSurveyDescription().contains("questionnaire2")){
+            file = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire2.txt");
+        }else if (o.getSurveyDescription().contains("questionnaire3")){
+            file = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire3.txt");
 
+        }
+
+        assert file != null;
+        String path = file.getAbsolutePath();
+        System.out.println(path);
         //String q = questionnaireAnswerController.questionnaires(questionnaireAnswerController.showOptionsQuestionaires());
 
         List<String> questionary = new LinkedList();
@@ -51,7 +67,7 @@ public class QuestionnaireAnswerUI extends AbstractUI {
         try {
             System.out.println("========================================");
 
-            Scanner sc = new Scanner(new FileReader((Arrays.toString(o.getSurveyFile()))));
+            Scanner sc = new Scanner(new FileReader(path));
             boolean flag = false; //se for uma questao
             boolean flagSC = false; //se for de escolha
             boolean flagTf = false; //se for de texto

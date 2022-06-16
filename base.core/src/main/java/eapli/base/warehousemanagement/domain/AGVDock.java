@@ -3,14 +3,12 @@ package eapli.base.warehousemanagement.domain;
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
-@Embeddable
+@Entity
 public class AGVDock implements ValueObject, Comparable<AGVDock>{
 
-    @Transient
+    @Id
     private String agvDockID;
     @Transient
     private int lsquareBeginAGVDock;

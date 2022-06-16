@@ -25,7 +25,7 @@ public class CustomerBootstrapper implements Action {
     @Override
     public boolean execute() {
         Date date1 = new Date(Calendar.YEAR+90, Calendar.FEBRUARY, Calendar.DAY_OF_MONTH);
-        Date date2 = new Date(Calendar.YEAR+110, Calendar.FEBRUARY, Calendar.DAY_OF_MONTH);
+        Date date2 = new Date(Calendar.YEAR+70, Calendar.FEBRUARY, Calendar.DAY_OF_MONTH);
         createCostumer("Mary", "Mendes", "mary@gmail.com",
                 date1, "937263547", "0936527",
                 "Sunset Boulevard", 78, "Los angeles", "USA",90210);

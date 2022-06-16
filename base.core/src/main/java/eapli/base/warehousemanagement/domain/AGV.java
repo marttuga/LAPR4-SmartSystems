@@ -5,6 +5,7 @@ import eapli.base.warehousemanagement.activity.Positioning;
 import eapli.framework.domain.model.AggregateRoot;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class AGV implements AggregateRoot<Identifier> {
@@ -16,7 +17,7 @@ public class AGV implements AggregateRoot<Identifier> {
     @Embedded
     private Autonomy autonomy;
 
-    @Embedded
+    @OneToOne
     private AGVDock agvDock;
 
     private String AGVDescription;
@@ -27,6 +28,11 @@ public class AGV implements AggregateRoot<Identifier> {
     @Embedded
     private Speed speed;
 
+    @Embedded
+    private Position position;
+
+    @Transient
+    private List<Sensor> sensorList;
 
     @Embedded
     private MaxWeightCarry maxWeightCarry;
@@ -41,22 +47,28 @@ public class AGV implements AggregateRoot<Identifier> {
 
     }
 
-    public AGV(Identifier identifier, Autonomy autonomy, AGVDock agvDock, String AGVDescription, Model model, MaxWeightCarry maxWeightCarry, Status status) {
+    public AGV(Identifier identifier, Autonomy autonomy, AGVDock agvDock, String AGVDescription,
+               Model model, Position position, List<Sensor> sensorList, MaxWeightCarry maxWeightCarry, Status status) {
         this.identifier = identifier;
         this.autonomy = autonomy;
         this.agvDock = agvDock;
         this.AGVDescription = AGVDescription;
         this.model = model;
+        this.position = position;
+        this.sensorList = sensorList;
         this.maxWeightCarry = maxWeightCarry;
         this.status = status;
     }
 
-    public AGV(Identifier identifier, Autonomy autonomy, AGVDock agvDock, String AGVDescription, Model model, MaxWeightCarry maxWeightCarry, Status status, ProductOrder order) {
+    public AGV(Identifier identifier, Autonomy autonomy, AGVDock agvDock, String AGVDescription,
+               Model model, Position position, List<Sensor> sensorList, MaxWeightCarry maxWeightCarry, Status status, ProductOrder order) {
         this.identifier = identifier;
         this.autonomy = autonomy;
         this.agvDock = agvDock;
         this.AGVDescription = AGVDescription;
         this.model = model;
+        this.position = position;
+        this.sensorList = sensorList;
         this.maxWeightCarry = maxWeightCarry;
         this.status = status;
         this.order = order;
