@@ -3,13 +3,12 @@ package eapli.base.warehousemanagement.domain;
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
-@Embeddable
-public class Aisle implements ValueObject, Comparable<Aisle>  {
+@Entity
+public class Aisle /*implements ValueObject, Comparable<Aisle>*/  {
 
+    @Id
     private int aisleId;
     @Column(insertable = false,updatable = false)
     @Transient
@@ -62,10 +61,10 @@ public class Aisle implements ValueObject, Comparable<Aisle>  {
     }
 
 
-    @Override
+/*    @Override
     public int compareTo(Aisle o) {
         return 0;
-    }
+    }*/
 
     public int getAisleId() {
         return aisleId;

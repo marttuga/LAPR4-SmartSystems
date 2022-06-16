@@ -5,6 +5,7 @@ import eapli.base.warehousemanagement.activity.Positioning;
 import eapli.framework.domain.model.AggregateRoot;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class AGV implements AggregateRoot<Identifier> {
@@ -16,7 +17,7 @@ public class AGV implements AggregateRoot<Identifier> {
     @Embedded
     private Autonomy autonomy;
 
-    @Embedded
+    @OneToOne
     private AGVDock agvDock;
 
     private String AGVDescription;
