@@ -27,6 +27,7 @@ public class ConfigureAGVController {
         final AGV agv = new AGV(identifier, autonomy, agvDock, AGVDescription, model, position, sensorList, maxWeightCarry,Status.FREE);
         this.agvRepository.save(agv);
         txCtx.commit();
+
         return agv;
     }
 
@@ -41,6 +42,7 @@ public class ConfigureAGVController {
                 Status.FREE, order);
         this.agvRepository.save(agv);
         txCtx.commit();
+
         return agv;
     }
 }
