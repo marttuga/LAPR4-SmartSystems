@@ -37,4 +37,8 @@ public class Answer implements AggregateRoot<AnswerId> {
     public AnswerId identity() {
         return null;
     }
+
+    public Map<String, String> getEvery_Answer() {
+        return every_Answer;
+    }
 }
