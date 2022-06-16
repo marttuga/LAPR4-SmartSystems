@@ -18,7 +18,7 @@ class AGVTest {
     Model model = new Model("x");
     MaxWeightCarry maxWeightCarry = new MaxWeightCarry(120);
     Autonomy autonomy = new Autonomy(100);
-    AGVDock agvDock = new AGVDock("D1", 1, 3, 1, 3, 1, 3, "l+");
+    AGVDock agvDock = new AGVDock("D1",new WarehouseID("1"), 1, 3, 1, 3, 1, 3, "l+");
     //AGV agv = new AGV(identifier, autonomy, agvDock, "automatic", model, maxWeightCarry , Status.FREE);
 
     AGVTest() throws IllegalAccessException {
