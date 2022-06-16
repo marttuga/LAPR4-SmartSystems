@@ -1,13 +1,13 @@
-package eapli.base.warehousemanagement.application;
+/*package eapli.base.warehousemanagement.application;
 
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.warehousemanagement.domain.Warehouse;
 import eapli.base.warehousemanagement.repositories.WarehouseRepository;
 import eapli.framework.application.UseCaseController;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
-import eapli.framework.infrastructure.authz.application.AuthzRegistry;
+import eapli.framework.infrastructure.authz.application.AuthzRegistry;*/
 
-@UseCaseController
+/*@UseCaseController
 public class UploadFileController {
    UploadFileService read = new UploadFileService();
 
@@ -23,4 +23,4 @@ public class UploadFileController {
       read.uploadFile(file_name);
    }
 
-}
+}*/

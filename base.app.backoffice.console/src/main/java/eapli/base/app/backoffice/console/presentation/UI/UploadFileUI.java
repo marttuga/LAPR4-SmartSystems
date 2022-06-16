@@ -1,3 +1,4 @@
+/*
 package eapli.base.app.backoffice.console.presentation.UI;
 
 import eapli.base.warehousemanagement.application.UploadFileController;
@@ -5,6 +6,8 @@ import eapli.framework.io.util.Console;
 import eapli.framework.presentation.console.AbstractUI;
 
 import java.util.Scanner;
+*/
+/*
 
 public class UploadFileUI extends AbstractUI {
 
@@ -41,3 +44,4 @@ public class UploadFileUI extends AbstractUI {
         }
 
 }
+*/

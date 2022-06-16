@@ -1,3 +1,4 @@
+/*
 package eapli.base.warehousemanagement.application;
 
 import eapli.base.warehousemanagement.domain.*;
@@ -113,3 +114,4 @@ public class UploadFileService {
         }
     }
 }
+*/
