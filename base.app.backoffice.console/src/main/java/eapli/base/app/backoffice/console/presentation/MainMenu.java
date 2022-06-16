@@ -213,7 +213,7 @@ public class MainMenu extends AbstractUI {
    private Menu buildWarehouseEmployeeMenu() {
         final Menu menusMenu = new Menu("Warehouse Management >");
         menusMenu.addItem(CONFIGURE_AGV, "Configure AGV", new ConfigureAGVUI()::show);
-        menusMenu.addItem(UPLOAD_FILE, "Upload File", new UploadFileUI()::show);
+        //menusMenu.addItem(UPLOAD_FILE, "Upload File", new UploadFileUI()::show);
        menusMenu.addItem(AGV_TO_PREP_ORDER, "Get an order to an AGV", new AGVToPrepOrderUI()::doShow);
         menusMenu.addItem(DISPATCH_ORDER, "Dispatch orders for customer delivery", new DispatchOrdersUI()::doShow);
         menusMenu.addItem(REQUEST, "Requests", new GetAGVInfoUI()::doShow);
