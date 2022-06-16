@@ -39,7 +39,7 @@ public class SurveyBootstrapper implements Action {
         Map<String, String> answers  = new HashMap<>();
         answers.put("1","A");
         answers.put("2","C");
-        answers.put("3","A");
+        answers.put("3","Not Answered");
         answers.put("4","D");
         Answer answer = new Answer( new AnswerId("123"),customer, answers);
         answerList.add(answer);
