@@ -34,6 +34,7 @@ public class ConfigureAGVController {
                                      String AGVDescription, Model model, Position position, List<Sensor> sensorList,
                                      MaxWeightCarry maxWeightCarry, ProductOrder order) throws IllegalAccessException{
         authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.WAREHOUSE_EMPLOYEE);
+
         //begin transaction
         txCtx.beginTransaction();
         final AGV agv = new AGV(identifier, autonomy, agvDock, AGVDescription, model, position, sensorList, maxWeightCarry,
