@@ -129,6 +129,22 @@ public class AGV implements AggregateRoot<Identifier> {
         return order;
     }
 
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
+    public List<Sensor> getSensorList() {
+        return sensorList;
+    }
+
+    public void setSensorList(List<Sensor> sensorList) {
+        this.sensorList = sensorList;
+    }
+
     @Override
     public String toString() {
         return "AGV=" + identifier +
