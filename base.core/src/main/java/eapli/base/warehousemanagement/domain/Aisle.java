@@ -1,12 +1,13 @@
 package eapli.base.warehousemanagement.domain;
 
+import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
 
 import javax.persistence.*;
 
 @Entity
-public class Aisle /*implements ValueObject, Comparable<Aisle>*/  {
+public class Aisle implements AggregateRoot<Integer>  {
 
     @Id
     private int aisleId;
@@ -60,12 +61,6 @@ public class Aisle /*implements ValueObject, Comparable<Aisle>*/  {
         return new Aisle(aisleId);
     }
 
-
-/*    @Override
-    public int compareTo(Aisle o) {
-        return 0;
-    }*/
-
     public int getAisleId() {
         return aisleId;
     }
@@ -96,5 +91,15 @@ public class Aisle /*implements ValueObject, Comparable<Aisle>*/  {
 
     public String getAccessibility() {
         return accessibility;
+    }
+
+    @Override
+    public boolean sameAs(Object other) {
+        return false;
+    }
+
+    @Override
+    public Integer identity() {
+        return null;
     }
 }

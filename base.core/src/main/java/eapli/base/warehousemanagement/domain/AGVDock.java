@@ -1,12 +1,13 @@
 package eapli.base.warehousemanagement.domain;
 
+import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
 
 import javax.persistence.*;
 
 @Entity
-public class AGVDock implements ValueObject, Comparable<AGVDock>{
+public class AGVDock implements AggregateRoot<String> {
 
     @Id
     private String agvDockID;
@@ -60,11 +61,6 @@ public class AGVDock implements ValueObject, Comparable<AGVDock>{
         return new AGVDock(agvDockID);
     }
 
-    @Override
-    public int compareTo(AGVDock o) {
-        return 0;
-    }
-
     public String getAgvDockID() {
         return agvDockID;
     }
@@ -95,5 +91,15 @@ public class AGVDock implements ValueObject, Comparable<AGVDock>{
 
     public String getAccessibility() {
         return accessibility;
+    }
+
+    @Override
+    public boolean sameAs(Object other) {
+        return false;
+    }
+
+    @Override
+    public String identity() {
+        return null;
     }
 }
