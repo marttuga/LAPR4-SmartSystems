@@ -11,9 +11,21 @@ class HTTPAjaxRequest {
 class HTTPmessage {
 }
 
+class AGVRepository{
+}
+
+class GetAllAGVController{
+}
+
+class AGV{
+}
+
 
 WebDashboard ...> HTTPAjaxRequest
 HTTPAjaxRequest ...> HTTPmessage
+WebDashboard ..> GetAllAGVController
+GetAllAGVController ..> AGVRepository
+AGVRepository ..> AGV
 
 
 @enduml
