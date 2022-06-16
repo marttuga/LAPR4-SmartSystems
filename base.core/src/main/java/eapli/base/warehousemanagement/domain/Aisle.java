@@ -11,26 +11,22 @@ public class Aisle implements AggregateRoot<Integer>  {
 
     @Id
     private int aisleId;
-    @Column(insertable = false,updatable = false)
-    @Transient
+
+    @Embedded
+    private WarehouseID warehouseID;
+
     private int lsquareBegin;
-    @Column(insertable = false,updatable = false)
-    @Transient
+
     private int wsquareBegin;
-    @Column(insertable = false,updatable = false)
-    @Transient
+
     private int lsquareEnd;
-    @Column(insertable = false,updatable = false)
-    @Transient
+
     private int wsquareEnd;
-    @Column(insertable = false,updatable = false)
-    @Transient
+
     private int beginDepth;
-    @Column(insertable = false,updatable = false)
-    @Transient
+
     private int endDepth;
-    @Column(insertable = false,updatable = false)
-    @Transient
+
     private String accessibility;
 
     public Aisle(final String aisleId) {
@@ -44,10 +40,11 @@ public class Aisle implements AggregateRoot<Integer>  {
     protected Aisle() {
     }
 
-    public Aisle(int aisleId, int lsquareBegin, int wsquareBegin,
+    public Aisle(int aisleId, WarehouseID warehouseID, int lsquareBegin, int wsquareBegin,
                  int lsquareEnd, int wsquareEnd,
                  int beginDepth, int endDepth, String accessibility) {
         this.aisleId = aisleId;
+        this.warehouseID = warehouseID;
         this.lsquareBegin = lsquareBegin;
         this.wsquareBegin = wsquareBegin;
         this.lsquareEnd = lsquareEnd;
@@ -91,6 +88,10 @@ public class Aisle implements AggregateRoot<Integer>  {
 
     public String getAccessibility() {
         return accessibility;
+    }
+
+    public WarehouseID getWarehouseID() {
+        return warehouseID;
     }
 
     @Override
