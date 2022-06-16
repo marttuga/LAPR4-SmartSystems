@@ -7,10 +7,11 @@ import eapli.base.ordersmanagement.customer.domain.CustomerId;
 import eapli.framework.domain.repositories.DomainRepository;
 
 import java.util.List;
+import java.util.Map;
 
 public interface AnswerRepository extends DomainRepository<AnswerId, Answer> {
     public List<Answer> universe(String id);
 
-    public List<Answer> universeAnswers(String id);
-    
+    public Map<String, String> answers();
+
 }
