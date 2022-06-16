@@ -5,6 +5,7 @@ import eapli.base.ordersmanagement.order.domain.ProductOrder;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
 import eapli.base.warehousemanagement.application.ConfigureAGVController;
 import eapli.base.warehousemanagement.domain.*;
+import eapli.base.warehousemanagement.repositories.AGVDockRepository;
 import eapli.base.warehousemanagement.repositories.AGVRepository;
 import eapli.framework.actions.Action;
 import eapli.framework.domain.repositories.ConcurrencyException;
@@ -18,12 +19,14 @@ public class AgvBootstrapper implements Action {
     private static final Logger LOGGER = LoggerFactory.getLogger(AgvBootstrapper.class);
     private final ConfigureAGVController configureAGVController = new ConfigureAGVController();
     private final AGVRepository agvRepository = PersistenceContext.repositories().agv();
+    private final AGVDockRepository agvDockRepository = PersistenceContext.repositories().agvDock();
     private final OrderRepository orderRepository = PersistenceContext.repositories().orders();
 
     @Override
     public boolean execute() {
         AGVDock agvDock = new AGVDock("555", 2, 2, 2,
                 2, 2, 2, "test");
+        agvDockRepository.save(agvDock);
         List<Sensor> sensorList = new ArrayList<>();
         Sensor a = new Sensor("a", 0,1); sensorList.add(a);
         Sensor s = new Sensor("s", 1,0); sensorList.add(s);
