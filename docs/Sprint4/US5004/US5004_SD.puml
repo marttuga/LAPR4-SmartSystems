@@ -1,0 +1,59 @@
+@startuml
+autonumber
+'hide footbox
+
+actor "client:AGVDigitalTwinCli" as Client
+participant "ChangeStatusAGVController" as OS
+participant ":PersistenceContext" as PC
+participant "AGVManagerServer" as AMS
+participant HandleClient <<Thread>>
+participant "MessageParser" as MP
+participant "SPOMSProtocol" as SP
+participant ":RepositoryFactory" as RF
+participant ":AGVRepository" as AGVRepo
+
+activate Client
+Client -> AMS : Sync()
+activate AMS
+
+AMS -> AMS : accept
+
+Client --> AMS: request
+activate HandleClient
+
+AMS -> HandleClient : start
+deactivate AMS
+
+HandleClient -> MP : parse(request)
+
+MP -> SP : new
+
+HandleClient -> SP : execute
+activate SP
+
+SP -> SP : buildResponse
+
+SP --> HandleClient : response
+deactivate SP
+
+SP -> OS : updateStatus()
+activate OS
+
+OS -> PC : repositories()
+activate PC
+deactivate OS
+
+PC -> RF : create()
+activate RF
+deactivate PC
+
+RF -> AGVRepo : create()
+deactivate RF
+activate AGVRepo
+
+
+HandleClient --> BackofficeApp : response
+deactivate HandleClient
+
+
+@enduml
