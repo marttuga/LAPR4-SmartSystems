@@ -45,9 +45,13 @@ parameterType : parameterDiffType ;
 
 parameterDiffType : TYPESINGLE parameterSingleChoice | parameterFreeText | parameterMultipleChoice ;
 
-parameterSingleChoice : (CHOICE SPACE STRING END)+ | (CHOICE SPACE INT END)+  ;
+parameterSingleChoice : choices  ;
 
-parameterFreeText: TYPEFREE ;
+choices : choice | choice choices ;
+
+choice : CHOICE SPACE STRING END | CHOICE SPACE INT END ;
+
+parameterFreeText : TYPEFREE ;
 
 parameterMultipleChoice: parameterSingleChoice parameterSingleChoice ;
 
