@@ -72,10 +72,6 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
         return alphanumericCode.toString();
     }
 
-    @Nullable
-    public List<Answer> getAnswers() {
-        return answers;
-    }
 
     public byte[] getSurveyFile() {
         return surveyFile;
