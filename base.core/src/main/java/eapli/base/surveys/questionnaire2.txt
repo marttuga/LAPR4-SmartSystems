@@ -38,7 +38,7 @@ Section: 2.
 
 STitle: Satisfaction;
 Description: Section Description ;
-Obligatoriness: Optional
+Obligatoriness: Optional;
 
 Q5.
 Obligatoriness: Mandatory.

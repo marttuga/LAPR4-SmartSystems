@@ -31,7 +31,9 @@ parameterSectionTitle : 'STitle: ' STRING SPACE STRING SPACE STRING END
 
 parameterSectionDesc : 'Description: ' (parameterText SPACE)* END | 'Description: ' parameterText  END | ;
 
-parameterOblig : MANDATORY | OPTIONAL;
+parameterOblig : OBLIG SPACE parameterObligatoriness ;
+
+parameterObligatoriness : OBLIGATORINESS ;
 
 parameterStrings : STRING | STRING parameterStrings ;
 
@@ -43,13 +45,17 @@ parameterType : parameterDiffType ;
 
 parameterDiffType : TYPESINGLE parameterSingleChoice | parameterFreeText | parameterMultipleChoice ;
 
-parameterSingleChoice : (CHOICE SPACE STRING END)+ | (CHOICE SPACE INT END)+  ;
+parameterSingleChoice : choices  ;
 
-parameterFreeText: TYPEFREE ;
+choices : choice | choice choices ;
+
+choice : CHOICE SPACE STRING END | CHOICE SPACE INT END ;
+
+parameterFreeText : TYPEFREE ;
 
 parameterMultipleChoice: parameterSingleChoice parameterSingleChoice ;
 
-parameterFinalMes : 'Final Message: ' parameterText | ;
+parameterFinalMes : 'Final Message:' (STRING SPACE)* STRING END (STRING SPACE)* STRING END |  ;
 
 INT : [0-9]+ ;
 STRING : [A-Za-z0-9]+ | '_' | '\''  ;
@@ -59,13 +65,11 @@ CHOICE : INT '.' ;
 QUEST : 'Questionnaire' ;
 SECTION : 'Section: ' ;
 SIGNAL : ':' | '-' | '.' ;
-MANDATORY : 'Obligatoriness: Mandatory.' ;
-OPTIONAL : 'Obligatoriness: Optional.' | 'Obligatoriness: Optional'  ;
+OBLIG : 'Obligatoriness:' ;
 TYPESINGLE : 'Single-Choice.' | 'SINGLE-CHOICE.' ;
 TYPEFREE: 'Free-Text.' | 'FREE-TEXT.' ;
 EMAIL : STRING '@' STRING '.' STRING  ;
 NEWLINE : ('\r'? '\n' | '\r' )+ -> skip;
 SPACE : [,-/: \t]+ ;
 SPACE1: [ \t] -> skip;
-OBLIGATORINESS : 'Mandatory.' | 'Optional.'  ;
-
+OBLIGATORINESS : 'Mandatory.' | 'Optional.' | 'Optional;';

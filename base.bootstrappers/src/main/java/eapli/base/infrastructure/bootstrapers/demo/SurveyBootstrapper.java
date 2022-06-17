@@ -38,12 +38,16 @@ public class SurveyBootstrapper implements Action {
 
         customers.add(customerController.findByCustomerEmail("mary@gmail.com"));
 
-        Map<String, String> answers = new HashMap<>();
-        answers.put("1", "A");
-        answers.put("2", "Not Answered");
-        answers.put("3", "A");
-        answers.put("4", "D");
-        Answer answer = new Answer(new AnswerId("123"), customer, answers);
+        Map<String, String> answers  = new HashMap<>();
+        answers.put("1","87654321");
+        answers.put("2","Not Answered");
+        answers.put("3","2");
+        answers.put("4","gabi@gmail.com");
+        answers.put("5","4");
+        answers.put("6","yes");
+        answers.put("7","yes");
+        answers.put("8","no");
+        Answer answer = new Answer( new AnswerId("123"),customer, answers);
         answerList.add(answer);
 
         File file = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire2.txt");

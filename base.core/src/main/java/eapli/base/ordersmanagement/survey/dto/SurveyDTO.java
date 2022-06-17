@@ -20,4 +20,11 @@ public class SurveyDTO {
     public String getSurveyDescription() {
         return surveyDescription;
     }
+
+    @Override
+    public String toString() {
+        return
+                "Survey ID:" + surveyID  +
+                ", Survey Description:" + surveyDescription + "\n";
+    }
 }

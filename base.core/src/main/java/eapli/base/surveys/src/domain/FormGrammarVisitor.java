@@ -95,6 +95,12 @@ public interface FormGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitParameterOblig(FormGrammarParser.ParameterObligContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link FormGrammarParser#parameterObligatoriness}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParameterObligatoriness(FormGrammarParser.ParameterObligatorinessContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link FormGrammarParser#parameterStrings}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -130,6 +136,18 @@ public interface FormGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitParameterSingleChoice(FormGrammarParser.ParameterSingleChoiceContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link FormGrammarParser#choices}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitChoices(FormGrammarParser.ChoicesContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link FormGrammarParser#choice}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitChoice(FormGrammarParser.ChoiceContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link FormGrammarParser#parameterFreeText}.
 	 * @param ctx the parse tree

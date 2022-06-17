@@ -16,18 +16,20 @@ public class StatisticalReportUI extends AbstractUI {
             System.out.println("==== Here are all the surveys available in the System! =====");
             System.out.println("============================================================");
             for (SurveyDTO dto: controller.showSurveys()) {
-                System.out.println(dto);
+                System.out.println(dto);;
             }
             //controller.showSurveys();
             String choice = Utils.readLine("== Please select the SurveyID to see a statistical report ==");
             System.out.println("====================== UNIVERSE ============================");
             System.out.println("\nFor this report there were considered a total of " + controller.calculateUniverse(choice) + " customers.\n");
-            System.out.println("============================================================\n");
-            System.out.println("============== Number Questions Answered ===================");
-            System.out.println("\nThere were a total of " + controller.calculateAnswers(choice) + " answered questions registered for this survey.\n");
             System.out.println("================ % Questions Answered =====================");
-            //System.out.println("\nThere were a total of " + controller.calculatePercentage(choice) + " answered questions registered for this survey.\n");
-            System.out.println("============================================================\n");
+            System.out.println("\nThere rate of answered questions is " + controller.calculatePercentage(choice) + "%.\n");
+            System.out.println("============== Number Questions Answered ===================");
+            System.out.println("\nThere are a total of " + controller.calculateAnswers(choice) + " answered questions registered for this survey.\n");
+            System.out.println("================ Single Choice Questions ===================");
+            System.out.println("\nThere are a total of " + controller.calculateAnswers(choice) + " answered questions registered for this survey.\n");
+            System.out.println("============================================================");
+            controller.getStatisticalReport(choice);
 
             return true;
         }catch (Exception e) {
