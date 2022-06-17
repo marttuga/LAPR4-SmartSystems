@@ -5,14 +5,12 @@ import eapli.base.ordersmanagement.customer.applicaion.RegisterCustomerControlle
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.customer.domain.CustomerGender;
 import eapli.base.ordersmanagement.customer.repositories.CustomerRepository;
-import eapli.base.ordersmanagement.order.domain.SalesRegion;
 import eapli.base.ordersmanagement.survey.application.CreateNewQuestionnaireController;
+import eapli.base.ordersmanagement.survey.application.SurveyNotificationOutput;
 import eapli.base.ordersmanagement.survey.domain.*;
-import eapli.base.utilitarianClasses.Utils;
 import eapli.framework.io.util.Console;
 import eapli.framework.presentation.console.AbstractUI;
 import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.lang3.RandomStringUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -49,15 +47,15 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
         SurveyRule s;
         int ruleA;
         String ruleG;
+        Survey sd;
 
-
-        int answer= ctrl.showOptionsRules();
+        int answer = ctrl.showOptionsRules();
         switch (answer) {
             case (1):
-                 ruleA = Console.readInteger("Minimum age rule: ");
-                 s = new SurveyRule((ruleA));
+                ruleA = Console.readInteger("Minimum age rule: ");
+                s = new SurveyRule((ruleA));
 
-               allCustomers = controller.findAllCustomers();
+                allCustomers = controller.findAllCustomers();
                 customers = new ArrayList<>();
 
                 for (Customer c : allCustomers) {
@@ -67,8 +65,6 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                     }
                 }
                 try {
-
-
 
                     System.out.println(customers);
                     File file = new File(fileName);
@@ -82,22 +78,30 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                     else {
                         fileInputStream.close();
                         try {
-                           ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null);
+                            sd= ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null);
+
+                            for (Customer c : customers) {
+
+                                ctrl.outPutNotification(sd, c);
+
+                            }
 
                         } catch (Exception e) {
                             System.out.println("Error saving the questionnaire: " + e);
                         }
                     }
+
+
                 } catch (IOException ex) {
                     throw new IllegalStateException("Error saving the questionnaire: " + ex);
                 }
+
+
                 break;
 
 
-
-
             case (2):
-                 ruleG = Console.readLine("Gender rule:(F/M/O)");
+                ruleG = Console.readLine("Gender rule:(F/M/O)");
                 switch (ruleG.toUpperCase()) {
                     case "F":
                         ruleG = String.valueOf(CustomerGender.FEMALE);
@@ -109,15 +113,15 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                         ruleG = String.valueOf(CustomerGender.OTHER);
                         break;
                 }
-                 s = new SurveyRule((ruleG));
-                 allCustomers = controller.findAllCustomers();
+                s = new SurveyRule((ruleG));
+                allCustomers = controller.findAllCustomers();
 
 
                 for (Customer c : allCustomers) {
                     if (c.getCustomerGender().equals(s.getRuleGender())) {
                         customers.add(c);
                     }
-                   //00 System.out.println(customers);
+                    //00 System.out.println(customers);
                 }
 
                 //System.out.println(customers);
@@ -136,7 +140,12 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                         fileInputStream.close();
                         try {
 
-                            ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null);
+                            sd=ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null);
+
+                            for (Customer c : customers) {
+                                ctrl.outPutNotification(sd, c);
+
+                            }
 
                         } catch (Exception e) {
                             System.out.println("Error saving the questionnaire in  question: " + e);
@@ -148,12 +157,10 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                 break;
 
 
-
-
             case (3):
-                 ruleA = Console.readInteger("Minimum age rule: ");
+                ruleA = Console.readInteger("Minimum age rule: ");
 
-                 ruleG = Console.readLine("Gender rule:(F/M/O)");
+                ruleG = Console.readLine("Gender rule:(F/M/O)");
                 switch (ruleG.toUpperCase()) {
                     case "F":
                         ruleG = String.valueOf(CustomerGender.FEMALE);
@@ -165,10 +172,10 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                         ruleG = String.valueOf(CustomerGender.OTHER);
                         break;
                 }
-                 s = new SurveyRule(ruleA,(ruleG));
+                s = new SurveyRule(ruleA, (ruleG));
 
-                 allCustomers = controller.findAllCustomers();
-                 customers = new ArrayList<>();
+                allCustomers = controller.findAllCustomers();
+                customers = new ArrayList<>();
 
                 for (Customer c : allCustomers) {
                     if (c.getCustomerBirthDay().getAge() > s.getRuleAge() && c.getCustomerGender().toString().equals(s.getRuleGender())) {
@@ -191,7 +198,12 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                     else {
                         fileInputStream.close();
                         try {
-                            ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null);
+                           sd= ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null);
+
+                            for (Customer c : customers) {
+                                ctrl.outPutNotification(sd, c);
+
+                            }
 
                         } catch (Exception e) {
                             System.out.println("Error saving the questionnaire: " + e);
@@ -202,7 +214,6 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                 }
                 break;
         }
-
 
 
         //}
