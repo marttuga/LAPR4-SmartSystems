@@ -37,4 +37,10 @@ public class Answer implements AggregateRoot<AnswerId> {
     public AnswerId identity() {
         return null;
     }
+
+    @Override
+    public String toString() {
+        return "Answer Id=" + answerId.toString() +
+                "/ customer=" + customer ;
+    }
 }
