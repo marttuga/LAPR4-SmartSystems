@@ -179,7 +179,7 @@ public class QuestionnaireAnswerUI extends AbstractUI {
 
             Map<String, String> map = new HashMap<>();
             for (int i = 0; i < answers.size(); i++) {
-                map.put(String.valueOf(i + 1), answers.get(i));
+                map.put("Q"+(i + 1)+".", answers.get(i));
 
             }
             System.out.println(map);

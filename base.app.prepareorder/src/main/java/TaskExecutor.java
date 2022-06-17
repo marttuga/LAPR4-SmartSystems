@@ -66,7 +66,7 @@ public class TaskExecutor implements Runnable {
                 for (int j = 0; j < threads.size(); j++){
                     System.out.println("Running thread " + Thread.currentThread().getName());
                     Thread.sleep(100);
-                    threads.get(i).join();                  //Wait for a thread to finish
+                    threads.get(j).join();                  //Wait for a thread to finish
                 }
                 semaphores.get(i).release();
             }
