@@ -1,10 +1,11 @@
-package eapli.base.warehousemanagement.domain;
+/*package eapli.base.warehousemanagement.domain;
 
 import eapli.base.ordersmanagement.order.domain.OrderID;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Test;*/
 
 import static org.junit.jupiter.api.Assertions.*;
+/*
 
 class AisleTest {
 
@@ -70,4 +71,5 @@ class AisleTest {
         Assertions.assertNotEquals(a.getAccessibility(), a1.getAccessibility());
     }
 
-}
+
+}*/

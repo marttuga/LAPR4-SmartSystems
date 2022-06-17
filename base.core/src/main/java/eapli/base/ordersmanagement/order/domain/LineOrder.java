@@ -54,6 +54,10 @@ public class LineOrder implements AggregateRoot<LineOrderID> {
         return priceOrderWithoutTaxes;
     }
 
+    public Set<ProductItem> getLineOrderList() {
+        return lineOrderList;
+    }
+
     @Override
     public boolean sameAs(Object other) {
         return false;

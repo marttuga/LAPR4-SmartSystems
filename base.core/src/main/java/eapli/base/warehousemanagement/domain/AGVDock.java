@@ -1,31 +1,34 @@
 package eapli.base.warehousemanagement.domain;
 
+import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
-@Embeddable
-public class AGVDock implements ValueObject, Comparable<AGVDock>{
+@Entity
+public class AGVDock implements AggregateRoot<String> {
 
-    @Transient
+
+    @Id
     private String agvDockID;
-    @Transient
+
+    @Embedded
+    private WarehouseID warehouseID;
+
     private int lsquareBeginAGVDock;
-    @Transient
+
     private int wsquareBeginAGVDock;
-    @Transient
+
     private int lsquareEndAGVDock;
-    @Transient
+
     private int wsquareEndAGVDock;
-    @Transient
+
     private int lsquareDepthAGVDock;
-    @Transient
+
     private int wsquareDepthAGVDock;
     @Column(insertable = false, updatable = false)
-    @Transient
+
     private String accessibility;
 
 
@@ -40,10 +43,11 @@ public class AGVDock implements ValueObject, Comparable<AGVDock>{
     public AGVDock(int agvDockID) {
     }
 
-    public AGVDock(String agvDockID, int lsquareBeginAGVDock, int wsquareBeginAGVDock,
+    public AGVDock(String agvDockID, WarehouseID warehouseID, int lsquareBeginAGVDock, int wsquareBeginAGVDock,
                    int lsquareEndAGVDock, int wsquareEndAGVDock, int lsquareDepthAGVDock,
                    int wsquareDepthAGVDock, String accessibility) {
         this.agvDockID = agvDockID;
+        this.warehouseID = warehouseID;
         this.lsquareBeginAGVDock = lsquareBeginAGVDock;
         this.wsquareBeginAGVDock = wsquareBeginAGVDock;
         this.lsquareEndAGVDock = lsquareEndAGVDock;
@@ -60,11 +64,6 @@ public class AGVDock implements ValueObject, Comparable<AGVDock>{
 
     public static AGVDock valueOf(final int agvDockID) {
         return new AGVDock(agvDockID);
-    }
-
-    @Override
-    public int compareTo(AGVDock o) {
-        return 0;
     }
 
     public String getAgvDockID() {
@@ -97,5 +96,15 @@ public class AGVDock implements ValueObject, Comparable<AGVDock>{
 
     public String getAccessibility() {
         return accessibility;
+    }
+
+    @Override
+    public boolean sameAs(Object other) {
+        return false;
+    }
+
+    @Override
+    public String identity() {
+        return null;
     }
 }

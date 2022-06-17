@@ -7,6 +7,7 @@ import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.framework.infrastructure.repositories.impl.inmemory.InMemoryDomainRepository;
 
 import java.util.List;
+import java.util.Map;
 
 public class InMemoryAnswerRepository extends InMemoryDomainRepository<Answer, AnswerId> implements AnswerRepository {
     static {
@@ -17,6 +18,6 @@ public class InMemoryAnswerRepository extends InMemoryDomainRepository<Answer, A
     public List<Answer> universe(String id){ return universe(id);  }
 
     @Override
-    public List<Answer> universeAnswers(String id){ return universeAnswers(id);  }
+    public Map<String, String> answers(){ return answers(); }
 
 }

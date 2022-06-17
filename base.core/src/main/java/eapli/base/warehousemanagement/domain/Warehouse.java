@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import eapli.framework.domain.model.AggregateRoot;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Warehouse implements AggregateRoot<WarehouseID> {
@@ -14,24 +15,22 @@ public class Warehouse implements AggregateRoot<WarehouseID> {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private WarehouseID WarehouseID;
 
-    @Transient
     @Embedded
     @JsonProperty
     private Plan plan;
-    @Transient
-    @Embedded
-    @JsonProperty
-    private Aisle aisle;
-    @Transient
+
+    @OneToMany
+    private List<Aisle> aisle;
+
     @Embedded
     @JsonProperty
     private Row row;
+
     @Embedded
     private Shelf shelf;
-    @Transient
-    @Embedded
-    @JsonProperty
-    private AGVDock agvDock;
+
+    @OneToMany
+    private List<AGVDock> agvDock;
 
 
 
@@ -41,7 +40,7 @@ public class Warehouse implements AggregateRoot<WarehouseID> {
 
 
     public Warehouse(eapli.base.warehousemanagement.domain.WarehouseID warehouseID, Plan plan,
-                     Aisle aisle, Row row, Shelf shelf, AGVDock agvDock) {
+                     List<Aisle> aisle, Row row, Shelf shelf, List<AGVDock> agvDock) {
         WarehouseID = warehouseID;
         this.plan = plan;
         this.aisle = aisle;
@@ -50,7 +49,7 @@ public class Warehouse implements AggregateRoot<WarehouseID> {
         this.agvDock = agvDock;
     }
 
-    public Warehouse(Plan plan, Aisle aisle, AGVDock agvDock) {
+    public Warehouse(Plan plan, List<Aisle> aisle, List<AGVDock> agvDock) {
         this.plan = plan;
         this.aisle = aisle;
         this.agvDock = agvDock;
@@ -75,7 +74,7 @@ public class Warehouse implements AggregateRoot<WarehouseID> {
         return plan;
     }
 
-    public Aisle getAisle() {
+    public List<Aisle> getAisle() {
         return aisle;
     }
 
@@ -87,7 +86,7 @@ public class Warehouse implements AggregateRoot<WarehouseID> {
         return shelf;
     }
 
-    public AGVDock getAgvDock() {
+    public List<AGVDock> getAgvDock() {
         return agvDock;
     }
 }

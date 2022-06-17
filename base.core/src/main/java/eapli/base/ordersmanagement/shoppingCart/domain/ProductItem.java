@@ -1,11 +1,9 @@
 package eapli.base.ordersmanagement.shoppingCart.domain;
 
-import eapli.base.ordersmanagement.order.domain.LineOrder;
 import eapli.base.ordersmanagement.product.domain.Product;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 import eapli.framework.general.domain.model.Money;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.util.HashSet;

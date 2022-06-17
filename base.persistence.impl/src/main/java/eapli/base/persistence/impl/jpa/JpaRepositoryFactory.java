@@ -23,7 +23,6 @@ package eapli.base.persistence.impl.jpa;
 import eapli.base.Application;
 import eapli.base.clientusermanagement.repositories.SignupRequestRepository;
 import eapli.base.infrastructure.persistence.RepositoryFactory;
-import eapli.base.ordersmanagement.answer.domain.Answer;
 import eapli.base.ordersmanagement.answer.repository.AnswerRepository;
 import eapli.base.ordersmanagement.category.repository.CategoryRepository;
 import eapli.base.ordersmanagement.customer.repositories.CustomerRepository;
@@ -33,7 +32,9 @@ import eapli.base.ordersmanagement.product.repositories.ProductRepository;
 import eapli.base.ordersmanagement.shoppingCart.repositories.ProductItemRepository;
 import eapli.base.ordersmanagement.shoppingCart.repositories.ShoppingCartRepository;
 import eapli.base.ordersmanagement.survey.repositories.SurveyRepository;
+import eapli.base.warehousemanagement.repositories.AGVDockRepository;
 import eapli.base.warehousemanagement.repositories.AGVRepository;
+import eapli.base.warehousemanagement.repositories.AisleRepository;
 import eapli.base.warehousemanagement.repositories.WarehouseRepository;
 import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.authz.domain.repositories.UserRepository;
@@ -146,6 +147,24 @@ public class JpaRepositoryFactory implements RepositoryFactory {
    @Override
     public WarehouseRepository warehouse() {
         return new JpaWarehouseRepository(Application.settings().getPersistenceUnitName());
+    }
+
+    public AGVDockRepository agvDock(TransactionalContext autoTx) {
+        return new JpaAGVDockRepository(autoTx);
+    }
+
+    @Override
+    public AGVDockRepository agvDock() {
+        return new JpaAGVDockRepository(Application.settings().getPersistenceUnitName());
+    }
+
+    public AisleRepository aisle(TransactionalContext autoTx) {
+        return new JpaAisleRepository(autoTx);
+    }
+
+
+    public AisleRepository aisle() {
+        return new JpaAisleRepository(Application.settings().getPersistenceUnitName());
     }
 
     @Override

@@ -1,36 +1,32 @@
 package eapli.base.warehousemanagement.domain;
 
+import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
-@Embeddable
-public class Aisle implements ValueObject, Comparable<Aisle>  {
+@Entity
+public class Aisle implements AggregateRoot<Integer>  {
 
+    @Id
     private int aisleId;
-    @Column(insertable = false,updatable = false)
-    @Transient
+
+    @Embedded
+    private WarehouseID warehouseID;
+
     private int lsquareBegin;
-    @Column(insertable = false,updatable = false)
-    @Transient
+
     private int wsquareBegin;
-    @Column(insertable = false,updatable = false)
-    @Transient
+
     private int lsquareEnd;
-    @Column(insertable = false,updatable = false)
-    @Transient
+
     private int wsquareEnd;
-    @Column(insertable = false,updatable = false)
-    @Transient
+
     private int beginDepth;
-    @Column(insertable = false,updatable = false)
-    @Transient
+
     private int endDepth;
-    @Column(insertable = false,updatable = false)
-    @Transient
+
     private String accessibility;
 
     public Aisle(final String aisleId) {
@@ -44,10 +40,11 @@ public class Aisle implements ValueObject, Comparable<Aisle>  {
     protected Aisle() {
     }
 
-    public Aisle(int aisleId, int lsquareBegin, int wsquareBegin,
+    public Aisle(int aisleId, WarehouseID warehouseID, int lsquareBegin, int wsquareBegin,
                  int lsquareEnd, int wsquareEnd,
                  int beginDepth, int endDepth, String accessibility) {
         this.aisleId = aisleId;
+        this.warehouseID = warehouseID;
         this.lsquareBegin = lsquareBegin;
         this.wsquareBegin = wsquareBegin;
         this.lsquareEnd = lsquareEnd;
@@ -59,12 +56,6 @@ public class Aisle implements ValueObject, Comparable<Aisle>  {
 
     public static Aisle valueOf(final String aisleId) {
         return new Aisle(aisleId);
-    }
-
-
-    @Override
-    public int compareTo(Aisle o) {
-        return 0;
     }
 
     public int getAisleId() {
@@ -97,5 +88,19 @@ public class Aisle implements ValueObject, Comparable<Aisle>  {
 
     public String getAccessibility() {
         return accessibility;
+    }
+
+    public WarehouseID getWarehouseID() {
+        return warehouseID;
+    }
+
+    @Override
+    public boolean sameAs(Object other) {
+        return false;
+    }
+
+    @Override
+    public Integer identity() {
+        return null;
     }
 }

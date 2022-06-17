@@ -1,6 +1,5 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
-import eapli.base.ordersmanagement.customer.applicaion.RegisterCustomerController;
 import eapli.base.ordersmanagement.survey.application.StatisticalReportController;
 import eapli.base.ordersmanagement.survey.dto.SurveyDTO;
 import eapli.base.utilitarianClasses.Utils;
@@ -22,9 +21,13 @@ public class StatisticalReportUI extends AbstractUI {
             //controller.showSurveys();
             String choice = Utils.readLine("== Please select the SurveyID to see a statistical report ==");
             System.out.println("====================== UNIVERSE ============================");
-            System.out.println("For this report there were considered a total of  customers.");
-            controller.calculateUniverse(choice);
-            System.out.println("============================================================");
+            System.out.println("\nFor this report there were considered a total of " + controller.calculateUniverse(choice) + " customers.\n");
+            System.out.println("============================================================\n");
+            System.out.println("============== Number Questions Answered ===================");
+            System.out.println("\nThere were a total of " + controller.calculateAnswers(choice) + " answered questions registered for this survey.\n");
+            System.out.println("================ % Questions Answered =====================");
+            //System.out.println("\nThere were a total of " + controller.calculatePercentage(choice) + " answered questions registered for this survey.\n");
+            System.out.println("============================================================\n");
 
             return true;
         }catch (Exception e) {
