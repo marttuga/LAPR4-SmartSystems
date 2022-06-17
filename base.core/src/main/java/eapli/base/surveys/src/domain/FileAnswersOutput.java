@@ -1,21 +1,19 @@
 package eapli.base.surveys.src.domain;
 
-import eapli.base.ordersmanagement.survey.domain.AlphanumericCode;
-import eapli.base.ordersmanagement.survey.domain.Survey;
-
 import java.io.File;
 import java.io.FileWriter;
 
-public class FileAnswers {
+public class FileAnswersOutput {
 
-    protected FileAnswers() {
+    protected FileAnswersOutput() {
     }
 
     public static boolean outPutResume(String answer) {
         try {
             FileWriter myWriter;
             String outputLocation = null;
-            outputLocation = "C:\\Users\\marti\\Documents\\2ANO2SEMESTRE\\LAPR4\\LEI21_22_S4_2DK_01\\base.core\\src\\main\\java\\eapli\\base\\surveys\\Answers.txt";
+            File file = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\Answers.txt");
+            outputLocation = file.getAbsolutePath();
             myWriter = new FileWriter(outputLocation, true);
 
             try {
