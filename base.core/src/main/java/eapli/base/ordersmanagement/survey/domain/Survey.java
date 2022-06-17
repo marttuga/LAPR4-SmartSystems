@@ -19,6 +19,8 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private AlphanumericCode alphanumericCode;
 
+
+
     @Embedded
     private SurveyDescription surveyDescription;
 
@@ -64,6 +66,11 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
 
     public String getAlphanumericCode() {
         return alphanumericCode.toString();
+    }
+
+    @Nullable
+    public List<Answer> getAnswers() {
+        return answers;
     }
 
     public byte[] getSurveyFile() {
