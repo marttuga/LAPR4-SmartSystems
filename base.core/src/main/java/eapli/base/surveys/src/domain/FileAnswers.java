@@ -1,5 +1,9 @@
 package eapli.base.surveys.src.domain;
 
+import eapli.base.ordersmanagement.survey.domain.AlphanumericCode;
+import eapli.base.ordersmanagement.survey.domain.Survey;
+
+import java.io.File;
 import java.io.FileWriter;
 
 public class FileAnswers {

@@ -60,7 +60,7 @@ QUEST : 'Questionnaire' ;
 SECTION : 'Section: ' ;
 SIGNAL : ':' | '-' | '.' ;
 MANDATORY : 'Obligatoriness: Mandatory.' ;
-OPTIONAL : 'Obligatoriness: Optional.' ;
+OPTIONAL : 'Obligatoriness: Optional.' | 'Obligatoriness: Optional'  ;
 TYPESINGLE : 'Single-Choice.' | 'SINGLE-CHOICE.' ;
 TYPEFREE: 'Free-Text.' | 'FREE-TEXT.' ;
 EMAIL : STRING '@' STRING '.' STRING  ;
