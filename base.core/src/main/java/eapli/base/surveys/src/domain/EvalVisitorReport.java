@@ -10,46 +10,71 @@ import java.util.Map;
 
 public class EvalVisitorReport extends FormGrammarBaseVisitor<String>{
 
-    private List<Answer> answers;
+    private final List<Answer> answers;
 
     public EvalVisitorReport(List<Answer> answers){
         this.answers=answers;
     }
 
     @Override
+    public String visitChoices(FormGrammarParser.ChoicesContext ctx){
+        return ctx.getText();
+    }
+
+    @Override
+    public String visitChoice(FormGrammarParser.ChoiceContext ctx){
+        return ctx.getText();
+    }
+    @Override
     public String visitParameterSingleChoice(FormGrammarParser.ParameterSingleChoiceContext ctx){
-        List<String> AnswerList = new ArrayList<>();
-        fillWithAnswers(ctx, AnswerList);
-        Map<String, Integer> singleOpts = new LinkedHashMap<>();
-        for (String answer: AnswerList) {
-            boolean isCorrect = true;
-            while (!(ctx == null)){
-                String choice = visit(ctx.getChild(0));
-                if (!singleOpts.containsKey(choice)){
-                    singleOpts.put(choice,0);
-                }
-                if (answer.equals(visit(ctx.getChild(0)))){
-                    isCorrect = true;
-                    int i = singleOpts.get(choice);
-                    singleOpts.put(choice, i+1);
-                }
-            }
-            if (isCorrect) System.out.println("Correct" + AnswerList.get(0));
+        List<String> answersList = new ArrayList<>();
+        List<String> numbQuestions = new ArrayList<>();
+        fillWithAnswers(ctx, answersList);
+        for (String s:
+             answersList) {
+            System.out.println(s);
         }
-        analyseSingleChoice(singleOpts);
+        Map<String, Integer> answersMap = new LinkedHashMap<>();
+
+        for (String answer: answersList) {
+            boolean correct = false;
+            FormGrammarParser.ChoicesContext choicesCtx= ctx.choices();
+            while (!(choicesCtx == null)){
+                String choice = visitChoice(choicesCtx.choice());
+
+                if (!answersMap.containsKey(choice.charAt(0))){
+                    answersMap.put(String.valueOf(choice.charAt(0)),0);
+                }
+                for (var entry:answersMap.entrySet()) {
+                    if (answer.equals(entry.getKey())){
+                        numbQuestions.add(choice);
+                        correct = true;
+                        int i = answersMap.get(answer);
+                        answersMap.put(answer, i+1);
+                    }
+                }
+                choicesCtx =choicesCtx.choices();
+            }
+            if (correct) System.out.println( "Answer: " + answersList.get(0) + " (Valid!)");
+            else System.out.println("Incorrect answer: " + answersList.get(0) + " (No option available)");
+        }
+        singleChoiceStatistics(answersMap);
         return "done";
     }
 
     private void fillWithAnswers(ParserRuleContext ctx, List<String> AnswerList){
-        FormGrammarParser.ParameterQuestionContext questionContext = (FormGrammarParser.ParameterQuestionContext) ctx.getParent().getParent();
+        FormGrammarParser.ParameterQuestionContext questionContext =  (FormGrammarParser.ParameterQuestionContext) ctx.getParent().getParent().getParent().getParent();
         String questionId = questionContext.parameterQuestionId().getText();
+        String question = questionContext.parameterQ().getText();
         String obligatoriness = questionContext.parameterOblig().getText();
         for (Answer a: answers) {
             try {
                 String answer = a.getEvery_Answer().get(questionId);
+                //System.out.println(answer);
                 if (!answer.equalsIgnoreCase("Not answered")){
                     AnswerList.add(answer);
-                }else if (!obligatoriness.equals("Optional")){
+                    //System.out.println("\n" + questionId + ": " + question);
+                }else if (!obligatoriness.equals("Obligatoriness: Optional.")){
                     System.out.println("This question is mandatory and was not answered: " + questionId);
                 }
             }catch (NullPointerException ex){
@@ -58,15 +83,17 @@ public class EvalVisitorReport extends FormGrammarBaseVisitor<String>{
         }
     }
 
-    private void analyseSingleChoice(Map<String, Integer> singleOpts){
-        int total = 0;
-        for(String choice : singleOpts.keySet()){
-            total = total + singleOpts.get(choice);
+    private void singleChoiceStatistics(Map<String, Integer> answersMap){
+        int amount = 0;
+        for(String choice : answersMap.keySet()){
+            amount = amount + answersMap.get(choice);
         }
-        for(String choice : singleOpts.keySet()){
-
+        for(String choice : answersMap.keySet()){
+            System.out.println(choice + " - " + ((answersMap.get(choice)/amount)*100) + "%.");
         }
     }
+
+
 
 
 }
