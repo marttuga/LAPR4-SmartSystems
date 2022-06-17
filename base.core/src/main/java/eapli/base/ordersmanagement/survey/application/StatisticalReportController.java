@@ -4,19 +4,15 @@ import eapli.base.ordersmanagement.answer.application.AnswerService;
 
 import eapli.base.ordersmanagement.answer.domain.Answer;
 import eapli.base.ordersmanagement.survey.dto.SurveyDTO;
-import eapli.base.surveys.src.domain.EvalVisitor;
 import eapli.base.surveys.src.domain.EvalVisitorReport;
 import eapli.base.surveys.src.domain.FormGrammarLexer;
 import eapli.base.surveys.src.domain.FormGrammarParser;
-import org.antlr.runtime.CharStream;
 import org.antlr.v4.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
