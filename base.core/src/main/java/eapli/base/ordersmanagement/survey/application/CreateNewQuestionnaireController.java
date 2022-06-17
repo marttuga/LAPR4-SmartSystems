@@ -59,10 +59,7 @@ public class CreateNewQuestionnaireController {
     }
 
 
-    public void saveSurvey(Survey survey) {
-        authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER);
-        repo.save(survey);
-    }
+
     public void saveCustomers( List<Customer> customers) {
         authz.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER);
         for (Customer c: customers) {
