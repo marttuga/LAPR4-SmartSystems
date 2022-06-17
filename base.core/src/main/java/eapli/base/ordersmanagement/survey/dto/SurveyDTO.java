@@ -12,4 +12,11 @@ import lombok.NoArgsConstructor;
 public class SurveyDTO {
     public String surveyID;
     public String surveyDescription;
+
+    @Override
+    public String toString() {
+        return
+                "Survey ID:" + surveyID  +
+                ", Survey Description:" + surveyDescription + "\n";
+    }
 }
