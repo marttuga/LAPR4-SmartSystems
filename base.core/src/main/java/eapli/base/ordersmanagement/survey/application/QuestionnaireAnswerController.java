@@ -1,9 +1,8 @@
 package eapli.base.ordersmanagement.survey.application;
 
-import eapli.base.ordersmanagement.order.domain.ProductOrder;
 import eapli.base.ordersmanagement.survey.domain.Survey;
 import eapli.base.ordersmanagement.survey.dto.SurveyDTO;
-import eapli.base.surveys.src.domain.FileAnswers;
+import eapli.base.surveys.src.domain.FileAnswersOutput;
 
 import java.util.List;
 
@@ -26,7 +25,7 @@ public class QuestionnaireAnswerController {
     }
 
     public void outPutResume(String answer) {
-        FileAnswers.outPutResume(answer);
+        FileAnswersOutput.outPutResume(answer);
     }
 
     public SurveyDTO fromEntityToDTO(Survey survey) {

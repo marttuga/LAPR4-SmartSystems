@@ -7,6 +7,7 @@ import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.customer.repositories.CustomerRepository;
 import eapli.base.ordersmanagement.survey.domain.*;
 import eapli.base.ordersmanagement.survey.repositories.SurveyRepository;
+import eapli.base.surveys.src.domain.FileAnswersOutput;
 import eapli.base.surveys.src.domain.FormGrammarLexer;
 import eapli.base.surveys.src.domain.FormGrammarParser;
 import eapli.base.surveys.src.domain.ThrowingErrorListener;
@@ -114,5 +115,9 @@ public class CreateNewQuestionnaireController {
         System.out.println("0. Back\n\n");
         option = Console.readInteger("Please select an option");
         return option;
+    }
+
+    public void outPutNotification(Survey s, Customer c) throws IOException {
+        SurveyNotificationOutput.outPutNotification(s, c);
     }
 }
