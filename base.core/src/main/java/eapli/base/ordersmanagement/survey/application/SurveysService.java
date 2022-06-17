@@ -42,10 +42,20 @@ public class SurveysService {
         return null;
     }
 
+    //TODO method to only show already answered surveys
     public List<SurveyDTO> findAll(){
-        List<Survey> surveyList =  surveyRepository.findAllAnswered();
+        List<Survey> surveyList =  surveyRepository.findAll();
+        for (Survey s: surveyList
+             ) {
+            if (s.getAnswers().isEmpty()){
+                surveyList.remove(s);
+            }
+        }
         return surveyList.stream().map(this::fromEntityToDTO).collect(Collectors.toList());
     }
+
+
+
     public List<Survey> findAllSurveys(){
         return surveyRepository.findAll();
 
