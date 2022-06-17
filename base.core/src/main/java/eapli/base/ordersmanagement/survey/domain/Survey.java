@@ -1,11 +1,20 @@
 package eapli.base.ordersmanagement.survey.domain;
 import eapli.base.ordersmanagement.answer.domain.Answer;
 import eapli.base.ordersmanagement.customer.domain.Customer;
+import eapli.base.surveys.src.domain.EvalVisitorReport;
+import eapli.base.surveys.src.domain.FormGrammarLexer;
+import eapli.base.surveys.src.domain.FormGrammarParser;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
+import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.tree.ParseTree;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -52,6 +61,17 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
         this.surveyRule = surveyRule;
         this.customers = customers;
         this.answers = answers;
+    }
+
+
+    public String getStatisticalReport() throws IOException {
+        FileInputStream fis = new FileInputStream(new File("/Users/ruidias/lei21_22_s4_2dk_01/base.core/src/main/java/eapli/base/surveys/questionnaire.txt"));
+        FormGrammarLexer lexer = new FormGrammarLexer(new ANTLRInputStream(fis));
+        org.antlr.v4.runtime.CommonTokenStream tokens = new CommonTokenStream(lexer);
+        FormGrammarParser parser = new FormGrammarParser(tokens);
+        ParseTree tree = parser.start(); // parse
+        EvalVisitorReport eval = new EvalVisitorReport(answers);
+        return eval.visit(tree);
     }
 
 
