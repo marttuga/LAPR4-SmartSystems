@@ -8,7 +8,7 @@ participant ":PersistenceContext" as PC
 participant ":RepositoryFactory" as RF
 participant ":ProductOrderRepository" as ProdRepo
 participant ":ProductOrderService" as ProdS
-
+participant ":ProtocolProxy" as P
 
 activate WE
 
@@ -32,11 +32,14 @@ CTRL -> ProdRepo : getOpenOrders= getOpenOrders()
 deactivate ProdRepo
 CTRL -> ProdS : printOpenOrderList=printOpenOrderList(getOpenOrders)
 
-
 activate ProdS
 
-CTRL --> UI :  getOpenOrdersDto
+CTRL -> P : sendOrdersToServer= sendOrdersToServer(status,email)
 deactivate ProdS
+activate P
+CTRL --> UI :  getOpenOrdersDto
+deactivate P
+
 deactivate CTRL
 
 UI --> WE :shows list of orders with the status on each one
