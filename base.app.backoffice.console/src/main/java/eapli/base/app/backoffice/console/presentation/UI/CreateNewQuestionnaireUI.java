@@ -50,9 +50,6 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
         int ruleA;
         String ruleG;
 
-        System.out.println(alphanumericCode);
-        System.out.println(surveyDescription);
-        System.out.println(surveyPeriod);
 
         int answer= ctrl.showOptionsRules();
         switch (answer) {

@@ -1,6 +1,10 @@
 package eapli.base.app.backoffice.console.presentation.UI;
 
+import eapli.base.ordersmanagement.answer.application.AnswerController;
+import eapli.base.ordersmanagement.answer.domain.Answer;
+import eapli.base.ordersmanagement.answer.domain.AnswerId;
 import eapli.base.ordersmanagement.customer.domain.Customer;
+import eapli.base.ordersmanagement.customer.domain.CustomerEmailAdress;
 import eapli.base.ordersmanagement.order.application.CheckOpenOrderController;
 import eapli.base.ordersmanagement.survey.application.QuestionnaireAnswerController;
 
@@ -10,6 +14,7 @@ import eapli.base.utilitarianClasses.Utils;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
 import eapli.framework.presentation.console.AbstractUI;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.security.crypto.codec.Hex;
 
 
@@ -22,6 +27,7 @@ public class QuestionnaireAnswerUI extends AbstractUI {
     private static final QuestionnaireAnswerController questionnaireAnswerController = new QuestionnaireAnswerController();
     private final AuthorizationService authz = AuthzRegistry.authorizationService();
     private final CheckOpenOrderController checkOpenOrderController = new CheckOpenOrderController();
+    private final AnswerController answerController = new AnswerController();
 
     @Override
     protected boolean doShow() {
@@ -31,27 +37,31 @@ public class QuestionnaireAnswerUI extends AbstractUI {
         List<Survey> allSurvey = questionnaireAnswerController.findAllSurveys();
         List<SurveyDTO> surveysForCustomer = new ArrayList<>();
 
-       questionnaireAnswerController.printSurveysList(allSurvey);
+
         for (Survey s : allSurvey) {
+
             for (Customer c : s.getCustomers()) {
-                if (c == customer) {
+                System.out.println(s.getCustomers());
+                if (c.getCustomerEmailAddress().toString().equals(customer.getCustomerEmailAddress().toString()) ){
                     surveysForCustomer.add(questionnaireAnswerController.fromEntityToDTO(s));
                 }
             }
         }
 
-        for (SurveyDTO sd:surveysForCustomer) {
+
+        questionnaireAnswerController.printSurveysList(surveysForCustomer);
+     /*   for (SurveyDTO sd:surveysForCustomer) {
             System.out.println(sd);
-        }
+        }*/
 
         String oi = Utils.readLine("Choose the questionnaire to answer: ");
-        Survey o= questionnaireAnswerController.findSurveyId(oi);
+        Survey o = questionnaireAnswerController.findSurveyId(oi);
         File file = null;
-        if (o.getSurveyDescription().contains("questionnaire1")){
-           file = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire.txt");
-        }else if (o.getSurveyDescription().contains("questionnaire2")){
+        if (o.getSurveyDescription().contains("questionnaire1")) {
+            file = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire.txt");
+        } else if (o.getSurveyDescription().contains("questionnaire2")) {
             file = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire2.txt");
-        }else if (o.getSurveyDescription().contains("questionnaire3")){
+        } else if (o.getSurveyDescription().contains("questionnaire3")) {
             file = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire3.txt");
 
         }
@@ -73,14 +83,12 @@ public class QuestionnaireAnswerUI extends AbstractUI {
             boolean flagTf = false; //se for de texto
             questionary.add("========================================"); //para mostrar o questionario junto com as respostas
             questionary.add(" ");
-            answers.add("========================================"); //para mostrar so as respostas
-            answers.add(" ");
 
             while (sc.hasNextLine()) {
                 String linha = sc.nextLine();
-                if (linha.contains("CHERRY22")) {
+              /*  if (linha.contains("CHERRY22")) {
                     answers.add(linha);
-                }
+                }*/
                 System.out.println(linha);
 
                 questionary.add(linha);
@@ -148,16 +156,16 @@ public class QuestionnaireAnswerUI extends AbstractUI {
                             index--;
                         }
 
-                        questionary.add(questionary.size() - 1, "Answer:" + finalAnswer + "\n");//adicionar a resposta à lista q vai para o txt
-                        answers.add("Answer:" + finalAnswer);
+                        questionary.add(questionary.size() - 1, finalAnswer + "\n");//adicionar a resposta à lista q vai para o txt
+                        answers.add(finalAnswer);
                         flagSC = false;
 
                     } else if (linha.equals("") || flagTf) { //se a linha for vazia e for de free text vai ler a proxima linha q é a resposta e adiciona la ao txt
                         String answer = in.nextLine();
                         if (!answer.equals("")) {
 
-                            questionary.add(questionary.size() - 1, "Answer:" + answer + "\n");
-                            answers.add("Answer:" + answer);
+                            questionary.add(questionary.size() - 1, answer + "\n");
+                            answers.add(answer);
                         }
                         flagTf = false;
                     }
@@ -165,9 +173,32 @@ public class QuestionnaireAnswerUI extends AbstractUI {
             }
             sc.close();
 
-            for (String a : questionary) {
+            for (String a : answers) {
                 questionnaireAnswerController.outPutResume(a); // print para o txt
             }
+
+            Map<String, String> map = new HashMap<>();
+            for (int i = 0; i < answers.size(); i++) {
+                map.put(String.valueOf(i + 1), answers.get(i));
+
+            }
+            System.out.println(map);
+            String id = RandomStringUtils.randomAlphanumeric(6);
+
+            Answer aw = answerController.registerAnswer(AnswerId.valueOf(id), customer, map);
+
+            List<Answer> answerList = new ArrayList<>();
+            answerList.add(aw);
+
+            answerController.saveSurveyAnswered(o, answerList);
+
+
+            answerController.saveSurveyRemoveCustomers(o, o.getCustomers(),customer);
+            for (Customer c : o.getCustomers()) {
+                System.out.println(c);
+            }
+            //System.out.println(o.getCustomers());
+
             System.out.println("========================================");
         } catch (RuntimeException ex) {
             ex.printStackTrace();
