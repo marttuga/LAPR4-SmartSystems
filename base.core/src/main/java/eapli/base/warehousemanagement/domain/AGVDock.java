@@ -9,22 +9,26 @@ import javax.persistence.*;
 @Entity
 public class AGVDock implements AggregateRoot<String> {
 
+
     @Id
     private String agvDockID;
-    @Transient
+
+    @Embedded
+    private WarehouseID warehouseID;
+
     private int lsquareBeginAGVDock;
-    @Transient
+
     private int wsquareBeginAGVDock;
-    @Transient
+
     private int lsquareEndAGVDock;
-    @Transient
+
     private int wsquareEndAGVDock;
-    @Transient
+
     private int lsquareDepthAGVDock;
-    @Transient
+
     private int wsquareDepthAGVDock;
     @Column(insertable = false, updatable = false)
-    @Transient
+
     private String accessibility;
 
 
@@ -39,10 +43,11 @@ public class AGVDock implements AggregateRoot<String> {
     public AGVDock(int agvDockID) {
     }
 
-    public AGVDock(String agvDockID, int lsquareBeginAGVDock, int wsquareBeginAGVDock,
+    public AGVDock(String agvDockID, WarehouseID warehouseID, int lsquareBeginAGVDock, int wsquareBeginAGVDock,
                    int lsquareEndAGVDock, int wsquareEndAGVDock, int lsquareDepthAGVDock,
                    int wsquareDepthAGVDock, String accessibility) {
         this.agvDockID = agvDockID;
+        this.warehouseID = warehouseID;
         this.lsquareBeginAGVDock = lsquareBeginAGVDock;
         this.wsquareBeginAGVDock = wsquareBeginAGVDock;
         this.lsquareEndAGVDock = lsquareEndAGVDock;

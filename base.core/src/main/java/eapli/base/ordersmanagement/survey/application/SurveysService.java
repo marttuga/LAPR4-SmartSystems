@@ -68,9 +68,9 @@ public class SurveysService {
     public SurveyDTO fromEntityToDTO(Survey survey){
         return new SurveyDTO(survey.getAlphanumericCode(), survey.getSurveyDescription());
     }
-    public void printSurveysList(List<Survey> ist) {
-        for (Survey c : ist) {
-            System.out.println("Questionnaire Code- " + c.getAlphanumericCode() + " / Description- "+ c.getSurveyDescription()+ "\n");
+    public void printSurveysList(List<SurveyDTO> ist) {
+        for (SurveyDTO c : ist) {
+            System.out.println("Questionnaire Code- " + c.getSurveyID()+ " / Description- "+ c.getSurveyDescription()+ "\n");
         }
     }
 

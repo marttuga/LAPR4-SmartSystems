@@ -13,6 +13,14 @@ public class SurveyDTO {
     public String surveyID;
     public String surveyDescription;
 
+    public String getSurveyID() {
+        return surveyID;
+    }
+
+    public String getSurveyDescription() {
+        return surveyDescription;
+    }
+
     @Override
     public String toString() {
         return

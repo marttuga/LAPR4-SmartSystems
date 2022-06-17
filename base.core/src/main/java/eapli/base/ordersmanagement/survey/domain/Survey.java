@@ -55,6 +55,10 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
     }
 
 
+    @Nullable
+    public List<Answer> getAnswers() {
+        return answers;
+    }
 
     public String getSurveyDescription() {
         return surveyDescription.toString();
@@ -81,6 +85,13 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
         return surveyRule;
     }
 
+    public void setAnswers(@Nullable List<Answer> answers) {
+        this.answers = answers;
+    }
+
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
+    }
 
     public List<Customer> getCustomers() {
         return customers;
@@ -105,5 +116,7 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
     public boolean sameAs(final Object other) {
         return DomainEntities.areEqual(this, other);
     }
+
+
 
 }

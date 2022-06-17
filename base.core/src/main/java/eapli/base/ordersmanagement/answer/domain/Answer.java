@@ -38,6 +38,12 @@ public class Answer implements AggregateRoot<AnswerId> {
         return null;
     }
 
+    @Override
+    public String toString() {
+        return "Answer Id=" + answerId.toString() +
+                "/ customer=" + customer ;
+    }
+
     public Map<String, String> getEvery_Answer() {
         return every_Answer;
     }

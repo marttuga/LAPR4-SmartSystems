@@ -33,7 +33,7 @@ public class QuestionnaireAnswerController {
     return surveysService.fromEntityToDTO(survey);
     }
 
-    public void printSurveysList(List<Survey> orderList) {
+    public void printSurveysList(List<SurveyDTO> orderList) {
         surveysService.printSurveysList(orderList);
     }
 }
