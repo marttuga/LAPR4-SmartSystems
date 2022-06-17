@@ -218,6 +218,26 @@ public interface FormGrammarListener extends ParseTreeListener {
 	 */
 	void exitParameterSingleChoice(FormGrammarParser.ParameterSingleChoiceContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link FormGrammarParser#choices}.
+	 * @param ctx the parse tree
+	 */
+	void enterChoices(FormGrammarParser.ChoicesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link FormGrammarParser#choices}.
+	 * @param ctx the parse tree
+	 */
+	void exitChoices(FormGrammarParser.ChoicesContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link FormGrammarParser#choice}.
+	 * @param ctx the parse tree
+	 */
+	void enterChoice(FormGrammarParser.ChoiceContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link FormGrammarParser#choice}.
+	 * @param ctx the parse tree
+	 */
+	void exitChoice(FormGrammarParser.ChoiceContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link FormGrammarParser#parameterFreeText}.
 	 * @param ctx the parse tree
 	 */

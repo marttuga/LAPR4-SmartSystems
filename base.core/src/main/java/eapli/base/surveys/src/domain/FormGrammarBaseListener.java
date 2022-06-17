@@ -268,6 +268,30 @@ public class FormGrammarBaseListener implements FormGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterChoices(FormGrammarParser.ChoicesContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitChoices(FormGrammarParser.ChoicesContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterChoice(FormGrammarParser.ChoiceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitChoice(FormGrammarParser.ChoiceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterParameterFreeText(FormGrammarParser.ParameterFreeTextContext ctx) { }
 	/**
 	 * {@inheritDoc}
