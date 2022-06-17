@@ -58,11 +58,11 @@ public class QuestionnaireAnswerUI extends AbstractUI {
         Survey o = questionnaireAnswerController.findSurveyId(oi);
         File file = null;
         if (o.getSurveyDescription().contains("questionnaire1")) {
-            file = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire.txt");
+            file = new File("base.core//src//main//java//eapli//base//surveys//questionnaire.txt");
         } else if (o.getSurveyDescription().contains("questionnaire2")) {
-            file = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire2.txt");
+            file = new File("base.core//src//main//java//eapli//base//surveys//questionnaire2.txt");
         } else if (o.getSurveyDescription().contains("questionnaire3")) {
-            file = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire3.txt");
+            file = new File("base.core//src//main//java//eapli//base//surveys//questionnaire3.txt");
 
         }
 
