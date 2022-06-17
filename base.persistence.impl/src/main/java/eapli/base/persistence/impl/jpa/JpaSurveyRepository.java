@@ -1,7 +1,6 @@
 package eapli.base.persistence.impl.jpa;
 
 import eapli.base.Application;
-import eapli.base.ordersmanagement.order.domain.ProductOrder;
 import eapli.base.ordersmanagement.survey.domain.AlphanumericCode;
 import eapli.base.ordersmanagement.survey.domain.Survey;
 import eapli.base.ordersmanagement.survey.repositories.SurveyRepository;
@@ -25,16 +24,16 @@ public class JpaSurveyRepository extends JpaAutoTxRepository<Survey, Alphanumeri
 
     @Override
     public List<Survey> findAll() {
-        TypedQuery<Survey> query = super.createQuery("SELECT DISTINCT c FROM Survey c", Survey.class);
-        return new ArrayList<>(query.getResultList());
+        Query q = entityManager().createQuery("SELECT DISTINCT s FROM Survey s");
+        return q.getResultList();
     }
 
     @Override
     public List<Survey> findAllAnswered(){
-        Query q = entityManager().createQuery(" SELECT DISTINCT s FROM Survey s WHERE EXISTS (SELECT s.answers from Survey s)");
-        return q.getResultList();
-        /*ypedQuery<Survey> query = super.createQuery("SELECT DISTINCT c FROM Survey c", Survey.class);
-        return new ArrayList<>(query.getResultList());*/
+        /*Query q = entityManager().createQuery(" SELECT DISTINCT s FROM Survey s WHERE EXISTS (SELECT s.answers from Survey s)");
+        return q.getResultList();*/
+        TypedQuery<Survey> query = super.createQuery("SELECT DISTINCT s FROM Survey s WHERE s.answers IN (SELECT s.answers from Survey s)", Survey.class);
+        return new ArrayList<>(query.getResultList());
     }
     @Override
     public Survey findByID(String alphanumericCode) {
