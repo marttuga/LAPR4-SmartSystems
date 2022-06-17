@@ -27,34 +27,23 @@ public class TaskExecutor implements Runnable {
         return semaphores;
     }
 
-    public static List<Thread> createThread(List<ProductOrder> productOrders){ //Orders to be prepared
+    public List<Thread> createThread(List<ProductOrder> productOrders){ //Orders to be prepared
 
         List<Thread> threads = new ArrayList<>();
 
         for(int i = 0; i < productOrders.size(); i++){
             TaskExecutor taskExecutor = new TaskExecutor();
             Thread thread = new Thread(taskExecutor);
-/*            thread.setName("Thread " + i);
             threads.add(thread);
-            thread.start();*/
-
-
         }
         return threads;
     }
 
-    public static List<Thread> initializeThread(List<ProductOrder> productOrders){ //Orders to be prepared
+    public List<Thread> initializeThread(List<Thread> threads){ //Orders to be prepared
 
-        List<Thread> threads = new ArrayList<>();
-
-        for(int i = 0; i < productOrders.size(); i++){
-            TaskExecutor taskExecutor = new TaskExecutor();
-            Thread thread = new Thread(taskExecutor);
-            thread.setName("Thread " + i);
-            threads.add(thread);
-            thread.start();
-
-
+        for(int i = 0; i < threads.size(); i++){
+            threads.get(i).setName("Thread " + i);
+            threads.get(i).start();                                     //Starts thread
         }
         return threads;
     }
@@ -77,6 +66,7 @@ public class TaskExecutor implements Runnable {
                 for (int j = 0; j < threads.size(); j++){
                     System.out.println("Running thread " + Thread.currentThread().getName());
                     Thread.sleep(100);
+                    threads.get(i).join();                  //Wait for a thread to finish
                 }
                 semaphores.get(i).release();
             }

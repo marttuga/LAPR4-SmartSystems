@@ -19,6 +19,8 @@ public class SemaphoreDemo {
         List<ProductOrder> productOrders = (List<ProductOrder>) orderRepository.findOrdersByStatus(Status.TO_BE_PREPARED);
 
         List<Thread> threads = taskExecutor.createThread(productOrders);
+        taskExecutor.initializeThread(threads);
+
 
 
     }
