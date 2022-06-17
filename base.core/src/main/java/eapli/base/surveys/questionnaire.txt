@@ -38,7 +38,7 @@ Section: 2.
 
 STitle: Satisfaction;
 Description: Quality assessment ;
-Obligatoriness: Optional
+Obligatoriness: Optional;
 
 Q5.
 Obligatoriness: Mandatory.
