@@ -32,6 +32,9 @@ public class CustomerBootstrapper implements Action {
         createCostumer("Elsa", "Mendes", "elsa@gmail.com",
                 date2, "937263549", "0936528",
                 "Sunset Boulevard", 78, "Los angeles", "USA",90211);
+        createCostumer("Joana", "Pacheco", "jo@gmail.com",
+                date2, "937275549", "0936529",
+                "Sunset Boulevard", 78, "Los angeles", "USA",90213);
         return true;
     }
 
