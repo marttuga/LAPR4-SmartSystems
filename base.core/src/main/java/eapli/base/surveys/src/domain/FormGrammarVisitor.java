@@ -71,6 +71,12 @@ public interface FormGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitParameterWelcomeMes(FormGrammarParser.ParameterWelcomeMesContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link FormGrammarParser#parameterAnswer}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParameterAnswer(FormGrammarParser.ParameterAnswerContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link FormGrammarParser#parameterSectionId}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -137,6 +143,12 @@ public interface FormGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitParameterSingleChoice(FormGrammarParser.ParameterSingleChoiceContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link FormGrammarParser#parameterMultipleChoice}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParameterMultipleChoice(FormGrammarParser.ParameterMultipleChoiceContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link FormGrammarParser#choices}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -154,12 +166,6 @@ public interface FormGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitParameterFreeText(FormGrammarParser.ParameterFreeTextContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link FormGrammarParser#parameterMultipleChoice}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitParameterMultipleChoice(FormGrammarParser.ParameterMultipleChoiceContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link FormGrammarParser#parameterFinalMes}.
 	 * @param ctx the parse tree

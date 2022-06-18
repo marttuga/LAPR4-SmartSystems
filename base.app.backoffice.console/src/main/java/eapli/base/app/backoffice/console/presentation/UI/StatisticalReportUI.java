@@ -12,6 +12,7 @@ public class StatisticalReportUI extends AbstractUI {
     @Override
     protected boolean doShow() {
         try {
+
             System.out.println("============================================================");
             System.out.println("==== Here are all the surveys available in the System! =====");
             System.out.println("============================================================");
@@ -20,13 +21,14 @@ public class StatisticalReportUI extends AbstractUI {
             }
             //controller.showSurveys();
             String choice = Utils.readLine("== Please select the SurveyID to see a statistical report ==");
-            System.out.println("====================== UNIVERSE ============================");
+            System.out.println("\n================= STATISTICAL REPORT ======================\n");
+            System.out.println("======================= UNIVERSE ===========================");
             System.out.println("\nFor this report there were considered a total of " + controller.calculateUniverse(choice) + " customers.\n");
-            System.out.println("================ % Questions Answered =====================");
+            System.out.println("================= % QUESTIONS ANSWERED =====================");
             System.out.println("\nThere rate of answered questions is " + controller.calculatePercentage(choice) + "%.\n");
-            System.out.println("============== Number Questions Answered ===================");
+            System.out.println("=============== NUMBER QUESTIONS ANSWERED ==================");
             System.out.println("\nThere are a total of " + controller.calculateAnswers(choice) + " answered questions registered for this survey.\n");
-            System.out.println("================ Single Choice Questions ===================");
+            System.out.println("=============== SINGLE CHOICE STATISTICS ===================");
             controller.getStatisticalReport(choice);
 
             return true;

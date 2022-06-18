@@ -70,6 +70,14 @@ Obligatoriness: Mandatory.
 Did the order arrive with a defect?
 Type: Free-Text.
 
+Q9.
+Obligatoriness: Optional.
+What did you appreciate the most while shopping at our SuperMarket?
+Type: Multiple-Choice.
+1. The aesthetic of our brand;
+2. Customer service;
+3. The quality of our products;
+
 Final Message:
 You have successfully completed the questionnaire.
 Thank you for your help.
