@@ -108,6 +108,16 @@ public interface FormGrammarListener extends ParseTreeListener {
 	 */
 	void exitParameterWelcomeMes(FormGrammarParser.ParameterWelcomeMesContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link FormGrammarParser#parameterAnswer}.
+	 * @param ctx the parse tree
+	 */
+	void enterParameterAnswer(FormGrammarParser.ParameterAnswerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link FormGrammarParser#parameterAnswer}.
+	 * @param ctx the parse tree
+	 */
+	void exitParameterAnswer(FormGrammarParser.ParameterAnswerContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link FormGrammarParser#parameterSectionId}.
 	 * @param ctx the parse tree
 	 */
@@ -218,6 +228,16 @@ public interface FormGrammarListener extends ParseTreeListener {
 	 */
 	void exitParameterSingleChoice(FormGrammarParser.ParameterSingleChoiceContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link FormGrammarParser#parameterMultipleChoice}.
+	 * @param ctx the parse tree
+	 */
+	void enterParameterMultipleChoice(FormGrammarParser.ParameterMultipleChoiceContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link FormGrammarParser#parameterMultipleChoice}.
+	 * @param ctx the parse tree
+	 */
+	void exitParameterMultipleChoice(FormGrammarParser.ParameterMultipleChoiceContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link FormGrammarParser#choices}.
 	 * @param ctx the parse tree
 	 */
@@ -247,16 +267,6 @@ public interface FormGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitParameterFreeText(FormGrammarParser.ParameterFreeTextContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link FormGrammarParser#parameterMultipleChoice}.
-	 * @param ctx the parse tree
-	 */
-	void enterParameterMultipleChoice(FormGrammarParser.ParameterMultipleChoiceContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link FormGrammarParser#parameterMultipleChoice}.
-	 * @param ctx the parse tree
-	 */
-	void exitParameterMultipleChoice(FormGrammarParser.ParameterMultipleChoiceContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link FormGrammarParser#parameterFinalMes}.
 	 * @param ctx the parse tree

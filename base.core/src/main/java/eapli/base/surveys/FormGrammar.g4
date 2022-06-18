@@ -9,7 +9,7 @@ parameterSection : 'Section: ' parameterSectionId parameterSectionTitle paramete
   'Section: ' parameterSectionId parameterSectionTitle parameterSectionDesc parameterOblig parameterQuestion+
   'Section: ' parameterSectionId parameterSectionTitle parameterSectionDesc parameterOblig parameterQuestion+   ;
 
-parameterQuestion : parameterQuestionId parameterOblig parameterQ parameterQuestionType  ;
+parameterQuestion : parameterQuestionId parameterOblig parameterQ parameterQuestionType | parameterQuestion parameterAnswer;
 
 parameterId : STRING SIGNAL INT ;
 
@@ -23,6 +23,8 @@ parameterText : parameterSentence parameterText |  parameterSentence ;
 parameterSentence : parameterStrings | parameterStrings END;
 
 parameterWelcomeMes : 'Welcome Message:'  (STRING SPACE)* STRING SPACE INT SPACE STRING END (STRING SPACE)* STRING END | ;
+
+parameterAnswer : INT | STRING;
 
 parameterSectionId : CHOICE ;
 
@@ -43,17 +45,17 @@ parameterQuestionType : 'Type: ' parameterType ;
 
 parameterType : parameterDiffType ;
 
-parameterDiffType : TYPESINGLE parameterSingleChoice | parameterFreeText | parameterMultipleChoice ;
+parameterDiffType : TYPESINGLE parameterSingleChoice | parameterFreeText | TYPEMUL parameterMultipleChoice ;
 
 parameterSingleChoice : choices  ;
 
+parameterMultipleChoice: choices ;
+
 choices : choice | choice choices ;
 
-choice : CHOICE SPACE STRING END | CHOICE SPACE INT END ;
+choice : CHOICE (SPACE STRING)+ END | CHOICE SPACE INT END ;
 
 parameterFreeText : TYPEFREE ;
-
-parameterMultipleChoice: parameterSingleChoice parameterSingleChoice ;
 
 parameterFinalMes : 'Final Message:' (STRING SPACE)* STRING END (STRING SPACE)* STRING END |  ;
 
@@ -68,6 +70,7 @@ SIGNAL : ':' | '-' | '.' ;
 OBLIG : 'Obligatoriness:' ;
 TYPESINGLE : 'Single-Choice.' | 'SINGLE-CHOICE.' ;
 TYPEFREE: 'Free-Text.' | 'FREE-TEXT.' ;
+TYPEMUL : 'Multiple-Choice.' | 'MULTIPLE-CHOICE.' ;
 EMAIL : STRING '@' STRING '.' STRING  ;
 NEWLINE : ('\r'? '\n' | '\r' )+ -> skip;
 SPACE : [,-/: \t]+ ;
