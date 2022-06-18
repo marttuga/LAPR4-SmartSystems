@@ -1,4 +1,4 @@
-// Generated from /Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/surveys/FormGrammar.g4 by ANTLR 4.10.1
+// Generated from C:/Users/marti/Documents/2ANO2SEMESTRE/LAPR4/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/surveys\FormGrammar.g4 by ANTLR 4.10.1
 package eapli.base.surveys.src.domain;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -29,7 +29,7 @@ public interface FormGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitParameterSection(FormGrammarParser.ParameterSectionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link FormGrammarParser#parameterQuestion}.
+	 * Visit a parse tree produced by .
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */

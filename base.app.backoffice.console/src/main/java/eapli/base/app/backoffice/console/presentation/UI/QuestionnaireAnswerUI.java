@@ -41,7 +41,6 @@ public class QuestionnaireAnswerUI extends AbstractUI {
         for (Survey s : allSurvey) {
 
             for (Customer c : s.getCustomers()) {
-                System.out.println(s.getCustomers());
                 if (c.getCustomerEmailAddress().toString().equals(customer.getCustomerEmailAddress().toString()) ){
                     surveysForCustomer.add(questionnaireAnswerController.fromEntityToDTO(s));
                 }
@@ -81,8 +80,6 @@ public class QuestionnaireAnswerUI extends AbstractUI {
             boolean flag = false; //se for uma questao
             boolean flagSC = false; //se for de escolha
             boolean flagTf = false; //se for de texto
-            questionary.add("========================================"); //para mostrar o questionario junto com as respostas
-            questionary.add(" ");
 
             while (sc.hasNextLine()) {
                 String linha = sc.nextLine();
@@ -173,7 +170,7 @@ public class QuestionnaireAnswerUI extends AbstractUI {
             }
             sc.close();
 
-            for (String a : answers) {
+            for (String a : questionary) {
                 questionnaireAnswerController.outPutResume(a); // print para o txt
             }
 
@@ -192,11 +189,22 @@ public class QuestionnaireAnswerUI extends AbstractUI {
 
             answerController.saveSurveyAnswered(o, answerList);
 
-
             answerController.saveSurveyRemoveCustomers(o, o.getCustomers(),customer);
             for (Customer c : o.getCustomers()) {
                 System.out.println(c);
             }
+
+            try{
+
+                    questionnaireAnswerController.checkAnswer(answers);
+
+             } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("Error while answering the survey!");
+            return false;
+        }
+
+
             //System.out.println(o.getCustomers());
 
             System.out.println("========================================");

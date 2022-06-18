@@ -7,8 +7,18 @@ import eapli.base.ordersmanagement.survey.domain.AlphanumericCode;
 import eapli.base.ordersmanagement.survey.domain.Survey;
 import eapli.base.ordersmanagement.survey.dto.SurveyDTO;
 import eapli.base.ordersmanagement.survey.repositories.SurveyRepository;
+import eapli.base.surveys.src.domain.EvalVisitor;
+import eapli.base.surveys.src.domain.EvalVisitorReport;
+import eapli.base.surveys.src.domain.FormGrammarLexer;
+import eapli.base.surveys.src.domain.FormGrammarParser;
 import eapli.framework.io.util.Console;
+import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.tree.ParseTree;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -77,6 +87,16 @@ public class SurveysService {
     public String getStatisticalReport(String id) throws IOException {
         var survey = surveyRepository.ofIdentity(AlphanumericCode.valueOf(id)).orElseThrow(IllegalArgumentException::new);
         return survey.getStatisticalReport();
+    }
+
+    public String checkAnswer(List<String> answers) throws IOException {
+        FileInputStream fis = new FileInputStream(new File(CharStreams.);
+        FormGrammarLexer lexer = new FormGrammarLexer(new ANTLRInputStream(fis));
+        org.antlr.v4.runtime.CommonTokenStream tokens = new CommonTokenStream(lexer);
+        FormGrammarParser parser = new FormGrammarParser(tokens);
+        EvalVisitor eval = new EvalVisitor(answers);
+        ParseTree tree = parser.start(); // parse
+        return eval.visit(tree);
     }
 
 }

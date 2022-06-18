@@ -117,7 +117,7 @@ public class CreateNewQuestionnaireController {
         return option;
     }
 
-    public void outPutNotification(Survey s, Customer c) throws IOException {
-        SurveyNotificationOutput.outPutNotification(s, c);
+    public void outPutNotification(Survey s) throws IOException {
+        SurveyNotificationOutput.outPutNotification(s);
     }
 }

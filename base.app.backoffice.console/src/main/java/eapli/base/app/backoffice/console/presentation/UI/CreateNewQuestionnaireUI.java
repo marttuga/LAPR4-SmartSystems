@@ -80,11 +80,9 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                         try {
                             sd= ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null);
 
-                            for (Customer c : customers) {
+                                ctrl.outPutNotification(sd);
 
-                                ctrl.outPutNotification(sd, c);
 
-                            }
 
                         } catch (Exception e) {
                             System.out.println("Error saving the questionnaire: " + e);
@@ -142,10 +140,10 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
 
                             sd=ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null);
 
-                            for (Customer c : customers) {
-                                ctrl.outPutNotification(sd, c);
 
-                            }
+                                ctrl.outPutNotification(sd);
+
+
 
                         } catch (Exception e) {
                             System.out.println("Error saving the questionnaire in  question: " + e);
@@ -200,10 +198,10 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                         try {
                            sd= ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null);
 
-                            for (Customer c : customers) {
-                                ctrl.outPutNotification(sd, c);
 
-                            }
+                                ctrl.outPutNotification(sd);
+
+
 
                         } catch (Exception e) {
                             System.out.println("Error saving the questionnaire: " + e);

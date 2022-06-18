@@ -1,5 +1,5 @@
 // Generated from C:/Users/marti/Documents/2ANO2SEMESTRE/LAPR4/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/surveys\FormGrammar.g4 by ANTLR 4.10.1
-package eapli.base.surveys.src.domain;
+package eapli.base.surveys;
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -136,18 +136,6 @@ public class FormGrammarBaseListener implements FormGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParameterAnswer(FormGrammarParser.ParameterAnswerContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitParameterAnswer(FormGrammarParser.ParameterAnswerContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterParameterSectionId(FormGrammarParser.ParameterSectionIdContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -191,18 +179,6 @@ public class FormGrammarBaseListener implements FormGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitParameterOblig(FormGrammarParser.ParameterObligContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterParameterObligatoriness(FormGrammarParser.ParameterObligatorinessContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitParameterObligatoriness(FormGrammarParser.ParameterObligatorinessContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -280,42 +256,6 @@ public class FormGrammarBaseListener implements FormGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParameterMultipleChoice(FormGrammarParser.ParameterMultipleChoiceContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitParameterMultipleChoice(FormGrammarParser.ParameterMultipleChoiceContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterChoices(FormGrammarParser.ChoicesContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitChoices(FormGrammarParser.ChoicesContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterChoice(FormGrammarParser.ChoiceContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitChoice(FormGrammarParser.ChoiceContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterParameterFreeText(FormGrammarParser.ParameterFreeTextContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -323,6 +263,18 @@ public class FormGrammarBaseListener implements FormGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitParameterFreeText(FormGrammarParser.ParameterFreeTextContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterParameterMultipleChoice(FormGrammarParser.ParameterMultipleChoiceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitParameterMultipleChoice(FormGrammarParser.ParameterMultipleChoiceContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

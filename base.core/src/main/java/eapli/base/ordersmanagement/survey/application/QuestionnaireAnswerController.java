@@ -4,6 +4,8 @@ import eapli.base.ordersmanagement.survey.domain.Survey;
 import eapli.base.ordersmanagement.survey.dto.SurveyDTO;
 import eapli.base.surveys.src.domain.FileAnswersOutput;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 public class QuestionnaireAnswerController {
@@ -34,5 +36,9 @@ public class QuestionnaireAnswerController {
 
     public void printSurveysList(List<SurveyDTO> orderList) {
         surveysService.printSurveysList(orderList);
+    }
+
+    public String checkAnswer(List<String> id) throws IOException {
+        return surveysService.checkAnswer(id);
     }
 }
