@@ -37,7 +37,6 @@ public class SurveyBootstrapper implements Action {
         List<Answer> answerList = new ArrayList<>();
         customers.add(customer);
 
-        customers.add(customerController.findByCustomerEmail("mary@gmail.com"));
         Customer jo = customerController.findByCustomerEmail("jo@gmail.com");
         customers.add(jo);
 
@@ -50,11 +49,12 @@ public class SurveyBootstrapper implements Action {
         answers.put("Q6.","yes");
         answers.put("Q7.","yes");
         answers.put("Q8.","no");
+        answers.put("Q9.","1,2");
         Answer answer = new Answer( new AnswerId("123"),customer, answers);
         answerList.add(answer);
         File file = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire2.txt");
         byte[] surveyFile = new byte[(int) file.length()];
-        createSurvey("3213", "questionnaire2- >16 female", 10, surveyFile, 16, "FEMALE", customers, answerList);
+        createSurvey("3213", "questionnaire1- >16 female", 10, surveyFile, 16, "FEMALE", customers, answerList);
 
         List<Answer> answerJoList = new ArrayList<>();
         Survey survey = qaController.findSurveyId("3213");
@@ -67,6 +67,7 @@ public class SurveyBootstrapper implements Action {
         answersJo.put("Q6.","yes");
         answersJo.put("Q7.","no");
         answersJo.put("Q8.","yes");
+        answersJo.put("Q9.","2,3");
         Answer answerJ = new Answer( new AnswerId("456"),jo, answersJo);
         answerJoList.add(answerJ);
         answerController.saveSurveyAnswered(survey,answerJoList);
@@ -97,6 +98,7 @@ public class SurveyBootstrapper implements Action {
         List<Customer> customersss = new ArrayList<>();
         List<Answer> answerListtt = new ArrayList<>();
         customersss.add(customerrr);
+        customersss.add(customerController.findByCustomerEmail("mary@gmail.com"));
 
         Map<String, String> answerssS = new HashMap<>();
         answerssS.put("Q1.", "A");
@@ -105,9 +107,9 @@ public class SurveyBootstrapper implements Action {
         answerssS.put("Q4.", "D");
         Answer answerrR = new Answer(new AnswerId("1005"), customerrr, answerssS);
         answerListtt.add(answerrR);
-        File fileee = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire.txt");
+        File fileee = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire2.txt");
         byte[] surveyFileee = new byte[(int) fileee.length()];
-        createSurvey3("665", "questionnaire1- >35", 6, surveyFileee, 35, customersss, answerListtt);
+        createSurvey3("665", "questionnaire2- >20", 6, surveyFileee, 20, customersss, answerListtt);
         return true;
     }
 
