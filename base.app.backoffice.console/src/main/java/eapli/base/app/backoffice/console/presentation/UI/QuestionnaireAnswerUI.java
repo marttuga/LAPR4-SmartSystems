@@ -80,8 +80,6 @@ public class QuestionnaireAnswerUI extends AbstractUI {
             boolean flag = false; //se for uma questao
             boolean flagSC = false; //se for de escolha
             boolean flagTf = false; //se for de texto
-            questionary.add("========================================"); //para mostrar o questionario junto com as respostas
-            questionary.add(" ");
 
             while (sc.hasNextLine()) {
                 String linha = sc.nextLine();
@@ -172,7 +170,7 @@ public class QuestionnaireAnswerUI extends AbstractUI {
             }
             sc.close();
 
-            for (String a : answers) {
+            for (String a : questionary) {
                 questionnaireAnswerController.outPutResume(a); // print para o txt
             }
 
