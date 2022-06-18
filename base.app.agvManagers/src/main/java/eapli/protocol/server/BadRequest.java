@@ -1,4 +1,4 @@
-package eapli.protocol.client.server;
+package eapli.protocol.server;
 
 public class BadRequest extends BaseErrorRequest {
 

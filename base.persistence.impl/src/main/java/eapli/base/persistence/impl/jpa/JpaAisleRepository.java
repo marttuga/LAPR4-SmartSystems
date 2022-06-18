@@ -8,7 +8,7 @@ import eapli.framework.domain.repositories.TransactionalContext;
 import eapli.framework.infrastructure.repositories.impl.jpa.JpaAutoTxRepository;
 
 
-import java.util.Optional;
+import javax.persistence.Query;
 
 public class JpaAisleRepository extends JpaAutoTxRepository<Aisle, Integer, Integer > implements AisleRepository {
 
@@ -18,7 +18,11 @@ public class JpaAisleRepository extends JpaAutoTxRepository<Aisle, Integer, Inte
         super(puname, Application.settings().getExtendedPersistenceProperties(), "aisleID");
     }
 
-    public Optional<Aisle> findById(String aisleID){
-        return Optional.empty();
+    @Override
+    public Aisle findByID(int aisleID) {
+        Query q = entityManager().createQuery("SELECT aisle FROM Aisle aisle " +
+                " WHERE aisle.aisleId = :id");
+        q.setParameter("id", aisleID);
+        return (Aisle) q.getSingleResult();
     }
 }

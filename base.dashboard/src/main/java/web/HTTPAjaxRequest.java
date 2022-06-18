@@ -1,20 +1,21 @@
 package web;
 
+import javax.net.ssl.SSLSocket;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.Socket;
 
 public class HTTPAjaxRequest extends Thread{
 
     String baseFolder;
-    Socket sock;
+    SSLSocket sock;
     DataInputStream inS;
     DataOutputStream outS;
 
 
-    public HTTPAjaxRequest(Socket s, String f) {
-        baseFolder=f; sock=s;
+    public HTTPAjaxRequest(SSLSocket s, String f) {
+        baseFolder=f;
+        sock=s;
     }
 
     public void run() {
@@ -65,3 +66,4 @@ public class HTTPAjaxRequest extends Thread{
         }
     }
 }
+

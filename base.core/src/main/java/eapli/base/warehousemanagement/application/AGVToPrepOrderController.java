@@ -17,8 +17,6 @@ public class AGVToPrepOrderController {
     private final AGVRepository agvRepository = PersistenceContext.repositories().agv();
     private final OrderService orderService = new OrderService();
     private final AGVService agvService = new AGVService();
-    private final AuthorizationService authorizationService = AuthzRegistry.authorizationService();
-
 
     public List<ProductOrder> findAllOrders() {
         return (List<ProductOrder>) orderRepository.findAllOrders();
@@ -26,6 +24,7 @@ public class AGVToPrepOrderController {
     public ProductOrder findByOrderID(String id) {
         return orderRepository.findByOrderID(id);
     }
+
     public List<ProductOrder> findOrdersByStatus(eapli.base.ordersmanagement.order.domain.Status status) {
         return (List<ProductOrder>) orderRepository.findOrdersByStatus(status);
     }
@@ -47,7 +46,6 @@ public class AGVToPrepOrderController {
 
 
     public AGV agvToPrepOrder(AGV agv,ProductOrder productOrder) {
-        authorizationService.ensureAuthenticatedUserHasAnyOf(BaseRoles.POWER_USER, BaseRoles.ADMIN, BaseRoles.WAREHOUSE_EMPLOYEE);
         agv.changeOrder(productOrder);
         agv.changeStatus(Status.OCCUPIED);
         agvRepository.save(agv);

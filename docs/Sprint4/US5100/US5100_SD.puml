@@ -2,6 +2,75 @@
 autonumber
 
 actor "Project Manager" as PM
-participant ":AGV" as AGV
+participant ":PrepareOrders" as PrepO
+participant "AGVToPrepOrderController" as CTRL <<application>>
+participant ":AGV" as AGV <<domain>>
+participant ":ProductOrder" as PO <<domain>>
+participant ":ProductItem" as PI <<domain>>
+participant ":Product" as Product <<domain>>
+participant ":WarehouseMatrix" as WM
+participant "PersistenceContext" as PC <<persistence>>
+participant "RepositoryFactory" as RF <<factory>>
+participant ":AisleRepository" as AisleRepo <<repository>>
+participant ":AGVRepository" as AGVRepo <<repository>>
+participant ":ProductOrderRepository" as PORepo <<repository>>
+
+activate PrepO
+
+PrepO -> AGV : getAvailableAgvs()
+activate AGV
+
+AGV -> AGVRepo : findAGVByStatus()
+activate AGVRepo
+
+deactivate AGVRepo
+deactivate AGV
+PrepO -> PO : getOrdersToBePrepared()
+activate PO
+
+PO -> PORepo : findOrdersByStatus()
+activate PORepo
+
+deactivate PORepo
+deactivate PO
+PrepO -> CTRL : agvToPrepOrder()
+activate CTRL
+
+CTRL -> AGV : changeOrder()
+activate AGV
+CTRL -> AGV : changeStatus()
+
+deactivate AGV
+CTRL -> AGVRepo : save()
+activate AGVRepo
+
+deactivate AGVRepo
+CTRL -> PO : changeStatus()
+activate PO
+
+deactivate PO
+CTRL -> PORepo : save()
+activate PORepo
+
+deactivate PORepo
+deactivate CTRL
+PrepO -> PI : getLineOrder()
+activate PI
+
+deactivate PI
+PrepO -> Product : addAll()
+activate Product
+
+deactivate Product
+PrepO -> AisleRepo : findByID()
+activate AisleRepo
+
+deactivate AisleRepo
+PrepO -> WM : getWarehouseMatrix()
+activate WM
+PrepO -> WM : getVisitedMatrix()
+deactivate WM
+
+
 
 @enduml
