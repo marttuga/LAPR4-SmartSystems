@@ -1,6 +1,9 @@
 package eapli;
 
 
+import javax.net.ssl.SSLServerSocket;
+import javax.net.ssl.SSLServerSocketFactory;
+import javax.net.ssl.SSLSocket;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -30,25 +33,39 @@ public class AgvServer {
         s.close();
     }
 
-
-    private static ServerSocket sock;
+    static final int SERVER_PORT=9999;
+    static final String TRUSTED_STORE = "server.jks";
+    static final String KEYSTORE_PASS="forgotten";
 
     public static void main(String args[]) throws Exception {
-        int i;
+
+        SSLServerSocket sock = null;
+        Socket cliSock;
+
+        // Trust these certificates provided by authorized clients
+        System.setProperty("javax.net.ssl.trustStore", TRUSTED_STORE);
+        System.setProperty("javax.net.ssl.trustStorePassword",KEYSTORE_PASS);
+
+        // Use this certificate and private key as server certificate
+        System.setProperty("javax.net.ssl.keyStore",TRUSTED_STORE);
+        System.setProperty("javax.net.ssl.keyStorePassword",KEYSTORE_PASS);
+
+        SSLServerSocketFactory sslF = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault();
 
         try {
-            sock = new ServerSocket(9999);
+            sock = (SSLServerSocket) sslF.createServerSocket(SERVER_PORT);
+            //sock.setNeedClientAuth(true);
 
         } catch (IOException ex) {
-            System.out.println("Local port number not available.");
+            System.out.println("Server failed to open local port " + SERVER_PORT);
             System.exit(1);
         }
 
         while (true) {
-            Socket s = sock.accept(); // wait for a new client connection request
-            addCli(s);
-            Thread cli = new TCPChatSrvClient(s);
-            cli.start();
+            cliSock=sock.accept();
+            //Thread cli = new TCPChatSrvClient(s);
+            //cli.start();
+            new Thread(new AgvServerThread(cliSock)).start();
         }
     }
 }
