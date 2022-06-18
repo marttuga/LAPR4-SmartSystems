@@ -34,8 +34,8 @@ public class AgvServer {
     }
 
     static final int SERVER_PORT=9999;
-    static final String TRUSTED_STORE = "server.jks";
-    static final String KEYSTORE_PASS="forgotten";
+    static final String TRUSTED_STORE = "server.jks";                       //criar a key store
+    static final String KEYSTORE_PASS="forgotten";                          //password
 
     public static void main(String args[]) throws Exception {
 
