@@ -16,7 +16,7 @@ public class LineOrder implements AggregateRoot<LineOrderID> {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private LineOrderID loid;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<ProductItem> lineOrderList;
 
     @Embedded

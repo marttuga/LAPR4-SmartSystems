@@ -1,7 +1,6 @@
 package eapli.base.warehousemanagement.domain;
 
 import eapli.framework.domain.model.AggregateRoot;
-import eapli.framework.domain.model.ValueObject;
 import eapli.framework.strings.util.StringPredicates;
 
 import javax.persistence.*;
