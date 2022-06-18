@@ -9,6 +9,7 @@ participant "AGVManagerServer" as AMS
 participant HandleClient <<Thread>>
 participant "MessageParser" as MP
 participant "SPOMSProtocol" as SP
+participant ":ProtocolProxy" as P
 participant ":RepositoryFactory" as RF
 participant ":AGVRepository" as AGVRepo
 
@@ -36,12 +37,13 @@ SP -> SP : buildResponse
 SP --> HandleClient : response
 deactivate SP
 
-SP -> OS : updateStatus()
-activate OS
+deactivate HandleClient
+OS -> P : updateStatus()
+activate P
 
 OS -> PC : repositories()
 activate PC
-deactivate OS
+deactivate P
 
 PC -> RF : create()
 activate RF
@@ -51,9 +53,8 @@ RF -> AGVRepo : create()
 deactivate RF
 activate AGVRepo
 
-
 HandleClient --> BackofficeApp : response
-deactivate HandleClient
+
 
 
 @enduml
