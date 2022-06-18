@@ -89,12 +89,12 @@ public class SurveysService {
         return survey.getStatisticalReport();
     }
 
-    public String checkAnswer(List<String> answers) throws IOException {
-        FileInputStream fis = new FileInputStream(new File(CharStreams.);
-        FormGrammarLexer lexer = new FormGrammarLexer(new ANTLRInputStream(fis));
+    public String checkAnswer(String answers) throws IOException {
+        //FileInputStream fis = new FileInputStream(new File(CharStreams.fromString(answers));
+        FormGrammarLexer lexer = new FormGrammarLexer(CharStreams.fromString(answers));
         org.antlr.v4.runtime.CommonTokenStream tokens = new CommonTokenStream(lexer);
         FormGrammarParser parser = new FormGrammarParser(tokens);
-        EvalVisitor eval = new EvalVisitor(answers);
+        EvalVisitor eval = new EvalVisitor();
         ParseTree tree = parser.start(); // parse
         return eval.visit(tree);
     }

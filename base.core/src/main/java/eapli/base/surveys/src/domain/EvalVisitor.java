@@ -9,10 +9,10 @@ import java.util.*;
 
 
 public class EvalVisitor extends FormGrammarBaseVisitor<String> {
-    List<String> answers;
+/*  List<String> answers;
     public EvalVisitor(List<String> answers) {
         this.answers=answers;
-    }
+    }*/
 /*
     public String visitStart(FormGrammarParser.StartContext ctx) {
         String all = ctx.allParameter().getText();
@@ -80,7 +80,7 @@ public class EvalVisitor extends FormGrammarBaseVisitor<String> {
 
 
     public String visitParameterAnswer(FormGrammarParser.ParameterAnswerContext ctx) {
-        System.out.println(answers);
+   /*     System.out.println(answers);
         for (String s:answers ) {
             if (s.equalsIgnoreCase(ctx.getText())){
                 System.out.println(s + ctx.getText());
@@ -89,7 +89,7 @@ public class EvalVisitor extends FormGrammarBaseVisitor<String> {
                 System.out.println(ctx.getText()+" "+ s+ " " +"erro");
             }
 
-        }
+        }*/
         ;return ctx.getText();
     }
 /*
