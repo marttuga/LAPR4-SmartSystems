@@ -148,7 +148,7 @@ public class QuestionnaireAnswerUI extends AbstractUI {
                             try {
                                 String[] aux = questionary.get(index).split(". ");
                                 if (aux[0].equals(answer)) {
-                                    finalAnswer = aux[1];
+                                    finalAnswer = aux[0];
                                 }
                             } catch (Exception e) {
                                 e.printStackTrace();
