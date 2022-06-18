@@ -24,7 +24,7 @@ parameterSentence : parameterStrings | parameterStrings END;
 
 parameterWelcomeMes : 'Welcome Message:'  (STRING SPACE)* STRING SPACE INT SPACE STRING END (STRING SPACE)* STRING END | ;
 
-parameterAnswer : INT | STRING;
+parameterAnswer : INT | (STRING SPACE)* STRING  ;
 
 parameterSectionId : CHOICE ;
 
