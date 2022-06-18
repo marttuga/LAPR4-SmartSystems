@@ -27,8 +27,6 @@ public class StatisticalReportUI extends AbstractUI {
             System.out.println("============== Number Questions Answered ===================");
             System.out.println("\nThere are a total of " + controller.calculateAnswers(choice) + " answered questions registered for this survey.\n");
             System.out.println("================ Single Choice Questions ===================");
-            System.out.println("\nThere are a total of " + controller.calculateAnswers(choice) + " answered questions registered for this survey.\n");
-            System.out.println("============================================================");
             controller.getStatisticalReport(choice);
 
             return true;

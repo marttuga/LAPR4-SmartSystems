@@ -22,9 +22,21 @@ public class TaskExecutor implements Runnable {
         for(int i = 0; i < agvList.size(); i++){
             Semaphore semaphoreAGV = new Semaphore(1); // semaphore mutual exclusion
             semaphores.add(semaphoreAGV);
-            //Semaphore semaphoreAGVDock = new Semaphore(1);
+            AGV agv = agvList.get(i);
+            agvList.remove(agv);
         }
         return semaphores;
+    }
+
+    public List<Semaphore> createSemaphoreDock(List<Semaphore> semList){
+
+        List<Semaphore> semaphoresDock = new ArrayList<>();
+
+        for(int i = 0; i < semList.size(); i++){
+            Semaphore semaphoreAGVDock = new Semaphore(1); // semaphore mutual exclusion
+            semaphoresDock.add(semaphoreAGVDock);
+        }
+        return semaphoresDock;
     }
 
     public List<Thread> createThread(List<ProductOrder> productOrders){ //Orders to be prepared
@@ -55,6 +67,7 @@ public class TaskExecutor implements Runnable {
             List<AGV> agvList = agvRepository.findAGVByStatus(eapli.base.warehousemanagement.domain.Status.FREE);
 
             List<Semaphore> semaphores = createSemaphore(agvList);
+            List<Semaphore> semaphoresDock = createSemaphoreDock(semaphores);
 
             List<ProductOrder> productOrders = (List<ProductOrder>) orderRepository.findOrdersByStatus(Status.TO_BE_PREPARED);
 
@@ -62,13 +75,15 @@ public class TaskExecutor implements Runnable {
 
             for(int i = 0; i < semaphores.size();i++){
                 semaphores.get(i).acquire();
+                semaphoresDock.get(i).acquire();
                 System.out.println("Being run by " + Thread.currentThread().getName());
                 for (int j = 0; j < threads.size(); j++){
                     System.out.println("Running thread " + Thread.currentThread().getName());
                     Thread.sleep(100);
-                    threads.get(i).join();                  //Wait for a thread to finish
+                    threads.get(j).join();                  //Wait for a thread to finish
                 }
                 semaphores.get(i).release();
+                semaphoresDock.get(i).release();
             }
 
         } catch (Exception e){

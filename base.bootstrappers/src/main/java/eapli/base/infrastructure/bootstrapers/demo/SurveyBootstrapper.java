@@ -1,14 +1,13 @@
 package eapli.base.infrastructure.bootstrapers.demo;
 
+import eapli.base.ordersmanagement.answer.application.AnswerController;
 import eapli.base.ordersmanagement.answer.domain.Answer;
 import eapli.base.ordersmanagement.answer.domain.AnswerId;
 import eapli.base.ordersmanagement.customer.applicaion.RegisterCustomerController;
 import eapli.base.ordersmanagement.customer.domain.*;
 import eapli.base.ordersmanagement.survey.application.CreateNewQuestionnaireController;
-import eapli.base.ordersmanagement.survey.domain.AlphanumericCode;
-import eapli.base.ordersmanagement.survey.domain.SurveyDescription;
-import eapli.base.ordersmanagement.survey.domain.SurveyPeriod;
-import eapli.base.ordersmanagement.survey.domain.SurveyRule;
+import eapli.base.ordersmanagement.survey.application.QuestionnaireAnswerController;
+import eapli.base.ordersmanagement.survey.domain.*;
 import eapli.framework.actions.Action;
 import eapli.framework.domain.repositories.ConcurrencyException;
 import eapli.framework.domain.repositories.IntegrityViolationException;
@@ -24,6 +23,8 @@ public class SurveyBootstrapper implements Action {
 
     private final CreateNewQuestionnaireController controller = new CreateNewQuestionnaireController();
 
+    private final QuestionnaireAnswerController qaController = new QuestionnaireAnswerController();
+    private final AnswerController answerController = new AnswerController();
     private final RegisterCustomerController customerController = new RegisterCustomerController();
 
     @Override
@@ -37,24 +38,38 @@ public class SurveyBootstrapper implements Action {
         customers.add(customer);
 
         customers.add(customerController.findByCustomerEmail("mary@gmail.com"));
+        Customer jo = customerController.findByCustomerEmail("jo@gmail.com");
+        customers.add(jo);
 
         Map<String, String> answers  = new HashMap<>();
-        answers.put("1","87654321");
-        answers.put("2","Not Answered");
-        answers.put("3","2");
-        answers.put("4","gabi@gmail.com");
-        answers.put("5","4");
-        answers.put("6","yes");
-        answers.put("7","yes");
-        answers.put("8","no");
+        answers.put("Q1.","87654321");
+        answers.put("Q2.","Not Answered");
+        answers.put("Q3.","2");
+        answers.put("Q4.","gabi@gmail.com");
+        answers.put("Q5.","4");
+        answers.put("Q6.","yes");
+        answers.put("Q7.","yes");
+        answers.put("Q8.","no");
         Answer answer = new Answer( new AnswerId("123"),customer, answers);
         answerList.add(answer);
-
         File file = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire2.txt");
         byte[] surveyFile = new byte[(int) file.length()];
         createSurvey("3213", "questionnaire2- >16 female", 10, surveyFile, 16, "FEMALE", customers, answerList);
 
-
+        List<Answer> answerJoList = new ArrayList<>();
+        Survey survey = qaController.findSurveyId("3213");
+        Map<String, String> answersJo  = new HashMap<>();
+        answersJo.put("Q1.","12345678");
+        answersJo.put("Q2.","Not Answered");
+        answersJo.put("Q3.","3");
+        answersJo.put("Q4.","jo@gmail.com");
+        answersJo.put("Q5.","1");
+        answersJo.put("Q6.","yes");
+        answersJo.put("Q7.","no");
+        answersJo.put("Q8.","yes");
+        Answer answerJ = new Answer( new AnswerId("456"),jo, answersJo);
+        answerJoList.add(answerJ);
+        answerController.saveSurveyAnswered(survey,answerJoList);
 
         Set<CustomerPostalAddress> postalAddresss = new HashSet<>();
         CustomerPostalAddress customerPostalAddresss = new CustomerPostalAddress("Corne", 2, "Miami", "USA", 90214);
@@ -130,5 +145,9 @@ public class SurveyBootstrapper implements Action {
             LOGGER.warn("Assuming {} already exists (activate trace log for details)", id);
             LOGGER.trace("Assuming existing record", e);
         }
+    }
+
+    private void saveSurveyAnswered(Survey s, List<Answer> answers){
+            answerController.saveSurveyAnswered(s, answers);
     }
 }

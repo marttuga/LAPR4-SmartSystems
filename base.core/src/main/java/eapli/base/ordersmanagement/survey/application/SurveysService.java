@@ -3,11 +3,13 @@ package eapli.base.ordersmanagement.survey.application;
 import eapli.base.infrastructure.persistence.PersistenceContext;
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.order.domain.ProductOrder;
+import eapli.base.ordersmanagement.survey.domain.AlphanumericCode;
 import eapli.base.ordersmanagement.survey.domain.Survey;
 import eapli.base.ordersmanagement.survey.dto.SurveyDTO;
 import eapli.base.ordersmanagement.survey.repositories.SurveyRepository;
 import eapli.framework.io.util.Console;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -45,12 +47,10 @@ public class SurveysService {
     //TODO method to only show already answered surveys
     public List<SurveyDTO> findAll(){
         List<Survey> surveyList =  surveyRepository.findAll();
-        for (Survey s: surveyList
-             ) {
-            if (s.getAnswers().isEmpty()){
-                surveyList.remove(s);
-            }
-        }
+        surveyList.removeIf(s -> {
+            assert s.getAnswers() != null;
+            return s.getAnswers().isEmpty();
+        });
         return surveyList.stream().map(this::fromEntityToDTO).collect(Collectors.toList());
     }
 
@@ -72,6 +72,11 @@ public class SurveysService {
         for (SurveyDTO c : ist) {
             System.out.println("Questionnaire Code- " + c.getSurveyID()+ " / Description- "+ c.getSurveyDescription()+ "\n");
         }
+    }
+
+    public String getStatisticalReport(String id) throws IOException {
+        var survey = surveyRepository.ofIdentity(AlphanumericCode.valueOf(id)).orElseThrow(IllegalArgumentException::new);
+        return survey.getStatisticalReport();
     }
 
 }
