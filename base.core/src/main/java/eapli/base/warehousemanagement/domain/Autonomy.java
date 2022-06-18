@@ -11,7 +11,7 @@ public class Autonomy implements ValueObject, Comparable<Autonomy>{
 
     private int autonomy;
 
-    protected Autonomy(){
+    public Autonomy(){
 
     }
 
@@ -50,5 +50,11 @@ public class Autonomy implements ValueObject, Comparable<Autonomy>{
     @Override
     public int compareTo(Autonomy o) {
         return 0;
+    }
+
+
+    public int discharching(int speed, double discharchingRate){
+        int result = (int) ( speed * discharchingRate);
+        return  result;
     }
 }
