@@ -9,6 +9,7 @@ import eapli.base.warehousemanagement.domain.AGV;
 import eapli.base.warehousemanagement.domain.Status;
 import eapli.base.warehousemanagement.repositories.AGVRepository;
 
+import javax.net.ssl.SSLSocket;
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;

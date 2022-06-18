@@ -3,6 +3,8 @@ package eapli.base.app.agvDigitalTwin;
 import eapli.base.app.agvDigitalTwin.application.ChangeStatusAgvController;
 import eapli.base.warehousemanagement.domain.Status;
 
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
 import java.io.*;
 import java.net.*;
 import java.nio.charset.StandardCharsets;
@@ -15,18 +17,34 @@ class DigitalTwinCli {
     //static byte[] STATUS = new byte[] {1, 12, 0,0};
 
     static InetAddress serverIP;
-    static Socket sock;
+    static SSLSocket sock;
+    static final String TRUSTED_STORE = "server.jks";
+    static final String KEYSTORE_PASS="forgotten";
 
 
     public static void main(String args[]) throws Exception {
 
+        // Trust these certificates provided by servers
+        System.setProperty("javax.net.ssl.trustStore", TRUSTED_STORE);
+        System.setProperty("javax.net.ssl.trustStorePassword",KEYSTORE_PASS);
+
+        // Use this certificate and private key for client certificate when requested by the server
+        System.setProperty("javax.net.ssl.keyStore",TRUSTED_STORE);
+        System.setProperty("javax.net.ssl.keyStorePassword",KEYSTORE_PASS);
+
+        SSLSocketFactory sf = (SSLSocketFactory) SSLSocketFactory.getDefault();
+
         try {
             //Cria o socket com o port 9999
-            sock = new Socket("localhost", 9999);
+            sock =(SSLSocket) sf.createSocket("localhost", 9999);
             System.out.println("Connected to server");
 
-            DataOutputStream out = new DataOutputStream(sock.getOutputStream());
-            DataInputStream in = new DataInputStream(sock.getInputStream());
+            sock.startHandshake();
+
+            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+            DataOutputStream sOut = new DataOutputStream(sock.getOutputStream());
+            DataInputStream sIn = new DataInputStream(sock.getInputStream());
+
 
             int option;
             do {

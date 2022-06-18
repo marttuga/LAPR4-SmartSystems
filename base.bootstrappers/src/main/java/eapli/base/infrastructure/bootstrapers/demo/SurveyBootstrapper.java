@@ -15,6 +15,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
 
 public class SurveyBootstrapper implements Action {
@@ -37,7 +40,6 @@ public class SurveyBootstrapper implements Action {
         List<Answer> answerList = new ArrayList<>();
         customers.add(customer);
 
-        customers.add(customerController.findByCustomerEmail("mary@gmail.com"));
         Customer jo = customerController.findByCustomerEmail("jo@gmail.com");
         customers.add(jo);
 
@@ -50,11 +52,23 @@ public class SurveyBootstrapper implements Action {
         answers.put("Q6.","yes");
         answers.put("Q7.","yes");
         answers.put("Q8.","no");
+        answers.put("Q9.","1,2");
         Answer answer = new Answer( new AnswerId("123"),customer, answers);
         answerList.add(answer);
-        File file = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire2.txt");
-        byte[] surveyFile = new byte[(int) file.length()];
-        createSurvey("3213", "questionnaire2- >16 female", 10, surveyFile, 16, "FEMALE", customers, answerList);
+        File file = new File("base.core/src/main/java/eapli/base/surveys/questionnaire.txt");
+        FileInputStream f1 = null;
+        try {
+            f1 = new FileInputStream(file);
+            byte[] surveyFile = new byte[(int) file.length()];
+            f1.read(surveyFile);
+            f1.close();
+            createSurvey("3213", "questionnaire1- >16 female", 10, surveyFile, 16, "FEMALE", customers, answerList);
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         List<Answer> answerJoList = new ArrayList<>();
         Survey survey = qaController.findSurveyId("3213");
@@ -67,6 +81,7 @@ public class SurveyBootstrapper implements Action {
         answersJo.put("Q6.","yes");
         answersJo.put("Q7.","no");
         answersJo.put("Q8.","yes");
+        answersJo.put("Q9.","2,3");
         Answer answerJ = new Answer( new AnswerId("456"),jo, answersJo);
         answerJoList.add(answerJ);
         answerController.saveSurveyAnswered(survey,answerJoList);
@@ -80,15 +95,31 @@ public class SurveyBootstrapper implements Action {
         customerss.add(customerr);
 
         Map<String, String> answersS = new HashMap<>();
-        answersS.put("Q3.", "A");
-        answersS.put("Q4.", "A");
-        answersS.put("Q5.", "A");
-        answersS.put("Q6.", "D");
+        answersS.put("Q1.","12345678");
+        answersS.put("Q2.","Not Answered");
+        answersS.put("Q3.","1");
+        answersS.put("Q4.","ferni@gmail.com");
+        answersS.put("Q5.","1");
+        answersS.put("Q6.","yes");
+        answersS.put("Q7.","no");
+        answersS.put("Q8.","yes");
+        answersS.put("Q9.","1,2,3");
         Answer answerR = new Answer(new AnswerId("12365"), customerr, answersS);
         answerListt.add(answerR);
-        File filee = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire.txt");
-        byte[] surveyFilee = new byte[(int) filee.length()];
-        createSurvey2("1289", "questionnaire1- male", 6, surveyFilee, "MALE", customerss, answerListt);
+        File filee = new File("base.core/src/main/java/eapli/base/surveys/questionnaire3.txt");
+        try {
+            f1 = new FileInputStream(filee);
+            byte[] surveyFilee = new byte[(int) filee.length()];
+            f1.read(surveyFilee);
+            f1.close();
+            createSurvey2("1289", "questionnaire1- male", 6, surveyFilee, "MALE", customerss, answerListt);
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
 
         Set<CustomerPostalAddress> postalAddressss = new HashSet<>();
         CustomerPostalAddress customerPostalAddressss = new CustomerPostalAddress("oi", 4, "Miami", "USA", 90214);
@@ -97,17 +128,32 @@ public class SurveyBootstrapper implements Action {
         List<Customer> customersss = new ArrayList<>();
         List<Answer> answerListtt = new ArrayList<>();
         customersss.add(customerrr);
+        customersss.add(customerController.findByCustomerEmail("mary@gmail.com"));
 
         Map<String, String> answerssS = new HashMap<>();
-        answerssS.put("Q1.", "A");
-        answerssS.put("Q2.", "A");
-        answerssS.put("Q3.", "A");
-        answerssS.put("Q4.", "D");
+        answerssS.put("Q1.","12345678");
+        answerssS.put("Q2.","Not Answered");
+        answerssS.put("Q3.","3");
+        answerssS.put("Q4.","to@gmail.com");
+        answerssS.put("Q5.","1");
+        answerssS.put("Q6.","yes");
+        answerssS.put("Q7.","no");
+        answerssS.put("Q8.","yes");
         Answer answerrR = new Answer(new AnswerId("1005"), customerrr, answerssS);
         answerListtt.add(answerrR);
-        File fileee = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire.txt");
-        byte[] surveyFileee = new byte[(int) fileee.length()];
-        createSurvey3("665", "questionnaire1- >35", 6, surveyFileee, 35, customersss, answerListtt);
+        File fileee = new File("base.core/src/main/java/eapli/base/surveys/questionnaire2.txt");
+        try {
+            f1 = new FileInputStream(fileee);
+            byte[] surveyFileee = new byte[(int) fileee.length()];
+            f1.read(surveyFileee);
+            f1.close();
+            createSurvey3("665", "questionnaire2- >20", 6, surveyFileee, 20, customersss, answerListtt);
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         return true;
     }
 

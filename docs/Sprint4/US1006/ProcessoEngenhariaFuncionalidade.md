@@ -12,6 +12,7 @@ To simplify this requirement the sales clerk has ability to filter the orders by
 ## Acceptance criteria
 * I would say that some fields might be the same (e.g. order id, date, customer) and differ on others.
 * For instance, within this US the dispatching' date seems to be an important information.
+* The state " (vii) dispatched" and "dispatched for customer delivery" represent the same thing.
 
 
 # 2. Analysis
@@ -32,9 +33,9 @@ with the status changed.
 
 ## 3.1. Realization of Functionality
 
-[US1006_SSD](US1006_SSD.svg)
+![US1006_SSD](US1006_SSD.svg)
 
-[US1006_SD](US1006_SD.svg)
+![US1006_SD](US1006_SD.svg)
 
 ## 3.2. Class Diagram
 

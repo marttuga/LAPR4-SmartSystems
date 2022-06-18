@@ -1,4 +1,4 @@
-package eapli.protocol.client.server;
+package eapli.protocol.server;
 
 import eapli.base.warehousemanagement.application.AGVChangeStatusController;
 import eapli.base.warehousemanagement.domain.AGV;

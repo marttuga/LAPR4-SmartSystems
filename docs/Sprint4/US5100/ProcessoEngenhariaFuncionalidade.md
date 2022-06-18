@@ -39,9 +39,11 @@ on its dock battery consumption might be computed based on time.
 - The AGV must slow down enough so that it does not collide, that is, when it encounters an obstacle 2 squares away.
 
 # 3. Design
-*  Use the standard base structure of the layer-based application.
+* Use the standard base structure of the layer-based application.
 
-* Controller:
+* Controller: AGVToPrepOrderController
+* Domain: AGV, Product Order, Autonomy, Product, Line Order
+* Repositories: AGVRepository, ProductOrderRepository, AisleRepository
 
 ## 3.1. Realization of Functionality
 
@@ -49,7 +51,7 @@ on its dock battery consumption might be computed based on time.
 
 ## 3.3. Applied Patterns
 
-Controller, 
+Controller, GRASP
 
 ## 3.4. Tests
 

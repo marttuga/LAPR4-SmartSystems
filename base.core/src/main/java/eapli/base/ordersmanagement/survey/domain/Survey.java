@@ -7,6 +7,8 @@ import eapli.base.surveys.src.domain.FormGrammarParser;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
 import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.springframework.lang.Nullable;
@@ -65,8 +67,9 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
 
 
     public String getStatisticalReport() throws IOException {
-        FileInputStream fis = new FileInputStream(new File("/Users/ruidias/lei21_22_s4_2dk_01/base.core/src/main/java/eapli/base/surveys/questionnaire.txt"));
-        FormGrammarLexer lexer = new FormGrammarLexer(new ANTLRInputStream(fis));
+        //FileInputStream fis = new FileInputStream(new File("/Users/ruidias/lei21_22_s4_2dk_01/base.core/src/main/java/eapli/base/surveys/questionnaire3.txt"));
+        CharStream charStream = CharStreams.fromString(new String(surveyFile));
+        FormGrammarLexer lexer = new FormGrammarLexer(charStream);
         org.antlr.v4.runtime.CommonTokenStream tokens = new CommonTokenStream(lexer);
         FormGrammarParser parser = new FormGrammarParser(tokens);
         ParseTree tree = parser.start(); // parse

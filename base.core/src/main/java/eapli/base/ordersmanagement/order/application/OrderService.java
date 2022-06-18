@@ -21,7 +21,7 @@ public class OrderService {
     public void printOrdersList(List<ProductOrder> orderList) {
         for (ProductOrder c : orderList) {
             System.out.println("orderID- " + c.toDTO().getOrderID() + "\nCustomerID- "
-                    + "\nStatus- " + c.toDTO().getStatusDto() +"\n");
+                    + "\nStatus- " + c.toDTO().getStatusDto()  + "\nDate- " + c.getDateTime() +"\n");
         }
     }
     public List<ProductOrderDto> printList(List<ProductOrder> orderList) {
@@ -35,7 +35,7 @@ public class OrderService {
     }
     public void printOrder(ProductOrder c) {
             System.out.println("orderID- " + c.toDTO().getOrderID() + "\nCustomerID- "
-                    + "\nStatus- " + c.toDTO().getStatusDto() +"\n");
+                    + "\nStatus- " + c.toDTO().getStatusDto() + "\nDate- " + c.getDateTime() + "\n" );
 
     }
 

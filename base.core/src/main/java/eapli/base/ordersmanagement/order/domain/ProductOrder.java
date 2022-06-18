@@ -8,6 +8,8 @@ import eapli.framework.representations.dto.DTOable;
 
 import javax.persistence.*;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 @Entity
 public class ProductOrder implements AggregateRoot<OrderID>, DTOable<ProductOrderDto> {
@@ -141,4 +143,11 @@ public class ProductOrder implements AggregateRoot<OrderID>, DTOable<ProductOrde
     public ProductOrderDto toDTO(){
         return new ProductOrderDto( this.orderID, this.status);
     }
+
+    public String getDateTime() {
+        return  " " + dateTime.getTime() + dateTime.get(Calendar.YEAR) +  dateTime.get(Calendar.MONTH) +
+        dateTime.get(Calendar.DAY_OF_MONTH);
+    }
+
+
 }

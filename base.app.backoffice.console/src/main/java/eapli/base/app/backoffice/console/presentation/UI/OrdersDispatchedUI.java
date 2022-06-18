@@ -7,6 +7,8 @@ import eapli.base.utilitarianClasses.Utils;
 import eapli.framework.domain.repositories.IntegrityViolationException;
 import eapli.framework.presentation.console.AbstractUI;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class OrdersDispatchedUI extends AbstractUI {
@@ -24,6 +26,7 @@ public class OrdersDispatchedUI extends AbstractUI {
 
             eapli.base.ordersmanagement.order.domain.Status status = ordersDispatchedController.statusOrder(ordersDispatchedController.showOptionsStatusOrder());
             List<ProductOrder> productOrderList = ordersDispatchedController.findOrdersByStatus(status);
+
 
             System.out.println();
             System.out.println("               ORDERS WITH THE CHOSEN STATUS :             ");

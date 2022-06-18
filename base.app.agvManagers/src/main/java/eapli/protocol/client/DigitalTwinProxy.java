@@ -24,6 +24,8 @@ package eapli.protocol.client;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -38,9 +40,11 @@ public class DigitalTwinProxy {
 
     private static class ClientSocket {
 
-        private Socket sock;
+        private SSLSocket sock;
         private PrintWriter output;
         private BufferedReader input;
+
+        static final String KEYSTORE_PASS="passwordT";
 
         /**
          * @param address
@@ -53,7 +57,20 @@ public class DigitalTwinProxy {
 
             serverIP = InetAddress.getByName(address);
 
-            sock = new Socket(serverIP, port);
+            System.setProperty("javax.net.ssl.trustStore", "AgvTwinSrv" +".jks");
+            System.setProperty("javax.net.ssl.trustStorePassword",KEYSTORE_PASS);
+
+            System.setProperty("javax.net.ssl.keyStore","AgvTwinSrv"+".jks");
+            System.setProperty("javax.net.ssl.keyStorePassword",KEYSTORE_PASS);
+
+            SSLSocketFactory sf = (SSLSocketFactory) SSLSocketFactory.getDefault();
+            try {
+                sock = (SSLSocket) sf.createSocket(serverIP, port);
+            } catch (IOException ex) {
+                System.out.println("Failed to connect to: " + port);
+                System.out.println("Application aborted.");
+                System.exit(1);
+            }
             output = new PrintWriter(sock.getOutputStream(), true);
             input = new BufferedReader(new InputStreamReader(sock.getInputStream()));
             LOGGER.debug("Connected to {}", address);
