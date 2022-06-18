@@ -189,11 +189,22 @@ public class QuestionnaireAnswerUI extends AbstractUI {
 
             answerController.saveSurveyAnswered(o, answerList);
 
-
             answerController.saveSurveyRemoveCustomers(o, o.getCustomers(),customer);
             for (Customer c : o.getCustomers()) {
                 System.out.println(c);
             }
+
+            try{
+
+                    questionnaireAnswerController.checkAnswer(answers);
+
+             } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("Error while answering the survey!");
+            return false;
+        }
+
+
             //System.out.println(o.getCustomers());
 
             System.out.println("========================================");
