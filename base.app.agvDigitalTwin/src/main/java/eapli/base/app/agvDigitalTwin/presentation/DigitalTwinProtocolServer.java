@@ -3,6 +3,10 @@ import eapli.base.app.agvDigitalTwin.protocol.server.AGVTwinProtocolRequest;
 import eapli.base.app.agvDigitalTwin.protocol.server.DigitalTwinProtocolMessageParser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import javax.net.ssl.SSLServerSocket;
+import javax.net.ssl.SSLServerSocketFactory;
+import javax.net.ssl.SSLSocket;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,8 +20,11 @@ public class DigitalTwinProtocolServer {
 
     private static class ClientHandler extends Thread {
         private Socket clientSocket;
-
         private final DigitalTwinProtocolMessageParser parser;
+
+        static final String TRUSTED_STORE = "AgvTwinSrv.jks";
+
+        static final String KEYSTORE_PASS="passwordT";
 
 
         public ClientHandler(final Socket socket, final DigitalTwinProtocolMessageParser parser) {
@@ -27,6 +34,12 @@ public class DigitalTwinProtocolServer {
 
         @Override
         public void run() {
+            System.setProperty("javax.net.ssl.trustStore", TRUSTED_STORE);
+            System.setProperty("javax.net.ssl.trustStorePassword",KEYSTORE_PASS);
+
+            System.setProperty("javax.net.ssl.keyStore",TRUSTED_STORE);
+            System.setProperty("javax.net.ssl.keyStorePassword",KEYSTORE_PASS);
+
             final var clientIP = clientSocket.getInetAddress();
             LOGGER.debug("Acepted connection from {}:{}", clientIP.getHostAddress(), clientSocket.getPort());
 
@@ -77,13 +90,13 @@ public class DigitalTwinProtocolServer {
     }
 
 
-
-
-
     private void listen(final int port) {
-        try (var serverSocket = new ServerSocket(port)) {
+
+        SSLServerSocketFactory sslF = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault();
+        try (var socket =  (SSLServerSocket) sslF.createServerSocket(port);) {
+            socket.setNeedClientAuth(true);
             while (true) {
-                final var clientSocket = serverSocket.accept();
+                final var clientSocket = socket.accept();
                 new ClientHandler(clientSocket, parser).start();
             }
         } catch (final IOException e) {
@@ -102,6 +115,7 @@ public class DigitalTwinProtocolServer {
 
     public void start(final int port, final boolean blocking) {
         if (blocking) {
+
             listen(port);
         } else {
             new Thread(() -> listen(port)).start();
