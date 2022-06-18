@@ -41,7 +41,6 @@ public class QuestionnaireAnswerUI extends AbstractUI {
         for (Survey s : allSurvey) {
 
             for (Customer c : s.getCustomers()) {
-                System.out.println(s.getCustomers());
                 if (c.getCustomerEmailAddress().toString().equals(customer.getCustomerEmailAddress().toString()) ){
                     surveysForCustomer.add(questionnaireAnswerController.fromEntityToDTO(s));
                 }
