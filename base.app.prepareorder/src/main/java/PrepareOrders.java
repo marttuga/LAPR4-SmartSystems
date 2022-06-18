@@ -17,9 +17,8 @@ public class PrepareOrders {
     private static final AisleRepository aisleRepository = PersistenceContext.repositories().aisle();
     private static final AGVRepository agvRepository = PersistenceContext.repositories().agv();
 
-
-
     public static void main(String[] args) {
+
         while (true) {
             List<ProductOrder> ordersToBePrepared = getOrdersToBePrepared();
             List<AGV> availableAgvs = getAvailableAgvs();
@@ -33,6 +32,7 @@ public class PrepareOrders {
                     availableAgv = availableAgvs.get(0);
                     orderToPrepare = ordersToBePrepared.get(0);
                     agvToPrepOrderController.agvToPrepOrder(availableAgv, orderToPrepare);
+                    System.out.println("Order " + orderToPrepare.getOrderID() + "atribuida ao agv " + availableAgv.getIdentifier());
 
                     Set<ProductItem> orderProductItems = orderToPrepare.getLineOrder().getLineOrderList();
                     List<Product> orderProductList = new ArrayList<>();
@@ -43,7 +43,7 @@ public class PrepareOrders {
 
                     Map<Position, Product> path = new HashMap<>();
                     for (Product p : orderProductList) {
-                        Aisle aisle = aisleRepository.findByID(p.getAisleId()).stream().findFirst().orElse(null);
+                        Aisle aisle = aisleRepository.findByID(p.getAisleId());
                         Position aislePosition = new Position(aisle.getLsquareBegin(), aisle.getWsquareBegin());
                         path.put(aislePosition, p);
                     }
@@ -133,12 +133,62 @@ public class PrepareOrders {
 
     public static void prepareOrder (AGV agv, Map<Position, Product> path) {
 
-        int[][] warehouseMatrix = WarehouseMatrix.getWarehouseMatrix();
-        boolean[][] visitedMatrix = WarehouseMatrix.getVisitedMatrix().clone();
+        int[][] warehouseMatrix = getWarehouseMatrix();
+        boolean[][] visitedMatrix = getVisitedMatrix().clone();
 
         for (Position p : path.keySet()) {
             BFS(warehouseMatrix, visitedMatrix, agv.getPosition(), p);
         }
+    }
+
+    private static int[][] warehouseMatrix = {
+            { 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 },
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+            { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 },
+            { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+            { 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 },
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+            { 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 },
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+            { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 },
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+            { 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 },
+    };
+
+    private static boolean[][] visitedMatrix = {
+            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
+            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
+            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
+            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
+            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
+            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
+            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
+            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
+            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
+            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
+            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
+            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
+            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
+            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
+            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
+            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
+            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
+            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
+    };
+
+    public static int[][] getWarehouseMatrix() {
+        return warehouseMatrix;
+    }
+
+    public static boolean[][] getVisitedMatrix() {
+        return visitedMatrix;
     }
 }
 

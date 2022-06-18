@@ -1,4 +1,5 @@
 package eapli.base.ordersmanagement.order.domain;
+
 import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.survey.domain.Survey;
 import eapli.framework.domain.model.AggregateRoot;
@@ -41,7 +42,7 @@ public class ProductOrder implements AggregateRoot<OrderID>, DTOable<ProductOrde
     })
     private PriceOrder priceOrder;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private LineOrder lineOrder;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
