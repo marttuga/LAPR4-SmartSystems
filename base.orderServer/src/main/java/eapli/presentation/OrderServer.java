@@ -8,38 +8,62 @@ import javax.net.ssl.SSLServerSocketFactory;
 import java.io.*;
 import java.net.*;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 
 
 public class OrderServer {
 
-    static final String TRUSTED_STORE = "server_J.jks";
-    static final String KEYSTORE_PASS = "forgotten";
-    private static final OrderServerController orderServerController = new OrderServerController();
+    static final String TRUSTED_STORE = "orderServer.jks";
+    static final String KEYSTORE_PASS = "password";
+    //private static final OrderServerController orderServerController = new OrderServerController();
+
+    private static HashMap<Socket, DataOutputStream> cliList = new HashMap<>();
+
+    public static synchronized void sendToAll(int len, byte[] data) throws Exception {
+        //System.out.println("Client Connected");
+        for (DataOutputStream cOut : cliList.values()) {
+            cOut.write(len);
+            cOut.write(data, 0, len);
+
+        }
+
+    }
+
+    public static synchronized void addCli(Socket s) throws Exception {
+        cliList.put(s, new DataOutputStream(s.getOutputStream()));
+    }
+
+    public static synchronized void remCli(Socket s) throws Exception {
+        cliList.get(s).write(0);
+        cliList.remove(s);
+        s.close();
+
+    }
 
     public static void main(String args[]) throws Exception {
         int i;
         SSLServerSocket sock = null;
         Socket cliSock;
         // Trust these certificates provided by authorized clients
-        System.setProperty("javax.net.ssl.trustStore", TRUSTED_STORE);
-        System.setProperty("javax.net.ssl.trustStorePassword", KEYSTORE_PASS);
+        System.setProperty("orderCustomerSSL//customerApp.jks", TRUSTED_STORE);
+        System.setProperty("orderCustomerSSL//customerApp.pem", KEYSTORE_PASS);
 
         // Use this certificate and private key as server certificate
-        System.setProperty("javax.net.ssl.keyStore", TRUSTED_STORE);
-        System.setProperty("javax.net.ssl.keyStorePassword", KEYSTORE_PASS);
+        System.setProperty("orderCustomerSSL//orderServer.jks", TRUSTED_STORE);
+        System.setProperty("orderCustomerSSL//orderServer.pem", KEYSTORE_PASS);
 
         SSLServerSocketFactory sslF = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault();
         try {
-            sock = (SSLServerSocket) sslF.createServerSocket(1111);
+            sock = (SSLServerSocket) sslF.createServerSocket(1112);
             sock.setNeedClientAuth(true);
         } catch (IOException ex) {
-            System.out.println("Server failed to open local port " + 1111);
+            System.out.println("Server failed to open local port " + 1112);
             System.exit(1);
         }
 
         while(true) {
             cliSock=sock.accept();
-            OrderServerController.addCli(cliSock);
+            addCli(cliSock);
             Thread cli = new OrderServerClient(cliSock);
             cli.start();
         }
@@ -67,12 +91,12 @@ class OrderServerClient extends Thread {
                 System.out.printf("num chars: %d", sIn.read(data, 0, nChars));
                 System.out.println();
                 System.out.println(new String(data, StandardCharsets.UTF_8));
-                OrderServerController.sendToAll(nChars, data);
+               OrderServer.sendToAll(nChars, data);
             }
 
 
             // the client wants to exit
-            OrderServerController.remCli(myS);
+            OrderServer.remCli(myS);
         } catch (Exception ex) {
             System.out.println("Error");
         }
