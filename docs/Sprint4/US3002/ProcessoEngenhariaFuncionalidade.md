@@ -11,47 +11,60 @@
 
 
 ## Acceptance criteria
-* The report should be generated considering the given questionnaire and the set of answers obtained until the current moment.
+>Every survey report must state:
+* Universe being considered (number of people that responded);
+* Number of questions answered;
+* % of questions answered;
+
+>For Single-Choice questions:
+* Distribution (in %) of responses for each alternative (e.g.: A = 30%, B = 27%, C = 40%, Others = 3%) (number of options varies from question to question);
+
+>For Multiple-Choice questions:
+* Distribution (in %) of responses for each alternative (e.g.: A = 30%, B = 27%, C = 40%, Others = 3%);
+* Distribution (in %) of combined responses (e.g.: A+B = 15%, A+C = 100%, B+C=100%, A+B+C=10%);
+
+>For Sorting questions:
+* Distribution of the various hypotheses for each position (e.g.: 1st Place = A(40%) B (60%) C(0%); 2nd Place = A(50%) B(40%) C(10%); 3rd Place= A(10%) C(90%));
+
+>For Scaling questions:
+* Distribution of each option by scale levels;
+
 
 # 2. Analysis
 
 * This US depends on the US 3001 that creates the questionnaires and the US 3501 that registers the answers to them.
-* For this US, the team must specify a parser that validates the various types of questionnaires and produces a statistical report on each of the previously configured questionnaires.
-*
+* For this US, the previously answered survey, chosen by the sales manager, serves as a base to validate the answers of the customers.
+* Using the visitors, the system iterates through every type of question (except free text) and compares it tho the answer given by a given customer.
+* In case that answer is correct, that answer will be accounted for in the statistics of a given type of question.
+* When all the answers are accounted for, the system calculates the statistics shown in the final report.
 
 # 3. Design
 
 
->   Domain Classes: Costumer, CustomerFirstName, CustomerLastName, CustomerEmailAddress, CustomerPostalAddress, CustomerPhoneNumber, CustomerBirthday, CustomerGender, CustomerVatIdentifier
+>   Domain Classes: Survey, Answer
 >
->   Controller: RegisterCustomerController
+>   Controller: StatisticalReportController
 >
->   Repository: CostumerRepository
+>   Service: SurveyService, AnswerService
+>
+>   Repository: SurveyRepository, AnswerRepository
+> 
+>   UI: StatisticalReportUI
+> 
+>   Visitor: EvalVisitorReport
 
-## 3.1. Realização da Funcionalidade
-
-![SSD](US1003_SSD.svg)
-
-![SD](US1003_SD.svg)
-
-## 3.2. Diagrama de Classes
-
-![CD](US1003_CD.svg)
+## 3.1. Functionalities
 
 
-## 3.3. Padrões Aplicados
+![SD](US3002_SD.svg)
 
-*Nesta secção deve apresentar e explicar quais e como foram os padrões de design aplicados e as melhores práticas.*
+
+## 3.3. Patterns applied
+
+* For this US the applied patterns were: GRASP, controller, service ,visitor
 
 ## 3.4. Testes 
-*Nesta secção deve sistematizar como os testes foram concebidos para permitir uma correta aferição da satisfação dos requisitos.*
-
-**Teste 1:** Verificar que não é possível criar uma instância da classe Exemplo com valores nulos.
-
-	@Test(expected = IllegalArgumentException.class)
-		public void ensureNullIsNotAllowed() {
-		Exemplo instance = new Exemplo(null, null);
-	}
+* Functional Tests:
 
 # 4. Implementação
 
