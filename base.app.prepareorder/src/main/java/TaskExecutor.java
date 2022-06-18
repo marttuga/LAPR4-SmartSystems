@@ -3,6 +3,7 @@ import eapli.base.ordersmanagement.order.domain.ProductOrder;
 import eapli.base.ordersmanagement.order.domain.Status;
 import eapli.base.ordersmanagement.order.repositories.OrderRepository;
 import eapli.base.warehousemanagement.domain.AGV;
+import eapli.base.warehousemanagement.domain.Autonomy;
 import eapli.base.warehousemanagement.repositories.AGVRepository;
 
 import java.util.ArrayList;
@@ -14,6 +15,12 @@ public class TaskExecutor implements Runnable {
 
     private static final OrderRepository orderRepository = PersistenceContext.repositories().orders();
 
+    private static final Autonomy autonomy = new Autonomy();
+
+    private int speed;
+    private double discharchingRate = 0.01;
+
+
 
     public List<Semaphore> createSemaphore(List<AGV> agvList){
 
@@ -24,6 +31,7 @@ public class TaskExecutor implements Runnable {
             semaphores.add(semaphoreAGV);
             AGV agv = agvList.get(i);
             agvList.remove(agv);
+
         }
         return semaphores;
     }
@@ -64,6 +72,10 @@ public class TaskExecutor implements Runnable {
     @Override
     public void run() {
         try{
+
+            int batery = 100;
+            int discharge;
+
             List<AGV> agvList = agvRepository.findAGVByStatus(eapli.base.warehousemanagement.domain.Status.FREE);
 
             List<Semaphore> semaphores = createSemaphore(agvList);
@@ -73,12 +85,16 @@ public class TaskExecutor implements Runnable {
 
             List<Thread> threads = createThread(productOrders);
 
+
+
             for(int i = 0; i < semaphores.size();i++){
                 semaphores.get(i).acquire();
                 semaphoresDock.get(i).acquire();
                 System.out.println("Being run by " + Thread.currentThread().getName());
                 for (int j = 0; j < threads.size(); j++){
                     System.out.println("Running thread " + Thread.currentThread().getName());
+                    discharge = autonomy.discharching(speed,discharchingRate);          //charge of AGV
+                    batery -= discharge;
                     Thread.sleep(100);
                     threads.get(j).join();                  //Wait for a thread to finish
                 }

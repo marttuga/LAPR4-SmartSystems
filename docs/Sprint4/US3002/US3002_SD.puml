@@ -1,91 +1,125 @@
 @startuml
 autonumber
 'hide footbox
-actor "Sales Clerck" as SC
-participant "RegisterCustomerUI" as UI <<presentation>>
-participant "RegisterCustomerController" as CTRL <<application>>
-participant "CustomerBuilder" as BD <<builder>>
-participant "customer:Customer" as Customer <<domain>>
-participant "PersistenceContext" as PC <<persistence>>
-participant "RepositoryFactory" as RF <<factory>>
-database "CustomerRepository" as CR <<repository>>
-database "UserRepository" as UR <<repository>>
+actor "Sales Manager" as SM
+participant "StatisticalReportUI" as UI <<presentation>>
+participant "StatisticalReportController" as CTRL <<application>>
+participant "SurveyService" as SERV <<application>>
+participant "AnswerService" as ASERV <<application>>
+participant "survey:Survey" as Survey <<domain>>
+database "SurveyRepository" as SR <<repository>>
+database "AnswerRepository" as AR <<repository>>
+participant "EvalVisitorReport" as V <<visitor>>
 
 
-activate SC
-SC -> UI : Starts to register a new customer
-activate UI
-opt birthdate, gender, billing and delivering addresses are not mandatory
-UI --> SC : Requests data (name, VAT identifier, email, phone number, birthdate, gender, billing address, delivering address)
-deactivate UI
-end opt
-
-
-SC -> UI : Inserts requested data
+activate SM
+SM -> UI : Starts to see surveys available to make statistical report
 activate UI
 
-UI -> CTRL : addCustomer(name, VATid, email, phoneNumber, birthdate, gender, billingAddress, deliveringAddress)
+UI -> CTRL : showSurveysAnswered()
 activate CTRL
 
-note right BD #CCE2CB
-    CustomerBuilder is used to create an entity of Customer in a valid state
-end note
 
-CTRL -> BD : create
-CTRL -> BD : putName(name)
+CTRL -> SERV : showSurveysAnswered()
 
-note right CTRL #CCE2CB
-    Places rest of customer information
-end note
-
-CTRL -> BD : createCustomer()
-activate BD
-BD -> Customer : create(name, VATid, email, phoneNumber, birthdate, gender, billingAddress, deliveringAddress)
-Customer -> BD : customer
-
-BD -> CTRL : customer
-deactivate BD
-
-CTRL -> PC : repositories()
-activate PC
-note right PC #CCE2CB
-    can create repository in memory or JPA
-end note
-PC -> RF : create
-PC -> CTRL : factory
-deactivate PC
-
-
-
-CTRL -> RF : customers()
-activate RF
-RF -> CR : create
-RF -> CTRL : customerRepository
-deactivate RF
-CTRL -> CR : save(customer)
-CTRL -> UI : customer
-
-
-
-CTRL -> RF : users()
-activate RF
-RF -> UR : create
-RF -> CTRL : userRepository
-deactivate RF
-CTRL -> UR : save(user)
-CTRL -> UI : user
+activate SERV
+SERV -> SR : findSurveys()
+activate SR
+SR --> SERV : List<Survey>
+deactivate SR
+SERV --> CTRL : List<SurveyDTO>
+deactivate SERV
+CTRL --> UI : List<SurveyDTO>
 deactivate CTRL
-
-UI --> SC :shows all data and requests confirmation
+UI --> SM : List<SurveyDTO>
 deactivate UI
 
 
-SC -> UI : confirms the data
+SM -> UI : Chooses SurveyID
 activate UI
-UI --> SC : Generates customerID and informs operation success
+UI -> CTRL : calculateUniverse(SurveyID)
+activate CTRL
+CTRL -> ASERV : calculateUniverse(SurveyID)
+activate ASERV
+note right AR #CCE2CB
+    Each answer has a costumer associated,
+    so amount of answers equals
+    the equals amounts of customers (universe)
+end note
+ASERV -> AR : calculateUniverse(SurveyID)
+
+activate AR
+AR --> ASERV : universe
+deactivate AR
+
+ASERV --> CTRL : universe
+deactivate ASERV
+CTRL --> UI : universe
+deactivate CTRL
+UI --> SM : Shows universe
+
+UI -> CTRL : calculatePercentage(SurveyID)
+activate CTRL
+CTRL -> ASERV : calculatePercentage(SurveyID)
+activate ASERV
+ASERV -> AR : calculatePercentage(SurveyID)
+activate AR
+AR --> ASERV : answers
+deactivate AR
+
+
+ASERV --> CTRL : percentage
+deactivate ASERV
+CTRL --> UI : percentage
+deactivate CTRL
+UI --> SM : Shows percentage
+
+
+UI -> CTRL : calculateNumAnswers(SurveyID)
+activate CTRL
+CTRL -> ASERV : calculateNumAnswers(SurveyID)
+activate ASERV
+ASERV -> AR : calculateNumAnswers(SurveyID)
+activate AR
+AR --> ASERV : numAnswers
+deactivate AR
+
+ASERV --> CTRL : numAnswers
+deactivate ASERV
+CTRL --> UI : numAnswers
+deactivate CTRL
+UI --> SM : Shows numAnswers
+
+
+UI -> CTRL : getStatisticalReport(SurveyID)
+activate CTRL
+CTRL -> SERV : getStatisticalReport(SurveyID)
+deactivate CTRL
+activate SERV
+
+SERV -> Survey : getStatisticalReport()
+activate Survey
+deactivate SERV
+note right V #CCE2CB
+    Visitor validates every answer,
+    and calculates the statistics for report
+end note
+Survey -> V : create
+
+activate V
+deactivate Survey
+V -> V : visitSingleChoice()
+V -> V : visitMultipleChoice()
+V -> V : statisticSingleChoice()
+V -> V : statisticsMultipleChoice()
+V --> UI : statistics
+deactivate V
+UI --> SM : Shows statistics
 deactivate UI
 
-deactivate SC
+
+
+deactivate SM
 
 
 
