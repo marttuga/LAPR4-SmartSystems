@@ -80,10 +80,10 @@ public class SurveyBootstrapper implements Action {
         customerss.add(customerr);
 
         Map<String, String> answersS = new HashMap<>();
-        answersS.put("3", "A");
-        answersS.put("4", "A");
-        answersS.put("5", "A");
-        answersS.put("6", "D");
+        answersS.put("Q3.", "A");
+        answersS.put("Q4.", "A");
+        answersS.put("Q5.", "A");
+        answersS.put("Q6.", "D");
         Answer answerR = new Answer(new AnswerId("12365"), customerr, answersS);
         answerListt.add(answerR);
         File filee = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire.txt");
@@ -99,10 +99,10 @@ public class SurveyBootstrapper implements Action {
         customersss.add(customerrr);
 
         Map<String, String> answerssS = new HashMap<>();
-        answerssS.put("1", "A");
-        answerssS.put("2", "A");
-        answerssS.put("3", "A");
-        answerssS.put("4", "D");
+        answerssS.put("Q1.", "A");
+        answerssS.put("Q2.", "A");
+        answerssS.put("Q3.", "A");
+        answerssS.put("Q4.", "D");
         Answer answerrR = new Answer(new AnswerId("1005"), customerrr, answerssS);
         answerListtt.add(answerrR);
         File fileee = new File("base.core\\src\\main\\java\\eapli\\base\\surveys\\questionnaire.txt");
