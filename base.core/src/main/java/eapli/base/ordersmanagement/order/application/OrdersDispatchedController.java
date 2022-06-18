@@ -10,6 +10,7 @@ import eapli.base.usermanagement.domain.BaseRoles;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
 
+import java.util.Collections;
 import java.util.List;
 
 public class OrdersDispatchedController {
@@ -22,7 +23,7 @@ public class OrdersDispatchedController {
         return (List<ProductOrder>) orderRepository.findAllOrders();
     }
     public ProductOrder findByOrderID(String id) {
-        return orderRepository.findByOrderID(id);
+        return orderRepository.findByOrderID(id) ;
     }
     public List<ProductOrder> findOrdersByStatus(eapli.base.ordersmanagement.order.domain.Status status) {
         return (List<ProductOrder>) orderRepository.findOrdersByStatus(status);
@@ -37,11 +38,6 @@ public class OrdersDispatchedController {
 
     public List<ProductOrder> findOpenOrders(eapli.base.ordersmanagement.order.domain.Status status, String c) {
         return orderRepository.findOpenOrders(status,c);
-    }
-
-    public void dispatchOrders (ProductOrder productOrder){
-        productOrder.changeStatus(eapli.base.ordersmanagement.order.domain.Status.DISPATCHED);
-        orderRepository.save(productOrder);
     }
 
     public void printOrdersList(List<ProductOrder> orderList) {
