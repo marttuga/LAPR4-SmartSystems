@@ -38,7 +38,7 @@ public class QuestionnaireAnswerController {
         surveysService.printSurveysList(orderList);
     }
 
-    public String checkAnswer(List<String> id) throws IOException {
+    public String checkAnswer(String id) throws IOException {
         return surveysService.checkAnswer(id);
     }
 }

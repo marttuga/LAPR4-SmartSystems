@@ -4,7 +4,6 @@ import eapli.base.ordersmanagement.answer.application.AnswerController;
 import eapli.base.ordersmanagement.answer.domain.Answer;
 import eapli.base.ordersmanagement.answer.domain.AnswerId;
 import eapli.base.ordersmanagement.customer.domain.Customer;
-import eapli.base.ordersmanagement.customer.domain.CustomerEmailAdress;
 import eapli.base.ordersmanagement.order.application.CheckOpenOrderController;
 import eapli.base.ordersmanagement.survey.application.QuestionnaireAnswerController;
 
@@ -194,9 +193,13 @@ public class QuestionnaireAnswerUI extends AbstractUI {
                 System.out.println(c);
             }
 
+            String str = String.join("\n", answers);
+            System.out.println(str);
             try{
 
-                    questionnaireAnswerController.checkAnswer(answers);
+questionnaireAnswerController.checkAnswer(str);
+
+
 
              } catch (Exception ex) {
             ex.printStackTrace();
