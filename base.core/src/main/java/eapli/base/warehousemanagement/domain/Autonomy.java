@@ -1,8 +1,11 @@
 package eapli.base.warehousemanagement.domain;
 
 import eapli.framework.domain.model.ValueObject;
+import eapli.framework.strings.util.StringPredicates;
+import eapli.framework.validations.Preconditions;
 
 import javax.persistence.Embeddable;
+import java.util.Collections;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
@@ -16,6 +19,10 @@ public class Autonomy implements ValueObject, Comparable<Autonomy>{
     }
 
     public Autonomy(int autonomy) throws IllegalAccessException {
+        if(StringPredicates.isNullOrWhiteSpace(String.valueOf(autonomy))) {
+            throw new IllegalAccessException("The autonomy cannot be null or empty!");
+        }
+
         if(0 < autonomy && autonomy > 100){
             throw new IllegalArgumentException("The autonomy should be from 0 to 100.");
         }
