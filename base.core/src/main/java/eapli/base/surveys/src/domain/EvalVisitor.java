@@ -9,7 +9,6 @@ import org.apache.commons.lang3.RandomStringUtils;
 import java.util.*;
 
 
-
 public class EvalVisitor extends FormGrammarBaseVisitor<String> {
 
 
@@ -17,18 +16,21 @@ public class EvalVisitor extends FormGrammarBaseVisitor<String> {
         FormGrammarParser.ParameterQuestionContext questionContext = (FormGrammarParser.ParameterQuestionContext) ctx.getParent();
         String obligatoriness = questionContext.parameterQuestion().parameterOblig().getText();
         String d = questionContext.parameterAnswer().getText();
-        List<String> words = new ArrayList<>();
+     /*   List<String> words = new ArrayList<>();
         words.add("hated");
         words.add("horrible");
         words.add("awful");
         words.add("disappointing");
-        words.add("hate");
+        words.add("hate");*/
         List<String> error = new ArrayList<>();
-        if (words.contains(d)) {
-            System.out.println("Error the answer contains inappropriate words and is not accepted: " + d);
 
-
+        String[] words = {" hated ", " horrible ", " awful ", " disappointing ", " hate "};
+        for (String e : words) {
+            if (d.contains(e))
+                System.out.println("Error the answer contains inappropriate words and is not accepted: " + d);
         }
+
+
         if ((questionContext.parameterQuestion().parameterQuestionType().getText().startsWith("Type: Single-Choice.") || questionContext.parameterQuestion().parameterQuestionType().getText().startsWith("TYPE: SINGLE-CHOICE.")) && !obligatoriness.equals("Obligatoriness: Optional.")) {
             if (!(d.matches("[1-6]"))) {
                 System.out.println("Error while choosing the option :" + d + " not valid");
