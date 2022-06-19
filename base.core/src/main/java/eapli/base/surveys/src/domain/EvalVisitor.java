@@ -31,17 +31,17 @@ public class EvalVisitor extends FormGrammarBaseVisitor<String> {
         }
         if ((questionContext.parameterQuestion().parameterQuestionType().getText().startsWith("Type: Single-Choice.") || questionContext.parameterQuestion().parameterQuestionType().getText().startsWith("TYPE: SINGLE-CHOICE.")) && !obligatoriness.equals("Obligatoriness: Optional.")) {
             if (!(d.matches("[1-6]"))) {
-                error.add("Error while choosing the option :" + d + " not valid");
+                System.out.println("Error while choosing the option :" + d + " not valid");
             }
 
         }
         if (d.matches(RandomStringUtils.randomAlphabetic(10).toLowerCase(Locale.ROOT))) {
-            error.add("Error while answering, random phrase " + d);
+            System.out.println("Error while answering, random phrase " + d);
 
         }
         if ((obligatoriness.equals("Obligatoriness: Mandatory.") && !(questionContext.parameterQuestion().parameterQuestionType().getText().startsWith("Type: Single-Choice.")))) {
             if (d.length() == 1 || d.length() > 50) {
-                error.add("Error while answering a mandatory question, length of answer is not valid");
+                System.out.println("Error while answering a mandatory question, length of answer is not valid");
             }
 
 
