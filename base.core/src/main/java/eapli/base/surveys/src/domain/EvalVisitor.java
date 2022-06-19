@@ -25,7 +25,7 @@ public class EvalVisitor extends FormGrammarBaseVisitor<String> {
         words.add("hate");
         List<String> error = new ArrayList<>();
         if (words.contains(d)) {
-            error.add("Error the answer contains inappropriate words and is not accepted: " + d);
+            System.out.println("Error the answer contains inappropriate words and is not accepted: " + d);
 
 
         }
