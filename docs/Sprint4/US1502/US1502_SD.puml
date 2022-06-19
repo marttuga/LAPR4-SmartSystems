@@ -2,21 +2,48 @@
 autonumber
 'hide footbox
 actor "Customer" as WE
-participant ":CheckOpenOrderUI" as UI
-participant ":CheckOpenOrderController" as CTRL
+participant ":CheckOpenOrderUI" as UI <<presentation>>
+participant ":AuthorizationService" as Au <<application>>
+participant ":CheckOpenOrderController" as CTRL <<application>>
 participant ":PersistenceContext" as PC
 participant ":RepositoryFactory" as RF
-participant ":ProductOrderRepository" as ProdRepo
-participant ":ProductOrderService" as ProdS
-participant ":ProtocolProxy" as P
+participant ":CustomerRepository" as CRepo <<repository>>
+participant ":ProductOrderRepository" as ProdRepo <<repository>>
+participant ":ProductOrderService" as ProdS <<application>>
+participant ":ProtocolProxy" as P <<proxy>>
 
 activate WE
 
 WE -> UI : asks to view the list of open orders
 activate UI
+UI -> Au : email=getCustomerLoggedInEmail
+activate Au
+deactivate CTRL
+deactivate Au
 
+
+UI -> CTRL : getCustomerByEmail
+activate CTRL
+CTRL -> PC : repositories()
+
+activate PC
+PC -> RF : create
+deactivate PC
+activate RF
+RF -> CRepo : create
+deactivate RF
+activate CRepo
+
+
+
+CTRL -> CRepo :  getCustomerByEmail=  getCustomerByEmail(email)
+
+deactivate CTRL
+
+deactivate CRepo
 
 UI -> CTRL : getOpenOrders
+
 activate CTRL
 CTRL -> PC : repositories()
 
@@ -27,11 +54,14 @@ activate RF
 RF -> ProdRepo : create
 deactivate RF
 activate ProdRepo
-deactivate ProdRepo
-CTRL -> ProdRepo : getOpenOrders= getOpenOrders()
-deactivate ProdRepo
-CTRL -> ProdS : printOpenOrderList=printOpenOrderList(getOpenOrders)
 
+
+CTRL -> ProdRepo : getOpenOrders= getOpenOrders(Status, Customer)
+deactivate ProdRepo
+
+
+CTRL -> ProdS : printOpenOrderList=printOpenOrderList(getOpenOrders)
+deactivate ProdRepo
 activate ProdS
 
 CTRL -> P : sendOrdersToServer= sendOrdersToServer(status,email)
