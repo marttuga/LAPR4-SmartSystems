@@ -39,7 +39,7 @@ class DigitalTwinCli {
             sock =(SSLSocket) sf.createSocket("localhost", 9999);
             System.out.println("Connected to server");
 
-            sock.startHandshake();
+            sock.startHandshake();                  //ensures that the call is idempotent, so we can safely call it
 
             BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
             DataOutputStream sOut = new DataOutputStream(sock.getOutputStream());
