@@ -99,4 +99,19 @@ public class SurveysService {
         return eval.visit(tree);
     }
 
+    public String surveysPath(Survey o) {
+        File file = null;
+        if (o.getSurveyDescription().contains("questionnaire1")) {
+            file = new File("base.core//src//main//java//eapli//base//surveys//questionnaire.txt");
+        } else if (o.getSurveyDescription().contains("questionnaire2")) {
+            file = new File("base.core//src//main//java//eapli//base//surveys//questionnaire2.txt");
+        } else if (o.getSurveyDescription().contains("questionnaire3")) {
+            file = new File("base.core//src//main//java//eapli//base//surveys//questionnaire3.txt");
+
+        }
+
+        assert file != null;
+        return file.getAbsolutePath();
+    }
+
 }

@@ -41,4 +41,8 @@ public class QuestionnaireAnswerController {
     public String checkAnswer(String id) throws IOException {
         return surveysService.checkAnswer(id);
     }
+    public String surveysPath(Survey id) throws IOException {
+        return surveysService.surveysPath(id);
+    }
+
 }

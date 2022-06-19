@@ -54,18 +54,14 @@ public class QuestionnaireAnswerUI extends AbstractUI {
 
         String oi = Utils.readLine("Choose the questionnaire to answer: ");
         Survey o = questionnaireAnswerController.findSurveyId(oi);
-        File file = null;
-        if (o.getSurveyDescription().contains("questionnaire1")) {
-            file = new File("base.core//src//main//java//eapli//base//surveys//questionnaire.txt");
-        } else if (o.getSurveyDescription().contains("questionnaire2")) {
-            file = new File("base.core//src//main//java//eapli//base//surveys//questionnaire2.txt");
-        } else if (o.getSurveyDescription().contains("questionnaire3")) {
-            file = new File("base.core//src//main//java//eapli//base//surveys//questionnaire3.txt");
 
+
+        String path= null;
+        try {
+            path = questionnaireAnswerController.surveysPath(o);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        assert file != null;
-        String path = file.getAbsolutePath();
         System.out.println(path);
         //String q = questionnaireAnswerController.questionnaires(questionnaireAnswerController.showOptionsQuestionaires());
 
