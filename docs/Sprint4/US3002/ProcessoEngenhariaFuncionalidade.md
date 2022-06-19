@@ -63,22 +63,23 @@
 
 * For this US the applied patterns were: GRASP, controller, service ,visitor
 
-## 3.4. Testes 
+## 3.4. Tests 
+
+* Unit Tests:
+
+![answer](screenshots/answer.png)
+![survey](screenshots/survey.png)
+
 * Functional Tests:
 
-# 4. Implementação
+![selection](screenshots/surveyselection.png)
+![general](screenshots/general.png)
+![general](screenshots/singlechoice.png)
+![general](screenshots/multiplechoice.png)
 
-*Nesta secção a equipa deve providenciar, se necessário, algumas evidências de que a implementação está em conformidade com o design efetuado. Para além disso, deve mencionar/descrever a existência de outros ficheiros (e.g. de configuração) relevantes e destacar commits relevantes;*
 
-*Recomenda-se que organize este conteúdo por subsecções.*
+# 4. Observations
 
-# 5. Integração/Demonstração
-
-*Nesta secção a equipa deve descrever os esforços realizados no sentido de integrar a funcionalidade desenvolvida com as restantes funcionalidades do sistema.*
-
-# 6. Observações
-
-*Nesta secção sugere-se que a equipa apresente uma perspetiva critica sobre o trabalho desenvolvido apontando, por exemplo, outras alternativas e ou trabalhos futuros relacionados.*
-
+* The statistical report does not encompass sorting nor scaling type statistics.
 
 
