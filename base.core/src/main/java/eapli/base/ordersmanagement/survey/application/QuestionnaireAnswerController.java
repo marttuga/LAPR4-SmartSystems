@@ -1,5 +1,7 @@
 package eapli.base.ordersmanagement.survey.application;
 
+import eapli.base.ordersmanagement.answer.domain.Answer;
+import eapli.base.ordersmanagement.customer.domain.Customer;
 import eapli.base.ordersmanagement.survey.domain.Survey;
 import eapli.base.ordersmanagement.survey.dto.SurveyDTO;
 import eapli.base.surveys.src.domain.FileAnswersOutput;
@@ -38,7 +40,7 @@ public class QuestionnaireAnswerController {
         surveysService.printSurveysList(orderList);
     }
 
-    public String checkAnswer(String id) throws IOException {
+    public String checkAnswer( File id) throws IOException {
         return surveysService.checkAnswer(id);
     }
     public String surveysPath(Survey id) throws IOException {

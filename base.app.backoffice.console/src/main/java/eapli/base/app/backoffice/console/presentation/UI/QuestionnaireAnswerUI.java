@@ -9,6 +9,7 @@ import eapli.base.ordersmanagement.survey.application.QuestionnaireAnswerControl
 
 import eapli.base.ordersmanagement.survey.domain.Survey;
 import eapli.base.ordersmanagement.survey.dto.SurveyDTO;
+import eapli.base.surveys.src.domain.EvalVisitor;
 import eapli.base.utilitarianClasses.Utils;
 import eapli.framework.infrastructure.authz.application.AuthorizationService;
 import eapli.framework.infrastructure.authz.application.AuthzRegistry;
@@ -40,7 +41,7 @@ public class QuestionnaireAnswerUI extends AbstractUI {
         for (Survey s : allSurvey) {
 
             for (Customer c : s.getCustomers()) {
-                if (c.getCustomerEmailAddress().toString().equals(customer.getCustomerEmailAddress().toString()) ){
+                if (c.getCustomerEmailAddress().toString().equals(customer.getCustomerEmailAddress().toString())) {
                     surveysForCustomer.add(questionnaireAnswerController.fromEntityToDTO(s));
                 }
             }
@@ -56,7 +57,7 @@ public class QuestionnaireAnswerUI extends AbstractUI {
         Survey o = questionnaireAnswerController.findSurveyId(oi);
 
 
-        String path= null;
+        String path = null;
         try {
             path = questionnaireAnswerController.surveysPath(o);
         } catch (IOException e) {
@@ -155,7 +156,6 @@ public class QuestionnaireAnswerUI extends AbstractUI {
                     } else if (linha.equals("") || flagTf) { //se a linha for vazia e for de free text vai ler a proxima linha q é a resposta e adiciona la ao txt
                         String answer = in.nextLine();
                         if (!answer.equals("")) {
-
                             questionary.add(questionary.size() - 1, answer + "\n");
                             answers.add(answer);
                         }
@@ -169,41 +169,34 @@ public class QuestionnaireAnswerUI extends AbstractUI {
                 questionnaireAnswerController.outPutResume(a); // print para o txt
             }
 
+
             Map<String, String> map = new HashMap<>();
             for (int i = 0; i < answers.size(); i++) {
-                map.put("Q"+(i + 1)+".", answers.get(i));
+                map.put("Q" + (i + 1) + ".", answers.get(i));
 
             }
             System.out.println(map);
             String id = RandomStringUtils.randomAlphanumeric(6);
 
             Answer aw = answerController.registerAnswer(AnswerId.valueOf(id), customer, map);
-
             List<Answer> answerList = new ArrayList<>();
             answerList.add(aw);
 
-            answerController.saveSurveyAnswered(o, answerList);
+            File f = new File("C:\\Users\\marti\\Documents\\2ANO2SEMESTRE\\LAPR4\\LEI21_22_S4_2DK_01\\base.core\\src\\main\\java\\eapli\\base\\surveys\\Answers.txt");
+            try {
+                questionnaireAnswerController.checkAnswer(f);
 
-            answerController.saveSurveyRemoveCustomers(o, o.getCustomers(),customer);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                System.out.println("Error while answering the survey!");
+                return false;
+            }
+
+            answerController.saveSurveyAnswered(o, answerList);
+            answerController.saveSurveyRemoveCustomers(o, o.getCustomers(), customer);
             for (Customer c : o.getCustomers()) {
                 System.out.println(c);
             }
-
-            String str = String.join("\n", answers);
-            System.out.println(str);
-            try{
-
-questionnaireAnswerController.checkAnswer(str);
-
-
-
-             } catch (Exception ex) {
-            ex.printStackTrace();
-            System.out.println("Error while answering the survey!");
-            return false;
-        }
-
-
             //System.out.println(o.getCustomers());
 
             System.out.println("========================================");
