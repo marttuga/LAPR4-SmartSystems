@@ -33,17 +33,17 @@ that the communications made through the SPOMS2022 protocol can be secured/prote
 > 
 >   Client: CustomerAppCli
 
-## 3.1. Realization of Functionality
-
-![SD](US1902_SD.svg)
 
 ## 3.2. Applied Patterns
 
 * Proxy,Controller,Grasp
 
 # 4. Implementation
+* It should be adopted SSL/TLS with mutual authentication based on public key certificates.
+* It complements the US1901.# 2. Analysis* To start, we changed the Sockets to SSLSocket and the ServerSockets to SSLServerSocket.
+* Then we created the TrustStore and KeyStore for both the client and the server with a given password, and respective certificates.
+* Also, in both the server and the client we linked the properties with the .jks files.
 
-  
 
 
 
