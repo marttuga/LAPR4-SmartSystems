@@ -30,14 +30,14 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
     @Override
     protected boolean doShow() {
         final String fileName = Console.readLine("Please insert the questionnaire file path:");
-/*        boolean valid = false;
+        boolean valid = false;
         try {
             valid = ctrl.validateSurvey(fileName);
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
 
-        //if (valid) {
+        if (valid) {
         String alphanumericCode = Console.readLine("Survey Alphanumeric code: ");
         String surveyDescription = Console.readLine("Survey Description: ");
         int surveyPeriod = Console.readInteger("Survey period (days): ");
@@ -214,11 +214,11 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
         }
 
 
-        //}
+        }
         return false;
     }
 
-    //}
+
     @Override
     public String headline() {
         return "Create a new Questionnaire";

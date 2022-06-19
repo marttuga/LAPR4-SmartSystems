@@ -5,6 +5,8 @@ import eapli.base.app.agvDigitalTwin.presentation.DigitalTwinProtocolServer;
 import eapli.base.app.agvDigitalTwin.protocol.server.DigitalTwinProtocolMessageParser;
 import eapli.base.warehousemanagement.application.AgvRequestControllerImpl;
 
+import java.io.IOException;
+
 
 public class AgvTwinSrv {
 
@@ -20,7 +22,7 @@ public class AgvTwinSrv {
     private AgvTwinSrv() {
     }
 
-    public static void main(final String[] args) {
+    public static void main(final String[] args) throws IOException {
         LOGGER.info("Starting Connection");
 
 /*        AuthzRegistry.configure(PersistenceContext.repositories().users(),

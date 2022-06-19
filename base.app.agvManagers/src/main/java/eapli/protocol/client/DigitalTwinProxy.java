@@ -31,7 +31,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.InetAddress;
-import java.net.Socket;
 
 
 public class DigitalTwinProxy {
@@ -44,7 +43,8 @@ public class DigitalTwinProxy {
         private PrintWriter output;
         private BufferedReader input;
 
-        static final String KEYSTORE_PASS="passwordT";
+        static final String KEYSTORE_PASS="keypass";
+
 
         /**
          * @param address
@@ -57,10 +57,10 @@ public class DigitalTwinProxy {
 
             serverIP = InetAddress.getByName(address);
 
-            System.setProperty("javax.net.ssl.trustStore", "AgvTwinSrv" +".jks");
+            System.setProperty("javax.net.ssl.trustStore", "base.app.agvManagers/src/main/java/eapli/protocol/client/AgvManagerCli.jks");
             System.setProperty("javax.net.ssl.trustStorePassword",KEYSTORE_PASS);
 
-            System.setProperty("javax.net.ssl.keyStore","AgvTwinSrv"+".jks");
+            System.setProperty("javax.net.ssl.keyStore","base.app.agvManagers/src/main/java/eapli/protocol/client/AgvManagerCli.jks");
             System.setProperty("javax.net.ssl.keyStorePassword",KEYSTORE_PASS);
 
             SSLSocketFactory sf = (SSLSocketFactory) SSLSocketFactory.getDefault();
@@ -71,9 +71,11 @@ public class DigitalTwinProxy {
                 System.out.println("Application aborted.");
                 System.exit(1);
             }
+            LOGGER.debug("Connected to {}", address);
+            sock.startHandshake();
             output = new PrintWriter(sock.getOutputStream(), true);
             input = new BufferedReader(new InputStreamReader(sock.getInputStream()));
-            LOGGER.debug("Connected to {}", address);
+
         }
 
         /**

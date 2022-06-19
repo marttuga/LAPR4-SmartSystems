@@ -50,7 +50,7 @@ public class AgvServer {
         System.setProperty("javax.net.ssl.keyStore",TRUSTED_STORE);
         System.setProperty("javax.net.ssl.keyStorePassword",KEYSTORE_PASS);
 
-        SSLServerSocketFactory sslF = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault();
+        SSLServerSocketFactory sslF = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault(); //factory for creating secure sockets
 
         try {
             sock = (SSLServerSocket) sslF.createServerSocket(SERVER_PORT);

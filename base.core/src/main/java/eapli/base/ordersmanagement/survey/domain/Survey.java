@@ -62,7 +62,6 @@ public class Survey implements AggregateRoot<AlphanumericCode> {
 
 
     public String getStatisticalReport() throws IOException {
-        //FileInputStream fis = new FileInputStream(new File("/Users/ruidias/lei21_22_s4_2dk_01/base.core/src/main/java/eapli/base/surveys/questionnaire3.txt"));
         CharStream charStream = CharStreams.fromString(new String(surveyFile));
         FormGrammarLexer lexer = new FormGrammarLexer(charStream);
         org.antlr.v4.runtime.CommonTokenStream tokens = new CommonTokenStream(lexer);

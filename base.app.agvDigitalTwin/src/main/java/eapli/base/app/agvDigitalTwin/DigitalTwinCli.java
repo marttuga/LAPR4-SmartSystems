@@ -11,6 +11,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 
+//Enforces the authentication of both the server and the clients,
+//through public key certificates.
 
 class DigitalTwinCli {
 
@@ -39,7 +41,7 @@ class DigitalTwinCli {
             sock =(SSLSocket) sf.createSocket("localhost", 9999);
             System.out.println("Connected to server");
 
-            sock.startHandshake();
+            sock.startHandshake();                  //ensures that the call is idempotent, so we can safely call it
 
             BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
             DataOutputStream sOut = new DataOutputStream(sock.getOutputStream());
