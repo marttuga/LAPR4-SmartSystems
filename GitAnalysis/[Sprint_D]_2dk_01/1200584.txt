@@ -1,3 +1,860 @@
+commit 4caa54ac382d950092119a55d69566bbe7f36318
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Jun 19 22:40:14 2022 +0100
+
+    <L2L20-86> US5100: Implementation - Updated class PrepareOrders and TaskExecutor
+
+M	base.app.prepareorder/src/main/java/PrepareOrders.java
+M	base.app.prepareorder/src/main/java/TaskExecutor.java
+
+commit 9c6edc9a3918bfb2487aded3f9d19800bcb42957
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Jun 19 22:23:43 2022 +0100
+
+    <L2L20-88> US2006: Implementation - Updated WebDashboard with comments
+
+M	base.dashboard/src/main/java/web/WebDashboard.java
+
+commit 57b624902969bcdf30a3ecf786ce585de93a1a42
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Jun 19 17:45:40 2022 +0100
+
+    <L2L20-88> US2006: Implementation - Updated WebDashboard with comments
+
+M	base.dashboard/src/main/java/web/WebDashboard.java
+
+commit 210c5cddd0bc3a95fa67a9398f4a25616bf92ece
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Jun 19 17:06:42 2022 +0100
+
+    Updated CreateNewQuestionnaireUI
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CreateNewQuestionnaireUI.java
+
+commit 894534d62aedd1abee34c033210ae3cdc1ff71cf
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Jun 19 16:20:01 2022 +0100
+
+    <L2L20-107> US9002- Added US1006.mp4.zip
+
+A	docs/Sprint4/Presentation/US1006.mp4.zip
+
+commit 7c312d983022752229d4611a798546786e084559
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Jun 19 15:24:41 2022 +0100
+
+    <L2L20-107> US9002- Updated LAPR4_Presentation.pptx
+
+M	docs/Sprint4/Presentation/LAPR4_Presentation.pptx
+
+commit af53c518902b349eb0d4f61f97f2e35e689e7c0c
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Jun 19 12:54:07 2022 +0100
+
+    <L2L20-86> US5100- Tests: Updated AutonomyTest
+
+M	base.core/src/test/java/eapli/base/warehousemanagement/domain/AutonomyTest.java
+
+commit 167d5b1519e6beb21ae920795238502d8175353f
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Jun 19 12:30:33 2022 +0100
+
+    <L2L20-86> US5100- Analysis: Updated US5100 analysis
+
+M	docs/Sprint4/US5100/ProcessoEngenhariaFuncionalidade.md
+
+commit 139a0ca30f8e65330174ef46b232be352351249b
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Jun 19 12:30:10 2022 +0100
+
+    <L2L20-86> US5100- Test: Added AutonomyTest
+
+A	base.core/src/test/java/eapli/base/warehousemanagement/domain/AutonomyTest.java
+
+commit 5cad099f0f97644b23c50c149c30e8f5870bee9f
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Jun 19 12:29:56 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Updated Autonomy
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/Autonomy.java
+
+commit 36892a2cacd0255e1aaae99e13c2ce41b1c5caf9
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Jun 18 17:48:45 2022 +0100
+
+    <L2L20-107> US9002: updated presentation
+
+M	docs/Sprint4/Presentation/LAPR4_Presentation.pptx
+
+commit 3a766738660a14605bc21ba71981c88f28da4a0c
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Jun 18 16:21:08 2022 +0100
+
+    <L2L20-88> US2006- Implementation: index.html
+
+M	base.dashboard/src/main/java/web/www/index.html
+
+commit a6b33d896f03621f29db45bcfe53e9f8518108e6
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Jun 18 15:40:12 2022 +0100
+
+    <L2L20-88> US2006- Implementation: Updated HTTPAjaxRequest and WebDashboard
+
+M	base.dashboard/src/main/java/web/HTTPAjaxRequest.java
+M	base.dashboard/src/main/java/web/WebDashboard.java
+
+commit c541bab8a4f52bd3b2c2ef83783ec72c1164c236
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Jun 18 14:29:29 2022 +0100
+
+    Updated FormGrammarParser and FormGrammarLexer.tokens
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarLexer.tokens
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarParser.java
+
+commit 727cd1257d19c5b813727a263c484713ef9926c5
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Jun 18 14:29:03 2022 +0100
+
+    Updated FormGrammarLexer and FormGrammarLexer.interp
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarLexer.interp
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarLexer.java
+
+commit f57c175d921f221d8e4a64b31f423e960ce4e2e4
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Jun 18 14:28:48 2022 +0100
+
+    Updated FormGrammarBaseVisitor and FormGrammarVisitor
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarBaseVisitor.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarVisitor.java
+
+commit d9d02974aa85caa5d9460b8958e4ef1c1718f6c3
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Jun 18 14:28:34 2022 +0100
+
+    Updated FormGrammarBaseListener and FormGrammarListener
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarBaseListener.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarListener.java
+
+commit f82a530b01b2cbbbcbdda76e3318603aa972e077
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Jun 18 14:28:11 2022 +0100
+
+    Updated FormGrammar.interp and FormGrammar.tokens
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammar.interp
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammar.tokens
+
+commit 5023c4ffb43eb88d7309f92dad7b72f51ec1ad02
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Jun 18 12:59:53 2022 +0100
+
+    <L2L20-88> US2006- Implementation: Added server.jks
+
+A	base.dashboard/src/main/java/web/server.jks
+
+commit 4a5ba27cace90d01aa0570e1a9c889a261e6e1bf
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Jun 18 12:59:46 2022 +0100
+
+    <L2L20-88> US2006- Implementation: Added Makefile
+
+A	base.dashboard/src/main/java/web/Makefile
+
+commit 241a7dca673bdbe65b404a2c053941e67bf3a365
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sat Jun 18 12:59:31 2022 +0100
+
+    <L2L20-88> US2006- Implementation: Added make_cert and cert.pem
+
+A	base.dashboard/src/main/java/web/cert.pem
+A	base.dashboard/src/main/java/web/make_cert
+
+commit 32340c9968228b5312c03ec922080fba90cb473e
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Jun 17 16:59:39 2022 +0100
+
+    Updated FormGrammarParser
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarParser.java
+
+commit a6dc43bb8b82037ba2df09de8e5d2fcc68d5e0c4
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Jun 17 16:59:28 2022 +0100
+
+    Updated FormGrammarBaseVisitor and FormGrammarVisitor
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarBaseVisitor.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarVisitor.java
+
+commit aa33420953246c3294fe017a95e60f85d0c9013e
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Jun 17 16:59:15 2022 +0100
+
+    Updated FormGrammarBaseListener and FormGrammarListener
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarBaseListener.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarListener.java
+
+commit 56b095a4ec256536e9e733bfb6ff65a0f7ef6899
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Jun 17 16:58:56 2022 +0100
+
+    Updated FormGrammar.interp
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammar.interp
+
+commit 616892f49b9df08cf26915e0ca1bc80896c38c7b
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Jun 17 16:58:29 2022 +0100
+
+    Updated FormGrammar.g4
+
+M	base.core/src/main/java/eapli/base/surveys/FormGrammar.g4
+
+commit e0285d63ed7edef5c323ef009b637f2b5e888dc7
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Jun 17 15:45:21 2022 +0100
+
+    Updated StatisticalReportController
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/StatisticalReportController.java
+
+commit 3c25dd0890cc1d6a4e3902428f5b5977f0ad3fd3
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Jun 17 15:45:11 2022 +0100
+
+    Updated questionnaires txt
+
+M	base.core/src/main/java/eapli/base/surveys/questionnaire.txt
+M	base.core/src/main/java/eapli/base/surveys/questionnaire2.txt
+M	base.core/src/main/java/eapli/base/surveys/questionnaire3.txt
+
+commit ebc09a300f78851d33babb068800d14a4a12e3d4
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Jun 17 15:44:55 2022 +0100
+
+    Updated FormGrammarParser
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarParser.java
+
+commit 29f9213c3d07fa03acdd09ae8e33849d36e4cb62
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Jun 17 15:44:43 2022 +0100
+
+    Updated FormGrammarLexer, FormGrammarLexer.interp and FormGrammarLexer.tokens
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarLexer.interp
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarLexer.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarLexer.tokens
+
+commit 6797fd0783cc8adcd8bcc306fbdbb95630c43140
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Jun 17 15:44:17 2022 +0100
+
+    Updated FormGrammarBaseVisitor and FormGrammarVisitor
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarBaseVisitor.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarVisitor.java
+
+commit bc863e29159c195bc391ffb84adbc040816bef87
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Jun 17 15:43:57 2022 +0100
+
+    Updated FormGrammarBaseListener and FormGrammarListener
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarBaseListener.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarListener.java
+
+commit e14e1e77b58470ef6192c4208fb7d7e167b3eec2
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Jun 17 15:43:40 2022 +0100
+
+    Updated FormGrammar.interp and FormGrammar.tokens
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammar.interp
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammar.tokens
+
+commit 685045514e56b9c1aa79ccdf42951d6265bbb7ea
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Jun 17 15:43:23 2022 +0100
+
+    Updated FormGrammar.g4
+
+M	base.core/src/main/java/eapli/base/surveys/FormGrammar.g4
+
+commit cef5576b0121eb799295b8359091ec904d0674c2
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Jun 17 14:24:11 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Created run-prepareOrder bat and sh
+
+A	run-prepareOrder.bat
+A	run-prepareOrder.sh
+
+commit cac1fea24ff26949fbcf9faefeaba28c6dd8e652
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Jun 17 11:59:40 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Added class TaskExecutor
+
+A	base.app.prepareorder/src/main/java/TaskExecutor.java
+
+commit a7ebd440fc5d75fb77a0221408563bf8505ff1f1
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Jun 17 11:59:32 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Added class SemaphoreDemo
+
+A	base.app.prepareorder/src/main/java/SemaphoreDemo.java
+
+commit 2ac0ebba0dc03d1ef21165217908b49f11441b34
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Fri Jun 17 10:37:12 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Updated base.app.prepareorder to module and added application.properties
+
+M	base.app.prepareorder/pom.xml
+A	base.app.prepareorder/src/main/resources/application.properties
+M	pom.xml
+
+commit 80b8aa1df770cf852d82fa64f8173e3e0cfd1f5c
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 19:34:09 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Updated WarehouseBootstrapper
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/WarehouseBootstrapper.java
+
+commit d2dab09ab84f5d17025fa38987aa7df972a40128
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 19:13:20 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Updated WarehouseBootstrapper
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/WarehouseBootstrapper.java
+
+commit 0316c21682d8481e34c39c032aa554a4be4fdc4c
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 19:13:07 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Commented AisleTest
+
+M	base.core/src/test/java/eapli/base/warehousemanagement/domain/AisleTest.java
+
+commit 9b5bde2f8be1e5a7d7e214f32b0789b6c6cfb436
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 19:12:54 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Updated Aisle
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/Aisle.java
+
+commit e09f1db5faf8ade2a73375dd77838de93a3a65fa
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 18:49:23 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Updated Position
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/Position.java
+
+commit a17c6fdd333e2550595163297eb3fdd682c8ddf6
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 18:49:15 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Updated AGV
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGV.java
+
+commit 8c60c7080d9e61dccb2441dd1318b060952942bf
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 18:42:27 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Added class JpaAGVDockRepository and JpaAisleRepository
+
+A	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaAGVDockRepository.java
+A	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaAisleRepository.java
+
+commit 06e1065c9b175d22e2a3c109f38d333627b465f0
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 18:41:20 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Added class WarehouseBootstrapper
+
+A	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/WarehouseBootstrapper.java
+
+commit a9d236f223307773e96ff27351c3d006c025c324
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 18:41:08 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Added class AGVDockRepository and AisleRepository
+
+A	base.core/src/main/java/eapli/base/warehousemanagement/repositories/AGVDockRepository.java
+A	base.core/src/main/java/eapli/base/warehousemanagement/repositories/AisleRepository.java
+
+commit be22ce5447daac7b83f0fc1208a1be73006dd291
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 18:39:07 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Updated class persistence.xml
+
+M	base.persistence.impl/src/main/resources/META-INF/persistence.xml
+
+commit 0ea9df291bd3dc15afe725181b8e6b71e2b64a3c
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 18:38:54 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Updated class RepositoryFactory
+
+M	base.core/src/main/java/eapli/base/infrastructure/persistence/RepositoryFactory.java
+
+commit b50fcc3d94f289676e97faf0912178984a4f0922
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 18:38:45 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Updated class JpaRepositoryFactory
+
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaRepositoryFactory.java
+
+commit 8c80bf707b67e63f10652c307a5304a7bab3c685
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 18:38:30 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Updated class BaseDemoBootstrapper
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/BaseDemoBootstrapper.java
+
+commit 74ac420bf132515bf69bba607f70478a09178a86
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 18:38:20 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Updated class AgvBootstrapper
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/AgvBootstrapper.java
+
+commit b9cb95a6d6265f665242e796adab60bc1b774714
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 18:38:01 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Updated class Asile, AGVDock
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGVDock.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/Aisle.java
+
+commit 666fd2a14a9b75e0da336ea87a3455c4dce1765b
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 18:09:25 2022 +0100
+
+    updated ConfigureAGVController
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/application/ConfigureAGVController.java
+
+commit d6065f3f699accbbd80fec90c90b8b8662969e71
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 17:17:46 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Updated class Warehouse
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/Warehouse.java
+
+commit cc8c2761adccf3c36809ff26790e33399ed7cbd7
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 17:17:36 2022 +0100
+
+    Commented line at MainMenu
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/MainMenu.java
+
+commit 495d64790c75e0a187749617b9eefd95b721add4
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 17:17:25 2022 +0100
+
+    Commented WarehouseTest.java
+
+M	base.core/src/test/java/eapli/base/warehousemanagement/domain/WarehouseTest.java
+
+commit d0effaa0b6f2711856bb083610f23c2fd3792f88
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 17:17:04 2022 +0100
+
+    Commented UploadFile UI, Controller and Service
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/UploadFileUI.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/application/UploadFileController.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/application/UploadFileService.java
+
+commit 07a7411d8ab21efb8f2da7818b42b8647ab21967
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 17:16:16 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Updated class AGV, AGVDock and Aisle
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGV.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGVDock.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/Aisle.java
+
+commit a6e87535783a15ee5e152de6bebf8f3fcad0194c
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 15:58:30 2022 +0100
+
+    base.app.AGVManagers updated pom.xml
+
+M	base.app.agvManagers/pom.xml
+
+commit 04f04a238f26172fe16afd3ef664bedc24db8f4a
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 15:16:03 2022 +0100
+
+    base.dashboard updated application.properties
+
+M	base.dashboard/src/main/resources/application.properties
+
+commit 6623337037fb66a7c12c7d4c182e92c839f4c2b5
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 12:09:52 2022 +0100
+
+    <L2L20-86> US5100- Implementation: Updated class Speed
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/Speed.java
+
+commit 83a935957d12b354b20ee6a7fe708585cf3abaf4
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 12:09:02 2022 +0100
+
+    <L2L20-88> US2006- Design: Added US2006_CD.svg and US2006_SD.svg
+
+A	docs/Sprint4/US2006/US2006_CD.svg
+A	docs/Sprint4/US2006/US2006_SD.svg
+
+commit 8e3073179941337aaf863c499539744f8ecc83d6
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 12:08:22 2022 +0100
+
+    <L2L20-88> US2006- Design: Updated US2006_CD.puml
+
+M	docs/Sprint4/US2006/US2006_CD.puml
+
+commit 4a31dd369b15de186c765ecfd615ea08d30aa7b9
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 16 12:07:52 2022 +0100
+
+    <L2L20-88> US2006- Analysis: Updated US2006.md analysis
+
+M	docs/Sprint4/US2006/US2006.md
+
+commit 3320e2c89f98226f87892eb0450e19aa13ca1f37
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Jun 15 11:18:52 2022 +0100
+
+    Updated FormGrammar
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammar.java
+
+commit 98a3fca717786b7a113af37914a696eb8b03a1a4
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Jun 15 09:58:28 2022 +0100
+
+    Updated CreateNewQuestionnaireController
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/CreateNewQuestionnaireController.java
+
+commit bd1d023aa6bd2cae7efd1d856fe99d55e6ffe378
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Jun 15 09:57:33 2022 +0100
+
+    Updated FormGrammarParser and FormGrammarLexer
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarLexer.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarParser.java
+
+commit c835a5a4f62a405670f029c40f9bf657acdaa4cb
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Jun 15 09:57:13 2022 +0100
+
+    Updated FormGrammarBaseVisitor and FormGrammarVisitor
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarBaseVisitor.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarVisitor.java
+
+commit 220d0d0371c6fbe0536d6217dd951a2f0c2fd372
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Jun 15 09:57:00 2022 +0100
+
+    Updated FormGrammarBaseListener and FormGrammarListener
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarBaseListener.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarListener.java
+
+commit a3d72fd89cf725eb7fef9aafab8c0fb110895f43
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Jun 15 09:56:41 2022 +0100
+
+    Updated FormGrammar.interp and FormGrammar.tokens
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammar.interp
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammar.tokens
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarLexer.interp
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarLexer.tokens
+
+commit b0d74b1627eeed3ffdc19b8f4856716df74b2389
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Jun 15 09:56:12 2022 +0100
+
+    Updated FormGrammar.g4
+
+M	base.core/src/main/java/eapli/base/surveys/FormGrammar.g4
+
+commit a7d356282e02d07d2f8ba6cc575a2bd02276d158
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Jun 15 09:53:02 2022 +0100
+
+    Updated questionnaire2.txt and questionnaire3.txt
+
+M	base.core/src/main/java/eapli/base/surveys/questionnaire2.txt
+M	base.core/src/main/java/eapli/base/surveys/questionnaire3.txt
+
+commit 46104b4c58781414707a0a398aeaf27e8cdc2d79
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Tue Jun 14 16:43:17 2022 +0100
+
+    Updated CustomerBirthDay
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/customer/domain/CustomerBirthDay.java
+
+commit bcabbf42b03d0ac41588bdae57526fa7080494a6
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Tue Jun 14 16:43:03 2022 +0100
+
+    US3001: Implementation- Updated CreateNewQuestionnaireController and CreateNewQuestionnaireUI
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CreateNewQuestionnaireUI.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/CreateNewQuestionnaireController.java
+
+commit a77d52531813f54a881edab678d25f4c839f8939
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Tue Jun 14 16:42:36 2022 +0100
+
+    US3501: Implementation- Updated Survey and SurveyRule
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/Survey.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/SurveyRule.java
+
+commit 3e77e15523e886d03bfea9a0a3fad0fa022a8c29
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Mon Jun 13 17:51:32 2022 +0100
+
+    <L2L20-86> US5100- Design: Added US5100_SD.puml design
+
+A	docs/Sprint4/US5100/US5100_SD.puml
+
+commit 139099570657325afef9052839629eae0298acb7
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Jun 12 15:29:35 2022 +0100
+
+    <L2L20-86> US5100- Analysis: Updated US5100 analysis
+
+M	docs/Sprint4/US5100/ProcessoEngenhariaFuncionalidade.md
+
+commit f66a1b48ba587bf87ba3b46166efd1179738e57f
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Jun 12 11:57:20 2022 +0100
+
+    <L2L20-88> US2006- Design: Added US2006_CD.puml
+
+A	docs/Sprint4/US2006/US2006_CD.puml
+
+commit 11c59830eb9f4dccf3d5af447f299a84ea8d20f6
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Jun 12 11:57:03 2022 +0100
+
+    <L2L20-88> US2006- Analysis: Updated US2006.md analysis
+
+M	docs/Sprint4/US2006/US2006.md
+
+commit 05350134ceb9e7c368339bcffffd9a3cccb05711
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Jun 12 11:50:39 2022 +0100
+
+    US3001- Implementation: Added ThrowingErrorListener
+
+A	base.core/src/main/java/eapli/base/surveys/src/domain/ThrowingErrorListener.java
+
+commit 68868348a6db9923521dc073c2c9c72c1fdc3417
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Sun Jun 12 11:50:25 2022 +0100
+
+    US3001- Implementation: Updated CreateNewQuestionnaireUI, CreateNewQuestionnaireController
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CreateNewQuestionnaireUI.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/CreateNewQuestionnaireController.java
+
+commit 570233a18cf605e4787d39c697a76f7ca12dc377
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 9 14:51:50 2022 +0100
+
+    US3001- Implementation: Updated CreateNewQuestionnaireUI and moved CreateNewQuestionnaireController
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CreateNewQuestionnaireUI.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/CreateNewQuestionnaireController.java
+D	base.core/src/main/java/eapli/base/surveys/src/application/CreateNewQuestionnaireController.java
+
+commit b8682ae382c93a812f7f96586aa5795735461c2f
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 9 14:51:19 2022 +0100
+
+    US3001- Implementation: Updated QuestionnaireAnswerUI
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/QuestionnaireAnswerUI.java
+
+commit 781fa91a61a9b6437f8d03cf436fd8d57cbec301
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 9 14:51:03 2022 +0100
+
+    US3001- Implementation: Moved classes SurveysService and QuestionnaireAnswerController
+
+R089	base.core/src/main/java/eapli/base/surveys/src/application/QuestionnaireAnswerController.java	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/QuestionnaireAnswerController.java
+R096	base.core/src/main/java/eapli/base/surveys/src/application/SurveysService.java	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/SurveysService.java
+
+commit edf9ac3003f5efe276fbefa3351a40b30d42a7f0
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 9 14:50:24 2022 +0100
+
+    US3001- Implementation: Updated Survey and SurveyPeriod
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/Survey.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/SurveyPeriod.java
+
+commit 3f48b86aba2b1ab85d4be9422ad21bde20f5b1d9
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 9 10:53:17 2022 +0100
+
+    <L2L20-88> US2006- Design: Created and added US2006_SD.puml
+
+A	docs/Sprint4/US2006/US2006_SD.puml
+
+commit b77c17de42b42ce16855d162351a806b9fb80d58
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 9 10:52:57 2022 +0100
+
+    <L2L20-88> US2006- Analysis: Created and added US2006.md analysis document
+
+A	docs/Sprint4/US2006/US2006.md
+
+commit 8a6405dd2527a7e7462b14a412e690f8a1c17b3d
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 9 10:32:05 2022 +0100
+
+    Updated class ConfigureAGVController and ConfigureAGVUI
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/ConfigureAGVUI.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/application/ConfigureAGVController.java
+
+commit 9f5951b67a7ae1eafa05ec258c4ac6f1cc05771a
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 9 10:31:46 2022 +0100
+
+    Updated class AGVTest
+
+M	base.core/src/test/java/eapli/base/warehousemanagement/domain/AGVTest.java
+
+commit d4b766d96361d4bebeab2d13685a7a06d32c737b
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 9 10:31:37 2022 +0100
+
+    Updated class AgvBootstrapper
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/AgvBootstrapper.java
+
+commit e49eaebb2f2ab5ff2b4f98393da78656edaf4372
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 9 10:31:21 2022 +0100
+
+    Updated class AGV, Builder and Service
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/application/AGVService.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGVBuilder.java
+
+commit 9da066c291d05194a46c862163d7cbb2ae2a6b98
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 9 10:30:39 2022 +0100
+
+    Updated class Autonomy
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/Autonomy.java
+
+commit 15ed262bc9f27bef54a6060013b6f9e41a4238ef
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Thu Jun 9 10:29:58 2022 +0100
+
+    Added class Autonomy
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGV.java
+A	base.core/src/main/java/eapli/base/warehousemanagement/domain/Autonomy.java
+
+commit ae8eba4509e18a7d4c39290a01504bc35fbcccd9
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Jun 8 21:16:34 2022 +0100
+
+    US2005: Implementation: Updated WebDashboard
+
+M	base.dashboard/src/main/java/web/WebDashboard.java
+
+commit a42dfea9544a9e6e127fe83201257ed8b8021007
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Jun 8 21:15:28 2022 +0100
+
+    US3001: Implementation: Deleted SurveyCode.java
+
+D	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/SurveyCode.java
+
+commit 5a837445696753124716637f523c45c3e2577dfd
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Jun 8 21:14:58 2022 +0100
+
+    US3001: Implementation: Added  JpaSurveyRepository and InMemorySurveyRepository
+
+A	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemorySurveyRepository.java
+A	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaSurveyRepository.java
+
+commit e68fd41cff0538b1ed37e3b9666368488366650f
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Jun 8 21:14:37 2022 +0100
+
+    US3001: Implementation: Updated JpaRepositoryFactory
+
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaRepositoryFactory.java
+
+commit 1b94c5b5a8024b54c7584eb29dafbe58aa1328b5
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Jun 8 21:13:29 2022 +0100
+
+    US3001: Implementation: Updated RepositoryFactory
+
+M	base.core/src/main/java/eapli/base/infrastructure/persistence/RepositoryFactory.java
+
+commit 707e605009af5ca3b1fdf6c961662ca8d4436bb2
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Jun 8 21:13:10 2022 +0100
+
+    US3001: Implementation: Added SurveyDescription, SurveyPeriod and AlphanumericCode classes
+
+A	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/AlphanumericCode.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/SurveyDescription.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/SurveyPeriod.java
+
+commit 1d212ca516cc8432c51b0362e84749eebb8cc00a
+Author: João Tiago Araújo <1200584@isep.ipp.pt>
+Date:   Wed Jun 8 21:12:37 2022 +0100
+
+    US3001: Implementation: Updated class Survey and added SurveyRepository
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/Survey.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/survey/repositories/SurveyRepository.java
+
 commit 4755cb4e90cf16cc4ab75bbe08b7c398eb8bf1ac
 Author: João Tiago Araújo <1200584@isep.ipp.pt>
 Date:   Sat Jun 4 12:00:19 2022 +0100

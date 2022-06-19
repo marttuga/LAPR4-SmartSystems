@@ -1,0 +1,617 @@
+commit 75f49a138b057335d582bdc21d54c113c6feabf4
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sun Jun 19 22:22:53 2022 +0100
+
+    <L2L20-84> Deleted comment
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/Survey.java
+
+commit de3cd263da4418f7c8eb2947a6f4a880be013056
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sun Jun 19 22:22:05 2022 +0100
+
+    <L2L20-84> Password changed for SSL
+
+M	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/AgvTwinSrv.java
+M	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/presentation/DigitalTwinProtocolServer.java
+M	base.app.agvManagers/src/main/java/eapli/protocol/client/DigitalTwinProxy.java
+
+commit 91ceea299c6d7d5fede29f011e31c6d18019c741
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sun Jun 19 22:19:23 2022 +0100
+
+    <L2L20-81> Documentation last changes and certificates changed paths
+
+A	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/protocol/server/AgvTwinSrv.jks
+A	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/protocol/server/AgvTwinSrv.pem
+A	base.app.agvManagers/src/main/java/eapli/protocol/client/AgvManagerCli.jks
+A	base.app.agvManagers/src/main/java/eapli/protocol/client/AgvManagerCli.pem
+M	docs/Sprint4/US5003/ProcessoEngenhariaFuncionalidade.md
+D	docs/Sprint4/US5003/US5003_CD.puml
+D	docs/Sprint4/US5003/US5003_SD.puml
+D	managerTwinSSL/AgvManagerCli.jks
+D	managerTwinSSL/AgvManagerCli.pem
+D	managerTwinSSL/AgvTwinSrv.jks
+D	managerTwinSSL/AgvTwinSrv.pem
+
+commit a30642bbe30ae76a772cc7eae4a67939bf4b3ff6
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sun Jun 19 15:03:22 2022 +0100
+
+    <L2L20-81> Fixed warnings on survey service and controller
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/StatisticalReportController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/SurveysService.java
+
+commit b0eaa9c4b8da7195b8705fbda5f828ec13b0758c
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sun Jun 19 15:02:55 2022 +0100
+
+    <L2L20-81> Fixed warnings on survey domain class
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/Survey.java
+
+commit 1994c6c1a7e1bafe68bd272b9921f53999559e91
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sun Jun 19 15:02:05 2022 +0100
+
+    <L2L20-81> Documentation - added screenshots
+
+M	docs/Sprint4/US3002/ProcessoEngenhariaFuncionalidade.md
+A	docs/Sprint4/US3002/screenshots/answer.png
+A	docs/Sprint4/US3002/screenshots/general.png
+A	docs/Sprint4/US3002/screenshots/multiplechoice.png
+A	docs/Sprint4/US3002/screenshots/singlechoice.png
+A	docs/Sprint4/US3002/screenshots/survey.png
+A	docs/Sprint4/US3002/screenshots/surveyselection.png
+
+commit e5f4670ce099d267801dfde464f2311d73805822
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sun Jun 19 14:58:51 2022 +0100
+
+    <L2L20-81> Unit Tests for domain classes
+
+A	base.core/src/test/java/eapli/base/ordersmanagement/answer/domain/AnswerIdTest.java
+A	base.core/src/test/java/eapli/base/ordersmanagement/survey/domain/AlphanumericCodeTest.java
+A	base.core/src/test/java/eapli/base/ordersmanagement/survey/domain/SurveyDescriptionTest.java
+A	base.core/src/test/java/eapli/base/ordersmanagement/survey/domain/SurveyPeriodTest.java
+
+commit 4c9e0816f0303f3a9619bcc0a7a5ac77c4a619e4
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sun Jun 19 00:42:14 2022 +0100
+
+    <L2L20-81> Documentation final updates with images
+
+M	docs/Sprint4/US3002/ProcessoEngenhariaFuncionalidade.md
+D	docs/Sprint4/US3002/US3002_CD.puml
+M	docs/Sprint4/US3002/US3002_SD.puml
+A	docs/Sprint4/US3002/US3002_SD.svg
+
+commit e2a91b6cc5bd134b404dee59232ca45f14426155
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sat Jun 18 21:08:58 2022 +0100
+
+    <L2L20-81> Survey getting file from database
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/Survey.java
+
+commit 479676d8963c0cdd00a534314a260c10f31e025c
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sat Jun 18 21:08:36 2022 +0100
+
+    <L2L20-81> Survey bootstrapper with file input
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/SurveyBootstrapper.java
+
+commit c365002044218bae2347eec2205fe3b386417f5b
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sat Jun 18 20:15:56 2022 +0100
+
+    <L2L20-84> Added certificates for communication between agvManager and agvDigitalTwin
+
+A	managerTwinSSL/AgvManagerCli.jks
+A	managerTwinSSL/AgvManagerCli.pem
+A	managerTwinSSL/AgvTwinSrv.jks
+A	managerTwinSSL/AgvTwinSrv.pem
+
+commit 7fef3a747374d4b2f994a128c5a498f4d4b1168d
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sat Jun 18 20:14:38 2022 +0100
+
+    <L2L20-84> Added ssl sockets for client ans server
+
+M	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/presentation/DigitalTwinProtocolServer.java
+M	base.app.agvManagers/src/main/java/eapli/protocol/client/DigitalTwinProxy.java
+
+commit 235c8ee2096d0757c501f4c030315d9f4945a6f6
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sat Jun 18 20:12:00 2022 +0100
+
+    <L2L20-81> Eval visitor added multiple choice questions and minor chenge to bootstrap
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/SurveyBootstrapper.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/EvalVisitorReport.java
+
+commit a3448da7e49af624370188adcd54d1d440364dd4
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sat Jun 18 14:24:24 2022 +0100
+
+    <L2L20-81> Survey bootstrapper
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/SurveyBootstrapper.java
+
+commit ef390e2c81fb1c81e5a00de476c6cf8ca0dd7a21
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sat Jun 18 14:22:16 2022 +0100
+
+    <L2L20-81> Minor changes in StatisticalReportUI
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/StatisticalReportUI.java
+
+commit fbb787dfd75e074368ef5e43ae59c6c4f46c4fe6
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sat Jun 18 14:21:42 2022 +0100
+
+    <L2L20-81> Eval report visitor added visits
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/EvalVisitorReport.java
+
+commit 05395427e407ff2fd826a128858a20d7b6ddf0fa
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sat Jun 18 14:19:28 2022 +0100
+
+    <L2L20-81> Grammar with multiple choice and .txt file
+
+M	base.core/src/main/java/eapli/base/surveys/FormGrammar.g4
+M	base.core/src/main/java/eapli/base/surveys/questionnaire.txt
+
+commit 7b2c0753d8492862fef116ce6b26bc56eb882d24
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Fri Jun 17 23:00:03 2022 +0100
+
+    <L2L20-81> Eval visitor report visiting single choice options
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/EvalVisitorReport.java
+
+commit 951ef56bd830287ca5b8d997a5880cf610195d72
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Fri Jun 17 22:59:32 2022 +0100
+
+    <L2L20-81> Customer bootstrapper new customer
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/CustomerBootstrapper.java
+
+commit dbac6c600aac0d429d5d839d56a6aadee05e0eba
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Fri Jun 17 22:59:02 2022 +0100
+
+    <L2L20-81> Survey bootstrapper added more answered questionaires
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/SurveyBootstrapper.java
+
+commit 6395cfbf4efec36d059cac98d1461efa67b4a729
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Fri Jun 17 22:58:31 2022 +0100
+
+    <L2L20-81> Survey domain class with visitors for report
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/Survey.java
+
+commit 8e3fcf29364362e0ba18bca19c0ccac7d860c1de
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Fri Jun 17 22:58:04 2022 +0100
+
+    <L2L20-81> StatisticalReport controller and service with visitors
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/StatisticalReportController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/SurveysService.java
+
+commit 67e3cef560fac25889d5644d5aa3dc9fb9a4e2ea
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Fri Jun 17 22:57:16 2022 +0100
+
+    <L2L20-81> StatisticalReportUI visiting questions
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/StatisticalReportUI.java
+
+commit 2482867d81d60a1c28f445b2d5adebede7cf7cd5
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Fri Jun 17 15:38:47 2022 +0100
+
+    <L2L20-81> Eval visitor Report
+
+A	base.core/src/main/java/eapli/base/surveys/src/domain/EvalVisitorReport.java
+
+commit 577aa4cc1ca913c92320cc73bb6fd5f4fa5d3bcd
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Fri Jun 17 14:29:17 2022 +0100
+
+    <L2L20-81> Survey duplicate getAnswers
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/Survey.java
+
+commit 34a68a1a104c3fbfc017948fd8d921a351a7f5ae
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Fri Jun 17 14:21:05 2022 +0100
+
+    <L2L20-81> Jpa survey repository sql commands
+
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaSurveyRepository.java
+
+commit 7ac5ce08c1e67b1e25577dfa99878add172b8220
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Fri Jun 17 14:19:50 2022 +0100
+
+    <L2L20-81> Answers service changes in methods for general calcs
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/answer/application/AnswerService.java
+
+commit 4694f773c88155982fa880013eef994c8e650677
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Fri Jun 17 14:19:13 2022 +0100
+
+    <L2L20-81> Survey bootstrapper added more answers
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/SurveyBootstrapper.java
+
+commit a4921db946948647dd29d40cf7379a5ca387a4e9
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Fri Jun 17 14:18:51 2022 +0100
+
+    <L2L20-81> Survey domain class get answers method
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/Survey.java
+
+commit 6fb51ab436bf2bf89c48c9463c5b88f662238510
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Fri Jun 17 14:18:14 2022 +0100
+
+    <L2L20-81> SurveyDTO added toString method
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/dto/SurveyDTO.java
+
+commit 90a8651fe29c3bc893a675939db0efaefcee5fda
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Fri Jun 17 14:17:46 2022 +0100
+
+    <L2L20-81> survey service get answers from map
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/SurveysService.java
+
+commit 1e079c9ad60690da1ebf1a4f170d9f119d670eba
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Fri Jun 17 14:17:10 2022 +0100
+
+    <L2L20-81> statistical report controller
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/StatisticalReportController.java
+
+commit 70a8dec0f5f2360e5ac237c6db7cc716850a61dd
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Fri Jun 17 14:16:18 2022 +0100
+
+    <L2L20-81> statistical report ui update in general calc methods
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/StatisticalReportUI.java
+
+commit f258fb9bc13017861fd2e6bf53b46802d05e7ded
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Thu Jun 16 17:54:43 2022 +0100
+
+    <L2L20-81> Survey bootstrapper added questions not answered
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/SurveyBootstrapper.java
+
+commit 8ce01143c2a59ca053913bb1e40f1359b145e38a
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Thu Jun 16 17:53:47 2022 +0100
+
+    <L2L20-81> Report UI new presentation
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/StatisticalReportUI.java
+
+commit af76d463b7e078cd4195861afd9913e26f434d91
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Thu Jun 16 17:53:28 2022 +0100
+
+    <L2L20-81> Report controller added universe calculations
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/StatisticalReportController.java
+
+commit 1f1a5c522343c03d76755c60fb4bf486c4a614e3
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Thu Jun 16 17:51:46 2022 +0100
+
+    <L2L20-81> Answer in memory and jpa  repository changes
+
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryAnswerRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaAnswerRepository.java
+
+commit 1fef5d60333eb295bd378bf37b9320ea9a497a05
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Thu Jun 16 17:50:41 2022 +0100
+
+    <L2L20-81> Answer repository changes
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/answer/repository/AnswerRepository.java
+
+commit 250b21db468a06495c2d5094c1b808dae5905aea
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Thu Jun 16 17:50:16 2022 +0100
+
+    <L2L20-81> Answer service amount questions answered
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/answer/application/AnswerService.java
+
+commit e5e036d85755a99fba4551f9d9f4e19dff64cfa8
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Thu Jun 16 17:49:35 2022 +0100
+
+    <L2L20-81> Answer domain class get all answers method
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/answer/domain/Answer.java
+
+commit 7398ad9af12c0e81b0949242a22326fdbd2885d1
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Wed Jun 15 18:01:17 2022 +0100
+
+    <L2L20-81> Survey UI and bootstrapper
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CreateNewQuestionnaireUI.java
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/SurveyBootstrapper.java
+
+commit d42997ee5c56460bc67a6395418df4380fd7a0d2
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Wed Jun 15 15:28:16 2022 +0100
+
+    <L2L20-81> Create survey UI
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CreateNewQuestionnaireUI.java
+
+commit 45fab3a07342906df0f5ce6479fa27cc94666e6e
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Wed Jun 15 15:22:37 2022 +0100
+
+    <L2L20-81> Survey repository classes
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/SurveysService.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/repositories/SurveyRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemorySurveyRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaSurveyRepository.java
+
+commit 038de9e77bb4365e74bf268f5596e0d4e050b46b
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Wed Jun 15 14:42:54 2022 +0100
+
+    <L2L20-81> Survey creation changes
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/SurveyBootstrapper.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/CreateNewQuestionnaireController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/Survey.java
+
+commit 4c82fd98251b1912c791ce34fc95187dc2f9a77d
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Wed Jun 15 12:31:36 2022 +0100
+
+    <L2L20-81> Answer classes working
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/StatisticalReportUI.java
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/BaseDemoBootstrapper.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/answer/application/AnswerService.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/answer/domain/Answer.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/answer/domain/AnswerId.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/answer/repository/AnswerRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryAnswerRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaAnswerRepository.java
+
+commit ffbd154195370a1b1852b1d83581ff3b8c756e77
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Wed Jun 15 11:32:35 2022 +0100
+
+    <L2L20-81> Survey bootstrapper
+
+A	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/SurveyBootstrapper.java
+
+commit 89be95c30de6cf7bc8dc11f8d0a854205b3f5d97
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Wed Jun 15 11:32:13 2022 +0100
+
+    <L2L20-81> Survey domain class changes
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/Survey.java
+
+commit 5f6816b950ceca479048610d67ba5c1635900707
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Wed Jun 15 11:31:58 2022 +0100
+
+    <L2L20-81> Survey changes to Controller
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/StatisticalReportController.java
+
+commit cee1fc5d846bfb81ec20e3cd0ed2a631f919c1cd
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Wed Jun 15 11:31:42 2022 +0100
+
+    <L2L20-81> Survey changes to UI
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/StatisticalReportUI.java
+
+commit c4d314c3a8e969c4546b3629816b0b0dc49317f3
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Wed Jun 15 11:31:03 2022 +0100
+
+    <L2L20-81> Survey added answers
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CreateNewQuestionnaireUI.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/CreateNewQuestionnaireController.java
+
+commit 2331ab93bf8ea62aab8342a28acba7e26afdff48
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Wed Jun 15 11:30:23 2022 +0100
+
+    <L2L20-81> Answer bootstrapper
+
+A	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/AnswerBootstrapper.java
+
+commit ec80b5b088d4d95351687959092ff4c78f9a8ce8
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Wed Jun 15 11:30:09 2022 +0100
+
+    <L2L20-81> Answer bootstrapper
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/BaseDemoBootstrapper.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/answer/application/AnswerService.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/answer/repository/AnswerRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryAnswerRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaAnswerRepository.java
+
+commit 8e28fb7d9a615f5afa02f859c3aeb10ad4a1d541
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Wed Jun 15 11:28:24 2022 +0100
+
+    <L2L20-81> Answer domain class changed
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/answer/domain/Answer.java
+
+commit 1d482b7eee5352b5474f2a892df2580d24be6cb0
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Tue Jun 14 17:34:25 2022 +0100
+
+    <L2L20-81> In memory survey repository
+
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemorySurveyRepository.java
+
+commit 41b3ab317d0c92c1f0725436af6f76a77940ea3e
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Tue Jun 14 17:33:25 2022 +0100
+
+    <L2L20-81> Survey added answers and  DTO
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/SurveysService.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/Survey.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/survey/dto/SurveyDTO.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/repositories/SurveyRepository.java
+
+commit 9d7b9f04b4d24a0c3c6893487867d1557ac571e0
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Tue Jun 14 17:32:40 2022 +0100
+
+    <L2L20-81> Answer repository and application classes
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/StatisticalReportUI.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/answer/application/AnswerService.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/CreateNewQuestionnaireController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/StatisticalReportController.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaRepositoryFactory.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaSurveyRepository.java
+M	base.persistence.impl/target/classes/eapli/base/persistence/impl/jpa/JpaRepositoryFactory.class
+
+commit 509042d02b18cbbd18e3709e2738296e82387f9c
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Tue Jun 14 17:30:02 2022 +0100
+
+    <L2L20-81> Answer repository classes
+
+M	base.core/src/main/java/eapli/base/infrastructure/persistence/RepositoryFactory.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/answer/repository/AnswerRepository.java
+A	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryAnswerRepository.java
+A	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaAnswerRepository.java
+M	base.persistence.impl/src/main/resources/META-INF/persistence.xml
+
+commit df941958ed67e259c0b32227327e80c27b3e7642
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Tue Jun 14 17:28:57 2022 +0100
+
+    <L2L20-81> Answer domain classes
+
+A	base.core/src/main/java/eapli/base/ordersmanagement/answer/domain/Answer.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/answer/domain/AnswerId.java
+
+commit 185bac810cd5cad1ff4d27a1f896a611ba92e95f
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Tue Jun 14 14:53:38 2022 +0100
+
+    <L2L20-81> Statistical report new UI
+
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/StatisticalReportUI.java
+
+commit 9b6e36e39e37a7783205fedf97f2cbb433470ea4
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Tue Jun 14 14:53:14 2022 +0100
+
+    <L2L20-81> Survey service added method to find surveys and new controller for statistical report
+
+A	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/StatisticalReportController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/SurveysService.java
+
+commit 2fb0c9b9ccc8e43e5b5ffa91e9601543ac098e80
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Tue Jun 14 14:52:17 2022 +0100
+
+    <L2L20-81> Survey repository added method (findAll)
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/repositories/SurveyRepository.java
+
+commit a4b4516fd1e9be00e8950d022a5f1d2a3dbae43a
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Tue Jun 14 14:51:04 2022 +0100
+
+    <L2L20-81> Find all method for survey
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/MainMenu.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemorySurveyRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaSurveyRepository.java
+
+commit 06c66da278e2168d4a29639269ac12bbee709295
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Tue Jun 14 14:20:16 2022 +0100
+
+    <L2L20-81> Added sales manager to bootstrap
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/MainMenu.java
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/BackofficeUsersBootstrapper.java
+M	base.core/src/main/java/eapli/base/usermanagement/domain/BaseRoles.java
+
+commit 8c8898d852a345175466d497f6d4a50a98c80900
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Mon Jun 13 14:31:34 2022 +0100
+
+    <L2L20-81> <L2L20-84> Documentaion for both us
+
+A	docs/Sprint4/US3002/ProcessoEngenhariaFuncionalidade.md
+A	docs/Sprint4/US3002/US3002_CD.puml
+A	docs/Sprint4/US3002/US3002_SD.puml
+A	docs/Sprint4/US5003/ProcessoEngenhariaFuncionalidade.md
+A	docs/Sprint4/US5003/US5003_CD.puml
+A	docs/Sprint4/US5003/US5003_SD.puml
+
+commit 8c992e8b86e8078682f4c13dd9c58c871774d023
+Author: Rui Dias <1200963@isep.ipp.pt>
+Date:   Sun Jun 12 01:01:40 2022 +0100
+
+    AgvManager and AgvDigitalTwin communication protocol done, adapted from eCafeteria and with GET_AGV request
+
+M	base.app.agvDigitalTwin/pom.xml
+A	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/AgvTwinSrv.java
+R098	base.app.agvDigitalTwin/src/main/java/eapli/DigitalTwinCli.java	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/DigitalTwinCli.java
+R098	base.app.agvDigitalTwin/src/main/java/eapli/DigitalTwinServer.java	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/DigitalTwinServer.java
+A	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/presentation/DigitalTwinProtocolServer.java
+A	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/protocol/server/AGVTwinProtocolRequest.java
+A	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/protocol/server/BadRequest.java
+A	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/protocol/server/BaseErrorRequest.java
+A	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/protocol/server/DigitalTwinProtocolMessageParser.java
+A	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/protocol/server/FailedRequestException.java
+A	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/protocol/server/GetAGVRequest.java
+A	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/protocol/server/UnknownRequest.java
+M	base.app.agvManagers/pom.xml
+A	base.app.agvManagers/src/main/java/eapli/application/RequestAgvController.java
+A	base.app.agvManagers/src/main/java/eapli/protocol/client/AGVDTO.java
+A	base.app.agvManagers/src/main/java/eapli/protocol/client/DigitalTwinProxy.java
+A	base.app.agvManagers/src/main/java/eapli/protocol/client/FailedRequestException.java
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/MainMenu.java
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/GetAGVInfoUI.java
+A	base.core/src/main/java/eapli/base/warehousemanagement/application/AgvRequestController.java
+A	base.core/src/main/java/eapli/base/warehousemanagement/application/AgvRequestControllerImpl.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/application/GetAGVController.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGV.java
+A	digitalTwinServer.sh

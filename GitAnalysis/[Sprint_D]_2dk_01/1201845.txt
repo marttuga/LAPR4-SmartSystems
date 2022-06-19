@@ -1,3 +1,747 @@
+commit 3481f26ec2509a633c9f38290286837ae0491e6e
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun Jun 19 23:51:34 2022 +0100
+
+    visitor
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/EvalVisitor.java
+
+commit 138da542b8a207d8c352700f0bd6f96219f38da9
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun Jun 19 23:51:11 2022 +0100
+
+    visitor
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/EvalVisitor.java
+
+commit 022a4e35692d5625dd1ad4f218a0df5d99436f1a
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun Jun 19 23:48:04 2022 +0100
+
+    txt
+
+A	base.core/src/main/java/eapli/base/surveys/SurveyNotification.txt
+
+commit f40102b8b4af61f14424e712783cd34747e25dce
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun Jun 19 23:47:39 2022 +0100
+
+    customerApp correction
+
+M	base.customerApp/src/main/java/eapli/presentation/CustomerApp.java
+
+commit 05978ed8b41671c975c9bcbaca7588d4a2a02da5
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun Jun 19 23:46:55 2022 +0100
+
+    service and visitor correction
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/SurveysService.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/EvalVisitor.java
+
+commit eff0e9dc9935beed83066cdd63c87c8f068c68b5
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun Jun 19 23:46:35 2022 +0100
+
+    us3501 correction
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/QuestionnaireAnswerUI.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/QuestionnaireAnswerController.java
+
+commit d9013916938492f13b930cd9740df3b684f19a14
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun Jun 19 23:46:07 2022 +0100
+
+    .md correction
+
+M	docs/Sprint4/US1902/ProcessoEngenhariaFuncionalidade.md
+
+commit 4ed9b1e2ba0fe9e809ef55f3921b2f5bfba3bbbf
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun Jun 19 16:43:19 2022 +0100
+
+    keystore and truststore of orderserver
+
+A	orderCustomerSSL/customerApp.jks
+A	orderCustomerSSL/customerApp.pem
+A	orderCustomerSSL/orderServer.jks
+A	orderCustomerSSL/orderServer.pem
+
+commit df5a91ff04bb15e748fde862f2e250db0e622079
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun Jun 19 16:31:54 2022 +0100
+
+    survey notification output
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/SurveyNotificationOutput.java
+
+commit e3b6b6b057055e56f47a11952dbbb47b22f3a5cc
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun Jun 19 16:30:44 2022 +0100
+
+    questionnaire answer method alteration on classes ui controller and service
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/QuestionnaireAnswerUI.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/QuestionnaireAnswerController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/SurveysService.java
+
+commit 95800a8da397994226a3383e44a7b5ea337091d9
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun Jun 19 16:29:35 2022 +0100
+
+    us1502 corrections on .md and sd
+
+M	docs/Sprint4/US1502/US1502_SD.puml
+M	docs/Sprint4/US1502/US1502_SD.svg
+
+commit d9ade1a267aa3d6bf9c86439e850135ca7047785
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun Jun 19 16:28:48 2022 +0100
+
+    us3501 corrections on .md and sd
+
+M	docs/Sprint4/US3501/ProcessoEngenhariaFuncionalidade.md
+M	docs/Sprint4/US3501/US3501_SD.puml
+M	docs/Sprint4/US3501/US3501_SD.svg
+D	docs/Sprint4/US3501/US3501_SSD.puml
+D	docs/Sprint4/US3501/US3501_SSD.svg
+
+commit c88bc68fb7f2261aca9c7347a8a7567d5b57c9eb
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun Jun 19 00:53:47 2022 +0100
+
+    ui and controller alteration
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/QuestionnaireAnswerUI.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/QuestionnaireAnswerController.java
+
+commit 71775c749a93263b059aba61750428d58e97929b
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sun Jun 19 00:53:30 2022 +0100
+
+    visitor and service alteration
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/SurveysService.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/EvalVisitor.java
+
+commit b432769d5e14f948b2bb9be17339012830fbcf8a
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sat Jun 18 23:38:17 2022 +0100
+
+    grammar alteration
+
+M	base.core/src/main/java/eapli/base/surveys/FormGrammar.g4
+
+commit 5d50f3c505fabb4051fcd8aa16121ee59b8d2e46
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sat Jun 18 23:37:42 2022 +0100
+
+    classes generated froom grammar
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarLexer.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarListener.java
+
+commit c738a50c84a0d6b1d8d618d7023bcac0086dc067
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sat Jun 18 23:36:32 2022 +0100
+
+    classes generated froom grammar
+
+A	base.core/gen/eapli/base/surveys/FormGrammarBaseListener.java
+A	base.core/gen/eapli/base/surveys/FormGrammarBaseVisitor.java
+A	base.core/gen/eapli/base/surveys/FormGrammarLexer.interp
+A	base.core/gen/eapli/base/surveys/FormGrammarLexer.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarParser.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarVisitor.java
+
+commit 17938aa59a1d6ddae69c9abfff66ea3ed3e86410
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sat Jun 18 23:36:00 2022 +0100
+
+    classes generated froom grammar
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/QuestionnaireAnswerUI.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/QuestionnaireAnswerController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/SurveysService.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/EvalVisitor.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammar.interp
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarBaseListener.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FormGrammarBaseVisitor.java
+
+commit d9c2a0981e7a97f6690d16220db58b75e82367d8
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sat Jun 18 16:17:05 2022 +0100
+
+     client customer and orderserver
+
+A	base.customerApp/src/main/java/eapli/presentation/CustomerApp.java
+D	base.customerApp/src/main/java/eapli/presentation/CustomerAppCli.java
+M	base.orderServer/src/main/java/eapli/presentation/OrderServer.java
+
+commit fc0fea5e4fc403d0cf0b75d18cc9c7aa0c8a6e88
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sat Jun 18 16:16:31 2022 +0100
+
+    run.batserver and client
+
+A	run-SSLClient.bat
+A	run-SSLServer.bat
+
+commit 2d6342686c2abbaaa887bbb03b768eab916eddaf
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sat Jun 18 14:33:31 2022 +0100
+
+    ui correction
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/QuestionnaireAnswerUI.java
+
+commit adece15b9967004487df7c38e9ed8c3a517df744
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sat Jun 18 11:52:24 2022 +0100
+
+    controller adition method
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/CreateNewQuestionnaireController.java
+
+commit f6c9eaf2da7b7b69eed9022e0f9cdac41bb46401
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sat Jun 18 11:52:01 2022 +0100
+
+    output notification
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/SurveyNotificationOutput.java
+
+commit 9e4359c61d282fb6cb821e1b84db55ed6d50a4cb
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sat Jun 18 11:51:38 2022 +0100
+
+    correction on UIs
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CreateNewQuestionnaireUI.java
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/QuestionnaireAnswerUI.java
+
+commit 4203cd106eff61aed058d3ef33f7eed2a6c14e78
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sat Jun 18 11:50:43 2022 +0100
+
+    SSL socket on server and client
+
+M	base.customerApp/src/main/java/eapli/presentation/CustomerAppCli.java
+M	base.orderServer/src/main/java/eapli/presentation/OrderServer.java
+
+commit 7c6ccca4df2aa1f651758d3a8b31232bc9548ea2
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Sat Jun 18 11:37:59 2022 +0100
+
+    ui correction
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/QuestionnaireAnswerUI.java
+
+commit 9d03fee15877c4a98e44c0da9df899d2a7e091b5
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 17 21:21:14 2022 +0100
+
+    ui correction on map
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/QuestionnaireAnswerUI.java
+
+commit 0d097dd8ac60a41cf6d3ed5f292d55bd5f787594
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 17 20:00:09 2022 +0100
+
+    ui correction on path
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/QuestionnaireAnswerUI.java
+
+commit 44e88205db4b2be7cf2adbc06a00e963f6b14c91
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 17 17:02:38 2022 +0100
+
+    controllers alteration
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/CreateNewQuestionnaireController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/QuestionnaireAnswerController.java
+
+commit c61543281026a87b932905375327c1f834499ce3
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 17 17:02:07 2022 +0100
+
+    repository factory alteration
+
+M	base.core/target/classes/eapli/base/infrastructure/persistence/RepositoryFactory.class
+M	base.persistence.impl/target/classes/eapli/base/persistence/impl/jpa/JpaRepositoryFactory.class
+
+commit 907be3b6ae9e9df8e31c1b81accfdd18b62d7928
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 17 17:01:32 2022 +0100
+
+    ui alteration for creation of surveys
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CreateNewQuestionnaireUI.java
+
+commit 6518b10842f44be649f72a163e3114eced922a31
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 17 17:00:46 2022 +0100
+
+    file output methods
+
+A	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/SurveyNotificationOutput.java
+R065	base.core/src/main/java/eapli/base/surveys/src/domain/FileAnswers.java	base.core/src/main/java/eapli/base/surveys/src/domain/FileAnswersOutput.java
+
+commit 4a32e8e647c4a94fcc522de8cf10989dc0c87878
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 17 16:57:54 2022 +0100
+
+    eval visitor
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/EvalVisitor.java
+
+commit 0d07693dd08e7ff60bac25487845f184ff5b6662
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 17 12:30:48 2022 +0100
+
+    alteration on survey service
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/SurveysService.java
+
+commit 28ff14b7ef8ad11617d8460222378c417c3063d6
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 17 12:30:13 2022 +0100
+
+    alteration on survey classes
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/SurveyBootstrapper.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/Survey.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/dto/SurveyDTO.java
+
+commit ebf9136451442532c9c305a82423b2dd7f01352f
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 17 12:29:47 2022 +0100
+
+    alteration on grammar
+
+M	base.core/src/main/java/eapli/base/surveys/FormGrammar.g4
+
+commit e9b6b19ec404814419cecb422e02ed291ea4e218
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 17 12:29:17 2022 +0100
+
+    alteration on outputfile method
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FileAnswers.java
+
+commit f7de5be90fd9a5fb44756904ba944b83af950f36
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 17 12:28:41 2022 +0100
+
+    alteration on answer classes
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/answer/domain/Answer.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/answer/domain/AnswerId.java
+
+commit b4d623e9ef192c5251942eebb8d08dab94495374
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 17 12:27:21 2022 +0100
+
+    alteration on txt files
+
+M	base.core/src/main/java/eapli/base/surveys/Answers.txt
+M	base.core/src/main/java/eapli/base/surveys/questionnaire.txt
+M	base.core/src/main/java/eapli/base/surveys/questionnaire2.txt
+M	base.core/src/main/java/eapli/base/surveys/questionnaire3.txt
+
+commit 82d48cf2758a57f9f87abad0a507bf7a48477740
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 17 12:08:31 2022 +0100
+
+    creation of answercontroller and correction on controler for us to create and read questionnaire
+
+A	base.core/src/main/java/eapli/base/ordersmanagement/answer/application/AnswerController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/CreateNewQuestionnaireController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/QuestionnaireAnswerController.java
+
+commit 115b9638192f0ca42e101e04f76a915d6bfe2446
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 17 12:07:35 2022 +0100
+
+    correction on ui for us to create questionnaire and read questionnaire
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CreateNewQuestionnaireUI.java
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/QuestionnaireAnswerUI.java
+
+commit c3aea3d9c673fb11f792f200910289dd5af53cd2
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Fri Jun 17 12:06:56 2022 +0100
+
+    correction on sd for 1502 and svg
+
+M	docs/Sprint4/US1502/US1502_SD.puml
+M	docs/Sprint4/US1502/US1502_SD.svg
+
+commit fdb90d3753ac2a43c38d4bcc62bcd898fdda00ed
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Wed Jun 15 22:12:52 2022 +0100
+
+    correction on controller for survey answers
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/QuestionnaireAnswerController.java
+
+commit 229cb9901b57a26a8251fb396729f0e6a4bbb2cc
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Wed Jun 15 22:12:44 2022 +0100
+
+    correction on UI for survey answers
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/QuestionnaireAnswerUI.java
+
+commit b81972dbf1ab4be2470c58ec61716c8f0dd03edb
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Wed Jun 15 22:12:12 2022 +0100
+
+    correction on creste questionnaire UI and customer bootstrapper
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CreateNewQuestionnaireUI.java
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/CustomerBootstrapper.java
+
+commit 5d140a3fe6172a660e9af166ce2a9c179ea3b244
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Wed Jun 15 15:47:31 2022 +0100
+
+    correction on method to search survey
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/SurveysService.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaSurveyRepository.java
+
+commit f59f8fe1099e1c1d54a5ed7f7861a15a7e3b04a1
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Wed Jun 15 15:47:04 2022 +0100
+
+    correction on ui to create survey
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CreateNewQuestionnaireUI.java
+
+commit 98555ea532abc4c983553be87c2bab52c1151680
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Wed Jun 15 12:37:07 2022 +0100
+
+    baserole and persistence
+
+M	base.core/target/classes/eapli/base/usermanagement/domain/BaseRoles.class
+M	base.persistence.impl/src/main/resources/META-INF/persistence.xml
+
+commit bf0a96ecf644cfb0240d571a898ac4d92f2f0a74
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Wed Jun 15 12:36:17 2022 +0100
+
+    deletion of some classes from surveyrule
+
+D	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/RuleAge.java
+D	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/RuleGender.java
+D	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/SurveyRuleID.java
+M	base.core/src/main/java/eapli/base/surveys/src/domain/EvalVisitor.java
+
+commit d7f1d78363108ce1a9fe8d807807d3e14195877e
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Tue Jun 14 18:37:18 2022 +0100
+
+    repository and service modification questionnaire
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/SurveysService.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/repositories/SurveyRepository.java
+M	base.core/target/classes/eapli/base/infrastructure/persistence/RepositoryFactory.class
+
+commit 0f683e1c73f415009f55e05dca169a2a6bae6ec1
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Tue Jun 14 18:36:38 2022 +0100
+
+    UI modification questionnaire
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/QuestionnaireAnswerUI.java
+
+commit f44a43de3bd203d6f6fac59a88abb2c9efe267f0
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Tue Jun 14 18:36:27 2022 +0100
+
+    controller modification questionnaire
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/QuestionnaireAnswerController.java
+
+commit 2a5db1d5994559872ef4e93305cfd34fb9664db6
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Tue Jun 14 18:35:56 2022 +0100
+
+    repository addition of methods
+
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemorySurveyRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaSurveyRepository.java
+
+commit fc350ebf07e30cfc6baa352427a1d41b70a5b637
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Tue Jun 14 17:23:28 2022 +0100
+
+    correction on survey creation controller and addition method
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/CreateNewQuestionnaireController.java
+
+commit 93af324840189d57abf38d42ab6f0028c347faa4
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Tue Jun 14 17:23:12 2022 +0100
+
+    correction on survey creation UI
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CreateNewQuestionnaireUI.java
+
+commit fad38cfc28d5b8dc57f5cde65e0efc0289791e2c
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Tue Jun 14 14:53:34 2022 +0100
+
+    class surveyRule modification
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/SurveyRule.java
+
+commit ea7d279c67b7607fdcf714c0d4f0772ecb3325ba
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Tue Jun 14 13:32:44 2022 +0100
+
+    class surveyRule modification Controller and UI name modification
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CreateNewQuestionnaireUI.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/CreateNewQuestionnaireController.java
+
+commit 4fe68920fcfc6ec23840510aea46690d9d43b3a9
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Tue Jun 14 13:31:29 2022 +0100
+
+    class surveyRule modification persistence
+
+M	base.persistence.impl/src/main/resources/META-INF/persistence.xml
+
+commit a355a48100b085abea027d45e7b1228a4834b9cc
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Tue Jun 14 13:31:18 2022 +0100
+
+    class surveyRule modification
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/Survey.java
+R077	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/SurveyRules.java	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/SurveyRule.java
+
+commit 26ca5b60b0fc3b962da844be2e5b558ba9cd64d2
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Tue Jun 14 13:25:41 2022 +0100
+
+    class survey modification
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/Survey.java
+
+commit 9f871ce35a7cd48576ab4d2bfc639d70b0d38e15
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon Jun 13 23:56:27 2022 +0100
+
+    classes addition for rules of survey
+
+A	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/RuleAge.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/RuleGender.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/Survey.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/SurveyRuleID.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/survey/domain/SurveyRules.java
+
+commit aed105f542240084d389a64e36b7250faef886c0
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon Jun 13 23:56:02 2022 +0100
+
+    persistencexml
+
+M	base.persistence.impl/src/main/resources/META-INF/persistence.xml
+
+commit 6d13fbe5224d2acc78c956ef23f2a5f068f5af4c
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon Jun 13 23:55:12 2022 +0100
+
+    correction on classes from previous us and add methods
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/customer/domain/Customer.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/customer/domain/CustomerBirthDay.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/OrdersDispatchedController.java
+
+commit 679c3c4a06889f9ebaec7f46bb2f7da6a68db7d3
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon Jun 13 23:54:29 2022 +0100
+
+    correction on Ui and Controller for survey creation
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CreateNewQuestionnaireUI.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/survey/application/CreateNewQuestionnaireController.java
+
+commit 491d46b95c83325846e2d81a723117a16d57ad7c
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon Jun 13 21:24:31 2022 +0100
+
+    correction of productorderdto
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/domain/ProductOrder.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/domain/ProductOrderDto.java
+M	base.core/target/classes/eapli/base/infrastructure/persistence/RepositoryFactory.class
+
+commit 58365f7ed30e4cf4bb684dfb67335cd86888f142
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon Jun 13 21:23:40 2022 +0100
+
+    addition of method to search orders
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/OrderService.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/repositories/OrderRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryOrderRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaOrderRepository.java
+M	base.persistence.impl/target/classes/eapli/base/persistence/impl/jpa/JpaRepositoryFactory.class
+
+commit 62ef1d4f13dd9b4d47294f4645a695e502474ad6
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon Jun 13 21:23:05 2022 +0100
+
+     new version of order server and client UI
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CheckOpenOrderUI.java
+A	base.app.customerApplication/src/main/java/eapli/protocol/client/FailedRequestException.java
+
+commit ad8e78a4f55dcd28d299cc31943e9b5fe3e4b76c
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon Jun 13 21:22:28 2022 +0100
+
+    classes addition to new version of order server and client
+
+A	base.app.customerApplication/src/main/java/eapli/presentation/CustomerAppCli.java
+A	base.app.customerApplication/src/main/java/eapli/protocol/client/CustomerProxy.java
+A	base.app.orderServ/src/main/java/eapli/protocolServer/UnknownRequest.java
+A	base.app.orderServ/src/main/java/eapli/server/OrdersSrv.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/CustomerCliOrderServer/service/CsvProtocolProxy.java
+
+commit 197d653e13c9f1e9a73d94ae438db1bfda6a2bc9
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon Jun 13 21:21:47 2022 +0100
+
+    classes addition to new version of order server
+
+A	base.app.orderServ/src/main/java/eapli/presentation/OrdersProtocolServer.java
+A	base.app.orderServ/src/main/java/eapli/protocolServer/BadRequest.java
+A	base.app.orderServ/src/main/java/eapli/protocolServer/BaseErrorRequest.java
+A	base.app.orderServ/src/main/java/eapli/protocolServer/FailedRequestException.java
+A	base.app.orderServ/src/main/java/eapli/protocolServer/GetOpenOrdersRequest.java
+A	base.app.orderServ/src/main/java/eapli/protocolServer/OrderProtocolRequest.java
+A	base.app.orderServ/src/main/java/eapli/protocolServer/OrdersProtocolMessageParser.java
+
+commit 6e671914f9e2cf17446beaeabfb6f43477776cda
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon Jun 13 21:19:52 2022 +0100
+
+    files to run server and appliction properties
+
+A	base.app.customerApplication/src/main/resources/application.properties
+A	base.app.orderServ/src/main/resources/application.properties
+A	run-CustomerApp.bat
+M	run-OrderServer.bat
+
+commit a1b090484b12708039f51d0ed4c88c9a737ce6c4
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon Jun 13 21:19:30 2022 +0100
+
+    correction on poms
+
+M	base.app.backoffice.console/pom.xml
+A	base.app.customerApplication/pom.xml
+A	base.app.orderServ/pom.xml
+M	pom.xml
+
+commit 7a957bede915f1fb68b508d464d753bce77da203
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Mon Jun 13 21:18:57 2022 +0100
+
+    correction on server and client connection and addition of controllers
+
+A	base.app.customerApplication/src/main/java/eapli/application/SeeOpenOrdersController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/CustomerCliOrderServer/application/ProtocolProxyController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/CheckOpenOrderController.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/application/AgvRequestController.java
+
+commit 7e0c446c62d39a36050d48ad7772ab0e6baac65a
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Thu Jun 9 16:26:07 2022 +0100
+
+    correction on sd of us1502 and svg
+
+M	docs/Sprint4/US1502/US1502_SD.svg
+
+commit d1ca18ff927d0c391bf3a3ae23ba41d86a093994
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Thu Jun 9 16:25:28 2022 +0100
+
+    correction on .md and sd of us1502
+
+M	docs/Sprint4/US1502/ProcessoEngenhariaFuncionalidade.md
+D	docs/Sprint4/US1502/US1502_CD.puml
+D	docs/Sprint4/US1502/US1502_CD.svg
+M	docs/Sprint4/US1502/US1502_SD.puml
+
+commit 3c656e8dc36fc9ff85c14e4ee6ca2e7d25b46ff8
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Thu Jun 9 14:14:55 2022 +0100
+
+    correction on classes from server and client
+
+M	base.core/src/main/java/eapli/base/surveys/src/domain/FileAnswers.java
+D	base.customerApp/src/main/java/CustomerAppCli.java
+A	base.customerApp/src/main/java/eapli/presentation/CustomerAppCli.java
+D	base.orderServer/src/main/java/eapli/OrderServer.java
+
+commit 9998a01e0b4c13873ede9e80389819c8071c945d
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Thu Jun 9 14:14:01 2022 +0100
+
+    correction on classes from server and client
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/CustomerCliOrderServer/application/ProtocolProxyController.java
+R097	base.core/src/main/java/eapli/base/ordersmanagement/CustomerCliOrderServer/BookingToken.java	base.core/src/main/java/eapli/base/ordersmanagement/CustomerCliOrderServer/domain/BookingToken.java
+R096	base.core/src/main/java/eapli/base/ordersmanagement/CustomerCliOrderServer/CsvProtocolProxy.java	base.core/src/main/java/eapli/base/ordersmanagement/CustomerCliOrderServer/service/CsvProtocolProxy.java
+R095	base.core/src/main/java/eapli/base/ordersmanagement/CustomerCliOrderServer/FailedRequestException.java	base.core/src/main/java/eapli/base/ordersmanagement/CustomerCliOrderServer/service/FailedRequestException.java
+
+commit 72420c0540c578b4de65d0656631b3502aef8fa3
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Thu Jun 9 14:08:24 2022 +0100
+
+    correction on UIs
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/AddProductShopCartUI.java
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/CheckOpenOrderUI.java
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/QuestionnaireAnswerUI.java
+
+commit beeba65c2e7cbfdc5af192b78c5fbe958d95a24d
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Thu Jun 9 14:05:04 2022 +0100
+
+    order server correction separating classes
+
+A	base.orderServer/src/main/java/eapli/application/OrderServerController.java
+A	base.orderServer/src/main/java/eapli/presentation/OrderServer.java
+A	base.orderServer/src/main/java/eapli/service/OrderServerService.java
+A	run-OrderServer.bat
+
+commit a33658677cab1c564c554066a78de3e088e6aa3c
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Wed Jun 8 17:34:05 2022 +0100
+
+    correction .md 1901
+
+M	docs/Sprint3/US1901/ProcessoEngenhariaFuncionalidade.md
+D	docs/Sprint3/US1901/table1.png
+D	docs/Sprint3/US1901/table2.png
+
+commit 83454260784d7eb0184202d426c8ae983032c77a
+Author: Marta Portugal <1201845@isep.ipp.pt>
+Date:   Wed Jun 8 15:39:51 2022 +0100
+
+    correction .md 1901
+
+M	docs/Sprint3/US1901/ProcessoEngenhariaFuncionalidade.md
+
 commit c170b70f307203e2d60a0b52cdf514047ca4d54e
 Author: Marta Portugal <1201845@isep.ipp.pt>
 Date:   Tue Jun 7 20:42:21 2022 +0100
