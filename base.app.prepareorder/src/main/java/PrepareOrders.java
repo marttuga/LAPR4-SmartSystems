@@ -16,12 +16,16 @@ public class PrepareOrders {
     private static final AGVToPrepOrderController agvToPrepOrderController = new AGVToPrepOrderController();
     private static final AisleRepository aisleRepository = PersistenceContext.repositories().aisle();
     private static final AGVRepository agvRepository = PersistenceContext.repositories().agv();
+    private static final TaskExecutor taskExecutor = new TaskExecutor();
 
     public static void main(String[] args) {
 
         while (true) {
             List<ProductOrder> ordersToBePrepared = getOrdersToBePrepared();
             List<AGV> availableAgvs = getAvailableAgvs();
+
+            List<Thread> threads = taskExecutor.createThread(ordersToBePrepared);
+            taskExecutor.initializeThread(threads);
 
             //Assign order to an available agv
             AGV availableAgv;

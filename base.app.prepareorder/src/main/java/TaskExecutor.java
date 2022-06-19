@@ -62,7 +62,7 @@ public class TaskExecutor implements Runnable {
     public List<Thread> initializeThread(List<Thread> threads){ //Orders to be prepared
 
         for(int i = 0; i < threads.size(); i++){
-            threads.get(i).setName("Thread " + i);
+            threads.get(i).setName("AGV " + i);
             threads.get(i).start();                                     //Starts thread
         }
         return threads;
@@ -88,17 +88,21 @@ public class TaskExecutor implements Runnable {
 
 
             for(int i = 0; i < semaphores.size();i++){
-                semaphores.get(i).acquire();
+                semaphores.get(i).acquire();        //blocks if necessary until a permit is available
                 semaphoresDock.get(i).acquire();
-                System.out.println("Being run by " + Thread.currentThread().getName());
+                //System.out.println("Being run by " + Thread.currentThread().getName());
                 for (int j = 0; j < threads.size(); j++){
-                    System.out.println("Running thread " + Thread.currentThread().getName());
+                    System.out.println("Running " + Thread.currentThread().getName());
                     discharge = autonomy.discharching(speed,discharchingRate);          //charge of AGV
                     batery -= discharge;
                     Thread.sleep(100);
-                    threads.get(j).join();                  //Wait for a thread to finish
+                    threads.get(j).join(); //Wait for a thread to finish
+
+                    productOrders.get(j).changeStatus(Status.PREPARED);
+                    orderRepository.save(productOrders.get(j));
+
                 }
-                semaphores.get(i).release();
+                semaphores.get(i).release();        //adds a permit
                 semaphoresDock.get(i).release();
             }
 
