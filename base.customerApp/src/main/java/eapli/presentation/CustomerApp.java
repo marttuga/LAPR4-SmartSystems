@@ -26,11 +26,11 @@ public class CustomerApp {
         }
 
         // Trust these certificates provided by servers
-        System.setProperty("orderCustomerSSL//orderServer.jks", args[1] + ".jks");
+        System.setProperty("orderCustomerSSL//orderServer.jks", "orderServer" + ".jks");
         System.setProperty("orderCustomerSSL//orderServer.pem", KEYSTORE_PASS);
 
         // Use this certificate and private key for client certificate when requested by the server
-        System.setProperty("orderCustomerSSL//customerApp.jks", args[1] + ".jks");
+        System.setProperty("orderCustomerSSL//customerApp.jks", "customerApp" + ".jks");
         System.setProperty("orderCustomerSSL//customerApp.pem", KEYSTORE_PASS);
 
         SSLSocketFactory sf = (SSLSocketFactory) SSLSocketFactory.getDefault();
