@@ -11,6 +11,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 
+//Enforces the authentication of both the server and the clients,
+//through public key certificates.
 
 class DigitalTwinCli {
 
