@@ -1,11 +1,8 @@
 package eapli.base.warehousemanagement.domain;
 
-import eapli.base.ordersmanagement.customer.domain.CustomerPhoneNumber;
-import eapli.base.ordersmanagement.customer.domain.CustomerVATIdentifier;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class AutonomyTest {
 
