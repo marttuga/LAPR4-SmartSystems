@@ -4,16 +4,18 @@ autonumber
 actor "Project Manager" as PM
 participant ":PrepareOrders" as PrepO
 participant "AGVToPrepOrderController" as CTRL <<application>>
+participant ":TaskExecutor" as TE
 participant ":AGV" as AGV <<domain>>
 participant ":ProductOrder" as PO <<domain>>
 participant ":ProductItem" as PI <<domain>>
 participant ":Product" as Product <<domain>>
+participant ":Autonomy" as A <<domain>>
 participant ":WarehouseMatrix" as WM
-participant "PersistenceContext" as PC <<persistence>>
-participant "RepositoryFactory" as RF <<factory>>
 participant ":AisleRepository" as AisleRepo <<repository>>
 participant ":AGVRepository" as AGVRepo <<repository>>
 participant ":ProductOrderRepository" as PORepo <<repository>>
+participant "PersistenceContext" as PC <<persistence>>
+participant "RepositoryFactory" as RF <<factory>>
 
 activate PrepO
 
@@ -33,6 +35,42 @@ activate PORepo
 
 deactivate PORepo
 deactivate PO
+PrepO -> TE : createThread()
+activate TE
+TE -> TE : initializeThread()
+activate TE
+deactivate TE
+
+TE -> AGV : getAvailableAgvs()
+activate AGV
+
+
+AGV -> AGVRepo : findAGVByStatus()
+activate AGVRepo
+
+deactivate AGVRepo
+deactivate AGV
+TE -> PO : getOrdersToBePrepared()
+activate PO
+
+PO -> PORepo : findOrdersByStatus()
+activate PORepo
+
+deactivate PORepo
+deactivate PO
+TE -> A : discharching()
+activate A
+
+deactivate A
+TE -> PO : changeStatus()
+activate PO
+
+PO -> PORepo : save()
+activate PORepo
+deactivate PO
+
+deactivate TE
+deactivate PORepo
 PrepO -> CTRL : agvToPrepOrder()
 activate CTRL
 
@@ -66,6 +104,10 @@ PrepO -> AisleRepo : findByID()
 activate AisleRepo
 
 deactivate AisleRepo
+PrepO -> PrepO : prepareOrder()
+activate PrepO
+
+deactivate PrepO
 PrepO -> WM : getWarehouseMatrix()
 activate WM
 PrepO -> WM : getVisitedMatrix()
