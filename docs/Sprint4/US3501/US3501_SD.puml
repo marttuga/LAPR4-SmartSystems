@@ -2,33 +2,109 @@
 autonumber
 'hide footbox
 actor "Customer" as PM
-participant ":QuestionnaireAnswerUI" as UI
-participant ":QuestionnaireAnswerController" as C
-participant ":SurveysService" as S
+participant ":QuestionnaireAnswerUI" as UI <<presentation>>
+participant ":AuthorizationService" as Au <<application>>
+participant ":QuestionnaireAnswerController" as CTRL <<application>>
+participant ":AnswerController" as ACTRL <<application>>
+participant ":SurveysService" as S <<application>>
+participant ":PersistenceContext" as PC
+participant ":RepositoryFactory" as RF
+participant ":CustomerRepository" as CRepo <<repository>>
+participant ":SurveyRepository" as SRepo <<repository>>
+participant ":TextFileSurveys" as TS
+participant ":FileAnswersOutput" as OUT <<domain>>
 participant ":TextFileAnswers" as T
-
+participant "answer:Answer" as Answer <<domain>>
+participant "survey:Survey" as Survey <<domain>>
+participant ":GrammarLexer" as GL
+participant ":GrammarParser" as GP
+participant ":ParseTree" as PS
+participant "EvalVisitor" as V <<visitor>>
 
 activate PM
 
-PM -> UI : aks to see the questionnaires
+PM -> UI : aks to answer the questionnaires
 activate UI
+UI -> Au : email=getCustomerLoggedInEmail
+activate Au
+deactivate CTRL
+deactivate Au
 
-UI -> C : getQuestionnaires
-activate C
-C -> S : getQuestionnaires
-deactivate C
+
+UI -> CTRL : getCustomerByEmail
+activate CTRL
+CTRL -> PC : repositories()
+
+activate PC
+PC -> RF : create
+deactivate PC
+activate RF
+RF -> CRepo : create
+deactivate RF
+activate CRepo
+
+
+CTRL -> CRepo :  getCustomerByEmail=  getCustomerByEmail(email)
+
+deactivate CTRL
+
+deactivate CRepo
+
+
+UI -> CTRL : getSurveys
+activate CTRL
+CTRL -> S : getSurveys= getSurveys(customer)
+
 activate S
-S -> C: shows the questionnaires
+S -> PC : repositories()
+
+activate PC
+PC -> RF : create
+deactivate PC
+activate RF
+RF -> SRepo : create
+deactivate RF
+activate SRepo
+S -> SRepo : getSurveys= getSurveys(customer)
+deactivate SRepo
+S --> CTRL: printSurveysDTO= PrintSurveysDTO(surveys)
 deactivate S
-activate C
-C --> UI : shows the questionnaires
-deactivate C
+
+
+CTRL --> UI : printSurveysDTO
+deactivate CTRL
 UI --> PM : shows the questionnaires
 deactivate UI
 
-PM -> UI : chooses the questionnaire to answer
+PM -> UI : types id of questionnaire to answer
 activate UI
 
+UI -> CTRL : findSurveyByID
+activate CTRL
+CTRL -> S : findSurveyByID= findSurveyByID(id)
+
+activate S
+S -> SRepo :  findSurveyByID= findSurveyByID(id)
+activate SRepo
+deactivate S
+deactivate SRepo
+
+
+
+CTRL -> S : findTXTbySurvey= findTXTbySurvey(survey)
+activate S
+
+S -> TS :  findTXTbySurvey= findTXTbySurvey(survey)
+activate TS
+TS --> S :   questionnaireTXTPath
+deactivate TS
+
+S --> CTRL: questionnaireTXTPath
+deactivate S
+
+
+CTRL --> UI : questionnaireTXTPath
+deactivate CTRL
 
 UI --> PM : shows questions
 deactivate UI
@@ -39,13 +115,67 @@ UI --> PM : shows questions to answer
 deactivate UI
 PM -> UI : answers the questions
 activate UI
-UI --> T : answers are stored in the .txt
+UI -> CTRL : outputAnswers
+activate CTRL
+
+CTRL -> OUT : outputAnswers(answers)
+deactivate CTRL
+
+activate OUT
+OUT -> T : outputAnswers(answers)
+deactivate OUT
 activate T
-UI --> PM : answers are stored in a .txt
+
+UI -> ACTRL : registAnswer
 deactivate T
-deactivate UI
+activate ACTRL
 
-deactivate UI
+ACTRL -> Answer : answer= registAnswer(id,customer,answers)
+deactivate ACTRL
+activate Answer
+Answer -> Answer : save(answer)
+
+
+
+UI -> ACTRL : saveSurveyAnswered
+deactivate Answer
+activate ACTRL
+ACTRL -> Survey : survey= saveSurveyAnswered(survey, answers)
+deactivate ACTRL
+activate Survey
+
+Survey -> Survey : save(survey))
+
+
+
+
+UI -> ACTRL : saveSurveyRemoveCustomer
+deactivate Survey
+activate ACTRL
+deactivate Answer
+ACTRL -> Survey : survey= saveSurveyRemoveCustomer(survey, customer)
+deactivate ACTRL
+
+activate Survey
+Survey -> Survey : save(survey))
+deactivate ACTRL
+
+
+UI -> CTRL : checkAnswers(answer)
+deactivate Survey
+activate CTRL
+CTRL-> S : checkAnswer= checkAnswers(answer)
+deactivate CTRL
+activate S
+
+S -> V :create ()
+deactivate S
+activate V
+V -> V : visitAnswer()
+
+UI --> PM :informs operation success
+deactivate V
+
 deactivate PM
-
+deactivate UI
 @enduml
