@@ -16,6 +16,12 @@ import java.util.*;
 	Reply to GET requests for some files types:
 	(HTML,PDF,GIF,PNG,JavaSript).
 	Web services: GET /agvStatus
+
+	Adaptation of WebDashboard to use SSL/TLS,
+	thus it's a HTTPS server and not a HTTP server.
+	Used "make cert" to create the server's public key
+	certificate and private key.
+
  */
 
 public class WebDashboard {
