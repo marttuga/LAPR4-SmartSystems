@@ -9,6 +9,15 @@ import javax.net.ssl.SSLSocket;
 import java.io.IOException;
 import java.util.*;
 
+/*
+    Get the port number to use as first argument in the
+    command line.
+    Documents directory is sub-folder base.dashboard/src/main/java/base/dashboard/web/www
+	Reply to GET requests for some files types:
+	(HTML,PDF,GIF,PNG,JavaSript).
+	Web services: GET /agvStatus
+ */
+
 public class WebDashboard {
     static private final String BASE_FOLDER ="base.dashboard/src/main/java/base/dashboard/web/www";
     static private SSLServerSocket sock;
@@ -21,8 +30,8 @@ public class WebDashboard {
             System.exit(1);
         }
 
-        System.setProperty("javax.net.ssl.keyStore", "server.jks");
-        System.setProperty("javax.net.ssl.keyStorePassword", "forgotten");
+        System.setProperty("javax.net.ssl.keyStore", "server.jks");     //Define a KeyStore
+        System.setProperty("javax.net.ssl.keyStorePassword", "forgotten");  //Define a Password da KeyStore
 
         try {
             SSLServerSocketFactory sslF = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault();
