@@ -6,7 +6,6 @@ import eapli.base.surveys.src.domain.FormGrammarLexer;
 import eapli.base.surveys.src.domain.FormGrammarParser;
 import eapli.framework.domain.model.AggregateRoot;
 import eapli.framework.domain.model.DomainEntities;
-import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -14,13 +13,9 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 
 @Entity
