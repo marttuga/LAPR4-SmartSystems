@@ -30,18 +30,30 @@ public class EvalVisitor extends FormGrammarBaseVisitor<String> {
                 System.out.println("Error the answer contains inappropriate words and is not accepted: " + d);
         }
 
+        //String[] num = {"1", "2", "3", "4"};
+        //for (String e : num) {
 
-        if ((questionContext.parameterQuestion().parameterQuestionType().getText().startsWith("Type: Single-Choice.") || questionContext.parameterQuestion().parameterQuestionType().getText().startsWith("TYPE: SINGLE-CHOICE.")) && !obligatoriness.equals("Obligatoriness: Optional.")) {
+        if (!questionContext.parameterQuestion().parameterQuestionType().getText().equalsIgnoreCase("Type: Free-Text.")) {
+            if (obligatoriness.equals("Obligatoriness: Mandatory.")) {
+                if ((!(d.contentEquals("1")) &&(!(d.contentEquals("2")) &&(!(d.contentEquals("3"))&&(!(d.contentEquals("4"))))))) {
+
+                    System.out.println("Error while choosing the option :" + d + " not valid");
+
+                }
+            }
+        }
+        // }
+  /*      if ((questionContext.parameterQuestion().parameterQuestionType().getText().equalsIgnoreCase("Type: Single-Choice.")) ){
             if (!(d.matches("[1-6]"))) {
                 System.out.println("Error while choosing the option :" + d + " not valid");
             }
 
-        }
+        }*/
         if (d.matches(RandomStringUtils.randomAlphabetic(10).toLowerCase(Locale.ROOT))) {
             System.out.println("Error while answering, random phrase " + d);
 
         }
-        if ((obligatoriness.equals("Obligatoriness: Mandatory.") && !(questionContext.parameterQuestion().parameterQuestionType().getText().startsWith("Type: Single-Choice.")))) {
+        if ((obligatoriness.equals("Obligatoriness: Mandatory.") && (questionContext.parameterQuestion().parameterQuestionType().getText().equalsIgnoreCase("Type: Free-Text.")))) {
             if (d.length() == 1 || d.length() > 50) {
                 System.out.println("Error while answering a mandatory question, length of answer is not valid");
             }
