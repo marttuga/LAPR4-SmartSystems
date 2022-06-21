@@ -49,9 +49,6 @@ public class QuestionnaireAnswerUI extends AbstractUI {
 
 
         questionnaireAnswerController.printSurveysList(surveysForCustomer);
-     /*   for (SurveyDTO sd:surveysForCustomer) {
-            System.out.println(sd);
-        }*/
 
         String oi = Utils.readLine("Choose the questionnaire to answer: ");
         Survey o = questionnaireAnswerController.findSurveyId(oi);
@@ -72,6 +69,7 @@ public class QuestionnaireAnswerUI extends AbstractUI {
         try {
             System.out.println("========================================");
 
+            assert path != null;
             Scanner sc = new Scanner(new FileReader(path));
             boolean flag = false; //se for uma questao
             boolean flagSC = false; //se for de escolha
@@ -112,13 +110,13 @@ public class QuestionnaireAnswerUI extends AbstractUI {
                         if (answer.equals("2")) {
 
                             answers.add("Not Answered");
-                            questionary.add(questionary.size() - 1, "Not Answered"); //se nao quiser fica como n respondida no txt e continua a ler
+                            questionary.add(questionary.size() - 1, "Not Answered"); //se nao quiser, fica como n respondida no txt e continua a ler
 
                             linha = sc.nextLine();
                             System.out.println(linha);
                             questionary.add(linha);
                         }
-                        if (answer.equals("1") && ifSingChoiceOrText.equals("Type: Single-Choice.")) { //se quiser responder e for de escolha multipla
+                        if (answer.equals("1") && ifSingChoiceOrText.equals("Type: Single-Choice.")) { //se quiser responder e for de escolha
                             flagSC = true;
                         } else if (answer.equals("1")) { //se n for de escolha multipla
                             flagTf = true;
@@ -127,30 +125,33 @@ public class QuestionnaireAnswerUI extends AbstractUI {
 
                     if (linha.equals("Type: Single-Choice.") || flagSC) { //se for de escolha multipla
 
-                        while (!linha.equals("")) {
+                        while (!linha.equals("")) { //enquanto a linha estiver preenchida vai ler proxima
                             linha = sc.nextLine();
                             System.out.println(linha);
                             questionary.add(linha);
                         }
-                        //  System.out.println(linha);
 
                         String answer = in.nextLine(); //quando a linha estiver vazia vai pedir a resposta
                         String finalAnswer = "";
                         int index = questionary.size() - 1;
                         while (finalAnswer.equals("")) {
-                            try {
+                            //try {
                                 String[] aux = questionary.get(index).split(". ");
                                 if (aux[0].equals(answer)) {
                                     finalAnswer = aux[0];
+                                }else {
+                                    finalAnswer= answer;
                                 }
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
+                           // } catch (Exception e) {
+                             //   e.printStackTrace();
+                            //}
                             index--;
                         }
 
                         questionary.add(questionary.size() - 1, finalAnswer + "\n");//adicionar a resposta à lista q vai para o txt
                         answers.add(finalAnswer);
+                       // questionary.add(questionary.size()-1 , answer + "\n");//adicionar a resposta à lista q vai para o txt
+                        //answers.add(answer);
                         flagSC = false;
 
                     } else if (linha.equals("") || flagTf) { //se a linha for vazia e for de free text vai ler a proxima linha q é a resposta e adiciona la ao txt
@@ -175,7 +176,6 @@ public class QuestionnaireAnswerUI extends AbstractUI {
                 map.put("Q" + (i + 1) + ".", answers.get(i));
 
             }
-            System.out.println(map);
             String id = RandomStringUtils.randomAlphanumeric(6);
 
             Answer aw = answerController.registerAnswer(AnswerId.valueOf(id), customer, map);
@@ -188,15 +188,11 @@ public class QuestionnaireAnswerUI extends AbstractUI {
 
             } catch (Exception ex) {
                 ex.printStackTrace();
-                System.out.println("Error while answering the survey!");
                 return false;
             }
 
             answerController.saveSurveyAnswered(o, answerList);
             answerController.saveSurveyRemoveCustomers(o, o.getCustomers(), customer);
-            for (Customer c : o.getCustomers()) {
-                System.out.println(c);
-            }
             //System.out.println(o.getCustomers());
 
             System.out.println("========================================");
