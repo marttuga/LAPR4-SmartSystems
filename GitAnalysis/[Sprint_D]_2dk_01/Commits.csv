@@ -1,3 +1,317 @@
+3481f26,2022-06-19 23:51:34 +0100,Marta Portugal,1201845@isep.ipp.pt,visitor
+138da54,2022-06-19 23:51:11 +0100,Marta Portugal,1201845@isep.ipp.pt,visitor
+022a4e3,2022-06-19 23:48:04 +0100,Marta Portugal,1201845@isep.ipp.pt,txt
+f40102b,2022-06-19 23:47:39 +0100,Marta Portugal,1201845@isep.ipp.pt,customerApp correction
+05978ed,2022-06-19 23:46:55 +0100,Marta Portugal,1201845@isep.ipp.pt,service and visitor correction
+eff0e9d,2022-06-19 23:46:35 +0100,Marta Portugal,1201845@isep.ipp.pt,us3501 correction
+d901391,2022-06-19 23:46:07 +0100,Marta Portugal,1201845@isep.ipp.pt,.md correction
+8105c8a,2022-06-19 23:18:19 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-107> Presentation(concluded)
+d75d311,2022-06-19 23:14:13 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-109> Design: SD(concluded) and SD.svg
+4caa54a,2022-06-19 22:40:14 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100: Implementation - Updated class PrepareOrders and TaskExecutor
+4bbcfb7,2022-06-19 22:31:47 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-110> Implementation: comments in code
+f17f953,2022-06-19 22:28:43 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-110> Implementation: comments in code
+9c6edc9,2022-06-19 22:23:43 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-88> US2006: Implementation - Updated WebDashboard with comments
+75f49a1,2022-06-19 22:22:53 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-84> Deleted comment
+de3cd26,2022-06-19 22:22:05 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-84> Password changed for SSL
+91ceea2,2022-06-19 22:19:23 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Documentation last changes and certificates changed paths
+ddc199c,2022-06-19 19:55:02 +0100,brunommgoncalves,1190456@isep.ipp.pt,PrepareOrders correction
+57b6249,2022-06-19 17:45:40 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-88> US2006: Implementation - Updated WebDashboard with comments
+210c5cd,2022-06-19 17:06:42 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated CreateNewQuestionnaireUI
+4ed9b1e,2022-06-19 16:43:19 +0100,Marta Portugal,1201845@isep.ipp.pt,keystore and truststore of orderserver
+df5a91f,2022-06-19 16:31:54 +0100,Marta Portugal,1201845@isep.ipp.pt,survey notification output
+e3b6b6b,2022-06-19 16:30:44 +0100,Marta Portugal,1201845@isep.ipp.pt,questionnaire answer method alteration on classes ui controller and service
+95800a8,2022-06-19 16:29:35 +0100,Marta Portugal,1201845@isep.ipp.pt,us1502 corrections on .md and sd
+d9ade1a,2022-06-19 16:28:48 +0100,Marta Portugal,1201845@isep.ipp.pt,us3501 corrections on .md and sd
+894534d,2022-06-19 16:20:01 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-107> US9002- Added US1006.mp4.zip
+7c312d9,2022-06-19 15:24:41 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-107> US9002- Updated LAPR4_Presentation.pptx
+a30642b,2022-06-19 15:03:22 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Fixed warnings on survey service and controller
+b0eaa9c,2022-06-19 15:02:55 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Fixed warnings on survey domain class
+1994c6c,2022-06-19 15:02:05 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Documentation - added screenshots
+e5f4670,2022-06-19 14:58:51 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Unit Tests for domain classes
+af53c51,2022-06-19 12:54:07 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Tests: Updated AutonomyTest
+167d5b1,2022-06-19 12:30:33 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Analysis: Updated US5100 analysis
+139a0ca,2022-06-19 12:30:10 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Test: Added AutonomyTest
+5cad099,2022-06-19 12:29:56 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Updated Autonomy
+c88bc68,2022-06-19 00:53:47 +0100,Marta Portugal,1201845@isep.ipp.pt,ui and controller alteration
+71775c7,2022-06-19 00:53:30 +0100,Marta Portugal,1201845@isep.ipp.pt,visitor and service alteration
+4c9e081,2022-06-19 00:42:14 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Documentation final updates with images
+e3cad43,2022-06-19 00:31:08 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-95> Design (SD.svg)
+fb01a19,2022-06-18 23:51:09 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-94> Analysis (conclusion)
+280e783,2022-06-18 23:41:31 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-108> Implementation: autonomy class and discharching
+b432769,2022-06-18 23:38:17 +0100,Marta Portugal,1201845@isep.ipp.pt,grammar alteration
+5d50f3c,2022-06-18 23:37:42 +0100,Marta Portugal,1201845@isep.ipp.pt,classes generated froom grammar
+c738a50,2022-06-18 23:36:32 +0100,Marta Portugal,1201845@isep.ipp.pt,classes generated froom grammar
+17938aa,2022-06-18 23:36:00 +0100,Marta Portugal,1201845@isep.ipp.pt,classes generated froom grammar
+f1a0a41,2022-06-18 21:48:57 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-87> Implementation: correction
+4d3b759,2022-06-18 21:48:39 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-87> Implementation: conclusion
+a1b5c1e,2022-06-18 21:48:11 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-93> Analysis: conclusion
+e2a91b6,2022-06-18 21:08:58 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey getting file from database
+479676d,2022-06-18 21:08:36 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey bootstrapper with file input
+c365002,2022-06-18 20:15:56 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-84> Added certificates for communication between agvManager and agvDigitalTwin
+7fef3a7,2022-06-18 20:14:38 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-84> Added ssl sockets for client ans server
+235c8ee,2022-06-18 20:12:00 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Eval visitor added multiple choice questions and minor chenge to bootstrap
+0ffbdbd,2022-06-18 18:13:24 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-96> Analysis: layer-based
+cc623b5,2022-06-18 18:06:43 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-109> Design: SSD(update)
+36892a2,2022-06-18 17:48:45 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-107> US9002: updated presentation
+1b3df89,2022-06-18 17:24:05 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-107> Presentation
+2560811,2022-06-18 16:58:53 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-110> US5004: Implementation: protocol server (new package)
+4db7352,2022-06-18 16:58:31 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-110> US5004: Implementation: protocol server (new package)
+a8c2de2,2022-06-18 16:57:40 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-110> US5004: Implementation: SSLSockets (server and client)
+b0039b0,2022-06-18 16:31:15 +0100,brunommgoncalves,1190456@isep.ipp.pt,AgvManager and TcpClient Certificates
+b477a04,2022-06-18 16:29:26 +0100,brunommgoncalves,1190456@isep.ipp.pt,SSLServerSockets and SSLSockets
+3a76673,2022-06-18 16:21:08 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-88> US2006- Implementation: index.html
+d9c2a09,2022-06-18 16:17:05 +0100,Marta Portugal,1201845@isep.ipp.pt, client customer and orderserver
+fc0fea5,2022-06-18 16:16:31 +0100,Marta Portugal,1201845@isep.ipp.pt,run.batserver and client
+a6b33d8,2022-06-18 15:40:12 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-88> US2006- Implementation: Updated HTTPAjaxRequest and WebDashboard
+fb1f657,2022-06-18 15:34:07 +0100,brunommgoncalves,1190456@isep.ipp.pt,PrepareOrders Corrections
+2d63426,2022-06-18 14:33:31 +0100,Marta Portugal,1201845@isep.ipp.pt,ui correction
+c541bab,2022-06-18 14:29:29 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammarParser and FormGrammarLexer.tokens
+727cd12,2022-06-18 14:29:03 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammarLexer and FormGrammarLexer.interp
+f57c175,2022-06-18 14:28:48 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammarBaseVisitor and FormGrammarVisitor
+d9d0297,2022-06-18 14:28:34 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammarBaseListener and FormGrammarListener
+f82a530,2022-06-18 14:28:11 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammar.interp and FormGrammar.tokens
+a3448da,2022-06-18 14:24:24 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey bootstrapper
+ef390e2,2022-06-18 14:22:16 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Minor changes in StatisticalReportUI
+fbb787d,2022-06-18 14:21:42 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Eval report visitor added visits
+0539542,2022-06-18 14:19:28 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Grammar with multiple choice and .txt file
+5023c4f,2022-06-18 12:59:53 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-88> US2006- Implementation: Added server.jks
+4a5ba27,2022-06-18 12:59:46 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-88> US2006- Implementation: Added Makefile
+241a7dc,2022-06-18 12:59:31 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-88> US2006- Implementation: Added make_cert and cert.pem
+adece15,2022-06-18 11:52:24 +0100,Marta Portugal,1201845@isep.ipp.pt,controller adition method
+f6c9eaf,2022-06-18 11:52:01 +0100,Marta Portugal,1201845@isep.ipp.pt,output notification
+9e4359c,2022-06-18 11:51:38 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on UIs
+4203cd1,2022-06-18 11:50:43 +0100,Marta Portugal,1201845@isep.ipp.pt,SSL socket on server and client
+7c6ccca,2022-06-18 11:37:59 +0100,Marta Portugal,1201845@isep.ipp.pt,ui correction
+712a64f,2022-06-17 23:13:45 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-108> US5100: Implementation (Threads) correction erros and create semaphore AGVDock
+7b2c075,2022-06-17 23:00:03 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Eval visitor report visiting single choice options
+951ef56,2022-06-17 22:59:32 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Customer bootstrapper new customer
+dbac6c6,2022-06-17 22:59:02 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey bootstrapper added more answered questionaires
+eb2938a,2022-06-17 22:58:46 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-108> US5100: Implementation (Threads) correction
+6395cfb,2022-06-17 22:58:31 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey domain class with visitors for report
+8e3fcf2,2022-06-17 22:58:04 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> StatisticalReport controller and service with visitors
+67e3cef,2022-06-17 22:57:16 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> StatisticalReportUI visiting questions
+9d03fee,2022-06-17 21:21:14 +0100,Marta Portugal,1201845@isep.ipp.pt,ui correction on map
+0d097dd,2022-06-17 20:00:09 +0100,Marta Portugal,1201845@isep.ipp.pt,ui correction on path
+44e8820,2022-06-17 17:02:38 +0100,Marta Portugal,1201845@isep.ipp.pt,controllers alteration
+c615432,2022-06-17 17:02:07 +0100,Marta Portugal,1201845@isep.ipp.pt,repository factory alteration
+907be3b,2022-06-17 17:01:32 +0100,Marta Portugal,1201845@isep.ipp.pt,ui alteration for creation of surveys
+6518b10,2022-06-17 17:00:46 +0100,Marta Portugal,1201845@isep.ipp.pt,file output methods
+32340c9,2022-06-17 16:59:39 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammarParser
+a6dc43b,2022-06-17 16:59:28 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammarBaseVisitor and FormGrammarVisitor
+aa33420,2022-06-17 16:59:15 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammarBaseListener and FormGrammarListener
+56b095a,2022-06-17 16:58:56 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammar.interp
+616892f,2022-06-17 16:58:29 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammar.g4
+4a32e8e,2022-06-17 16:57:54 +0100,Marta Portugal,1201845@isep.ipp.pt,eval visitor
+e0285d6,2022-06-17 15:45:21 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated StatisticalReportController
+3c25dd0,2022-06-17 15:45:11 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated questionnaires txt
+ebc09a3,2022-06-17 15:44:55 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammarParser
+29f9213,2022-06-17 15:44:43 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammarLexer, FormGrammarLexer.interp and FormGrammarLexer.tokens
+6797fd0,2022-06-17 15:44:17 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammarBaseVisitor and FormGrammarVisitor
+bc863e2,2022-06-17 15:43:57 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammarBaseListener and FormGrammarListener
+e14e1e7,2022-06-17 15:43:40 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammar.interp and FormGrammar.tokens
+6850455,2022-06-17 15:43:23 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammar.g4
+2482867,2022-06-17 15:38:47 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Eval visitor Report
+3c02f9a,2022-06-17 15:05:13 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-108> US5100: Implementation (Threads)
+577aa4c,2022-06-17 14:29:17 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey duplicate getAnswers
+cef5576,2022-06-17 14:24:11 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Created run-prepareOrder bat and sh
+34a68a1,2022-06-17 14:21:05 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Jpa survey repository sql commands
+7ac5ce0,2022-06-17 14:19:50 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Answers service changes in methods for general calcs
+4694f77,2022-06-17 14:19:13 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey bootstrapper added more answers
+a4921db,2022-06-17 14:18:51 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey domain class get answers method
+6fb51ab,2022-06-17 14:18:14 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> SurveyDTO added toString method
+90a8651,2022-06-17 14:17:46 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> survey service get answers from map
+1e079c9,2022-06-17 14:17:10 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> statistical report controller
+70a8dec,2022-06-17 14:16:18 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> statistical report ui update in general calc methods
+1de8b99,2022-06-17 12:34:37 +0100,brunommgoncalves,1190456@isep.ipp.pt,Implementation of PrepareOrders and WarehouseMatrix
+0d07693,2022-06-17 12:30:48 +0100,Marta Portugal,1201845@isep.ipp.pt,alteration on survey service
+28ff14b,2022-06-17 12:30:13 +0100,Marta Portugal,1201845@isep.ipp.pt,alteration on survey classes
+ebf9136,2022-06-17 12:29:47 +0100,Marta Portugal,1201845@isep.ipp.pt,alteration on grammar
+e9b6b19,2022-06-17 12:29:17 +0100,Marta Portugal,1201845@isep.ipp.pt,alteration on outputfile method
+f7de5be,2022-06-17 12:28:41 +0100,Marta Portugal,1201845@isep.ipp.pt,alteration on answer classes
+b4d623e,2022-06-17 12:27:21 +0100,Marta Portugal,1201845@isep.ipp.pt,alteration on txt files
+82d48cf,2022-06-17 12:08:31 +0100,Marta Portugal,1201845@isep.ipp.pt,creation of answercontroller and correction on controler for us to create and read questionnaire
+115b963,2022-06-17 12:07:35 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on ui for us to create questionnaire and read questionnaire
+c3aea3d,2022-06-17 12:06:56 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on sd for 1502 and svg
+cac1fea,2022-06-17 11:59:40 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Added class TaskExecutor
+a7ebd44,2022-06-17 11:59:32 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Added class SemaphoreDemo
+2ac0ebb,2022-06-17 10:37:12 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Updated base.app.prepareorder to module and added application.properties
+f882f84,2022-06-17 10:22:41 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-95> US5004: Design (SD)
+ca51a55,2022-06-17 00:06:40 +0100,brunommgoncalves,1190456@isep.ipp.pt,Implementation of PrepareOrders from AGV
+80b8aa1,2022-06-16 19:34:09 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Updated WarehouseBootstrapper
+d2dab09,2022-06-16 19:13:20 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Updated WarehouseBootstrapper
+0316c21,2022-06-16 19:13:07 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Commented AisleTest
+9b5bde2,2022-06-16 19:12:54 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Updated Aisle
+9e197da,2022-06-16 19:08:54 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-108> US5100: corrections AGV and AGV Dock
+8d436ff,2022-06-16 19:08:35 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-108> US5100: corrections bootstrapper
+e09f1db,2022-06-16 18:49:23 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Updated Position
+a17c6fd,2022-06-16 18:49:15 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Updated AGV
+8c60c70,2022-06-16 18:42:27 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Added class JpaAGVDockRepository and JpaAisleRepository
+06e1065,2022-06-16 18:41:20 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Added class WarehouseBootstrapper
+a9d236f,2022-06-16 18:41:08 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Added class AGVDockRepository and AisleRepository
+be22ce5,2022-06-16 18:39:07 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Updated class persistence.xml
+0ea9df2,2022-06-16 18:38:54 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Updated class RepositoryFactory
+b50fcc3,2022-06-16 18:38:45 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Updated class JpaRepositoryFactory
+8c80bf7,2022-06-16 18:38:30 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Updated class BaseDemoBootstrapper
+74ac420,2022-06-16 18:38:20 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Updated class AgvBootstrapper
+b9cb95a,2022-06-16 18:38:01 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Updated class Asile, AGVDock
+0c2f163,2022-06-16 18:18:01 +0100,brunommgoncalves,1190456@isep.ipp.pt,ConfigureAGVController updated
+666fd2a,2022-06-16 18:09:25 +0100,João Tiago Araújo,1200584@isep.ipp.pt,updated ConfigureAGVController
+f258fb9,2022-06-16 17:54:43 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey bootstrapper added questions not answered
+8ce0114,2022-06-16 17:53:47 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Report UI new presentation
+af76d46,2022-06-16 17:53:28 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Report controller added universe calculations
+1f1a5c5,2022-06-16 17:51:46 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Answer in memory and jpa  repository changes
+4cc3742,2022-06-16 17:51:38 +0100,brunommgoncalves,1190456@isep.ipp.pt,Implementation of AGV Position and Sensor
+1fef5d6,2022-06-16 17:50:41 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Answer repository changes
+250b21d,2022-06-16 17:50:16 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Answer service amount questions answered
+e5e036d,2022-06-16 17:49:35 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Answer domain class get all answers method
+d6065f3,2022-06-16 17:17:46 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Updated class Warehouse
+cc8c276,2022-06-16 17:17:36 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Commented line at MainMenu
+495d647,2022-06-16 17:17:25 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Commented WarehouseTest.java
+d0effaa,2022-06-16 17:17:04 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Commented UploadFile UI, Controller and Service
+07a7411,2022-06-16 17:16:16 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Updated class AGV, AGVDock and Aisle
+a6e8753,2022-06-16 15:58:30 +0100,João Tiago Araújo,1200584@isep.ipp.pt,base.app.AGVManagers updated pom.xml
+b3d8e6f,2022-06-16 15:41:50 +0100,brunommgoncalves,1190456@isep.ipp.pt,Cria��o application.properties modulo agvmanager
+04f04a2,2022-06-16 15:16:03 +0100,João Tiago Araújo,1200584@isep.ipp.pt,base.dashboard updated application.properties
+6623337,2022-06-16 12:09:52 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Implementation: Updated class Speed
+83a9359,2022-06-16 12:09:02 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-88> US2006- Design: Added US2006_CD.svg and US2006_SD.svg
+8e30731,2022-06-16 12:08:22 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-88> US2006- Design: Updated US2006_CD.puml
+4a31dd3,2022-06-16 12:07:52 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-88> US2006- Analysis: Updated US2006.md analysis
+fdb90d3,2022-06-15 22:12:52 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on controller for survey answers
+229cb99,2022-06-15 22:12:44 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on UI for survey answers
+b81972d,2022-06-15 22:12:12 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on creste questionnaire UI and customer bootstrapper
+7398ad9,2022-06-15 18:01:17 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey UI and bootstrapper
+4e876a5,2022-06-15 16:40:16 +0100,brunommgoncalves,1190456@isep.ipp.pt,Corre��o Bootstrap
+2018e72,2022-06-15 16:16:26 +0100,brunommgoncalves,1190456@isep.ipp.pt,Corre��o Bootstrap
+5d140a3,2022-06-15 15:47:31 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on method to search survey
+f59f8fe,2022-06-15 15:47:04 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on ui to create survey
+d42997e,2022-06-15 15:28:16 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Create survey UI
+45fab3a,2022-06-15 15:22:37 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey repository classes
+038de9e,2022-06-15 14:42:54 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey creation changes
+98555ea,2022-06-15 12:37:07 +0100,Marta Portugal,1201845@isep.ipp.pt,baserole and persistence
+bf0a96e,2022-06-15 12:36:17 +0100,Marta Portugal,1201845@isep.ipp.pt,deletion of some classes from surveyrule
+4c82fd9,2022-06-15 12:31:36 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Answer classes working
+0fab821,2022-06-15 12:29:30 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-107> presentation power point (updated)
+ffbd154,2022-06-15 11:32:35 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey bootstrapper
+89be95c,2022-06-15 11:32:13 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey domain class changes
+5f6816b,2022-06-15 11:31:58 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey changes to Controller
+cee1fc5,2022-06-15 11:31:42 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey changes to UI
+c4d314c,2022-06-15 11:31:03 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey added answers
+2331ab9,2022-06-15 11:30:23 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Answer bootstrapper
+ec80b5b,2022-06-15 11:30:09 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Answer bootstrapper
+8e28fb7,2022-06-15 11:28:24 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Answer domain class changed
+3320e2c,2022-06-15 11:18:52 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammar
+98a3fca,2022-06-15 09:58:28 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated CreateNewQuestionnaireController
+bd1d023,2022-06-15 09:57:33 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammarParser and FormGrammarLexer
+c835a5a,2022-06-15 09:57:13 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammarBaseVisitor and FormGrammarVisitor
+220d0d0,2022-06-15 09:57:00 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammarBaseListener and FormGrammarListener
+a3d72fd,2022-06-15 09:56:41 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammar.interp and FormGrammar.tokens
+b0d74b1,2022-06-15 09:56:12 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated FormGrammar.g4
+a7d3562,2022-06-15 09:53:02 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated questionnaire2.txt and questionnaire3.txt
+06f3460,2022-06-14 22:00:47 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-81> US3002: FormGrammar.g4 and fich txt (questionnaire)
+cca7178,2022-06-14 22:00:28 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-81> US3002: FormGrammar.g4 and fich txt (questionnaire)
+d7f1d78,2022-06-14 18:37:18 +0100,Marta Portugal,1201845@isep.ipp.pt,repository and service modification questionnaire
+0f683e1,2022-06-14 18:36:38 +0100,Marta Portugal,1201845@isep.ipp.pt,UI modification questionnaire
+f44a43d,2022-06-14 18:36:27 +0100,Marta Portugal,1201845@isep.ipp.pt,controller modification questionnaire
+2a5db1d,2022-06-14 18:35:56 +0100,Marta Portugal,1201845@isep.ipp.pt,repository addition of methods
+1d482b7,2022-06-14 17:34:25 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> In memory survey repository
+41b3ab3,2022-06-14 17:33:25 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey added answers and  DTO
+9d7b9f0,2022-06-14 17:32:40 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Answer repository and application classes
+509042d,2022-06-14 17:30:02 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Answer repository classes
+df94195,2022-06-14 17:28:57 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Answer domain classes
+fc350eb,2022-06-14 17:23:28 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on survey creation controller and addition method
+93af324,2022-06-14 17:23:12 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on survey creation UI
+46104b4,2022-06-14 16:43:17 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated CustomerBirthDay
+bcabbf4,2022-06-14 16:43:03 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US3001: Implementation- Updated CreateNewQuestionnaireController and CreateNewQuestionnaireUI
+a77d525,2022-06-14 16:42:36 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US3501: Implementation- Updated Survey and SurveyRule
+185bac8,2022-06-14 14:53:38 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Statistical report new UI
+fad38cf,2022-06-14 14:53:34 +0100,Marta Portugal,1201845@isep.ipp.pt,class surveyRule modification
+9b6e36e,2022-06-14 14:53:14 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey service added method to find surveys and new controller for statistical report
+2fb0c9b,2022-06-14 14:52:17 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Survey repository added method (findAll)
+a4b4516,2022-06-14 14:51:04 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Find all method for survey
+06c66da,2022-06-14 14:20:16 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> Added sales manager to bootstrap
+ea7d279,2022-06-14 13:32:44 +0100,Marta Portugal,1201845@isep.ipp.pt,class surveyRule modification Controller and UI name modification
+4fe6892,2022-06-14 13:31:29 +0100,Marta Portugal,1201845@isep.ipp.pt,class surveyRule modification persistence
+a355a48,2022-06-14 13:31:18 +0100,Marta Portugal,1201845@isep.ipp.pt,class surveyRule modification
+26ca5b6,2022-06-14 13:25:41 +0100,Marta Portugal,1201845@isep.ipp.pt,class survey modification
+2349e75,2022-06-14 01:17:46 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-110> US5004: ChangeStatusController
+f2c4c6c,2022-06-14 01:16:19 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-110> US5004: classes: server and client (class to change status)
+6db5e28,2022-06-14 01:14:17 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-110> US5004: classes to RCOMP (controller)
+e25892d,2022-06-14 01:13:50 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-110> US5004: classes to RCOMP (protocol)
+14c4250,2022-06-14 01:12:27 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-110> US5004: classes to RCOMP (proxy e protocol)
+9f871ce,2022-06-13 23:56:27 +0100,Marta Portugal,1201845@isep.ipp.pt,classes addition for rules of survey
+aed105f,2022-06-13 23:56:02 +0100,Marta Portugal,1201845@isep.ipp.pt,persistencexml
+6d13fbe,2022-06-13 23:55:12 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on classes from previous us and add methods
+679c3c4,2022-06-13 23:54:29 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on Ui and Controller for survey creation
+491d46b,2022-06-13 21:24:31 +0100,Marta Portugal,1201845@isep.ipp.pt,correction of productorderdto
+58365f7,2022-06-13 21:23:40 +0100,Marta Portugal,1201845@isep.ipp.pt,addition of method to search orders
+62ef1d4,2022-06-13 21:23:05 +0100,Marta Portugal,1201845@isep.ipp.pt, new version of order server and client UI
+ad8e78a,2022-06-13 21:22:28 +0100,Marta Portugal,1201845@isep.ipp.pt,classes addition to new version of order server and client
+197d653,2022-06-13 21:21:47 +0100,Marta Portugal,1201845@isep.ipp.pt,classes addition to new version of order server
+6e67191,2022-06-13 21:19:52 +0100,Marta Portugal,1201845@isep.ipp.pt,files to run server and appliction properties
+a1b0904,2022-06-13 21:19:30 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on poms
+7a957be,2022-06-13 21:18:57 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on server and client connection and addition of controllers
+a618508,2022-06-13 17:54:08 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-108> US5100: classes to SCOMP
+e2510e7,2022-06-13 17:53:24 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-108> US5100: classes domain (Speed, AGV and Model)
+3e77e15,2022-06-13 17:51:32 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Design: Added US5100_SD.puml design
+e59fef7,2022-06-13 17:02:50 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-91> US1006: Design SSD.svg (concluded)
+8c8898d,2022-06-13 14:31:34 +0100,Rui Dias,1200963@isep.ipp.pt,<L2L20-81> <L2L20-84> Documentaion for both us
+1390995,2022-06-12 15:29:35 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-86> US5100- Analysis: Updated US5100 analysis
+f66a1b4,2022-06-12 11:57:20 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-88> US2006- Design: Added US2006_CD.puml
+11c5983,2022-06-12 11:57:03 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-88> US2006- Analysis: Updated US2006.md analysis
+0535013,2022-06-12 11:50:39 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US3001- Implementation: Added ThrowingErrorListener
+6886834,2022-06-12 11:50:25 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US3001- Implementation: Updated CreateNewQuestionnaireUI, CreateNewQuestionnaireController
+8c992e8,2022-06-12 01:01:40 +0100,Rui Dias,1200963@isep.ipp.pt,AgvManager and AgvDigitalTwin communication protocol done, adapted from eCafeteria and with GET_AGV request
+01cd87b,2022-06-11 18:04:21 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-91> US1006: Design SD.svg (concluded)
+b9c4bbb,2022-06-11 18:01:05 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-93> US1006: Analysis (concluded)
+dba7bcc,2022-06-11 17:50:55 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-100> US1006: Tests class Product Order
+4c63674,2022-06-09 16:41:55 +0100,Maria Flores,1201615@isep.ipp.pt,Corrections
+7e0c446,2022-06-09 16:26:07 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on sd of us1502 and svg
+d1ca18f,2022-06-09 16:25:28 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on .md and sd of us1502
+580d26b,2022-06-09 15:01:09 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-96> US5100: Analysis (update)
+570233a,2022-06-09 14:51:50 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US3001- Implementation: Updated CreateNewQuestionnaireUI and moved CreateNewQuestionnaireController
+b8682ae,2022-06-09 14:51:19 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US3001- Implementation: Updated QuestionnaireAnswerUI
+781fa91,2022-06-09 14:51:03 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US3001- Implementation: Moved classes SurveysService and QuestionnaireAnswerController
+edf9ac3,2022-06-09 14:50:24 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US3001- Implementation: Updated Survey and SurveyPeriod
+3c656e8,2022-06-09 14:14:55 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on classes from server and client
+9998a01,2022-06-09 14:14:01 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on classes from server and client
+72420c0,2022-06-09 14:08:24 +0100,Marta Portugal,1201845@isep.ipp.pt,correction on UIs
+beeba65,2022-06-09 14:05:04 +0100,Marta Portugal,1201845@isep.ipp.pt,order server correction separating classes
+97185a3,2022-06-09 13:59:24 +0100,Maria Flores,1201615@isep.ipp.pt,Rollback LineOrder (corrections)
+bb90f10,2022-06-09 13:58:40 +0100,Maria Flores,1201615@isep.ipp.pt,Rollback LineOrderRepository
+3f48b86,2022-06-09 10:53:17 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-88> US2006- Design: Created and added US2006_SD.puml
+b77c17d,2022-06-09 10:52:57 +0100,João Tiago Araújo,1200584@isep.ipp.pt,<L2L20-88> US2006- Analysis: Created and added US2006.md analysis document
+8a6405d,2022-06-09 10:32:05 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated class ConfigureAGVController and ConfigureAGVUI
+9f5951b,2022-06-09 10:31:46 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated class AGVTest
+d4b766d,2022-06-09 10:31:37 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated class AgvBootstrapper
+e49eaeb,2022-06-09 10:31:21 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated class AGV, Builder and Service
+9da066c,2022-06-09 10:30:39 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Updated class Autonomy
+15ed262,2022-06-09 10:29:58 +0100,João Tiago Araújo,1200584@isep.ipp.pt,Added class Autonomy
+c77c1a5,2022-06-09 00:35:49 +0100,Maria Flores,1201615@isep.ipp.pt,Corrections classes (DTOs)
+bd3aa2a,2022-06-09 00:33:55 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-100> US1006: Product Order domain (with DTOs)
+8cd059c,2022-06-09 00:33:24 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-100> US1006: Product Order application
+0202c91,2022-06-09 00:32:58 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-100> US1006: Order repository
+2f37b2e,2022-06-09 00:32:05 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-100> US1006: service
+b949665,2022-06-09 00:31:41 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-100> US1006: presentation
+a4e34da,2022-06-09 00:28:37 +0100,Maria Flores,1201615@isep.ipp.pt,Corrections LineOrder Repository in Factory
+50817b9,2022-06-09 00:28:16 +0100,Maria Flores,1201615@isep.ipp.pt,Corrections LineOrder Repository
+e63928f,2022-06-08 22:33:10 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-91> US1006: Design (SD with DTO)
+ae8eba4,2022-06-08 21:16:34 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US2005: Implementation: Updated WebDashboard
+a42dfea,2022-06-08 21:15:28 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US3001: Implementation: Deleted SurveyCode.java
+5a83744,2022-06-08 21:14:58 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US3001: Implementation: Added  JpaSurveyRepository and InMemorySurveyRepository
+e68fd41,2022-06-08 21:14:37 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US3001: Implementation: Updated JpaRepositoryFactory
+1b94c5b,2022-06-08 21:13:29 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US3001: Implementation: Updated RepositoryFactory
+707e605,2022-06-08 21:13:10 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US3001: Implementation: Added SurveyDescription, SurveyPeriod and AlphanumericCode classes
+1d212ca,2022-06-08 21:12:37 +0100,João Tiago Araújo,1200584@isep.ipp.pt,US3001: Implementation: Updated class Survey and added SurveyRepository
+877a142,2022-06-08 19:41:06 +0100,Maria Flores,1201615@isep.ipp.pt,Line Order (correction Entity)
+a336586,2022-06-08 17:34:05 +0100,Marta Portugal,1201845@isep.ipp.pt,correction .md 1901
+a2a2db3,2022-06-08 16:57:40 +0100,Maria Flores,1201615@isep.ipp.pt,Final correction
+b1f76e1,2022-06-08 16:57:15 +0100,Maria Flores,1201615@isep.ipp.pt,Final correction
+8345426,2022-06-08 15:39:51 +0100,Marta Portugal,1201845@isep.ipp.pt,correction .md 1901
+6389fb7,2022-06-08 00:43:25 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-101> US1006: CD
+e9735fe,2022-06-08 00:37:13 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-100> US1006: Implementation(main Menu: sles clerk)
+16b000e,2022-06-08 00:36:01 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-100> US1006: Implementation(UI and bootstrapper, new order)
+3ac72f9,2022-06-08 00:35:14 +0100,Maria Flores,1201615@isep.ipp.pt,<L2L20-100> US1006: Implementation(controller)
+9ab002b,2022-06-07 23:31:56 +0100,Paulo Proen�a,prp@isep.ipp.pt,Repository Analysis
 c170b70,2022-06-07 20:42:21 +0100,Marta Portugal,1201845@isep.ipp.pt,questionnaireAnswersUI ateration to store the answers
 6c34d49,2022-06-07 20:41:41 +0100,Marta Portugal,1201845@isep.ipp.pt,alteration and corrections on .mds
 b33a4e7,2022-06-07 20:41:01 +0100,Marta Portugal,1201845@isep.ipp.pt,alteration on txts and answers.txt
@@ -40,3 +354,4 @@ caffdf8,2022-06-01 21:47:35 +0100,Marta Portugal,1201845@isep.ipp.pt,documentati
 463a584,2022-06-01 17:34:29 +0100,Maria Flores,1201615@isep.ipp.pt,US3000 (SD.svg SSD.svg) US5002 (SD.svg)
 d4edd81,2022-06-01 17:19:24 +0100,João Tiago Araújo,1200584@isep.ipp.pt,base.dashboard pom.xml, run-dashboard.sh and WebDashboard update
 0b45e98,2022-06-01 13:24:53 +0100,Maria Flores,1201615@isep.ipp.pt,Start of Sprint 4
+020cfa8,2022-05-30 00:43:09 +0100,Paulo Proen�a,prp@isep.ipp.pt,Repository Analysis

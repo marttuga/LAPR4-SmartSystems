@@ -1,3 +1,500 @@
+commit 8105c8a21efff6391d68e6a26edd0a1695857438
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sun Jun 19 23:18:19 2022 +0100
+
+    <L2L20-107> Presentation(concluded)
+
+M	docs/Sprint4/Presentation/LAPR4_Presentation.pptx
+
+commit d75d3118841a77d31067d940b83f10702fb72d9a
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sun Jun 19 23:14:13 2022 +0100
+
+    <L2L20-109> Design: SD(concluded) and SD.svg
+
+M	docs/Sprint4/US5100/US5100_SD.puml
+A	docs/Sprint4/US5100/US5100_SD.svg
+
+commit 4bbcfb7afe6690bda60bfe232e720fa271e59302
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sun Jun 19 22:31:47 2022 +0100
+
+    <L2L20-110> Implementation: comments in code
+
+M	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/DigitalTwinCli.java
+
+commit f17f9535aa545345c6485a9cc8be7fc96d36bd42
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sun Jun 19 22:28:43 2022 +0100
+
+    <L2L20-110> Implementation: comments in code
+
+M	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/DigitalTwinCli.java
+M	base.app.agvManagers/src/main/java/eapli/AgvServer.java
+
+commit e3cad43b84d3b952f78405980d646715d7a1a916
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sun Jun 19 00:31:08 2022 +0100
+
+    <L2L20-95> Design (SD.svg)
+
+M	docs/Sprint4/US5004/US5004_SD.puml
+A	docs/Sprint4/US5004/US5004_SD.svg
+
+commit fb01a1995b636856ae58572449fd1013a244a339
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sat Jun 18 23:51:09 2022 +0100
+
+    <L2L20-94> Analysis (conclusion)
+
+M	docs/Sprint4/US5004/ProcessoEngenhariaFuncionalidade.md
+
+commit 280e783a98af9efe7f298aa3776c99e561f2f965
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sat Jun 18 23:41:31 2022 +0100
+
+    <L2L20-108> Implementation: autonomy class and discharching
+
+M	base.app.prepareorder/src/main/java/SemaphoreDemo.java
+M	base.app.prepareorder/src/main/java/TaskExecutor.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/Autonomy.java
+
+commit f1a0a41c763ba07f9f590fa1c7f048f94b5bcee5
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sat Jun 18 21:48:57 2022 +0100
+
+    <L2L20-87> Implementation: correction
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/ProductOrderBootstrapper.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/OrderService.java
+
+commit 4d3b759c1a03cbc1c70cbf648ef778f0b37b8ddf
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sat Jun 18 21:48:39 2022 +0100
+
+    <L2L20-87> Implementation: conclusion
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/OrdersDispatchedUI.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/OrdersDispatchedController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/domain/ProductOrder.java
+
+commit a1b5c1e88d32e5eac6992b50fc2f09dc57d7dfe5
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sat Jun 18 21:48:11 2022 +0100
+
+    <L2L20-93> Analysis: conclusion
+
+M	docs/Sprint4/US1006/ProcessoEngenhariaFuncionalidade.md
+
+commit 0ffbdbdfe4402a1d26e6073e30fa1044a8181a94
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sat Jun 18 18:13:24 2022 +0100
+
+    <L2L20-96> Analysis: layer-based
+
+M	docs/Sprint4/US5100/ProcessoEngenhariaFuncionalidade.md
+
+commit cc623b56114c06eb566441c0f7fecdac7bc66881
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sat Jun 18 18:06:43 2022 +0100
+
+    <L2L20-109> Design: SSD(update)
+
+M	docs/Sprint4/US5100/US5100_SD.puml
+
+commit 1b3df892b1b736f5e2eeeb8949da54a81964f5bd
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sat Jun 18 17:24:05 2022 +0100
+
+    <L2L20-107> Presentation
+
+M	docs/Sprint4/Presentation/LAPR4_Presentation.pptx
+
+commit 2560811aba7177e794354e02207be30bbe286249
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sat Jun 18 16:58:53 2022 +0100
+
+    <L2L20-110> US5004: Implementation: protocol server (new package)
+
+R097	base.app.agvManagers/src/main/java/eapli/protocol/client/server/FailedRequestException.java	base.app.agvManagers/src/main/java/eapli/protocol/server/FailedRequestException.java
+R086	base.app.agvManagers/src/main/java/eapli/protocol/client/server/UnknownRequest.java	base.app.agvManagers/src/main/java/eapli/protocol/server/UnknownRequest.java
+
+commit 4db735229b8ce2be0dc8445d5e7f0e7173592453
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sat Jun 18 16:58:31 2022 +0100
+
+    <L2L20-110> US5004: Implementation: protocol server (new package)
+
+R097	base.app.agvManagers/src/main/java/eapli/protocol/client/server/AGVManagerProtocol.java	base.app.agvManagers/src/main/java/eapli/protocol/server/AGVManagerProtocol.java
+R087	base.app.agvManagers/src/main/java/eapli/protocol/client/server/BadRequest.java	base.app.agvManagers/src/main/java/eapli/protocol/server/BadRequest.java
+R096	base.app.agvManagers/src/main/java/eapli/protocol/client/server/BaseErrorRequest.java	base.app.agvManagers/src/main/java/eapli/protocol/server/BaseErrorRequest.java
+R096	base.app.agvManagers/src/main/java/eapli/protocol/client/server/ChangeStatusAGV.java	base.app.agvManagers/src/main/java/eapli/protocol/server/ChangeStatusAGV.java
+
+commit a8c2de2e0a525995ef2f93b2171c711d3a376ee0
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sat Jun 18 16:57:40 2022 +0100
+
+    <L2L20-110> US5004: Implementation: SSLSockets (server and client)
+
+M	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/DigitalTwinCli.java
+M	base.app.agvManagers/src/main/java/eapli/AgvServer.java
+
+commit 712a64f6fb74db0934384b4ded3df369a84b3ef8
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Fri Jun 17 23:13:45 2022 +0100
+
+    <L2L20-108> US5100: Implementation (Threads) correction erros and create semaphore AGVDock
+
+M	base.app.prepareorder/src/main/java/TaskExecutor.java
+
+commit eb2938a58874d094780a0054916a315c171a225d
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Fri Jun 17 22:58:46 2022 +0100
+
+    <L2L20-108> US5100: Implementation (Threads) correction
+
+M	base.app.prepareorder/src/main/java/TaskExecutor.java
+
+commit 3c02f9ae91b11a3263ada308208916faf09e1a75
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Fri Jun 17 15:05:13 2022 +0100
+
+    <L2L20-108> US5100: Implementation (Threads)
+
+M	base.app.prepareorder/src/main/java/SemaphoreDemo.java
+M	base.app.prepareorder/src/main/java/TaskExecutor.java
+
+commit f882f84522566cd90929d2fe08b3b0be02d81e31
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Fri Jun 17 10:22:41 2022 +0100
+
+    <L2L20-95> US5004: Design (SD)
+
+A	docs/Sprint4/US5004/US5004_SD.puml
+
+commit 9e197daf6118e31a11b2826b40ca440058dca82f
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Thu Jun 16 19:08:54 2022 +0100
+
+    <L2L20-108> US5100: corrections AGV and AGV Dock
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGVDock.java
+M	base.core/src/test/java/eapli/base/warehousemanagement/domain/AGVDockTest.java
+M	base.core/src/test/java/eapli/base/warehousemanagement/domain/AGVTest.java
+
+commit 8d436ff65590f98aa3e403153a7469e9423a930b
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Thu Jun 16 19:08:35 2022 +0100
+
+    <L2L20-108> US5100: corrections bootstrapper
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/AgvBootstrapper.java
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/WarehouseBootstrapper.java
+
+commit 0fab821653afa17d6163a505e369a858f86bd836
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Wed Jun 15 12:29:30 2022 +0100
+
+    <L2L20-107> presentation power point (updated)
+
+A	docs/Sprint4/Presentation/LAPR4_Presentation.pptx
+A	docs/Sprint4/Presentation/~$LAPR4_Presentation.pptx
+
+commit 06f34607cc12b6b0a0f707c792fa39f4fac6d85d
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Tue Jun 14 22:00:47 2022 +0100
+
+    <L2L20-81> US3002: FormGrammar.g4 and fich txt (questionnaire)
+
+M	base.core/src/main/java/eapli/base/surveys/FormGrammar.g4
+
+commit cca7178470cbb617eae2872e6656afce2f289ed1
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Tue Jun 14 22:00:28 2022 +0100
+
+    <L2L20-81> US3002: FormGrammar.g4 and fich txt (questionnaire)
+
+M	base.core/src/main/java/eapli/base/surveys/FormGrammar.g4
+M	base.core/src/main/java/eapli/base/surveys/questionnaire.txt
+
+commit 2349e75406c56c5c6a29237d9f99c9195c341d75
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Tue Jun 14 01:17:46 2022 +0100
+
+    <L2L20-110> US5004: ChangeStatusController
+
+A	base.core/src/main/java/eapli/base/warehousemanagement/application/AGVChangeStatusControllerImpl.java
+
+commit f2c4c6c39c8104a83452b22a029e8509fea9806f
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Tue Jun 14 01:16:19 2022 +0100
+
+    <L2L20-110> US5004: classes: server and client (class to change status)
+
+M	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/DigitalTwinCli.java
+A	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/protocol/client/AGVDTO.java
+M	base.app.agvManagers/src/main/java/eapli/AgvServer.java
+A	base.app.agvManagers/src/main/java/eapli/protocol/client/server/ChangeStatusAGV.java
+
+commit 6db5e28c316f53f1cbf049f458fc2cce7732d6a7
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Tue Jun 14 01:14:17 2022 +0100
+
+    <L2L20-110> US5004: classes to RCOMP (controller)
+
+A	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/application/ChangeStatusAgvController.java
+A	base.core/src/main/java/eapli/base/warehousemanagement/application/AGVChangeStatusController.java
+
+commit e25892dea600a8ee482f2a534daa800df58d385e
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Tue Jun 14 01:13:50 2022 +0100
+
+    <L2L20-110> US5004: classes to RCOMP (protocol)
+
+A	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/protocol/client/FailedRequestException.java
+A	base.app.agvManagers/src/main/java/eapli/protocol/client/server/UnknownRequest.java
+
+commit 14c4250c2b19da39582a404b04c271e6dc315c2c
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Tue Jun 14 01:12:27 2022 +0100
+
+    <L2L20-110> US5004: classes to RCOMP (proxy e protocol)
+
+A	base.app.agvDigitalTwin/src/main/java/eapli/base/app/agvDigitalTwin/protocol/client/AgvManagerProxy.java
+A	base.app.agvManagers/src/main/java/eapli/protocol/client/server/AGVManagerProtocol.java
+A	base.app.agvManagers/src/main/java/eapli/protocol/client/server/BadRequest.java
+A	base.app.agvManagers/src/main/java/eapli/protocol/client/server/BaseErrorRequest.java
+A	base.app.agvManagers/src/main/java/eapli/protocol/client/server/FailedRequestException.java
+
+commit a618508d5023f190502eedec2bcc2e1951b62021
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Mon Jun 13 17:54:08 2022 +0100
+
+    <L2L20-108> US5100: classes to SCOMP
+
+A	base.core/src/main/java/eapli/base/warehousemanagement/activity/Activity.java
+A	base.core/src/main/java/eapli/base/warehousemanagement/activity/Positioning.java
+A	base.core/src/main/java/eapli/base/warehousemanagement/activity/SimulationEngine.java
+
+commit e2510e706ac3ed53d3e0ac135b1d47d9550397eb
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Mon Jun 13 17:53:24 2022 +0100
+
+    <L2L20-108> US5100: classes domain (Speed, AGV and Model)
+
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/AGV.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/domain/Model.java
+A	base.core/src/main/java/eapli/base/warehousemanagement/domain/Speed.java
+
+commit e59fef7d3173ebee0966ec02a316eaef6bd7d4c1
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Mon Jun 13 17:02:50 2022 +0100
+
+    <L2L20-91> US1006: Design SSD.svg (concluded)
+
+A	docs/Sprint4/US1006/US1006_SSD.svg
+
+commit 01cd87b3a471b76c861d0b4291636d00ffb5e889
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sat Jun 11 18:04:21 2022 +0100
+
+    <L2L20-91> US1006: Design SD.svg (concluded)
+
+M	docs/Sprint4/US1006/US1006_SD.puml
+A	docs/Sprint4/US1006/US1006_SD.svg
+
+commit b9c4bbb62c32826b845a186fe196b90a2c69142a
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sat Jun 11 18:01:05 2022 +0100
+
+    <L2L20-93> US1006: Analysis (concluded)
+
+M	docs/Sprint4/US1006/ProcessoEngenhariaFuncionalidade.md
+
+commit dba7bcc9dd423857c54fe54d0a05cd3d8a1dcbf3
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Sat Jun 11 17:50:55 2022 +0100
+
+    <L2L20-100> US1006: Tests class Product Order
+
+M	base.core/src/test/java/eapli/base/ordersmanagement/order/domain/ProductOrderTest.java
+
+commit 4c6367413bed3831356e8bcb1faae14c1290ea37
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Thu Jun 9 16:41:55 2022 +0100
+
+    Corrections
+
+M	base.core/target/classes/eapli/base/infrastructure/persistence/RepositoryFactory.class
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaLineOrderRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaRepositoryFactory.java
+
+commit 580d26bb3eea1a639ce958095439c84e7088258c
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Thu Jun 9 15:01:09 2022 +0100
+
+    <L2L20-96> US5100: Analysis (update)
+
+M	docs/Sprint4/US5100/ProcessoEngenhariaFuncionalidade.md
+
+commit 97185a3c770b6d9d3df7cf69c69687427b1b75e5
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Thu Jun 9 13:59:24 2022 +0100
+
+    Rollback LineOrder (corrections)
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/ProductOrderBootstrapper.java
+M	base.core/src/main/java/eapli/base/infrastructure/persistence/RepositoryFactory.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/NewProductOrderController.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/domain/LineOrder.java
+
+commit bb90f10505cf4244f55ae398ea774c98f9c0de32
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Thu Jun 9 13:58:40 2022 +0100
+
+    Rollback LineOrderRepository
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/repositories/LineOrderRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryLineOrderRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaLineOrderRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaRepositoryFactory.java
+
+commit c77c1a5e38203901535f307cedc134134ab3a6df
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Thu Jun 9 00:35:49 2022 +0100
+
+    Corrections classes (DTOs)
+
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/ProductOrderBootstrapper.java
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/NewProductOrderController.java
+M	base.core/src/main/java/eapli/base/warehousemanagement/application/AGVToPrepOrderController.java
+
+commit bd3aa2a753f3cd8d76daace276e187059fbbf3b4
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Thu Jun 9 00:33:55 2022 +0100
+
+    <L2L20-100> US1006: Product Order domain (with DTOs)
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/domain/ProductOrder.java
+A	base.core/src/main/java/eapli/base/ordersmanagement/order/domain/ProductOrderDto.java
+
+commit 8cd059cc3e6b501a198c824e918cb6e47c423522
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Thu Jun 9 00:33:24 2022 +0100
+
+    <L2L20-100> US1006: Product Order application
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/OrdersDispatchedController.java
+
+commit 0202c91510a1bc142c26b1b38763634b2bf5d064
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Thu Jun 9 00:32:58 2022 +0100
+
+    <L2L20-100> US1006: Order repository
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/repositories/OrderRepository.java
+
+commit 2f37b2e36c84c545d70ea25043605ffb03190a47
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Thu Jun 9 00:32:05 2022 +0100
+
+    <L2L20-100> US1006: service
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/application/OrderService.java
+
+commit b949665827aa9a00af419a690c432f6ee37f8454
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Thu Jun 9 00:31:41 2022 +0100
+
+    <L2L20-100> US1006: presentation
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/OrdersDispatchedUI.java
+
+commit a4e34daefc4371073f4c407a9200c7c2062976d4
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Thu Jun 9 00:28:37 2022 +0100
+
+    Corrections LineOrder Repository in Factory
+
+M	base.core/src/main/java/eapli/base/infrastructure/persistence/RepositoryFactory.java
+M	base.core/target/classes/eapli/base/infrastructure/persistence/RepositoryFactory.class
+
+commit 50817b97ac6900be9e571029fcb0751009ecda0f
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Thu Jun 9 00:28:16 2022 +0100
+
+    Corrections LineOrder Repository
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/repositories/LineOrderRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/inmemory/InMemoryLineOrderRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaLineOrderRepository.java
+M	base.persistence.impl/src/main/java/eapli/base/persistence/impl/jpa/JpaRepositoryFactory.java
+
+commit e63928f5ce90d344532a579f5643921bcf2f0ff5
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Wed Jun 8 22:33:10 2022 +0100
+
+    <L2L20-91> US1006: Design (SD with DTO)
+
+M	docs/Sprint4/US1006/US1006_SD.puml
+
+commit 877a14269f92f265998f65a6f1dba3d0458db0eb
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Wed Jun 8 19:41:06 2022 +0100
+
+    Line Order (correction Entity)
+
+M	base.core/src/main/java/eapli/base/ordersmanagement/order/domain/LineOrder.java
+
+commit a2a2db362ae802ad79b403e8e78fa2bea39d1331
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Wed Jun 8 16:57:40 2022 +0100
+
+    Final correction
+
+M	docs/Sprint3/US5002/ProcessoEngenhariaFuncionalidade.md
+
+commit b1f76e142ff988ee68498506ace25ea81a06f302
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Wed Jun 8 16:57:15 2022 +0100
+
+    Final correction
+
+M	docs/Sprint3/US5002/US5002_SD.puml
+
+commit 6389fb7b8e39fb126ca0da3d0e8b1c51033bf7a9
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Wed Jun 8 00:43:25 2022 +0100
+
+    <L2L20-101> US1006: CD
+
+A	docs/Sprint4/US1006/US1006_CD.puml
+
+commit e9735fe4587d92932ede332f05c577d6633c07af
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Wed Jun 8 00:37:13 2022 +0100
+
+    <L2L20-100> US1006: Implementation(main Menu: sles clerk)
+
+M	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/MainMenu.java
+
+commit 16b000e24e9ffca47c9a212fcce84aa31dd670c7
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Wed Jun 8 00:36:01 2022 +0100
+
+    <L2L20-100> US1006: Implementation(UI and bootstrapper, new order)
+
+A	base.app.backoffice.console/src/main/java/eapli/base/app/backoffice/console/presentation/UI/OrdersDispatchedUI.java
+M	base.bootstrappers/src/main/java/eapli/base/infrastructure/bootstrapers/demo/ProductOrderBootstrapper.java
+
+commit 3ac72f9bc4c5b7d98c945d2ec355a4ab5847e087
+Author: Maria Flores <1201615@isep.ipp.pt>
+Date:   Wed Jun 8 00:35:14 2022 +0100
+
+    <L2L20-100> US1006: Implementation(controller)
+
+A	base.core/src/main/java/eapli/base/ordersmanagement/order/application/OrdersDispatchedController.java
+
 commit 9d4fe71174aaa6905cf6a8adf92d26bf8338de70
 Author: Maria Flores <1201615@isep.ipp.pt>
 Date:   Tue Jun 7 16:51:02 2022 +0100

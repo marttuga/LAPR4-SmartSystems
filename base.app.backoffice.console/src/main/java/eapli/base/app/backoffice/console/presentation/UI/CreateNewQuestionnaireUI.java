@@ -80,7 +80,7 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                         try {
                             sd= ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null);
 
-                                ctrl.outPutNotification(sd);
+                                ctrl.outPutNotification(customers);
 
 
 
@@ -141,7 +141,7 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                             sd=ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null);
 
 
-                                ctrl.outPutNotification(sd);
+                                ctrl.outPutNotification(customers);
 
 
 
@@ -199,7 +199,7 @@ public class CreateNewQuestionnaireUI extends AbstractUI {
                            sd= ctrl.createSurvey(AlphanumericCode.valueOf(alphanumericCode), SurveyDescription.valueOf(surveyDescription), SurveyPeriod.valueOf(surveyPeriod), surveyFile, s, customers, null);
 
 
-                                ctrl.outPutNotification(sd);
+                                ctrl.outPutNotification(customers);
 
 
 
