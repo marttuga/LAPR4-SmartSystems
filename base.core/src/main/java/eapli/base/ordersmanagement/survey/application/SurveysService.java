@@ -89,10 +89,10 @@ public class SurveysService {
     }
 
     public String checkAnswer( File answers) throws IOException {
-        FileInputStream fis = new FileInputStream(answers);
-        FormGrammarLexer lexer = new FormGrammarLexer(new ANTLRInputStream(fis));
-        org.antlr.v4.runtime.CommonTokenStream tokens = new CommonTokenStream(lexer);
-        FormGrammarParser parser = new FormGrammarParser(tokens);
+        FileInputStream fis = new FileInputStream(answers); //obtém os bytes de entrada de um ficheiro. É utilizado para a leitura de dados orientados por bytes (streams of raw bytes)
+        FormGrammarLexer lexer = new FormGrammarLexer(new ANTLRInputStream(fis)); //converteo input para um vector de tokens.
+        org.antlr.v4.runtime.CommonTokenStream tokens = new CommonTokenStream(lexer); //token stream dá accesso a todos os tokens por index
+        FormGrammarParser parser = new FormGrammarParser(tokens); //parser pega no tokens do lexer para determinar se foi formado corretamente
         ParseTree tree = parser.start(); // parse
         EvalVisitor eval = new EvalVisitor();
          return  eval.visit(tree);
