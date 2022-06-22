@@ -27,10 +27,11 @@ view/check the status of his open orders.
 >
 >   Controlador:  CheckOpenOrderController   ;
 >
->   Repository:   OrderRepository
+>   Repository:   OrderRepository CustomerRepository
 >
 >   Service:  OrderService
-
+>
+>   Proxy: CustomerProtocolProxy
 
 ## 3.1. Realization of Functionality
 ![SSD](US1502_SSD.svg)
