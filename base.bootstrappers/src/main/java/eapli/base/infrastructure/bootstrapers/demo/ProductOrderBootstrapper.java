@@ -90,37 +90,23 @@ public class ProductOrderBootstrapper implements Action {
             products.add(product);
             System.out.println(products);
             Money money = new Money(priceMoney, Currency.getInstance(currencyCode));
-            System.out.println("-----MONEY-----");
-            System.out.println(money);
+
             ProductItemID productItemID = new ProductItemID("365");
             ProductItem productItem = new ProductItem(money,amount, productItemID, products);
             productItemRepository.save(productItem);
             Set<ProductItem> productItems = new HashSet<ProductItem>();
             productItems.add(productItem);
-            System.out.println("-----PRODUCTS-----");
-            System.out.println(productItems);
 
             OrderActor orderActor = new OrderActor(actorId, OrderActor.Role.Costumer);
-            System.out.println("-----ORDER ACTOR-----");
-            System.out.println(orderActor);
 
             OrderID orderID1 = new OrderID(orderID);
-            System.out.println("-----ORDER ID-----");
-            System.out.println(orderID1);
 
             LineOrderID lineOrderID = new LineOrderID("365");
             LineOrder lineOrder = new LineOrder(lineOrderID, productItems, money);
-            //lineOrderRepository.save(lineOrder);
-            System.out.println("-----LINE ORDER-----");
-            System.out.println(lineOrder);
 
             ShippingCost shippingCost = new ShippingCost(money);
-            System.out.println("-----SHIPPING COST-----");
-            System.out.println(shippingCost);
 
             PriceOrder priceOrder = new PriceOrder(money, shippingCost);
-            System.out.println("-----PRICE ORDER-----");
-            System.out.println(priceOrder);
 
             System.out.println("-----CONTROLLER-----");
             ProductOrder productOrder = newProductOrderController.registerNewOrder(orderActor, orderID1, customer, calendar, lineOrder, priceOrder,

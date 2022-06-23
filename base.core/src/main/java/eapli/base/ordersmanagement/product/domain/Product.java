@@ -100,6 +100,11 @@ public class Product implements AggregateRoot<UniqueInternalCode> {
         this.shelfId = shelfId;
     }
 
+    public Product(UniqueInternalCode uniqueInternalCode, int aisleId) {
+        this.uniqueInternalCode = uniqueInternalCode;
+        this.aisleId = aisleId;
+    }
+
     public Product(UniqueInternalCode uniqueInternalCode, ShortDescription shortDescription, ExtendedDescription extendedDescription, Barcode barcode, CategoryCode categoryCode) {
         this.uniqueInternalCode = uniqueInternalCode;
         this.shortDescription = shortDescription;

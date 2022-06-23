@@ -137,12 +137,8 @@ public class AGV implements AggregateRoot<Identifier> {
         this.position = position;
     }
 
-    public List<Sensor> getSensorList() {
-        return sensorList;
-    }
-
-    public void setSensorList(List<Sensor> sensorList) {
-        this.sensorList = sensorList;
+    public void setAutonomy(Autonomy autonomy) {
+        this.autonomy = autonomy;
     }
 
     @Override

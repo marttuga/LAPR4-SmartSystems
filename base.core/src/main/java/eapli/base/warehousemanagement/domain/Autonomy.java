@@ -18,20 +18,32 @@ public class Autonomy implements ValueObject, Comparable<Autonomy>{
 
     }
 
-    public Autonomy(int autonomy) throws IllegalAccessException {
+    public Autonomy(int autonomy) {
+        /*
         if(StringPredicates.isNullOrWhiteSpace(String.valueOf(autonomy))) {
             throw new IllegalAccessException("The autonomy cannot be null or empty!");
         }
 
-        if(0 < autonomy && autonomy > 100){
+
+        if(autonomy < 0 || autonomy > 100){
             throw new IllegalArgumentException("The autonomy should be from 0 to 100.");
         }
+        */
+
         Pattern descRegerx = Pattern.compile("");
         this.autonomy = autonomy;
     }
 
     public static Autonomy valueOf(final int autonomy) throws IllegalAccessException {
         return new Autonomy(autonomy);
+    }
+
+    public int getAutonomy() {
+        return autonomy;
+    }
+
+    public void setAutonomy(int autonomy) {
+        this.autonomy = autonomy;
     }
 
     @Override
