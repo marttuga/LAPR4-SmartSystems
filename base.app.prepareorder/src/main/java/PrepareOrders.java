@@ -1,62 +1,30 @@
 import eapli.base.infrastructure.persistence.PersistenceContext;
-import eapli.base.ordersmanagement.order.domain.ProductOrder;
+import eapli.base.ordersmanagement.customer.domain.*;
+import eapli.base.ordersmanagement.order.domain.*;
 import eapli.base.ordersmanagement.order.domain.Status;
 import eapli.base.ordersmanagement.product.domain.Product;
+import eapli.base.ordersmanagement.product.domain.UniqueInternalCode;
 import eapli.base.ordersmanagement.shoppingCart.domain.ProductItem;
+import eapli.base.ordersmanagement.shoppingCart.domain.ProductItemID;
 import eapli.base.warehousemanagement.application.AGVToPrepOrderController;
-import eapli.base.warehousemanagement.domain.AGV;
-import eapli.base.warehousemanagement.domain.Aisle;
-import eapli.base.warehousemanagement.domain.Position;
+import eapli.base.warehousemanagement.domain.*;
 import eapli.base.warehousemanagement.repositories.AGVRepository;
-import eapli.base.warehousemanagement.repositories.AisleRepository;
+import eapli.framework.general.domain.model.Money;
+import org.apache.commons.lang3.RandomStringUtils;
+
 import java.util.*;
 
 public class PrepareOrders {
 
-    private static final AGVToPrepOrderController agvToPrepOrderController = new AGVToPrepOrderController();
-    private static final AisleRepository aisleRepository = PersistenceContext.repositories().aisle();
-    private static final AGVRepository agvRepository = PersistenceContext.repositories().agv();
-    private static final TaskExecutor taskExecutor = new TaskExecutor();
-
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException {
 
         while (true) {
-            List<ProductOrder> ordersToBePrepared = getOrdersToBePrepared();
-            List<AGV> availableAgvs = getAvailableAgvs();
-
-            List<Thread> threads = taskExecutor.createThread(ordersToBePrepared);
-            taskExecutor.initializeThread(threads);
-
-            //Assign order to an available agv
-            AGV availableAgv;
-            ProductOrder orderToPrepare;
+            List<ProductOrder> ordersToBePrepared = orderList();
+            List<AGV> availableAgvs = agvList();
 
             if (!ordersToBePrepared.isEmpty()) {
                 if (!availableAgvs.isEmpty()) {
-                    availableAgv = availableAgvs.get(0);
-                    orderToPrepare = ordersToBePrepared.get(0);
-                    agvToPrepOrderController.agvToPrepOrder(availableAgv, orderToPrepare);
-                    System.out.println("Order " + orderToPrepare.getOrderID() + " atribuida ao agv " + availableAgv.getIdentifier());
-
-                    Set<ProductItem> orderProductItems = orderToPrepare.getLineOrder().getLineOrderList();
-                    List<Product> orderProductList = new ArrayList<>();
-
-                    for (ProductItem p : orderProductItems) {
-                        orderProductList.addAll(p.getProducts());
-                    }
-
-                    Map<Position, Product> path = new HashMap<>();
-                    for (Product p : orderProductList) {
-                        Aisle aisle = aisleRepository.findByID(p.getAisleId());
-                        Position aislePosition = new Position(aisle.getLsquareBegin(), aisle.getWsquareBegin());
-                        path.put(aislePosition, p);
-                    }
-
-                    prepareOrder(availableAgv, path);
-                    availableAgv.changeStatus(eapli.base.warehousemanagement.domain.Status.FREE);
-                    agvRepository.save(availableAgv);
-                    System.out.println("Order " + orderToPrepare.getOrderID() + " preparada pelo agv " + availableAgv.getIdentifier());
-
+                    createThreads();
 
                 } else {
                     System.out.println("Nenhum agv disponivel de momento!\n");
@@ -68,144 +36,132 @@ public class PrepareOrders {
         }
     }
 
-    public static List<ProductOrder> getOrdersToBePrepared() {
-        return agvToPrepOrderController.findOrdersByStatus(Status.TO_BE_PREPARED);
-    }
-
-    public static List<AGV> getAvailableAgvs () {
-        return agvRepository.findAGVByStatus(eapli.base.warehousemanagement.domain.Status.FREE);
-    }
-
-    static final int ROW = 18;
-    static final int COL = 20;
-
-    // Direction vectors
-    static int dRow[] = { -1, 0, 1, 0 };
-    static int dCol[] = { 0, 1, 0, -1 };
-
-    // Function to check if a cell is be visited or not
-    static boolean isValid(int grid[][], boolean vis[][], int row, int col){
-        // If cell lies out of bounds
-        if (row < 0 || col < 0 ||
-                row >= ROW || col >= COL)
-            return false;
-
-        // If cell is already visited
-        if (vis[row][col])
-            return false;
-
-        //if (grid[row][col] == 1)
-            //return false;
-
-        // Otherwise
-        return true;
-    }
-
-    // Function to perform the BFS traversal
-    static void BFS(int grid[][], boolean vis[][], Position start, Position end, AGV agv) {
-
-        // Stores indices of the matrix cells
-        Queue<int[]> q = new LinkedList<>();
-
-        // Mark the starting cell as visited and push it into the queue
-        int[] startingCell = {start.getX(), start.getY()};
-        q.add(startingCell);
-        vis[start.getX()][start.getY()] = true;
-
-        int[] endP = {end.getX(), end.getY()};
-        // Iterate while the queue is not empty
-        while (!q.isEmpty()) {
-            int[] cell = q.peek();
-            assert cell != null;
-            if (cell[0] == endP[0] && cell[1] == endP[1]) {
-                System.out.println("Chegou a posição pretendida!");
-                break;
-            }
-            int x = cell[0];
-            int y = cell[1];
-
-            System.out.print("AGV Position: \n");
-            System.out.println("X - " + x + "\n");
-            System.out.println("Y - " + y + "\n");
-            agv.setPosition(new Position(x,y));
-            agvRepository.save(agv);
-
-            q.remove();
-
-            // Go to the adjacent cells
-            for(int i = 0; i < 4; i++)
-            {
-                int adjx = x + dRow[i];
-                int adjy = y + dCol[i];
-
-                if (isValid(grid, vis, adjx, adjy))
-                {
-                    int[] block = {adjx, adjy};
-                    q.add(block);
-                    vis[adjx][adjy] = true;
-                }
-            }
+    public static void createThreads() throws IllegalAccessException {
+        List<ProductOrder> orderList = orderList();
+        List<AGV> agvList = agvList();
+        List<Aisle> aisleList = aisleList();
+        AGVDock agvDock = getAgvDock();
+        TaskExecutor task = new TaskExecutor(orderList, agvList, aisleList, agvDock);
+        for (int i = 0; i < agvList.size(); i++) {
+            Thread t = new Thread(task);
+            t.setName(String.valueOf(i));
+            t.start();
         }
     }
 
-    public static void prepareOrder (AGV agv, Map<Position, Product> path) {
+    private static AGVDock agvDock = new AGVDock("555",new WarehouseID("1"), 2, 2, 2,
+            2, 2, 2, "test");
 
-        int[][] warehouseMatrix = getWarehouseMatrix();
-        boolean[][] visitedMatrix = getVisitedMatrix().clone();
-
-        for (Position p : path.keySet()) {
-            BFS(warehouseMatrix, visitedMatrix, agv.getPosition(), p, agv);
-        }
+    public static AGVDock getAgvDock() {
+        return agvDock;
     }
 
-    private static int[][] warehouseMatrix = {
-            { 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 },
-            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-            { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 },
-            { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-            { 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 },
-            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-            { 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 },
-            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-            { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 },
-            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-            { 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 },
-    };
+    public static List<AGV> agvList () throws IllegalAccessException {
+        List<Sensor> sensorList = new ArrayList<>();
+        Sensor a = new Sensor("a", 0,1); sensorList.add(a);
+        Sensor s = new Sensor("s", 1,0); sensorList.add(s);
+        Sensor d = new Sensor("d", 2,1); sensorList.add(d);
+        Sensor w = new Sensor("w", 1,2); sensorList.add(w);
 
-    private static boolean[][] visitedMatrix = {
-            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
-            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
-            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
-            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
-            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
-            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
-            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
-            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
-            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
-            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
-            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
-            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
-            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
-            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
-            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
-            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
-            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
-            { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false },
-    };
+        AGVDock agvDock = getAgvDock();
 
-    public static int[][] getWarehouseMatrix() {
-        return warehouseMatrix;
+        Position inicialPosition = new Position(1,1);
+
+        AGV agv1 = new AGV(new Identifier("555"), new Autonomy(50), agvDock, "test",
+                new Model("test"), inicialPosition, sensorList, new MaxWeightCarry(100), eapli.base.warehousemanagement.domain.Status.FREE);
+        AGV agv2 = new AGV(new Identifier("556"), new Autonomy(50), agvDock, "test",
+                new Model("test"), inicialPosition, sensorList, new MaxWeightCarry(100), eapli.base.warehousemanagement.domain.Status.FREE);
+        AGV agv3 = new AGV(new Identifier("557"), new Autonomy(50), agvDock, "test",
+                new Model("test"), inicialPosition, sensorList, new MaxWeightCarry(100), eapli.base.warehousemanagement.domain.Status.FREE);
+        List<AGV> agvList = new ArrayList<>();
+        agvList.add(agv1);
+        agvList.add(agv2);
+        agvList.add(agv3);
+
+        return agvList;
     }
 
-    public static boolean[][] getVisitedMatrix() {
-        return visitedMatrix;
+    public static List<ProductOrder> orderList() throws IllegalAccessException {
+        Set<CustomerPostalAddress> postalAddress = new HashSet<>();
+        CustomerPostalAddress customerPostalAddress = new CustomerPostalAddress("Sunset Boulevard", 78,
+                "Los angeles", "USA",90210);
+        postalAddress.add(customerPostalAddress);
+
+        String uniqueID = RandomStringUtils.randomAlphanumeric(8);
+        Date date1 = new Date(Calendar.YEAR+90, Calendar.FEBRUARY, Calendar.DAY_OF_MONTH);
+        Customer customer = new CustomerBuilder().withCustomerId(uniqueID).withFisrtName(
+                        CustomerFirstName.valueOf("Bruno")).
+                withLastName(CustomerLastName.valueOf("Goncalves")).
+                withEmailAdress(CustomerEmailAdress.valueOf("bruno@gmail.com")).
+                withPhoneNumber(CustomerPhoneNumber.valueOf("916218056")).
+                withVATIdentifier(CustomerVATIdentifier.valueOf("0936527")).
+                withBirthday(CustomerBirthDay.valueOf(date1)).
+                withGender(CustomerGender.valueOf("MALE")).
+                withPostalAdresses(postalAddress).build();
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date1);
+
+        Product product = new Product(new UniqueInternalCode("555"), 1);
+        Set<Product> products = new HashSet<Product>();
+        products.add(product);
+
+        Money money = new Money(10L, Currency.getInstance("EUR"));
+
+        ProductItemID productItemID = new ProductItemID("365");
+        ProductItem productItem = new ProductItem(money,2, productItemID, products);
+
+        Set<ProductItem> productItems = new HashSet<ProductItem>();
+        productItems.add(productItem);
+
+        OrderActor orderActor = new OrderActor("actor@gmail.com", OrderActor.Role.Costumer);
+
+        OrderID orderID1 = new OrderID("551");
+        OrderID orderID2 = new OrderID("552");
+        OrderID orderID3 = new OrderID("553");
+        OrderID orderID4 = new OrderID("554");
+        OrderID orderID5 = new OrderID("555");
+
+        LineOrderID lineOrderID = new LineOrderID("365");
+        LineOrder lineOrder = new LineOrder(lineOrderID, productItems, money);
+
+        ShippingCost shippingCost = new ShippingCost(money);
+
+        PriceOrder priceOrder = new PriceOrder(money, shippingCost);
+
+        ProductOrder productOrder1 = new ProductOrder(orderActor, orderID1, customer, calendar, lineOrder, priceOrder,
+                PaymentMethod.MBWAY, ShippingMethod.Standart, eapli.base.ordersmanagement.order.domain.Status.TO_BE_PREPARED);
+        ProductOrder productOrder2 = new ProductOrder(orderActor, orderID2, customer, calendar, lineOrder, priceOrder,
+                PaymentMethod.MBWAY, ShippingMethod.Standart, eapli.base.ordersmanagement.order.domain.Status.TO_BE_PREPARED);
+        ProductOrder productOrder3 = new ProductOrder(orderActor, orderID3, customer, calendar, lineOrder, priceOrder,
+                PaymentMethod.MBWAY, ShippingMethod.Standart, eapli.base.ordersmanagement.order.domain.Status.TO_BE_PREPARED);
+        ProductOrder productOrder4 = new ProductOrder(orderActor, orderID4, customer, calendar, lineOrder, priceOrder,
+                PaymentMethod.MBWAY, ShippingMethod.Standart, eapli.base.ordersmanagement.order.domain.Status.TO_BE_PREPARED);
+        ProductOrder productOrder5 = new ProductOrder(orderActor, orderID5, customer, calendar, lineOrder, priceOrder,
+                PaymentMethod.MBWAY, ShippingMethod.Standart, eapli.base.ordersmanagement.order.domain.Status.TO_BE_PREPARED);
+
+        List<ProductOrder> orderList = new ArrayList<>();
+        orderList.add(productOrder1);
+        orderList.add(productOrder2);
+        //orderList.add(productOrder3);
+        //orderList.add(productOrder4);
+        //orderList.add(productOrder5);
+        return orderList;
     }
+
+    public static List<Aisle> aisleList () {
+        Aisle aisle = new Aisle(1,new WarehouseID("1"),5,1,16,1,1,1,"w");
+        Aisle aisle2 = new Aisle(2,new WarehouseID("1"),5,8,16,8,1,1,"w");
+        Aisle aisle3 = new Aisle(3,new WarehouseID("1"),5,11,16,11,1,1,"w");
+        Aisle aisle4 = new Aisle(4,new WarehouseID("1"),5,18,16,18,1,1,"w");
+        List<Aisle> aisles = new ArrayList<>();
+
+        aisles.add(aisle);
+        aisles.add(aisle2);
+        aisles.add(aisle3);
+        aisles.add(aisle4);
+        return aisles;
+    }
+
 }
 

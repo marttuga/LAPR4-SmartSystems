@@ -12,14 +12,14 @@ public class SemaphoreDemo {
 
     private static final OrderRepository orderRepository = PersistenceContext.repositories().orders();
 
-    private static final TaskExecutor taskExecutor = new TaskExecutor();
+    //private static final TaskExecutor taskExecutor = new TaskExecutor();
 
     public static void main(String[] args) {
 
         List<ProductOrder> productOrders = (List<ProductOrder>) orderRepository.findOrdersByStatus(Status.TO_BE_PREPARED);
 
-        List<Thread> threads = taskExecutor.createThread(productOrders);
-        taskExecutor.initializeThread(threads);
+        //List<Thread> threads = taskExecutor.createThread(productOrders);
+        //taskExecutor.initializeThread(threads);
 
 
 
