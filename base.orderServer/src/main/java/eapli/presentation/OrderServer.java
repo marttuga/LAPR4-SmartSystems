@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 public class OrderServer {
 
-    static final String TRUSTED_STORE = "orderServer.jks";
+    static final String TRUSTED_STORE = "C:\\Users\\marti\\Documents\\2ANO2SEMESTRE\\LAPR4\\LEI21_22_S4_2DK_01\\orderCustomerSSL\\orderServer.jks";
     static final String KEYSTORE_PASS = "password";
     //private static final OrderServerController orderServerController = new OrderServerController();
 
@@ -44,13 +44,11 @@ public class OrderServer {
         int i;
         SSLServerSocket sock = null;
         Socket cliSock;
-        // Trust these certificates provided by authorized clients
-        System.setProperty("orderCustomerSSL//customerApp.jks", TRUSTED_STORE);
-        System.setProperty("orderCustomerSSL//customerApp.pem", KEYSTORE_PASS);
+        System.setProperty("javax.net.ssl.trustStore", TRUSTED_STORE);
+        System.setProperty("javax.net.ssl.trustStorePassword",KEYSTORE_PASS);
 
-        // Use this certificate and private key as server certificate
-        System.setProperty("orderCustomerSSL//orderServer.jks", TRUSTED_STORE);
-        System.setProperty("orderCustomerSSL//orderServer.pem", KEYSTORE_PASS);
+        System.setProperty("javax.net.ssl.keyStore",TRUSTED_STORE);
+        System.setProperty("javax.net.ssl.keyStorePassword",KEYSTORE_PASS);
 
         SSLServerSocketFactory sslF = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault();
         try {

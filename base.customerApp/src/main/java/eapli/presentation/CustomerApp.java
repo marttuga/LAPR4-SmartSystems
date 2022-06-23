@@ -10,35 +10,23 @@ import java.net.UnknownHostException;
 public class CustomerApp {
     static InetAddress serverIP;
     static SSLSocket sock;
-    public static void main(String args[]) throws Exception {
+    public static void main(String[] args) throws Exception {
         String nick, frase;
         byte[] data = new byte[300];
 
          final String KEYSTORE_PASS="password";
 
+        System.setProperty("javax.net.ssl.trustStore", "C:\\Users\\marti\\Documents\\2ANO2SEMESTRE\\LAPR4\\LEI21_22_S4_2DK_01\\orderCustomerSSL\\customerApp.jks");
+        System.setProperty("javax.net.ssl.trustStorePassword",KEYSTORE_PASS);
 
-
-        if (args.length != 2) {
-            System.out.println(args.length);
-            System.out.println("Server IPv4/IPv6 address/DNS name is required as first argument");
-            System.out.println("Client name is required as second argument (a matching keystore must exist)");
-            System.exit(1);
-        }
-
-        // Trust these certificates provided by servers
-        System.setProperty("orderCustomerSSL//orderServer.jks", "orderServer" + ".jks");
-        System.setProperty("orderCustomerSSL//orderServer.pem", KEYSTORE_PASS);
-
-        // Use this certificate and private key for client certificate when requested by the server
-        System.setProperty("orderCustomerSSL//customerApp.jks", "customerApp" + ".jks");
-        System.setProperty("orderCustomerSSL//customerApp.pem", KEYSTORE_PASS);
-
+        System.setProperty("javax.net.ssl.keyStore","C:\\Users\\marti\\Documents\\2ANO2SEMESTRE\\LAPR4\\LEI21_22_S4_2DK_01\\orderCustomerSSL\\customerApp.jks");
+        System.setProperty("javax.net.ssl.keyStorePassword",KEYSTORE_PASS);
         SSLSocketFactory sf = (SSLSocketFactory) SSLSocketFactory.getDefault();
 
         try {
-            serverIP = InetAddress.getByName(args[0]);
+            serverIP = InetAddress.getByName("localhost");
         } catch (UnknownHostException ex) {
-            System.out.println("Invalid server specified: " + args[0]);
+            System.out.println("Invalid server specified: " + "localhost");
             System.exit(1);
         }
 
@@ -46,12 +34,12 @@ public class CustomerApp {
         try {
             sock = (SSLSocket) sf.createSocket(serverIP, 1112);
         } catch (IOException ex) {
-            System.out.println("Failed to connect to: " + args[0] + ":" + 1112);
+            System.out.println("Failed to connect to: " +"localhost" + ":" + 1112);
             System.out.println("Application aborted.");
             System.exit(1);
         }
 
-        System.out.println("Connected to: " + args[0] + ":" + 1112);
+        System.out.println("Connected to: " + "localhost" + ":" + 1112);
 
 
         sock.startHandshake();

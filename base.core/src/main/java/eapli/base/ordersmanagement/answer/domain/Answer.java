@@ -20,7 +20,6 @@ public class Answer implements AggregateRoot<AnswerId> {
     private Map<String,String> every_Answer;
 
     protected Answer(){
-
     }
 
     public Answer(AnswerId answerId, Customer customer, Map<String,String> every_Answer){
@@ -28,15 +27,7 @@ public class Answer implements AggregateRoot<AnswerId> {
         this.customer = customer;
         this.every_Answer = every_Answer;
     }
-    @Override
-    public boolean sameAs(Object other) {
-        return false;
-    }
 
-    @Override
-    public AnswerId identity() {
-        return null;
-    }
 
     @Override
     public String toString() {
@@ -46,5 +37,15 @@ public class Answer implements AggregateRoot<AnswerId> {
 
     public Map<String, String> getEvery_Answer() {
         return every_Answer;
+    }
+
+    @Override
+    public boolean sameAs(Object other) {
+        return false;
+    }
+
+    @Override
+    public AnswerId identity() {
+        return null;
     }
 }

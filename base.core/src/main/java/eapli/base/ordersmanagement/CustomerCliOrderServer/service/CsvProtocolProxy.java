@@ -63,9 +63,9 @@ public class CsvProtocolProxy {
         public void connect(final String address, final int port) throws IOException {
             InetAddress serverIP;
 
-            //serverIP = InetAddress.getByName(address);
+            serverIP = InetAddress.getByName(address);
 
-            sock = new Socket("localhost", port);
+            sock = new Socket(serverIP, port);
             output = new PrintWriter(sock.getOutputStream(), true);
             input = new BufferedReader(new InputStreamReader(sock.getInputStream()));
             LOGGER.debug("Connected to {}", address);
@@ -123,12 +123,12 @@ public class CsvProtocolProxy {
 
     private int getPort() {
         // TODO read from config file
-        return 1111;
+        return 1112;
     }
 
     private String getAddress() {
         // TODO read from config file
-        return "127.0.0.1";
+        return "localhost";
     }
 
 
