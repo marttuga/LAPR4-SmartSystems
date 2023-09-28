@@ -18,12 +18,17 @@
     <class>eapli.base.ordersmanagement.category.domain.Category</class>
     <class>eapli.base.warehousemanagement.domain.Warehouse</class>
     <class>eapli.base.ordersmanagement.survey.domain.Survey</class>
-
-
-
+    <class>eapli.base.ordersmanagement.shoppingCart.domain.ProductItem</class>
+    <class>eapli.base.ordersmanagement.shoppingCart.domain.ShoppingCart</class>
+    <class>eapli.base.ordersmanagement.order.domain.LineOrder</class>
+    <class>eapli.base.ordersmanagement.order.domain.PriceTable</class>
+    <class>eapli.base.warehousemanagement.domain.AGV</class>
+    <class>eapli.base.warehousemanagement.domain.Aisle</class>
+    <class>eapli.base.warehousemanagement.domain.AGVDock</class>
+    <class>eapli.base.ordersmanagement.answer.domain.Answer</class>
 
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://vsgate-s2.dei.isep.ipp.pt:10327/DB"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://vsgate-s2.dei.isep.ipp.pt:10327/DB;DB_CLOSE_ON_EXIT=FALSE"/>
       <!--<property name="javax.persistence.jdbc.url" value="jdbc:h2:~\base;MV_STORE=FALSE;AUTO_SERVER=true;"/>-->
 
       <property name="javax.persistence.jdbc.user" value=""/>

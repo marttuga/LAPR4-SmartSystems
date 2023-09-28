@@ -1,32 +1,123 @@
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/usermanagement/application/DeactivateUserController.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/clientusermanagement/application/eventhandlers/AddClientUserOnSignupAcceptedController.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/clientusermanagement/domain/SignupRequestBuilder.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/Application.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/clientusermanagement/application/AcceptRefuseSignupRequestControllerTxImpl.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/AppSettings.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/usermanagement/application/eventhandlers/AddUserOnSignupAcceptedController.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/clientusermanagement/domain/ClientUser.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/usermanagement/application/AddUserController.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/clientusermanagement/application/AcceptRefuseSignupRequestControllerEventfullImpl.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/usermanagement/domain/BaseRoles.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/myclientuser/application/MyClientUserService.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/clientusermanagement/application/eventhandlers/NewUserRegisteredFromSignupWatchDog.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/clientusermanagement/application/AcceptRefuseSignupFactory.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/clientusermanagement/repositories/ClientUserRepository.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/clientusermanagement/domain/ClientUserBuilder.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/clientusermanagement/domain/events/NewUserRegisteredFromSignupEvent.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/clientusermanagement/domain/events/SignupAcceptedEvent.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/clientusermanagement/domain/SignupRequest.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/usermanagement/application/eventhandlers/SignupAcceptedWatchDog.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/clientusermanagement/repositories/SignupRequestRepository.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/usermanagement/application/ListUsersController.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/usermanagement/domain/BasePasswordPolicy.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/clientusermanagement/application/ListClientUsersController.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/clientusermanagement/application/AcceptRefuseSignupRequestController.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/myclientuser/application/SignupController.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/infrastructure/persistence/PersistenceContext.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/usermanagement/domain/UserBuilderHelper.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/clientusermanagement/application/ClientUserService.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/clientusermanagement/domain/MecanographicNumber.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/infrastructure/persistence/RepositoryFactory.java
-/Users/jtiagoaraujo/OneDrive - Instituto Superior de Engenharia do Porto/ISEP/2º ANO/2º SEMESTRE/LEI21_22_S4_2DK_01/base.core/src/main/java/eapli/base/clientusermanagement/domain/ApprovalStatus.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\category\domain\CategoryCode.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\product\domain\UniqueInternalCode.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\order\domain\PaymentMethod.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\shoppingCart\domain\ShoppingCart.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\clientusermanagement\domain\SignupRequest.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\product\domain\ProductPriceDetail.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\survey\domain\SurveyCode.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\shoppingCart\domain\ProductItem.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\myclientuser\application\SignupController.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\customer\domain\CustomerBirthDay.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\clientusermanagement\domain\ClientUserBuilder.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\customer\domain\CustomerId.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\customer\domain\CustomerPhoneNumber.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\product\domain\Dimension.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\customer\repositories\CustomerRepository.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\order\application\OrderService.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\customer\domain\CustomerPostalAddress.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\product\application\SpecifyNewProductController.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\product\domain\TechnicalDescription.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\domain\Plan.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\category\application\DefineCategoryController.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\category\domain\Category.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\domain\AGVBuilder.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\customer\domain\CustomerEmailAdress.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\customer\domain\CustomerGender.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\usermanagement\domain\UserBuilderHelper.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\domain\Aisle.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\domain\AGV.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\clientusermanagement\domain\SignupRequestBuilder.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\clientusermanagement\domain\events\SignupAcceptedEvent.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\product\application\ProductService.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\domain\Identifier.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\customer\domain\Customer.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\shoppingCart\domain\ProductItemId.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\order\application\NewProductOrderController.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\order\domain\LineOrder.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\usermanagement\application\DeactivateUserController.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\domain\MaxWeightCarry.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\usermanagement\application\ListUsersController.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\customer\domain\Name.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\customer\domain\CustomerVATIdentifier.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\utilitarianClasses\PasswordGeneratorAlgorithm.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\clientusermanagement\application\AcceptRefuseSignupRequestControllerTxImpl.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\clientusermanagement\application\AcceptRefuseSignupRequestController.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\domain\Route.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\usermanagement\application\eventhandlers\SignupAcceptedWatchDog.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\domain\AGVDock.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\product\domain\ExtendedDescription.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\customer\domain\CustomerLastName.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\product\domain\Product.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\customer\domain\CustomerFirstName.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\customer\domain\EmailAddress.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\order\domain\PriceTable.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\product\domain\ShortDescription.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\domain\Warehouse.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\domain\Model.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\domain\Status.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\product\domain\ProductionCode.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\product\domain\ProductBuilder.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\product\application\ViewCatalogController.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\clientusermanagement\domain\ApprovalStatus.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\product\application\ProductSorter.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\clientusermanagement\domain\events\NewUserRegisteredFromSignupEvent.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\order\domain\ShippingCost.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\order\domain\ProductOrder.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\order\domain\Status.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\order\domain\OrderID.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\clientusermanagement\domain\MecanographicNumber.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\order\domain\LineOrderID.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\clientusermanagement\application\AcceptRefuseSignupFactory.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\product\domain\Barcode.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\domain\Bin.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\product\domain\Weight.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\usermanagement\application\eventhandlers\AddUserOnSignupAcceptedController.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\usermanagement\application\AddUserController.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\order\domain\PriceOrder.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\shoppingCart\domain\ShoppingCartId.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\utilitarianClasses\EmailSystem.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\clientusermanagement\application\ListClientUsersController.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\clientusermanagement\repositories\ClientUserRepository.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\order\repositories\OrderRepository.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\infrastructure\persistence\PersistenceContext.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\domain\WarehouseID.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\Application.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\order\domain\ShippingMethod.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\customer\application\RegisterCustomerController.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\order\domain\PriceTableID.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\utilitarianClasses\Utils.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\application\UploadFileController.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\domain\AGV_Warehouse.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\myclientuser\application\MyClientUserService.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\customer\domain\BirthDate.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\domain\Task.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\clientusermanagement\application\AcceptRefuseSignupRequestControllerEventfullImpl.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\application\UploadFileService.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\customer\application\services\CustomerServices.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\product\domain\Brand.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\customer\domain\CustomerBuilder.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\utilitarianClasses\AgeCalculator.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\domain\Row.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\category\repository\CategoryRepository.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\AppSettings.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\survey\domain\Survey.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\clientusermanagement\application\eventhandlers\AddClientUserOnSignupAcceptedController.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\product\application\ViewCatalogService.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\usermanagement\domain\BasePasswordPolicy.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\category\domain\CategoryDescription.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\order\domain\SalesRegion.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\order\repositories\LineOrderRepository.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\repositories\WarehouseRepository.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\product\repositories\ProductRepository.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\application\AGVService.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\clientusermanagement\application\ClientUserService.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\usermanagement\domain\BaseRoles.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\repositories\AGVRepository.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\clientusermanagement\domain\ClientUser.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\clientusermanagement\repositories\SignupRequestRepository.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\application\ConfigureAGVController.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\warehousemanagement\domain\Shelf.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\product\domain\Reference.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\ordersmanagement\order\domain\OrderActor.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\clientusermanagement\application\eventhandlers\NewUserRegisteredFromSignupWatchDog.java
+C:\Users\marti\Documents\2ANO2SEMESTRE\LAPR4\LEI21_22_S4_2DK_01\base.core\src\main\java\eapli\base\infrastructure\persistence\RepositoryFactory.java

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="base.orderServer" />
+        <module name="base.app.prepareorder" />
+        <module name="base.dashboard" />
+        <module name="base.app.other.console" />
+        <module name="base.app.customerApplication" />
+        <module name="base.app.common.console" />
+        <module name="base.app.backoffice.console" />
+        <module name="base.app.bootstrap" />
+        <module name="daemon" />
+        <module name="base.persistence.impl" />
+        <module name="base.app.orderServ" />
+        <module name="AGVManager" />
+        <module name="base.app.user.console" />
+        <module name="base.core" />
+        <module name="base.bootstrappers" />
+        <module name="base.customerApp" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eapli.base" target="11" />
+      <module name="eapli_base" target="11" />
+      <module name="eaplibase" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="base.app.backoffice.console" options="" />
+    </option>
+  </component>
+</project>
